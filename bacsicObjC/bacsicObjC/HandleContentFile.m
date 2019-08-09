@@ -7,10 +7,7 @@
 //
 
 #import "HandleContentFile.h"
-
-
-
-@implementation HandleContentFile 
+@implementation HandleContentFile
 
 -(void)splitFileWithURLAndNumberSizeInput:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte {
     NSFileHandle *inputFileHandle;
@@ -89,11 +86,7 @@
         }
         [inputFileHandle closeFile];
     }
-    //    }
-    
-    
-    
-    
+   
 }
 
 
