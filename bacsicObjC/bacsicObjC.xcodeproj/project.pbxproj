@@ -15,6 +15,18 @@
 		E7FCD2A922FD4A2B00597004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2A822FD4A2B00597004 /* main.m */; };
 		E7FCD2B322FD4A2B00597004 /* bacsicObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2B222FD4A2B00597004 /* bacsicObjCTests.m */; };
 		E7FCD2BE22FD4A2B00597004 /* bacsicObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2BD22FD4A2B00597004 /* bacsicObjCUITests.m */; };
+		E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */; };
+		E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2CE22FD4A8800597004 /* NSString+DetectURL.m */; };
+		E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2CF22FD4A8800597004 /* NSFileManager+ListSatisfyFile.m */; };
+		E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2D222FD4A8800597004 /* NSString+CompareTimeStamp.m */; };
+		E7FCD2DA22FD4AE200597004 /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2D822FD4AE200597004 /* Body.m */; };
+		E7FCD2E822FD4AFE00597004 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = E7FCD2DB22FD4AFC00597004 /* example.json */; };
+		E7FCD2E922FD4AFE00597004 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2DC22FD4AFC00597004 /* Content.m */; };
+		E7FCD2EA22FD4AFE00597004 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2DE22FD4AFD00597004 /* Box.m */; };
+		E7FCD2EB22FD4AFE00597004 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E022FD4AFD00597004 /* Image.m */; };
+		E7FCD2EC22FD4AFE00597004 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E122FD4AFD00597004 /* Data.m */; };
+		E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E322FD4AFD00597004 /* Question.m */; };
+		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,29 @@
 		E7FCD2B922FD4A2B00597004 /* bacsicObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bacsicObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FCD2BD22FD4A2B00597004 /* bacsicObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bacsicObjCUITests.m; sourceTree = "<group>"; };
 		E7FCD2BF22FD4A2B00597004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7FCD2CB22FD4A8800597004 /* NSString+DetectURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DetectURL.h"; sourceTree = "<group>"; };
+		E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+handleTailFile.m"; sourceTree = "<group>"; };
+		E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ListSatisfyFile.h"; sourceTree = "<group>"; };
+		E7FCD2CE22FD4A8800597004 /* NSString+DetectURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DetectURL.m"; sourceTree = "<group>"; };
+		E7FCD2CF22FD4A8800597004 /* NSFileManager+ListSatisfyFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ListSatisfyFile.m"; sourceTree = "<group>"; };
+		E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+handleTailFile.h"; sourceTree = "<group>"; };
+		E7FCD2D122FD4A8800597004 /* NSString+CompareTimeStamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CompareTimeStamp.h"; sourceTree = "<group>"; };
+		E7FCD2D222FD4A8800597004 /* NSString+CompareTimeStamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CompareTimeStamp.m"; sourceTree = "<group>"; };
+		E7FCD2D822FD4AE200597004 /* Body.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Body.m; sourceTree = "<group>"; };
+		E7FCD2D922FD4AE200597004 /* Body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Body.h; sourceTree = "<group>"; };
+		E7FCD2DB22FD4AFC00597004 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
+		E7FCD2DC22FD4AFC00597004 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
+		E7FCD2DD22FD4AFD00597004 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		E7FCD2DE22FD4AFD00597004 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		E7FCD2DF22FD4AFD00597004 /* NSDictionary+ParseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ParseJson.h"; sourceTree = "<group>"; };
+		E7FCD2E022FD4AFD00597004 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		E7FCD2E122FD4AFD00597004 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		E7FCD2E222FD4AFD00597004 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		E7FCD2E322FD4AFD00597004 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		E7FCD2E422FD4AFD00597004 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
+		E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ParseJson.m"; sourceTree = "<group>"; };
+		E7FCD2E622FD4AFE00597004 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		E7FCD2E722FD4AFE00597004 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +116,7 @@
 		E7FCD28D22FD4A2A00597004 = {
 			isa = PBXGroup;
 			children = (
+				E7FCD2D722FD4AB100597004 /* ParseJsonForAPost */,
 				E7FCD29822FD4A2A00597004 /* bacsicObjC */,
 				E7FCD2B122FD4A2B00597004 /* bacsicObjCTests */,
 				E7FCD2BC22FD4A2B00597004 /* bacsicObjCUITests */,
@@ -101,6 +137,14 @@
 		E7FCD29822FD4A2A00597004 /* bacsicObjC */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */,
+				E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */,
+				E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */,
+				E7FCD2CF22FD4A8800597004 /* NSFileManager+ListSatisfyFile.m */,
+				E7FCD2D122FD4A8800597004 /* NSString+CompareTimeStamp.h */,
+				E7FCD2D222FD4A8800597004 /* NSString+CompareTimeStamp.m */,
+				E7FCD2CB22FD4A8800597004 /* NSString+DetectURL.h */,
+				E7FCD2CE22FD4A8800597004 /* NSString+DetectURL.m */,
 				E7FCD29922FD4A2A00597004 /* AppDelegate.h */,
 				E7FCD29A22FD4A2A00597004 /* AppDelegate.m */,
 				E7FCD29C22FD4A2A00597004 /* ViewController.h */,
@@ -130,6 +174,28 @@
 				E7FCD2BF22FD4A2B00597004 /* Info.plist */,
 			);
 			path = bacsicObjCUITests;
+			sourceTree = "<group>";
+		};
+		E7FCD2D722FD4AB100597004 /* ParseJsonForAPost */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCD2D922FD4AE200597004 /* Body.h */,
+				E7FCD2D822FD4AE200597004 /* Body.m */,
+				E7FCD2E622FD4AFE00597004 /* Box.h */,
+				E7FCD2DE22FD4AFD00597004 /* Box.m */,
+				E7FCD2E422FD4AFD00597004 /* Content.h */,
+				E7FCD2DC22FD4AFC00597004 /* Content.m */,
+				E7FCD2DD22FD4AFD00597004 /* Data.h */,
+				E7FCD2E122FD4AFD00597004 /* Data.m */,
+				E7FCD2DB22FD4AFC00597004 /* example.json */,
+				E7FCD2E222FD4AFD00597004 /* Image.h */,
+				E7FCD2E022FD4AFD00597004 /* Image.m */,
+				E7FCD2DF22FD4AFD00597004 /* NSDictionary+ParseJson.h */,
+				E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */,
+				E7FCD2E722FD4AFE00597004 /* Question.h */,
+				E7FCD2E322FD4AFD00597004 /* Question.m */,
+			);
+			path = ParseJsonForAPost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FCD2E822FD4AFE00597004 /* example.json in Resources */,
 				E7FCD2A622FD4A2B00597004 /* LaunchScreen.storyboard in Resources */,
 				E7FCD2A322FD4A2B00597004 /* Assets.xcassets in Resources */,
 				E7FCD2A122FD4A2A00597004 /* Main.storyboard in Resources */,
@@ -262,9 +329,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FCD2EB22FD4AFE00597004 /* Image.m in Sources */,
+				E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */,
+				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
+				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
+				E7FCD2EA22FD4AFE00597004 /* Box.m in Sources */,
+				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
+				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
+				E7FCD2E922FD4AFE00597004 /* Content.m in Sources */,
+				E7FCD2DA22FD4AE200597004 /* Body.m in Sources */,
+				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,
+				E7FCD2EC22FD4AFE00597004 /* Data.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "Data.h"
-#import "NSDictionary+DictCategory.h"
+#import "NSDictionary+ParseJson.h"
 @implementation Data
 
 

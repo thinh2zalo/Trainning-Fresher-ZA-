@@ -22,7 +22,7 @@
         NSArray *results = [dict getNSArray:@"questions"];
         for (NSDictionary *groupDic in results){
             Question * quesTemp = [[Question alloc] initWithDict:groupDic];
-            if([quesTemp isKingOfClass:Question.class]){
+            if([quesTemp isKindOfClass:Question.class]){
                 [self.questions addObject:quesTemp];
             }
         }
