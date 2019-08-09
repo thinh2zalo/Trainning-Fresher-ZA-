@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "HandleContentFile.m"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSString *currentpath = NSTemporaryDirectory() ;
+    currentpath = [currentpath stringByAppendingPathComponent:@"txt.txt"];
+    NSURL *currentURL = [NSURL fileURLWithPath:currentpath];
+    HandleContentFile *test = [[HandleContentFile alloc] init];
+    NSLog(@"%@",currentURL);
+    [test splitFileWithURLAndNumberSizeInput:currentURL andNumberOfByte:400];
     return YES;
 }
 

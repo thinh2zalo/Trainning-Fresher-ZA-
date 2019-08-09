@@ -27,6 +27,7 @@
 		E7FCD2EC22FD4AFE00597004 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E122FD4AFD00597004 /* Data.m */; };
 		E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E322FD4AFD00597004 /* Question.m */; };
 		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
+		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ParseJson.m"; sourceTree = "<group>"; };
 		E7FCD2E622FD4AFE00597004 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		E7FCD2E722FD4AFE00597004 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleContentFile.m; sourceTree = "<group>"; };
+		E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 		E7FCD29822FD4A2A00597004 /* bacsicObjC */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */,
+				E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */,
 				E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */,
 				E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */,
 				E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */,
@@ -341,6 +346,7 @@
 				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
 				E7FCD2E922FD4AFE00597004 /* Content.m in Sources */,
 				E7FCD2DA22FD4AE200597004 /* Body.m in Sources */,
+				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
 				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,
 				E7FCD2EC22FD4AFE00597004 /* Data.m in Sources */,
 			);
