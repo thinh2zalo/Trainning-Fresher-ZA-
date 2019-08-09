@@ -38,8 +38,6 @@
         self.originalUrl = [dict getNSURLWithString:@"original_url"];
         self.avatarURL = [dict getNSURLWithString:@"avatar_url"];
         self.publicsherName = [dict getNSString:@"publicsher_name"];
-        
-       
     }
     return self;
 }

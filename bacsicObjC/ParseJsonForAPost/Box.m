@@ -29,10 +29,7 @@
         self.displayType = (NSInteger)[dict getNSNumber:@"display_type"] ;
         self.maxShow =     (NSInteger)[dict getNSNumber:@"max_show"] ;
         self.objectType = (NSInteger)[dict getNSNumber:@"object_type"] ;
-        
-        
-        
-    }
+        }
     return self;
 }
 @end

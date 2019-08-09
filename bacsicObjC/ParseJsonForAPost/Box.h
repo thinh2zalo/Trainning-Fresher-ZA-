@@ -10,7 +10,6 @@
 #import "Question.h"
 #import "NSDictionary+ParseJson.h"
 NS_ASSUME_NONNULL_BEGIN
-
 @interface Box : NSObject
 @property (nonatomic) NSInteger position;
 @property (nonatomic) NSInteger sectionBoxId;
@@ -22,8 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSArray  *positions;
 @property (nonatomic) NSMutableArray  *questions;
 -(Box *)initWithDict:(NSDictionary *) dict;
-
-
 @end
 
 NS_ASSUME_NONNULL_END
