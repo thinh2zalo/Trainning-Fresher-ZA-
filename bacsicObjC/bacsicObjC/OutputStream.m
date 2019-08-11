@@ -19,8 +19,7 @@
     if(self){
         [[NSFileManager defaultManager] createFileAtPath:outputFile contents: nil attributes: nil];
         NSError *error = nil;
-         _output = [NSFileHandle fileHandleForWritingAtPath: outputFile];
-      
+         _output = [NSFileHandle fileHandleForWritingAtPath: outputFile];     
     }
     return self;
 }

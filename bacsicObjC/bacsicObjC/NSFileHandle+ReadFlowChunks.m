@@ -11,7 +11,6 @@
 @implementation NSFileHandle (ReadFlowChunks)
 -(NSData *)ReadDataOfChunks:(NSInteger )sizeChunks totalSize:(unsigned long long )size {
     NSMutableData * mutableData = NSMutableData.new;
-  
     unsigned long long currentSize = 0;
     while (currentSize < size){
         if (currentSize + sizeChunks < size){
@@ -21,10 +20,8 @@
             [mutableData appendData:[self readDataOfLength:(size-currentSize)]];
             break;
         }
-    
-        currentSize = currentSize + sizeChunks;
+            currentSize = currentSize + sizeChunks;
         }
     return mutableData;
-    
 }
 @end
