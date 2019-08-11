@@ -22,7 +22,7 @@
     if ([arrResults isKindOfClass:NSArray.class]) {
         return arrResults;
     }
-    else return [[NSArray alloc] init];
+    else return NSArray.new;
 }
 - (NSNumber *)getNSNumber:(NSString *) numberKey{
     NSNumber *numberResults = [self objectForKey:numberKey];

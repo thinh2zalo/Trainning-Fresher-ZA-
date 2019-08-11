@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "OutputStream.h"
+#import "InputStream.h"
+#import "NSFileHandle+ReadFlowChunks.h"
+#define CHUNKS 100
+@class OutputStream;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HandleContentFile :NSObject

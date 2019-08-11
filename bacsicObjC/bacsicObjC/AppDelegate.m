@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HandleContentFile.m"
+#import "HandleContentFile.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,7 @@
     NSURL *currentURL = [NSURL fileURLWithPath:currentpath];
     HandleContentFile *test = [[HandleContentFile alloc] init];
     NSLog(@"%@",currentURL);
-    [test splitFileWithURLAndNumberSizeInput:currentURL andNumberOfByte:400];
+    [test splitFileWithURLAndNumberSizeInput:currentURL andNumberOfByte:100];
     return YES;
 }
 

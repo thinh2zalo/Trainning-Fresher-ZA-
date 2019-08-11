@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */ = {isa = PBXBuildFile; fileRef = E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */; };
+		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
 		E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29D22FD4A2A00597004 /* ViewController.m */; };
 		E7FCD2A122FD4A2A00597004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FCD29F22FD4A2A00597004 /* Main.storyboard */; };
@@ -28,6 +30,7 @@
 		E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E322FD4AFD00597004 /* Question.m */; };
 		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
 		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
+		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ReadFlowChunks.h"; sourceTree = "<group>"; };
+		E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ReadFlowChunks.m"; sourceTree = "<group>"; };
+		E70249FA22FFBFFE004552A6 /* OutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
+		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
 		E7FCD29622FD4A2A00597004 /* bacsicObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bacsicObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FCD29922FD4A2A00597004 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7FCD29A22FD4A2A00597004 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +96,8 @@
 		E7FCD2E722FD4AFE00597004 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleContentFile.m; sourceTree = "<group>"; };
 		E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
+		E7FCD2F222FD7C5E00597004 /* InputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
+		E7FCD2F322FD7C5E00597004 /* InputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +168,12 @@
 				E7FCD2A422FD4A2B00597004 /* LaunchScreen.storyboard */,
 				E7FCD2A722FD4A2B00597004 /* Info.plist */,
 				E7FCD2A822FD4A2B00597004 /* main.m */,
+				E7FCD2F222FD7C5E00597004 /* InputStream.h */,
+				E7FCD2F322FD7C5E00597004 /* InputStream.m */,
+				E70249FA22FFBFFE004552A6 /* OutputStream.h */,
+				E70249FB22FFBFFE004552A6 /* OutputStream.m */,
+				E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */,
+				E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */,
 			);
 			path = bacsicObjC;
 			sourceTree = "<group>";
@@ -338,6 +353,9 @@
 				E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */,
 				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
+				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
+				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
+				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
