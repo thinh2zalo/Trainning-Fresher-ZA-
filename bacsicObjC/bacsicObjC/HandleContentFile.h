@@ -15,9 +15,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HandleContentFile :NSObject
-
--(void)splitFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N;
--(void)splitFileWithURLAndNumberSizeInput:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte ;
+-(void)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N;
+-(void)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte ;
+-(void)mergeFileAtURL:(NSArray<NSURL*>*) listURL;
+-(unsigned long long)getSizeOfFileAtPath:(NSString *)path;
 @end
 
 NS_ASSUME_NONNULL_END

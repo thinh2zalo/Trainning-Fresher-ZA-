@@ -17,12 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *currentpath = NSTemporaryDirectory() ;
-    currentpath = [currentpath stringByAppendingPathComponent:@"txt.txt"];
-    NSURL *currentURL = [NSURL fileURLWithPath:currentpath];
+    NSString *currentpath1 = NSTemporaryDirectory() ;
+    currentpath1 = [currentpath1 stringByAppendingPathComponent:@"txt(1)"];
+    NSString *currentpath2 = NSTemporaryDirectory() ;
+    currentpath2 = [currentpath2 stringByAppendingPathComponent:@"txt(2)"];
+    NSURL *currentURL1 = [NSURL fileURLWithPath:currentpath1];
+    NSURL *currentURL2 = [NSURL fileURLWithPath:currentpath2];
+    NSArray<NSURL*>* listURL = @[currentURL1,currentURL2];
+    
     HandleContentFile *test = [[HandleContentFile alloc] init];
-    NSLog(@"%@",currentURL);
-    [test splitFileWithURLAndNumberSizeInput:currentURL andNumberOfByte:100];
+
+    [test mergeFileAtURL:listURL];
     return YES;
 }
 
