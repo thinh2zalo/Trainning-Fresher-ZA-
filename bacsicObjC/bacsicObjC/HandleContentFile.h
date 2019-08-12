@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Stream.h"
 #import "OutputStream.h"
 #import "InputStream.h"
 #import "NSFileHandle+ReadFlowChunks.h"
 #define CHUNKS 100
+typedef void(^BlockName)(float  process);
 @class OutputStream;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HandleContentFile :NSObject
--(void)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N;
--(void)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte ;
+-(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N;
+-(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte andBlock:(BlockName)blockName ;
 -(void)mergeFileAtURL:(NSArray<NSURL*>*) listURL;
 -(unsigned long long)getSizeOfFileAtPath:(NSString *)path;
 @end

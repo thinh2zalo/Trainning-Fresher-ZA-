@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HandleContentFile.h"
+#import "NSFileManager+InteractWithFile.h"
 
 @interface AppDelegate ()
 
@@ -18,16 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *currentpath1 = NSTemporaryDirectory() ;
-    currentpath1 = [currentpath1 stringByAppendingPathComponent:@"txt(1)"];
-    NSString *currentpath2 = NSTemporaryDirectory() ;
-    currentpath2 = [currentpath2 stringByAppendingPathComponent:@"txt(2)"];
-    NSURL *currentURL1 = [NSURL fileURLWithPath:currentpath1];
-    NSURL *currentURL2 = [NSURL fileURLWithPath:currentpath2];
-    NSArray<NSURL*>* listURL = @[currentURL1,currentURL2];
+    currentpath1 = [currentpath1 stringByAppendingPathComponent:@"img.jpg"];
+//    NSString *currentpath2 = NSTemporaryDirectory() ;
+//    currentpath2 = [currentpath2 stringByAppendingPathComponent:@"txt(2)"];
+//    NSURL *currentURL1 = [NSURL fileURLWithPath:currentpath1];
+//    NSURL *currentURL2 = [NSURL fileURLWithPath:currentpath2];
+//    NSArray<NSURL*>* listURL = @[currentURL1,currentURL2];
     
-    HandleContentFile *test = [[HandleContentFile alloc] init];
-
-    [test mergeFileAtURL:listURL];
+    
+    
+ 
+    [NSFileManager splitAFileIntoNFileWithURL:[NSURL fileURLWithPath:currentpath1] andN:10];
+   
+      
+    
     return YES;
 }
 

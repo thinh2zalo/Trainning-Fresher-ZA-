@@ -17,17 +17,21 @@
 - (OutputStream *)initWithPath:(NSString *)outputFile {
     self = [super init];
     if(self){
-        [[NSFileManager defaultManager] createFileAtPath:outputFile contents: nil attributes: nil];
-        NSError *error = nil;
-         _output = [NSFileHandle fileHandleForWritingAtPath: outputFile];     
+        if(![[NSFileManager defaultManager] fileExistsAtPath:outputFile ]){
+            [[NSFileManager defaultManager] createFileAtPath:outputFile contents: nil attributes: nil];
+        }
+        self.fileHandle = [NSFileHandle fileHandleForWritingAtPath: outputFile];
     }
     return self;
 }
+-(void)writeData:(NSData *)data{
+    [self.fileHandle writeData:data];
+}
 - (void)use :(Block )block{
-    if(_output && block){
-        block(_output);
-        [_output closeFile];
+    if(self && block){
+        block(self);
     }
+     [self.fileHandle closeFile];
 }
 
 @end

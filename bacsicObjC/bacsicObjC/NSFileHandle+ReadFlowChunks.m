@@ -20,8 +20,8 @@
             [mutableData appendData:[self readDataOfLength:(size-currentSize)]];
             break;
         }
-            currentSize = currentSize + sizeChunks;
-        }
+        currentSize = currentSize + sizeChunks;
+    }
     return mutableData;
 }
 @end

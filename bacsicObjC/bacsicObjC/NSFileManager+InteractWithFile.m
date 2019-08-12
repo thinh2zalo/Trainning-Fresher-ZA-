@@ -1,14 +1,15 @@
 //
-//  NSFileManager+HandleContentFile.m
-//  ProjectFresherZAMD
+//  NSFileManager+InteractWithFile.m
+//  bacsicObjC
 //
-//  Created by CPU11606 on 8/8/19.
+//  Created by CPU11606 on 8/12/19.
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "HandleContentFile.h"
-@implementation HandleContentFile
--(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N {
+#import "NSFileManager+InteractWithFile.h"
+
+@implementation NSFileManager (InteractWithFile)
++(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N {
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     NSFileManager * fm = [NSFileManager defaultManager];
     NSString *directoryPath = urlInput.path;
@@ -16,6 +17,8 @@
     if (![fm fileExistsAtPath:directoryPath] || N == 0){
         NSLog(@"Link is error or N = 0");
     } else {
+        
+        NSLog(@"Link is not error");
         unsigned long long sizeOfFile = [self getSizeOfFileAtPath:directoryPath];
         unsigned long long sizeEachFileSplited = sizeOfFile/N;
         InputStream *input = [[InputStream alloc] initWithPath:urlInput.path];
@@ -30,11 +33,12 @@
                 [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
             }
         }];
+        
     }
     return fileUrls;
 }
 
--(void)mergeFileAtURL:(NSArray<NSURL*>*) listURL {
++(void)mergeFileAtURL:(NSArray<NSURL*>*) listURL {
     if (![listURL isKindOfClass:NSArray.class]){
         NSLog(@"listURL ERROR");
     } else {
@@ -53,7 +57,7 @@
     }
 }
 
--(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte andBlock:(BlockName)blockName {
++(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte andBlock:(BlockName)blockName {
     
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     InputStream *inputStream = [[InputStream alloc] initWithPath:urlInput.path];
@@ -96,7 +100,7 @@
     return fileUrls;
 }
 
--(unsigned long long)getSizeOfFileAtPath:(NSString *)path{
++(unsigned long long)getSizeOfFileAtPath:(NSString *)path{
     NSError *attributesError = nil;
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path  error:&attributesError];
     unsigned long long sizeOfFile = [attributes fileSize];

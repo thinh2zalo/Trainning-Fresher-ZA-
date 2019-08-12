@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */ = {isa = PBXBuildFile; fileRef = E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */; };
 		E700149922FFF9C60009AA43 /* testHandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E700149822FFF9C60009AA43 /* testHandleContentFile.m */; };
+		E700767C230114C100F0FCD8 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E700767B230114C100F0FCD8 /* Stream.m */; };
+		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
 		E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29D22FD4A2A00597004 /* ViewController.m */; };
@@ -55,6 +57,10 @@
 		E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ReadFlowChunks.h"; sourceTree = "<group>"; };
 		E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ReadFlowChunks.m"; sourceTree = "<group>"; };
 		E700149822FFF9C60009AA43 /* testHandleContentFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testHandleContentFile.m; sourceTree = "<group>"; };
+		E700767A230114C100F0FCD8 /* Stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stream.h; sourceTree = "<group>"; };
+		E700767B230114C100F0FCD8 /* Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stream.m; sourceTree = "<group>"; };
+		E701AF0C230171550024E4B3 /* NSFileManager+InteractWithFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+InteractWithFile.h"; sourceTree = "<group>"; };
+		E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+InteractWithFile.m"; sourceTree = "<group>"; };
 		E70249FA22FFBFFE004552A6 /* OutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
 		E7FCD29622FD4A2A00597004 /* bacsicObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bacsicObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +159,8 @@
 			children = (
 				E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */,
 				E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */,
+				E701AF0C230171550024E4B3 /* NSFileManager+InteractWithFile.h */,
+				E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */,
 				E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */,
 				E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */,
 				E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */,
@@ -170,6 +178,8 @@
 				E7FCD2A422FD4A2B00597004 /* LaunchScreen.storyboard */,
 				E7FCD2A722FD4A2B00597004 /* Info.plist */,
 				E7FCD2A822FD4A2B00597004 /* main.m */,
+				E700767A230114C100F0FCD8 /* Stream.h */,
+				E700767B230114C100F0FCD8 /* Stream.m */,
 				E7FCD2F222FD7C5E00597004 /* InputStream.h */,
 				E7FCD2F322FD7C5E00597004 /* InputStream.m */,
 				E70249FA22FFBFFE004552A6 /* OutputStream.h */,
@@ -353,12 +363,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7FCD2EB22FD4AFE00597004 /* Image.m in Sources */,
+				E700767C230114C100F0FCD8 /* Stream.m in Sources */,
 				E7FCD2ED22FD4AFE00597004 /* Question.m in Sources */,
 				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
+				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,

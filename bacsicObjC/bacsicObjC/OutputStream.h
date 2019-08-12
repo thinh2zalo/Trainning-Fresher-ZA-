@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Stream.h"
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^Block)(NSFileHandle * fileHandle);
-@interface OutputStream : NSFileHandle
-@property (nonatomic) NSFileHandle * output;
+
+@interface OutputStream : Stream
+
 -(OutputStream *)initWithPath:(NSString *)urlInput;
+typedef void(^Block)(OutputStream * inputStream);
 - (void)use :(Block )block;
-@end
+-(void)writeData:(NSData *)data;
+@end          
 
 NS_ASSUME_NONNULL_END
