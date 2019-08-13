@@ -20,18 +20,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *currentpath1 = NSTemporaryDirectory() ;
     currentpath1 = [currentpath1 stringByAppendingPathComponent:@"img.jpg"];
-//    NSString *currentpath2 = NSTemporaryDirectory() ;
-//    currentpath2 = [currentpath2 stringByAppendingPathComponent:@"txt(2)"];
-//    NSURL *currentURL1 = [NSURL fileURLWithPath:currentpath1];
-//    NSURL *currentURL2 = [NSURL fileURLWithPath:currentpath2];
+    NSString *currentpath2 = NSTemporaryDirectory() ;
+    currentpath2 = [currentpath2 stringByAppendingPathComponent:@"img(2).jpg"];
+    NSURL *currentURL1 = [NSURL fileURLWithPath:currentpath1];
+    NSURL *currentURL2 = [NSURL fileURLWithPath:currentpath2];
 //    NSArray<NSURL*>* listURL = @[currentURL1,currentURL2];
     
+    NSFileManager.defaultManager.testProperty = @"A";
     
+    NSString* a = NSFileManager.defaultManager.testProperty;
     
- 
-    [NSFileManager splitAFileIntoNFileWithURL:[NSURL fileURLWithPath:currentpath1] andN:10];
-   
-      
+    dispatch_queue_global_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        dispatch_sync(queue, ^{
+            NSLog(@"A");
+        });
+        NSLog(@"B");
+//        [NSFileManager splitAFileIntoNFileWithURL:currentURL1 andNumberOfByte:1024 andBlock:^(float progess){
+//            NSLog(@"%f",progess);
+//        }];
+    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [NSFileManager splitAFileIntoNFileWithURL:currentURL2 andNumberOfByte:1024 andBlock:^(float progess){
+//            NSLog(@"%f",progess);
+//        }];
+//    });
+    
     
     return YES;
 }

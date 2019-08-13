@@ -9,7 +9,7 @@
 #import "NSFileManager+InteractWithFile.h"
 
 @implementation NSFileManager (InteractWithFile)
-+(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N {
++(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N andBlock:(BlockName)blockName{
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     NSFileManager * fm = [NSFileManager defaultManager];
     NSString *directoryPath = urlInput.path;
@@ -30,7 +30,10 @@
                 OutputStream *output = [[OutputStream alloc]  initWithPath:aPathWithStringAddedIndex];
                 NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeEachFileSplited];
                 [output writeData:inputDataBuffer];
+                float percent = ((float)i/(float)N) * 100;
+                blockName(percent);
                 [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                
             }
         }];
         
@@ -58,7 +61,6 @@
 }
 
 +(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andNumberOfByte:(NSUInteger)NByte andBlock:(BlockName)blockName {
-    
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     InputStream *inputStream = [[InputStream alloc] initWithPath:urlInput.path];
     NSFileManager * fm = [NSFileManager defaultManager];
@@ -89,10 +91,10 @@
                         [output writeData: inputDataBuffer];
                         readCurrent = readCurrent + NByte;
                         float percent = ((float)i/(float)countFileHasTheSameByte) * 100;
-                        
                         blockName(percent);
+                        [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
                     }];
-                    [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                    
                 }
             }];
         }

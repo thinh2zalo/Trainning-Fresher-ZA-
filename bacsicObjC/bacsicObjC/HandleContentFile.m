@@ -8,7 +8,7 @@
 
 #import "HandleContentFile.h"
 @implementation HandleContentFile
--(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N {
+-(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N  {
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     NSFileManager * fm = [NSFileManager defaultManager];
     NSString *directoryPath = urlInput.path;
@@ -84,7 +84,7 @@
                         }
                         [output writeData: inputDataBuffer];
                         readCurrent = readCurrent + NByte;
-                        float percent = ((float)i/(float)countFileHasTheSameByte) * 100;
+                        float percent = ((float)i/(float)(countFileHasTheSameByte + 1 )) * 100;
                         
                         blockName(percent);
                     }];
@@ -93,6 +93,7 @@
             }];
         }
     }
+    
     return fileUrls;
 }
 
