@@ -8,13 +8,13 @@
 
 #import "Image.h"
 
-@implementation image
--(image *)initWithDict:(NSDictionary *)dict{
-self = [super init];
-if(self){
-    self.width = (NSInteger)[dict getNSNumber:@"width"];
-    self.height = (NSInteger)[dict getNSNumber:@"height"];
-    self.url = [dict getURL];
-}
-return self;
+@implementation Image
+-(Image *)initWithDict:(NSDictionary *)dict{
+    self = [super init];
+    if(self){
+        self.width = (NSInteger)[dict getNSNumber:@"width"];
+        self.height = (NSInteger)[dict getNSNumber:@"height"];
+        self.url = [dict getURL];
+    }
+    return self;
 }@end

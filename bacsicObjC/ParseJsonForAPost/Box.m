@@ -20,16 +20,20 @@
         self.sectionBoxId = (NSInteger)[dict getNSNumber:@"section_box_id"] ;
         self.positions = [dict getNSArray:@"positions"];
         NSArray *results = [dict getNSArray:@"questions"];
+        self.questions = NSMutableArray.new;
         for (NSDictionary *groupDic in results){
             Question * quesTemp = [[Question alloc] initWithDict:groupDic];
-            if([quesTemp isKindOfClass:Question.class]){
+            if(SAFE_TYPE(quesTemp, Question)){
+                
                 [self.questions addObject:quesTemp];
             }
         }
+        
         self.displayType = (NSInteger)[dict getNSNumber:@"display_type"] ;
         self.maxShow =     (NSInteger)[dict getNSNumber:@"max_show"] ;
         self.objectType = (NSInteger)[dict getNSNumber:@"object_type"] ;
-        }
+    }
     return self;
 }
+
 @end

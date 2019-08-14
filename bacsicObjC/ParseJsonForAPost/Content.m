@@ -12,32 +12,33 @@
 -(Content *)initWithDict:(NSDictionary *)dict{
     self = [super init];
     if (self){
-        self.attributes = (NSInteger)[dict getNSNumber:@"attributes"];
-        self.date = (NSInteger)[dict getNSNumber:@"date"];
+        self.attributes = [dict getNSNumber:@"attributes"].integerValue;
+        self.date = [dict getNSNumber:@"date"].integerValue;
         NSArray *results = [dict getNSArray:@"images"];
+        self.images = NSMutableArray.new;
         for(NSDictionary *groupDic in results){
-            image * imageTemp = [[image alloc] initWithDict:groupDic];
-            if([image isKindOfClass:image.class]){
-            [self.images addObject:imageTemp];
+            Image * imageTemp = [[Image alloc] initWithDict:groupDic];
+            if(SAFE_TYPE(imageTemp, Image)){
+                [self.images addObject:imageTemp];
             }
         }
         self.descriptionOfProject = [dict getNSString:@"description"];
         self.url = [dict getURL];
         self.title = [dict getTitle];
-        self.contentId = (NSInteger)[dict getNSNumber:@"content_id"];
-        self.attributes = (NSInteger)[dict getNSNumber:@"attributes"];
-        self.avatarHeight = (NSInteger)[dict getNSNumber:@"avatar_height"];
-        self.avatarWidth  = (NSInteger)[dict getNSNumber:@"avatar_width"];
-        self.categoryId   = (NSInteger)[dict getNSNumber:@"category_id"];
+        self.contentId = [dict getNSNumber:@"content_id"].integerValue;
+        self.attributes = [dict getNSNumber:@"attributes"].integerValue;
+        self.avatarHeight = [dict getNSNumber:@"avatar_height"].integerValue;
+        self.avatarWidth  = [dict getNSNumber:@"avatar_width"].integerValue;
+        self.categoryId   = [dict getNSNumber:@"category_id"].integerValue;
         self.categoryName = [dict getNSString:@"category_name"];
         self.categoryZone = [dict getNSString:@"category_zone"];
         self.publisherZone =[dict getNSString:@"publisher_zone"];
-        self.commentCount = (NSInteger)[dict getNSNumber:@"comment_count"];
-        self.serverIndex = (NSInteger)[dict getNSNumber:@"server_index"];
+        self.commentCount = [dict getNSNumber:@"comment_count"].integerValue;
+        self.serverIndex =  [dict getNSNumber:@"server_index"].integerValue;
         self.publisherIcon = [dict getNSURLWithString:@"publisher_icon"];
         self.originalUrl = [dict getNSURLWithString:@"original_url"];
         self.avatarURL = [dict getNSURLWithString:@"avatar_url"];
-        self.publicsherName = [dict getNSString:@"publicsher_name"];
+        self.publicsherName = [dict getNSString:@"publisher_name"];
     }
     return self;
 }

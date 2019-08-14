@@ -9,7 +9,6 @@
 #import "Question.h"
 #import <objc/runtime.h>
 
-#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 
 @implementation Question
 -(Question *)initWithDict:(NSDictionary *) dict{
@@ -28,12 +27,13 @@
         self.publisherZone = [dict getNSString:@"publisher_zone"];
         self.categoryZone = [dict getNSString:@"category_zone"] ;
         self.categoryName = [dict getNSString:@"category_name"];
-      
+        
         self.bodies = [dict getNSArray:@"body"];
         NSArray *results = [dict getNSArray:@"images"];
+        self.bodies = NSMutableArray.new;
         for(NSDictionary *groupDic in results){
-            image * imageTemp = [[image alloc] initWithDict:groupDic];
-            if(SAFE_TYPE(imageTemp, image)){
+            Image * imageTemp = [[Image alloc] initWithDict:groupDic];
+            if(SAFE_TYPE(imageTemp, Image)){
                 [self.images addObject:imageTemp];
             }
         }
@@ -41,3 +41,4 @@
     return self;
 }
 @end
+

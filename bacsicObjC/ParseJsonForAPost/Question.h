@@ -7,6 +7,8 @@
 //
 
 
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
+
 #import <Foundation/Foundation.h>
 #import "Image.h"
 #import "NSDictionary+ParseJson.h"
@@ -32,4 +34,5 @@ NS_ASSUME_NONNULL_BEGIN
 -(Question *)initWithDict:(NSDictionary *) dict;
 @end
 NS_ASSUME_NONNULL_END
+
 

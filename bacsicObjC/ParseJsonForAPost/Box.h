@@ -6,6 +6,7 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #import <Foundation/Foundation.h>
 #import "Question.h"
 #import "NSDictionary+ParseJson.h"
@@ -24,3 +25,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+

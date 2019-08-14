@@ -10,6 +10,7 @@
 #import "Stream.h"
 #import "OutputStream.h"
 #import "InputStream.h"
+
 #import "NSFileHandle+ReadFlowChunks.h"
 #define CHUNKS 100
 typedef void(^BlockName)(float  process);
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)mergeFileAtURL:(NSArray<NSURL*>*) listURL;
 +(unsigned long long)getSizeOfFileAtPath:(NSString *)path;
 
-@property (nonatomic) NSString* testProperty;
+@property (nonatomic,strong) NSNumber* testProperty;
 
 @end
 

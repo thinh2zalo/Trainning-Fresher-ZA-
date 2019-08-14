@@ -5,10 +5,16 @@
 //  Created by CPU11606 on 8/12/19.
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
-
+#import <objc/runtime.h>
 #import "NSFileManager+InteractWithFile.h"
-
+static void *keyTemp;
 @implementation NSFileManager (InteractWithFile)
+- (void)setTestProperty:(NSNumber *)testProperty {
+    objc_setAssociatedObject(self, &keyTemp , testProperty, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(NSNumber *)testProperty{
+    return objc_getAssociatedObject(self, &keyTemp);
+}
 +(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N andBlock:(BlockName)blockName{
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
     NSFileManager * fm = [NSFileManager defaultManager];
@@ -17,7 +23,6 @@
     if (![fm fileExistsAtPath:directoryPath] || N == 0){
         NSLog(@"Link is error or N = 0");
     } else {
-        
         NSLog(@"Link is not error");
         unsigned long long sizeOfFile = [self getSizeOfFileAtPath:directoryPath];
         unsigned long long sizeEachFileSplited = sizeOfFile/N;
@@ -33,7 +38,6 @@
                 float percent = ((float)i/(float)N) * 100;
                 blockName(percent);
                 [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
-                
             }
         }];
         

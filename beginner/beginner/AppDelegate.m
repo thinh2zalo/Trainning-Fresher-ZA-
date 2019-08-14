@@ -1,15 +1,12 @@
 //
 //  AppDelegate.m
-//  bacsicObjC
+//  beginner
 //
-//  Created by CPU11606 on 8/9/19.
+//  Created by CPU11606 on 8/13/19.
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "HandleContentFile.h"
-#import "NSFileManager+InteractWithFile.h"
-
 
 @interface AppDelegate ()
 
@@ -19,9 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    
+    // Override point for customization after application launch.
     return YES;
 }
 

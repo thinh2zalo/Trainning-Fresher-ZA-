@@ -7,6 +7,7 @@
 //
 
 
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #import <Foundation/Foundation.h>
 #import "Image.h"
 #import "NSDictionary+ParseJson.h"

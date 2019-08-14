@@ -11,6 +11,9 @@
 @implementation NSString (DetectURL)
 
 +(NSString *)getShemeFromURLString:(NSString *) strURL{
+    if([strURL isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *pattern = @"(https?://)?([a-z0-9-]+?.?[a-z0-9-]+.[a-z]{2,})(/[^s]+)?";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];
     NSTextCheckingResult *match = [regex firstMatchInString:strURL options:0 range:NSMakeRange(0, [strURL length])];
@@ -23,6 +26,9 @@
     }
 }
 +(NSString *)getFullDomainFromURLString:(NSString *) strURL{
+    if([strURL isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *pattern = @"(https?://)?([a-z0-9-]+?.?[a-z0-9-]+.[a-z]{2,})(/[^s]+)?";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];
     NSTextCheckingResult *match = [regex firstMatchInString:strURL options:0 range:NSMakeRange(0, [strURL length])];
@@ -35,6 +41,9 @@
     }
 }
 +(NSString *)getPathFromURLString:(NSString *) strURL{
+    if([strURL isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *pattern = @"(https?://)?([a-z0-9-]+?.?[a-z0-9-]+.[a-z]{2,})/?([^\\s]+)?";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];
     NSTextCheckingResult *match = [regex firstMatchInString:strURL options:0 range:NSMakeRange(0, [strURL length])];
@@ -48,6 +57,9 @@
     
 }
 +(NSString *)getSubDomainFromURLString:(NSString *) strURL{
+    if([strURL isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *fullDomain = [self getFullDomainFromURLString:strURL];
     NSLog(@"%@",fullDomain);
     NSInteger times = [[fullDomain componentsSeparatedByString:@"."] count];
@@ -62,6 +74,9 @@
     
 }
 +(NSString *)getDomainFromURLString:(NSString *) strURL{
+    if([strURL isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *fullDomain = [self getFullDomainFromURLString:strURL];
     NSInteger times = [[fullDomain componentsSeparatedByString:@"."] count];
     if (times==3){
@@ -75,6 +90,9 @@
     
 }
 +(NSString *)detectSubDomain:(NSString *) fullDomain{
+    if([fullDomain isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *pattern = @"([a-z0-9-]+).([a-z0-9-.]+)";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];
     NSTextCheckingResult *match = [regex firstMatchInString:fullDomain options:0 range:NSMakeRange(0, [fullDomain length])];
@@ -85,6 +103,9 @@
     else return @"";
 }
 +(NSString *)detectDomain:(NSString *) fullDomain{
+    if([fullDomain isKindOfClass:NSString.class]){
+        NSLog(@"URL is error or null");
+    }
     NSString *pattern = @"([a-z0-9-]+).([a-z0-9-.]+)";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];
     NSTextCheckingResult *match = [regex firstMatchInString:fullDomain options:0 range:NSMakeRange(0, [fullDomain length])];

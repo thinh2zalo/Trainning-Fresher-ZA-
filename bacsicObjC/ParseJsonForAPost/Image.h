@@ -10,11 +10,11 @@
 #import "NSDictionary+ParseJson.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface image : NSObject
+@interface Image : NSObject
 @property (nonatomic) NSInteger width;
 @property (nonatomic) NSInteger height;
 @property (nonatomic) NSURL  *url;
-- (image *) initWithDict:(NSDictionary *) dict;
+- (Image *) initWithDict:(NSDictionary *) dict;
 
 @end
 

@@ -6,6 +6,7 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
+
 #import "NSDictionary+ParseJson.h"
 
 @implementation NSDictionary (ParseJson)
@@ -32,14 +33,16 @@
     else return NSNumber.new;
 }
 - (NSURL *)getNSURLWithString:(NSString *) URL{
-    NSURL *urlResults = [self objectForKey:URL];
-    if ([urlResults isKindOfClass:NSNumber.class]) {
+    NSString *strResults = [self objectForKey:URL];
+    NSURL * urlResults = [[NSURL alloc] initWithString:strResults];
+    NSLog(@"%@",urlResults);
+    if ([urlResults isKindOfClass:NSURL.class]) {
         return urlResults;
     }
     else return NSURL.new;
 }
 - (NSString *)getTitle{
-    return [self getNSString:@"Tittle"];
+    return [self getNSString:@"title"];
 }
 - (NSURL *)getURL{
     return [NSURL URLWithString:[self getNSString:@"url"]];
