@@ -10,7 +10,6 @@
 #import "HandleContentFile.h"
 #import "NSFileManager+InteractWithFile.h"
 
-
 @interface AppDelegate ()
 
 @end

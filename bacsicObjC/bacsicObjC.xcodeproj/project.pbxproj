@@ -35,6 +35,8 @@
 		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
 		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
 		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
+		E7FDD3A723050CC9008D2C33 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3A623050CC9008D2C33 /* NavigationBar.m */; };
+		E7FDD3B1230520D5008D2C33 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B0230520D5008D2C33 /* test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
 		E7FCD2F222FD7C5E00597004 /* InputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
 		E7FCD2F322FD7C5E00597004 /* InputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
+		E7FDD3A523050CC9008D2C33 /* NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		E7FDD3A623050CC9008D2C33 /* NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		E7FDD3AF230520D5008D2C33 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		E7FDD3B0230520D5008D2C33 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +176,10 @@
 		E7FCD29822FD4A2A00597004 /* bacsicObjC */ = {
 			isa = PBXGroup;
 			children = (
+				E7FDD3AE230520C5008D2C33 /* abcv */,
 				E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */,
+				E7FDD3A523050CC9008D2C33 /* NavigationBar.h */,
+				E7FDD3A623050CC9008D2C33 /* NavigationBar.m */,
 				E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */,
 				E701AF0C230171550024E4B3 /* NSFileManager+InteractWithFile.h */,
 				E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */,
@@ -242,6 +251,15 @@
 				E7FCD2E322FD4AFD00597004 /* Question.m */,
 			);
 			path = ParseJsonForAPost;
+			sourceTree = "<group>";
+		};
+		E7FDD3AE230520C5008D2C33 /* abcv */ = {
+			isa = PBXGroup;
+			children = (
+				E7FDD3AF230520D5008D2C33 /* test.h */,
+				E7FDD3B0230520D5008D2C33 /* test.m */,
+			);
+			path = abcv;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +402,7 @@
 				E7CE3BEE23042BB900F1CF64 /* MyViewController.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
+				E7FDD3A723050CC9008D2C33 /* NavigationBar.m in Sources */,
 				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
@@ -391,6 +410,7 @@
 				E7FCD2EA22FD4AFE00597004 /* Box.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
 				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
+				E7FDD3B1230520D5008D2C33 /* test.m in Sources */,
 				E7FCD2E922FD4AFE00597004 /* Content.m in Sources */,
 				E7FCD2DA22FD4AE200597004 /* Body.m in Sources */,
 				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
