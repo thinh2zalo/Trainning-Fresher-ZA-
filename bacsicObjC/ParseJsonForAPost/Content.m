@@ -39,6 +39,8 @@
         self.originalUrl = [dict getNSURLWithString:@"original_url"];
         self.avatarURL = [dict getNSURLWithString:@"avatar_url"];
         self.publicsherName = [dict getNSString:@"publisher_name"];
+        self.publisherId = [dict getNSNumber:@"publisher_id"].integerValue;
+    
     }
     return self;
 }
