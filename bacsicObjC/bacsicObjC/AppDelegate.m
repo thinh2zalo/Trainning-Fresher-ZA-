@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HandleContentFile.h"
 #import "NSFileManager+InteractWithFile.h"
+#import "threeUIview_Navigation/NavigationBar.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+      self.window.backgroundColor = [UIColor whiteColor];
+       self.window.rootViewController = [NavigationBar new];
     
     
     return YES;

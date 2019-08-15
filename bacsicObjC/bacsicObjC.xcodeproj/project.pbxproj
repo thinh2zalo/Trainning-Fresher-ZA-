@@ -12,7 +12,6 @@
 		E700767C230114C100F0FCD8 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E700767B230114C100F0FCD8 /* Stream.m */; };
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
-		E7CE3BEE23042BB900F1CF64 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CE3BEC23042BB800F1CF64 /* MyViewController.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
 		E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29D22FD4A2A00597004 /* ViewController.m */; };
 		E7FCD2A122FD4A2A00597004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FCD29F22FD4A2A00597004 /* Main.storyboard */; };
@@ -35,8 +34,9 @@
 		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
 		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
 		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
-		E7FDD3A723050CC9008D2C33 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3A623050CC9008D2C33 /* NavigationBar.m */; };
-		E7FDD3B1230520D5008D2C33 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B0230520D5008D2C33 /* test.m */; };
+		E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B7230595D4008D2C33 /* MyViewController.m */; };
+		E7FDD3BD2305960A008D2C33 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3BC23059609008D2C33 /* NavigationBar.m */; };
+		E7FDD3C52305978C008D2C33 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3C32305978C008D2C33 /* Container.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +66,6 @@
 		E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+InteractWithFile.m"; sourceTree = "<group>"; };
 		E70249FA22FFBFFE004552A6 /* OutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
-		E7CE3BEC23042BB800F1CF64 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		E7CE3BED23042BB800F1CF64 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		E7FCD29622FD4A2A00597004 /* bacsicObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bacsicObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FCD29922FD4A2A00597004 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7FCD29A22FD4A2A00597004 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,10 +109,12 @@
 		E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
 		E7FCD2F222FD7C5E00597004 /* InputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
 		E7FCD2F322FD7C5E00597004 /* InputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
-		E7FDD3A523050CC9008D2C33 /* NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
-		E7FDD3A623050CC9008D2C33 /* NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
-		E7FDD3AF230520D5008D2C33 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		E7FDD3B0230520D5008D2C33 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		E7FDD3B7230595D4008D2C33 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		E7FDD3B8230595D5008D2C33 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		E7FDD3BB23059609008D2C33 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		E7FDD3BC23059609008D2C33 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		E7FDD3C32305978C008D2C33 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
+		E7FDD3C42305978C008D2C33 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,19 +142,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E7CE3BEB23042B8700F1CF64 /* CreateBasicUI */ = {
-			isa = PBXGroup;
-			children = (
-				E7CE3BED23042BB800F1CF64 /* MyViewController.h */,
-				E7CE3BEC23042BB800F1CF64 /* MyViewController.m */,
-			);
-			path = CreateBasicUI;
-			sourceTree = "<group>";
-		};
 		E7FCD28D22FD4A2A00597004 = {
 			isa = PBXGroup;
 			children = (
-				E7CE3BEB23042B8700F1CF64 /* CreateBasicUI */,
 				E7FCD2D722FD4AB100597004 /* ParseJsonForAPost */,
 				E7FCD29822FD4A2A00597004 /* bacsicObjC */,
 				E7FCD2B122FD4A2B00597004 /* bacsicObjCTests */,
@@ -176,21 +166,13 @@
 		E7FCD29822FD4A2A00597004 /* bacsicObjC */ = {
 			isa = PBXGroup;
 			children = (
-				E7FDD3AE230520C5008D2C33 /* abcv */,
-				E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */,
-				E7FDD3A523050CC9008D2C33 /* NavigationBar.h */,
-				E7FDD3A623050CC9008D2C33 /* NavigationBar.m */,
-				E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */,
-				E701AF0C230171550024E4B3 /* NSFileManager+InteractWithFile.h */,
-				E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */,
-				E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */,
-				E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */,
-				E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */,
-				E7FCD2CF22FD4A8800597004 /* NSFileManager+ListSatisfyFile.m */,
-				E7FCD2D122FD4A8800597004 /* NSString+CompareTimeStamp.h */,
-				E7FCD2D222FD4A8800597004 /* NSString+CompareTimeStamp.m */,
-				E7FCD2CB22FD4A8800597004 /* NSString+DetectURL.h */,
-				E7FCD2CE22FD4A8800597004 /* NSString+DetectURL.m */,
+				E7FDD3C22305967D008D2C33 /* listFileSatisfy */,
+				E7FDD3C123059664008D2C33 /* detectURL */,
+				E7FDD3C023059651008D2C33 /* compareTimeStamp */,
+				E7FDD3BF23059634008D2C33 /* handleTailFile */,
+				E7FDD3BE23059614008D2C33 /* handleContentFile */,
+				E7FDD3BA230595DB008D2C33 /* threeUIview_Navigation */,
+				E7FDD3AE230520C5008D2C33 /* rotateScreen */,
 				E7FCD29922FD4A2A00597004 /* AppDelegate.h */,
 				E7FCD29A22FD4A2A00597004 /* AppDelegate.m */,
 				E7FCD29C22FD4A2A00597004 /* ViewController.h */,
@@ -200,14 +182,6 @@
 				E7FCD2A422FD4A2B00597004 /* LaunchScreen.storyboard */,
 				E7FCD2A722FD4A2B00597004 /* Info.plist */,
 				E7FCD2A822FD4A2B00597004 /* main.m */,
-				E700767A230114C100F0FCD8 /* Stream.h */,
-				E700767B230114C100F0FCD8 /* Stream.m */,
-				E7FCD2F222FD7C5E00597004 /* InputStream.h */,
-				E7FCD2F322FD7C5E00597004 /* InputStream.m */,
-				E70249FA22FFBFFE004552A6 /* OutputStream.h */,
-				E70249FB22FFBFFE004552A6 /* OutputStream.m */,
-				E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */,
-				E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */,
 			);
 			path = bacsicObjC;
 			sourceTree = "<group>";
@@ -253,13 +227,79 @@
 			path = ParseJsonForAPost;
 			sourceTree = "<group>";
 		};
-		E7FDD3AE230520C5008D2C33 /* abcv */ = {
+		E7FDD3AE230520C5008D2C33 /* rotateScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E7FDD3AF230520D5008D2C33 /* test.h */,
-				E7FDD3B0230520D5008D2C33 /* test.m */,
+				E7FDD3B8230595D5008D2C33 /* MyViewController.h */,
+				E7FDD3B7230595D4008D2C33 /* MyViewController.m */,
 			);
-			path = abcv;
+			path = rotateScreen;
+			sourceTree = "<group>";
+		};
+		E7FDD3BA230595DB008D2C33 /* threeUIview_Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E7FDD3C42305978C008D2C33 /* Container.h */,
+				E7FDD3C32305978C008D2C33 /* Container.m */,
+				E7FDD3BB23059609008D2C33 /* NavigationBar.h */,
+				E7FDD3BC23059609008D2C33 /* NavigationBar.m */,
+			);
+			path = threeUIview_Navigation;
+			sourceTree = "<group>";
+		};
+		E7FDD3BE23059614008D2C33 /* handleContentFile */ = {
+			isa = PBXGroup;
+			children = (
+				E700767A230114C100F0FCD8 /* Stream.h */,
+				E700767B230114C100F0FCD8 /* Stream.m */,
+				E7FCD2F222FD7C5E00597004 /* InputStream.h */,
+				E7FCD2F322FD7C5E00597004 /* InputStream.m */,
+				E70249FA22FFBFFE004552A6 /* OutputStream.h */,
+				E70249FB22FFBFFE004552A6 /* OutputStream.m */,
+				E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */,
+				E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */,
+				E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */,
+				E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */,
+				E701AF0C230171550024E4B3 /* NSFileManager+InteractWithFile.h */,
+				E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */,
+			);
+			path = handleContentFile;
+			sourceTree = "<group>";
+		};
+		E7FDD3BF23059634008D2C33 /* handleTailFile */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCD2D022FD4A8800597004 /* NSArray+handleTailFile.h */,
+				E7FCD2CC22FD4A8800597004 /* NSArray+handleTailFile.m */,
+			);
+			path = handleTailFile;
+			sourceTree = "<group>";
+		};
+		E7FDD3C023059651008D2C33 /* compareTimeStamp */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCD2D122FD4A8800597004 /* NSString+CompareTimeStamp.h */,
+				E7FCD2D222FD4A8800597004 /* NSString+CompareTimeStamp.m */,
+			);
+			path = compareTimeStamp;
+			sourceTree = "<group>";
+		};
+		E7FDD3C123059664008D2C33 /* detectURL */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCD2CB22FD4A8800597004 /* NSString+DetectURL.h */,
+				E7FCD2CE22FD4A8800597004 /* NSString+DetectURL.m */,
+			);
+			path = detectURL;
+			sourceTree = "<group>";
+		};
+		E7FDD3C22305967D008D2C33 /* listFileSatisfy */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCD2CD22FD4A8800597004 /* NSFileManager+ListSatisfyFile.h */,
+				E7FCD2CF22FD4A8800597004 /* NSFileManager+ListSatisfyFile.m */,
+			);
+			path = listFileSatisfy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,18 +439,18 @@
 				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
-				E7CE3BEE23042BB900F1CF64 /* MyViewController.m in Sources */,
+				E7FDD3BD2305960A008D2C33 /* NavigationBar.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
-				E7FDD3A723050CC9008D2C33 /* NavigationBar.m in Sources */,
+				E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */,
 				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
+				E7FDD3C52305978C008D2C33 /* Container.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* Box.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
 				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
-				E7FDD3B1230520D5008D2C33 /* test.m in Sources */,
 				E7FCD2E922FD4AFE00597004 /* Content.m in Sources */,
 				E7FCD2DA22FD4AE200597004 /* Body.m in Sources */,
 				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
