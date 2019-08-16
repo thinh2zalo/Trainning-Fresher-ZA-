@@ -28,7 +28,7 @@
         _label.textColor = [UIColor blueColor];
         NSLog(@"%f",self.frame.size.width);
     
-        _label.frame = CGRectMake(WIDTH_VIEW , 0, WITDTH_LAB, LENGTH_LAB); // Em chua contrain duoc
+        _label.frame = CGRectMake(WIDTH_VIEW , 0, WITDTH_LAB, LENGTH_LAB); 
          [self addSubview:_label];
     }
     return _label;

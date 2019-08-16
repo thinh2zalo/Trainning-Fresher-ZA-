@@ -32,45 +32,30 @@
 }
 -(void)checkToSetLayout{
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        
-        float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_VIEW/2;
-        float originY =  (SCREEN_MAIN_LENGTH - LENGTH_VIEW*3- SPACE*2)/2; // can tinh lai.
-      
-        [self updateUI:originX andY:originY];
-        
-        NSLog(@"protraitUI");
-    }
-    if (orientation == UIInterfaceOrientationLandscapeRight ||
-        orientation == UIInterfaceOrientationLandscapeLeft) {
-        
-        NSInteger originX = SCREEN_MAIN_WIDTH/2 - WIDTH_VIEW/2;
-        NSInteger originY =  (SCREEN_MAIN_LENGTH - LENGTH_VIEW*3 - SPACE*2)/2;
-       
-        
-        [self updateUI:originX andY:originY];
-    }
+    [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
+                     orientation == UIInterfaceOrientationPortraitUpsideDown)];
+   
 }
 
+
 // update lai
--(void)updateUI:(float)originX andY:(float)originY{
+-(void)updateUI:(BOOL)checkPortrait{
+    float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_VIEW/2;
+    float originY =  (SCREEN_MAIN_LENGTH - LENGTH_VIEW*3- SPACE*2)/2;
+    if (!checkPortrait){
+        originX = SCREEN_MAIN_WIDTH/2 - WIDTH_VIEW/2;
+        originY =  (SCREEN_MAIN_LENGTH - LENGTH_VIEW*3 - SPACE*2)/2;
+    }
     self.view1.frame = CGRectMake(originX, originY, WIDTH_VIEW, LENGTH_VIEW);
-  
-    self.view1.label.text = @"view1";
-   
     self.view2.frame = CGRectMake(originX, self.view1.frame.origin.y + LENGTH_VIEW + SPACE , WIDTH_VIEW, LENGTH_VIEW);
-   
-    self.view2.label.text = @"view2";
-    
     self.view3.frame = CGRectMake(originX, self.view2.frame.origin.y + LENGTH_VIEW + SPACE , WIDTH_VIEW, LENGTH_VIEW);
-    self.view3.label.text = @"view3";
 }
 
 
 -(Container *)view1{
     if (!_view1){
         self.view1 = Container.new;
+         self.view1.label.text = @"view1";
         [self.view addSubview:_view1];
     }
     return _view1;
@@ -78,6 +63,7 @@
 -(Container *)view2{
     if (!_view2){
         self.view2 = Container.new;
+        self.view2.label.text = @"view2";
         [self.view addSubview:_view2];
     }
     return _view2;
@@ -86,6 +72,7 @@
 -(Container *)view3{
     if (!_view3){
         self.view3 = Container.new;
+        self.view3.label.text = @"view3";
         [self.view addSubview:_view3];
     }
     return _view3;
