@@ -8,12 +8,6 @@
 
 #import "Container.h"
 
-
-
-@interface Container()
-
-@end
-
 @implementation Container
 
 -(Container *)initWithFrame:(CGRect) size{

@@ -19,6 +19,7 @@
     [self updateUI];
     
 }
+
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
@@ -28,18 +29,22 @@
         
     }];
 }
+
 -(void)updateUI{
     float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_TEXTVIEW/2;
     float originY =  SCREEN_MAIN_LENGTH/3;
+    
     self.textViewInSecondScreen.frame = CGRectMake(originX, originY, WIDTH_TEXTVIEW, HEIGHT_TEXTVIEW);
     self.btnConfirm.frame = CGRectMake(originX + WIDTH_TEXTVIEW - WIDTH_BTN - 10 , originY + HEIGHT_TEXTVIEW + 10, WIDTH_BTN, HEIGHT_BTN);
 }
+
 - (UIButton *)btnConfirm{
     if (!_btnConfirm) {
         _btnConfirm = UIButton.new;
         UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(delegatePassData)];
         [_btnConfirm addGestureRecognizer:gesture];
         [_btnConfirm setTitle:@"confirm" forState:UIControlStateNormal];
+        
         _btnConfirm.layer.borderWidth = 1.0f;
         _btnConfirm.layer.cornerRadius = 8;
         _btnConfirm.backgroundColor = [UIColor darkGrayColor];
@@ -47,6 +52,7 @@
     }
     return  _btnConfirm;
 }
+
 - (void)delegatePassData{
     if (_delegate){
         _data = self.textViewInSecondScreen.text;
@@ -54,6 +60,7 @@
         [_delegate getDataBack:self];
     }
 }
+
 - (UITextView *)textViewInSecondScreen{
     if (!_textViewInSecondScreen) {
         _textViewInSecondScreen = UITextView.new;
@@ -67,9 +74,11 @@
     }
     return _textViewInSecondScreen;
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     NSLog(@"viewWillAppear");
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"viewDidAppear");
 }

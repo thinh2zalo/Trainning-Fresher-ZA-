@@ -11,8 +11,8 @@
 @protocol PassData <NSObject>
 @required
 - (void)passData;
-
 @end
+
 @interface NavigationExample () <callSecondViewController, PassDataBack>
 @property (nonatomic, strong) NSMutableArray <Container *> *listView ;
 @property (nonatomic, strong) NSMutableArray<NSString *> *arrTitle;
@@ -54,13 +54,12 @@
 -(void)callSencondVC:(Container*) container{
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     secondVC.data = container.label.text;
-   
+    
     secondVC.delegate = self;
     [self.navigationController pushViewController:secondVC animated:YES];
-
 }
+
 - (void) getDataBack:(SecondViewController *)dataInsideSecond{
-    NSLog(@"%@", dataInsideSecond.data);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -72,7 +71,7 @@
             Container *tempContainner = Container.new;
             tempContainner.delagte = self;
             [tempContainner.label textWithTopAlign:[self.contentsModel objectAtIndex:i].title];
-            
+           
             [self.view addSubview:tempContainner];
             [_listView  addObject:tempContainner];
         }
@@ -86,17 +85,13 @@
     }
     return _contentsModel;
 }
+
 - (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"viewWillAppear");
+    [self updateUI]; // ?? considering
 }
 - (void)viewDidAppear:(BOOL)animated{
-      NSLog(@"viewDidAppear");
+    
 }
-//- (void)viewWillDisappear:(BOOL)animated{
-//      NSLog(@"viewWillDisappear");
-//}
-//- (void)viewDidDisappear:(BOOL)animated{
-//      NSLog(@"viewDidDisppear");
-//}
+
 
 @end

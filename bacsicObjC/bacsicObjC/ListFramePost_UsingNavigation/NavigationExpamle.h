@@ -11,7 +11,7 @@
 #import "UILabel+TopAlign.h"
 #import "../ParseJsonForAPost/Data.h"
 #import "SecondViewController.h"
-#import "connectData.h"
+#import "ConnectData.h"
 #import "../ParseJsonForAPost/Content.h"
 
 
@@ -21,6 +21,7 @@
 #define LENGTH_VIEW 100.0
 #define WIDTH_VIEW 400.0
 #define NAV_LENGTH self.navigationController.navigationBar.frame.size.height
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NavigationExample : UIViewController
