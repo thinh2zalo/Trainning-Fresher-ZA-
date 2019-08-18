@@ -35,7 +35,7 @@
 - (NSURL *)getNSURLWithString:(NSString *) URL{
     NSString *strResults = [self objectForKey:URL];
     NSURL * urlResults = [[NSURL alloc] initWithString:strResults];
-    NSLog(@"%@",urlResults);
+
     if ([urlResults isKindOfClass:NSURL.class]) {
         return urlResults;
     }
