@@ -25,19 +25,23 @@
         NSArray *arrResults = [dict getNSArray:@"contents"];
         for (NSDictionary *groupDic in arrResults) {
             Content * contentTemp = [[Content alloc] initWithDict:groupDic];
+            
             if (SAFE_TYPE(contentTemp, Content)) {
                 [self.contents addObject:contentTemp];
             }
         }
+        
         self.boxes = NSMutableArray.new;
         NSArray *arrResultsBoxes = [dict getNSArray:@"boxes"];
         for (NSDictionary *groupDic in arrResultsBoxes) {
             Box * boxesTemp = [[Box alloc] initWithDict:groupDic];
+            
             if (SAFE_TYPE(boxesTemp, Box)) {
                 [self.boxes addObject:boxesTemp];
             }
         }
     }
+    
     self.tittle = [dict getTitle];
     return self;
     

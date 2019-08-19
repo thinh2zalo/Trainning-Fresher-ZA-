@@ -9,7 +9,7 @@
 #import "NSString+CompareTimeStamp.h"
 
 @implementation NSString (CompareTimeStamp)
--(NSString *)compareTimeStamp:(long long)timeStampInput{
++(NSString *)compareTimeStamp:(NSInteger)timeStampInput{
     long long timeStamp = (long long)([[NSDate date] timeIntervalSince1970]);
     long long diffTimeStamp;
     diffTimeStamp = timeStamp - timeStampInput;
@@ -43,13 +43,13 @@
             if (timeStamp > timeStampInput) {
                 NSInteger minute = MINUTE;
                 NSUInteger result = seconds/minute;
-                strResults =[NSString stringWithFormat:@"%tu minutes before", result];
+                strResults =[NSString stringWithFormat:@"%tu minutes ago", result];
                 break;
             }
             else{
                 NSInteger minute = MINUTE;
                 NSUInteger result = seconds/minute;
-                strResults =[NSString stringWithFormat:@"%tu minutes after", result];
+                strResults =[NSString stringWithFormat:@"%tu minutes ago", result];
                 break;
            
             }
@@ -59,14 +59,14 @@
             if (timeStamp > timeStampInput) {
                 NSInteger house = HOUSE;
                 NSUInteger result = seconds/house;
-                strResults =[NSString stringWithFormat:@"%tu house before ", result];
+                strResults =[NSString stringWithFormat:@"%tu house ago ", result];
                 break;
                 
             }
             else{
                 NSInteger house = HOUSE;
                 NSUInteger result = seconds/house;
-                strResults =[NSString stringWithFormat:@"%tu house after", result];
+                strResults =[NSString stringWithFormat:@"%tu more house", result];
                 break;
               
             }
@@ -76,28 +76,28 @@
                 
                 NSInteger day = DAY;
                 NSUInteger result = seconds/day;
-                strResults =[NSString stringWithFormat:@"%tu day before", result];
+                strResults =[NSString stringWithFormat:@"%tu day ago", result];
                 break;
                 
             }
             else{
                 NSInteger day = DAY;
                 NSUInteger result = seconds/day;
-                strResults =[NSString stringWithFormat:@"%tu day after", result];
+                strResults =[NSString stringWithFormat:@"%tu more day", result];
                 break;
             }
         case periodTimeWeek:
             if (timeStamp > timeStampInput) {
                 NSInteger week = WEEK;
                 NSUInteger result = seconds/week;
-                strResults =[NSString stringWithFormat:@"%tu week before", result];
+                strResults =[NSString stringWithFormat:@"%tu week ago", result];
                 break;
                
             }
             else{
                 NSInteger week = WEEK;
                 NSUInteger result = seconds/week;
-                strResults =[NSString stringWithFormat:@"%tu week after", result];
+                strResults =[NSString stringWithFormat:@"%tu more week", result];
                 break;
             }
         case periodTimeMonth:

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Container.h"
-#import "UILabel+TopAlign.h"
+#import "View.h"
+#import "../compareTimeStamp/NSString+CompareTimeStamp.h"
 #import "../ParseJsonForAPost/Data.h"
 #import "SecondViewController.h"
 #import "ConnectData.h"
@@ -17,10 +17,9 @@
 
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_MAIN_LENGTH [UIScreen mainScreen].bounds.size.height
-#define LENGTH_VIEW 100.0
-#define WIDTH_VIEW 400.0
-#define NAV_LENGTH self.navigationController.navigationBar.frame.size.height
+#define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define NAV_HEIGHT 44
 
 NS_ASSUME_NONNULL_BEGIN
 

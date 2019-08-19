@@ -17,6 +17,8 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self updateUI];
+    NSLog(@"viewdidLoad2");
+   
     
 }
 
@@ -31,8 +33,10 @@
 }
 
 -(void)updateUI{
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_TEXTVIEW/2;
-    float originY =  SCREEN_MAIN_LENGTH/3;
+    float originY =  SCREEN_MAIN_HEIGHT/3;
     
     self.textViewInSecondScreen.frame = CGRectMake(originX, originY, WIDTH_TEXTVIEW, HEIGHT_TEXTVIEW);
     self.btnConfirm.frame = CGRectMake(originX + WIDTH_TEXTVIEW - WIDTH_BTN - 10 , originY + HEIGHT_TEXTVIEW + 10, WIDTH_BTN, HEIGHT_BTN);
@@ -41,8 +45,7 @@
 - (UIButton *)btnConfirm{
     if (!_btnConfirm) {
         _btnConfirm = UIButton.new;
-        UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(delegatePassData)];
-        [_btnConfirm addGestureRecognizer:gesture];
+        [_btnConfirm addTarget:self action:@selector(delegatePassData) forControlEvents:UIControlEventAllTouchEvents];
         [_btnConfirm setTitle:@"confirm" forState:UIControlStateNormal];
         
         _btnConfirm.layer.borderWidth = 1.0f;
@@ -74,18 +77,26 @@
     }
     return _textViewInSecondScreen;
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"viewWillAppear");
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"viewDidAppear");
-}
 //- (void)viewWillDisappear:(BOOL)animated{
-//    NSLog(@"viewWillDisappear");
+//    [super viewWillDisappear:animated];
+//    NSLog(@"viewWillDisappear2");
 //}
+//
 //- (void)viewDidDisappear:(BOOL)animated{
-//     NSLog(@"viewDidDisppear");
+//    [super viewDidDisappear:animated];
+//    NSLog(@"viewDidDisappear2");
 //}
+//
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    NSLog(@"viewWillAppear2");
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//
+//    NSLog(@"viewDidAppear2");
+//}
+
+
 @end

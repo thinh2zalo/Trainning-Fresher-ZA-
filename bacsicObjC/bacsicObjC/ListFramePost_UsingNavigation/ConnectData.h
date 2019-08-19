@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "../ParseJsonForAPost/Data.h"
-
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConnectData : NSObject

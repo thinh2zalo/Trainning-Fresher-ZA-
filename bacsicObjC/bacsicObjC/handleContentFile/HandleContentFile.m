@@ -21,6 +21,7 @@
         InputStream *input = [[InputStream alloc] initWithPath:urlInput.path];
         [input use:^(InputStream* input){
             for (NSInteger i = 1 ; i <= N ; i++){
+                
                 NSString *nameFile = [[[directoryPath lastPathComponent] stringByDeletingPathExtension]
                                       stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
                 NSString* aPathWithStringAddedIndex =[NSTemporaryDirectory() stringByAppendingString:nameFile];

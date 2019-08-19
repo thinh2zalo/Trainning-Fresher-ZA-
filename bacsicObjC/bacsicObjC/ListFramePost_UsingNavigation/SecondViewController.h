@@ -10,10 +10,11 @@
 
 #define HEIGHT_BTN 30
 #define WIDTH_BTN 90
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Container.h"
+#import "View.h"
 NS_ASSUME_NONNULL_BEGIN
 @class SecondViewController;
 @protocol PassDataBack <NSObject>

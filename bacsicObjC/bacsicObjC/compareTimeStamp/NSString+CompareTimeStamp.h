@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, periodTime){
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (CompareTimeStamp)
--(NSString *)compareTimeStamp:(long long)timeStampInput;
++(NSString *)compareTimeStamp:(NSInteger)timeStampInput;
 @end
 
 NS_ASSUME_NONNULL_END
