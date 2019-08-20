@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "../ParseJsonForAPost/Content.h"
 #import "RootViewController.h"
 
 #define SPACE 20.0
-#define WITDTH_IMG 100.0
-#define HEIGHT_IMG 40.0
+#define WITDTH_IMG 120.0
+#define HEIGHT_IMG 80.0
 #define WITDTH_LAB 100.0
 #define HEIGHT_LAB 20.0
 #define HEIGHT_TIMESTAMP 20
@@ -24,18 +24,19 @@
 #define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
 NS_ASSUME_NONNULL_BEGIN
 
-@class View;
+@class ContainerView;
 @protocol ViewDelegate <NSObject>
 @required
--(void)allText:(View *)view;
+-(void)onTouched:(ContainerView *)containerView;
 @end
 
-@interface View : UIView
+@interface ContainerView : UIView
+@property (nonatomic) NSInteger ContentID;
 @property (nonatomic, strong) UILabel * label;
 @property (nonatomic, strong) UILabel *timeStamp;
 @property (nonatomic, strong) UIImageView * thumbnail;
 @property (nonatomic, weak) id<ViewDelegate> delagte;
-
+- (void)updateContentInsideContainerView:(Content *)content;
 @end
 
 

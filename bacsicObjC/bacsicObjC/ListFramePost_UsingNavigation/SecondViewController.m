@@ -45,7 +45,7 @@
 - (UIButton *)btnConfirm{
     if (!_btnConfirm) {
         _btnConfirm = UIButton.new;
-        [_btnConfirm addTarget:self action:@selector(delegatePassData) forControlEvents:UIControlEventAllTouchEvents];
+        [_btnConfirm addTarget:self action:@selector(delegatePassData) forControlEvents:UIControlEventTouchUpInside];
         [_btnConfirm setTitle:@"confirm" forState:UIControlStateNormal];
         
         _btnConfirm.layer.borderWidth = 1.0f;

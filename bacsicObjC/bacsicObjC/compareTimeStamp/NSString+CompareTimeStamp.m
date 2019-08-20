@@ -43,13 +43,13 @@
             if (timeStamp > timeStampInput) {
                 NSInteger minute = MINUTE;
                 NSUInteger result = seconds/minute;
-                strResults =[NSString stringWithFormat:@"%tu minutes ago", result];
+                strResults =[NSString stringWithFormat:@"%tu phút trước", result];
                 break;
             }
             else{
                 NSInteger minute = MINUTE;
                 NSUInteger result = seconds/minute;
-                strResults =[NSString stringWithFormat:@"%tu minutes ago", result];
+                strResults =[NSString stringWithFormat:@"%tu phút nữa", result];
                 break;
            
             }
@@ -59,14 +59,14 @@
             if (timeStamp > timeStampInput) {
                 NSInteger house = HOUSE;
                 NSUInteger result = seconds/house;
-                strResults =[NSString stringWithFormat:@"%tu house ago ", result];
+                strResults =[NSString stringWithFormat:@"%tu giờ trước", result];
                 break;
                 
             }
             else{
                 NSInteger house = HOUSE;
                 NSUInteger result = seconds/house;
-                strResults =[NSString stringWithFormat:@"%tu more house", result];
+                strResults =[NSString stringWithFormat:@"%tu giờ nữa", result];
                 break;
               
             }
@@ -76,28 +76,28 @@
                 
                 NSInteger day = DAY;
                 NSUInteger result = seconds/day;
-                strResults =[NSString stringWithFormat:@"%tu day ago", result];
+                strResults =[NSString stringWithFormat:@"%tu ngày trước", result];
                 break;
                 
             }
             else{
                 NSInteger day = DAY;
                 NSUInteger result = seconds/day;
-                strResults =[NSString stringWithFormat:@"%tu more day", result];
+                strResults =[NSString stringWithFormat:@"%tu ngày nữa", result];
                 break;
             }
         case periodTimeWeek:
             if (timeStamp > timeStampInput) {
                 NSInteger week = WEEK;
                 NSUInteger result = seconds/week;
-                strResults =[NSString stringWithFormat:@"%tu week ago", result];
+                strResults =[NSString stringWithFormat:@"%tu tuần trước", result];
                 break;
                
             }
             else{
                 NSInteger week = WEEK;
                 NSUInteger result = seconds/week;
-                strResults =[NSString stringWithFormat:@"%tu more week", result];
+                strResults =[NSString stringWithFormat:@"%tu tuần nữa", result];
                 break;
             }
         case periodTimeMonth:
