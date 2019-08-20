@@ -19,14 +19,27 @@
         _timeStamp = self.timeStamp;
         _thumbnail = self.thumbnail;
         _label = self.label;
+        
         UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(delegateForRoot)];
         [self addGestureRecognizer:singleTap];
-       
     }
     return self;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.thumbnail.frame = CGRectMake(10, 10, WITDTH_IMG, HEIGHT_IMG);
+     NSInteger originXOftimeStamp = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width;
+    self.timeStamp.frame = CGRectMake(originXOftimeStamp, HEIGHT_VIEW - 30, WIDTH_TIMESTAMP, HEIGHT_TIMESTAMP);
+    float originXOfLabel = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width;
+    self.label.frame = CGRectMake(originXOfLabel , self.thumbnail.frame.origin.y, WIDTH_VIEW - originXOfLabel - 10 , HEIGHT_LAB);
+    [self.label sizeToFit];
+    
+}
+
 - (void)updateContentInsideContainerView:(Content *)content{
     self.label.text = content.title;
+
     [self.label sizeToFit];
     _ContentID = content.contentId;
     
@@ -50,8 +63,6 @@
         _timeStamp = UILabel.new;
         [_timeStamp setFont:[UIFont systemFontOfSize:13]];
         
-        NSInteger originXOftimeStamp = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width;
-        _timeStamp.frame = CGRectMake(originXOftimeStamp, HEIGHT_VIEW - 30, WIDTH_TIMESTAMP, HEIGHT_TIMESTAMP);
         [self addSubview:_timeStamp];
     }
     return _timeStamp;
@@ -63,10 +74,6 @@
         _label = UILabel.new;
         _label.textColor = [UIColor darkGrayColor];
         [_label setNumberOfLines:3];
-      
-        float originXOfLabel = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width ;
-        _label.frame = CGRectMake(originXOfLabel , self.thumbnail.frame.origin.y, WIDTH_VIEW - originXOfLabel - 10 , 100);
-        NSLog(@"width is %f", _label.bounds.size.width);
         [self addSubview:_label];
       
     }
@@ -80,7 +87,7 @@
         _thumbnail.layer.masksToBounds = true;
         _thumbnail.layer.borderWidth = 2.0f;
         _thumbnail.layer.cornerRadius = 6.0f;
-        _thumbnail.frame = CGRectMake(10, 10, WITDTH_IMG, HEIGHT_IMG);
+       
         _thumbnail.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:_thumbnail];
     }
@@ -91,5 +98,9 @@
     if (_delagte)
         [_delagte onTouched:self];
 }
-
+- (CGSize)sizeThatFits:(CGSize)size{
+    CGSize res = [super sizeThatFits:size];
+    
+    return CGSizeMake(size.width, res.height);
+}
 @end

@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "../ParseJsonForAPost/Content.h"
 #import "RootViewController.h"
+#import "FitHight.h"
 
 #define SPACE 20.0
 #define WITDTH_IMG 120.0
 #define HEIGHT_IMG 80.0
 #define WITDTH_LAB 100.0
-#define HEIGHT_LAB 20.0
+#define HEIGHT_LAB 80.0
 #define HEIGHT_TIMESTAMP 20
 #define WIDTH_TIMESTAMP 100
 #define HEIGHT_VIEW 100.0
@@ -37,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView * thumbnail;
 @property (nonatomic, weak) id<ViewDelegate> delagte;
 - (void)updateContentInsideContainerView:(Content *)content;
+- (CGSize)sizeThatFitsOverride:(CGSize)size;
 @end
 
 

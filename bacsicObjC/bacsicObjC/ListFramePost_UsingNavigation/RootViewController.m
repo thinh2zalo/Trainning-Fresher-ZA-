@@ -64,7 +64,7 @@ int getCurrentIndex = 0;
 - (void)onTouched:(ContainerView*) view{
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     secondVC.data = view.label.text;
-    secondVC.indexOfSubview = view.ContentID;
+    secondVC.ID = view.ContentID;
     secondVC.delegate = self;
 
     [self.navigationController pushViewController:secondVC animated:YES];
@@ -73,15 +73,14 @@ int getCurrentIndex = 0;
 - (void)getDataBack:(SecondViewController *)dataInsideSecond{
     int count = 0;
     for (Content *aContent in self.contentsModel) {
-        if (aContent.contentId == dataInsideSecond.indexOfSubview) {
+        if (aContent.contentId == dataInsideSecond.ID) {
             [self.contentsModel objectAtIndex:count].title = dataInsideSecond.data;
             break;
         }
         count = count + 1;
     }
+   [self.listView objectAtIndex:count].label.text = dataInsideSecond.data;
    
-    NSRange boldedRange = NSMakeRange(getCurrentIndex, [self.contentsModel count] - getCurrentIndex);
-    [self createView:[self.contentsModel subarrayWithRange:boldedRange]];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (NSInteger )createView:(NSArray<Content *> *) listData{
@@ -98,32 +97,34 @@ int getCurrentIndex = 0;
     return  count;
 }
 
-- (void)updateNext {
-    int sizeOfcontents = [self.contentsModel count];
-    if (getCurrentIndex + 5 < sizeOfcontents ){
-       getCurrentIndex = getCurrentIndex + 5;
-    }
-    NSRange boldedRange = NSMakeRange(getCurrentIndex, [self.contentsModel count] - getCurrentIndex);
-    NSArray * newArray =  [self.contentsModel subarrayWithRange:boldedRange];
-    [self createView:newArray];
-}
 
-- (void)updatePre {
-  
-    getCurrentIndex = getCurrentIndex - 5;
-    if (getCurrentIndex < 0){
-        getCurrentIndex = 0;
+- (void)refreshContent: (id)sender {
+    UIButton *btnPre = (UIButton *)sender;
+    NSRange boldedRange ;
+    if ([btnPre isEqual:_previousBtn]) {
+            getCurrentIndex = getCurrentIndex - 5;
+            if (getCurrentIndex < 0){
+                getCurrentIndex = 0;
+            }
+             boldedRange = NSMakeRange(getCurrentIndex, 5);
+        
     }
-    NSRange boldedRange = NSMakeRange(getCurrentIndex, 5);
-    NSArray * newArray =  [self.contentsModel subarrayWithRange:boldedRange];
-    [self createView:newArray];
+    if ( [btnPre isEqual:_nextBtn]) {
+        int sizeOfContents = [self.contentsModel count];
+        if (getCurrentIndex + 5 < sizeOfContents ){
+            getCurrentIndex = getCurrentIndex + 5;
+        }
+         boldedRange = NSMakeRange(getCurrentIndex, [self.contentsModel count] - getCurrentIndex);
+       
+    }
+     [self createView:[self.contentsModel subarrayWithRange:boldedRange]];
 }
 
 - (UIButton *)previousBtn {
     if (!_previousBtn) {
         _previousBtn = UIButton.new;
         _previousBtn.frame = CGRectMake(20 , SCREEN_MAIN_HEIGHT - 100 , WIDTH_BTN, HEIGHT_BTN);
-          [_previousBtn addTarget:self action:@selector(updatePre) forControlEvents:UIControlEventTouchUpInside ];
+        [_previousBtn addTarget:self action:@selector(refreshContent:) forControlEvents:UIControlEventTouchUpInside ] ;
         
         [_previousBtn setTitle:@"PREVIOUS" forState:UIControlStateNormal];
         _previousBtn.layer.borderWidth = 1.0f;
@@ -139,7 +140,7 @@ int getCurrentIndex = 0;
         _nextBtn = UIButton.new;
         float space = SCREEN_MAIN_WIDTH - _previousBtn.frame.origin.x * 2 - WIDTH_BTN * 2;
         _nextBtn.frame = CGRectMake(20 + WIDTH_BTN + space , _previousBtn.frame.origin.y , WIDTH_BTN, HEIGHT_BTN);
-        [_nextBtn addTarget:self action:@selector(updateNext) forControlEvents: UIControlEventTouchUpInside];
+        [_nextBtn addTarget:self action:@selector(refreshContent:) forControlEvents: UIControlEventTouchUpInside];
         [_nextBtn setTitle:@"NEXT" forState:UIControlStateNormal];
         
         _nextBtn.layer.borderWidth = 1.0f;

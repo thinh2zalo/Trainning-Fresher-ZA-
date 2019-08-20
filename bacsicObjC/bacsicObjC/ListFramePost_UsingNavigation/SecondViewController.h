@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @interface SecondViewController : UIViewController
-@property (nonatomic, assign) NSInteger indexOfSubview;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, strong) NSString *data;
 @property (nonatomic, weak) id<PassDataBack> delegate;
 

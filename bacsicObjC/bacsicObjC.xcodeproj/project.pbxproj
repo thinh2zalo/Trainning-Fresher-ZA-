@@ -12,6 +12,8 @@
 		E700767C230114C100F0FCD8 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E700767B230114C100F0FCD8 /* Stream.m */; };
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
+		E7034549230BF5DC0041C8C9 /* UILabel+UtilOfLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7034548230BF5DC0041C8C9 /* UILabel+UtilOfLabel.m */; };
+		E703454D230BF8770041C8C9 /* FitHight.m in Sources */ = {isa = PBXBuildFile; fileRef = E703454C230BF8770041C8C9 /* FitHight.m */; };
 		E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70588B623065F4A0055BDDF /* SecondViewController.m */; };
 		E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB9C15230930A3000D66AE /* ConnectData.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
@@ -68,6 +70,11 @@
 		E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+InteractWithFile.m"; sourceTree = "<group>"; };
 		E70249FA22FFBFFE004552A6 /* OutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
+		E7034547230BF5DC0041C8C9 /* UILabel+UtilOfLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+UtilOfLabel.h"; sourceTree = "<group>"; };
+		E7034548230BF5DC0041C8C9 /* UILabel+UtilOfLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UtilOfLabel.m"; sourceTree = "<group>"; };
+		E703454A230BF78E0041C8C9 /* UILabel+FitHight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+FitHight.h"; sourceTree = "<group>"; };
+		E703454B230BF8770041C8C9 /* FitHight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FitHight.h; sourceTree = "<group>"; };
+		E703454C230BF8770041C8C9 /* FitHight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FitHight.m; sourceTree = "<group>"; };
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E7FB9C14230930A3000D66AE /* ConnectData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectData.h; sourceTree = "<group>"; };
@@ -253,6 +260,11 @@
 				E70588B623065F4A0055BDDF /* SecondViewController.m */,
 				E7FB9C14230930A3000D66AE /* ConnectData.h */,
 				E7FB9C15230930A3000D66AE /* ConnectData.m */,
+				E7034547230BF5DC0041C8C9 /* UILabel+UtilOfLabel.h */,
+				E7034548230BF5DC0041C8C9 /* UILabel+UtilOfLabel.m */,
+				E703454A230BF78E0041C8C9 /* UILabel+FitHight.h */,
+				E703454B230BF8770041C8C9 /* FitHight.h */,
+				E703454C230BF8770041C8C9 /* FitHight.m */,
 			);
 			path = ListFramePost_UsingNavigation;
 			sourceTree = "<group>";
@@ -449,6 +461,7 @@
 				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
 				E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
+				E703454D230BF8770041C8C9 /* FitHight.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
 				E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */,
 				E7FDD3BD2305960A008D2C33 /* RootViewController.m in Sources */,
@@ -459,6 +472,7 @@
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
 				E7FDD3C52305978C008D2C33 /* ContainerView.m in Sources */,
+				E7034549230BF5DC0041C8C9 /* UILabel+UtilOfLabel.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* Box.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
