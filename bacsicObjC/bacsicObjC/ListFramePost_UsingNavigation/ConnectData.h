@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../ParseJsonForAPost/Data.h"
+#import "../ParseJsonForAPost/DataModel.h"
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 NS_ASSUME_NONNULL_BEGIN
 

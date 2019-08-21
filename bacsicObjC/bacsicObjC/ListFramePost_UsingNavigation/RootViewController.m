@@ -101,23 +101,25 @@ int getCurrentIndex = 0;
 - (void)refreshContent: (id)sender {
     UIButton *btnPre = (UIButton *)sender;
     NSRange boldedRange ;
+    int sizeOfContents = (int)[self.contentsModel count];
+    NSUInteger numberElementOfRange = 5;
+    
+    getCurrentIndex = getCurrentIndex + 5;
     if ([btnPre isEqual:_previousBtn]) {
-            getCurrentIndex = getCurrentIndex - 5;
-            if (getCurrentIndex < 0){
-                getCurrentIndex = 0;
-            }
-             boldedRange = NSMakeRange(getCurrentIndex, 5);
-        
+        getCurrentIndex = getCurrentIndex - 10;
     }
-    if ( [btnPre isEqual:_nextBtn]) {
-        int sizeOfContents = [self.contentsModel count];
-        if (getCurrentIndex + 5 < sizeOfContents ){
-            getCurrentIndex = getCurrentIndex + 5;
-        }
-         boldedRange = NSMakeRange(getCurrentIndex, [self.contentsModel count] - getCurrentIndex);
+    if (getCurrentIndex + 5 > sizeOfContents) {
+        
+        numberElementOfRange = sizeOfContents - getCurrentIndex;
+        getCurrentIndex = getCurrentIndex - 5;
        
     }
-     [self createView:[self.contentsModel subarrayWithRange:boldedRange]];
+    if (getCurrentIndex < 0) {
+        getCurrentIndex = 0;
+    }
+   
+    boldedRange = NSMakeRange(getCurrentIndex, numberElementOfRange);
+    [self createView:[self.contentsModel subarrayWithRange:boldedRange]];
 }
 
 - (UIButton *)previousBtn {

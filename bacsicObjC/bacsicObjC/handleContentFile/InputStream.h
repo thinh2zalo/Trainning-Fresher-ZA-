@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Stream.h"
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InputStream : Stream

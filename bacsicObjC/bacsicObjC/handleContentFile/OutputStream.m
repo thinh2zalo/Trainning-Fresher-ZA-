@@ -15,6 +15,10 @@
 
 @implementation OutputStream
 - (OutputStream *)initWithPath:(NSString *)outputFile {
+    if (![outputFile isKindOfClass:NSString.class]) {
+        NSLog(@"path is error");
+        return nil;
+    }
     self = [super init];
     if(self){
         if(![[NSFileManager defaultManager] fileExistsAtPath:outputFile ]){

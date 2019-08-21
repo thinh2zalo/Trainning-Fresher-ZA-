@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../ParseJsonForAPost/Content.h"
+#import "../ParseJsonForAPost/ContentModel.h"
 #import "RootViewController.h"
-#import "FitHight.h"
+
 
 #define SPACE 20.0
 #define WITDTH_IMG 120.0

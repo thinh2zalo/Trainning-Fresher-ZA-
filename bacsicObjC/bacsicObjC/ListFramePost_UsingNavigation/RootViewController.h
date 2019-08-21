@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ContainerView.h"
 #import "../compareTimeStamp/NSString+CompareTimeStamp.h"
-#import "../ParseJsonForAPost/Data.h"
+#import "../ParseJsonForAPost/DataModel.h"
 #import "SecondViewController.h"
 #import "ConnectData.h"
-#import "../ParseJsonForAPost/Content.h"
+#import "../ParseJsonForAPost/ContentModel.h"
 
 #define HEIGHT_BTN 30
 #define WIDTH_BTN 90

@@ -6,12 +6,16 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "Box.h"
+#import "BoxModel.h"
 
 @implementation Box
 @dynamic  description;
 
 -(Box *)initWithDict:(NSDictionary *) dict{
+    if (!SAFE_TYPE(dict, NSDictionary)) {
+        NSLog(@"dictionary is error ");
+        return nil;
+    }
     self = [super init];
     if(self){
         self.title = [dict getTitle] ;

@@ -17,10 +17,9 @@ static void *keyTemp;
 }
 +(NSArray<NSURL*>*)splitAFileIntoNFileWithURL:(NSURL *)urlInput andN:(NSUInteger)N andBlock:(BlockName)blockName{
     NSMutableArray<NSURL*>* fileUrls = NSMutableArray.new;
-    NSFileManager * fm = [NSFileManager defaultManager];
     NSString *directoryPath = urlInput.path;
     NSLog(@"%@",directoryPath);
-    if (![fm fileExistsAtPath:directoryPath] || N == 0){
+    if (![[NSFileManager defaultManager] fileExistsAtPath:directoryPath] || N == 0){
         NSLog(@"Link is error or N = 0");
     } else {
         NSLog(@"Link is not error");
@@ -33,7 +32,10 @@ static void *keyTemp;
                                       stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
                 NSString* aPathWithStringAddedIndex =[NSTemporaryDirectory() stringByAppendingString:nameFile];
                 OutputStream *output = [[OutputStream alloc]  initWithPath:aPathWithStringAddedIndex];
+                
                 NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeEachFileSplited];
+                
+                
                 [output writeData:inputDataBuffer];
                 float percent = ((float)i/(float)N) * 100;
                 blockName(percent);

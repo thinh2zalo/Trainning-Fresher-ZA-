@@ -8,7 +8,7 @@
 
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #import <Foundation/Foundation.h>
-#import "Question.h"
+#import "QuestionModel.h"
 #import "NSDictionary+ParseJson.h"
 NS_ASSUME_NONNULL_BEGIN
 @interface Box : NSObject

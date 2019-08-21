@@ -10,7 +10,7 @@
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 
 #import <Foundation/Foundation.h>
-#import "Image.h"
+#import "ImageModel.h"
 #import "NSDictionary+ParseJson.h"
 NS_ASSUME_NONNULL_BEGIN
 

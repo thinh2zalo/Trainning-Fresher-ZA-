@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Content.h"
-#import "Box.h"
+#import "ContentModel.h"
+#import "BoxModel.h"
+
+#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 
 NS_ASSUME_NONNULL_BEGIN
 

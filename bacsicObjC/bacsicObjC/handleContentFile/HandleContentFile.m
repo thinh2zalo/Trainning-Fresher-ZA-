@@ -26,9 +26,12 @@
                                       stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
                 NSString* aPathWithStringAddedIndex =[NSTemporaryDirectory() stringByAppendingString:nameFile];
                 OutputStream *output = [[OutputStream alloc]  initWithPath:aPathWithStringAddedIndex];
-                NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeEachFileSplited];
-                [output writeData:inputDataBuffer];
-                [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                
+                if (SAFE_TYPE(input, InputStream)) {
+                    NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeEachFileSplited];
+                    [output writeData:inputDataBuffer];
+                    [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                } else { NSLog(@"input error"); }
             }
         }];
     }
@@ -45,9 +48,14 @@
             for (NSURL *each in listURL) {
                 InputStream *input = [[InputStream alloc] initWithPath:each.path];
                 unsigned long long sizeOfFile = [self getSizeOfFileAtPath:each.path];
-                [input use:^(InputStream* input){
-                    NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeOfFile];
-                    [output writeData:inputDataBuffer];
+                    [input use:^(InputStream* input){
+                        if (SAFE_TYPE(input, InputStream)) {
+                            NSData *inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeOfFile];
+                            [output writeData:inputDataBuffer];
+                        }
+                        else {
+                            NSLog(@"input is error");
+                        }
                 }];
             }
         }];
@@ -70,27 +78,34 @@
             NSUInteger countFileHasTheSameByte = (sizeOfFile - sizeOfRestOfFileSize)/NByte;
             NSLog(@"%tu", countFileHasTheSameByte);
             [inputStream use:^(InputStream * input){
-                unsigned long long __block readCurrent = 0;
-                for (NSInteger i = 1 ; i <= countFileHasTheSameByte + 1 ; i++){
-                    NSString *nameFile = [[[directoryPath lastPathComponent] stringByDeletingPathExtension]
-                                          stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
-                    NSString* aPathWithStringAddedIndex = [NSTemporaryDirectory() stringByAppendingString:nameFile];
-                    OutputStream *outputStream = [[OutputStream alloc] initWithPath:aPathWithStringAddedIndex];
-                    [outputStream use:^(OutputStream* output){
-                        NSData *inputDataBuffer;
-                        if (readCurrent + NByte > sizeOfFile ){
-                            inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeOfRestOfFileSize];
-                        } else {
-                            inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:NByte];
-                        }
-                        [output writeData: inputDataBuffer];
-                        readCurrent = readCurrent + NByte;
-                        float percent = ((float)i/(float)(countFileHasTheSameByte + 1 )) * 100;
-                        
-                        blockName(percent);
-                    }];
-                    [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                if (SAFE_TYPE(input, InputStream)) {
+                    unsigned long long __block readCurrent = 0;
+                    for (NSInteger i = 1 ; i <= countFileHasTheSameByte + 1 ; i++){
+                        NSString *nameFile = [[[directoryPath lastPathComponent] stringByDeletingPathExtension]
+                                              stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
+                        NSString* aPathWithStringAddedIndex = [NSTemporaryDirectory() stringByAppendingString:nameFile];
+                        OutputStream *outputStream = [[OutputStream alloc] initWithPath:aPathWithStringAddedIndex];
+                        [outputStream use:^(OutputStream* output){
+                            NSData *inputDataBuffer;
+                            if (readCurrent + NByte > sizeOfFile ){
+                                inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:sizeOfRestOfFileSize];
+                            } else {
+                                inputDataBuffer = [input ReadDataOfChunks:CHUNKS totalSize:NByte];
+                            }
+                            [output writeData: inputDataBuffer];
+                            readCurrent = readCurrent + NByte;
+                            float percent = ((float)i/(float)(countFileHasTheSameByte + 1 )) * 100;
+                            
+                            blockName(percent);
+                        }];
+                        [fileUrls addObject:[NSURL URLWithString:aPathWithStringAddedIndex]];
+                    }
+                } else {
+                    NSLog(@"input is not error");
                 }
+            
+                
+         
             }];
         }
     }

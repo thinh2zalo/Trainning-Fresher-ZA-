@@ -98,9 +98,5 @@
     if (_delagte)
         [_delagte onTouched:self];
 }
-- (CGSize)sizeThatFits:(CGSize)size{
-    CGSize res = [super sizeThatFits:size];
-    
-    return CGSizeMake(size.width, res.height);
-}
+
 @end

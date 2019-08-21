@@ -14,11 +14,15 @@
 @end
 
 @implementation InputStream
-- (InputStream *)initWithPath:(NSString*)urlInput {
+- (InputStream *)initWithPath:(NSString*)inputPath {
+    if (![inputPath isKindOfClass:NSString.class]) {
+        NSLog(@"path is error");
+        return nil;
+    }
     self = [super init];
     if(self){
 
-        self.fileHandle = [NSFileHandle fileHandleForReadingAtPath:urlInput];
+        self.fileHandle = [NSFileHandle fileHandleForReadingAtPath:inputPath];
     }
     return self;
 }

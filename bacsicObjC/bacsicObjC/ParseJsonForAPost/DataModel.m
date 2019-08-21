@@ -6,8 +6,8 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
-#import "Data.h"
+
+#import "DataModel.h"
 #import "NSDictionary+ParseJson.h"
 @implementation Data
 
@@ -19,6 +19,10 @@
  @return object data
  */
 -(Data*)initWithDict:(NSDictionary *) dict{
+    if (!SAFE_TYPE(dict, NSDictionary)) {
+        NSLog(@"dictionary is error ");
+        return nil;
+    }
     self = [super init];
     if (self){
         self.contents = NSMutableArray.new;

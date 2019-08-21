@@ -6,10 +6,14 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "Content.h"
+#import "ContentModel.h"
 
 @implementation Content
 -(Content *)initWithDict:(NSDictionary *)dict{
+    if (!SAFE_TYPE(dict, NSDictionary)) {
+        NSLog(@"dictionary is error ");
+        return nil;
+    }
     self = [super init];
     if (self){
         self.attributes = [dict getNSNumber:@"attributes"].integerValue;

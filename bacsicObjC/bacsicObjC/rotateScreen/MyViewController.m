@@ -24,15 +24,7 @@
        [self checkToSetLayout];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-        NSLog(@"WillAppear");
-}
--(void)viewDidAppear:(BOOL)animated{
-    
-    NSLog(@"DidAppear");
-}
+
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
