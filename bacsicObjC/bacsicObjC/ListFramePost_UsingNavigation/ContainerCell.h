@@ -25,18 +25,18 @@
 #define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
 NS_ASSUME_NONNULL_BEGIN
 
-@class ContainerView;
+@class ContainerCell;
 @protocol ViewDelegate <NSObject>
 @required
--(void)onTouched:(ContainerView *)containerView;
+-(void)onTouched:(ContainerCell *)containerView;
 @end
 
-@interface ContainerView : UITableViewCell
+@interface ContainerCell : UITableViewCell
 @property (nonatomic) NSInteger ContentID;
 @property (nonatomic, strong) UILabel * label;
 @property (nonatomic, strong) UILabel *timeStamp;
 @property (nonatomic, strong) UIImageView * thumbnail;
-\
+
 @property (nonatomic, weak) id<ViewDelegate> delagte;
 - (void)updateContentInsideContainerView:(Content *)content;
 

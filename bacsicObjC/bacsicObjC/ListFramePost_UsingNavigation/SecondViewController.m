@@ -11,13 +11,17 @@
 @interface SecondViewController()
 @property (nonatomic, strong) UITextView * textViewInSecondScreen;
 @property (nonatomic, strong) UIButton * btnConfirm;
+
 @end  
 @implementation SecondViewController
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self updateUI];
-    NSLog(@"viewdidLoad2");
+
+
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
+                    orientation == UIInterfaceOrientationPortraitUpsideDown)];
    
     
 }
@@ -25,21 +29,27 @@
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
-        [self updateUI];
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
+                        orientation == UIInterfaceOrientationPortraitUpsideDown)];
         
     }completion:^(id<UIViewControllerTransitionCoordinatorContext> context){
         
     }];
 }
 
--(void)updateUI{
+-(void)updateUI:(BOOL)isPortrait{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_TEXTVIEW/2;
+    float originX = 20;
+    float widthOfView;
     float originY =  SCREEN_MAIN_HEIGHT/3;
-    
-    self.textViewInSecondScreen.frame = CGRectMake(originX, originY, WIDTH_TEXTVIEW, HEIGHT_TEXTVIEW);
-    self.btnConfirm.frame = CGRectMake(originX + WIDTH_TEXTVIEW - WIDTH_BTN - 10 , originY + HEIGHT_TEXTVIEW + 10, WIDTH_BTN, HEIGHT_BTN);
+    if (!isPortrait) {
+         widthOfView = originX = 40;
+    }
+     widthOfView = SCREEN_MAIN_WIDTH - originX * 2;
+    self.textViewInSecondScreen.frame = CGRectMake(originX, originY, widthOfView, HEIGHT_TEXTVIEW);
+    self.btnConfirm.frame = CGRectMake(originX + widthOfView - WIDTH_BTN - 10 , originY + HEIGHT_TEXTVIEW + 10, WIDTH_BTN, HEIGHT_BTN);
 }
 
 - (UIButton *)btnConfirm{
@@ -47,7 +57,6 @@
         _btnConfirm = UIButton.new;
         [_btnConfirm addTarget:self action:@selector(delegatePassData) forControlEvents:UIControlEventTouchUpInside];
         [_btnConfirm setTitle:@"confirm" forState:UIControlStateNormal];
-        
         _btnConfirm.layer.borderWidth = 1.0f;
         _btnConfirm.layer.cornerRadius = 8;
         _btnConfirm.backgroundColor = [UIColor darkGrayColor];

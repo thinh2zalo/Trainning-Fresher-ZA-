@@ -1,11 +1,3 @@
-//
-//  NavigationBar.m
-//  CreateUIDemo
-//
-//  Created by CPU11606 on 8/15/19.
-//  Copyright © 2019 CPU11606. All rights reserved.
-//
-
 #import "RootViewController.h"
 
 @protocol PassData <NSObject>
@@ -13,13 +5,12 @@
 - (void)passData;
 @end
 
-@interface NavigationExample () <ViewDelegate, PassDataBack>{
+@interface NavigationExample () <ViewDelegate, PassDataBack,UITableViewDelegate, UITableViewDataSource>
 
-}
-
-@property (nonatomic, strong) NSMutableArray <ContainerView *> *listView ;
+@property (nonatomic, strong) NSMutableArray <ContainerCell *> *listView ;
 @property (nonatomic, strong) NSArray <Content *> *contentsModel;
 @property (nonatomic, strong) UIButton *previousBtn;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *nextBtn;
 
 
@@ -30,57 +21,55 @@
 int getCurrentIndex = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateUI];
+    [self layoutViewFlowOrientation];
     
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
-        [self updateUI];
+        [self layoutViewFlowOrientation];
         
     }completion:^(id<UIViewControllerTransitionCoordinatorContext> context){
         
     }];
 }
-
-
-- (void)updateUI{
-    NSInteger countArrTitle = [self createView:self.contentsModel];
-    self.view.backgroundColor = [UIColor whiteColor];
-    float originX = SCREEN_MAIN_WIDTH/2 - WIDTH_VIEW/2;
-    float originY =  (SCREEN_MAIN_HEIGHT - NAV_HEIGHT - HEIGHT_VIEW * countArrTitle- SPACE * (countArrTitle-1))/2 + NAV_HEIGHT;
-    [self.listView objectAtIndex:0].frame = CGRectMake(originX, originY, WIDTH_VIEW, HEIGHT_VIEW);
-    
-    for (int i = 1; i < countArrTitle ; i++){
-        float previousOriginY = [self.listView objectAtIndex:(i-1)].frame.origin.y;
-        [self.listView objectAtIndex:(i)].frame = CGRectMake(originX, previousOriginY + HEIGHT_VIEW +SPACE , WIDTH_VIEW, HEIGHT_VIEW);
+- (void)layoutViewFlowOrientation{
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
+                    orientation == UIInterfaceOrientationPortraitUpsideDown)];
+  
+}
+- (void)updateUI:(BOOL)isPortrait{
+     _tableView = self.tableView;
+    float originX = 0.0f;
+    if (!isPortrait) {
+        originX = 25;
     }
-
-    _previousBtn = self.previousBtn;
-    _nextBtn = self.nextBtn;
+    self.tableView.frame = CGRectMake(originX , 0, SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT);
+    
 }
 
-- (void)onTouched:(ContainerView*) view{
+- (void)onTouched:(ContainerCell*) view andIndexPath:(NSIndexPath *)indexpath{
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     secondVC.data = view.label.text;
-    secondVC.ID = view.ContentID;
+    secondVC.indexPath = indexpath;
     secondVC.delegate = self;
-
+    
     [self.navigationController pushViewController:secondVC animated:YES];
 }
 
 - (void)getDataBack:(SecondViewController *)dataInsideSecond{
-    int count = 0;
-    for (Content *aContent in self.contentsModel) {
-        if (aContent.contentId == dataInsideSecond.ID) {
-            [self.contentsModel objectAtIndex:count].title = dataInsideSecond.data;
-            break;
-        }
-        count = count + 1;
-    }
-   [self.listView objectAtIndex:count].label.text = dataInsideSecond.data;
-   
+
+    ContainerCell * cellToUpdate = [self.tableView cellForRowAtIndexPath:dataInsideSecond.indexPath];
+    Content * contentToUpdate = [self.contentsModel objectAtIndex:[dataInsideSecond.indexPath row]];
+    contentToUpdate.title = dataInsideSecond.data;
+    [cellToUpdate updateContentInsideContainerView:contentToUpdate];
+    
+//    [self.contentsModel objectAtIndex:[dataInsideSecond.indexPath row]].title = dataInsideSecond.data;
+//
+//
+//    [self.tableView rectForRowAtIndexPath:dataInsideSecond.indexPath];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (NSInteger )createView:(NSArray<Content *> *) listData{
@@ -88,10 +77,10 @@ int getCurrentIndex = 0;
     for (NSUInteger i = 0; i < 5 ; i ++){
         if (i < count ) {
             [[self.listView objectAtIndex:i] updateContentInsideContainerView:[listData objectAtIndex:i]];
-             [self.listView objectAtIndex:i].hidden = NO;
+            [self.listView objectAtIndex:i].hidden = NO;
         } else {
-             [self.listView objectAtIndex:i].hidden = YES;
-        
+            [self.listView objectAtIndex:i].hidden = YES;
+            
         }
     }
     return  count;
@@ -112,12 +101,12 @@ int getCurrentIndex = 0;
         
         numberElementOfRange = sizeOfContents - getCurrentIndex;
         getCurrentIndex = getCurrentIndex - 5;
-       
+        
     }
     if (getCurrentIndex < 0) {
         getCurrentIndex = 0;
     }
-   
+    
     boldedRange = NSMakeRange(getCurrentIndex, numberElementOfRange);
     [self createView:[self.contentsModel subarrayWithRange:boldedRange]];
 }
@@ -160,11 +149,11 @@ int getCurrentIndex = 0;
     return _contentsModel;
 }
 
-- (NSMutableArray<ContainerView *> *)listView{
+- (NSMutableArray<ContainerCell *> *)listView{
     if (!_listView) {
         _listView = NSMutableArray.new;
         for (NSInteger i = 0 ; i < 5; i++){
-            ContainerView *tempContainner = ContainerView.new;
+            ContainerCell *tempContainner = ContainerCell.new;
             tempContainner.delagte = self;
             [self.view addSubview:tempContainner];
             [_listView  addObject:tempContainner];
@@ -172,27 +161,43 @@ int getCurrentIndex = 0;
     }
     return _listView;
 }
-//
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    NSLog(@"viewWillDisAppear1");
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//    NSLog(@"viewDidDisappear1");
-//}
-//
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    NSLog(@"viewWillAppear1");
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    NSLog(@"viewDidAppear1");
-//}
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = UITableView.new;
+       _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.dataSource = self;
+        [_tableView registerClass:ContainerCell.class forCellReuseIdentifier:@"Containerview"];
+        
+        _tableView.delegate = self;
+       
+        [self.view addSubview:_tableView];
+    }
+    return _tableView;
+}
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    ContainerCell* cell = [[ContainerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Contrainerview"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell updateContentInsideContainerView:[self.contentsModel objectAtIndex:indexPath.row]];
+    return cell;
+}
 
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.contentsModel count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    [self onTouched:[tableView cellForRowAtIndexPath:indexPath] andIndexPath:indexPath];
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = HEIGHT_VIEW;
+    return height;
+}
 @end

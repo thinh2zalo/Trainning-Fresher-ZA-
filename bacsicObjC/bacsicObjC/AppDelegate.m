@@ -23,6 +23,7 @@
       self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *navigationController =  [[UINavigationController alloc] initWithRootViewController:[NavigationExample new]];
         self.window.rootViewController = navigationController;
+
     
     
     return YES;

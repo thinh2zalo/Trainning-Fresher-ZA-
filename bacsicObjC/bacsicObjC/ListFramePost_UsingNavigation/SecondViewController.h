@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ContainerView.h"
+#import "ContainerCell.h"
 NS_ASSUME_NONNULL_BEGIN
 @class SecondViewController;
 @protocol PassDataBack <NSObject>
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @interface SecondViewController : UIViewController
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) NSIndexPath *indexPath;
 @property (nonatomic, strong) NSString *data;
 @property (nonatomic, weak) id<PassDataBack> delegate;
 

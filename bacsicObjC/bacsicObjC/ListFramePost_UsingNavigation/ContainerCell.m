@@ -6,22 +6,17 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "ContainerView.h"
+#import "ContainerCell.h"
 
-@implementation ContainerView
+@implementation ContainerCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-//        self.layer.borderColor = [UIColor grayColor].CGColor;
-//        self.layer.borderWidth = 2.0f;
-//        self.layer.cornerRadius = 4.0f;
+
         _timeStamp = self.timeStamp;
         _thumbnail = self.thumbnail;
         _label = self.label;
-        
-//        UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(delegateForRoot)];
-//        [self addGestureRecognizer:singleTap];
+
     }
     return self;
 }
@@ -29,21 +24,6 @@
 -(void)prepareForReuse{
     [super prepareForReuse];
     NSLog(@"prepareForUse");
-}
-
--(ContainerView *)initWithFrame:(CGRect) size{
-    self = [super initWithFrame:size];
-    if (self) {
-        
-     
-        _timeStamp = self.timeStamp;
-        _thumbnail = self.thumbnail;
-        _label = self.label;
-        
-        UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(delegateForRoot)];
-        [self addGestureRecognizer:singleTap];
-    }
-    return self;
 }
 
 - (void)layoutSubviews {
@@ -56,14 +36,11 @@
     self.label.frame = CGRectMake(originXOfLabel , self.thumbnail.frame.origin.y, self.frame.size.width - originXOfLabel - 10 , HEIGHT_LAB);
     [self.label setNumberOfLines:3];
     [self.label sizeToFit];
-   
-    
 }
 
 - (void)updateContentInsideContainerView:(Content *)content{
     self.label.text = content.title;
-
-    [self.label sizeToFit];
+  
     _ContentID = content.contentId;
     
     dispatch_async(dispatch_get_global_queue(0,0), ^{
@@ -97,7 +74,7 @@
     if (!_label){       
         _label = UILabel.new;
         _label.textColor = [UIColor darkGrayColor];
-//        [_label setNumberOfLines:3];
+        [_label setNumberOfLines:3];
         [self addSubview:_label];
       
     }

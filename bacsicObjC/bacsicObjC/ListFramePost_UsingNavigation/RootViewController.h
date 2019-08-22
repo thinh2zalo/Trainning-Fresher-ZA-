@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContainerView.h"
+#import "ContainerCell.h"
 #import "../compareTimeStamp/NSString+CompareTimeStamp.h"
 #import "../ParseJsonForAPost/DataModel.h"
 #import "SecondViewController.h"
@@ -24,7 +24,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NavigationExample : UIViewController
+@interface NavigationExample : UIViewController 
 extern int globalX;
 
 @end
