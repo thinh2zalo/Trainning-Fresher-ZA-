@@ -31,14 +31,15 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)onTouched:(ContainerView *)containerView;
 @end
 
-@interface ContainerView : UIView
+@interface ContainerView : UITableViewCell
 @property (nonatomic) NSInteger ContentID;
 @property (nonatomic, strong) UILabel * label;
 @property (nonatomic, strong) UILabel *timeStamp;
 @property (nonatomic, strong) UIImageView * thumbnail;
+\
 @property (nonatomic, weak) id<ViewDelegate> delagte;
 - (void)updateContentInsideContainerView:(Content *)content;
-- (CGSize)sizeThatFitsOverride:(CGSize)size;
+
 @end
 
 

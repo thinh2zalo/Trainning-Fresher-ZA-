@@ -9,13 +9,33 @@
 #import "ContainerView.h"
 
 @implementation ContainerView
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+//        self.layer.borderColor = [UIColor grayColor].CGColor;
+//        self.layer.borderWidth = 2.0f;
+//        self.layer.cornerRadius = 4.0f;
+        _timeStamp = self.timeStamp;
+        _thumbnail = self.thumbnail;
+        _label = self.label;
+        
+//        UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(delegateForRoot)];
+//        [self addGestureRecognizer:singleTap];
+    }
+    return self;
+}
+
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    NSLog(@"prepareForUse");
+}
 
 -(ContainerView *)initWithFrame:(CGRect) size{
     self = [super initWithFrame:size];
     if (self) {
-        self.layer.borderColor = [UIColor grayColor].CGColor;
-        self.layer.borderWidth = 2.0f;
-        self.layer.cornerRadius = 4.0f;
+        
+     
         _timeStamp = self.timeStamp;
         _thumbnail = self.thumbnail;
         _label = self.label;
@@ -28,12 +48,15 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
     self.thumbnail.frame = CGRectMake(10, 10, WITDTH_IMG, HEIGHT_IMG);
      NSInteger originXOftimeStamp = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width;
     self.timeStamp.frame = CGRectMake(originXOftimeStamp, HEIGHT_VIEW - 30, WIDTH_TIMESTAMP, HEIGHT_TIMESTAMP);
     float originXOfLabel = self.thumbnail.frame.origin.x + 10 + self.thumbnail.bounds.size.width;
-    self.label.frame = CGRectMake(originXOfLabel , self.thumbnail.frame.origin.y, WIDTH_VIEW - originXOfLabel - 10 , HEIGHT_LAB);
+    self.label.frame = CGRectMake(originXOfLabel , self.thumbnail.frame.origin.y, self.frame.size.width - originXOfLabel - 10 , HEIGHT_LAB);
+    [self.label setNumberOfLines:3];
     [self.label sizeToFit];
+   
     
 }
 
@@ -56,6 +79,7 @@
         
     });
      self.timeStamp.text = [NSString compareTimeStamp:content.date];
+    [self setNeedsLayout];
 }
 
 - (UILabel *)timeStamp{
@@ -73,7 +97,7 @@
     if (!_label){       
         _label = UILabel.new;
         _label.textColor = [UIColor darkGrayColor];
-        [_label setNumberOfLines:3];
+//        [_label setNumberOfLines:3];
         [self addSubview:_label];
       
     }
