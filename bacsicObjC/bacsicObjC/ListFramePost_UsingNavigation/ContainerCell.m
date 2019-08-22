@@ -16,6 +16,8 @@
         _timeStamp = self.timeStamp;
         _thumbnail = self.thumbnail;
         _label = self.label;
+        UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(delegateForRoot)];
+        [self addGestureRecognizer:gesture];
 
     }
     return self;

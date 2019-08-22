@@ -1,10 +1,6 @@
-//
-//  secondViewController.h
-//  bacsicObjC
-//
-//  Created by CPU11606 on 8/16/19.
-//  Copyright © 2019 CPU11606. All rights reserved.
-//
+
+
+
 #define HEIGHT_TEXTVIEW 100.0
 #define WIDTH_TEXTVIEW 400.0
 

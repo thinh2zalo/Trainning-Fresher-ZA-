@@ -5,7 +5,7 @@
 //  Created by CPU11606 on 8/15/19.
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
-
+#import "../compareTimeStamp/NSString+CompareTimeStamp.h"
 #import <UIKit/UIKit.h>
 #import "../ParseJsonForAPost/ContentModel.h"
 #import "RootViewController.h"
@@ -26,7 +26,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class ContainerCell;
-@protocol ViewDelegate <NSObject>
+@protocol ContainerCellDelegate <NSObject>
 @required
 -(void)onTouched:(ContainerCell *)containerView;
 @end
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *timeStamp;
 @property (nonatomic, strong) UIImageView * thumbnail;
 
-@property (nonatomic, weak) id<ViewDelegate> delagte;
+@property (nonatomic, weak) id<ContainerCellDelegate> delagte;
 - (void)updateContentInsideContainerView:(Content *)content;
 
 @end
