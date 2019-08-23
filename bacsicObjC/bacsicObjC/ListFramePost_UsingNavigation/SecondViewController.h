@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ContainerCell.h"
+#import "SingleImageCell.h"
 NS_ASSUME_NONNULL_BEGIN
 @class SecondViewController;
 @protocol PassDataBack <NSObject>

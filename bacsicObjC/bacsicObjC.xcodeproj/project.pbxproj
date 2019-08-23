@@ -13,6 +13,10 @@
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
 		E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70588B623065F4A0055BDDF /* SecondViewController.m */; };
+		E78A06D5230E495D00C2DA1B /* TwoKindOfCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */; };
+		E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */; };
+		E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06DC230E7C4800C2DA1B /* BigImageCell.m */; };
+		E78A06E3230EAB2800C2DA1B /* ParentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06E2230EAB2800C2DA1B /* ParentsCell.m */; };
 		E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB9C15230930A3000D66AE /* ConnectData.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
 		E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29D22FD4A2A00597004 /* ViewController.m */; };
@@ -38,7 +42,7 @@
 		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
 		E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B7230595D4008D2C33 /* MyViewController.m */; };
 		E7FDD3BD2305960A008D2C33 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3BC23059609008D2C33 /* RootViewController.m */; };
-		E7FDD3C52305978C008D2C33 /* ContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3C32305978C008D2C33 /* ContainerCell.m */; };
+		E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3C32305978C008D2C33 /* SingleImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,14 @@
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		E78A06D3230E495D00C2DA1B /* TwoKindOfCellVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoKindOfCellVC.h; sourceTree = "<group>"; };
+		E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoKindOfCellVC.m; sourceTree = "<group>"; };
+		E78A06D6230E4E0900C2DA1B /* ThreeImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeImageCell.h; sourceTree = "<group>"; };
+		E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeImageCell.m; sourceTree = "<group>"; };
+		E78A06DB230E7C4800C2DA1B /* BigImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigImageCell.h; sourceTree = "<group>"; };
+		E78A06DC230E7C4800C2DA1B /* BigImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigImageCell.m; sourceTree = "<group>"; };
+		E78A06E1230EAB2800C2DA1B /* ParentsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentsCell.h; sourceTree = "<group>"; };
+		E78A06E2230EAB2800C2DA1B /* ParentsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentsCell.m; sourceTree = "<group>"; };
 		E7FB9C14230930A3000D66AE /* ConnectData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectData.h; sourceTree = "<group>"; };
 		E7FB9C15230930A3000D66AE /* ConnectData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectData.m; sourceTree = "<group>"; };
 		E7FCD29622FD4A2A00597004 /* bacsicObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bacsicObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +131,8 @@
 		E7FDD3B8230595D5008D2C33 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		E7FDD3BB23059609008D2C33 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E7FDD3BC23059609008D2C33 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		E7FDD3C32305978C008D2C33 /* ContainerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerCell.m; sourceTree = "<group>"; };
-		E7FDD3C42305978C008D2C33 /* ContainerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerCell.h; sourceTree = "<group>"; };
+		E7FDD3C32305978C008D2C33 /* SingleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleImageCell.m; sourceTree = "<group>"; };
+		E7FDD3C42305978C008D2C33 /* SingleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleImageCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +160,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E78A06DA230E7BAC00C2DA1B /* BigListPost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BigListPost;
+			sourceTree = "<group>";
+		};
 		E7FCD28D22FD4A2A00597004 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 		E7FCD29822FD4A2A00597004 /* bacsicObjC */ = {
 			isa = PBXGroup;
 			children = (
+				E78A06DA230E7BAC00C2DA1B /* BigListPost */,
 				E7FCD2D722FD4AB100597004 /* ParseJsonForAPost */,
 				E7FDD3C22305967D008D2C33 /* listFileSatisfy */,
 				E7FDD3C123059664008D2C33 /* detectURL */,
@@ -245,10 +265,18 @@
 		E7FDD3BA230595DB008D2C33 /* ListFramePost_UsingNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				E7FDD3C42305978C008D2C33 /* ContainerCell.h */,
-				E7FDD3C32305978C008D2C33 /* ContainerCell.m */,
+				E78A06D3230E495D00C2DA1B /* TwoKindOfCellVC.h */,
+				E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */,
+				E78A06E1230EAB2800C2DA1B /* ParentsCell.h */,
+				E78A06E2230EAB2800C2DA1B /* ParentsCell.m */,
 				E7FDD3BB23059609008D2C33 /* RootViewController.h */,
 				E7FDD3BC23059609008D2C33 /* RootViewController.m */,
+				E78A06DB230E7C4800C2DA1B /* BigImageCell.h */,
+				E78A06DC230E7C4800C2DA1B /* BigImageCell.m */,
+				E7FDD3C42305978C008D2C33 /* SingleImageCell.h */,
+				E7FDD3C32305978C008D2C33 /* SingleImageCell.m */,
+				E78A06D6230E4E0900C2DA1B /* ThreeImageCell.h */,
+				E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */,
 				E70588B523065F4A0055BDDF /* SecondViewController.h */,
 				E70588B623065F4A0055BDDF /* SecondViewController.m */,
 				E7FB9C14230930A3000D66AE /* ConnectData.h */,
@@ -454,11 +482,13 @@
 				E7FDD3BD2305960A008D2C33 /* RootViewController.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
+				E78A06D5230E495D00C2DA1B /* TwoKindOfCellVC.m in Sources */,
 				E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */,
 				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
+				E78A06E3230EAB2800C2DA1B /* ParentsCell.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
-				E7FDD3C52305978C008D2C33 /* ContainerCell.m in Sources */,
+				E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* BoxModel.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
@@ -467,7 +497,9 @@
 				E7FCD2DA22FD4AE200597004 /* BodyModel.m in Sources */,
 				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
 				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,
+				E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */,
 				E7FCD2EC22FD4AFE00597004 /* DataModel.m in Sources */,
+				E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
