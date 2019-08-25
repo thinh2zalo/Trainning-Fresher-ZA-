@@ -13,7 +13,7 @@
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
 		E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70588B623065F4A0055BDDF /* SecondViewController.m */; };
-		E78A06D5230E495D00C2DA1B /* TwoKindOfCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */; };
+		E78A06D5230E495D00C2DA1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D4230E495D00C2DA1B /* MainViewController.m */; };
 		E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */; };
 		E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06DC230E7C4800C2DA1B /* BigImageCell.m */; };
 		E78A06E3230EAB2800C2DA1B /* ParentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06E2230EAB2800C2DA1B /* ParentsCell.m */; };
@@ -41,7 +41,6 @@
 		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
 		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
 		E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B7230595D4008D2C33 /* MyViewController.m */; };
-		E7FDD3BD2305960A008D2C33 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3BC23059609008D2C33 /* RootViewController.m */; };
 		E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3C32305978C008D2C33 /* SingleImageCell.m */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +73,8 @@
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		E78A06D3230E495D00C2DA1B /* TwoKindOfCellVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoKindOfCellVC.h; sourceTree = "<group>"; };
-		E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoKindOfCellVC.m; sourceTree = "<group>"; };
+		E78A06D3230E495D00C2DA1B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E78A06D4230E495D00C2DA1B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E78A06D6230E4E0900C2DA1B /* ThreeImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeImageCell.h; sourceTree = "<group>"; };
 		E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeImageCell.m; sourceTree = "<group>"; };
 		E78A06DB230E7C4800C2DA1B /* BigImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigImageCell.h; sourceTree = "<group>"; };
@@ -129,8 +128,6 @@
 		E7FCD2F322FD7C5E00597004 /* InputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
 		E7FDD3B7230595D4008D2C33 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		E7FDD3B8230595D5008D2C33 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
-		E7FDD3BB23059609008D2C33 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		E7FDD3BC23059609008D2C33 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E7FDD3C32305978C008D2C33 /* SingleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleImageCell.m; sourceTree = "<group>"; };
 		E7FDD3C42305978C008D2C33 /* SingleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleImageCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,12 +262,10 @@
 		E7FDD3BA230595DB008D2C33 /* ListFramePost_UsingNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				E78A06D3230E495D00C2DA1B /* TwoKindOfCellVC.h */,
-				E78A06D4230E495D00C2DA1B /* TwoKindOfCellVC.m */,
+				E78A06D3230E495D00C2DA1B /* MainViewController.h */,
+				E78A06D4230E495D00C2DA1B /* MainViewController.m */,
 				E78A06E1230EAB2800C2DA1B /* ParentsCell.h */,
 				E78A06E2230EAB2800C2DA1B /* ParentsCell.m */,
-				E7FDD3BB23059609008D2C33 /* RootViewController.h */,
-				E7FDD3BC23059609008D2C33 /* RootViewController.m */,
 				E78A06DB230E7C4800C2DA1B /* BigImageCell.h */,
 				E78A06DC230E7C4800C2DA1B /* BigImageCell.m */,
 				E7FDD3C42305978C008D2C33 /* SingleImageCell.h */,
@@ -479,10 +474,9 @@
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
 				E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */,
-				E7FDD3BD2305960A008D2C33 /* RootViewController.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
-				E78A06D5230E495D00C2DA1B /* TwoKindOfCellVC.m in Sources */,
+				E78A06D5230E495D00C2DA1B /* MainViewController.m in Sources */,
 				E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */,
 				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,

@@ -13,10 +13,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface BigImageCell : ParentsCell
+
 @property (nonatomic, strong) UIImageView *centerImg;
 @property (nonatomic, strong) UIImageView *rightImg;
+
 @end
+
+
 
 NS_ASSUME_NONNULL_END

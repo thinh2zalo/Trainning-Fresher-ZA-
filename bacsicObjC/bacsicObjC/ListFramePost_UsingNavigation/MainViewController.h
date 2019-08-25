@@ -13,6 +13,7 @@
 #import "../ParseJsonForAPost/ContentModel.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 #import "BigImageCell.h"
 #import "SingleImageCell.h"
 #import "ThreeImageCell.h"
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface TwoKindOfCellVC : UIViewController
+@interface MainViewController : UIViewController
 
 
 @end
