@@ -79,8 +79,8 @@ int getCurrentIndex = 0;
         _tableView.delegate = self;
         
         [_tableView registerClass:ThreeImageCell.class forCellReuseIdentifier:@"ThreeImageCell"];
-        [_tableView registerClass:SingleImageCell.class forCellReuseIdentifier:@"ContainerCell"];
-        [_tableView registerClass:BigImageCell.class forCellReuseIdentifier:@"BigListContainerCell"];
+        [_tableView registerClass:SingleImageCell.class forCellReuseIdentifier:@"SingleImageCell"];
+        [_tableView registerClass:BigImageCell.class forCellReuseIdentifier:@"BigImageCell"];
 
         [self.view addSubview:_tableView];
     }
@@ -95,7 +95,7 @@ int getCurrentIndex = 0;
         [cell updateContentInsideCell:[self.arrContents objectAtIndex:index]];
         return cell;
     } else if (indexPath.row % 3 == 1) {
-        SingleImageCell * cell  = [self.tableView dequeueReusableCellWithIdentifier:@"ContainerCell" forIndexPath:indexPath];
+        SingleImageCell * cell  = [self.tableView dequeueReusableCellWithIdentifier:@"SingleImageCell" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         NSInteger index = indexPath.row/3;
         [cell updateContentInsideCell:[self.arrContents objectAtIndex:index]];
@@ -103,7 +103,7 @@ int getCurrentIndex = 0;
         return cell;
     }
     else {
-        BigImageCell * cell  = [self.tableView dequeueReusableCellWithIdentifier:@"BigListContainerCell" forIndexPath:indexPath];
+        BigImageCell * cell  = [self.tableView dequeueReusableCellWithIdentifier:@"BigImageCell " forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         NSInteger index = indexPath.row/3;
         [cell updateContentInsideCell:[self.arrContents objectAtIndex:index]];
