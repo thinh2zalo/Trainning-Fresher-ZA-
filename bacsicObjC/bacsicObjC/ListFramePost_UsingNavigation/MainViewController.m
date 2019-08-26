@@ -23,7 +23,6 @@ int getCurrentIndex = 0;
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
         [self updateUI];
-        
     }completion:nil];
 }
 
@@ -87,6 +86,7 @@ int getCurrentIndex = 0;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  
     ParentsCell * cell;
     if (indexPath.row % 3 == 1) {
          cell  = [self.tableView dequeueReusableCellWithIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
@@ -108,7 +108,6 @@ int getCurrentIndex = 0;
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.row].title;
     if (indexPath.row % 3 == 0) {
-        self.ta
         return [ThreeImageCell heightOfCell:titleToCal];
     } else if (indexPath.row % 3 == 1 ) {
             return [SingleImageCell heightOfCell];

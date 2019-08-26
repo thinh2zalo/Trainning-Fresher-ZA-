@@ -74,7 +74,6 @@
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E76E5F162313841900F51339 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		E76E5F172313CF0C00F51339 /* UITableView+SetEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+SetEmptyView.h"; sourceTree = "<group>"; };
 		E78A06D3230E495D00C2DA1B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E78A06D4230E495D00C2DA1B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E78A06D6230E4E0900C2DA1B /* ThreeImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeImageCell.h; sourceTree = "<group>"; };
@@ -279,7 +278,6 @@
 				E7FB9C14230930A3000D66AE /* ConnectData.h */,
 				E7FB9C15230930A3000D66AE /* ConnectData.m */,
 				E76E5F162313841900F51339 /* Define.h */,
-				E76E5F172313CF0C00F51339 /* UITableView+SetEmptyView.h */,
 			);
 			path = ListFramePost_UsingNavigation;
 			sourceTree = "<group>";

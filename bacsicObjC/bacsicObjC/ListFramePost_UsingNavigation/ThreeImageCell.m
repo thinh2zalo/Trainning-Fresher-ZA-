@@ -33,21 +33,8 @@
     self.rightImg.frame = CGRectMake(thumbnailImgX + 2 * thumbnailWidth + 2 * SPACE_BETWEEN_THREE_IMG, thumbnailImgY,  thumbnailWidth,  thumbnailHeight);
     
     self.timeStampLab.frame = CGRectMake(thumbnailImgX, thumbnailImgY + thumbnailHeight + ALIGN_TOP, 100 , HEIGHT_TIMESTAMP);
-    
-
-
 }
-+ (float) heightOfCell:(NSString *)labelText {
-    float thumbnailWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
-    float thumbnailHeight  = (thumbnailWidth / 4) * 3;
-    float heightOfLabel = [ParentsCell heightOfLabel:labelText];
-    float heightOfCell = thumbnailHeight + HEIGHT_TIMESTAMP + ALIGN_TOP * 3;
-    if (heightOfLabel != 0) {
-        return heightOfCell + heightOfLabel + ALIGN_TOP ;
-    }
-    return heightOfCell;
-    
-}
+
 
 - (void)updateContentInsideCell:(Content *)content {
     [super updateContentInsideCell:content];
@@ -82,6 +69,19 @@
         [self addSubview:_centerImg];
     }
     return _centerImg;
+}
+
+
++ (float) heightOfCell:(NSString *)labelText {
+    float thumbnailWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
+    float thumbnailHeight  = (thumbnailWidth / 4) * 3;
+    float heightOfLabel = [ParentsCell heightOfLabel:labelText];
+    float heightOfCell = thumbnailHeight + HEIGHT_TIMESTAMP + ALIGN_TOP * 3;
+    if (heightOfLabel != 0) {
+        return heightOfCell + heightOfLabel + ALIGN_TOP ;
+    }
+    return heightOfCell;
+    
 }
 
 - (UIColor *)randomColor {

@@ -29,7 +29,7 @@
     
     self.titleLab.frame = CGRectMake(thumbnailImgX  , thumbnailImgY + thumbnailImgHeight + ALIGN_TOP,  thumbnailImgWidth , [ParentsCell heightOfLabel:self.titleLab.text]);
   
-    self.timeStampLab.frame = CGRectMake(thumbnailImgX, self.titleLab.frame.origin.y + self.titleLab.frame.size.height + self.spaceBetweentElement  , 100 , 10);
+    self.timeStampLab.frame = CGRectMake(thumbnailImgX, self.titleLab.frame.origin.y + self.titleLab.frame.size.height + self.spaceBetweentElement  , WIDTH_TIMESTAMP , HEIGHT_TIMESTAMP);
 }
 
 + (float) heightOfCell:(NSString *) labelText {

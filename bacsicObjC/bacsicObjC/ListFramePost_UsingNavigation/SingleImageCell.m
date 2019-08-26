@@ -31,6 +31,7 @@
 
     
 }
+
 + (float)heightOfCell {
     float thumbnailImgWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
     float thumbnailImgHeight  = (thumbnailImgWidth / 4) * 3;

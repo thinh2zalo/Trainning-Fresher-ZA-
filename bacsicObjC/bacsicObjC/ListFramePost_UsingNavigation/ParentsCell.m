@@ -8,17 +8,7 @@
 
 #import "ParentsCell.h"
 
-
-
-
-
-
 @implementation ParentsCell
-- (void)layoutSubviews {
-    [super layoutSubviews];
- 
-  
-}
 
 
 - (void)updateContentInsideCell:(Content *)content{
@@ -29,12 +19,13 @@
         NSData * data = [[NSData alloc] initWithContentsOfURL:url];
         if (data == nil){
             NSLog(@"data is null");
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.thumbnailImg.image = [UIImage imageWithData: data];
-        });
-        
-    });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.thumbnailImg.image = [UIImage imageWithData: data];
+            });
+            
+        }});
+    
     self.timeStampLab.text = [NSString compareTimeStamp:content.date];
     
 }
@@ -43,7 +34,6 @@
     if (!_timeStampLab) {
         _timeStampLab = UILabel.new;
         [_timeStampLab setFont:[UIFont systemFontOfSize:13]];
-        
         [self addSubview:_timeStampLab];
     }
     return _timeStampLab;
