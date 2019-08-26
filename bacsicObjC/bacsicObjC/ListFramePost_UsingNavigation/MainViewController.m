@@ -36,7 +36,6 @@ int getCurrentIndex = 0;
     
 }
 
-
 - (void)getDataBack:(SecondViewController *)dataInsideSecond{
     
     Content * contentToUpdate = self.arrContents[dataInsideSecond.indexPath.row];
@@ -47,7 +46,7 @@ int getCurrentIndex = 0;
     }
     [self.tableView reloadRowsAtIndexPaths:@[dataInsideSecond.indexPath] withRowAnimation:YES];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (NSArray<Content *> *)arrContents{
@@ -78,10 +77,13 @@ int getCurrentIndex = 0;
     if ([cell isKindOfClass:ParentsCell.class]) {
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
-    if (indexPath.row >= [self.arrContents count] -3) {
+    
+    if (indexPath.row >= [self.arrContents count] - 3) {
+        
         //TODO: Load More cell.
         // upadte arrContents
-        //
+        // and show current percent of row
+        
     }
 }
 
@@ -115,7 +117,6 @@ int getCurrentIndex = 0;
     } else {
         return [BigImageCell heightOfCell:titleToCal];
  }
-  
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
