@@ -15,14 +15,25 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    float thumbnailImgWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
+    float thumbnailImgHeight  = (thumbnailImgWidth / 4) * 3;
+ 
+    self.thumbnailImg.frame = CGRectMake(ALIGN_LEFT, ALIGN_TOP, thumbnailImgWidth, thumbnailImgHeight);
+    float thumbnailImgX = self.thumbnailImg.frame.origin.x;
+    float thumbnailImgY = self.thumbnailImg.frame.origin.y;
     
-    self.thumbnailImg.frame = CGRectMake(PADDING, PADDING, WITDTH_IMG, HEIGHT_IMG);
-    NSInteger originXOftimeStamp = self.thumbnailImg.frame.origin.x + 10 + self.thumbnailImg.bounds.size.width;
-    self.timeStampLab.frame = CGRectMake(originXOftimeStamp, self.thumbnailImg.frame.origin.y + self.thumbnailImg.frame.size.height - 20 , WIDTH_TIMESTAMP, HEIGHT_TIMESTAMP);
-    float originXOfLabel = self.thumbnailImg.frame.origin.x + 10 + self.thumbnailImg.bounds.size.width;
-    self.titleLab.frame = CGRectMake(originXOfLabel , self.thumbnailImg.frame.origin.y, self.frame.size.width - originXOfLabel - 10 , HEIGHT_LAB);
-    [self.titleLab setNumberOfLines:3];
-    [self.titleLab sizeToFit];
-}
+    float originXOftimeStamp = thumbnailImgX + thumbnailImgWidth + SPACE_THUMBNAIL_LABEL;
 
+    self.timeStampLab.frame = CGRectMake(originXOftimeStamp, thumbnailImgY + thumbnailImgHeight - 2 * HEIGHT_TIMESTAMP , WIDTH_TIMESTAMP, HEIGHT_TIMESTAMP);
+    
+    self.titleLab.frame = CGRectMake(originXOftimeStamp, thumbnailImgY, SCREEN_MAIN_WIDTH - self.timeStampLab.frame.origin.x - 10 , thumbnailImgHeight);
+    [self.titleLab sizeToFit];
+
+    
+}
++ (float)heightOfCell {
+    float thumbnailImgWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
+    float thumbnailImgHeight  = (thumbnailImgWidth / 4) * 3;
+    return thumbnailImgHeight + 2 * ALIGN_TOP ;
+}
 @end

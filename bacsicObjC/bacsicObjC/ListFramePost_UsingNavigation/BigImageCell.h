@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BigImageCell : ParentsCell
 
-@property (nonatomic, strong) UIImageView *centerImg;
-@property (nonatomic, strong) UIImageView *rightImg;
-
++ (float) heightOfCell:(NSString *) labelText;
 @end
 
 

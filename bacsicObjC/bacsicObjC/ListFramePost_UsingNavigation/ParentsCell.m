@@ -50,17 +50,17 @@
     
 }
 
-- (float)spaceOfTitle {
-    _spaceOfTitle = 0;
-    if (self.titleLab.frame.size.height != 0) {
-        _spaceOfTitle = PADDING;
+- (float)spaceBetweentElement {
+    if (![self.titleLab.text isEqualToString:@""]) {
+        return ALIGN_TOP;
     }
-    return _spaceOfTitle;
+    return 0;
 }
 
 -(UILabel *)titleLab{
     if (!_titleLab){
         _titleLab = UILabel.new;
+        [_titleLab setNumberOfLines:3];
         _titleLab.textColor = [UIColor blackColor];
         [_titleLab setFont:[UIFont systemFontOfSize:16]];
         [self addSubview:_titleLab];
@@ -76,7 +76,7 @@
         _thumbnailImg.layer.borderWidth = 2.0f;
         _thumbnailImg.layer.cornerRadius = 6.0f;
         _thumbnailImg.layer.borderColor = [UIColor whiteColor].CGColor;
-        _thumbnailImg.contentMode = UIViewContentModeScaleToFill;
+        _thumbnailImg.contentMode = UIViewContentModeScaleAspectFill;
         [self  addSubview:_thumbnailImg];
     }
     return _thumbnailImg;
@@ -85,7 +85,7 @@
 
 + (CGFloat) heightOfLabel:(NSString *)lableText{
     NSString *string = @"aLine";
-    CGSize maxSize = CGSizeMake(CELL_WIDTH - 2 * PADDING, FLT_MAX);
+    CGSize maxSize = CGSizeMake((SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT) , FLT_MAX);
     CGFloat heightOfEachLine  = [self heightForText:string WithFontSize:16 maxSize:maxSize];
     CGFloat heightOfLabel = [self heightForText:lableText WithFontSize:16 maxSize:maxSize];
     
@@ -95,7 +95,7 @@
 
 + (CGFloat) heightForText:(NSString*)string WithFontSize:(CGFloat) fontSize maxSize:(CGSize) maxSize {
     
-    CGFloat textHeight = - SPACE;
+    CGFloat textHeight = - ALIGN_TOP;
     if (![string isEqualToString:@""]) {
         
         UIFont* font = [UIFont systemFontOfSize:fontSize];

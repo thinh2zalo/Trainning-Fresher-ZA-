@@ -1,10 +1,5 @@
 
 
-#define HEIGHT_TEXTVIEW 100.0
-#define WIDTH_TEXTVIEW 400.0
-#define HEIGHT_BTN 30
-#define WIDTH_BTN 90
-#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 
 
 #import "../ParseJsonForAPost/DataModel.h"
@@ -20,11 +15,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
-#define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define ThreeImageCellIdenti @"ThreeImageCell"
+#define SingleImageCellIdenti @"SingleImageCell"
+#define BigImageCellIdenti @"BigImageCell"
 
-#define NAV_HEIGHT 44
 
 
 

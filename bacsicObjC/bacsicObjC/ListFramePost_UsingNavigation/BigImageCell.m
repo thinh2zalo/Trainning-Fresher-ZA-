@@ -18,16 +18,27 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.thumbnailImg.frame = CGRectMake(PADDING , PADDING, SCREEN_MAIN_WIDTH - 2 * PADDING, CELL_HEIGHT_BIG_IMG);
-    self.titleLab.frame = CGRectMake(self.thumbnailImg.frame.origin.x * 2 , self.thumbnailImg.frame.origin.y + self.thumbnailImg.frame.size.height + PADDING, CELL_WIDTH - 2 * PADDING ,0);
-    [self.titleLab setNumberOfLines:3];
-    [self.titleLab sizeToFit];
-    self.timeStampLab.frame = CGRectMake(self.titleLab.frame.origin.x, self.titleLab.frame.origin.y + self.titleLab.frame.size.height + self.spaceOfTitle  , CELL_WIDTH / 2 , 10);
-    NSLog(@"height of self : %f", self.frame.size.height);
-
     
-
+    float thumbnailImgWidth = SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT;
+    float thumbnailImgHeight  = (thumbnailImgWidth / 16) * 9;
    
+    
+    self.thumbnailImg.frame = CGRectMake(ALIGN_TOP , ALIGN_LEFT,thumbnailImgWidth , thumbnailImgHeight);
+    float thumbnailImgX = self.thumbnailImg.frame.origin.x;
+    float thumbnailImgY = self.thumbnailImg.frame.origin.y;
+    
+    self.titleLab.frame = CGRectMake(thumbnailImgX  , thumbnailImgY + thumbnailImgHeight + ALIGN_TOP,  thumbnailImgWidth , [ParentsCell heightOfLabel:self.titleLab.text]);
+  
+    self.timeStampLab.frame = CGRectMake(thumbnailImgX, self.titleLab.frame.origin.y + self.titleLab.frame.size.height + self.spaceBetweentElement  , 100 , 10);
 }
 
++ (float) heightOfCell:(NSString *) labelText {
+    float heightOfLabel = [ParentsCell heightOfLabel:labelText];
+    float heightOfCell = (((SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT) / 16) * 9) + HEIGHT_TIMESTAMP + ALIGN_TOP * 3;
+    
+    if (heightOfLabel != 0) {
+        return heightOfCell + heightOfLabel + ALIGN_TOP ;
+    }
+    return heightOfCell;
+}
 @end

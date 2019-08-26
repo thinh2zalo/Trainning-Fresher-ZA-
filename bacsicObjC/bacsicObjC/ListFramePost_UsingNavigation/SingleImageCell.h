@@ -7,17 +7,11 @@
 //
 
 #import "ParentsCell.h"
-
-
-
-
-#define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SingleImageCell : ParentsCell
-
-
+    
++ (float)heightOfCell;
 @end
 
 NS_ASSUME_NONNULL_END

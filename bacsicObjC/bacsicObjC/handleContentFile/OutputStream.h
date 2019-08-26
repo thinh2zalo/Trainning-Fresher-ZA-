@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface OutputStream : Stream
 
 -(OutputStream *)initWithPath:(NSString *)urlInput;
-typedef void(^Block)(OutputStream * inputStream);
+typedef void(^Block)(OutputStream * outputStream);
 - (void)use :(Block )block;
 -(void)writeData:(NSData *)data;
 @end          

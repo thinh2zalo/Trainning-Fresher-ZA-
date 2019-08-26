@@ -84,6 +84,7 @@
                         NSString *nameFile = [[[directoryPath lastPathComponent] stringByDeletingPathExtension]
                                               stringByAppendingString:[NSString stringWithFormat:@"(%tu)",i]];
                         NSString* aPathWithStringAddedIndex = [NSTemporaryDirectory() stringByAppendingString:nameFile];
+                        
                         OutputStream *outputStream = [[OutputStream alloc] initWithPath:aPathWithStringAddedIndex];
                         [outputStream use:^(OutputStream* output){
                             NSData *inputDataBuffer;

@@ -17,37 +17,29 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-
-
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
-                    orientation == UIInterfaceOrientationPortraitUpsideDown)];
-   
+        [self updateUI];
     
 }
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
-        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-        [self updateUI:(orientation == UIInterfaceOrientationPortrait ||
-                        orientation == UIInterfaceOrientationPortraitUpsideDown)];
         
-    }completion:^(id<UIViewControllerTransitionCoordinatorContext> context){
+        [self updateUI];
         
-    }];
+    }completion:nil];
 }
 
--(void)updateUI:(BOOL)isPortrait{
+-(void)updateUI{
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     float originX = 20;
     float widthOfView;
     float originY =  SCREEN_MAIN_HEIGHT/3;
-    if (!isPortrait) {
-         widthOfView = originX = 40;
+    if (!UIInterfaceOrientationIsPortrait(orientation)) {
+        widthOfView = originX = 40;
     }
-     widthOfView = SCREEN_MAIN_WIDTH - originX * 2;
+    widthOfView = SCREEN_MAIN_WIDTH - originX * 2;
     self.textViewInSecondScreen.frame = CGRectMake(originX, originY, widthOfView, HEIGHT_TEXTVIEW);
     self.btnConfirm.frame = CGRectMake(originX + widthOfView - WIDTH_BTN - 10 , originY + HEIGHT_TEXTVIEW + 10, WIDTH_BTN, HEIGHT_BTN);
 }
