@@ -7,7 +7,6 @@
 
 @interface MainViewController () < FeedAPIDelegate, PassDataBack,UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic) float heightOfString;
-@property (nonatomic) NSUInteger sizeData;
 @property (nonatomic) BOOL isScrolled;
 @property (strong) NSMutableArray <Content *> *arrContents;
 @property (nonatomic, strong) UITableView *tableView;
@@ -16,12 +15,12 @@
 
 @implementation MainViewController
 @synthesize arrContents = _arrContens;
-int sizeData = 0;
-int getCurrentIndex = 0;
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    _sizeData = 0;
+    
     _isScrolled = false;
     [self updateUI];
     
@@ -91,7 +90,6 @@ int getCurrentIndex = 0;
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
     //TODO: Load More cell.
-    NSLog(@"%tu", indexPath.row);
     if (indexPath.row == [self.arrContents count] - 1 ) {
         [self callFeedAPI];
     }
