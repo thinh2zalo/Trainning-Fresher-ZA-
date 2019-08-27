@@ -9,13 +9,14 @@
 #import "ConnectData.h"
 
 @implementation ConnectData
-+ (Data *)connectData{
++ (NSArray <Content *> *)getNumberContent:(NSUInteger) number {
     Data *data = Data.new;
     NSString* path = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
     if (![path isKindOfClass:NSString.class]){
         NSLog(@"path is error");
     }
     else{
+ 
         NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
@@ -28,7 +29,10 @@
      
       
     }
-    return data;
+    NSRange HEADER_VERSION = {.location = 0, .length = number};
+   
+    return [data.contents subarrayWithRange:HEADER_VERSION];
+    
    
 }
 @end

@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConnectData : NSObject
-+ (Data *)connectData;
++ (NSArray <Content *> *)getNumberContent:(NSUInteger) number;
 @end
 
 NS_ASSUME_NONNULL_END

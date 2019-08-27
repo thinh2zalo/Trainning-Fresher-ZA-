@@ -61,7 +61,7 @@
     if (_delegate){
         _data = self.textViewInSecondScreen.text;
         
-        [_delegate getDataBack:self];
+        [_delegate getDataBack:self];   
     }
 }
 

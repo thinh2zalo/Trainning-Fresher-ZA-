@@ -5,16 +5,24 @@
 - (void)passData;
 @end
 
-@interface MainViewController () < PassDataBack,UITableViewDelegate, UITableViewDataSource>
+@interface MainViewController () < FeedAPIDelegate, PassDataBack,UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic) float heightOfString;
-@property (nonatomic, strong) NSArray <Content *> *arrContents;
+@property (nonatomic) NSUInteger sizeData;
+@property (nonatomic) BOOL isScrolled;
+@property (strong) NSMutableArray <Content *> *arrContents;
 @property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation MainViewController
+@synthesize arrContents = _arrContens;
+int sizeData = 0;
 int getCurrentIndex = 0;
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    _sizeData = 0;
+    _isScrolled = false;
     [self updateUI];
     
 }
@@ -48,12 +56,17 @@ int getCurrentIndex = 0;
     
     [self.navigationController popViewControllerAnimated:NO];
 }
-
-- (NSArray<Content *> *)arrContents{
-    if (!_arrContents){
-        _arrContents = ConnectData.connectData.contents;
+- (void)setArrContents:(NSMutableArray<Content *> *)arrContents{
+    self.arrContents = arrContents;
+}
+- (NSMutableArray <Content *> *)arrContents{
+    
+    if (!_arrContens){
+        _arrContens = NSMutableArray.new;
+        _arrContens = [NSMutableArray arrayWithArray:[ConnectData getNumberContent:10]];
     }
-    return _arrContents;
+    return _arrContens;
+    
 }
 
 - (UITableView *)tableView {
@@ -77,26 +90,41 @@ int getCurrentIndex = 0;
     if ([cell isKindOfClass:ParentsCell.class]) {
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
-    
-    if (indexPath.row >= [self.arrContents count] - 3) {
-        
-        //TODO: Load More cell.
-        // upadte arrContents
-        // and show current percent of row
-        
+    //TODO: Load More cell.
+    NSLog(@"%tu", indexPath.row);
+    if (indexPath.row == [self.arrContents count] - 1 ) {
+        [self callFeedAPI];
     }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _isScrolled = true;
+}
+
+- (void)callFeedAPI {
+    FeedAPI * feedAPI = FeedAPI.new;
+    feedAPI.delegate = self;
+    [feedAPI callAPI];
+}
+
+- (void)updateArrContents:(NSArray *)arrContentsBack {
+    
+    [self.arrContents addObjectsFromArray:arrContentsBack];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  
+    
     ParentsCell * cell;
     if (indexPath.row % 3 == 1) {
-         cell  = [self.tableView dequeueReusableCellWithIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
-      
+        cell  = [self.tableView dequeueReusableCellWithIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
+        
     } else if (indexPath.row % 3 == 2){
         cell  = [self.tableView dequeueReusableCellWithIdentifier:BigImageCellIdenti        forIndexPath:indexPath];
     } else {
-          cell  = [self.tableView dequeueReusableCellWithIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
+        cell  = [self.tableView dequeueReusableCellWithIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
@@ -104,19 +132,22 @@ int getCurrentIndex = 0;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [self.arrContents count];
 }
 
+
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.row].title;
     if (indexPath.row % 3 == 0) {
         return [ThreeImageCell heightOfCell:titleToCal];
     } else if (indexPath.row % 3 == 1 ) {
-            return [SingleImageCell heightOfCell];
+        return [SingleImageCell heightOfCell];
         
     } else {
         return [BigImageCell heightOfCell:titleToCal];
- }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

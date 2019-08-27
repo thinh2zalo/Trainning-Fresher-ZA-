@@ -8,7 +8,7 @@
 #import "../ParseJsonForAPost/ContentModel.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "FeedAPI.h"
 #import "BigImageCell.h"
 #import "SingleImageCell.h"
 #import "ThreeImageCell.h"
@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewController : UIViewController
 
+
+- (void)getDataBack:(SecondViewController *)dataInsideSecond;
 
 @end
 

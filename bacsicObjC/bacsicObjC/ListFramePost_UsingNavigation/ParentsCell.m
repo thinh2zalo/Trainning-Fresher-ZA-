@@ -8,13 +8,7 @@
 
 #import "ParentsCell.h"
 
-#define HEIGHT_TIMESTAMP 10
-#define WIDTH_TIMESTAMP 100
-#define SPACE_BETWEEN_THREE_IMG 10
-#define SPACE_THUMBNAIL_LABEL 10
-#define ALIGN_TOP 20
-#define ALIGN_LEFT 20
-#define ALIGN_RIGHT 20
+
 
 @implementation ParentsCell
 
@@ -22,7 +16,6 @@
 - (void)updateContentInsideCell:(Content *)content{
     self.titleLab.text = content.title;
     dispatch_async(dispatch_get_global_queue(0,0), ^{
-        
         NSURL *url = content.avatarURL;
         NSData * data = [[NSData alloc] initWithContentsOfURL:url];
         if (data == nil){

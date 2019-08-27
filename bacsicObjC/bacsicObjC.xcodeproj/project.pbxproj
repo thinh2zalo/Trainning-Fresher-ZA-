@@ -13,6 +13,7 @@
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
 		E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70588B623065F4A0055BDDF /* SecondViewController.m */; };
+		E76E5F1B2314D8C800F51339 /* FeedAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E76E5F1A2314D8C800F51339 /* FeedAPI.m */; };
 		E78A06D5230E495D00C2DA1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D4230E495D00C2DA1B /* MainViewController.m */; };
 		E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */; };
 		E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06DC230E7C4800C2DA1B /* BigImageCell.m */; };
@@ -74,6 +75,8 @@
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E76E5F162313841900F51339 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		E76E5F192314D8C800F51339 /* FeedAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedAPI.h; sourceTree = "<group>"; };
+		E76E5F1A2314D8C800F51339 /* FeedAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedAPI.m; sourceTree = "<group>"; };
 		E78A06D3230E495D00C2DA1B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E78A06D4230E495D00C2DA1B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E78A06D6230E4E0900C2DA1B /* ThreeImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeImageCell.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */,
 				E70588B523065F4A0055BDDF /* SecondViewController.h */,
 				E70588B623065F4A0055BDDF /* SecondViewController.m */,
+				E76E5F192314D8C800F51339 /* FeedAPI.h */,
+				E76E5F1A2314D8C800F51339 /* FeedAPI.m */,
 				E7FB9C14230930A3000D66AE /* ConnectData.h */,
 				E7FB9C15230930A3000D66AE /* ConnectData.m */,
 				E76E5F162313841900F51339 /* Define.h */,
@@ -496,6 +501,7 @@
 				E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */,
 				E7FCD2EC22FD4AFE00597004 /* DataModel.m in Sources */,
 				E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */,
+				E76E5F1B2314D8C800F51339 /* FeedAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
