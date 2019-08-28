@@ -109,34 +109,19 @@ float postionScrollInCurrentContent;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // TODO: only allowing to implement when scroll down.
-    if (previoustPostion <= scrollView.contentOffset.y) {
-        previoustPostion = scrollView.contentOffset.y;
-
-        postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
+     postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
         
         if ( 100 *(postionScrollInCurrentContent / contentSizeHeightAfterUpdated) >= 70 && _isLoadingData) {
-            NSLog(@"call api");
+          
             [self callFeedAPI];
         }
-        
-        
-        
-        if (postionScrollInCurrentContent >= contentSizeHeightAfterUpdated ) {
-            // TODO: update currentContentHeight and previousContentHeight
-            NSLog(@"updated pre");
+        if (postionScrollInCurrentContent > contentSizeHeightAfterUpdated) {
+            // TODO: previousContentHeight
             previousContentSizeHeight = previousContentSizeHeight + contentSizeHeightAfterUpdated;
-            
         }
-        NSLog(@"percent : %f", 100 * (postionScrollInCurrentContent / contentSizeHeightAfterUpdated));
+    NSLog(@"percent : %f", 100 * (postionScrollInCurrentContent / contentSizeHeightAfterUpdated));
 
-       
-//        NSLog(@"postionScrollInCureentContent : %f", postionScrollInCurrentContent);
-//        NSLog(@"currentContentSizeHeight : %f", currentContentSizeHeight);
-   
-
-    
     }
-}
 - (FeedAPI *)feedAPI {
     if (!_feedAPI) {
         _feedAPI = FeedAPI.new;
