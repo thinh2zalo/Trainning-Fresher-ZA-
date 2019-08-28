@@ -22,7 +22,7 @@ typedef void (^BlockCall)(void);
 @interface FeedAPI : NSObject
 
 @property (nonatomic, weak) id<FeedAPIDelegate> delegate;
-- (void)callAPI;
+- (void)callAPI:(NSUInteger)numberContent;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,7 +11,7 @@
 
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_MAIN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_MAIN_HEIGHT ([UIScreen mainScreen].bounds.size.height)     
 
 #define NAV_HEIGHT 44
 

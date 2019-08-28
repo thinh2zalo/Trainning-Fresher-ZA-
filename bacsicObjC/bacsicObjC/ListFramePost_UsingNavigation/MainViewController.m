@@ -6,13 +6,20 @@
 @end
 
 @interface MainViewController () < FeedAPIDelegate, PassDataBack,UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic) float heightOfString;
-@property (nonatomic) BOOL isScrolled;
+
+@property (nonatomic) BOOL isLoadingData;
+@property (nonatomic) FeedAPI * feedAPI;
+
 @property (strong) NSMutableArray <Content *> *arrContents;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
-
+float previoustPostion;
+float contentSizeHeightAfterUpdated;
+float currentContentSizeHeight;
+float oldContentSizeHeight;
+float previousContentSizeHeight;
+float postionScrollInCurrentContent;
 @implementation MainViewController
 @synthesize arrContents = _arrContens;
 
@@ -20,8 +27,12 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    _isScrolled = false;
+    previoustPostion = 0;
+    oldContentSizeHeight = 0;
+    contentSizeHeightAfterUpdated = 0;
+    currentContentSizeHeight = 0;
+    previousContentSizeHeight = 0;
+    _isLoadingData = true;
     [self updateUI];
     
 }
@@ -39,7 +50,7 @@
     if (!UIInterfaceOrientationIsPortrait(orientation)) {
         originX = 25;
     }
-    self.tableView.frame = CGRectMake(originX , 0, SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT);
+    self.tableView.frame = CGRectMake(originX , 88 , SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT);
     
 }
 
@@ -59,10 +70,9 @@
     self.arrContents = arrContents;
 }
 - (NSMutableArray <Content *> *)arrContents{
-    
     if (!_arrContens){
         _arrContens = NSMutableArray.new;
-        _arrContens = [NSMutableArray arrayWithArray:[ConnectData getNumberContent:10]];
+        [self callFeedAPI];
     }
     return _arrContens;
     
@@ -75,6 +85,8 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _tableView.estimatedRowHeight = 0;
         [_tableView registerClass:ThreeImageCell.class forCellReuseIdentifier:ThreeImageCellIdenti];
         [_tableView registerClass:SingleImageCell.class forCellReuseIdentifier:SingleImageCellIdenti];
         [_tableView registerClass:BigImageCell.class forCellReuseIdentifier:BigImageCellIdenti];
@@ -89,32 +101,67 @@
     if ([cell isKindOfClass:ParentsCell.class]) {
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
-    //TODO: Load More cell.
-    if (indexPath.row == [self.arrContents count] - 1 ) {
-        [self callFeedAPI];
+    
+//        if (indexPath.row >= [self.arrContents count] - 1 && _isLoadingData) {
+//            [self callFeedAPI];
+//        }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // TODO: only allowing to implement when scroll down.
+    if (previoustPostion <= scrollView.contentOffset.y) {
+        previoustPostion = scrollView.contentOffset.y;
+
+        postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
+        
+        if ( 100 *(postionScrollInCurrentContent / contentSizeHeightAfterUpdated) >= 70 && _isLoadingData) {
+            NSLog(@"call api");
+            [self callFeedAPI];
+        }
+        
+        
+        
+        if (postionScrollInCurrentContent >= contentSizeHeightAfterUpdated ) {
+            // TODO: update currentContentHeight and previousContentHeight
+            NSLog(@"updated pre");
+            previousContentSizeHeight = previousContentSizeHeight + contentSizeHeightAfterUpdated;
+            
+        }
+        NSLog(@"percent : %f", 100 * (postionScrollInCurrentContent / contentSizeHeightAfterUpdated));
+
+       
+//        NSLog(@"postionScrollInCureentContent : %f", postionScrollInCurrentContent);
+//        NSLog(@"currentContentSizeHeight : %f", currentContentSizeHeight);
+   
+
+    
     }
 }
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    _isScrolled = true;
+- (FeedAPI *)feedAPI {
+    if (!_feedAPI) {
+        _feedAPI = FeedAPI.new;
+    }
+    return _feedAPI;
 }
-
 - (void)callFeedAPI {
-    FeedAPI * feedAPI = FeedAPI.new;
-    feedAPI.delegate = self;
-    [feedAPI callAPI];
+    _isLoadingData = false;
+    self.feedAPI.delegate = self;
+    [self.feedAPI callAPI:10];
 }
 
 - (void)updateArrContents:(NSArray *)arrContentsBack {
-    
     [self.arrContents addObjectsFromArray:arrContentsBack];
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    [self.tableView reloadData];
+    
+    
+    contentSizeHeightAfterUpdated = self.tableView.contentSize.height - oldContentSizeHeight - SCREEN_MAIN_HEIGHT;
+    NSLog(@"contentSizeHeightAfterUpdated : %f", contentSizeHeightAfterUpdated);
+    oldContentSizeHeight = oldContentSizeHeight + contentSizeHeightAfterUpdated ;
+    _isLoadingData = true;
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
     ParentsCell * cell;
     if (indexPath.row % 3 == 1) {
         cell  = [self.tableView dequeueReusableCellWithIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
@@ -130,15 +177,14 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return [self.arrContents count];
 }
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.row].title;
     if (indexPath.row % 3 == 0) {
+        
         return [ThreeImageCell heightOfCell:titleToCal];
     } else if (indexPath.row % 3 == 1 ) {
         return [SingleImageCell heightOfCell];
