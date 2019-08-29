@@ -15,11 +15,11 @@
     }
 
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4 * NSEC_PER_SEC), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"call API FeedAPI");
 
         NSArray *result = [ConnectData getNumberContent:numberContent];
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
             if ([result isKindOfClass:NSArray.class] && self.delegate) {
                 if (self.delegate && [self->_delegate respondsToSelector:@selector(updateArrContents:)]) {
                     [self.delegate updateArrContents:result];

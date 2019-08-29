@@ -8,6 +8,7 @@
 @interface MainViewController () < FeedAPIDelegate, PassDataBack,UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) BOOL isLoadingData;
+@property (nonatomic) BOOL isLoadingPreviousData;
 @property (nonatomic) FeedAPI * feedAPI;
 
 @property (strong) NSMutableArray <Content *> *arrContents;
@@ -32,6 +33,7 @@ float postionScrollInCurrentContent;
     contentSizeHeightAfterUpdated = 0;
     currentContentSizeHeight = 0;
     previousContentSizeHeight = 0;
+    _isLoadingPreviousData = true;
     _isLoadingData = true;
     [self updateUI];
     
@@ -102,26 +104,33 @@ float postionScrollInCurrentContent;
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
     
-//        if (indexPath.row >= [self.arrContents count] - 1 && _isLoadingData) {
-//            [self callFeedAPI];
-//        }
+    //        if (indexPath.row >= [self.arrContents count] - 1 && _isLoadingData) {
+    //            [self callFeedAPI];
+    //        }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // TODO: only allowing to implement when scroll down.
-     postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
+    postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
+   
+    if (postionScrollInCurrentContent >= currentContentSizeHeight && _isLoadingData ) {
+        _isLoadingPreviousData = true;
+        previousContentSizeHeight = previousContentSizeHeight + currentContentSizeHeight;
+        currentContentSizeHeight = contentSizeHeightAfterUpdated;
         
-        if ( 100 *(postionScrollInCurrentContent / contentSizeHeightAfterUpdated) >= 70 && _isLoadingData) {
-          
-            [self callFeedAPI];
-        }
-        if (postionScrollInCurrentContent > contentSizeHeightAfterUpdated) {
-            // TODO: previousContentHeight
-            previousContentSizeHeight = previousContentSizeHeight + contentSizeHeightAfterUpdated;
-        }
-    NSLog(@"percent : %f", 100 * (postionScrollInCurrentContent / contentSizeHeightAfterUpdated));
-
     }
+    float percent = 100 * (postionScrollInCurrentContent / currentContentSizeHeight);
+    
+    if ( percent >= 70  && _isLoadingPreviousData && _isLoadingData) {
+        
+        _isLoadingPreviousData = false;
+        [self callFeedAPI];
+    }
+    
+
+    NSLog(@"percent : %f", percent);
+    
+}
 - (FeedAPI *)feedAPI {
     if (!_feedAPI) {
         _feedAPI = FeedAPI.new;
@@ -129,9 +138,11 @@ float postionScrollInCurrentContent;
     return _feedAPI;
 }
 - (void)callFeedAPI {
+    NSLog(@"called");
     _isLoadingData = false;
     self.feedAPI.delegate = self;
     [self.feedAPI callAPI:10];
+    
 }
 
 - (void)updateArrContents:(NSArray *)arrContentsBack {
@@ -143,6 +154,9 @@ float postionScrollInCurrentContent;
     NSLog(@"contentSizeHeightAfterUpdated : %f", contentSizeHeightAfterUpdated);
     oldContentSizeHeight = oldContentSizeHeight + contentSizeHeightAfterUpdated ;
     _isLoadingData = true;
+    if (_isLoadingData) {
+        NSLog(@"true ");
+    }
     
 }
 
