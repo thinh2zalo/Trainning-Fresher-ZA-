@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
-float previoustPostion;
+
 float contentSizeHeightAfterUpdated;
 float currentContentSizeHeight;
 float oldContentSizeHeight;
@@ -28,7 +28,7 @@ float postionScrollInCurrentContent;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    previoustPostion = 0;
+    
     oldContentSizeHeight = 0;
     contentSizeHeightAfterUpdated = 0;
     currentContentSizeHeight = 0;
@@ -52,7 +52,7 @@ float postionScrollInCurrentContent;
     if (!UIInterfaceOrientationIsPortrait(orientation)) {
         originX = 25;
     }
-    self.tableView.frame = CGRectMake(originX , 88 , SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT);
+    self.tableView.frame = CGRectMake(originX , 88 , SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT - 88);
     
 }
 
@@ -103,32 +103,29 @@ float postionScrollInCurrentContent;
     if ([cell isKindOfClass:ParentsCell.class]) {
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
-    
-    //        if (indexPath.row >= [self.arrContents count] - 1 && _isLoadingData) {
-    //            [self callFeedAPI];
-    //        }
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // TODO: only allowing to implement when scroll down.
-    postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
    
-    if (postionScrollInCurrentContent >= currentContentSizeHeight && _isLoadingData ) {
+    if (postionScrollInCurrentContent >= currentContentSizeHeight && _isLoadingData) {
         _isLoadingPreviousData = true;
         previousContentSizeHeight = previousContentSizeHeight + currentContentSizeHeight;
         currentContentSizeHeight = contentSizeHeightAfterUpdated;
-        
     }
+
+    postionScrollInCurrentContent = scrollView.contentOffset.y - previousContentSizeHeight;
     float percent = 100 * (postionScrollInCurrentContent / currentContentSizeHeight);
     
-    if ( percent >= 70  && _isLoadingPreviousData && _isLoadingData) {
+    if ( percent >= 100  && _isLoadingPreviousData && _isLoadingData) {
         
         _isLoadingPreviousData = false;
         [self callFeedAPI];
     }
     
-
-    NSLog(@"percent : %f", percent);
+    if (percent >=0) {
+        NSLog(@"percent : %f", percent);
+    }
     
 }
 - (FeedAPI *)feedAPI {
@@ -154,11 +151,7 @@ float postionScrollInCurrentContent;
     NSLog(@"contentSizeHeightAfterUpdated : %f", contentSizeHeightAfterUpdated);
     oldContentSizeHeight = oldContentSizeHeight + contentSizeHeightAfterUpdated ;
     _isLoadingData = true;
-    if (_isLoadingData) {
-        NSLog(@"true ");
-    }
-    
-}
+ }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ParentsCell * cell;
