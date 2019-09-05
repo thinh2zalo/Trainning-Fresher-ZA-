@@ -33,6 +33,7 @@
 }
 
 + (float) heightOfCell:(NSString *) labelText {
+    
     float heightOfLabel = [ParentsCell heightOfLabel:labelText];
     float heightOfCell = (((SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT) / 16) * 9) + HEIGHT_TIMESTAMP + ALIGN_TOP * 3;
     

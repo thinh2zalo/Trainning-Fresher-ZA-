@@ -146,9 +146,7 @@ float postionScrollInCurrentContent;
     [self.arrContents addObjectsFromArray:arrContentsBack];
     [self.tableView reloadData];
     
-    
     contentSizeHeightAfterUpdated = self.tableView.contentSize.height - oldContentSizeHeight - SCREEN_MAIN_HEIGHT;
-    NSLog(@"contentSizeHeightAfterUpdated : %f", contentSizeHeightAfterUpdated);
     oldContentSizeHeight = oldContentSizeHeight + contentSizeHeightAfterUpdated ;
     _isLoadingData = true;
  }
@@ -164,7 +162,7 @@ float postionScrollInCurrentContent;
         cell  = [self.tableView dequeueReusableCellWithIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+  
     return cell;
 }
 

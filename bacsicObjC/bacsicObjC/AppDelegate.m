@@ -10,6 +10,8 @@
 #import "HandleContentFile.h"
 #import "NSFileManager+InteractWithFile.h"
 #import "ListFramePost_UsingNavigation/MainViewController.h"
+#import "ListFramePost_UsingNavigation/MainCollectionViewController.h"
+
 
 
 
@@ -22,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       self.window.backgroundColor = [UIColor whiteColor];
-    UINavigationController *navigationController =  [[UINavigationController alloc] initWithRootViewController:[MainViewController new]];
+    UINavigationController *navigationController =  [[UINavigationController alloc] initWithRootViewController:[MainCollectionViewController new]];
         self.window.rootViewController = navigationController;
 
     

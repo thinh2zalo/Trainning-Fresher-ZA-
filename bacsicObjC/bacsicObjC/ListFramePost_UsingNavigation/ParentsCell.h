@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)onTouched:(ParentsCell *)containerView;
 @end
 
-@interface ParentsCell : UITableViewCell
+@interface ParentsCell : UICollectionViewCell
 @property  (nonatomic) float spaceBetweentElement ;
 @property (nonatomic) NSInteger contentID;
 @property (nonatomic, strong) UIView * containerView;

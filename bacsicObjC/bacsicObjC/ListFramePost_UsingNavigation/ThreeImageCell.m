@@ -73,6 +73,7 @@
 
 
 + (float) heightOfCell:(NSString *)labelText {
+    if ([labelText isKindOfClass:NSString.class]) {
     float thumbnailWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
     float thumbnailHeight  = (thumbnailWidth / 4) * 3;
     float heightOfLabel = [ParentsCell heightOfLabel:labelText];
@@ -81,6 +82,7 @@
         return heightOfCell + heightOfLabel + ALIGN_TOP ;
     }
     return heightOfCell;
+    } else return 0;
     
 }
 

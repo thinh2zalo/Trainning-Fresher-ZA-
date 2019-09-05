@@ -6,6 +6,14 @@
          contextName = "-[MainViewController tableView:heightForRowAtIndexPath:]:MainViewController.m">
       </ContextState>
       <ContextState
+         contextName = "-[MainCollectionViewController updateUI]:MainCollectionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.safeAreaInsets">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MainViewController tableView:willDisplayCell:forRowAtIndexPath:]:MainViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -28,10 +36,10 @@
          contextName = "-[MainViewController updateArrContents:]:MainViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "oldContentSizeHeight">
+               value = "self.tableView.contentSize">
             </PersistentString>
             <PersistentString
-               value = "self.tableView.contentSize">
+               value = "oldContentSizeHeight">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
