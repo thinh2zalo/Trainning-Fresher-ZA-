@@ -8,9 +8,13 @@
 
 #import "MainCollectionViewController.h"
 
+
+
 @interface MainCollectionViewController() <FeedAPIDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray <Content *> *arrContents;
+
+
 
 @property (nonatomic) BOOL isLoadingData;
 @property (nonatomic) BOOL isLoadingPreviousData;
@@ -50,7 +54,7 @@
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
 }
-    
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ParentsCell * cell;
     if (indexPath.item % 3 == 1) {
@@ -68,7 +72,7 @@
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.item].title;
     float heightOfCell;
     NSLog(@"indexPath.item:%tu", indexPath.item);
-
+    
     if (indexPath.item % 3 == 0 ) {
         
         heightOfCell = [ThreeImageCell heightOfCell:titleToCal];
@@ -118,11 +122,16 @@
     
 }
 
+
 - (void)callFeedAPI {
     self.feedAPI.delegate = self;
     [self.feedAPI callAPI:10];
     
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [AlertWindowViewController showAlert:self.arrContents[indexPath.item].title];
+}
+
 
 - (FeedAPI *)feedAPI {
     if (!_feedAPI) {
@@ -131,10 +140,12 @@
     return _feedAPI;
 }
 
+
 - (void)updateArrContents:(NSArray *)arrContentsBack {
     [self.arrContents addObjectsFromArray:arrContentsBack];
     [self.collectionView reloadData];
 }
+
 
 
 @end

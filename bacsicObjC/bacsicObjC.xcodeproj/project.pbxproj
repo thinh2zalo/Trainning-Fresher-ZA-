@@ -42,6 +42,8 @@
 		E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2E522FD4AFE00597004 /* NSDictionary+ParseJson.m */; };
 		E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2EF22FD4BEC00597004 /* HandleContentFile.m */; };
 		E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD2F322FD7C5E00597004 /* InputStream.m */; };
+		E7FD20C523221BFB00F08FE1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FD20C423221BFB00F08FE1 /* AlertView.m */; };
+		E7FD20C823223A2D00F08FE1 /* AlertWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FD20C723223A2D00F08FE1 /* AlertWindowViewController.m */; };
 		E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3B7230595D4008D2C33 /* MyViewController.m */; };
 		E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD3C32305978C008D2C33 /* SingleImageCell.m */; };
 /* End PBXBuildFile section */
@@ -133,6 +135,10 @@
 		E7FCD2F022FD4BEC00597004 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
 		E7FCD2F222FD7C5E00597004 /* InputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
 		E7FCD2F322FD7C5E00597004 /* InputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
+		E7FD20C323221BFB00F08FE1 /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		E7FD20C423221BFB00F08FE1 /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		E7FD20C623223A2D00F08FE1 /* AlertWindowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertWindowViewController.h; sourceTree = "<group>"; };
+		E7FD20C723223A2D00F08FE1 /* AlertWindowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertWindowViewController.m; sourceTree = "<group>"; };
 		E7FDD3B7230595D4008D2C33 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		E7FDD3B8230595D5008D2C33 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		E7FDD3C32305978C008D2C33 /* SingleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleImageCell.m; sourceTree = "<group>"; };
@@ -271,8 +277,10 @@
 			children = (
 				E716741F2320EAD200D5D6E4 /* MainCollectionViewController.h */,
 				E71674202320EAD200D5D6E4 /* MainCollectionViewController.m */,
-				E78A06D3230E495D00C2DA1B /* MainViewController.h */,
-				E78A06D4230E495D00C2DA1B /* MainViewController.m */,
+				E7FD20C623223A2D00F08FE1 /* AlertWindowViewController.h */,
+				E7FD20C723223A2D00F08FE1 /* AlertWindowViewController.m */,
+				E7FD20C323221BFB00F08FE1 /* AlertView.h */,
+				E7FD20C423221BFB00F08FE1 /* AlertView.m */,
 				E78A06E1230EAB2800C2DA1B /* ParentsCell.h */,
 				E78A06E2230EAB2800C2DA1B /* ParentsCell.m */,
 				E78A06DB230E7C4800C2DA1B /* BigImageCell.h */,
@@ -287,6 +295,8 @@
 				E76E5F1A2314D8C800F51339 /* FeedAPI.m */,
 				E7FB9C14230930A3000D66AE /* ConnectData.h */,
 				E7FB9C15230930A3000D66AE /* ConnectData.m */,
+				E78A06D3230E495D00C2DA1B /* MainViewController.h */,
+				E78A06D4230E495D00C2DA1B /* MainViewController.m */,
 				E76E5F162313841900F51339 /* Define.h */,
 			);
 			path = ListFramePost_UsingNavigation;
@@ -497,10 +507,12 @@
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
 				E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
+				E7FD20C523221BFB00F08FE1 /* AlertView.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* BoxModel.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
 				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
 				E7FCD2E922FD4AFE00597004 /* ContentModel.m in Sources */,
+				E7FD20C823223A2D00F08FE1 /* AlertWindowViewController.m in Sources */,
 				E7FCD2DA22FD4AE200597004 /* BodyModel.m in Sources */,
 				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
 				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,

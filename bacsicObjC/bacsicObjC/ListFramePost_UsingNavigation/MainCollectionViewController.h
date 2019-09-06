@@ -16,6 +16,8 @@
 #import "BigImageCell.h"
 #import "SingleImageCell.h"
 #import "ThreeImageCell.h"
+#import "AlertView.h"
+#import "AlertWindowViewController.h"
 
 #define ThreeImageCellIdenti @"ThreeImageCell"
 #define SingleImageCellIdenti @"SingleImageCell"
@@ -24,7 +26,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainCollectionViewController : UIViewController
-
 @end
 
 NS_ASSUME_NONNULL_END
