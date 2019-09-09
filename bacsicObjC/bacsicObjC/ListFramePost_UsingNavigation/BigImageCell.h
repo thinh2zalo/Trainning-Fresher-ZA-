@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BigImageCell : ParentsCell
 
 + (float) heightOfCell:(NSString *) labelText;
++ (float)heightOfCellLandscape:(NSString *) labelText;
 @end
 
 

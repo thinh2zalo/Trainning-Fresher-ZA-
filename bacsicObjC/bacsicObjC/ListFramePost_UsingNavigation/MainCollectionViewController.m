@@ -13,6 +13,8 @@
 @interface MainCollectionViewController() <FeedAPIDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray <Content *> *arrContents;
+@property (nonatomic, strong) UITapGestureRecognizer *gesture;
+
 
 
 
@@ -28,12 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateUI];
+  
 }
+
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context){
         [self updateUI];
+        [self.collectionView.collectionViewLayout invalidateLayout];
     }completion:nil];
 }
 
@@ -45,7 +50,8 @@
         originX = 25;
     }
     float originY = KEY_WINDOW_SAFE_AREA_INSETS.top + self.navigationController.navigationBar.frame.size.height;
-    self.collectionView.frame = CGRectMake(originX ,originY, SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT - originY);
+    self.collectionView.frame = CGRectMake(originX , originY , SCREEN_MAIN_WIDTH - originX, SCREEN_MAIN_HEIGHT - originY);
+//    [self.collectionView reloadData];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,36 +60,76 @@
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
 }
+//
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    NSLog(@"check");
+}
+//
+//}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ParentsCell * cell;
-    if (indexPath.item % 3 == 1) {
-        cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
+    NSLog(@"cell at %tu", indexPath.item);
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (!UIInterfaceOrientationIsPortrait(orientation)) {
+        if (indexPath.item % 4 == 0) {
+             cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
+            
+        } else if (indexPath.item % 4 == 3){
+            
+            cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
+           
+        } else {
+            cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:BigImageCellIdenti forIndexPath:indexPath];
+        }
         
-    } else if (indexPath.item % 3 == 2){
-        cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:BigImageCellIdenti        forIndexPath:indexPath];
     } else {
-        cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
+        if (indexPath.item % 3 == 1) {
+            cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:SingleImageCellIdenti forIndexPath:indexPath];
+        } else if (indexPath.item % 3 == 2){
+            cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:BigImageCellIdenti forIndexPath:indexPath];
+        } else {
+            cell  = [self.collectionView dequeueReusableCellWithReuseIdentifier:ThreeImageCellIdenti forIndexPath:indexPath];
+        }
     }
     
     return cell;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"sizeForItemAtIndexPath");
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.item].title;
     float heightOfCell;
-    NSLog(@"indexPath.item:%tu", indexPath.item);
-    
-    if (indexPath.item % 3 == 0 ) {
+    float widthOfCell = self.collectionView.frame.size.width;
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (!UIInterfaceOrientationIsPortrait(orientation)) {
+        if (indexPath.item % 4 == 0 ) {
+            
+            heightOfCell = [ThreeImageCell heightOfCell:titleToCal];
+        } else if (indexPath.item % 4 == 3 ) {
+            heightOfCell = [SingleImageCell heightOfCell];
+            
+        } else {
+            heightOfCell = [BigImageCell heightOfCellLandscape:titleToCal];
+            
+            
+            widthOfCell = (self.collectionView.frame.size.width - 2 * ALIGN_LEFT - [(UICollectionViewFlowLayout *)collectionViewLayout minimumInteritemSpacing]) / 2;
+        }
+            
+    } else {
+        if (indexPath.item % 3 == 0 ) {
         
         heightOfCell = [ThreeImageCell heightOfCell:titleToCal];
-    } else if (indexPath.item % 3 == 1 ) {
+        } else if (indexPath.item % 3 == 1 ) {
         heightOfCell = [SingleImageCell heightOfCell];
         
-    } else {
+        } else {
         heightOfCell = [BigImageCell heightOfCell:titleToCal];
+        }
     }
+   
     
-    return CGSizeMake(self.collectionView.frame.size.width, heightOfCell);
+    return CGSizeMake(widthOfCell, heightOfCell);
     
 }
 
@@ -91,11 +137,16 @@
     return self.arrContents.count;
 }
 
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout* flowLayout = UICollectionViewFlowLayout.new;
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        flowLayout.minimumLineSpacing = 5;
+        flowLayout.minimumLineSpacing = 20;
+        flowLayout.sectionInset = UIEdgeInsetsMake(ALIGN_TOP, ALIGN_LEFT,  ALIGN_TOP , ALIGN_LEFT);
+        
+        flowLayout.minimumInteritemSpacing = 10;
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
         
         _collectionView.backgroundColor = [UIColor whiteColor];

@@ -18,12 +18,12 @@
 - (void)layoutSubviews {
     [super  layoutSubviews];
     
-    self.titleLab.frame = CGRectMake(ALIGN_LEFT , ALIGN_TOP, SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT,   [ParentsCell heightOfLabel:self.titleLab.text]);
+    self.titleLab.frame = CGRectMake(0 , 0, self.frame.size.width - 2 * ALIGN_LEFT,   [ParentsCell heightOfLabel:self.titleLab.text]);
         
-    float thumbnailWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
+    float thumbnailWidth = (self.frame.size.width - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
     float thumbnailHeight  = (thumbnailWidth / 4) * 3;
 
-    self.thumbnailImg.frame = CGRectMake(ALIGN_LEFT, self.titleLab.frame.origin.y + self.titleLab.frame.size.height +  self.spaceBetweentElement, thumbnailWidth , thumbnailHeight);
+    self.thumbnailImg.frame = CGRectMake(0, self.titleLab.frame.origin.y + self.titleLab.frame.size.height +  self.spaceBetweentElement, thumbnailWidth , thumbnailHeight);
     
     float thumbnailImgY = self.thumbnailImg.frame.origin.y;
     float thumbnailImgX = self.thumbnailImg.frame.origin.x;
@@ -77,7 +77,7 @@
     float thumbnailWidth = (SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - SPACE_THUMBNAIL_LABEL * 2) / 3;
     float thumbnailHeight  = (thumbnailWidth / 4) * 3;
     float heightOfLabel = [ParentsCell heightOfLabel:labelText];
-    float heightOfCell = thumbnailHeight + HEIGHT_TIMESTAMP + ALIGN_TOP * 3;
+    float heightOfCell = thumbnailHeight + HEIGHT_TIMESTAMP + ALIGN_TOP * 1;
     if (heightOfLabel != 0) {
         return heightOfCell + heightOfLabel + ALIGN_TOP ;
     }

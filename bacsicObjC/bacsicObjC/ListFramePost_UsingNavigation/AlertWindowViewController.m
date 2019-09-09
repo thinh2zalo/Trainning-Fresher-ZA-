@@ -8,9 +8,11 @@
 
 #import "AlertWindowViewController.h"
 
-@interface AlertWindowViewController () {
-    
-}
+@interface AlertWindowViewController ()
+
+@property (nonatomic, strong) UITapGestureRecognizer *gesture;
+
+
 
 
 @end
@@ -28,7 +30,7 @@ AlertView *alertView;
     blurEffectView.tag = 121212;
     
     windowToAlert = UIWindow.new;
-    windowToAlert.windowLevel = UIWindowLevelStatusBar;
+    windowToAlert.windowLevel = UIWindowLevelStatusBar + 1;
     [windowToAlert makeKeyAndVisible];
     alertView = AlertView.new;
     
@@ -46,37 +48,26 @@ AlertView *alertView;
     windowToAlert.rootViewController = AlertWindowViewController.new;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
     UITouch * touch = [touches anyObject];
     CGPoint locationOfTouch = [touch locationInView:self.view];
     if (![ self isContaining:locationOfTouch andView:alertView]) {
         UIWindow * currentWindow = [[UIApplication sharedApplication] keyWindow];
         [currentWindow setHidden:YES];
+        [alertView removeFromSuperview];
+        [currentWindow removeFromSuperview];
+        windowToAlert = nil;
     }
-    
 }
 
 - (BOOL) isContaining:(CGPoint) pointOfTouch andView:(UIView *)view {
-    float originX = view.frame.origin.x;
-    float originY = view.frame.origin.y;
-    float widthView = view.frame.size.width;
-    float heightView = view.frame.size.height;
-    if ( pointOfTouch.x >= originX && pointOfTouch.x <= (originX + widthView) &&
-        pointOfTouch.y >= originY && pointOfTouch.y <= (originY + heightView )) {
-        return true;
-    }
-    return false;
+    return CGRectContainsPoint(view.frame, pointOfTouch);
 }
 
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end
