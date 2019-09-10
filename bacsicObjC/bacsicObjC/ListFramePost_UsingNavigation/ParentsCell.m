@@ -49,7 +49,7 @@
 }
 
 -(UILabel *)titleLab{
-    if (!_titleLab){
+    if (!_titleLab) {
         _titleLab = UILabel.new;
         [_titleLab setNumberOfLines:3];
         _titleLab.textColor = [UIColor blackColor];
@@ -61,7 +61,7 @@
 }
 
 -(UIImageView *)thumbnailImg{
-    if (!_thumbnailImg){
+    if (!_thumbnailImg) {
         _thumbnailImg = UIImageView.new;
         _thumbnailImg.layer.masksToBounds = true;
         _thumbnailImg.layer.borderWidth = 2.0f;

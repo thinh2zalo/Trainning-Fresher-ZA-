@@ -51,7 +51,6 @@
     }
     float originY = KEY_WINDOW_SAFE_AREA_INSETS.top + self.navigationController.navigationBar.frame.size.height;
     self.collectionView.frame = CGRectMake(originX , originY , SCREEN_MAIN_WIDTH - originX, SCREEN_MAIN_HEIGHT - originY);
-//    [self.collectionView reloadData];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,13 +59,12 @@
         [((ParentsCell*)cell) updateContentInsideCell:contentToUpdate];
     }
 }
-//
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     NSLog(@"check");
 }
-//
-//}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ParentsCell * cell;

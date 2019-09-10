@@ -31,6 +31,7 @@ float widthCell;
   
     self.timeStampLab.frame = CGRectMake(thumbnailImgX, self.titleLab.frame.origin.y + self.titleLab.frame.size.height + self.spaceBetweentElement  , WIDTH_TIMESTAMP , HEIGHT_TIMESTAMP);
 }
+
 + (float)heightOfCellLandscape:(NSString *) labelText {
     float heightOfLabel = [ParentsCell heightOfLabel:labelText];
     float heightOfCell = ((((SCREEN_MAIN_WIDTH - 2 * ALIGN_LEFT - ALIGN_TOP * 2 - 25 ) / 2 ) /  16) * 9) + HEIGHT_TIMESTAMP + ALIGN_TOP * 2;

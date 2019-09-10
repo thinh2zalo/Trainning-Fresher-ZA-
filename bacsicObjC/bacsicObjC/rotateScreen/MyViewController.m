@@ -76,8 +76,12 @@
 
 
 -(void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"viewWillDisappear");
+ 
+//    image.translatesAutoresizingMaskIntoConstraints = false;
+    
+  
 }
+
 -(void)viewDidDisappear:(BOOL)animated{
     NSLog(@"viewDiDDisappear");
 }
