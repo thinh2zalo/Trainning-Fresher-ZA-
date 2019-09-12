@@ -6,9 +6,9 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "ConversactionModel.h"
+#import "ConversationModel.h"
 
-@implementation ConversactionModel
+@implementation ConversationModel
 
 
 @end

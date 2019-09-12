@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../ModelMessage/ConversactionModel.h"
+#import "../ModelMessage/ConversationModel.h"
 #import "../View/SingleConversationCell.h"
 #import "../View/GroupConversationCell.h"
+#import "GroupViewController.h"
+#import "PeopleViewController.h"
 
-#define SingleConversationCell @"SingleConversationCell"
-#define GroupConversationCell @"GroupConversationCell"
+#define SingleConversationCellIdent @"SingleConversationCell"
+#define GroupConversationCellIdent @"GroupConversationCell"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RootMesViewController : UIViewController

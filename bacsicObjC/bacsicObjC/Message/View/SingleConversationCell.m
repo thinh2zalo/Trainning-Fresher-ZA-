@@ -11,15 +11,15 @@
 @implementation SingleConversationCell
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
     
 }
 
-- (UIImageView *)avatarImg {
-    if (!_avatarImg) {
-        _avatarImg = UIImageView.new;
-        [self.conversactionStackView addArrangedSubview:_avatarImg];
-    }
-    return _avatarImg;
+- (void)updateContentInsideCell:(ConversationModel *)conversationModel {
+    [super updateContentInsideCell:conversationModel];
+
 }
+
+
 
 @end

@@ -10,6 +10,12 @@
 
 @implementation GroupConversationCell
 
+
+
+- (void)updateContentInsideCell:(ConversationModel *)conversationModel {
+    
+}
+
 - (GroupAvatarView *)groupAvatarView {
     if (!_groupAvatarView) {
         _groupAvatarView = GroupAvatarView.new;

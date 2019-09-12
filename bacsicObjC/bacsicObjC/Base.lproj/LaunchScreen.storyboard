@@ -28,20 +28,7 @@
         <!--View Controller-->
         <scene sceneID="0CD-V8-7Tu">
             <objects>
-                <viewController id="td7-Eg-qU7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wQM-7U-tsU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                        </accessibility>
-                        <viewLayoutGuide key="safeArea" id="htE-Yp-urR"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                </viewController>
+                <viewController id="td7-Eg-qU7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBY-rz-52q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="375"/>

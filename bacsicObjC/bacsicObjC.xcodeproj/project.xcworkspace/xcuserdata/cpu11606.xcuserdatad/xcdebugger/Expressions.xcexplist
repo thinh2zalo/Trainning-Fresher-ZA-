@@ -3,21 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MainViewController tableView:heightForRowAtIndexPath:]:MainViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[MainCollectionViewController updateUI]:MainCollectionViewController.m">
+         contextName = "-[MainViewController updateArrContents:]:MainViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.safeAreaInsets">
+               value = "self.tableView.contentSize">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[MainViewController tableView:willDisplayCell:forRowAtIndexPath:]:MainViewController.m">
-         <PersistentStrings>
             <PersistentString
-               value = "[self.arrContents count]">
+               value = "oldContentSizeHeight">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,13 +25,54 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MainViewController updateArrContents:]:MainViewController.m">
+         contextName = "-[MainCollectionViewController updateUI]:MainCollectionViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.tableView.contentSize">
+               value = "self.view.safeAreaInsets">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ConversationCell layoutSubviews]:ConversationCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.nameAndContentView.frame.size.height">
             </PersistentString>
             <PersistentString
-               value = "oldContentSizeHeight">
+               value = "self.nameAdContentView.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.nameAndContentView.frame.origin.y">
+            </PersistentString>
+            <PersistentString
+               value = "self.nameAndContentView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController tableView:heightForRowAtIndexPath:]:MainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ConversationCell updateContentInsideCell:]:ConversationCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " self.timeLab.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RootMesViewController viewDidLoad]:RootMesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.groups">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController tableView:willDisplayCell:forRowAtIndexPath:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.arrContents count]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
