@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "../ModelMessage/ConversationModel.h"
 #import "../View/SingleConversationCell.h"
 #import "../View/GroupConversationCell.h"
+#import "../View/HeaderView.h"
+
 #import "GroupViewController.h"
 #import "PeopleViewController.h"
 

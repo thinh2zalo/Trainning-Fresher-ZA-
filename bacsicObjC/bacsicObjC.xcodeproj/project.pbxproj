@@ -18,6 +18,7 @@
 		E701985B2327C17600AB474F /* ConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E701985A2327C17600AB474F /* ConversationModel.m */; };
 		E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */; };
 		E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70249FB22FFBFFE004552A6 /* OutputStream.m */; };
+		E703F5CF232B57170055C7B5 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E703F5CE232B57170055C7B5 /* HeaderView.m */; };
 		E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70588B623065F4A0055BDDF /* SecondViewController.m */; };
 		E71674212320EAD200D5D6E4 /* MainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E71674202320EAD200D5D6E4 /* MainCollectionViewController.m */; };
 		E76E5F1B2314D8C800F51339 /* FeedAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E76E5F1A2314D8C800F51339 /* FeedAPI.m */; };
@@ -96,6 +97,8 @@
 		E701AF0D230171550024E4B3 /* NSFileManager+InteractWithFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+InteractWithFile.m"; sourceTree = "<group>"; };
 		E70249FA22FFBFFE004552A6 /* OutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
 		E70249FB22FFBFFE004552A6 /* OutputStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
+		E703F5CD232B57170055C7B5 /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		E703F5CE232B57170055C7B5 /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		E70588B523065F4A0055BDDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		E70588B623065F4A0055BDDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E716741F2320EAD200D5D6E4 /* MainCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewController.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				E70198542327B8D700AB474F /* GroupConversationCell.m */,
 				E70198562327B99300AB474F /* GroupAvatarView.h */,
 				E70198572327B99300AB474F /* GroupAvatarView.m */,
+				E703F5CD232B57170055C7B5 /* HeaderView.h */,
+				E703F5CE232B57170055C7B5 /* HeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FD20C523221BFB00F08FE1 /* AlertView.m in Sources */,
+				E703F5CF232B57170055C7B5 /* HeaderView.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* BoxModel.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
 				E7FCD2D622FD4A8800597004 /* NSString+CompareTimeStamp.m in Sources */,
