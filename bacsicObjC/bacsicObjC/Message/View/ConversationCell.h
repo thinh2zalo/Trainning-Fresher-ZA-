@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "../ModelMessage/ConversationModel.h"
-#import "../Controller/define.h"
+#import "../define.h"
 #define HEIGHT_BIG_IMG  100
 
 NS_ASSUME_NONNULL_BEGIN

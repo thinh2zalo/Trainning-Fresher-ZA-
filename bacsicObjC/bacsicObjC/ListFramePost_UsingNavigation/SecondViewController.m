@@ -79,25 +79,6 @@
     return _textViewInSecondScreen;
 }
 //- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    NSLog(@"viewWillDisappear2");
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//    NSLog(@"viewDidDisappear2");
-//}
-//
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    NSLog(@"viewWillAppear2");
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//
-//    NSLog(@"viewDidAppear2");
-//}
-
+//    [super viewWillDisappear:animate
 
 @end

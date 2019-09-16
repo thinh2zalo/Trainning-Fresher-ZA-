@@ -12,6 +12,7 @@
 #import "../View/SingleConversationCell.h"
 #import "../View/GroupConversationCell.h"
 #import "../View/HeaderView.h"
+#import "ConversationViewController.h" 
 
 #import "GroupViewController.h"
 #import "PeopleViewController.h"

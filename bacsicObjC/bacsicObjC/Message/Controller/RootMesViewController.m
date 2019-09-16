@@ -17,6 +17,8 @@
 @property (nonatomic, strong) HeaderView *headerView;
 @property (nonatomic, strong) UILabel * titleLab;
 @property (nonatomic, strong) NSLayoutConstraint *  headerHeightConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *  headerHeightTopTitle;
+
 
 @end
 
@@ -61,11 +63,14 @@ CGFloat previousScrollViewHeight = 0;
     [self.arrConversations  addObject:conversation10];
     
     self.headerHeightConstraint.constant = maxHeaderHeight;
-    
+     self.headerHeightTopTitle = [self.headerView.titleTopConstraint.topAnchor constraintEqualToAnchor:self.view.topAnchor];
     [self.headerView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:88].active = YES;
     self.headerHeightConstraint = [self.headerView.heightAnchor constraintEqualToConstant:0];
     self.headerHeightConstraint.active = YES;
     [self.headerView.widthAnchor constraintEqualToConstant:414].active = YES;
+    
+    
+    
     
     [self.tableView.topAnchor constraintEqualToAnchor:self.headerView.bottomAnchor constant:0].active = YES;
     
@@ -81,7 +86,12 @@ CGFloat previousScrollViewHeight = 0;
     
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ConversationViewController * conversationViewController = ConversationViewController.new;
+    [self.navigationController pushViewController:conversationViewController animated:YES];
+    
+    
+}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self scrollViewDidStopScrolling];
@@ -170,7 +180,11 @@ CGFloat previousScrollViewHeight = 0;
     float range = maxHeaderHeight - minHeaderHeight;
     float openAmount = self.headerHeightConstraint.constant - minHeaderHeight;
     float percent = openAmount /range;
-    self.headerView.titleTopConstraint.alpha = percent;
+    self.headerView.titleBotConstraint.alpha = percent;
+    self.headerHeightTopTitle.active = true;
+   
+    self.headerHeightTopTitle.constant = - openAmount * 2 + 88 ;
+    self.headerHeightTopTitle.active = YES;
     [self.view layoutIfNeeded];
     
     

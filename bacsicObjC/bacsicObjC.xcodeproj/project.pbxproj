@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52EFD9D8232F70F900FC0451 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9D7232F70F900FC0451 /* ConversationViewController.m */; };
+		52EFD9DB232F7CAA00FC0451 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9DA232F7CAA00FC0451 /* MessageCell.m */; };
+		52EFD9DE232F7FD500FC0451 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9DD232F7FD500FC0451 /* Message.m */; };
+		52EFD9E1232F8A7D00FC0451 /* ConversationViewController+CallAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9E0232F8A7D00FC0451 /* ConversationViewController+CallAPI.m */; };
 		E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */ = {isa = PBXBuildFile; fileRef = E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */; };
 		E700149922FFF9C60009AA43 /* testHandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E700149822FFF9C60009AA43 /* testHandleContentFile.m */; };
 		E700767C230114C100F0FCD8 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E700767B230114C100F0FCD8 /* Stream.m */; };
@@ -75,6 +79,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52EFD9D6232F70F900FC0451 /* ConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
+		52EFD9D7232F70F900FC0451 /* ConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
+		52EFD9D9232F7CAA00FC0451 /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		52EFD9DA232F7CAA00FC0451 /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		52EFD9DC232F7FD500FC0451 /* Message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		52EFD9DD232F7FD500FC0451 /* Message.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		52EFD9DF232F8A7D00FC0451 /* ConversationViewController+CallAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConversationViewController+CallAPI.h"; sourceTree = "<group>"; };
+		52EFD9E0232F8A7D00FC0451 /* ConversationViewController+CallAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ConversationViewController+CallAPI.m"; sourceTree = "<group>"; };
 		E700149522FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ReadFlowChunks.h"; sourceTree = "<group>"; };
 		E700149622FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ReadFlowChunks.m"; sourceTree = "<group>"; };
 		E700149822FFF9C60009AA43 /* testHandleContentFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testHandleContentFile.m; sourceTree = "<group>"; };
@@ -201,6 +213,7 @@
 		E70198462327938A00AB474F /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				E701985C2329DA0B00AB474F /* define.h */,
 				E7019849232793D300AB474F /* Controller */,
 				E7019848232793C600AB474F /* View */,
 				E7019847232793B800AB474F /* ModelMessage */,
@@ -213,6 +226,8 @@
 			children = (
 				E70198592327C17600AB474F /* ConversationModel.h */,
 				E701985A2327C17600AB474F /* ConversationModel.m */,
+				52EFD9DC232F7FD500FC0451 /* Message.h */,
+				52EFD9DD232F7FD500FC0451 /* Message.m */,
 			);
 			path = ModelMessage;
 			sourceTree = "<group>";
@@ -239,11 +254,16 @@
 			children = (
 				E701984A2327940100AB474F /* RootMesViewController.h */,
 				E701984B2327940100AB474F /* RootMesViewController.m */,
+				52EFD9D6232F70F900FC0451 /* ConversationViewController.h */,
+				52EFD9D7232F70F900FC0451 /* ConversationViewController.m */,
 				E7FB1B37232A5EF7007A747B /* GroupViewController.h */,
 				E7FB1B38232A5EF7007A747B /* GroupViewController.m */,
 				E7FB1B3A232A5F0A007A747B /* PeopleViewController.h */,
 				E7FB1B3B232A5F0A007A747B /* PeopleViewController.m */,
-				E701985C2329DA0B00AB474F /* define.h */,
+				52EFD9D9232F7CAA00FC0451 /* MessageCell.h */,
+				52EFD9DA232F7CAA00FC0451 /* MessageCell.m */,
+				52EFD9DF232F8A7D00FC0451 /* ConversationViewController+CallAPI.h */,
+				52EFD9E0232F8A7D00FC0451 /* ConversationViewController+CallAPI.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E701984C2327940100AB474F /* RootMesViewController.m in Sources */,
+				52EFD9D8232F70F900FC0451 /* ConversationViewController.m in Sources */,
 				E7FCD2EB22FD4AFE00597004 /* ImageModel.m in Sources */,
 				E700767C230114C100F0FCD8 /* Stream.m in Sources */,
 				E7FCD2ED22FD4AFE00597004 /* QuestionModel.m in Sources */,
@@ -575,6 +596,7 @@
 				E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */,
 				E71674212320EAD200D5D6E4 /* MainCollectionViewController.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
+				52EFD9DE232F7FD500FC0451 /* Message.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
 				E7FB1B39232A5EF7007A747B /* GroupViewController.m in Sources */,
 				E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */,
@@ -600,12 +622,14 @@
 				E7FD20C823223A2D00F08FE1 /* AlertWindowViewController.m in Sources */,
 				E701985B2327C17600AB474F /* ConversationModel.m in Sources */,
 				E7FCD2DA22FD4AE200597004 /* BodyModel.m in Sources */,
+				52EFD9E1232F8A7D00FC0451 /* ConversationViewController+CallAPI.m in Sources */,
 				E7FCD2F122FD4BEC00597004 /* HandleContentFile.m in Sources */,
 				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,
 				E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */,
 				E7FCD2EC22FD4AFE00597004 /* DataModel.m in Sources */,
 				E70198582327B99300AB474F /* GroupAvatarView.m in Sources */,
 				E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */,
+				52EFD9DB232F7CAA00FC0451 /* MessageCell.m in Sources */,
 				E70198552327B8D700AB474F /* GroupConversationCell.m in Sources */,
 				E76E5F1B2314D8C800F51339 /* FeedAPI.m in Sources */,
 			);
