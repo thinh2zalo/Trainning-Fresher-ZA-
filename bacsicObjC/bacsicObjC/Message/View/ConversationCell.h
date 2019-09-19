@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel * timeLab;
 @property (nonatomic, strong) UILabel * nameUserLab;
 @property (nonatomic, strong) UIView * usersView;
-
+@property (nonatomic) BOOL isSender;
 @property (nonatomic, strong) UIImageView * avatarUserImg;
 @property (nonatomic, strong) UIButton * countNewMessageBtn;
 @property (nonatomic, strong) UIView * nameAndContentView;

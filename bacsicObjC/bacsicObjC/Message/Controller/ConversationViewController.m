@@ -11,6 +11,7 @@
 @interface ConversationViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) NSArray <Message *> *arrMessages;
+@property (nonatomic, strong) FeedAPIMess *feedAPI;
 
 
 
@@ -20,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.arrMessages = [[self.feedAPI setUpdataMessage:self.conversationId] copy];
+    self.collectionView.frame = CGRectMake(0, 88, SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT - 88);
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
@@ -30,8 +32,7 @@
         UICollectionViewFlowLayout* flowLayout = UICollectionViewFlowLayout.new;
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.minimumLineSpacing = 20;
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0,  0 , 0);
-        
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 0,  0 , SCREEN_MAIN_WIDTH / 3);
         flowLayout.minimumInteritemSpacing = 10;
         flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
@@ -48,6 +49,8 @@
     return _collectionView;
 }
 
+
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MessageCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"MessageCell" forIndexPath:indexPath];
     return cell;
@@ -55,12 +58,25 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(self.view.frame.size.width, [MessageCell heightOfLabel:self.arrMessages[indexPath.row].contentMessage]);
+    return CGSizeMake((SCREEN_MAIN_WIDTH / 3) * 2, [MessageCell heightOfLabel:self.arrMessages[indexPath.row].contentMessage]
+                    + 20);
     
 }
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell isKindOfClass:MessageCell.class]) {
+        [(MessageCell *)cell updateDataForCell:self.arrMessages[indexPath.item]];
+    }
 }
-
+    
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.arrMessages count];
+}
+- (FeedAPIMess *)feedAPI {
+    if (!_feedAPI) {
+        _feedAPI = FeedAPIMess.new;
+        
+    }
+    return _feedAPI;
+}
 @end

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../ModelMessage/Message.h"
 #import "../define.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MessageCell : UICollectionViewCell
-+ (CGFloat) heightForText:(NSString*)string WithFontSize:(CGFloat) fontSize maxSize:(CGSize) maxSize;
++ (CGSize) heightForText:(NSString*)string WithFontSize:(CGFloat) fontSize maxSize:(CGSize) maxSize;
 + (CGFloat) heightOfLabel:(NSString *)lableText;
++ (CGFloat) widthOfLabel:(NSString *)lableText;
+
+- (void) updateDataForCell:(Message *) message;
 
 @end
 

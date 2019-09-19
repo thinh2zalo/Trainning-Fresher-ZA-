@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MessageCell.h"
 #import "../define.h"
-#import "../ModelMessage/Message.h"
+#import "FeedAPMess.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConversationViewController : UIViewController
-
+@property (nonatomic) NSInteger conversationId;
 @end
 
 NS_ASSUME_NONNULL_END

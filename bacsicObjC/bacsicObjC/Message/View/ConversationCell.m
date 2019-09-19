@@ -44,7 +44,7 @@
 }
 
 - (void)updateContentInsideCell:(ConversationModel *)conversationModel {
-    self.nameUserLab.text = conversationModel.nameUser;
+    self.nameUserLab.text = conversationModel.user.userName;
     self.lastMessageLab.text = conversationModel.lastMessage;
     self.timeLab.text = conversationModel.time;
     [self.countNewMessageBtn setTitle:[NSString stringWithFormat:@"%tu", conversationModel.countNewMessage] forState:UIControlStateNormal];

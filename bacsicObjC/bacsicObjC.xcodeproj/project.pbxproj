@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520BF5E52330CB2C00CFCFDE /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 520BF5E42330CB2C00CFCFDE /* Friend.m */; };
+		520BF5E82330CC9E00CFCFDE /* FeedAPIMess.m in Sources */ = {isa = PBXBuildFile; fileRef = 520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */; };
+		521BBCF72333176C005B905F /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBCF62333176C005B905F /* MessageViewController.m */; };
+		521BBCFA23335EE2005B905F /* ConversationViewController+trash.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBCF923335EE2005B905F /* ConversationViewController+trash.m */; };
 		52EFD9D8232F70F900FC0451 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9D7232F70F900FC0451 /* ConversationViewController.m */; };
 		52EFD9DB232F7CAA00FC0451 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9DA232F7CAA00FC0451 /* MessageCell.m */; };
 		52EFD9DE232F7FD500FC0451 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EFD9DD232F7FD500FC0451 /* Message.m */; };
@@ -79,6 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520BF5E32330CB2C00CFCFDE /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		520BF5E42330CB2C00CFCFDE /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		520BF5E62330CC9E00CFCFDE /* FeedAPMess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedAPMess.h; sourceTree = "<group>"; };
+		520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedAPIMess.m; sourceTree = "<group>"; };
+		521BBCF52333176C005B905F /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		521BBCF62333176C005B905F /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		521BBCF823335EE2005B905F /* ConversationViewController+trash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConversationViewController+trash.h"; sourceTree = "<group>"; };
+		521BBCF923335EE2005B905F /* ConversationViewController+trash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ConversationViewController+trash.m"; sourceTree = "<group>"; };
 		52EFD9D6232F70F900FC0451 /* ConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
 		52EFD9D7232F70F900FC0451 /* ConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
 		52EFD9D9232F7CAA00FC0451 /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
@@ -228,6 +240,8 @@
 				E701985A2327C17600AB474F /* ConversationModel.m */,
 				52EFD9DC232F7FD500FC0451 /* Message.h */,
 				52EFD9DD232F7FD500FC0451 /* Message.m */,
+				520BF5E32330CB2C00CFCFDE /* Friend.h */,
+				520BF5E42330CB2C00CFCFDE /* Friend.m */,
 			);
 			path = ModelMessage;
 			sourceTree = "<group>";
@@ -235,6 +249,8 @@
 		E7019848232793C600AB474F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52EFD9D9232F7CAA00FC0451 /* MessageCell.h */,
+				52EFD9DA232F7CAA00FC0451 /* MessageCell.m */,
 				E701984D2327B2B100AB474F /* ConversationCell.h */,
 				E701984E2327B2B100AB474F /* ConversationCell.m */,
 				E70198502327B8BE00AB474F /* SingleConversationCell.h */,
@@ -260,10 +276,14 @@
 				E7FB1B38232A5EF7007A747B /* GroupViewController.m */,
 				E7FB1B3A232A5F0A007A747B /* PeopleViewController.h */,
 				E7FB1B3B232A5F0A007A747B /* PeopleViewController.m */,
-				52EFD9D9232F7CAA00FC0451 /* MessageCell.h */,
-				52EFD9DA232F7CAA00FC0451 /* MessageCell.m */,
 				52EFD9DF232F8A7D00FC0451 /* ConversationViewController+CallAPI.h */,
 				52EFD9E0232F8A7D00FC0451 /* ConversationViewController+CallAPI.m */,
+				520BF5E62330CC9E00CFCFDE /* FeedAPMess.h */,
+				520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */,
+				521BBCF52333176C005B905F /* MessageViewController.h */,
+				521BBCF62333176C005B905F /* MessageViewController.m */,
+				521BBCF823335EE2005B905F /* ConversationViewController+trash.h */,
+				521BBCF923335EE2005B905F /* ConversationViewController+trash.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -593,9 +613,11 @@
 				E700767C230114C100F0FCD8 /* Stream.m in Sources */,
 				E7FCD2ED22FD4AFE00597004 /* QuestionModel.m in Sources */,
 				E7FCD2D522FD4A8800597004 /* NSFileManager+ListSatisfyFile.m in Sources */,
+				521BBCF72333176C005B905F /* MessageViewController.m in Sources */,
 				E70588B723065F4A0055BDDF /* SecondViewController.m in Sources */,
 				E71674212320EAD200D5D6E4 /* MainCollectionViewController.m in Sources */,
 				E7FCD2D322FD4A8800597004 /* NSArray+handleTailFile.m in Sources */,
+				520BF5E52330CB2C00CFCFDE /* Friend.m in Sources */,
 				52EFD9DE232F7FD500FC0451 /* Message.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
 				E7FB1B39232A5EF7007A747B /* GroupViewController.m in Sources */,
@@ -613,6 +635,7 @@
 				E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FD20C523221BFB00F08FE1 /* AlertView.m in Sources */,
+				521BBCFA23335EE2005B905F /* ConversationViewController+trash.m in Sources */,
 				E703F5CF232B57170055C7B5 /* HeaderView.m in Sources */,
 				E7FCD2EA22FD4AFE00597004 /* BoxModel.m in Sources */,
 				E7FCD2D422FD4A8800597004 /* NSString+DetectURL.m in Sources */,
@@ -627,6 +650,7 @@
 				E7FCD2EE22FD4AFE00597004 /* NSDictionary+ParseJson.m in Sources */,
 				E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */,
 				E7FCD2EC22FD4AFE00597004 /* DataModel.m in Sources */,
+				520BF5E82330CC9E00CFCFDE /* FeedAPIMess.m in Sources */,
 				E70198582327B99300AB474F /* GroupAvatarView.m in Sources */,
 				E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */,
 				52EFD9DB232F7CAA00FC0451 /* MessageCell.m in Sources */,

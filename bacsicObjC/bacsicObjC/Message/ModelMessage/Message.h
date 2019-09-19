@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Friend.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Message : NSObject
-@property (nonatomic, strong)  NSString *username;
+@property (nonatomic) NSInteger messageId;
+@property (nonatomic) NSInteger conversationId;
 @property (nonatomic, strong) NSString * contentMessage;
 @property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSURL * urlAvtar;
+@property (nonatomic,strong) Friend * user;
+@property (nonatomic) BOOL isSender;
+
 
 
 @end

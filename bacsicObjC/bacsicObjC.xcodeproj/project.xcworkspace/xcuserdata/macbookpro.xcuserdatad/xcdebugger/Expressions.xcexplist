@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[RootMesViewController scrollViewDidScroll:]:RootMesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentSize.height ">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MessageViewController scrollViewDidStopScrolling]:MessageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView.contentOffset.y ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -8,7 +8,8 @@
 
 #ifndef Header_h
 #define Header_h
-
+#define TABBAR_HEIGHT 100
+#define HEADER_HEIGHT 88
 #define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
 #define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_MAIN_HEIGHT ([UIScreen mainScreen].bounds.size.height)

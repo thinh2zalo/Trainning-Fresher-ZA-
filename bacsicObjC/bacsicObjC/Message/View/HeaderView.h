@@ -11,9 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HeaderView : UIView
+@property (nonatomic, strong) UIView * botHeaderView;
+@property (nonatomic, strong) UIView * topHeaderView;
+@property (nonatomic, strong) UILabel * titleBotLab;
+@property (nonatomic, strong) UILabel * titleTopLab;
+- (void) setHeightForBotHeader:(float) height ;
+- (void) setHeightForTopHeader:(float) height ;
 
-@property (nonatomic, strong) UILabel * titleBotConstraint;
-@property (nonatomic, strong) UILabel * titleTopConstraint;
 @end
 
 NS_ASSUME_NONNULL_END

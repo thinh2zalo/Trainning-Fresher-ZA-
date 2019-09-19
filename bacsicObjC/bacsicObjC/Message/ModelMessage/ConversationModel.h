@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Friend.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ConversationModel : UIView
+@interface ConversationModel : NSObject
 @property (nonatomic, strong) NSString * lastMessage;
+@property (nonatomic) NSInteger conversationID;
 @property (nonatomic, strong) NSString * time;
-@property (nonatomic, strong) NSString * nameUser;
-@property (nonatomic, strong) NSURL * avatarUser;
+@property (nonatomic, strong) Friend * user;
 @property (nonatomic) NSInteger  countNewMessage;
 @property (nonatomic) BOOL  isGroupConversation;
 @end

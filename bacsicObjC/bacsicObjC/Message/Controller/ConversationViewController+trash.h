@@ -1,18 +1,16 @@
 //
-//  ConversationViewController+CallAPI.h
+//  ConversationViewController+trash.h
 //  bacsicObjC
 //
-//  Created by Steve on 9/16/19.
+//  Created by Steve on 9/19/19.
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
 #import "ConversationViewController.h"
-#import "../ModelMessage/Message.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ConversationViewController (CallAPI)
-
+@interface ConversationViewController (trash)
 
 @end
 
