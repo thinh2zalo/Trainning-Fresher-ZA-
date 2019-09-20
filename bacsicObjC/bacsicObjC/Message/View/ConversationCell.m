@@ -20,39 +20,57 @@
     [self.conversationStackView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-20].active = YES;
     [self.conversationStackView.topAnchor constraintEqualToAnchor:self.topAnchor constant:20].active = YES;
     [self.conversationStackView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant: -20].active = YES;
+    [self.usersView.widthAnchor constraintEqualToConstant:self.frame.size.height - 2 * 20].active = YES;
     
-   [self.usersView.widthAnchor constraintEqualToConstant:70].active = YES;
-   [self.timeAndCountNewMesView.widthAnchor constraintEqualToConstant:70].active = YES;
+    [self.timeAndCountNewMesView.widthAnchor constraintEqualToConstant:[MessageCell widthOfLabel:self.timeLab.text]].active = YES;
+    [self layoutIfNeeded];
     
     [self.conversationStackView addArrangedSubview:self.usersView];
     [self.conversationStackView addArrangedSubview:self.nameAndContentView];
     [self.conversationStackView addArrangedSubview:self.timeAndCountNewMesView];
-   
-
-    [self layoutIfNeeded];
-
+    
     self.nameUserLab.frame = CGRectMake(0, 0, self.nameAndContentView.frame.size.width, 20);
     self.lastMessageLab.frame = CGRectMake(self.nameUserLab.frame.origin.y  , self.nameAndContentView.frame.size.height / 2, self.nameAndContentView.frame.size.width, self.nameAndContentView.frame.size.height / 2);
     [self.lastMessageLab sizeToFit];
     
-    self.timeLab.frame = CGRectMake(0, 0, self.timeAndCountNewMesView.frame.size.width, self.timeAndCountNewMesView.frame.size.height);
-    [self.timeLab sizeToFit];
+    self.avatarUserImg.frame = CGRectMake(0, 0, self.usersView.frame.size.width,self.usersView.frame.size.height);
+    self.avatarUserImg.layer.cornerRadius = self.usersView.frame.size.width / 2.0f;
+    self.avatarUserImg.clipsToBounds = YES;
     
-    self.countNewMessageBtn.frame = CGRectMake(0, 40, 40, 0);
- 
-
+    self.timeLab.frame = CGRectMake(0, 0, self.timeAndCountNewMesView.frame.size.width, 14);
+    self.availableView.frame = CGRectMake(0, 0, 15  , 15);
+    self.availableView.layer.cornerRadius = self.availableView.frame.size.width / 2.0f;
+    
+    self.availableView.center = CGPointMake(0, self.usersView.center.y);
+    self.countNewMessageLab.frame = CGRectMake(0, (self.timeAndCountNewMesView.frame.size.height/ 5) * 2, self.timeAndCountNewMesView.frame.size.width, (self.timeAndCountNewMesView.frame.size.height/5) * 3);
+    
 }
 
 - (void)updateContentInsideCell:(ConversationModel *)conversationModel {
     self.nameUserLab.text = conversationModel.user.userName;
     self.lastMessageLab.text = conversationModel.lastMessage;
     self.timeLab.text = conversationModel.time;
-    [self.countNewMessageBtn setTitle:[NSString stringWithFormat:@"%tu", conversationModel.countNewMessage] forState:UIControlStateNormal];
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSURL *url = conversationModel.user.avatarUrl;
+        NSData * data = [[NSData alloc] initWithContentsOfURL:url];
+        if (data == nil){
+            NSLog(@"data is null");
+        } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                self.avatarUserImg.image = [UIImage imageWithData: data];
+            });
+        }});
+    self.countNewMessageLab.text = [NSString stringWithFormat:@"%tu", conversationModel.countNewMessage];
+    if (!conversationModel.user.isAvailable) {
+        [self.availableView  setHidden:YES];
+    }
 }
 
 - (UIImageView *)avatarUserImg {
     if (!_avatarUserImg) {
         _avatarUserImg = UIImageView.new;
+        [self.usersView addSubview:_avatarUserImg];
     }
     return _avatarUserImg;
 }
@@ -60,9 +78,7 @@
 - (UIView *)usersView {
     if (!_usersView) {
         _usersView = UIView.new;
-        _nameAndContentView.translatesAutoresizingMaskIntoConstraints = false;
         
-        _usersView.backgroundColor = [UIColor blackColor];
     }
     return  _usersView;
 }
@@ -70,7 +86,6 @@
 - (UIView *)nameAndContentView {
     if (!_nameAndContentView) {
         _nameAndContentView = UIView.new;
-        _nameAndContentView.translatesAutoresizingMaskIntoConstraints = false;
     }
     return _nameAndContentView;
 }
@@ -78,9 +93,6 @@
 - (UIView *)timeAndCountNewMesView {
     if (!_timeAndCountNewMesView) {
         _timeAndCountNewMesView = UIView.new;
-        _timeAndCountNewMesView.backgroundColor = [UIColor redColor];
-
-        _timeAndCountNewMesView.translatesAutoresizingMaskIntoConstraints = false;
     }
     return _timeAndCountNewMesView;
 }
@@ -88,7 +100,6 @@
 
 - (UILabel *)nameUserLab {
     if (!_nameUserLab) {
-       
         _nameUserLab = UILabel.new;
         _nameUserLab.textColor = [UIColor blackColor];
         [_nameUserLab setFont:[UIFont boldSystemFontOfSize:20]];
@@ -109,29 +120,46 @@
     return _lastMessageLab;
 }
 
+
+- (UIView *)availableView {
+    if (!_availableView) {
+        _availableView = UIView.new;
+        _availableView.layer.borderWidth = 3.0f;
+        
+        _availableView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _availableView.backgroundColor = [UIColor greenColor];
+        [self.usersView insertSubview:_availableView aboveSubview:self.avatarUserImg];
+    }
+    return _availableView;
+}
+
 - (UILabel *)timeLab {
     if (!_timeLab) {
         _timeLab = UILabel.new;
+        
         _timeLab.textColor = [UIColor darkGrayColor];
         [_timeLab setFont:[UIFont systemFontOfSize:13]];
+        _timeLab.textAlignment = NSTextAlignmentCenter;
+        
         [self.timeAndCountNewMesView addSubview:_timeLab];
     }
     return _timeLab;
 }
 
-- (UIButton *)countNewMessageBtn {
-    if (!_countNewMessageBtn) {
-        _countNewMessageBtn = UIButton.new;
-        [_countNewMessageBtn setSelected:YES];
-        [_countNewMessageBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_countNewMessageBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
-        [self.timeAndCountNewMesView addSubview:_countNewMessageBtn];
-
+- (UILabel *)countNewMessageLab {
+    if (!_countNewMessageLab) {
+        _countNewMessageLab = UILabel.new;
+        _countNewMessageLab.textColor = [UIColor darkGrayColor];
+        _countNewMessageLab.backgroundColor = [UIColor redColor];
+        _countNewMessageLab.layer.cornerRadius = 13;
+        _countNewMessageLab.layer.masksToBounds = true;
+        
+        _countNewMessageLab.textAlignment = NSTextAlignmentCenter;
+        [self.timeAndCountNewMesView addSubview:_countNewMessageLab];
+        
     }
-    return _countNewMessageBtn;
+    return _countNewMessageLab;
 }
-
-
 
 - (UIView *)conversationStackView {
     if (!_conversationStackView) {

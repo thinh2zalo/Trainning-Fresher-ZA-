@@ -24,10 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    self.navigationController.view.frame =  CGRectMake(0, KEY_WINDOW_SAFE_AREA_INSETS.top, SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT - KEY_WINDOW_SAFE_AREA_INSETS.top);
 
     [self switchToViewController:self.message];
-    self.tabBar.frame = CGRectMake(0, SCREEN_MAIN_HEIGHT - TABBAR_HEIGHT, SCREEN_MAIN_WIDTH,   TABBAR_HEIGHT);
+    self.tabBar.frame = CGRectMake(0, self.view.frame.size.height - TABBAR_HEIGHT, self.view.frame.size.width,   TABBAR_HEIGHT);
     [self.navigationController setNavigationBarHidden:YES];
     
 }
@@ -48,15 +47,18 @@
 }
 
 - (void)switchToViewController:(UIViewController *)toVC {
-    if (toVC != nil) {
-        [self addChildViewController:toVC];
-
-        [toVC willMoveToParentViewController:self];
-        
-        [self.view addSubview:toVC.view];
-        toVC.view.frame = CGRectMake(0, 0, SCREEN_MAIN_WIDTH ,SCREEN_MAIN_HEIGHT - TABBAR_HEIGHT );
-
-        [toVC didMoveToParentViewController:self];
+    if (toVC.view.hidden || !toVC.view.superview) {
+        for (UIViewController *each in self.viewControllers) {
+            [each.view setHidden:each != toVC];
+        }
+        if (toVC.view.superview != self.view) {
+            [self addChildViewController:toVC];
+            [toVC willMoveToParentViewController:self];
+            [self.view addSubview:toVC.view];
+            
+            toVC.view.frame = CGRectMake(0, 0 , self.view.frame.size.width ,self.view.frame.size.height - TABBAR_HEIGHT );
+            [toVC didMoveToParentViewController:self];
+        }
     }
 }
 
@@ -81,7 +83,6 @@
     if (!_tabBar) {
         _tabBar = UITabBar.new;
         _tabBar.delegate = self;
-        _tabBar.translatesAutoresizingMaskIntoConstraints = false;
         
         [_tabBar setItems:@[[[UITabBarItem alloc] initWithTitle:@"Messages" image:[UIImage imageNamed:@"people"] tag:1],
                             [[UITabBarItem alloc] initWithTitle:@"Groups" image:[UIImage imageNamed:@"groups"] tag:2],
@@ -95,8 +96,6 @@
     }
     return _tabBar;
 }
-
-
 
 
 @end

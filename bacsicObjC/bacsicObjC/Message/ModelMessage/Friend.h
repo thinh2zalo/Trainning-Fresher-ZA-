@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger friendID;
 @property (nonatomic, strong) NSString * userName;
 @property (nonatomic, strong) NSURL * avatarUrl;
+@property (nonatomic) BOOL  isAvailable;
+
 @end
 
 NS_ASSUME_NONNULL_END

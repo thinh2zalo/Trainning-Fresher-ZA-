@@ -23,7 +23,7 @@
 #define GroupConversationCellIdent @"GroupConversationCell"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RootMesViewController : UIViewController
+@interface RootMesViewController : UINavigationController
 
 @end
 

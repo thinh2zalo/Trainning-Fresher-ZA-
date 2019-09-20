@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "../ModelMessage/ConversationModel.h"
 #import "../define.h"
+#import "MessageCell.h"
 #define HEIGHT_BIG_IMG  100
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,8 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView * usersView;
 @property (nonatomic) BOOL isSender;
 @property (nonatomic, strong) UIImageView * avatarUserImg;
-@property (nonatomic, strong) UIButton * countNewMessageBtn;
+@property (nonatomic, strong) UILabel * countNewMessageLab;
 @property (nonatomic, strong) UIView * nameAndContentView;
+@property (nonatomic, strong) UIView * availableView;
 @property (nonatomic, strong) UIView * timeAndCountNewMesView;
 -(void)updateContentInsideCell:(ConversationModel *) conversationModel;
 @end

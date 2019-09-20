@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel * titleTopLab;
 - (void) setHeightForBotHeader:(float) height ;
 - (void) setHeightForTopHeader:(float) height ;
-
 @end
 
 NS_ASSUME_NONNULL_END

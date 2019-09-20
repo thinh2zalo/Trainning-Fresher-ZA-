@@ -24,11 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.frame = CGRectMake(10, 10, 300, 300);
+    self.view.backgroundColor = [UIColor blueColor];
     self.titleLab;
-    NSLog(@"Group");
 
-    // Do any additional setup after loading the view.
 }
 
 - (UILabel *)titleLab {

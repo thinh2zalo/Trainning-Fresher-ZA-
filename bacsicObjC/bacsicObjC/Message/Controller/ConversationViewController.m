@@ -13,8 +13,6 @@
 @property (nonatomic, strong) NSArray <Message *> *arrMessages;
 @property (nonatomic, strong) FeedAPIMess *feedAPI;
 
-
-
 @end
 
 @implementation ConversationViewController

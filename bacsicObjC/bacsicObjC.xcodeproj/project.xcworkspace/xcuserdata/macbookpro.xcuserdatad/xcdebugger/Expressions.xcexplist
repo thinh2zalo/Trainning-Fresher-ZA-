@@ -14,10 +14,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ConversationCell updateContentInsideCell:]:ConversationCell.m">
+      </ContextState>
+      <ContextState
          contextName = "-[MessageViewController scrollViewDidStopScrolling]:MessageViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.tableView.contentOffset.y ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ConversationCell layoutSubviews]:ConversationCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[MessageCell widthOfLabel:self.timeLab.tex">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

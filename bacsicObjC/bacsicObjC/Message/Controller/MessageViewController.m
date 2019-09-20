@@ -13,26 +13,27 @@
 @property (nonatomic, strong) NSMutableArray <ConversationModel *> *arrConversations;
 @property (nonatomic, strong) UITabBar * tabBar;
 @property (nonatomic, strong) HeaderView *headerView;
-
 @property (nonatomic, strong) FeedAPIMess * feedAPI;
 @end
 
 @implementation MessageViewController
 CGFloat maxHeaderHeight ;
 CGFloat minHeaderHeight ;
+CGFloat heightOfBotTitle ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    minHeaderHeight = HEADER_HEIGHT / 2;
-    maxHeaderHeight = HEADER_HEIGHT;
-    self.arrConversations =  [[self.feedAPI setupData] copy];
    
-    self.tableView.frame = CGRectMake(0, 0, SCREEN_MAIN_WIDTH, self.view.frame.size.height - TABBAR_HEIGHT);
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_MAIN_WIDTH, HEADER_HEIGHT);
+    self.arrConversations =  [[self.feedAPI setupData] copy];
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TABBAR_HEIGHT);
+    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT);
+    minHeaderHeight = HEADER_HEIGHT - 44;
+    maxHeaderHeight = HEADER_HEIGHT;
 
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"DID STROP");
 
     [self scrollViewDidStopScrolling];
 }
@@ -41,40 +42,47 @@ CGFloat minHeaderHeight ;
     if (!decelerate) {
         [self scrollViewDidStopScrolling];
     }
-    
+
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     float scrollDiff = scrollView.contentOffset.y  +  HEADER_HEIGHT;
-    [self.headerView setHeightForBotHeader: HEADER_HEIGHT / 2 - scrollDiff];
-    NSLog(@"height of top : %f", - HEADER_HEIGHT / 2 + scrollDiff);
-    [self.headerView setHeightForTopHeader: - HEADER_HEIGHT / 2 + scrollDiff];
+    [self.headerView setHeightForBotHeader:scrollDiff];
+    [self.headerView setHeightForTopHeader:scrollDiff];
+    [self.headerView.topHeaderView setHidden:YES];
+    
+    if (self.tableView.contentOffset.y > - maxHeaderHeight) {
+        [self.headerView.topHeaderView setHidden:NO];
+        
+    }
 }
 
 - (void) scrollViewDidStopScrolling {
-    CGFloat range = maxHeaderHeight - minHeaderHeight; 
+    CGFloat range = maxHeaderHeight - minHeaderHeight;
     CGFloat midPoint = minHeaderHeight + (range / 2);
-    if (self.tableView.contentOffset.y < (- midPoint) - 1) {
-            NSLog(@"do you go here when i scroll down %f", self.tableView.contentOffset.y);
+ 
+    
+    if (self.tableView.contentOffset.y < (- midPoint)) {
         [self expandHeader];
-    } else if (self.tableView.contentOffset.y < 0){
-        NSLog(@"do you go here when i scroll upppp");
+    } else if (self.tableView.contentOffset.y < - 88){
         [self collapseHeader];
     }
 }
 
 - (void) collapseHeader {
-    
+    [self.headerView setHidden:false];
     [UIView animateWithDuration:0.2 animations:^{
         
-        [self.headerView setHeightForBotHeader:minHeaderHeight];
+        [self.headerView setHeightForBotHeader:heightOfBotTitle];
         [self.tableView setContentOffset:CGPointMake(0, - minHeaderHeight)];
     }];
 }
 
 - (void) expandHeader {
-    [UIView animateWithDuration:3 animations:^{
-        [self.headerView setHeightForBotHeader:maxHeaderHeight/2];
+
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.headerView setHeightForBotHeader:0];
         [self.tableView setContentOffset:CGPointMake(0, - maxHeaderHeight)];
     }];
 }
@@ -96,6 +104,7 @@ CGFloat minHeaderHeight ;
     } else {
         conversation = [self.tableView dequeueReusableCellWithIdentifier:SingleConversationCellIdent];
     }
+    conversation.selectionStyle = UITableViewCellSelectionStyleNone;
     return conversation;
     
 }
@@ -142,7 +151,9 @@ CGFloat minHeaderHeight ;
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.contentInset = UIEdgeInsetsMake(TABBAR_HEIGHT, 0, 0, 0);
+        
+        _tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT, 0, 0, 0);
+        _tableView.separatorColor = [UIColor clearColor];
 
         [_tableView registerClass:SingleConversationCell.class forCellReuseIdentifier:SingleConversationCellIdent];
         [_tableView registerClass:GroupConversationCell.class forCellReuseIdentifier:GroupConversationCellIdent];
