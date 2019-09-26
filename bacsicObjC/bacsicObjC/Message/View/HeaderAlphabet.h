@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HeaderAlphabet : UIView
-
+@interface HeaderAlphabet : UICollectionReusableView
+@property (nonatomic, strong) UILabel * alphabetLabel;
+- (void) setAlphabet:(NSString *) alphabet;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,8 +20,10 @@
 CGFloat maxHeaderHeight ;
 CGFloat minHeaderHeight ;
 CGFloat heightOfBotTitle ;
+BOOL isEditting;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    isEditting = true;
     self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TABBAR_HEIGHT);
     self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT);
@@ -46,6 +48,7 @@ CGFloat heightOfBotTitle ;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     float scrollDiff = scrollView.contentOffset.y  +  HEADER_HEIGHT;
+    
     [self.headerView setHeightForBotHeader:scrollDiff];
     [self.headerView setHeightForTopHeader:scrollDiff];
     [self.headerView.topHeaderView setHidden:YES];
@@ -88,10 +91,15 @@ CGFloat heightOfBotTitle ;
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView
                   editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    isEditting = false;
+
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         [self.arrConversations removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+
     }];
+    isEditting = true;
+
     deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
     
     UITableViewRowAction *callAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Call" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
@@ -105,10 +113,9 @@ CGFloat heightOfBotTitle ;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return true;
+    
+    return isEditting;
 }
-
-
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     ConversationModel * contentToUpdate = self.arrConversations[indexPath.row];
@@ -119,14 +126,15 @@ CGFloat heightOfBotTitle ;
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    ConversationCell * conversation;
+    ConversationCell * conversationCell;
     if (self.arrConversations[indexPath.row].isGroupConversation) {
-        conversation = [self.tableView dequeueReusableCellWithIdentifier:GroupConversationCellIdent];
+        conversationCell = [self.tableView dequeueReusableCellWithIdentifier:GroupConversationCellIdent];
     } else {
-        conversation = [self.tableView dequeueReusableCellWithIdentifier:SingleConversationCellIdent];
+        conversationCell = [self.tableView dequeueReusableCellWithIdentifier:SingleConversationCellIdent];
     }
-    conversation.selectionStyle = UITableViewCellSelectionStyleNone;
-    return conversation;
+    
+    conversationCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return conversationCell;
     
 }
 

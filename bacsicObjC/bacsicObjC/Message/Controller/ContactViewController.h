@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../View/ContactCell.h"
 #import "ConversationViewController.h"
-
+#import "FeedAPIContact.h"
+#import "../View/HeaderAlphabet.h"
+#import "NSString+GetLastName.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GroupViewController : UIViewController
+@interface ContactViewController : UIViewController
 
 @end
 

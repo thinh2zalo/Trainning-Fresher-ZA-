@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (GetLastName)
++(NSString *)getLastName:(NSString *) fullName;
 
 @end
 

@@ -11,6 +11,10 @@
 		520BF5E82330CC9E00CFCFDE /* FeedAPIMess.m in Sources */ = {isa = PBXBuildFile; fileRef = 520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */; };
 		521BBCF72333176C005B905F /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBCF62333176C005B905F /* MessageViewController.m */; };
 		521BBCFA23335EE2005B905F /* ConversationViewController+trash.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBCF923335EE2005B905F /* ConversationViewController+trash.m */; };
+		529D6BF9233C503F006102C1 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6BF8233C503F006102C1 /* ContactCell.m */; };
+		529D6BFC233C5883006102C1 /* FeedAPIContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6BFB233C5883006102C1 /* FeedAPIContact.m */; };
+		529D6BFF233C9F71006102C1 /* HeaderAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6BFE233C9F71006102C1 /* HeaderAlphabet.m */; };
+		529D6C02233CD025006102C1 /* NSString+GetLastName.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C01233CD025006102C1 /* NSString+GetLastName.m */; };
 		52E7CDD82338BE9B00060545 /* UIView+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E7CDD72338BE9B00060545 /* UIView+Padding.m */; };
 		52EA02FC23373E540088E05C /* SingleAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EA02FB23373E540088E05C /* SingleAvatar.m */; };
 		52EA02FF233745380088E05C /* GroupAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EA02FE233745380088E05C /* GroupAvatar.m */; };
@@ -37,7 +41,7 @@
 		E78A06D8230E4E0900C2DA1B /* ThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06D7230E4E0900C2DA1B /* ThreeImageCell.m */; };
 		E78A06DD230E7C4800C2DA1B /* BigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06DC230E7C4800C2DA1B /* BigImageCell.m */; };
 		E78A06E3230EAB2800C2DA1B /* ParentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A06E2230EAB2800C2DA1B /* ParentsCell.m */; };
-		E7FB1B39232A5EF7007A747B /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB1B38232A5EF7007A747B /* GroupViewController.m */; };
+		E7FB1B39232A5EF7007A747B /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB1B38232A5EF7007A747B /* ContactViewController.m */; };
 		E7FB1B3C232A5F0A007A747B /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB1B3B232A5F0A007A747B /* PeopleViewController.m */; };
 		E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FB9C15230930A3000D66AE /* ConnectData.m */; };
 		E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FCD29A22FD4A2A00597004 /* AppDelegate.m */; };
@@ -94,6 +98,14 @@
 		521BBCF62333176C005B905F /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		521BBCF823335EE2005B905F /* ConversationViewController+trash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConversationViewController+trash.h"; sourceTree = "<group>"; };
 		521BBCF923335EE2005B905F /* ConversationViewController+trash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ConversationViewController+trash.m"; sourceTree = "<group>"; };
+		529D6BF7233C503F006102C1 /* ContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
+		529D6BF8233C503F006102C1 /* ContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
+		529D6BFA233C5883006102C1 /* FeedAPIContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedAPIContact.h; sourceTree = "<group>"; };
+		529D6BFB233C5883006102C1 /* FeedAPIContact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedAPIContact.m; sourceTree = "<group>"; };
+		529D6BFD233C9F71006102C1 /* HeaderAlphabet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderAlphabet.h; sourceTree = "<group>"; };
+		529D6BFE233C9F71006102C1 /* HeaderAlphabet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderAlphabet.m; sourceTree = "<group>"; };
+		529D6C00233CD025006102C1 /* NSString+GetLastName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GetLastName.h"; sourceTree = "<group>"; };
+		529D6C01233CD025006102C1 /* NSString+GetLastName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetLastName.m"; sourceTree = "<group>"; };
 		52E7CDD62338BE9B00060545 /* UIView+Padding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Padding.h"; sourceTree = "<group>"; };
 		52E7CDD72338BE9B00060545 /* UIView+Padding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Padding.m"; sourceTree = "<group>"; };
 		52EA02FA23373E540088E05C /* SingleAvatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleAvatar.h; sourceTree = "<group>"; };
@@ -147,8 +159,8 @@
 		E78A06DC230E7C4800C2DA1B /* BigImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigImageCell.m; sourceTree = "<group>"; };
 		E78A06E1230EAB2800C2DA1B /* ParentsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentsCell.h; sourceTree = "<group>"; };
 		E78A06E2230EAB2800C2DA1B /* ParentsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentsCell.m; sourceTree = "<group>"; };
-		E7FB1B37232A5EF7007A747B /* GroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupViewController.h; sourceTree = "<group>"; };
-		E7FB1B38232A5EF7007A747B /* GroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
+		E7FB1B37232A5EF7007A747B /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		E7FB1B38232A5EF7007A747B /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		E7FB1B3A232A5F0A007A747B /* PeopleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		E7FB1B3B232A5F0A007A747B /* PeopleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
 		E7FB9C14230930A3000D66AE /* ConnectData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectData.h; sourceTree = "<group>"; };
@@ -277,6 +289,8 @@
 			children = (
 				52EFD9D9232F7CAA00FC0451 /* MessageCell.h */,
 				52EFD9DA232F7CAA00FC0451 /* MessageCell.m */,
+				529D6BF7233C503F006102C1 /* ContactCell.h */,
+				529D6BF8233C503F006102C1 /* ContactCell.m */,
 				E701984D2327B2B100AB474F /* ConversationCell.h */,
 				E701984E2327B2B100AB474F /* ConversationCell.m */,
 				E70198502327B8BE00AB474F /* SingleConversationCell.h */,
@@ -291,6 +305,8 @@
 				52EA02FB23373E540088E05C /* SingleAvatar.m */,
 				52EA02FD233745380088E05C /* GroupAvatar.h */,
 				52EA02FE233745380088E05C /* GroupAvatar.m */,
+				529D6BFD233C9F71006102C1 /* HeaderAlphabet.h */,
+				529D6BFE233C9F71006102C1 /* HeaderAlphabet.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,18 +318,22 @@
 				E701984B2327940100AB474F /* RootMesViewController.m */,
 				52EFD9D6232F70F900FC0451 /* ConversationViewController.h */,
 				52EFD9D7232F70F900FC0451 /* ConversationViewController.m */,
-				E7FB1B37232A5EF7007A747B /* GroupViewController.h */,
-				E7FB1B38232A5EF7007A747B /* GroupViewController.m */,
+				E7FB1B37232A5EF7007A747B /* ContactViewController.h */,
+				E7FB1B38232A5EF7007A747B /* ContactViewController.m */,
 				E7FB1B3A232A5F0A007A747B /* PeopleViewController.h */,
 				E7FB1B3B232A5F0A007A747B /* PeopleViewController.m */,
 				52EFD9DF232F8A7D00FC0451 /* ConversationViewController+CallAPI.h */,
 				52EFD9E0232F8A7D00FC0451 /* ConversationViewController+CallAPI.m */,
-				520BF5E62330CC9E00CFCFDE /* FeedAPMess.h */,
-				520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */,
 				521BBCF52333176C005B905F /* MessageViewController.h */,
 				521BBCF62333176C005B905F /* MessageViewController.m */,
 				521BBCF823335EE2005B905F /* ConversationViewController+trash.h */,
 				521BBCF923335EE2005B905F /* ConversationViewController+trash.m */,
+				520BF5E62330CC9E00CFCFDE /* FeedAPMess.h */,
+				520BF5E72330CC9E00CFCFDE /* FeedAPIMess.m */,
+				529D6BFA233C5883006102C1 /* FeedAPIContact.h */,
+				529D6BFB233C5883006102C1 /* FeedAPIContact.m */,
+				529D6C00233CD025006102C1 /* NSString+GetLastName.h */,
+				529D6C01233CD025006102C1 /* NSString+GetLastName.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -652,20 +672,24 @@
 				520BF5E52330CB2C00CFCFDE /* User.m in Sources */,
 				52EFD9DE232F7FD500FC0451 /* Message.m in Sources */,
 				E70249FC22FFBFFE004552A6 /* OutputStream.m in Sources */,
-				E7FB1B39232A5EF7007A747B /* GroupViewController.m in Sources */,
+				E7FB1B39232A5EF7007A747B /* ContactViewController.m in Sources */,
 				E7FB9C16230930A3000D66AE /* ConnectData.m in Sources */,
 				E7FCD2F422FD7C5E00597004 /* InputStream.m in Sources */,
 				E700149722FFE1E40009AA43 /* NSFileHandle+ReadFlowChunks.m in Sources */,
 				E7FB1B3C232A5F0A007A747B /* PeopleViewController.m in Sources */,
+				529D6BF9233C503F006102C1 /* ContactCell.m in Sources */,
 				E78A06D5230E495D00C2DA1B /* MainViewController.m in Sources */,
 				52EA02FF233745380088E05C /* GroupAvatar.m in Sources */,
 				E7FDD3B9230595D5008D2C33 /* MyViewController.m in Sources */,
 				E701AF0E230171550024E4B3 /* NSFileManager+InteractWithFile.m in Sources */,
 				E7FCD29E22FD4A2A00597004 /* ViewController.m in Sources */,
+				529D6C02233CD025006102C1 /* NSString+GetLastName.m in Sources */,
 				E78A06E3230EAB2800C2DA1B /* ParentsCell.m in Sources */,
 				E7FCD2A922FD4A2B00597004 /* main.m in Sources */,
+				529D6BFC233C5883006102C1 /* FeedAPIContact.m in Sources */,
 				E701984F2327B2B100AB474F /* ConversationCell.m in Sources */,
 				E7FDD3C52305978C008D2C33 /* SingleImageCell.m in Sources */,
+				529D6BFF233C9F71006102C1 /* HeaderAlphabet.m in Sources */,
 				E7FCD29B22FD4A2A00597004 /* AppDelegate.m in Sources */,
 				E7FD20C523221BFB00F08FE1 /* AlertView.m in Sources */,
 				521BBCFA23335EE2005B905F /* ConversationViewController+trash.m in Sources */,
