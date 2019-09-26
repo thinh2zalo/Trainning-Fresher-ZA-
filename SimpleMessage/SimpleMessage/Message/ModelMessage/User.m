@@ -6,8 +6,8 @@
 //  Copyright © 2019 CPU11606. All rights reserved.
 //
 
-#import "Friend.h"
+#import "User.h"
 
-@implementation Friend
+@implementation User
 
 @end

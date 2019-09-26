@@ -1,0 +1,6 @@
+framework module Pods_SimpleMessage_SimpleMessageUITests {
+  umbrella header "Pods-SimpleMessage-SimpleMessageUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,10 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GroupAvatarView : UIView
-@property (nonatomic, strong) UIView * firstView;
-@property (nonatomic, strong) UIView * secondView;
-@property (nonatomic, strong) UIView * ThirdView;
-@property (nonatomic, strong) UILabel * restOfMenber;
+@property (nonatomic, strong) UIImageView * fristAvatar;
+@property (nonatomic, strong) UIImageView * secondAvatar;
+@property (nonatomic, strong) UIImageView * thirdAvatar;
+@property (nonatomic, strong) UIImageView * fourthAvatar;
+@property (nonatomic, strong) UILabel * remainingAmountLabel;
+@property (nonatomic, strong) NSMutableArray <UIImageView *> * arrAvatarView;
 @end
 
 NS_ASSUME_NONNULL_END

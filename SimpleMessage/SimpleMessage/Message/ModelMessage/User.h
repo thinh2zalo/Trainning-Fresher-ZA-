@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Friend : NSObject
+@interface User : NSObject
 @property (nonatomic) NSInteger friendID;
 @property (nonatomic, strong) NSString * userName;
 @property (nonatomic, strong) NSURL * avatarUrl;

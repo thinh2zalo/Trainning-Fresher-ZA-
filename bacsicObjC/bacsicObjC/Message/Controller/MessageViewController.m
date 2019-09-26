@@ -22,9 +22,7 @@ CGFloat minHeaderHeight ;
 CGFloat heightOfBotTitle ;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
-    self.arrConversations =  [[self.feedAPI setupData] copy];
+    self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TABBAR_HEIGHT);
     self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT);
     minHeaderHeight = HEADER_HEIGHT - 44;
@@ -65,7 +63,7 @@ CGFloat heightOfBotTitle ;
     
     if (self.tableView.contentOffset.y < (- midPoint)) {
         [self expandHeader];
-    } else if (self.tableView.contentOffset.y < - 88){
+    } else if (self.tableView.contentOffset.y < - minHeaderHeight){
         [self collapseHeader];
     }
 }
@@ -85,6 +83,29 @@ CGFloat heightOfBotTitle ;
         [self.headerView setHeightForBotHeader:0];
         [self.tableView setContentOffset:CGPointMake(0, - maxHeaderHeight)];
     }];
+}
+
+
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView
+                  editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        [self.arrConversations removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }];
+    deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
+    
+    UITableViewRowAction *callAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Call" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+    }];
+    UITableViewRowAction *informationAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Information" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+    }];
+    
+    return @[deleteAction, callAction, informationAction];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return true;
 }
 
 

@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[GroupConversationCell updateContentInsideCell:]:GroupConversationCell.m">
+      </ContextState>
+      <ContextState
          contextName = "-[RootMesViewController scrollViewDidScroll:]:RootMesViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +13,14 @@
             </PersistentString>
             <PersistentString
                value = "scrollView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__64-[MessageViewController tableView:editActionsForRowAtIndexPath:]_block_invoke:MessageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrConversations">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

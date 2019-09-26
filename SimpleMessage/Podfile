@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SimpleMessage' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SimpleMessage
+  pod 'SDWebImage', '~> 5.0'
+
+  target 'SimpleMessageTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SimpleMessageUITests' do
+    # Pods for testing
+  end
+
+end
