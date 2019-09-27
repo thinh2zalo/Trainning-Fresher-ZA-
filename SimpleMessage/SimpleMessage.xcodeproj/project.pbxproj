@@ -376,8 +376,8 @@
 		529D6C47233CE2FB006102C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5225A1C3233DACC6005B88F6 /* MessageVC */,
 				5225A1C2233DA713005B88F6 /* RootMesVC */,
+				5225A1C3233DACC6005B88F6 /* MessageVC */,
 				5225A1C1233DA6CC005B88F6 /* ConnectAPI */,
 				5225A1C0233DA6A8005B88F6 /* ContactVC */,
 				5225A1BF233DA68D005B88F6 /* ConversationVC */,
@@ -408,6 +408,7 @@
 				529D6C67233CE2FB006102C1 /* HeaderAlphabet.h */,
 				529D6C6E233CE2FB006102C1 /* HeaderAlphabet.m */,
 				529D6C68233CE2FB006102C1 /* ConversationCell.h */,
+				529D6C72233CE2FB006102C1 /* ConversationCell.m */,
 				529D6C69233CE2FB006102C1 /* ContactCell.m */,
 				529D6C6A233CE2FB006102C1 /* GroupAvatarView.h */,
 				529D6C77233CE2FB006102C1 /* GroupAvatarView.m */,
@@ -420,7 +421,6 @@
 				529D6C66233CE2FB006102C1 /* SingleConversationCell.m */,
 				529D6C71233CE2FB006102C1 /* GroupConversationCell.h */,
 				529D6C64233CE2FB006102C1 /* GroupConversationCell.m */,
-				529D6C72233CE2FB006102C1 /* ConversationCell.m */,
 				529D6C73233CE2FB006102C1 /* ContactCell.h */,
 				529D6C76233CE2FB006102C1 /* GroupAvatar.h */,
 			);

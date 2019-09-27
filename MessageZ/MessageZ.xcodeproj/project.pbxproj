@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10F99C6C2A6906C8B559AB42 /* Pods_MessageZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E39CA8D3C350B2EE616763D /* Pods_MessageZ.framework */; };
 		52EB7761233DB3030001F841 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EB7760233DB3030001F841 /* AppDelegate.m */; };
 		52EB7764233DB3030001F841 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EB7763233DB3030001F841 /* ViewController.m */; };
 		52EB7767233DB3030001F841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EB7765233DB3030001F841 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		52EB776F233DB3040001F841 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EB776E233DB3040001F841 /* main.m */; };
 		52EB7779233DB3040001F841 /* MessageZTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EB7778233DB3040001F841 /* MessageZTests.m */; };
 		52EB7784233DB3040001F841 /* MessageZUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EB7783233DB3040001F841 /* MessageZUITests.m */; };
+		63983234C19244A6D173CA5A /* Pods_MessageZTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF7C937CF70D84DA110949A /* Pods_MessageZTests.framework */; };
+		FF2837E040FA8BD9EB2198C9 /* Pods_MessageZ_MessageZUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001883DAF5785C87BE81F1E3 /* Pods_MessageZ_MessageZUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001883DAF5785C87BE81F1E3 /* Pods_MessageZ_MessageZUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageZ_MessageZUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0D69553282CED71262B565 /* Pods-MessageZTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZTests.release.xcconfig"; path = "Target Support Files/Pods-MessageZTests/Pods-MessageZTests.release.xcconfig"; sourceTree = "<group>"; };
+		408E70844939F41CB6CD9ED0 /* Pods-MessageZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZ.debug.xcconfig"; path = "Target Support Files/Pods-MessageZ/Pods-MessageZ.debug.xcconfig"; sourceTree = "<group>"; };
+		468070EDC6B2D00D7B39F697 /* Pods-MessageZ-MessageZUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZ-MessageZUITests.release.xcconfig"; path = "Target Support Files/Pods-MessageZ-MessageZUITests/Pods-MessageZ-MessageZUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AF7C937CF70D84DA110949A /* Pods_MessageZTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageZTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCD1303F54271D5E54D3905 /* Pods-MessageZ-MessageZUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZ-MessageZUITests.debug.xcconfig"; path = "Target Support Files/Pods-MessageZ-MessageZUITests/Pods-MessageZ-MessageZUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52EB775C233DB3030001F841 /* MessageZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EB775F233DB3030001F841 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52EB7760233DB3030001F841 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +60,9 @@
 		52EB777F233DB3040001F841 /* MessageZUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageZUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EB7783233DB3040001F841 /* MessageZUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageZUITests.m; sourceTree = "<group>"; };
 		52EB7785233DB3040001F841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE95039E0336580045175AA /* Pods-MessageZTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZTests.debug.xcconfig"; path = "Target Support Files/Pods-MessageZTests/Pods-MessageZTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E39CA8D3C350B2EE616763D /* Pods_MessageZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F66AE7348B88D51CAF4DB /* Pods-MessageZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageZ.release.xcconfig"; path = "Target Support Files/Pods-MessageZ/Pods-MessageZ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F99C6C2A6906C8B559AB42 /* Pods_MessageZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63983234C19244A6D173CA5A /* Pods_MessageZTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2837E040FA8BD9EB2198C9 /* Pods_MessageZ_MessageZUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				52EB7777233DB3040001F841 /* MessageZTests */,
 				52EB7782233DB3040001F841 /* MessageZUITests */,
 				52EB775D233DB3030001F841 /* Products */,
+				84962FEFA2524D0190A964ED /* Pods */,
+				84EC80947299DD8D04D30ED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +149,30 @@
 			path = MessageZUITests;
 			sourceTree = "<group>";
 		};
+		84962FEFA2524D0190A964ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				408E70844939F41CB6CD9ED0 /* Pods-MessageZ.debug.xcconfig */,
+				D34F66AE7348B88D51CAF4DB /* Pods-MessageZ.release.xcconfig */,
+				4DCD1303F54271D5E54D3905 /* Pods-MessageZ-MessageZUITests.debug.xcconfig */,
+				468070EDC6B2D00D7B39F697 /* Pods-MessageZ-MessageZUITests.release.xcconfig */,
+				7AE95039E0336580045175AA /* Pods-MessageZTests.debug.xcconfig */,
+				1D0D69553282CED71262B565 /* Pods-MessageZTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84EC80947299DD8D04D30ED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E39CA8D3C350B2EE616763D /* Pods_MessageZ.framework */,
+				001883DAF5785C87BE81F1E3 /* Pods_MessageZ_MessageZUITests.framework */,
+				4AF7C937CF70D84DA110949A /* Pods_MessageZTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52EB7788233DB3040001F841 /* Build configuration list for PBXNativeTarget "MessageZ" */;
 			buildPhases = (
+				5FECD72684D27E7999A3FE5A /* [CP] Check Pods Manifest.lock */,
 				52EB7758233DB3030001F841 /* Sources */,
 				52EB7759233DB3030001F841 /* Frameworks */,
 				52EB775A233DB3030001F841 /* Resources */,
+				F17A7860DD490C0ABCE66A8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52EB778B233DB3040001F841 /* Build configuration list for PBXNativeTarget "MessageZTests" */;
 			buildPhases = (
+				6544B933CD046729709F761F /* [CP] Check Pods Manifest.lock */,
 				52EB7770233DB3040001F841 /* Sources */,
 				52EB7771233DB3040001F841 /* Frameworks */,
 				52EB7772233DB3040001F841 /* Resources */,
@@ -174,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52EB778E233DB3040001F841 /* Build configuration list for PBXNativeTarget "MessageZUITests" */;
 			buildPhases = (
+				64A264B45CB162A10EC4F10A /* [CP] Check Pods Manifest.lock */,
 				52EB777B233DB3040001F841 /* Sources */,
 				52EB777C233DB3040001F841 /* Frameworks */,
 				52EB777D233DB3040001F841 /* Resources */,
+				3321335541644C325F27804B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +302,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3321335541644C325F27804B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageZ-MessageZUITests/Pods-MessageZ-MessageZUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageZ-MessageZUITests/Pods-MessageZ-MessageZUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageZ-MessageZUITests/Pods-MessageZ-MessageZUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FECD72684D27E7999A3FE5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageZ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64A264B45CB162A10EC4F10A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageZ-MessageZUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6544B933CD046729709F761F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageZTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F17A7860DD490C0ABCE66A8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageZ/Pods-MessageZ-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageZ/Pods-MessageZ-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageZ/Pods-MessageZ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52EB7758233DB3030001F841 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		52EB7789233DB3040001F841 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408E70844939F41CB6CD9ED0 /* Pods-MessageZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +599,7 @@
 		};
 		52EB778A233DB3040001F841 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34F66AE7348B88D51CAF4DB /* Pods-MessageZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +616,7 @@
 		};
 		52EB778C233DB3040001F841 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AE95039E0336580045175AA /* Pods-MessageZTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +635,7 @@
 		};
 		52EB778D233DB3040001F841 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D0D69553282CED71262B565 /* Pods-MessageZTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -501,6 +654,7 @@
 		};
 		52EB778F233DB3040001F841 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DCD1303F54271D5E54D3905 /* Pods-MessageZ-MessageZUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MessageZUITests/Info.plist;
@@ -518,6 +672,7 @@
 		};
 		52EB7790233DB3040001F841 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 468070EDC6B2D00D7B39F697 /* Pods-MessageZ-MessageZUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MessageZUITests/Info.plist;
