@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Message/Controller/RootMesViewController.h"
+#import "../SimpleMessage/Message/Controller/RootMesVC/RootMesViewController.h"
 @interface AppDelegate ()
 
 @end

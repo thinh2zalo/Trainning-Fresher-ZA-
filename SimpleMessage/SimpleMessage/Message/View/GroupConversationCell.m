@@ -7,7 +7,6 @@
 //
 
 #import "GroupConversationCell.h"
-
 @implementation GroupConversationCell
 
 - (void)layoutSubviews {

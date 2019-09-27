@@ -1,10 +1,5 @@
-//
-//  HeaderView.m
-//  bacsicObjC
-//
-//  Created by CPU11606 on 9/13/19.
-//  Copyright © 2019 CPU11606. All rights reserved.
-//
+
+
 #import "../define.h"
 #import "HeaderView.h"
 @interface HeaderView()
@@ -27,7 +22,6 @@
     UIEdgeInsets shadowInsets     = UIEdgeInsetsMake(0, 0, -1.5f, 0);
     UIBezierPath *shadowPath      = [UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(self.topHeaderView.bounds, shadowInsets)];
     self.topHeaderView.layer.shadowPath    = shadowPath.CGPath;
-//
 
 
 }
@@ -42,9 +36,9 @@
 - (UIView *)botHeaderView {
     
     if (!_botHeaderView) {
+
         _botHeaderView = UIView.new;
-
-
+        _botHeaderView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_botHeaderView];
     }
     return _botHeaderView;

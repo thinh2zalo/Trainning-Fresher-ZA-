@@ -1,0 +1,6 @@
+framework module Pods_MessageZ {
+  umbrella header "Pods-MessageZ-umbrella.h"
+
+  export *
+  module * { export * }
+}
