@@ -18,9 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT );
-    self.tabBar.frame = CGRectMake(0, self.view.frame.size.height - TABBAR_HEIGHT, self.view.frame.size.width,   TABBAR_HEIGHT);
+
+    self.tabBar;
+
     [self.navigationController setNavigationBarHidden:YES];
+
     
 }
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
@@ -52,22 +54,20 @@
         if (toVC.view.superview != self.view) {
             [self addChildViewController:toVC];
             [toVC willMoveToParentViewController:self];
-            toVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.height - self.tabBar.frame.size.height + self.headerView.frame.size.height);
-            [self.view insertSubview:toVC.view belowSubview:self.headerView];
+            [self.view addSubview:toVC.view];
+            
+            [toVC.view constrainBottomSpaceToView:self.tabBar predicate:@"0"];
+
+//            [toVC.view constrainTopSpaceToView:self.view predicate:@"0"];
+            [toVC.view constrainLeadingSpaceToView:self.view predicate:@"0"];
+//            [toVC.view constrainTrailingSpaceToView:self.view predicate:@"0"];
+
 
             [toVC didMoveToParentViewController:self];
         }
     }
 }
 
-- (HeaderView *)headerView {
-    if (!_headerView) {
-        _headerView = HeaderView.new;
-        
-        [self.view addSubview:_headerView];
-    }
-    return _headerView;
-}
 
 - (MessageViewController *)message {
     if (!_message) {
@@ -89,16 +89,17 @@
     if (!_tabBar) {
         _tabBar = UITabBar.new;
         _tabBar.delegate = self;
-        _tabBar.translatesAutoresizingMaskIntoConstraints = false;
         [_tabBar setItems:@[[[UITabBarItem alloc] initWithTitle:@"Messages" image:[UIImage imageNamed:@"people"] tag:1],
                             [[UITabBarItem alloc] initWithTitle:@"Contact" image:[UIImage imageNamed:@"groups"] tag:2],
                             
                             [[UITabBarItem alloc] initWithTitle:@"Call" image:[UIImage imageNamed:@"calls"] tag:3]
                             ]];
-        
-        [_tabBar setSelectedItem:_tabBar.items[0]];
-        
         [self.view addSubview:_tabBar ];
+        [_tabBar setSelectedItem:_tabBar.items[0]];
+        [_tabBar alignBottomEdgeWithView:self.view predicate:@"0"];
+        [_tabBar alignLeadingEdgeWithView:self.view predicate:@"0"];
+        [_tabBar constrainWidth:[NSString stringWithFormat:@"%f",self.view.frame.size.width] height:@"100"];
+
     }
     return _tabBar;
 }

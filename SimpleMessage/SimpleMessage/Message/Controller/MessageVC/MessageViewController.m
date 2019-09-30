@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray <ConversationModel *> *arrConversations;
 @property (nonatomic, strong) UITabBar * tabBar;
-@property (nonatomic, strong) HeaderView * headerView;
+//@property (nonatomic, strong) HeaderView * headerView;
 @property (nonatomic, strong) FeedAPIMess * feedAPI;
 @end
 
@@ -25,65 +25,64 @@ BOOL isEditting;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    isEditting = true;
     
-    heightOfHeader = [(RootMesViewController *) self.parentViewController headerView].frame.size.height;
+//    heightOfHeader = [(RootMesViewController *) self.parentViewController headerView].frame.size.height;
     self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - [(RootMesViewController *) self.parentViewController tabBar].frame.size.height);
     
-    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, heightOfHeader);
+    
+//    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, heightOfHeader);
     minHeaderHeight = heightOfHeader - 44;
     maxHeaderHeight = heightOfHeader;
 
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self scrollViewDidStopScrolling];
-}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    [self scrollViewDidStopScrolling];
+//}
+//
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    if (!decelerate) {
+//        [self scrollViewDidStopScrolling];
+//    }
+//
+//}
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (!decelerate) {
-        [self scrollViewDidStopScrolling];
-    }
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
+//    [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:scrollDiff];
+//    [[(RootMesViewController *) self.parentViewController headerView] setHeightForTopHeader:scrollDiff];
+//    [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:YES];
+//
+//    if (self.tableView.contentOffset.y > - maxHeaderHeight) {
+//        [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:NO];
+//
+//    }
+//}
 
-}
+//- (void) scrollViewDidStopScrolling {
+//    CGFloat range = maxHeaderHeight - minHeaderHeight;
+//    CGFloat midPoint = minHeaderHeight + (range / 2);
+//    if (self.tableView.contentOffset.y < (- midPoint)) {
+//        [self expandHeader];
+//    } else if (self.tableView.contentOffset.y < - minHeaderHeight){
+//        [self collapseHeader];
+//    }
+//}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
-    [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:scrollDiff];
-    [[(RootMesViewController *) self.parentViewController headerView] setHeightForTopHeader:scrollDiff];
-    [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:YES];
-    
-    if (self.tableView.contentOffset.y > - maxHeaderHeight) {
-        [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:NO];
-        
-    }
-}
+//- (void) collapseHeader {
+//    [[(RootMesViewController *) self.parentViewController headerView] setHidden:false];
+//    [UIView animateWithDuration:0.2 animations:^{
+//        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:heightOfBotTitle];
+//        [self.tableView setContentOffset:CGPointMake(0, - minHeaderHeight)];
+//    }];
+//}
 
-- (void) scrollViewDidStopScrolling {
-    CGFloat range = maxHeaderHeight - minHeaderHeight;
-    CGFloat midPoint = minHeaderHeight + (range / 2);
-    if (self.tableView.contentOffset.y < (- midPoint)) {
-        [self expandHeader];
-    } else if (self.tableView.contentOffset.y < - minHeaderHeight){
-        [self collapseHeader];
-    }
-}
-
-- (void) collapseHeader {
-    [[(RootMesViewController *) self.parentViewController headerView] setHidden:false];
-    [UIView animateWithDuration:0.2 animations:^{
-        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:heightOfBotTitle];
-        [self.tableView setContentOffset:CGPointMake(0, - minHeaderHeight)];
-    }];
-}
-
-- (void) expandHeader {
-    [UIView animateWithDuration:0.2 animations:^{
-        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:0];
-        [self.tableView setContentOffset:CGPointMake(0, - maxHeaderHeight)];
-    }];
-}
+//- (void) expandHeader {
+//    [UIView animateWithDuration:0.2 animations:^{
+//        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:0];
+//        [self.tableView setContentOffset:CGPointMake(0, - maxHeaderHeight)];
+//    }];
+//}
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView
                   editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -159,6 +158,14 @@ BOOL isEditting;
     return _feedAPI;
     
 }
+//- (HeaderView *)headerView {
+//    if (!_headerView) {
+//        _headerView = HeaderView.new;
+//
+//        [self.view addSubview:_headerView];
+//    }
+//    return _headerView;
+//}
 
 - (UITableView *)tableView {
 

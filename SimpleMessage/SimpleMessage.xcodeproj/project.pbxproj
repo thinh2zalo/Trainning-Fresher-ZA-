@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		48F1BB5B5A6731078C8C6D79 /* Pods_SimpleMessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6D4DEE8C3E4CDFDC92C0D8 /* Pods_SimpleMessageTests.framework */; };
+		521C5E1B2341E32900AADD0D /* UIView+ZBMAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */; };
+		521C5E2A2341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C5E292341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m */; };
 		521E36AD2339FA4900DEEA9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36AC2339FA4900DEEA9C /* AppDelegate.m */; };
 		521E36B02339FA4900DEEA9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36AF2339FA4900DEEA9C /* ViewController.m */; };
 		521E36B32339FA4900DEEA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E36B12339FA4900DEEA9C /* Main.storyboard */; };
@@ -143,6 +145,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521C5E192341E32900AADD0D /* UIView+ZBMAutoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZBMAutoLayout.h"; sourceTree = "<group>"; };
+		521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZBMAutoLayout.m"; sourceTree = "<group>"; };
+		521C5E282341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZBMAutoLayoutPredicate.h"; sourceTree = "<group>"; };
+		521C5E292341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZBMAutoLayoutPredicate.m"; sourceTree = "<group>"; };
 		521E36A82339FA4900DEEA9C /* SimpleMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E36AB2339FA4900DEEA9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		521E36AC2339FA4900DEEA9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -432,6 +438,10 @@
 			children = (
 				529D6C79233CE2FB006102C1 /* UIView+Padding.h */,
 				529D6C7A233CE2FB006102C1 /* UIView+Padding.m */,
+				521C5E192341E32900AADD0D /* UIView+ZBMAutoLayout.h */,
+				521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */,
+				521C5E282341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.h */,
+				521C5E292341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -822,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529D6C8E233CE2FB006102C1 /* ConversationCell.m in Sources */,
+				521C5E2A2341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m in Sources */,
 				529D6C8B233CE2FB006102C1 /* ContactCell.m in Sources */,
 				529D6C90233CE2FB006102C1 /* SingleAvatar.m in Sources */,
 				529D6C91233CE2FB006102C1 /* GroupAvatarView.m in Sources */,
@@ -830,6 +841,7 @@
 				529D6C86233CE2FB006102C1 /* ConversationModel.m in Sources */,
 				529D6C7C233CE2FB006102C1 /* NSString+GetLastName.m in Sources */,
 				529D6C7D233CE2FB006102C1 /* ContactViewController.m in Sources */,
+				521C5E1B2341E32900AADD0D /* UIView+ZBMAutoLayout.m in Sources */,
 				529D6C8C233CE2FB006102C1 /* GroupAvatar.m in Sources */,
 				529D6C88233CE2FB006102C1 /* GroupConversationCell.m in Sources */,
 				529D6C81233CE2FB006102C1 /* FeedAPIMess.m in Sources */,

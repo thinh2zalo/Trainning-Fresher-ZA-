@@ -25,8 +25,6 @@
     self.collectionView.frame = CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height  - TABBAR_HEIGHT );
 }
 
-
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ContactCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:CONTACT_CELL forIndexPath:indexPath];
 
@@ -77,6 +75,7 @@
     }
     return dictListContacts;
 }
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *headerAlphabet = nil;
     if (kind == UICollectionElementKindSectionHeader) {
@@ -130,7 +129,6 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
-
 
 
 - (NSMutableDictionary *)dictListContacts {

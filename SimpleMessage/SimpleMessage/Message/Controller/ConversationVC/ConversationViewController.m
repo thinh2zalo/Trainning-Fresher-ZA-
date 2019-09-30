@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
     self.arrMessages = [[self.feedAPI setUpdataMessage:self.conversationId] copy];
     self.collectionView.frame = CGRectMake(0, 88, self.view.frame.size.width, self.view.frame.size.height - 88);
     self.view.backgroundColor = [UIColor whiteColor];

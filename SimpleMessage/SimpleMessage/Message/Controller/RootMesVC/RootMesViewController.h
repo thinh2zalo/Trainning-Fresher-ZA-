@@ -17,6 +17,7 @@
 #import "../../define.h"
 #import "ContactViewController.h"
 #import "FeedAPMess.h"
+#import "../../Utility/UIView+ZBMAutoLayout.h"
 #define KEY_WINDOW_SAFE_AREA_INSETS [UIApplication sharedApplication].keyWindow.safeAreaInsets
 #define SingleConversationCellIdent @"SingleConversationCell"
 #define GroupConversationCellIdent @"GroupConversationCell"
@@ -24,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RootMesViewController : UINavigationController
 @property (nonatomic, strong) UITabBar * tabBar;
-@property (nonatomic,strong) HeaderView * headerView;
 @end
 
 NS_ASSUME_NONNULL_END
