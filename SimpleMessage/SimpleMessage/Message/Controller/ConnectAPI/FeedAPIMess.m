@@ -10,7 +10,7 @@
 
 @implementation FeedAPIMess
 - (NSArray <ConversationModel *> *)setupData {
-    NSMutableArray * arrConversations = NSMutableArray.new;
+    NSArray * arrConversations = NSArray.new;
     User * user = User.new;
     user.userName = @"Hoai Thi";
     user.friendID = 123;
@@ -54,16 +54,8 @@
     ConversationModel * conversation9 = conversation;
     ConversationModel * conversation10 = conversation;
   
-    [arrConversations  addObject:conversation];
-    [arrConversations  addObject:conversation2];
-    [arrConversations  addObject:conversation3];
-    [arrConversations  addObject:conversation4];
-    [arrConversations  addObject:conversation5];
-    [arrConversations  addObject:conversation6];
-    [arrConversations  addObject:conversation7];
-    [arrConversations  addObject:conversation8];
-    [arrConversations  addObject:conversation9];
-    [arrConversations  addObject:conversation10];
+    arrConversations = @[conversation, conversation2, conversation3, conversation4, conversation5, conversation6, conversation7, conversation8, conversation9, conversation10];
+
     return arrConversations;
 }
 //

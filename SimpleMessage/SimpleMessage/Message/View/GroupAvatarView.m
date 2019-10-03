@@ -21,7 +21,8 @@
     self.arrAvatarView[2].frame = CGRectMake(0, heightOfEachAvatarView , widthOfEachAvatarView, heightOfEachAvatarView);
     self.arrAvatarView[3].frame = CGRectMake(widthOfEachAvatarView, heightOfEachAvatarView , widthOfEachAvatarView, heightOfEachAvatarView);
     self.remainingAmountLabel.frame = CGRectMake(widthOfEachAvatarView, heightOfEachAvatarView , widthOfEachAvatarView, heightOfEachAvatarView);
-    
+    self.remainingAmountLabel.layer.cornerRadius = self.remainingAmountLabel.frame.size.width / 2;
+
     for ( int i = 0 ; i <= 3 ; i ++) {
         self.arrAvatarView[i].layer.cornerRadius = self.arrAvatarView.firstObject.frame.size.width / 2;
         self.arrAvatarView[i].layer.borderWidth = 3.0f;
@@ -51,7 +52,6 @@
         _remainingAmountLabel = UILabel.new;
         _remainingAmountLabel.textColor = [UIColor whiteColor];
         _remainingAmountLabel.backgroundColor = [UIColor redColor];
-        _remainingAmountLabel.layer.cornerRadius = 20;
         _remainingAmountLabel.layer.masksToBounds = true;
         
         _remainingAmountLabel.textAlignment = NSTextAlignmentCenter;

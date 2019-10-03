@@ -40,7 +40,12 @@
     self.timeLab.text = conversationModel.message.time;
     
     if ( conversationModel.countNewMessage > 0) {
-        self.countNewMessageLab.text = [NSString stringWithFormat:@"%tu", conversationModel.countNewMessage];
+        if (  conversationModel.countNewMessage > 5 ) {
+            self.countNewMessageLab.text = @"5+";
+        } else {
+            self.countNewMessageLab.text = [NSString stringWithFormat:@"%tu", conversationModel.countNewMessage];
+
+        }
     } else [self.countNewMessageLab setHidden:YES];
 
 }

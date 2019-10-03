@@ -167,7 +167,6 @@
 
 + (NSLayoutConstraint *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(UIView *)ofViews toViews:(UIView *)toViews predicate:(NSString *)predicate {
     return [self alignAttribute:attribute ofViews:ofViews toAttribute:attribute ofViews:toViews predicate:predicate];
-    
 }
 
 + (NSLayoutConstraint *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(UIView *)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(UIView *)toViews predicate:(NSString *)predicate {

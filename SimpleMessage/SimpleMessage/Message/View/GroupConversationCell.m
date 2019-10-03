@@ -24,57 +24,29 @@
         int index = 0;
         
         for (User * user in conversationModel.arrUsers) {
-            dispatch_async(dispatch_get_global_queue(0,0), ^{
-                
-                NSURL *url = user.avatarUrl;
-                NSData * data = [[NSData alloc] initWithContentsOfURL:url];
-                if (data == nil){
-                    NSLog(@"data is null");
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.groupAvatarView.arrAvatarView[index].image = [UIImage imageWithData: data];
-                    });
-                }});
+            NSURL *url = user.avatarUrl;
+            [self.groupAvatarView.arrAvatarView[index] sd_setImageWithURL:[NSURL URLWithString:url.absoluteString]
+                                               placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+
             index = index + 1;
             
         }
     } else {
         for (int i = 0; i < 3 ; i ++) {
-            dispatch_async(dispatch_get_global_queue(0,0), ^{
-                
-                NSURL *url = conversationModel.arrUsers[i].avatarUrl;
-                NSData * data = [[NSData alloc] initWithContentsOfURL:url];
-                if (data == nil){
-                    NSLog(@"data is null");
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.groupAvatarView.arrAvatarView[i].image = [UIImage imageWithData: data];
-                    });
-                }});
+            NSURL *url = conversationModel.arrUsers[i].avatarUrl;
+
+            [self.groupAvatarView.arrAvatarView[i] sd_setImageWithURL:[NSURL URLWithString:url.absoluteString]
+                                                         placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+          
         }
-        self.groupAvatarView.remainingAmountLabel.text = [NSString stringWithFormat:@"%tu", [conversationModel.arrUsers count] - 3 ];
+        if ( [conversationModel.arrUsers count] < 5 ) {
+            self.groupAvatarView.remainingAmountLabel.text = [NSString stringWithFormat:@"%tu", [conversationModel.arrUsers count] - 3 ];
+        } else {
+            self.groupAvatarView.remainingAmountLabel.text = @"5+";
+        }
+        
     }
     
-    
-    //    if ([conversationModel.arrUsers count] > 4) {
-    //        int index = 0;
-    //        for (int i = 0 ; i < 3 ; i ++) {
-    //            dispatch_async(dispatch_get_global_queue(0,0), ^{
-    //
-    //                NSURL *url = conversationModel.arrUsers[i].avatarUrl;
-    //                NSData * data = [[NSData alloc] initWithContentsOfURL:url];
-    //                if (data == nil){
-    //                    NSLog(@"data is null");
-    //                } else {
-    //                    dispatch_async(dispatch_get_main_queue(), ^{
-    //                        self.groupAvatarView.arrAvatarView[i].image = [UIImage imageWithData: data];
-    //                    });
-    //                }});
-    //        }
-    //
-    //
-    //
-    //    }
 }
 
 - (GroupAvatarView *)groupAvatarView {

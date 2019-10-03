@@ -39,7 +39,7 @@
 
         _botHeaderView = UIView.new;
         _botHeaderView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:_botHeaderView];
+        [self insertSubview:_botHeaderView belowSubview:self.topHeaderView];
     }
     return _botHeaderView;
 }
@@ -85,7 +85,6 @@
         [_titleTopLab setFont:[UIFont boldSystemFontOfSize:23]];
         _titleTopLab.textAlignment = NSTextAlignmentCenter;
         
-        _titleTopLab.text = @"Message";
         [self.topHeaderView addSubview:_titleTopLab];
     }
     return  _titleTopLab;

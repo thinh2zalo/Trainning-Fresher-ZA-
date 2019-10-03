@@ -10,9 +10,11 @@
 #define CONTACT_CELL @"ContactCell"
 #define HEADER_ALPHABET @"headerAlphabet"
 
-@interface ContactViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface ContactViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionIndexViewDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) NSMutableArray <User *> * arrContacts;
+@property (nonatomic, strong) HeaderView *headerView;
+@property (nonatomic,strong) CollectionIndexView * collectionIndexView;
 @property (nonatomic, strong) NSMutableDictionary * dictListContacts;
 
 @end
@@ -22,12 +24,83 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.collectionView.frame = CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height  - TABBAR_HEIGHT );
+    [self.headerView.topHeaderView setHidden:YES];
+    [self.view layoutIfNeeded];
+    heightOfHeader = self.headerView.frame.size.height;
+    minHeaderHeight = heightOfHeader - 44;
+    maxHeaderHeight = heightOfHeader;
+    
+    NSArray <NSString *> * array = [[self.dictListContacts allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    [self.collectionIndexView setupWithIndexTitles:array];
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self scrollViewDidStopScrolling];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [self scrollViewDidStopScrolling];
+    }
+    
+}
+
+
+- (void)moveContentToIndexPath:(NSIndexPath *)indexPath {
+    [self.collectionView scrollItemToTopWithIndexPath:indexPath];
+//    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x,self.collectionView.contentOffset.y ) ;
+
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
+
+    self.collectionView.contentInset = UIEdgeInsetsMake(MAX (88 , heightOfHeader - scrollDiff), 0,  0 ,0);
+    
+    [self.headerView  setHeightForBotHeader:scrollDiff];
+    [self.headerView  setHeightForTopHeader:scrollDiff];
+    [self.headerView.topHeaderView setHidden:YES];
+    if (self.collectionView.contentOffset.y > - maxHeaderHeight) {
+        [self.headerView.topHeaderView setHidden:NO];
+        
+    }
+}
+
+- (NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView {
+    return [self.dictListContacts allKeys];
+}
+
+- (void) scrollViewDidStopScrolling {
+
+    CGFloat range = maxHeaderHeight - minHeaderHeight;
+    CGFloat midPoint = minHeaderHeight + (range / 2);
+    if (self.collectionView.contentOffset.y < (- midPoint)) {
+        [self expandHeader];
+    } else if (self.collectionView.contentOffset.y < - minHeaderHeight){
+        [self collapseHeader];
+    }
+}
+
+
+
+- (void) collapseHeader {
+    [self.headerView setHidden:false];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.headerView setHeightForBotHeader:self->heightOfBotTitle];
+        [self.collectionView setContentOffset:CGPointMake(0, - self->minHeaderHeight)];
+    }];
+}
+
+- (void) expandHeader {
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.headerView setHeightForBotHeader:0];
+        [self.collectionView setContentOffset:CGPointMake(0, - self->maxHeaderHeight)];
+    }];
+}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ContactCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:CONTACT_CELL forIndexPath:indexPath];
-
+    
     [(ContactCell *) cell updateContactCell:[self getArrayOfDict: self.dictListContacts andIndex:indexPath.section][indexPath.item]];
     return cell;
 }
@@ -37,18 +110,22 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
+    
     return [[self getArrayOfDict: self.dictListContacts andIndex:section] count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-
     return [self.dictListContacts count];
 }
 
 - (NSArray *) getArrayOfDict:(NSDictionary *) dict andIndex:(NSInteger) index {
-    NSString *key = [[dict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)][index];
-    return [dict objectForKey:key];
+    if ([dict isKindOfClass:NSDictionary.class]) {
+        NSString *key = [[dict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)][index];
+        return [dict objectForKey:key];
+        
+    }
+    else return @[];
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,14 +139,15 @@
         
         NSString * fullName = [NSString getLastName:user.userName];
         NSString * firstCharacter = [[fullName substringToIndex:1] uppercaseString];
-        [[dictListContacts objectForKey:firstCharacter] addObject:user];
-        
+        if ([firstCharacter isKindOfClass:NSString.class]) {
+            [[dictListContacts objectForKey:firstCharacter] addObject:user];
+        }
         if (![dictListContacts objectForKey:firstCharacter]) {
             NSMutableArray <User *> * subArr = NSMutableArray.new;
             [subArr addObject:user];
             [dictListContacts setObject:subArr forKey:firstCharacter];
-
-            }
+            
+        }
         currentIndex++;
         
     }
@@ -101,10 +179,11 @@
         flowLayout.minimumLineSpacing = 30;
         flowLayout.sectionInset = UIEdgeInsetsMake(30, 20,  30 ,20);
         flowLayout.sectionHeadersPinToVisibleBounds = true;
+        
         flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
-        
+        _collectionView.contentInset = UIEdgeInsetsMake(heightOfHeader , 0, 0, 0);
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
@@ -115,9 +194,8 @@
         [_collectionView registerClass:HeaderAlphabet.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HEADER_ALPHABET];
         
         [_collectionView registerClass:ContactCell.class forCellWithReuseIdentifier:CONTACT_CELL];
-        
-        
-        [self.view addSubview:_collectionView];
+        [self.view insertSubview:_collectionView belowSubview:self.headerView];
+        [_collectionView alignToView:self.view];
     }
     return _collectionView;
 }
@@ -130,11 +208,35 @@
     [self.view endEditing:YES];
 }
 
+- (CollectionIndexView *)collectionIndexView {
+    if (!_collectionIndexView) {
+        _collectionIndexView = CollectionIndexView.new;
+        _collectionIndexView.delegate = self;
+        [self.view insertSubview:_collectionIndexView aboveSubview:self.collectionView];
+        [_collectionIndexView alignTop:@"0" bottom:@"0" toView:self.view];
+        [_collectionIndexView alignTrailingEdgeWithView:self.view predicate:@"0"];
+        [_collectionIndexView constrainWidth:@"30"];
+    }
+    return _collectionIndexView;
+}
+
+- (HeaderView *)headerView {
+    if (!_headerView) {
+        _headerView = HeaderView.new;
+        [self.view addSubview:_headerView];
+        _headerView.titleBotLab.text = @"CONTACT";
+        _headerView.titleTopLab.text = @"Contact";
+        [_headerView alignTop:@"0" leading:@"0" toView:self.view];
+        [_headerView alignTrailingEdgeWithView:self.view predicate:@"0"];
+        [_headerView constrainHeight:@"132"];
+    }
+    return _headerView;
+}
 
 - (NSMutableDictionary *)dictListContacts {
     if (!_dictListContacts) {
         _dictListContacts = NSMutableDictionary.new;
-       _dictListContacts = [self sortListContact:self.arrContacts];
+        _dictListContacts = [self sortListContact:self.arrContacts];
     }
     return _dictListContacts;
 }

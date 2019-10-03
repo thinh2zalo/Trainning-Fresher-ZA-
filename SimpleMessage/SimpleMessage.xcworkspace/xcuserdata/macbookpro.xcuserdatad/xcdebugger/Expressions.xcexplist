@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CollectionIndexView setupWithIndexTitles:]:CollectionIndexView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MessageViewController viewDidLoad]:MessageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableview.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

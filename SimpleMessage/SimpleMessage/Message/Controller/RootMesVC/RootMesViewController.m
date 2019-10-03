@@ -18,16 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.tabBar;
+//    [self switchToViewController:self.message];
 
     [self.navigationController setNavigationBarHidden:YES];
-
+    
     
 }
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
-    self = [super initWithRootViewController:rootViewController];
-    [self switchToViewController:rootViewController];
+//    self = [super initWithRootViewController:rootViewController];
+    [self switchToViewController:self.message];
+
     return self;
 }
 
@@ -39,7 +40,7 @@
         case 2:
             [self switchToViewController:self.groups];
             break;
-
+            
         default:
             break;
     }
@@ -52,17 +53,18 @@
             [each.view setHidden:each != toVC];
         }
         if (toVC.view.superview != self.view) {
+
             [self addChildViewController:toVC];
-            [toVC willMoveToParentViewController:self];
             [self.view addSubview:toVC.view];
-            
+
+            [toVC willMoveToParentViewController:self];
+//            [toVC.view alignToView:self.view];
+            [self.view addSubview:toVC.view];
+
+            [toVC.view alignTrailingEdgeWithView:self.view predicate:@"0"];
+            [toVC.view alignLeadingEdgeWithView:self.view predicate:@"0"];
+            [toVC.view alignTopEdgeWithView:self.view predicate:@"0"];
             [toVC.view constrainBottomSpaceToView:self.tabBar predicate:@"0"];
-
-//            [toVC.view constrainTopSpaceToView:self.view predicate:@"0"];
-            [toVC.view constrainLeadingSpaceToView:self.view predicate:@"0"];
-//            [toVC.view constrainTrailingSpaceToView:self.view predicate:@"0"];
-
-
             [toVC didMoveToParentViewController:self];
         }
     }
@@ -72,16 +74,16 @@
 - (MessageViewController *)message {
     if (!_message) {
         _message = MessageViewController.new;
-
+        
     }
     return _message;
 }
 - (ContactViewController *)groups {
-        if (!_groups) {
-            _groups = ContactViewController.new;
-        }
-        return _groups;
-
+    if (!_groups) {
+        _groups = ContactViewController.new;
+    }
+    return _groups;
+    
 }
 
 
@@ -99,7 +101,8 @@
         [_tabBar alignBottomEdgeWithView:self.view predicate:@"0"];
         [_tabBar alignLeadingEdgeWithView:self.view predicate:@"0"];
         [_tabBar constrainWidth:[NSString stringWithFormat:@"%f",self.view.frame.size.width] height:@"100"];
-
+ 
+        
     }
     return _tabBar;
 }

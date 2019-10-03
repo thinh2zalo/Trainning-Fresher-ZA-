@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48F1BB5B5A6731078C8C6D79 /* Pods_SimpleMessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6D4DEE8C3E4CDFDC92C0D8 /* Pods_SimpleMessageTests.framework */; };
+		5206B0892345D93400FEE921 /* UICollectionView+ScrollItemToTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5206B0882345D93400FEE921 /* UICollectionView+ScrollItemToTop.m */; };
 		521C5E1B2341E32900AADD0D /* UIView+ZBMAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */; };
 		521C5E2A2341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C5E292341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m */; };
 		521E36AD2339FA4900DEEA9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36AC2339FA4900DEEA9C /* AppDelegate.m */; };
@@ -39,6 +40,7 @@
 		529D6C90233CE2FB006102C1 /* SingleAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C75233CE2FB006102C1 /* SingleAvatar.m */; };
 		529D6C91233CE2FB006102C1 /* GroupAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C77233CE2FB006102C1 /* GroupAvatarView.m */; };
 		529D6C92233CE2FB006102C1 /* UIView+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C7A233CE2FB006102C1 /* UIView+Padding.m */; };
+		52ABEA96234369C6003042F2 /* CollectionIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ABEA95234369C6003042F2 /* CollectionIndexView.m */; };
 		A8D48B261FB52F2ED067A5A0 /* Pods_SimpleMessage_SimpleMessageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7305D3B0B8BF0ACDE3639E /* Pods_SimpleMessage_SimpleMessageUITests.framework */; };
 		D0160CEFDD9B366523D72382 /* Pods_SimpleMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560930DB9EA740B78B14E16A /* Pods_SimpleMessage.framework */; };
 /* End PBXBuildFile section */
@@ -145,6 +147,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5206B0872345D93400FEE921 /* UICollectionView+ScrollItemToTop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ScrollItemToTop.h"; sourceTree = "<group>"; };
+		5206B0882345D93400FEE921 /* UICollectionView+ScrollItemToTop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+ScrollItemToTop.m"; sourceTree = "<group>"; };
 		521C5E192341E32900AADD0D /* UIView+ZBMAutoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZBMAutoLayout.h"; sourceTree = "<group>"; };
 		521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZBMAutoLayout.m"; sourceTree = "<group>"; };
 		521C5E282341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZBMAutoLayoutPredicate.h"; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 		529D6C77233CE2FB006102C1 /* GroupAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupAvatarView.m; sourceTree = "<group>"; };
 		529D6C79233CE2FB006102C1 /* UIView+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Padding.h"; sourceTree = "<group>"; };
 		529D6C7A233CE2FB006102C1 /* UIView+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Padding.m"; sourceTree = "<group>"; };
+		52ABEA94234369C6003042F2 /* CollectionIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionIndexView.h; sourceTree = "<group>"; };
+		52ABEA95234369C6003042F2 /* CollectionIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionIndexView.m; sourceTree = "<group>"; };
 		52EB7702233DB1F20001F841 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		52EB7711233DB1FF0001F841 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		52EB7720233DB2020001F841 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -341,10 +347,10 @@
 		5225A1C1233DA6CC005B88F6 /* ConnectAPI */ = {
 			isa = PBXGroup;
 			children = (
-				529D6C4D233CE2FB006102C1 /* FeedAPIContact.m */,
-				529D6C4E233CE2FB006102C1 /* FeedAPIMess.m */,
 				529D6C57233CE2FB006102C1 /* FeedAPMess.h */,
+				529D6C4E233CE2FB006102C1 /* FeedAPIMess.m */,
 				529D6C58233CE2FB006102C1 /* FeedAPIContact.h */,
+				529D6C4D233CE2FB006102C1 /* FeedAPIContact.m */,
 			);
 			path = ConnectAPI;
 			sourceTree = "<group>";
@@ -382,10 +388,10 @@
 		529D6C47233CE2FB006102C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5225A1C0233DA6A8005B88F6 /* ContactVC */,
 				5225A1C2233DA713005B88F6 /* RootMesVC */,
 				5225A1C3233DACC6005B88F6 /* MessageVC */,
 				5225A1C1233DA6CC005B88F6 /* ConnectAPI */,
-				5225A1C0233DA6A8005B88F6 /* ContactVC */,
 				5225A1BF233DA68D005B88F6 /* ConversationVC */,
 				529D6C49233CE2FB006102C1 /* NSString+GetLastName.m */,
 				529D6C54233CE2FB006102C1 /* NSString+GetLastName.h */,
@@ -415,6 +421,7 @@
 				529D6C6E233CE2FB006102C1 /* HeaderAlphabet.m */,
 				529D6C68233CE2FB006102C1 /* ConversationCell.h */,
 				529D6C72233CE2FB006102C1 /* ConversationCell.m */,
+				529D6C73233CE2FB006102C1 /* ContactCell.h */,
 				529D6C69233CE2FB006102C1 /* ContactCell.m */,
 				529D6C6A233CE2FB006102C1 /* GroupAvatarView.h */,
 				529D6C77233CE2FB006102C1 /* GroupAvatarView.m */,
@@ -427,8 +434,9 @@
 				529D6C66233CE2FB006102C1 /* SingleConversationCell.m */,
 				529D6C71233CE2FB006102C1 /* GroupConversationCell.h */,
 				529D6C64233CE2FB006102C1 /* GroupConversationCell.m */,
-				529D6C73233CE2FB006102C1 /* ContactCell.h */,
 				529D6C76233CE2FB006102C1 /* GroupAvatar.h */,
+				52ABEA94234369C6003042F2 /* CollectionIndexView.h */,
+				52ABEA95234369C6003042F2 /* CollectionIndexView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +450,8 @@
 				521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */,
 				521C5E282341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.h */,
 				521C5E292341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m */,
+				5206B0872345D93400FEE921 /* UICollectionView+ScrollItemToTop.h */,
+				5206B0882345D93400FEE921 /* UICollectionView+ScrollItemToTop.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -832,6 +842,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529D6C8E233CE2FB006102C1 /* ConversationCell.m in Sources */,
+				5206B0892345D93400FEE921 /* UICollectionView+ScrollItemToTop.m in Sources */,
 				521C5E2A2341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.m in Sources */,
 				529D6C8B233CE2FB006102C1 /* ContactCell.m in Sources */,
 				529D6C90233CE2FB006102C1 /* SingleAvatar.m in Sources */,
@@ -851,6 +862,7 @@
 				529D6C85233CE2FB006102C1 /* User.m in Sources */,
 				521E36B02339FA4900DEEA9C /* ViewController.m in Sources */,
 				529D6C7B233CE2FB006102C1 /* ConversationViewController.m in Sources */,
+				52ABEA96234369C6003042F2 /* CollectionIndexView.m in Sources */,
 				521E36BB2339FA4900DEEA9C /* main.m in Sources */,
 				529D6C7F233CE2FB006102C1 /* MessageViewController.m in Sources */,
 				529D6C8D233CE2FB006102C1 /* HeaderAlphabet.m in Sources */,

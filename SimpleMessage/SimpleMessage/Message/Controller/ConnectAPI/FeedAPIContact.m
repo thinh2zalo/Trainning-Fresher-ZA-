@@ -12,7 +12,7 @@
 @implementation FeedAPIContact
 
 + (NSArray <User *> *) queryContact {
-    NSMutableArray * arr = NSMutableArray.new;
+    NSArray * arr = NSArray.new;
     User * user1 = User.new;
     user1.userName = @"Nguyen Thi";
 
@@ -36,16 +36,7 @@
     User * user10 = User.new;
     user10.userName = @"Nguyen tung";
 
-    [arr addObject:user1];
-    [arr addObject:user2];
-    [arr addObject:user3];
-    [arr addObject:user4];
-    [arr addObject:user5];
-    [arr addObject:user6];
-    [arr addObject:user7];
-    [arr addObject:user8];
-    [arr addObject:user9];
-    [arr addObject:user10];
+    arr = @[user1,user2,user3,user4, user5, user6, user7, user8, user9, user10];
 
     return arr;
 }

@@ -20,7 +20,12 @@
 #define GroupConversationCellIdent @"GroupConversationCell"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MessageViewController : UIViewController
+@interface MessageViewController : UIViewController {
+    CGFloat heightOfHeader;
+    CGFloat maxHeaderHeight ;
+    CGFloat minHeaderHeight ;
+    CGFloat heightOfBotTitle ;
+}
 
 @end
 

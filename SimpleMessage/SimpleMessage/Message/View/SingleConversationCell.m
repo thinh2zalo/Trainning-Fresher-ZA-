@@ -8,7 +8,7 @@
 
 #import "SingleConversationCell.h"
 
-@implementation SingleConversationCell
+@implementation SingleConversationCell 
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -19,21 +19,10 @@
 
 - (void)updateContentInsideCell:(ConversationModel *)conversationModel {
     [super updateContentInsideCell:conversationModel];
-    if ([conversationModel.arrUsers[0] isKindOfClass:User.class]) {
-        dispatch_async(dispatch_get_global_queue(0,0), ^{
-            
-            NSURL *url = conversationModel.arrUsers[0].avatarUrl;
-            NSData * data = [[NSData alloc] initWithContentsOfURL:url];
-            if (data == nil){
-                NSLog(@"data is null");
-            } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                    self.singleAvatar.avatarUserImg.image = [UIImage imageWithData: data];
-                });
-            }});
-        self.nameUserLab.text = conversationModel.arrUsers[0].userName;
-    }
-    
+    NSURL *url = conversationModel.arrUsers[0].avatarUrl;
+    [self.singleAvatar.avatarUserImg sd_setImageWithURL:[NSURL URLWithString:url.absoluteString]
+                 placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+
 }
 
 - (SingleAvatar *)singleAvatar {

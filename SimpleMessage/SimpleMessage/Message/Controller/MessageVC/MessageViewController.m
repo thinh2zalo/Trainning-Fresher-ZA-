@@ -12,88 +12,86 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray <ConversationModel *> *arrConversations;
 @property (nonatomic, strong) UITabBar * tabBar;
-//@property (nonatomic, strong) HeaderView * headerView;
+@property (nonatomic, strong) HeaderView * headerView;
 @property (nonatomic, strong) FeedAPIMess * feedAPI;
+
+ 
+
 @end
 
 @implementation MessageViewController
-CGFloat heightOfHeader;
-CGFloat maxHeaderHeight ;
-CGFloat minHeaderHeight ;
-CGFloat heightOfBotTitle ;
+
 BOOL isEditting;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    heightOfHeader = [(RootMesViewController *) self.parentViewController headerView].frame.size.height;
     self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
+    self.headerView;
     
-    
-//    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, heightOfHeader);
+     [self.view layoutIfNeeded];
+    heightOfHeader = self.headerView.frame.size.height;
     minHeaderHeight = heightOfHeader - 44;
     maxHeaderHeight = heightOfHeader;
+    self.tableView;
 
 }
 
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    [self scrollViewDidStopScrolling];
-//}
-//
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-//    if (!decelerate) {
-//        [self scrollViewDidStopScrolling];
-//    }
-//
-//}
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
-//    [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:scrollDiff];
-//    [[(RootMesViewController *) self.parentViewController headerView] setHeightForTopHeader:scrollDiff];
-//    [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:YES];
-//
-//    if (self.tableView.contentOffset.y > - maxHeaderHeight) {
-//        [[(RootMesViewController *) self.parentViewController headerView].topHeaderView setHidden:NO];
-//
-//    }
-//}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self scrollViewDidStopScrolling];
+}
 
-//- (void) scrollViewDidStopScrolling {
-//    CGFloat range = maxHeaderHeight - minHeaderHeight;
-//    CGFloat midPoint = minHeaderHeight + (range / 2);
-//    if (self.tableView.contentOffset.y < (- midPoint)) {
-//        [self expandHeader];
-//    } else if (self.tableView.contentOffset.y < - minHeaderHeight){
-//        [self collapseHeader];
-//    }
-//}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [self scrollViewDidStopScrolling];
+    }
 
-//- (void) collapseHeader {
-//    [[(RootMesViewController *) self.parentViewController headerView] setHidden:false];
-//    [UIView animateWithDuration:0.2 animations:^{
-//        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:heightOfBotTitle];
-//        [self.tableView setContentOffset:CGPointMake(0, - minHeaderHeight)];
-//    }];
-//}
+}
 
-//- (void) expandHeader {
-//    [UIView animateWithDuration:0.2 animations:^{
-//        [[(RootMesViewController *) self.parentViewController headerView] setHeightForBotHeader:0];
-//        [self.tableView setContentOffset:CGPointMake(0, - maxHeaderHeight)];
-//    }];
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
+    [self.headerView  setHeightForBotHeader:scrollDiff];
+    [self.headerView  setHeightForTopHeader:scrollDiff];
+    [self.headerView.topHeaderView setHidden:YES];
+    if (self.tableView.contentOffset.y > - maxHeaderHeight) {
+        [self.headerView.topHeaderView setHidden:NO];
+
+    }
+}
+
+- (void) scrollViewDidStopScrolling {
+    CGFloat range = maxHeaderHeight - minHeaderHeight;
+    CGFloat midPoint = minHeaderHeight + (range / 2);
+    if (self.tableView.contentOffset.y < (- midPoint)) {
+        [self expandHeader];
+    } else if (self.tableView.contentOffset.y < - minHeaderHeight){
+        [self collapseHeader];
+    }
+}
+
+- (void) collapseHeader {
+    [self.headerView setHidden:false];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.headerView setHeightForBotHeader:self->heightOfBotTitle];
+        [self.tableView setContentOffset:CGPointMake(0, - self->minHeaderHeight)];
+    }];
+}
+
+- (void) expandHeader {
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.headerView setHeightForBotHeader:0];
+        [self.tableView setContentOffset:CGPointMake(0, - self->maxHeaderHeight)];
+    }];
+}
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView
                   editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    isEditting = false;
 
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         [self.arrConversations removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 
     }];
-    isEditting = true;
 
     deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
     
@@ -109,7 +107,7 @@ BOOL isEditting;
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return isEditting;
+    return true;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -158,14 +156,18 @@ BOOL isEditting;
     return _feedAPI;
     
 }
-//- (HeaderView *)headerView {
-//    if (!_headerView) {
-//        _headerView = HeaderView.new;
-//
-//        [self.view addSubview:_headerView];
-//    }
-//    return _headerView;
-//}
+- (HeaderView *)headerView {
+    if (!_headerView) {
+        _headerView = HeaderView.new;
+        [self.view addSubview:_headerView];
+        _headerView.titleBotLab.text = @"MESSAGE";
+        _headerView.titleTopLab.text = @"Message";
+        [_headerView alignTop:@"0" leading:@"0" toView:self.view];
+        [_headerView alignTrailingEdgeWithView:self.view predicate:@"0"];
+        [_headerView constrainHeight:@"132"];
+    }
+    return _headerView;
+}
 
 - (UITableView *)tableView {
 
@@ -176,13 +178,18 @@ BOOL isEditting;
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorColor = [UIColor clearColor];
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         _tableView.contentInset = UIEdgeInsetsMake(heightOfHeader , 0, 0, 0);
 
         [_tableView registerClass:SingleConversationCell.class forCellReuseIdentifier:SingleConversationCellIdent];
         [_tableView registerClass:GroupConversationCell.class forCellReuseIdentifier:GroupConversationCellIdent];
-        [self.view addSubview:_tableView];
-    }
+        [self.view insertSubview:_tableView belowSubview:self.headerView];
+        [_tableView alignToView:self.view];
+
+   }
+    
     return _tableView;
+
 }
 
 
