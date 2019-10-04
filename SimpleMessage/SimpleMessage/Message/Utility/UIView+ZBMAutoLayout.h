@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Aligns all 4 edges to another view
 - (NSArray <NSLayoutConstraint *> *)alignToView:(id)view;
 
+- (NSArray <NSLayoutConstraint *> *)alignTop:(NSString *)top leading:(NSString *)leading bottom:(NSString *)bottom trailing:(NSString *)trailing toView:(id)view;
+
 /// Aligns all 4 edges to another view with different offset
 + (NSLayoutConstraint *)alignAttribute:(NSLayoutAttribute)attribute ofViews:(UIView *)views toAttribute:(NSLayoutAttribute)toAttribute ofViews:(UIView *)toViews predicate:(NSString *)predicate;
 

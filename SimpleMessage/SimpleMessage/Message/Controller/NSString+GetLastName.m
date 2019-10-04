@@ -12,7 +12,7 @@
 
 + (NSString *)getLastName:(NSString *) fullName{
     if(![fullName isKindOfClass:NSString.class]){
-        NSLog(@"nil");
+        return nil;
     }
     NSString *pattern = @"[A-Za-z]+$";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern  options:0 error:NULL];

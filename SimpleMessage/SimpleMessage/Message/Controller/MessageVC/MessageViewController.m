@@ -27,8 +27,7 @@ BOOL isEditting;
     [super viewDidLoad];
     self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
     self.headerView;
-    
-     [self.view layoutIfNeeded];
+   [self.view layoutIfNeeded];
     heightOfHeader = self.headerView.frame.size.height;
     minHeaderHeight = heightOfHeader - 44;
     maxHeaderHeight = heightOfHeader;

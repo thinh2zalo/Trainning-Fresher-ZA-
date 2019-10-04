@@ -7,6 +7,7 @@
 //
 
 #import "ConversationCell.h"
+#import "../Utility/UIView+ZBMAutoLayout.h"
 
 @interface ConversationCell()
 
@@ -140,9 +141,7 @@
         [_conversationStackView setDistribution:UIStackViewDistributionFill];
         _conversationStackView.spacing = 10;
         [self addSubview:_conversationStackView];
-        [_conversationStackView paddingLeftAndRight:20];
-        [_conversationStackView paddingTopAndBotton:20];
-        
+        [_conversationStackView alignTop:@"20" leading:@"20" bottom:@"-20" trailing:@"-20" toView:self];
         [_conversationStackView addArrangedSubview:self.usersView];
         [_conversationStackView addArrangedSubview:self.nameAndContentView];
         [_conversationStackView addArrangedSubview:self.timeAndCountNewMesView];

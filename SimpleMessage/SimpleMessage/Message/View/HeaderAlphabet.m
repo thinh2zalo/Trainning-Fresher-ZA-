@@ -13,7 +13,6 @@
 - (void)layoutSubviews {
     self.backgroundColor = [UIColor grayColor];
     self.alphabetLabel.frame = CGRectMake(20, 0, self.frame.size.width, self.frame.size.height);
-//    self.alphabetLabel.center = CGPointMake(self.center.x, self.center.y);
 }
 - (void)setAlphabet:(NSString *) alphabet {
     self.alphabetLabel.text = alphabet;

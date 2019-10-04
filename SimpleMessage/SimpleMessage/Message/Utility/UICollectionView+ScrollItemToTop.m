@@ -15,7 +15,7 @@
 
 @implementation UICollectionView (ScrollItemToTop)
 
-- (void) scrollItemToTopWithIndexPath:(NSIndexPath *) indexPath ,  {
+- (void) scrollItemToTopWithIndexPath:(NSIndexPath *) indexPath  {
     CGFloat contentOffsetY = -88;
     for ( int i = 0 ; i < indexPath.section ; i ++) {
         NSUInteger numberOfItemsInSection = [self numberOfItemsInSection:i];

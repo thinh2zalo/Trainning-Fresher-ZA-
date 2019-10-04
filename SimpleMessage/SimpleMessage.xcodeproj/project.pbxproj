@@ -39,7 +39,6 @@
 		529D6C8F233CE2FB006102C1 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C74233CE2FB006102C1 /* MessageCell.m */; };
 		529D6C90233CE2FB006102C1 /* SingleAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C75233CE2FB006102C1 /* SingleAvatar.m */; };
 		529D6C91233CE2FB006102C1 /* GroupAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C77233CE2FB006102C1 /* GroupAvatarView.m */; };
-		529D6C92233CE2FB006102C1 /* UIView+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C7A233CE2FB006102C1 /* UIView+Padding.m */; };
 		52ABEA96234369C6003042F2 /* CollectionIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ABEA95234369C6003042F2 /* CollectionIndexView.m */; };
 		A8D48B261FB52F2ED067A5A0 /* Pods_SimpleMessage_SimpleMessageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7305D3B0B8BF0ACDE3639E /* Pods_SimpleMessage_SimpleMessageUITests.framework */; };
 		D0160CEFDD9B366523D72382 /* Pods_SimpleMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560930DB9EA740B78B14E16A /* Pods_SimpleMessage.framework */; };
@@ -210,8 +209,6 @@
 		529D6C75233CE2FB006102C1 /* SingleAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleAvatar.m; sourceTree = "<group>"; };
 		529D6C76233CE2FB006102C1 /* GroupAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupAvatar.h; sourceTree = "<group>"; };
 		529D6C77233CE2FB006102C1 /* GroupAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupAvatarView.m; sourceTree = "<group>"; };
-		529D6C79233CE2FB006102C1 /* UIView+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Padding.h"; sourceTree = "<group>"; };
-		529D6C7A233CE2FB006102C1 /* UIView+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Padding.m"; sourceTree = "<group>"; };
 		52ABEA94234369C6003042F2 /* CollectionIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionIndexView.h; sourceTree = "<group>"; };
 		52ABEA95234369C6003042F2 /* CollectionIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionIndexView.m; sourceTree = "<group>"; };
 		52EB7702233DB1F20001F841 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -402,11 +399,11 @@
 		529D6C5C233CE2FB006102C1 /* ModelMessage */ = {
 			isa = PBXGroup;
 			children = (
+				529D6C61233CE2FB006102C1 /* User.h */,
 				529D6C5D233CE2FB006102C1 /* User.m */,
+				529D6C60233CE2FB006102C1 /* ConversationModel.h */,
 				529D6C5E233CE2FB006102C1 /* ConversationModel.m */,
 				529D6C5F233CE2FB006102C1 /* Message.h */,
-				529D6C60233CE2FB006102C1 /* ConversationModel.h */,
-				529D6C61233CE2FB006102C1 /* User.h */,
 				529D6C62233CE2FB006102C1 /* Message.m */,
 			);
 			path = ModelMessage;
@@ -425,6 +422,7 @@
 				529D6C69233CE2FB006102C1 /* ContactCell.m */,
 				529D6C6A233CE2FB006102C1 /* GroupAvatarView.h */,
 				529D6C77233CE2FB006102C1 /* GroupAvatarView.m */,
+				529D6C76233CE2FB006102C1 /* GroupAvatar.h */,
 				529D6C6B233CE2FB006102C1 /* GroupAvatar.m */,
 				529D6C6C233CE2FB006102C1 /* SingleAvatar.h */,
 				529D6C75233CE2FB006102C1 /* SingleAvatar.m */,
@@ -434,7 +432,6 @@
 				529D6C66233CE2FB006102C1 /* SingleConversationCell.m */,
 				529D6C71233CE2FB006102C1 /* GroupConversationCell.h */,
 				529D6C64233CE2FB006102C1 /* GroupConversationCell.m */,
-				529D6C76233CE2FB006102C1 /* GroupAvatar.h */,
 				52ABEA94234369C6003042F2 /* CollectionIndexView.h */,
 				52ABEA95234369C6003042F2 /* CollectionIndexView.m */,
 			);
@@ -444,8 +441,6 @@
 		529D6C78233CE2FB006102C1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				529D6C79233CE2FB006102C1 /* UIView+Padding.h */,
-				529D6C7A233CE2FB006102C1 /* UIView+Padding.m */,
 				521C5E192341E32900AADD0D /* UIView+ZBMAutoLayout.h */,
 				521C5E1A2341E32900AADD0D /* UIView+ZBMAutoLayout.m */,
 				521C5E282341FFF800AADD0D /* UIView+ZBMAutoLayoutPredicate.h */,
@@ -856,7 +851,6 @@
 				529D6C8C233CE2FB006102C1 /* GroupAvatar.m in Sources */,
 				529D6C88233CE2FB006102C1 /* GroupConversationCell.m in Sources */,
 				529D6C81233CE2FB006102C1 /* FeedAPIMess.m in Sources */,
-				529D6C92233CE2FB006102C1 /* UIView+Padding.m in Sources */,
 				529D6C83233CE2FB006102C1 /* RootMesViewController.m in Sources */,
 				529D6C87233CE2FB006102C1 /* Message.m in Sources */,
 				529D6C85233CE2FB006102C1 /* User.m in Sources */,

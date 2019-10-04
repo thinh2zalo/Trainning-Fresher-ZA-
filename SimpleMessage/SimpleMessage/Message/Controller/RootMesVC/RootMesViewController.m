@@ -19,14 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBar;
-//    [self switchToViewController:self.message];
-
     [self.navigationController setNavigationBarHidden:YES];
-    
-    
 }
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
-//    self = [super initWithRootViewController:rootViewController];
     [self switchToViewController:self.message];
 
     return self;
@@ -58,7 +53,6 @@
             [self.view addSubview:toVC.view];
 
             [toVC willMoveToParentViewController:self];
-//            [toVC.view alignToView:self.view];
             [self.view addSubview:toVC.view];
 
             [toVC.view alignTrailingEdgeWithView:self.view predicate:@"0"];
@@ -101,8 +95,6 @@
         [_tabBar alignBottomEdgeWithView:self.view predicate:@"0"];
         [_tabBar alignLeadingEdgeWithView:self.view predicate:@"0"];
         [_tabBar constrainWidth:[NSString stringWithFormat:@"%f",self.view.frame.size.width] height:@"100"];
- 
-        
     }
     return _tabBar;
 }

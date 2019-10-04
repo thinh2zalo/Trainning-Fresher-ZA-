@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "../ModelMessage/ConversationModel.h"
 #import "../define.h"
-#import "../Utility/UIView+Padding.h"
 #import "MessageCell.h"
 #define HEIGHT_BIG_IMG  100
 

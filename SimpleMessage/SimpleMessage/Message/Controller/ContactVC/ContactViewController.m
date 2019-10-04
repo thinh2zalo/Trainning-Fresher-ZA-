@@ -19,7 +19,6 @@
 
 @end
 
-
 @implementation ContactViewController
 
 - (void)viewDidLoad {
@@ -44,20 +43,16 @@
     
 }
 
-
 - (void)moveContentToIndexPath:(NSIndexPath *)indexPath {
     [self.collectionView scrollItemToTopWithIndexPath:indexPath];
-//    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x,self.collectionView.contentOffset.y ) ;
 
 }
-
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     float scrollDiff = scrollView.contentOffset.y + heightOfHeader;
 
     self.collectionView.contentInset = UIEdgeInsetsMake(MAX (88 , heightOfHeader - scrollDiff), 0,  0 ,0);
-    
     [self.headerView  setHeightForBotHeader:scrollDiff];
     [self.headerView  setHeightForTopHeader:scrollDiff];
     [self.headerView.topHeaderView setHidden:YES];
@@ -81,8 +76,6 @@
         [self collapseHeader];
     }
 }
-
-
 
 - (void) collapseHeader {
     [self.headerView setHidden:false];
@@ -189,8 +182,6 @@
         _collectionView.delegate = self;
         _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        
-        
         [_collectionView registerClass:HeaderAlphabet.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HEADER_ALPHABET];
         
         [_collectionView registerClass:ContactCell.class forCellWithReuseIdentifier:CONTACT_CELL];
@@ -235,8 +226,8 @@
 
 - (NSMutableDictionary *)dictListContacts {
     if (!_dictListContacts) {
-        _dictListContacts = NSMutableDictionary.new;
-        _dictListContacts = [self sortListContact:self.arrContacts];
+        _dictListContacts = [[self sortListContact:self.arrContacts] copy];
+        
     }
     return _dictListContacts;
 }
