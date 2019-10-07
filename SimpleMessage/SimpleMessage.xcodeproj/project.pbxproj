@@ -19,6 +19,7 @@
 		521E36BB2339FA4900DEEA9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36BA2339FA4900DEEA9C /* main.m */; };
 		521E36C52339FA4A00DEEA9C /* SimpleMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36C42339FA4A00DEEA9C /* SimpleMessageTests.m */; };
 		521E36D02339FA4A00DEEA9C /* SimpleMessageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E36CF2339FA4A00DEEA9C /* SimpleMessageUITests.m */; };
+		521F36412347915B006E3FCE /* TabbarHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521F36402347915B006E3FCE /* TabbarHeaderViewController.m */; };
 		529D6C7B233CE2FB006102C1 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C48233CE2FB006102C1 /* ConversationViewController.m */; };
 		529D6C7C233CE2FB006102C1 /* NSString+GetLastName.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C49233CE2FB006102C1 /* NSString+GetLastName.m */; };
 		529D6C7D233CE2FB006102C1 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D6C4A233CE2FB006102C1 /* ContactViewController.m */; };
@@ -168,6 +169,8 @@
 		521E36CB2339FA4A00DEEA9C /* SimpleMessageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMessageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E36CF2339FA4A00DEEA9C /* SimpleMessageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleMessageUITests.m; sourceTree = "<group>"; };
 		521E36D12339FA4A00DEEA9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521F363F2347915B006E3FCE /* TabbarHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarHeaderViewController.h; sourceTree = "<group>"; };
+		521F36402347915B006E3FCE /* TabbarHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarHeaderViewController.m; sourceTree = "<group>"; };
 		529D6C46233CE2FB006102C1 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		529D6C48233CE2FB006102C1 /* ConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
 		529D6C49233CE2FB006102C1 /* NSString+GetLastName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetLastName.m"; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 			children = (
 				529D6C5A233CE2FB006102C1 /* RootMesViewController.h */,
 				529D6C50233CE2FB006102C1 /* RootMesViewController.m */,
+				521F363F2347915B006E3FCE /* TabbarHeaderViewController.h */,
+				521F36402347915B006E3FCE /* TabbarHeaderViewController.m */,
 			);
 			path = RootMesVC;
 			sourceTree = "<group>";
@@ -859,6 +864,7 @@
 				52ABEA96234369C6003042F2 /* CollectionIndexView.m in Sources */,
 				521E36BB2339FA4900DEEA9C /* main.m in Sources */,
 				529D6C7F233CE2FB006102C1 /* MessageViewController.m in Sources */,
+				521F36412347915B006E3FCE /* TabbarHeaderViewController.m in Sources */,
 				529D6C8D233CE2FB006102C1 /* HeaderAlphabet.m in Sources */,
 				529D6C8F233CE2FB006102C1 /* MessageCell.m in Sources */,
 				529D6C8A233CE2FB006102C1 /* SingleConversationCell.m in Sources */,
@@ -968,7 +974,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1021,7 +1027,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1035,6 +1041,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
 				INFOPLIST_FILE = SimpleMessage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1052,6 +1059,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
 				INFOPLIST_FILE = SimpleMessage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
