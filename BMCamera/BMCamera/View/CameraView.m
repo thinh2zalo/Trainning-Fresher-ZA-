@@ -9,119 +9,180 @@
 #import "CameraView.h"
 
 @interface CameraView()
-@property (nonatomic, assign) AVCaptureDevicePosition position;
+
+@property (nonatomic, strong) CameraCore * cameraCore;
+@property (strong, nonatomic) AVCaptureSession * captureSession;
+@property (nonatomic, strong) AVCaptureDevice * captureDevice;
+@property (nonatomic, weak) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
+
 @property (nonatomic, strong) AVCaptureDeviceType deviceType;
-@property (nonatomic) CameraRatio cameraRatio;
+@property (nonatomic) dispatch_queue_t queue;
+
+typedef void(^BlockOfBackground)(CameraView * cameraView);
+typedef void(^BlockOfMain)(CameraView * cameraView);
+
 
 @end
 
+//duylh2: atomic cho config
+//cap nhat layer.frame khi setFrame cho view
+//Handle error cho moi truong hop
+
 @implementation CameraView
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.captureVideoPreviewLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
 }
 
 - (void) stopCamera {
-    
+    [self async:^(CameraView *cameraView) {
+        [self.captureSession stopRunning];
+    }];
 }
 
-- (void) startCameraWithPosition:(AVCaptureDevicePosition) position{
+
+- (void) startCameraWithPosition:(BMPosCam) position{
     //duylh2: dùng CameraConfig để lưu xuống local
     self.position = position;
-//    self.deviceType = type;
+    //    self.deviceType = type;
     if (!_captureSession) {
-        [self setupSession];
+        [self setupAndStartSession];
     } else {
-        if (![self.captureSession isRunning]) {
-            [self.captureSession startRunning];
-        }
-    }
-}
-
-//duylh2: setupSession đang làm nhiều mục đích hơn tên hàm của nó
-- (void)setupSession {
-    //duylh2: tại sao có code chỗ này
-    self.captureSession;
-    CameraView * __weak weakSelf = self;
-    if (weakSelf) {
-        //duylh2: lưu một property dispatch_queue
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-            CameraView * strongSelf = weakSelf;
-            if (strongSelf) {
-                [strongSelf.captureSession beginConfiguration];
-                [strongSelf changeCameraPosition:strongSelf.position];
-                [strongSelf.captureSession commitConfiguration];
-            } else {
-                NSLog(@"self has been deallocated in the meantime.");
+        [self async:^(CameraView *cameraView) {
+            if (![self.captureSession isRunning]) {
+                [self.captureSession startRunning];
             }
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                [strongSelf.captureSession startRunning];
-            });
-        });
+        }];
     }
 }
 
-- (void)updateRatio:(CameraRatio) ratio {
-    
+- (void)setupAndStartSession {
+    self.captureSession = AVCaptureSession.new;
+    [self asyncBackground:^(CameraView * cameraView){
+        [cameraView.captureSession beginConfiguration];
+        BMFlashCamera on = kBMFlashOn;
+        
+        [cameraView updateFlash:on];
+        [cameraView changeCameraPosition:cameraView.position];
+        [cameraView.captureSession commitConfiguration];
+        [cameraView.captureSession startRunning];
+    } asyncMain:^(CameraView * cameraView) {
+        BMCameraRatio ratio = kBMSQUARE;
+        [cameraView updateRatio:ratio];
+    }];
 }
 
+- (void)setFlash:(BMFlashCamera)flash {
+    if (flash != _flash) {
+        [self async:^(CameraView * cameraView) {
+            [cameraView updateFlash:flash];
+        }];
+    }
+}
+
+- (void)setRatio:(BMCameraRatio)ratio {
+    if (ratio != _ratio) {
+        [self updateRatio:ratio];
+    }
+}
+
+- (void)setPosition:(BMPosCam)position {
+    if (position != _position) {
+        
+        [self async:^(CameraView * camera){
+            
+            [camera changeCameraPosition:position];
+        }];
+    }
+}
 
 - (AVCaptureDevicePosition )getCurrentPosition {
     return [self.captureDevice position];
 }
 //duylh2: dispatch_queue
-- (void)changeCameraPosition :(AVCaptureDevicePosition) position {
+- (void)changeCameraPosition :(BMPosCam) position {
     if (_captureSession) {
-        NSError *error = nil;
-         
+        
         [self.captureSession beginConfiguration];
         
         for (AVCaptureInput * input in [self.captureSession inputs]) {
-            if ([input isKindOfClass:AVCaptureDeviceInput.class] && [[(AVCaptureDeviceInput * )input device] position] != position) {
+            if ([input isKindOfClass:AVCaptureDeviceInput.class] && [[(AVCaptureDeviceInput * )input device] position] != (AVCaptureDevicePosition) position) {
                 [self.captureSession removeInput:input];
             }
         }
         
-        //duylh2: while set sessionPreset -> should we check canSetSessionPreset -> why???
-        self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
+        if ([self.captureSession canSetSessionPreset:AVCaptureSessionPresetHigh]) {
+            self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
+        }
         self.captureDevice = [self.cameraCore getCurrentCaptureDeviceWithPostion:position];
         
         //handle Error?
-        AVCaptureDeviceInput *newDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
+        AVCaptureDeviceInput *newDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:nil];
         
-        //Why check canAddInput?
-        // can not add multi the same input.
         if ([self.captureSession canAddInput:newDeviceInput]) {
             [self.captureSession addInput:newDeviceInput];
-            [self.captureSession addInput:newDeviceInput];
-            [self.captureSession addInput:newDeviceInput];
+            
         }
-      [self.captureSession commitConfiguration];
+        _position = position;
+        [self.captureSession commitConfiguration];
     }
 }
 
-- (AVCaptureVideoPreviewLayer *)captureVideoPreviewLayer {
-    if (!_captureVideoPreviewLayer) {
-        _captureVideoPreviewLayer = AVCaptureVideoPreviewLayer.new;
-        _captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
-        _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        [self.layer addSublayer:_captureVideoPreviewLayer];
-    }
-    return _captureVideoPreviewLayer;
-}
-
-
-
-- (AVCaptureSession *)captureSession {
-    if (!_captureSession) {
+- (void)updateRatio:(BMCameraRatio) ratio {
+    if (_captureSession) {
+        if (!_captureVideoPreviewLayer) {
+            _captureVideoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_captureSession];
+            _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+            [self.layer addSublayer:_captureVideoPreviewLayer];
+            [self  updateFrameRatio:ratio];
+            
+        } else {
+            [self  updateFrameRatio:ratio];
+        }
         
-        _captureSession = AVCaptureSession.new;
-        
-    }
-    return _captureSession;
+    } else NSLog(@"error");
 }
 
+//duylh2: Cap nhat lai co che layout vi tri
+- (void)updateFrameRatio:(BMCameraRatio) ratio {
+    CGRect bound = self.layer.bounds;
+    float width = bound.size.width;
+    CGRect frame = bound;
+    switch (ratio) {
+        case kBMSQUARE: frame = CGRectMake(0, 70, width, width);  NSLog(@"square");
+            break;
+        case kBMTHREE_FOUR: frame = CGRectMake(0, 0, width, (width / 3 )* 4); break;
+        case kBMFULL: frame = bound; NSLog(@"full");
+    }
+    _ratio = ratio;
+    _captureVideoPreviewLayer.frame = frame;
+}
+
+- (void)updateFlash:(BMFlashCamera) flash {
+    if (_captureSession && self.captureDevice) {
+        [self.captureSession beginConfiguration];
+        if ([self.captureDevice isTorchAvailable]) {
+            [self.captureDevice lockForConfiguration:nil];
+            [self.captureDevice setTorchMode:(AVCaptureTorchMode)flash];
+            [self.captureDevice unlockForConfiguration];
+            //duylh2: nho chu y
+            _flash = flash;
+        }
+        [self.captureSession commitConfiguration];
+    }
+}
+
+- (dispatch_queue_t)queue {
+    if (!_queue) {
+        _queue = dispatch_queue_create("bm.camera", DISPATCH_QUEUE_SERIAL);
+    }
+    return _queue;
+}
 
 - (CameraCore *)cameraCore {
     if (!_cameraCore) {
@@ -129,9 +190,30 @@
     }
     return _cameraCore;
 }
-- (void)takePhoto {
+
+- (void)async:(BlockOfBackground)blockOfBackground {
+    CameraView * __weak weakSelf = self;
+    dispatch_async(weakSelf.queue, ^(void){
+        if (weakSelf) {
+            blockOfBackground(weakSelf);
+        } else {
+            NSLog(@"CamneraView has been deallocated in the meantime.");
+        }
+    });
+}
+- (void) asyncBackground:(BlockOfBackground) blockBackground asyncMain:(BlockOfMain) blockMain{
+    CameraView * __weak weakSelf = self;
+    dispatch_async(weakSelf.queue, ^(void) {
+        if (weakSelf) {
+            blockBackground(weakSelf);
+        } else {
+            NSLog(@"CamneraView has been deallocated in the meantime.");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            blockMain(weakSelf);
+        });
+    });
     
 }
-
 
 @end

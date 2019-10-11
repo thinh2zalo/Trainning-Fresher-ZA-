@@ -8,6 +8,7 @@
 
 #import "CameraCore.h"
 #import "../GetAPIProtocol.m"
+#import "../CameraEnum/CameraEnum.h"
 @interface CameraCore () <AVCapturePhotoCaptureDelegate>
 @property (nonatomic, strong) id getVersionIOS ;
 
@@ -17,12 +18,14 @@
 @implementation CameraCore
 
 
-- (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(AVCaptureDevicePosition) position{
+- (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMPosCam) position{
     if (self.getVersionIOS) {
         return [self.getVersionIOS getCaptureDeviceWithPostion:position];
     }
     return nil;
 }
+
+
 
 - (id)getVersionIOS {
     if (!_getVersionIOS) {
@@ -31,21 +34,13 @@
             _getVersionIOS = APIForIOSLesser10.new;
             return _getVersionIOS;
         }
-        //duylh2: dư if
-        else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
-            _getVersionIOS = APIForIOSGreater10.new;
+        else     _getVersionIOS = APIForIOSGreater10.new;
             return _getVersionIOS;
         }
-    }
+    
     return _getVersionIOS;
 }
 
-//duylh2: dư
-- (AVCaptureVideoPreviewLayer *)captureVideoPreviewLayer {
-    if (!_captureVideoPreviewLayer) {
-        _captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
-    }
-    return _captureVideoPreviewLayer;
-}
+
 
 @end

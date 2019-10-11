@@ -14,11 +14,11 @@
 @implementation APIForIOSLesser10 
 
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position {
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMPosCam) position {
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
       for (AVCaptureDevice *device in devices)
         {
-            if ([device position] == position)
+            if ([device position] == (AVCaptureDevicePosition) position)
                 return device;
         }
 

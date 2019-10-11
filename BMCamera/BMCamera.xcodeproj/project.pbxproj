@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52181CFD23504FE70058D596 /* PostionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 52181CFC23504FE70058D596 /* PostionCamera.m */; };
 		522E94B3234C3FF500770FF7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94B2234C3FF500770FF7 /* CameraViewController.m */; };
 		522E94BD234C422600770FF7 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94BC234C422600770FF7 /* CameraView.m */; };
 		522E94C5234C732900770FF7 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94C4234C732900770FF7 /* HeaderView.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52181CFB23504FE70058D596 /* PostionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostionCamera.h; sourceTree = "<group>"; };
+		52181CFC23504FE70058D596 /* PostionCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostionCamera.m; sourceTree = "<group>"; };
 		522E94B1234C3FF500770FF7 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		522E94B2234C3FF500770FF7 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		522E94BB234C422600770FF7 /* CameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52181CFA23504FB10058D596 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				52181CFB23504FE70058D596 /* PostionCamera.h */,
+				52181CFC23504FE70058D596 /* PostionCamera.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		522E94B7234C406500770FF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +210,7 @@
 		52DD5B6E234B188E0008E8AC /* BMCamera */ = {
 			isa = PBXGroup;
 			children = (
+				52181CFA23504FB10058D596 /* Utilities */,
 				522E95B6234EEE1A00770FF7 /* CameraEnum */,
 				522E94BF234C650200770FF7 /* Adapter */,
 				522E94BA234C409700770FF7 /* Categories */,
@@ -371,6 +384,7 @@
 				522E94C5234C732900770FF7 /* HeaderView.m in Sources */,
 				522E94B3234C3FF500770FF7 /* CameraViewController.m in Sources */,
 				522E94BD234C422600770FF7 /* CameraView.m in Sources */,
+				52181CFD23504FE70058D596 /* PostionCamera.m in Sources */,
 				522E9550234C9ACF00770FF7 /* APIForIOSGreater10.m in Sources */,
 				52DD5B7F234B188F0008E8AC /* main.m in Sources */,
 				522E9557234C9B7900770FF7 /* GetAPIProtocol.m in Sources */,

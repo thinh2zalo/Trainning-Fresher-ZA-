@@ -10,10 +10,10 @@
 
 @implementation APIForIOSGreater10
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position {
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMPosCam) position {
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                                                                                             mediaType:AVMediaTypeVideo
-                                                                                                                             position:position];
+                                                                                                                             position:(AVCaptureDevicePosition)position];
     NSArray *arrayCaptureDevices = [captureDeviceDiscoverySession devices];
     if (arrayCaptureDevices.count > 0) {
         return arrayCaptureDevices.firstObject;

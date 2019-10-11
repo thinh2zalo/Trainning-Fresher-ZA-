@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import "../BMCamera/CameraEnum/CameraEnum.h"
 #ifndef DecodeProtocol_h
 #define DecodeProtocol_h
 @protocol GetAPIProtocol <NSObject>
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position;
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMPosCam) position;
 
 @end
 

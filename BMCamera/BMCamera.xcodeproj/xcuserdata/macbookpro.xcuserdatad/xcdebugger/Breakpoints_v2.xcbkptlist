@@ -6,16 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BMCamera/CameraEnum/CameraEnum.h"
+            timestampString = "592487045.4509929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BMCamera/View/CameraView.m"
-            timestampString = "592453653.297639"
+            timestampString = "592487045.451839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-setupSession"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-updateFrameRatio:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BMCamera/View/CameraView.m"
-            timestampString = "592453653.298082"
+            timestampString = "592487045.4526629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-setupSession"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-async:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +58,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BMCamera/View/CameraView.m"
-            timestampString = "592453653.298311"
+            timestampString = "592487045.4529949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-setupSession"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-async:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BMCamera/View/CameraView.m"
+            timestampString = "592487045.453235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-asyncBackground:asyncMain:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BMCamera/View/CameraView.m"
+            timestampString = "592487045.4534791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-setupAndStartSession"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BMCamera/View/CameraView.m"
+            timestampString = "592487045.4537081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-setupAndStartSession"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

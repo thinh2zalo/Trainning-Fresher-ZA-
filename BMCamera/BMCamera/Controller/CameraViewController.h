@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "../View/CameraView.h"
+#import "../CameraEnum/CameraEnum.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

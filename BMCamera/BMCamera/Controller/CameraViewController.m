@@ -10,6 +10,8 @@
 @interface CameraViewController ()
 @property (nonatomic, strong ) CameraView * cameraView;
 @property (nonatomic, strong) UIButton * switchCameraBtn;
+@property (nonatomic, strong) UIButton * switchRatioBtn;
+@property (nonatomic, strong) UIButton * flashBtn;
 @end
 
 @implementation CameraViewController
@@ -21,67 +23,63 @@
 
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.cameraView startCameraWithPosition:AVCaptureDevicePositionBack];
+    BMPosCam pos = kBMBACK;
+    [self.cameraView startCameraWithPosition:pos];
 
 }
 
 - (void)layoutUI {
-    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
-    self.cameraView.frame = CGRectMake(0, self.headerView.frame.size.height, self.view.frame.size.width, (self.view.frame.size.height/7) * 5);
-    self.bottomView.frame = CGRectMake(0, self.headerView.frame.size.height + self.cameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
-    self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, self.headerView.frame.size.height/3, 40, 40);
+//    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
+    self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width);
+    self.cameraView.clipsToBounds = YES;
+//    self.bottomView.frame = CGRectMake(0, self.headerView.frame.size.height + self.cameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
+    self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 13 , 80/3, 30, 30);
+    self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
+
+    self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, 80/3, 30, 30);
 }
 
-- (CameraView *)cameraView {
-    if (!_cameraView) {
-        _cameraView = CameraView.new;
-        [self.view addSubview:_cameraView];
-    }
-    return _cameraView;
-}
 
-- (UIButton *)switchCameraBtn {
-    if (!_switchCameraBtn) {
-        _switchCameraBtn = UIButton.new;
-        [_switchCameraBtn setImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
-        [_switchCameraBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_switchCameraBtn];
+
+
+
+- (void)switchRatio {
+    switch (self.cameraView.ratio) {
+        case kBMSQUARE:
+            [self.cameraView setRatio:kBMFULL];
+            break;
+        case kBMFULL:
+            [self.cameraView setRatio:kBMTHREE_FOUR];
+
+            break;
+        case kBMTHREE_FOUR:
+            [self.cameraView setRatio:kBMSQUARE];
     }
-    return _switchCameraBtn;
-    
 }
 
 - (void) switchCamera {
-    if ([self.cameraView getCurrentPosition] == AVCaptureDevicePositionBack) {
-        [self.cameraView changeCameraPosition:AVCaptureDevicePositionFront];
-    } else {
-        [self.cameraView changeCameraPosition:AVCaptureDevicePositionBack];
-
-    }
+//    if ([self.cameraView getCurrentPosition] == AVCaptureDevicePositionBack) {
+//        [self.cameraView changeCameraPosition:2];
+//    } else {
+//        [self.cameraView changeCameraPosition:AVCaptureDevicePositionBack];
+//
+//    }
     
 }
 
-- (UIView *)bottomView {
-    if (!_bottomView) {
-        _bottomView = UIView.new;
-        _bottomView.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:_bottomView];
-    }
-    return _bottomView;
-    
+- (void)onOffFlash {
+    switch (self.cameraView.flash) {
+        case kBMFlashOff:
+            [self.cameraView setFlash:kBMFlashOn];
+            break;
+        case kBMFlashOn:
+            [self.cameraView setFlash:kBMFlashOff];
+  }
 }
 
-- (UIView *)headerView {
-    if (!_headerView) {
-        _headerView = UIView.new;
-        _headerView.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:_headerView];
-    }
-    return _headerView;
-    
-}
 - (UIButton *)takePhotoButton {
     if (!_takePhotoButton) {
         _takePhotoButton = UIButton.new;
@@ -94,7 +92,47 @@
     return _takePhotoButton;
 }
 
+- (CameraView *)cameraView {
+    if (!_cameraView) {
+        _cameraView = CameraView.new;
+        [self.view addSubview:_cameraView];
+    }
+    return _cameraView;
+}
 
+- (UIButton *)flashBtn {
+    if (!_flashBtn) {
+        _flashBtn = UIButton.new;
+        [_flashBtn setImage:[UIImage imageNamed:@"ic_cam_flash"] forState:UIControlStateNormal];
+        [_flashBtn addTarget:self action:@selector(onOffFlash) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_flashBtn];
+    }
+    return _flashBtn;
+    
+}
+
+
+- (UIButton *)switchRatioBtn {
+    if (!_switchRatioBtn) {
+        _switchRatioBtn = UIButton.new;
+        [_switchRatioBtn setImage:[UIImage imageNamed:@"ic_cam_ratio_number"] forState:UIControlStateNormal];
+        [_switchRatioBtn addTarget:self action:@selector(switchRatio) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_switchRatioBtn];
+    }
+    return _switchRatioBtn;
+    
+}
+
+- (UIButton *)switchCameraBtn {
+    if (!_switchCameraBtn) {
+        _switchCameraBtn = UIButton.new;
+        [_switchCameraBtn setImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
+        [_switchCameraBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_switchCameraBtn];
+    }
+    return _switchCameraBtn;
+    
+}
 /*
 #pragma mark - Navigation
 

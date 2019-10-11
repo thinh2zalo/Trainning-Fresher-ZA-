@@ -29,5 +29,13 @@
       <ContextState
          contextName = "-[CameraCore init]:CameraCore.m">
       </ContextState>
+      <ContextState
+         contextName = "-[CameraView updateFrameRatio:]:CameraView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " _captureVideoPreviewLayer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

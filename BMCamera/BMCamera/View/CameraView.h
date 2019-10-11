@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "../CameraCore/CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
+#import "../View/HeaderView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,17 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CameraView : UIView
 
-//duylh2: private
-@property (nonatomic, strong) CameraCore * cameraCore;
-@property (strong, nonatomic) AVCaptureSession * captureSession;
-@property (nonatomic, strong) AVCaptureDevice * captureDevice;
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
+@property (nonatomic) BMCameraRatio ratio;
+@property (nonatomic) BMPosCam position;
+@property (nonatomic) BMFlashCamera flash;
 
-- (void) startCameraWithPosition:(AVCaptureDevicePosition) position;
-
-//duylh2: đổi sang property
-- (void) changeCameraPosition :(AVCaptureDevicePosition) position ;
-- (AVCaptureDevicePosition )getCurrentPosition;
+- (void) startCameraWithPosition:(BMPosCam) position;
 
 @end
 
