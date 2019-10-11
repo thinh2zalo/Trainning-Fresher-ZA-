@@ -14,34 +14,16 @@
 @implementation APIForIOSLesser10 
 
 
-- (AVCaptureSession* )getDevice {
-    
-
-
-   AVCaptureSession* captureSession = [AVCaptureSession new];
-    captureSession.sessionPreset = AVCaptureSessionPresetHigh;
-
-  
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position {
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-
-    if (devices.count > 0) {
-        captureDevice = devices[0];
-
-        NSError *error = nil;
-        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
-
-        if ([captureSession canAddInput:input]) {
-            [captureSession addInput:input];
+      for (AVCaptureDevice *device in devices)
+        {
+            if ([device position] == position)
+                return device;
         }
-
-      captureStillImageOutput = [AVCaptureStillImageOutput new];
-        NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
-        [captureStillImageOutput setOutputSettings:settings];
-        [captureSession addOutput:captureStillImageOutput];
-
-        return captureSession;
-    }
 
     return nil;
 }
+
+
 @end

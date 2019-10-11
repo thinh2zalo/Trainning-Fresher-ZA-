@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "../../GetAPIProtocol.m"
-#import "../GetAPI.h"
+//#import "../GetAPI.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIForIOSGreater10 : NSObject <GetAPIProtocol>

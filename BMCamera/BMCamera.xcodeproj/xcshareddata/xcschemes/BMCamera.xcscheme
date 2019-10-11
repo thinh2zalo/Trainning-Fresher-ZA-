@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52DD5B83234B188F0008E8AC"
-               BuildableName = "BMCameraTests.xctest"
-               BlueprintName = "BMCameraTests"
-               ReferencedContainer = "container:BMCamera.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52DD5B8E234B188F0008E8AC"
-               BuildableName = "BMCameraUITests.xctest"
-               BlueprintName = "BMCameraUITests"
-               ReferencedContainer = "container:BMCamera.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

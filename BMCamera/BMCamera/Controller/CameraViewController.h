@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CameraViewController : UIViewController
 @property (nonatomic, strong) UIView * bottomView;
 @property (nonatomic, strong) UIView * headerView;
-@property (nonatomic, strong) UIView * frameCameraView;
 @property (nonatomic, strong) UIButton * takePhotoButton;
 
 @end

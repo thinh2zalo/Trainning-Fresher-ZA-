@@ -9,6 +9,7 @@
 #import "CameraViewController.h"
 @interface CameraViewController ()
 @property (nonatomic, strong ) CameraView * cameraView;
+@property (nonatomic, strong) UIButton * switchCameraBtn;
 @end
 
 @implementation CameraViewController
@@ -17,22 +18,49 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self layoutUI];
-    [self.cameraView.cameraCore.captureSession startRunning];
-    
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.cameraView startCameraWithPosition:AVCaptureDevicePositionBack];
+
 }
 
 - (void)layoutUI {
-    self.bottomView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
-    self.frameCameraView.frame = CGRectMake(0, self.bottomView.frame.size.height, self.view.frame.size.width, (self.view.frame.size.height/7) * 5);
-    self.frameCameraView.frame = CGRectMake(0, self.bottomView.frame.size.height + self.frameCameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
+    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
+    self.cameraView.frame = CGRectMake(0, self.headerView.frame.size.height, self.view.frame.size.width, (self.view.frame.size.height/7) * 5);
+    self.bottomView.frame = CGRectMake(0, self.headerView.frame.size.height + self.cameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
+    self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, self.headerView.frame.size.height/3, 40, 40);
 }
 
 - (CameraView *)cameraView {
     if (!_cameraView) {
         _cameraView = CameraView.new;
-        [self.frameCameraView addSubview:_cameraView];
+        [self.view addSubview:_cameraView];
     }
     return _cameraView;
+}
+
+- (UIButton *)switchCameraBtn {
+    if (!_switchCameraBtn) {
+        _switchCameraBtn = UIButton.new;
+        [_switchCameraBtn setImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
+        [_switchCameraBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_switchCameraBtn];
+    }
+    return _switchCameraBtn;
+    
+}
+
+- (void) switchCamera {
+    if ([self.cameraView getCurrentPosition] == AVCaptureDevicePositionBack) {
+        [self.cameraView changeCameraPosition:AVCaptureDevicePositionFront];
+    } else {
+        [self.cameraView changeCameraPosition:AVCaptureDevicePositionBack];
+
+    }
+    
 }
 
 - (UIView *)bottomView {
@@ -45,20 +73,10 @@
     
 }
 
-- (UIView *)frameCameraView {
-    if (!_frameCameraView) {
-        _frameCameraView = UIView.new;
-        _frameCameraView.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:_frameCameraView];
-    }
-    return _frameCameraView;
-    
-}
-
 - (UIView *)headerView {
     if (!_headerView) {
         _headerView = UIView.new;
-        _headerView.backgroundColor = [UIColor blackColor];
+        _headerView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_headerView];
     }
     return _headerView;
@@ -70,6 +88,7 @@
         UIImage *image = [UIImage imageNamed:@"take_photo_icon"];
         [_takePhotoButton setImage:image forState:UIControlStateNormal];
         [_takePhotoButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+        
         [self.bottomView addSubview:_takePhotoButton];
     }
     return _takePhotoButton;

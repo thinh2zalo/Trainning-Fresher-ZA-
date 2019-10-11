@@ -53,6 +53,7 @@
 		522E9554234C9B2F00770FF7 /* APIForIOSLesser10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIForIOSLesser10.m; sourceTree = "<group>"; };
 		522E9556234C9B7900770FF7 /* GetAPIProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAPIProtocol.m; sourceTree = "<group>"; };
 		522E9558234CA33A00770FF7 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		522E95B7234EEE6B00770FF7 /* CameraEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraEnum.h; sourceTree = "<group>"; };
 		52DD5B6C234B188E0008E8AC /* BMCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DD5B6F234B188E0008E8AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52DD5B70234B188E0008E8AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,6 +167,14 @@
 			path = IOSLesser10;
 			sourceTree = "<group>";
 		};
+		522E95B6234EEE1A00770FF7 /* CameraEnum */ = {
+			isa = PBXGroup;
+			children = (
+				522E95B7234EEE6B00770FF7 /* CameraEnum.h */,
+			);
+			path = CameraEnum;
+			sourceTree = "<group>";
+		};
 		52DD5B63234B188E0008E8AC = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +198,7 @@
 		52DD5B6E234B188E0008E8AC /* BMCamera */ = {
 			isa = PBXGroup;
 			children = (
+				522E95B6234EEE1A00770FF7 /* CameraEnum */,
 				522E94BF234C650200770FF7 /* Adapter */,
 				522E94BA234C409700770FF7 /* Categories */,
 				522E94B9234C407600770FF7 /* Source */,
@@ -537,12 +547,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
-				INFOPLIST_FILE = ZBMCamera/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BMCamera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thi.ZBMcamea;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thi.BMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,12 +564,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
-				INFOPLIST_FILE = ZBMCamera/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BMCamera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thi.ZBMcamea;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thi.BMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

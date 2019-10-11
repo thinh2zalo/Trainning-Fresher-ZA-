@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBar;
+    [self.tabBar setIsAccessibilityElement: true];
+    [self.tabBar setAccessibilityIdentifier:@"TabBar"];
     [self.navigationController setNavigationBarHidden:YES];
 }
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
@@ -85,11 +87,20 @@
     if (!_tabBar) {
         _tabBar = UITabBar.new;
         _tabBar.delegate = self;
+        UITabBarItem * contactItem = [[UITabBarItem alloc] initWithTitle:@"Contact" image:[UIImage imageNamed:@"groups"] tag:2];
+        if (!contactItem) {
+            NSLog(@"nil");
+        } else {
+            [contactItem setIsAccessibilityElement:true];
+            [contactItem setAccessibilityIdentifier:@"contactItem"];
+        }
+        
         [_tabBar setItems:@[[[UITabBarItem alloc] initWithTitle:@"Messages" image:[UIImage imageNamed:@"people"] tag:1],
-                            [[UITabBarItem alloc] initWithTitle:@"Contact" image:[UIImage imageNamed:@"groups"] tag:2],
+                            contactItem,
                             
                             [[UITabBarItem alloc] initWithTitle:@"Call" image:[UIImage imageNamed:@"calls"] tag:3]
                             ]];
+        
         [self.view addSubview:_tabBar ];
         [_tabBar setSelectedItem:_tabBar.items[0]];
         [_tabBar alignBottomEdgeWithView:self.view predicate:@"0"];

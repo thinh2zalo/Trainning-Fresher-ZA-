@@ -10,25 +10,14 @@
 
 @implementation APIForIOSGreater10
 
-- (void)getDevice {
-    self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
-    self.captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position {
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                                                                                             mediaType:AVMediaTypeVideo
-                                                                                                                             position:AVCaptureDevicePositionFront];
+                                                                                                                             position:position];
     NSArray *arrayCaptureDevices = [captureDeviceDiscoverySession devices];
     if (arrayCaptureDevices.count > 0) {
-        self.captureDevice = arrayCaptureDevices.firstObject;
-        NSError *error = nil;
-        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
-        
-        if ([self.captureSession canAddInput:input]) {
-            [self.captureSession addInput:input];
-        }
-        [self.captureSession startRunning];
-        return YES;
+        return arrayCaptureDevices.firstObject;
     }
-    return NO;
+    return nil;
 }
 @end

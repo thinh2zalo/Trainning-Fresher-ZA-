@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__26-[CameraView setupSession]_block_invoke:CameraView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "strongSelf.captureSession">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CameraView setupSession]:CameraView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CameraViewController layoutUI]:CameraViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " self.switchCameraBtn.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CameraCore init]:CameraCore.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

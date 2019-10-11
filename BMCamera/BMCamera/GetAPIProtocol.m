@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #ifndef DecodeProtocol_h
 #define DecodeProtocol_h
 @protocol GetAPIProtocol <NSObject>
 
-- (void) getDevice;
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(AVCaptureDevicePosition) position;
 
 @end
 
