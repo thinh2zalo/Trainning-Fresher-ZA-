@@ -10,6 +10,7 @@
 #import "../CameraCore/CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
 #import "../View/HeaderView.h"
+#import "CameraFocusView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,11 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CameraView : UIView
 
-@property (nonatomic) BMCameraRatio ratio;
-@property (nonatomic) BMPosCam position;
-@property (nonatomic) BMFlashCamera flash;
+@property (atomic) BMRatioCamera ratio;
+@property (atomic) BMCamPosition position;
+@property (atomic) BMTorchCamera flash;
+@property (atomic) BMPosPreview posPreview;
+@property (assign) BMTypeCamera type;
+//@property (nonatomic) setPosOfPreview;
 
-- (void) startCameraWithPosition:(BMPosCam) position;
+- (void) startCameraWithPosition:(BMCamPosition) position;
 
 @end
 

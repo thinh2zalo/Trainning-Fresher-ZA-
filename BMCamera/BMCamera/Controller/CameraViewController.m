@@ -26,15 +26,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    BMPosCam pos = kBMBACK;
+    BMCamPosition pos = BMCamPositionBack;
     [self.cameraView startCameraWithPosition:pos];
 
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
+
 - (void)layoutUI {
 //    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
-    self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width);
+    self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.cameraView.clipsToBounds = YES;
+
 //    self.bottomView.frame = CGRectMake(0, self.headerView.frame.size.height + self.cameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
     self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 13 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
@@ -72,11 +77,11 @@
 
 - (void)onOffFlash {
     switch (self.cameraView.flash) {
-        case kBMFlashOff:
-            [self.cameraView setFlash:kBMFlashOn];
+        case kBMTorchOn:
+            [self.cameraView setFlash:kBMTorchOff];
             break;
-        case kBMFlashOn:
-            [self.cameraView setFlash:kBMFlashOff];
+        case kBMTorchOff:
+            [self.cameraView setFlash:kBMTorchOn];
   }
 }
 
@@ -105,6 +110,9 @@
         _flashBtn = UIButton.new;
         [_flashBtn setImage:[UIImage imageNamed:@"ic_cam_flash"] forState:UIControlStateNormal];
         [_flashBtn addTarget:self action:@selector(onOffFlash) forControlEvents:UIControlEventTouchUpInside];
+        [_flashBtn setIsAccessibilityElement:true];
+        [_flashBtn setAccessibilityIdentifier:@"btn_flash"];
+        [_flashBtn setAccessibilityLabel:@"button flash"];
         [self.view addSubview:_flashBtn];
     }
     return _flashBtn;

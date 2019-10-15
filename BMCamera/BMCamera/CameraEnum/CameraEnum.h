@@ -10,27 +10,38 @@
 #define CameraEnum_h
 #import <AVFoundation/AVFoundation.h>
 
-typedef enum posCam{
-    kBMFRONT ,// AVCaptureDevicePostionFront 2,
-    kBMBACK // AVCaptureDevicePostionFront 1
-} BMPosCam;
+typedef NS_ENUM(NSUInteger, BMTypeCamera) {
+    kBMPhoto,
+    kBMVideo,
+    
+};
 
 typedef NS_ENUM(NSUInteger, BMCamPosition) {
     BMCamPositionFront,
     BMCamPositionBack,
 };
 
-typedef enum RatioCamera {
+
+typedef NS_ENUM(NSUInteger, BMRatioCamera) {
     kBMFULL  ,
     kBMSQUARE ,
     kBMTHREE_FOUR
-} BMCameraRatio;
+};
 
-typedef enum FlashCamera {
-    kBMFlashOff = 0 ,
-    kBMFlashOn = 1
-    
-} BMFlashCamera;
+typedef NS_ENUM(NSUInteger, BMTorchCamera) {
+    kBMTorchOff = 0 ,
+    kBMTorchOn = 1
+};
+
+
+
+typedef NS_ENUM(NSUInteger, BMPosPreview) {
+    kBMPreviewTop,
+    kBMPreviewCenter,
+    kBMPreviewBottom,
+};
+
+
 
 
 

@@ -14,7 +14,7 @@
 #define DecodeProtocol_h
 @protocol GetAPIProtocol <NSObject>
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMPosCam) position;
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position;
 
 @end
 

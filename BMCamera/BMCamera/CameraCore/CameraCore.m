@@ -18,7 +18,7 @@
 @implementation CameraCore
 
 
-- (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMPosCam) position{
+- (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMCamPosition) position{
     if (self.getVersionIOS) {
         return [self.getVersionIOS getCaptureDeviceWithPostion:position];
     }

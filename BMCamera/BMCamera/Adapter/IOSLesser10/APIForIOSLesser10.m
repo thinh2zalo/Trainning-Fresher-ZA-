@@ -14,7 +14,7 @@
 @implementation APIForIOSLesser10 
 
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMPosCam) position {
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position {
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
       for (AVCaptureDevice *device in devices)
         {
