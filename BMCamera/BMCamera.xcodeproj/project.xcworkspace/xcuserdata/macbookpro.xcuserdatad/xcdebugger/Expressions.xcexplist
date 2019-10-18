@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[CameraView zoom:]:CameraView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "velocity / pinchVelocityDividerFactor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "__26-[CameraView setupSession]_block_invoke:CameraView.m">
          <PersistentStrings>
             <PersistentString

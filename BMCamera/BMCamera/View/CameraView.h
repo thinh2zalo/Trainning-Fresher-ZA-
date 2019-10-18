@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "../CameraCore/CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
-#import "../View/HeaderView.h"
-#import "CameraFocusView.h"
+#import "CameraFocusLayer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

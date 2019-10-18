@@ -18,8 +18,8 @@
 @property (nonatomic, weak) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
 @property (nonatomic, strong) AVCaptureDeviceType deviceType;
 @property (nonatomic) dispatch_queue_t queue;
-@property (nonatomic, strong) CameraFocusView * focusView;
-
+@property (nonatomic, strong) CameraFocusLayer * focusLayer;
+@property (nonatomic) float lastScale;
 typedef void(^BlockOfBackground)(CameraView * cameraView);
 typedef void(^BlockOfMain)(CameraView * cameraView);
 
@@ -29,97 +29,16 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 
 //Handle error cho moi truong hop
 
-
-
 @implementation CameraView
 @synthesize position = _position;
 @synthesize flash = _flash;
 @synthesize ratio = _ratio;
 @synthesize type = _type;
 @synthesize posPreview = _posPreview;
+@synthesize lastScale = _lastScale;
 
-- (void)layoutSubviews {
-//    self.focusView.frame = CGRectMake(20, 20, 70, 70);
-}
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
 
-- (void) stopCamera {
-    [self async:^(CameraView *cameraView) {
-        [self.captureSession stopRunning];
-    }];
-}
-
-- (void)focusAtThePoint:(CGPoint) atPoint {
-    if (self.captureDevice != nil) {
-        
-        if([self.captureDevice isFocusPointOfInterestSupported] &&
-           [self.captureDevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
-            CGRect bounds = [self.layer bounds];
-            double cameraViewWidth = bounds.size.width;
-            double cameraViewHeight = bounds.size.height;
-            double focus_x = atPoint.x/cameraViewWidth;
-            double focus_y = atPoint.y/cameraViewHeight;
-            CGPoint cameraViewPoint = CGPointMake(focus_x, focus_y);
-            if([self.captureDevice lockForConfiguration:nil]) {
-                [self.captureDevice setFocusPointOfInterest:cameraViewPoint];
-                [self.captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];
-                if ([self.captureDevice isExposurePointOfInterestSupported] && [self.captureDevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
-                    [self.captureDevice setExposureMode:AVCaptureExposureModeAutoExpose];
-                    [self.captureDevice setExposurePointOfInterest:cameraViewPoint];
-                }
-                [self.captureDevice setSubjectAreaChangeMonitoringEnabled:true];
-                [self.captureDevice unlockForConfiguration];
-            }
-        }
-        
-    }
-      
-}
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-  // check multi touch
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint touchPoint = [touch locationInView:touch.view];
-    [self focusAtThePoint:touchPoint];
-    
-    if (self.focusView)
-    {
-        [self.focusView removeFromSuperlayer];
-    }
-        self.focusView = CameraFocusView.new;
-//        self.focusView = [[CameraFocusView alloc]initWithFrame:CGRectMake(touchPoint.x-40, touchPoint.y-40, 80, 80)];
-        [self.layer addSublayer:self.focusView];
-        [self.focusView setNeedsDisplay];
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:1.0];
-//        [self.focusView.layer setAlpha:0.0];
-        [UIView commitAnimations];
-    
-}
-- (void) startCameraWithPosition:(BMCamPosition) position{
-
-    //duylh2: dùng CameraConfig để lưu xuống local
-    self.position = position;
-    //    self.deviceType = type;
-    if (!_captureSession) {
-        [self setupAndStartSession];
-    } else {
-        [self async:^(CameraView *cameraView) {
-            if (![self.captureSession isRunning]) {
-                [self.captureSession startRunning];
-            }
-        }];
-    }
-}
 
 - (void)setupAndStartSession {
     self.captureSession = AVCaptureSession.new;
@@ -129,16 +48,91 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         BMTypeCamera type = kBMPhoto;
         [cameraView changeType:type];
         [cameraView updateTorch:on];
-        [cameraView changeCameraPosition:cameraView.position];
+        BMCamPosition camPos = kBMCamPositionBack;
+        [cameraView changeCameraPosition:camPos];
         [cameraView.captureSession commitConfiguration];
         [cameraView.captureSession startRunning];
+        
     } asyncMain:^(CameraView * cameraView) {
+        UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchToZoomRecognizer:)];
+        [self addGestureRecognizer:pinchGesture];
         [cameraView setPosPreview:kBMPreviewCenter];
-        BMRatioCamera ratio = kBMSQUARE;
+        BMRatioCamera ratio = kBMCIRCLE;
         [cameraView updateRatio:ratio];
     }];
 }
 
+
+- (void)zoom:(CGFloat)zoomFactor{
+    if (!_captureVideoPreviewLayer) {
+        return;
+    }
+    
+    if ([self.captureDevice lockForConfiguration:nil]) {
+        
+        self.captureDevice.videoZoomFactor = zoomFactor;
+        [self.captureDevice  unlockForConfiguration];
+    } else {
+        NSLog(@"error");
+    }
+}
+
+- (void)handlePinchToZoomRecognizer:(UIPinchGestureRecognizer*)pinchRecognizer {
+    if (pinchRecognizer.state == UIGestureRecognizerStateBegan) {
+        pinchRecognizer.scale = _lastScale;
+    }
+    CGFloat zoomFactor = MAX(1, MIN(5, pinchRecognizer.scale));
+    [self zoom:zoomFactor];
+    if (pinchRecognizer.state == UIGestureRecognizerStateEnded) {
+        _lastScale = zoomFactor;
+    }
+}
+
+
+- (void)focusAtThePoint:(CGPoint) atPoint {
+    if (self.captureDevice != nil) {
+        
+        if([self.captureDevice isFocusPointOfInterestSupported] &&
+           [self.captureDevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            
+            CGRect bounds = [self.layer bounds];
+            double cameraViewWidth = bounds.size.width;
+            double cameraViewHeight = bounds.size.height;
+            double focus_x = atPoint.y/cameraViewHeight;
+            double focus_y = (cameraViewWidth - atPoint.x)/cameraViewWidth;
+            
+            CGPoint cameraViewPoint = CGPointMake(focus_x, focus_y);
+            if([self.captureDevice lockForConfiguration:nil]) {
+                [self.captureDevice setFocusPointOfInterest:cameraViewPoint];
+                [self.captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];
+                if ([self.captureDevice isExposurePointOfInterestSupported] && [self.captureDevice isExposureModeSupported:AVCaptureExposureModeContinuousAutoExposure]) {
+                    
+                    [self.captureDevice setExposurePointOfInterest:cameraViewPoint];
+                    [self.captureDevice setExposureMode:AVCaptureExposureModeContinuousAutoExposure];
+                }
+                [self.captureDevice setSubjectAreaChangeMonitoringEnabled:true];
+                [self.captureDevice unlockForConfiguration];
+            }
+        }
+        
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    // check multi touch
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchPoint = [touch locationInView:touch.view];
+    [self focusAtThePoint:touchPoint];
+    
+    if (self.focusLayer) {
+        [self.focusLayer removeFromSuperlayer];
+    }
+    self.focusLayer = CameraFocusLayer.new;
+    self.focusLayer = [[CameraFocusLayer alloc]initWithFrame:CGRectMake(touchPoint.x - 40, touchPoint.y - 40, 80, 80)];
+    [self.layer addSublayer:self.focusLayer];
+    
+}
 
 - (AVCaptureDevicePosition )getCurrentPosition {
     return [self.captureDevice position];
@@ -151,18 +145,17 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         for (AVCaptureInput * input in [self.captureSession inputs]) {
             if ([input isKindOfClass:AVCaptureDeviceInput.class] && [[(AVCaptureDeviceInput * )input device] position] != (AVCaptureDevicePosition) position) {
                 [self.captureSession removeInput:input];
-            
+                NSLog(@"deleted");
+                
             }
         }
-
         self.captureDevice = [self.cameraCore getCurrentCaptureDeviceWithPostion:position];
-        
-        //handle Error?
         AVCaptureDeviceInput *newDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:nil];
         
         if ([self.captureSession canAddInput:newDeviceInput]) {
             [self.captureSession addInput:newDeviceInput];
             _position = position;
+            NSLog(@"postion in function");
         }
         [self.captureSession commitConfiguration];
     }
@@ -174,7 +167,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         //duylh2: mising update _type
         [self.captureSession beginConfiguration];
         AVCaptureSessionPreset  preset = AVCaptureSessionPresetHigh;
-
+        
         switch (type) {
             case kBMPhoto:
                 preset = AVCaptureSessionPresetPhoto;
@@ -186,8 +179,10 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         }
         if ([self.captureSession canSetSessionPreset:preset]) {
             [self.captureSession setSessionPreset:preset];
+            _type = type;
         }
         [self.captureSession commitConfiguration];
+        
     }
 }
 
@@ -205,7 +200,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 }
 
 - (void)updateFrameRatio:(BMRatioCamera) ratio {
-    CGRect bounds = self.layer.bounds;
+    CGRect bounds = [[UIScreen mainScreen] bounds];
     
     CGRect frame = bounds;
     float width = bounds.size.width;
@@ -228,19 +223,83 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
             break;
         case kBMPreviewBottom:
             yCaseThreeFour = height - height_3_4;
-            yCaseSquare = height - height_1_1 + width / 3 ;
+            yCaseSquare = yCaseThreeFour ;
+      
     }
     
     switch (ratio) {
-        case kBMSQUARE: frame = CGRectMake(0, yCaseSquare , width, width);
-
-            break;
         case kBMTHREE_FOUR: frame = CGRectMake(0, yCaseThreeFour, width, (width / 3 )* 4);
             break;
         case kBMFULL: frame = bounds;
+            break;
+        default: frame = CGRectMake(0, yCaseSquare , width, width);
     }
+//    [self drawMask];
+
     _ratio = ratio;
-    _captureVideoPreviewLayer.frame = frame;
+    CameraView * __weakSelf = self;
+    [UIView animateWithDuration:0.2 animations:^{
+        __weakSelf.frame = frame;
+        __weakSelf.captureVideoPreviewLayer.frame = self.bounds;
+        if (ratio == kBMCIRCLE) {
+//            __weakSelf.captureVideoPreviewLayer.cornerRadius = frame.size.width / 2;
+        }
+        
+    }];
+}
+
+
+//- (void)drawMask {
+//    int radius = self.frame.size.width/2;
+//    CAShapeLayer *circle = [CAShapeLayer layer];
+//    circle.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 40 -[[UIScreen mainScreen] bounds].size.height/4, 2.0*radius, 2.0*radius)cornerRadius:radius].CGPath;
+//
+//    circle.position = CGPointMake(CGRectGetMidX(self.frame)-radius,
+//                                  CGRectGetMidY(self.frame)-radius);
+//    circle.fillColor = [UIColor clearColor].CGColor;
+//    circle.strokeColor = [UIColor blueColor].CGColor;
+//    circle.lineWidth = 1;
+//    [self.layer addSublayer:circle];
+//}
+
+
+
+- (void)drawMask {
+    UIBezierPath *path = UIBezierPath.new;
+    [path appendPath:[self squarePathWithCenter:CGPointMake(self.frame.size.width/2, -self.frame.size.height/2) size:self.frame.size.width]];
+    [path appendPath:[self circlePathWithCenter:CGPointMake(self.frame.size.width/2, -self.frame.size.height/2) radius:self.frame.size.width/2]];
+    CAShapeLayer *subLayer = CAShapeLayer.new;
+    subLayer.path = path.CGPath;
+//    subLayer.fillMode = kCAFillRuleEvenOdd;
+    subLayer.fillColor = [UIColor redColor].CGColor;
+    [self.layer addSublayer:subLayer];
+    
+}
+
+- (UIBezierPath *)squarePathWithCenter:(CGPoint)center size:(CGFloat)size
+{
+    CGFloat startX = center.x-size/2;
+    CGFloat startY = center.y-size/2;
+    
+    UIBezierPath *squarePath = [UIBezierPath bezierPath];
+    [squarePath moveToPoint:CGPointMake(startX, startY)];
+    [squarePath addLineToPoint:CGPointMake(startX+size, startY)];
+    [squarePath addLineToPoint:CGPointMake(startX+size, startY+size)];
+    [squarePath addLineToPoint:CGPointMake(startX, startY+size)];
+    [squarePath closePath];
+    return squarePath;
+}
+
+
+- (UIBezierPath *)circlePathWithCenter:(CGPoint)center radius:(CGFloat)radius
+{
+    UIBezierPath *circlePath = [UIBezierPath bezierPath];
+    [circlePath addArcWithCenter:center radius:radius startAngle:0 endAngle:M_PI/2 clockwise:YES];
+    [circlePath addArcWithCenter:center radius:radius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
+    [circlePath addArcWithCenter:center radius:radius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
+    [circlePath addArcWithCenter:center radius:radius startAngle:3*M_PI/2 endAngle:M_PI clockwise:YES];
+    [circlePath closePath];
+    return circlePath;
 }
 
 - (void)updateTorch:(BMTorchCamera) flash {
@@ -269,12 +328,12 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     }
     return _cameraCore;
 }
-- (CameraFocusView *)focusView {
-    if (!_focusView) {
-        _focusView = CameraFocusView.new;
-        [self addSubview:_focusView];
+- (CameraFocusLayer *)focusLayer {
+    if (!_focusLayer) {
+        _focusLayer = CameraFocusLayer.new;
+        [self.layer addSublayer:_focusLayer];
     }
-    return _focusView;
+    return _focusLayer;
 }
 
 - (void)async:(BlockOfBackground)blockOfBackground {
@@ -302,7 +361,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     });
     
 }
-
 
 
 
@@ -340,9 +398,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 
 - (void)setPosition:(BMCamPosition)position {
     if (position != _position) {
-        
         [self async:^(CameraView * camera){
-            
             [camera changeCameraPosition:position];
         }];
     }
@@ -366,6 +422,29 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 
 - (BMCamPosition)position {
     return  _position;
+}
+
+
+- (void) stopCamera {
+    [self async:^(CameraView *cameraView) {
+        [self.captureSession stopRunning];
+    }];
+}
+
+- (void)startCameraWithPosition:(BMCamPosition) position{
+    
+    //duylh2: dùng CameraConfig để lưu xuống local
+    self.position = position;
+    _lastScale = 1;
+    if (!_captureSession) {
+        [self setupAndStartSession];
+    } else {
+        [self async:^(CameraView *cameraView) {
+            if (![self.captureSession isRunning]) {
+                [self.captureSession startRunning];
+            }
+        }];
+    }
 }
 
 @end

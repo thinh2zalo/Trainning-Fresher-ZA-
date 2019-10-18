@@ -10,8 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CameraFocusView : CAShapeLayer
+@protocol displince	 <NSObject>
+
+
 
 @end
 
+@interface CameraFocusLayer : CAShapeLayer
+- (instancetype)initWithFrame:(CGRect) frame;
+@end
+
 NS_ASSUME_NONNULL_END
+

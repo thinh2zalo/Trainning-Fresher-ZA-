@@ -26,30 +26,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    BMCamPosition pos = BMCamPositionBack;
+    BMCamPosition pos = kBMCamPositionBack;
     [self.cameraView startCameraWithPosition:pos];
 
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-}
 
 - (void)layoutUI {
-//    self.headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/7);
     self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.cameraView.clipsToBounds = YES;
-
-//    self.bottomView.frame = CGRectMake(0, self.headerView.frame.size.height + self.cameraView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/7);
+    
     self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 13 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
-
     self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, 80/3, 30, 30);
 }
-
-
-
-
 
 - (void)switchRatio {
     switch (self.cameraView.ratio) {
@@ -61,17 +51,21 @@
 
             break;
         case kBMTHREE_FOUR:
-            [self.cameraView setRatio:kBMSQUARE];
+            [self.cameraView setRatio:kBMSQUARE]; break;
+        default:[self.cameraView setRatio:kBMCIRCLE];
+        
     }
 }
 
-- (void) switchCamera {
-//    if ([self.cameraView getCurrentPosition] == AVCaptureDevicePositionBack) {
-//        [self.cameraView changeCameraPosition:2];
-//    } else {
-//        [self.cameraView changeCameraPosition:AVCaptureDevicePositionBack];
-//
-//    }
+- (void)switchCamera {
+    
+    if (self.cameraView.position == kBMCamPositionFront) {
+        [self.cameraView setPosition:kBMCamPositionBack];
+
+    } else {
+        [self.cameraView setPosition:kBMCamPositionFront];
+
+    }
     
 }
 
@@ -119,7 +113,6 @@
     
 }
 
-
 - (UIButton *)switchRatioBtn {
     if (!_switchRatioBtn) {
         _switchRatioBtn = UIButton.new;
@@ -141,14 +134,7 @@
     return _switchCameraBtn;
     
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

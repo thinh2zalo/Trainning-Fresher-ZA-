@@ -25,8 +25,6 @@
     return nil;
 }
 
-
-
 - (id)getVersionIOS {
     if (!_getVersionIOS) {
 

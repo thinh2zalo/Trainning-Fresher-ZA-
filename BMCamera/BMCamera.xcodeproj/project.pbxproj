@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520496D62355B66A0033C702 /* CameraFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520496D52355B66A0033C702 /* CameraFocusView.m */; };
+		520496D62355B66A0033C702 /* CameraFocusLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 520496D52355B66A0033C702 /* CameraFocusLayer.m */; };
 		52181CFD23504FE70058D596 /* PostionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 52181CFC23504FE70058D596 /* PostionCamera.m */; };
 		522E94B3234C3FF500770FF7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94B2234C3FF500770FF7 /* CameraViewController.m */; };
 		522E94BD234C422600770FF7 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94BC234C422600770FF7 /* CameraView.m */; };
-		522E94C5234C732900770FF7 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E94C4234C732900770FF7 /* HeaderView.m */; };
 		522E9550234C9ACF00770FF7 /* APIForIOSGreater10.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E954F234C9ACF00770FF7 /* APIForIOSGreater10.m */; };
 		522E9555234C9B2F00770FF7 /* APIForIOSLesser10.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E9554234C9B2F00770FF7 /* APIForIOSLesser10.m */; };
 		522E9557234C9B7900770FF7 /* GetAPIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E9556234C9B7900770FF7 /* GetAPIProtocol.m */; };
@@ -43,16 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		520496D42355B66A0033C702 /* CameraFocusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFocusView.h; sourceTree = "<group>"; };
-		520496D52355B66A0033C702 /* CameraFocusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraFocusView.m; sourceTree = "<group>"; };
+		520496D42355B66A0033C702 /* CameraFocusLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFocusLayer.h; sourceTree = "<group>"; };
+		520496D52355B66A0033C702 /* CameraFocusLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraFocusLayer.m; sourceTree = "<group>"; };
 		52181CFB23504FE70058D596 /* PostionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostionCamera.h; sourceTree = "<group>"; };
 		52181CFC23504FE70058D596 /* PostionCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostionCamera.m; sourceTree = "<group>"; };
 		522E94B1234C3FF500770FF7 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		522E94B2234C3FF500770FF7 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		522E94BB234C422600770FF7 /* CameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		522E94BC234C422600770FF7 /* CameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
-		522E94C3234C732900770FF7 /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
-		522E94C4234C732900770FF7 /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		522E954E234C9ACF00770FF7 /* APIForIOSGreater10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIForIOSGreater10.h; sourceTree = "<group>"; };
 		522E954F234C9ACF00770FF7 /* APIForIOSGreater10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIForIOSGreater10.m; sourceTree = "<group>"; };
 		522E9553234C9B2F00770FF7 /* APIForIOSLesser10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIForIOSLesser10.h; sourceTree = "<group>"; };
@@ -117,10 +114,8 @@
 			children = (
 				522E94BB234C422600770FF7 /* CameraView.h */,
 				522E94BC234C422600770FF7 /* CameraView.m */,
-				522E94C3234C732900770FF7 /* HeaderView.h */,
-				522E94C4234C732900770FF7 /* HeaderView.m */,
-				520496D42355B66A0033C702 /* CameraFocusView.h */,
-				520496D52355B66A0033C702 /* CameraFocusView.m */,
+				520496D42355B66A0033C702 /* CameraFocusLayer.h */,
+				520496D52355B66A0033C702 /* CameraFocusLayer.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,13 +381,12 @@
 			files = (
 				52DD5B74234B188E0008E8AC /* CameraCore.m in Sources */,
 				522E9555234C9B2F00770FF7 /* APIForIOSLesser10.m in Sources */,
-				522E94C5234C732900770FF7 /* HeaderView.m in Sources */,
 				522E94B3234C3FF500770FF7 /* CameraViewController.m in Sources */,
 				522E94BD234C422600770FF7 /* CameraView.m in Sources */,
 				52181CFD23504FE70058D596 /* PostionCamera.m in Sources */,
 				522E9550234C9ACF00770FF7 /* APIForIOSGreater10.m in Sources */,
 				52DD5B7F234B188F0008E8AC /* main.m in Sources */,
-				520496D62355B66A0033C702 /* CameraFocusView.m in Sources */,
+				520496D62355B66A0033C702 /* CameraFocusLayer.m in Sources */,
 				522E9557234C9B7900770FF7 /* GetAPIProtocol.m in Sources */,
 				52DD5B71234B188E0008E8AC /* AppDelegate.m in Sources */,
 			);

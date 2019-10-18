@@ -17,15 +17,17 @@ typedef NS_ENUM(NSUInteger, BMTypeCamera) {
 };
 
 typedef NS_ENUM(NSUInteger, BMCamPosition) {
-    BMCamPositionFront,
-    BMCamPositionBack,
+    kBMCamPositionBack = AVCaptureDevicePositionBack,
+    kBMCamPositionFront = AVCaptureDevicePositionFront,
+
 };
 
 
 typedef NS_ENUM(NSUInteger, BMRatioCamera) {
     kBMFULL  ,
     kBMSQUARE ,
-    kBMTHREE_FOUR
+    kBMTHREE_FOUR,
+    kBMCIRCLE
 };
 
 typedef NS_ENUM(NSUInteger, BMTorchCamera) {
