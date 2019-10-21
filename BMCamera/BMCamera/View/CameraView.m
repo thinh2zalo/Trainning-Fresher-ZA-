@@ -19,6 +19,7 @@
 @property (nonatomic, strong) AVCaptureDeviceType deviceType;
 @property (nonatomic) dispatch_queue_t queue;
 @property (nonatomic, strong) CameraFocusLayer * focusLayer;
+@property (nonatomic, strong) MaskLayer *maskLayer;
 @property (nonatomic) float lastScale;
 typedef void(^BlockOfBackground)(CameraView * cameraView);
 typedef void(^BlockOfMain)(CameraView * cameraView);
@@ -224,17 +225,14 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         case kBMPreviewBottom:
             yCaseThreeFour = height - height_3_4;
             yCaseSquare = yCaseThreeFour ;
-      
     }
-    
     switch (ratio) {
-        case kBMTHREE_FOUR: frame = CGRectMake(0, yCaseThreeFour, width, (width / 3 )* 4);
+        case kBMTHREE_FOUR: frame = CGRectMake(0, yCaseThreeFour, width, (width / 3 ) * 4);
             break;
         case kBMFULL: frame = bounds;
             break;
         default: frame = CGRectMake(0, yCaseSquare , width, width);
     }
-//    [self drawMask];
 
     _ratio = ratio;
     CameraView * __weakSelf = self;
@@ -242,64 +240,14 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         __weakSelf.frame = frame;
         __weakSelf.captureVideoPreviewLayer.frame = self.bounds;
         if (ratio == kBMCIRCLE) {
-//            __weakSelf.captureVideoPreviewLayer.cornerRadius = frame.size.width / 2;
+            self->_maskLayer = [[MaskLayer alloc] initWithFrame:frame];
+            [self.layer addSublayer:self->_maskLayer];
+
         }
         
     }];
-}
-
-
-//- (void)drawMask {
-//    int radius = self.frame.size.width/2;
-//    CAShapeLayer *circle = [CAShapeLayer layer];
-//    circle.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 40 -[[UIScreen mainScreen] bounds].size.height/4, 2.0*radius, 2.0*radius)cornerRadius:radius].CGPath;
-//
-//    circle.position = CGPointMake(CGRectGetMidX(self.frame)-radius,
-//                                  CGRectGetMidY(self.frame)-radius);
-//    circle.fillColor = [UIColor clearColor].CGColor;
-//    circle.strokeColor = [UIColor blueColor].CGColor;
-//    circle.lineWidth = 1;
-//    [self.layer addSublayer:circle];
-//}
-
-
-
-- (void)drawMask {
-    UIBezierPath *path = UIBezierPath.new;
-    [path appendPath:[self squarePathWithCenter:CGPointMake(self.frame.size.width/2, -self.frame.size.height/2) size:self.frame.size.width]];
-    [path appendPath:[self circlePathWithCenter:CGPointMake(self.frame.size.width/2, -self.frame.size.height/2) radius:self.frame.size.width/2]];
-    CAShapeLayer *subLayer = CAShapeLayer.new;
-    subLayer.path = path.CGPath;
-//    subLayer.fillMode = kCAFillRuleEvenOdd;
-    subLayer.fillColor = [UIColor redColor].CGColor;
-    [self.layer addSublayer:subLayer];
     
-}
-
-- (UIBezierPath *)squarePathWithCenter:(CGPoint)center size:(CGFloat)size
-{
-    CGFloat startX = center.x-size/2;
-    CGFloat startY = center.y-size/2;
     
-    UIBezierPath *squarePath = [UIBezierPath bezierPath];
-    [squarePath moveToPoint:CGPointMake(startX, startY)];
-    [squarePath addLineToPoint:CGPointMake(startX+size, startY)];
-    [squarePath addLineToPoint:CGPointMake(startX+size, startY+size)];
-    [squarePath addLineToPoint:CGPointMake(startX, startY+size)];
-    [squarePath closePath];
-    return squarePath;
-}
-
-
-- (UIBezierPath *)circlePathWithCenter:(CGPoint)center radius:(CGFloat)radius
-{
-    UIBezierPath *circlePath = [UIBezierPath bezierPath];
-    [circlePath addArcWithCenter:center radius:radius startAngle:0 endAngle:M_PI/2 clockwise:YES];
-    [circlePath addArcWithCenter:center radius:radius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
-    [circlePath addArcWithCenter:center radius:radius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
-    [circlePath addArcWithCenter:center radius:radius startAngle:3*M_PI/2 endAngle:M_PI clockwise:YES];
-    [circlePath closePath];
-    return circlePath;
 }
 
 - (void)updateTorch:(BMTorchCamera) flash {

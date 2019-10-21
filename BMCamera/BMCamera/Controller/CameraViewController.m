@@ -12,6 +12,8 @@
 @property (nonatomic, strong) UIButton * switchCameraBtn;
 @property (nonatomic, strong) UIButton * switchRatioBtn;
 @property (nonatomic, strong) UIButton * flashBtn;
+@property (nonatomic, strong) MaskLayer *maskLayer;
+
 @end
 
 @implementation CameraViewController
@@ -39,6 +41,8 @@
     self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 13 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
     self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, 80/3, 30, 30);
+   
+    
 }
 
 - (void)switchRatio {

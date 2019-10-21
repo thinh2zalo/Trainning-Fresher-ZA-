@@ -12,6 +12,8 @@
 }
 
 
+
+
 - (instancetype) initWithFrame:(CGRect) frame {
     self = CameraFocusLayer.new;
     if (self) {
