@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "../CameraEnum/CameraEnum.h"
-
 #import "CameraFocusLayer.h"
 #import "MaskLayer.h"
 
@@ -26,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGSize previewSize;
 - (void) startCameraWithPosition:(BMCamPosition) position;
 + (CGSize)getPreviewSize;
-- (void)takePicture;
 
 @end
 

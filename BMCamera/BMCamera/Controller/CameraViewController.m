@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+#import "../View/CameraView+Execute.m"
 @interface CameraViewController ()
 @property (nonatomic, strong ) CameraView * cameraView;
 @property (nonatomic, strong) UIButton * switchCameraBtn;

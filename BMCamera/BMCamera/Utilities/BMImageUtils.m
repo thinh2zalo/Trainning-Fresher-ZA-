@@ -7,16 +7,13 @@
 //
 
 #import "BMImageUtils.h"
-#import "../View/CameraView+Execute.h"
 #import "../View/CameraView.h"
 
 @implementation BMImageUtils
-+ (UIImage *) finalizeUIImage:(UIImage *)image andOptions:(struct photoCaptureOptions)options {
++ (UIImage *) finalizeUIImage:(UIImage *)image andOptions:(struct photoCaptureOptions) options {
     CGImageRef  cgImage = image.CGImage;
     CGSize previewSize;
-    if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
-        previewSize = [CameraView getPreviewSize];
-    }
+    previewSize = [CameraView getPreviewSize];
     CGRect cropRect = CGRectMake(0, 0, CGImageGetWidth(cgImage), CGImageGetHeight(cgImage));
     CGRect croppedSize = AVMakeRectWithAspectRatioInsideRect(previewSize, cropRect);
     image = [BMImageUtils cropImage:image toRect:croppedSize];

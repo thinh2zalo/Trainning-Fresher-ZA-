@@ -20,8 +20,8 @@
     }
     return nil;
 }
-
-//- (AVCapturePhoto *)getCaptureOutput:(struct photoCaptureOptions)options { 
+//
+//- (AVCapturePhoto *)getCaptureOutput:(struct photoCaptureOptions)options  API_AVAILABLE(ios(10.0)){
 //    
 //}
 

@@ -30,11 +30,11 @@
     AVCaptureConnection  * connection = [photoOutput connectionWithMediaType:AVMediaTypeVideo];
     if (connection) {
         [photoOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer,  NSError *error){
+            if (error == nil) {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *takenImage = [UIImage imageWithData:imageData];
             takenImage = [BMImageUtils finalizeUIImage:takenImage andOptions:options];
-            
-            
+            }
         }];
     }
     return photoOutput;
