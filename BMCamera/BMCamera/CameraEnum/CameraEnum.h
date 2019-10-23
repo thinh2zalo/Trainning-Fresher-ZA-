@@ -10,6 +10,9 @@
 #define CameraEnum_h
 #import <AVFoundation/AVFoundation.h>
 
+
+
+
 typedef NS_ENUM(NSUInteger, BMTypeCamera) {
     kBMPhoto,
     kBMVideo,

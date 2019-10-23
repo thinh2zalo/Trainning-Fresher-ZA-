@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../CameraCore/CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
+
 #import "CameraFocusLayer.h"
 #import "MaskLayer.h"
 
@@ -23,9 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic) BMTorchCamera flash;
 @property (atomic) BMPosPreview posPreview;
 @property (assign) BMTypeCamera type;
-//@property (nonatomic) setPosOfPreview;
-
+@property (nonatomic) CGSize previewSize;
 - (void) startCameraWithPosition:(BMCamPosition) position;
++ (CGSize)getPreviewSize;
+- (void)takePicture;
 
 @end
 

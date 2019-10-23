@@ -7,13 +7,13 @@
 //
 
 #import "CameraView.h"
-
+#import "CameraView+Execute.h"
 
 
 @interface CameraView()
 
-@property (nonatomic, strong) CameraCore * cameraCore;
 @property (strong, nonatomic) AVCaptureSession * captureSession;
+
 @property (nonatomic, strong) AVCaptureDevice * captureDevice;
 @property (nonatomic, weak) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
 @property (nonatomic, strong) AVCaptureDeviceType deviceType;
@@ -21,6 +21,7 @@
 @property (nonatomic, strong) CameraFocusLayer * focusLayer;
 @property (nonatomic, strong) MaskLayer *maskLayer;
 @property (nonatomic) float lastScale;
+
 typedef void(^BlockOfBackground)(CameraView * cameraView);
 typedef void(^BlockOfMain)(CameraView * cameraView);
 
@@ -113,6 +114,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
                 }
                 [self.captureDevice setSubjectAreaChangeMonitoringEnabled:true];
                 [self.captureDevice unlockForConfiguration];
+            
             }
         }
         
@@ -147,17 +149,18 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
             if ([input isKindOfClass:AVCaptureDeviceInput.class] && [[(AVCaptureDeviceInput * )input device] position] != (AVCaptureDevicePosition) position) {
                 [self.captureSession removeInput:input];
                 NSLog(@"deleted");
-                
+
             }
         }
         self.captureDevice = [self.cameraCore getCurrentCaptureDeviceWithPostion:position];
         AVCaptureDeviceInput *newDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:nil];
-        
+
         if ([self.captureSession canAddInput:newDeviceInput]) {
             [self.captureSession addInput:newDeviceInput];
             _position = position;
             NSLog(@"postion in function");
         }
+
         [self.captureSession commitConfiguration];
     }
 }
@@ -242,12 +245,8 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         if (ratio == kBMCIRCLE) {
             self->_maskLayer = [[MaskLayer alloc] initWithFrame:frame];
             [self.layer addSublayer:self->_maskLayer];
-
         }
-        
     }];
-    
-    
 }
 
 - (void)updateTorch:(BMTorchCamera) flash {
@@ -350,6 +349,10 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
             [camera changeCameraPosition:position];
         }];
     }
+}
+
+- (CGSize)getPreviewSize {
+    return CGSizeMake(self.captureVideoPreviewLayer.frame.size.width, self.captureVideoPreviewLayer.frame.size.height);
 }
 
 - (BMTypeCamera)type {

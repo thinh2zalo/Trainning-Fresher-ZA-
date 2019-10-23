@@ -10,7 +10,7 @@
 
 @implementation APIForIOSGreater10
 
-- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position {
+- (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position API_AVAILABLE(ios(10.0)){
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                                                                                             mediaType:AVMediaTypeVideo
                                                                                                                              position:(AVCaptureDevicePosition)position];
@@ -20,4 +20,9 @@
     }
     return nil;
 }
+
+//- (AVCapturePhoto *)getCaptureOutput:(struct photoCaptureOptions)options { 
+//    
+//}
+
 @end

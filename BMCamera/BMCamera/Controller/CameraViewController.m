@@ -12,6 +12,8 @@
 @property (nonatomic, strong) UIButton * switchCameraBtn;
 @property (nonatomic, strong) UIButton * switchRatioBtn;
 @property (nonatomic, strong) UIButton * flashBtn;
+@property (nonatomic, strong) UIButton * takePictureButton;
+
 @property (nonatomic, strong) MaskLayer *maskLayer;
 
 @end
@@ -38,9 +40,10 @@
     self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.cameraView.clipsToBounds = YES;
     
-    self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 13 , 80/3, 30, 30);
+    self.takePhotoButton.frame = CGRectMake(self.view.frame.size.width/2 - 40, self.view.frame.size.height - 80, 80, 80);
+    self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 20 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
-    self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 50, 80/3, 30, 30);
+    self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 60, 80/3, 30, 30);
    
     
 }
@@ -83,16 +86,20 @@
   }
 }
 
+- (void)takePicture {
+    [self.cameraView takePicture];
+}
+
 - (UIButton *)takePhotoButton {
-    if (!_takePhotoButton) {
-        _takePhotoButton = UIButton.new;
+    if (!_takePictureButton) {
+        _takePictureButton = UIButton.new;
         UIImage *image = [UIImage imageNamed:@"take_photo_icon"];
-        [_takePhotoButton setImage:image forState:UIControlStateNormal];
-        [_takePhotoButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+        [_takePictureButton setImage:image forState:UIControlStateNormal];
+        [_takePictureButton addTarget:self action:@selector(takePicture) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.bottomView addSubview:_takePhotoButton];
+        [self.view addSubview:_takePictureButton];
     }
-    return _takePhotoButton;
+    return _takePictureButton;
 }
 
 - (CameraView *)cameraView {

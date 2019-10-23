@@ -10,11 +10,15 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "../BMCamera/CameraEnum/CameraEnum.h"
+#import "Utilities/CapturePhotoOptions.h"
+//#import "View/CameraView+Execute.h"
 #ifndef DecodeProtocol_h
 #define DecodeProtocol_h
 @protocol GetAPIProtocol <NSObject>
 
 - (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position;
+- (AVCaptureOutput *) getCaptureOutput:(struct photoCaptureOptions)options;
+
 
 @end
 

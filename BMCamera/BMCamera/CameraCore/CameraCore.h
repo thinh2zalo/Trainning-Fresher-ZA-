@@ -15,5 +15,6 @@
 @interface  CameraCore: NSObject
 
 - (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMCamPosition) position;
+- (AVCaptureOutput *) getCaptureOutput:(struct photoCaptureOptions)options;
 @end
 
