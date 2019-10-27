@@ -7,23 +7,22 @@
 //
 
 #import "CameraView.h"
-#import "CameraView+Execute.h"
 
 
 @interface CameraView()
 
 @property (strong, nonatomic) AVCaptureSession * captureSession;
-
 @property (nonatomic, strong) AVCaptureDevice * captureDevice;
 @property (nonatomic, weak) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
-@property (nonatomic, strong) AVCaptureDeviceType deviceType;
 @property (nonatomic) dispatch_queue_t queue;
 @property (nonatomic, strong) CameraFocusLayer * focusLayer;
 @property (nonatomic, strong) MaskLayer *maskLayer;
 @property (nonatomic) float lastScale;
-
+@property (strong, nonatomic) AVCaptureOutput * currentGrapicOutput;
+@property (nonatomic, strong) CameraCore * cameraCore;
 typedef void(^BlockOfBackground)(CameraView * cameraView);
 typedef void(^BlockOfMain)(CameraView * cameraView);
+
 
 
 @end
@@ -58,7 +57,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     } asyncMain:^(CameraView * cameraView) {
         UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchToZoomRecognizer:)];
         [self addGestureRecognizer:pinchGesture];
-        [cameraView setPosPreview:kBMPreviewCenter];
+        [cameraView setPosPreview:kBMPreviewTop];
         BMRatioCamera ratio = kBMCIRCLE;
         [cameraView updateRatio:ratio];
     }];
@@ -71,7 +70,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     }
     
     if ([self.captureDevice lockForConfiguration:nil]) {
-        
         self.captureDevice.videoZoomFactor = zoomFactor;
         [self.captureDevice  unlockForConfiguration];
     } else {
@@ -114,7 +112,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
                 }
                 [self.captureDevice setSubjectAreaChangeMonitoringEnabled:true];
                 [self.captureDevice unlockForConfiguration];
-            
             }
         }
         
@@ -122,8 +119,18 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     
 }
 
+- (void)takePicture {
+    struct photoCaptureOptions options;
+    options.camPos = kBMCamPositionBack;
+    options.imageQulity = 90;
+    options.interfaceOrientation = UIInterfaceOrientationPortrait;
+    options.origin = CGPointZero;
+    options.ratio = self.ratio;
+    
+    [self.cameraCore capturePhoto:self.currentGrapicOutput options:options];
+}
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    // check multi touch
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:touch.view];
     [self focusAtThePoint:touchPoint];
@@ -134,7 +141,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     self.focusLayer = CameraFocusLayer.new;
     self.focusLayer = [[CameraFocusLayer alloc]initWithFrame:CGRectMake(touchPoint.x - 40, touchPoint.y - 40, 80, 80)];
     [self.layer addSublayer:self.focusLayer];
-    
 }
 
 - (AVCaptureDevicePosition )getCurrentPosition {
@@ -149,7 +155,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
             if ([input isKindOfClass:AVCaptureDeviceInput.class] && [[(AVCaptureDeviceInput * )input device] position] != (AVCaptureDevicePosition) position) {
                 [self.captureSession removeInput:input];
                 NSLog(@"deleted");
-
             }
         }
         self.captureDevice = [self.cameraCore getCurrentCaptureDeviceWithPostion:position];
@@ -168,10 +173,11 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 
 - (void)changeType:(BMTypeCamera) type {
     if (_captureSession) {
-        //duylh2: mising update _type
         [self.captureSession beginConfiguration];
         AVCaptureSessionPreset  preset = AVCaptureSessionPresetHigh;
-        
+        if (self.currentGrapicOutput) {
+            [self.captureSession removeOutput:self.currentGrapicOutput];
+        }
         switch (type) {
             case kBMPhoto:
                 preset = AVCaptureSessionPresetPhoto;
@@ -181,9 +187,21 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
                 // add input audio
                 break;
         }
+        
+        self.currentGrapicOutput = [self.cameraCore getCaptureOutput:type];
+        if ([self.captureSession canAddOutput:self.currentGrapicOutput]) {
+            [self.captureSession addOutput:self.currentGrapicOutput];
+            AVCaptureConnection * connection = [self.currentGrapicOutput connectionWithMediaType:AVMediaTypeVideo];
+            if (connection.isVideoMirroringSupported) {
+                [connection setVideoMirrored:self.position = kBMCamPositionFront ? true : false];
+            }
+            if (connection.isVideoOrientationSupported) {
+                [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+            }
+        }
         if ([self.captureSession canSetSessionPreset:preset]) {
             [self.captureSession setSessionPreset:preset];
-            _type = type;
+                _type = type;
         }
         [self.captureSession commitConfiguration];
         
@@ -294,7 +312,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     });
 }
 
-- (void) asyncBackground:(BlockOfBackground) blockBackground asyncMain:(BlockOfMain) blockMain{
+- (void)asyncBackground:(BlockOfBackground) blockBackground asyncMain:(BlockOfMain) blockMain{
     CameraView * __weak weakSelf = self;
     dispatch_async(weakSelf.queue, ^(void) {
         if (weakSelf) {
@@ -308,8 +326,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     });
     
 }
-
-
 
 - (void)setType:(BMTypeCamera)type {
     if (type != _type) {
@@ -327,7 +343,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     }
 }
 
-
 - (void)setPosPreview:(BMPosPreview)posPreview {
     if (posPreview != _posPreview) {
         _posPreview = posPreview;
@@ -342,7 +357,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     }
 }
 
-
 - (void)setPosition:(BMCamPosition)position {
     if (position != _position) {
         [self async:^(CameraView * camera){
@@ -351,8 +365,8 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     }
 }
 
-- (CGSize)getPreviewSize {
-    return CGSizeMake(self.captureVideoPreviewLayer.frame.size.width, self.captureVideoPreviewLayer.frame.size.height);
++ (CGSize)getPreviewSize {
+    return CGSizeMake(400,400 );
 }
 
 - (BMTypeCamera)type {

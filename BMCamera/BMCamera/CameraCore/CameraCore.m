@@ -8,28 +8,35 @@
 
 #import "CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
-//#import "../View/CameraView+Execute.h"
+
 @interface CameraCore () <AVCapturePhotoCaptureDelegate>
 @property (nonatomic, strong) id getVersionIOS ;
-
 @end
 
 
 @implementation CameraCore
 
-
 - (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMCamPosition) position{
     if (self.getVersionIOS) {
         return [self.getVersionIOS getCaptureDeviceWithPostion:position];
+        
     }
     return nil;
 }
 
-- (AVCaptureOutput *) getCaptureOutput:(struct photoCaptureOptions)options {
-    if (self.getVersionIOS) {
-        return [self.getVersionIOS getCaptureOutput:options];
+- (void)capturePhoto:(AVCaptureOutput *) photoOutput options:(struct photoCaptureOptions) options{
+    if (photoOutput) {
+        [self.getVersionIOS capturePhoto:photoOutput photoCaptureOptions:options];
     }
-    return nil;
+}
+
+- (AVCaptureOutput *) getCaptureOutput:(BMTypeCamera)type {
+    switch (type) {
+        case kBMPhoto:  if (self.getVersionIOS) {
+            return [self.getVersionIOS getCaptureOutput];
+        }
+        default: return AVCaptureVideoDataOutput.new;
+    }
 }
 
 - (id)getVersionIOS {
@@ -46,6 +53,5 @@
     return _getVersionIOS;
 }
 
-
-
 @end
+

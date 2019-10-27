@@ -10,6 +10,9 @@
 #import "../CameraEnum/CameraEnum.h"
 #import "CameraFocusLayer.h"
 #import "MaskLayer.h"
+#import "../CameraCore/CameraCore.h"
+#import "../CameraCore/PhotoCaptureProcessor.h"
+#import "../CameraCore/CameraViewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic) BMPosPreview posPreview;
 @property (assign) BMTypeCamera type;
 @property (nonatomic) CGSize previewSize;
+- (void)takePicture;
+@property (nonatomic, weak) id <CameraViewDelegate> delegate;
+
 - (void) startCameraWithPosition:(BMCamPosition) position;
 + (CGSize)getPreviewSize;
 

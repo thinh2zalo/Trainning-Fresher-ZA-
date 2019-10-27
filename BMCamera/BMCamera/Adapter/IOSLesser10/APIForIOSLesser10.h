@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../../GetAPIProtocol.m"
-//#import "../..//Utilities/BMImageUtils.h"
+#import "../../CameraCore/GetAPIProtocol.h"
 #import <AVFoundation/AVFoundation.h>
 
 

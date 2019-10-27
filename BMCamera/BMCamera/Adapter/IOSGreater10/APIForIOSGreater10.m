@@ -7,6 +7,11 @@
 //
 
 #import "APIForIOSGreater10.h"
+#import "../../CameraCore/CameraViewDelegate.h"
+@interface APIForIOSGreater10();
+@property (nonatomic, strong) NSMutableDictionary * progressPhotoCaptureProcessorsDict;
+
+@end
 
 @implementation APIForIOSGreater10
 
@@ -16,13 +21,50 @@
                                                                                                                              position:(AVCaptureDevicePosition)position];
     NSArray *arrayCaptureDevices = [captureDeviceDiscoverySession devices];
     if (arrayCaptureDevices.count > 0) {
+        
         return arrayCaptureDevices.firstObject;
     }
     return nil;
 }
-//
-//- (AVCapturePhoto *)getCaptureOutput:(struct photoCaptureOptions)options  API_AVAILABLE(ios(10.0)){
-//    
-//}
+
+
+- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options {
+    AVCapturePhotoOutput * photoOutput = (AVCapturePhotoOutput *) capturePhotoOutput ;
+    AVCapturePhotoSettings * setting = AVCapturePhotoSettings.new;
+    if (photoOutput) {
+        PhotoCaptureProcessor  __block * processor = [[PhotoCaptureProcessor alloc]initWithUniqueID:setting.uniqueID photoCaptureOptions:options willCapturePhotoAnimation:^{
+            
+        } andCompleteHandler:^(PhotoCaptureProcessor * processor, UIImage * image) {
+            dispatch_async(self.queue, ^{
+                [self.progressPhotoCaptureProcessorsDict removeObjectForKey:[NSNumber numberWithUnsignedLongLong:processor.uniqueID]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate onCaptured:image];
+                });
+            });
+        }];
+        [self.progressPhotoCaptureProcessorsDict setObject:processor forKey:[NSNumber numberWithUnsignedLongLong:processor.uniqueID]];
+        [photoOutput capturePhotoWithSettings:setting delegate:processor];
+    }
+}
+
+
+- (AVCapturePhotoOutput *)getCaptureOutput API_AVAILABLE(ios(10.0)){
+    return AVCapturePhotoOutput.new;
+}
+
+
+- (dispatch_queue_t)queue {
+    if (!_queue) {
+        _queue = dispatch_queue_create("bm.camera.captureProcess", DISPATCH_QUEUE_SERIAL);
+    }
+    return _queue;
+}
+
+- (NSMutableDictionary *)progressPhotoCaptureProcessorsDict {
+    if (!_progressPhotoCaptureProcessorsDict) {
+        _progressPhotoCaptureProcessorsDict = NSMutableDictionary.new;
+    }
+    return _progressPhotoCaptureProcessorsDict;
+}
 
 @end

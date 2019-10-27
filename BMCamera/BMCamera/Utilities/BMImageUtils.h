@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../View/CameraView+Execute.h"
-
+#import "../CameraCore/PhotoCaptureProcessor.h"
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BMImageUtils : NSObject
-+ (UIImage *) finalizeUIImage:(UIImage *)img andOptions:(struct photoCaptureOptions)options;
++ (UIImage *) finalizeUIImage:(CGImageRef )cgImage andOptions:(struct photoCaptureOptions) options;
 
 @end
 

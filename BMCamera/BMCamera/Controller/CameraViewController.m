@@ -7,14 +7,14 @@
 //
 
 #import "CameraViewController.h"
-#import "../View/CameraView+Execute.m"
-@interface CameraViewController ()
+#import "../CameraCore/CameraViewDelegate.h"
+@interface CameraViewController () <CameraViewDelegate>
 @property (nonatomic, strong ) CameraView * cameraView;
 @property (nonatomic, strong) UIButton * switchCameraBtn;
 @property (nonatomic, strong) UIButton * switchRatioBtn;
 @property (nonatomic, strong) UIButton * flashBtn;
 @property (nonatomic, strong) UIButton * takePictureButton;
-
+@property (nonatomic, strong) UIView * preview;
 @property (nonatomic, strong) MaskLayer *maskLayer;
 
 @end
@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
+    [self.preview setHidden:true];
+    self.cameraView.delegate = self;
     [self layoutUI];
 
 }
@@ -33,34 +35,41 @@
     [super viewWillAppear:animated];
     BMCamPosition pos = kBMCamPositionBack;
     [self.cameraView startCameraWithPosition:pos];
+    self.preview.frame = self.cameraView.frame;
+
 
 }
 
-
+- (void)onCaptured:(UIImage *)image {
+    [self.preview setHidden:false];
+    UIImageView * imgView = [[UIImageView alloc] initWithImage:image];
+    imgView.frame = self.preview.bounds;
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.preview addSubview:imgView];
+}
 - (void)layoutUI {
     self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.cameraView.clipsToBounds = YES;
-    
     self.takePhotoButton.frame = CGRectMake(self.view.frame.size.width/2 - 40, self.view.frame.size.height - 80, 80, 80);
     self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 20 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
     self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 60, 80/3, 30, 30);
-   
-    
+    self.preview.frame = CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height);
 }
 
 - (void)switchRatio {
     switch (self.cameraView.ratio) {
         case kBMSQUARE:
+            [self.cameraView setRatio:kBMCIRCLE];
+            break;
+        case kBMCIRCLE:
             [self.cameraView setRatio:kBMFULL];
             break;
         case kBMFULL:
-            [self.cameraView setRatio:kBMTHREE_FOUR];
-
-            break;
+            [self.cameraView setRatio:kBMTHREE_FOUR]; break;
         case kBMTHREE_FOUR:
-            [self.cameraView setRatio:kBMSQUARE]; break;
-        default:[self.cameraView setRatio:kBMCIRCLE];
+            [self.cameraView setRatio:kBMSQUARE];
+//        default:[self.cameraView setRatio:kBMCIRCLE];
         
     }
 }
@@ -90,7 +99,13 @@
 - (void)takePicture {
     [self.cameraView takePicture];
 }
-
+- (UIView *)preview{
+    if (!_preview) {
+        _preview = UIView.new;
+        [self.view insertSubview:_preview aboveSubview:self.cameraView];
+    }
+    return _preview;
+}
 - (UIButton *)takePhotoButton {
     if (!_takePictureButton) {
         _takePictureButton = UIButton.new;

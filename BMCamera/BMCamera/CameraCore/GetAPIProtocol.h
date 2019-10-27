@@ -9,19 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "../BMCamera/CameraEnum/CameraEnum.h"
-#import "Utilities/CapturePhotoOptions.h"
+#import "../CameraEnum/CameraEnum.h"
+#import "../CameraCore/PhotoCaptureProcessor.h"
+#import "../CameraCore/CameraViewDelegate.h"
 //#import "View/CameraView+Execute.h"
 #ifndef DecodeProtocol_h
 #define DecodeProtocol_h
+
 @protocol GetAPIProtocol <NSObject>
-
+//@property (nonatomic, strong)
 - (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position;
-- (AVCaptureOutput *) getCaptureOutput:(struct photoCaptureOptions)options;
-
+- (AVCaptureOutput *) getCaptureOutput;
+- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options ;
 
 @end
 
-
-
 #endif /* DecodeProtocol_h */
+

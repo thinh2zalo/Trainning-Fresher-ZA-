@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../../GetAPIProtocol.m"
+#import "../../CameraCore/GetAPIProtocol.h"
+#import "../../CameraCore/CameraCore.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIForIOSGreater10 : NSObject <GetAPIProtocol>
+@property (nonatomic) dispatch_queue_t queue;
 
 @end
 

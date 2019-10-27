@@ -51,9 +51,13 @@
     scale.duration = 0.2;
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    animation.duration = 4;
+    animation.duration = 2;
     animation.fromValue = [NSNumber numberWithFloat:1.0f];
-    animation.toValue = [NSNumber numberWithFloat:0.5f];
+    animation.toValue = [NSNumber numberWithFloat:0.0f];
+    
+    
+    
+    
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeBoth;
     animation.additive = NO;
@@ -64,6 +68,7 @@
                                             animationWithKeyPath:@"borderColor"];
     selectionAnimation.toValue = (id)[UIColor colorWithRed:1.0 green:0.83 blue:0 alpha:0.95].CGColor;
     selectionAnimation.repeatCount = 8;
+    
     [self addAnimation:selectionAnimation
                 forKey:@"selectionAnimation"];
 }
