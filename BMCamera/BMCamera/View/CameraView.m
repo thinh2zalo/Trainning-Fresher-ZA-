@@ -38,9 +38,6 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
 @synthesize posPreview = _posPreview;
 @synthesize lastScale = _lastScale;
 
-
-
-
 - (void)setupAndStartSession {
     self.captureSession = AVCaptureSession.new;
     [self asyncBackground:^(CameraView * cameraView){
@@ -123,9 +120,10 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     struct photoCaptureOptions options;
     options.camPos = kBMCamPositionBack;
     options.imageQulity = 90;
-    options.interfaceOrientation = UIInterfaceOrientationLandscapeRight;
+    options.interfaceOrientation = self.cameraCore.orientation;
     options.origin = CGPointZero;
     options.ratio = self.ratio;
+ 
     [self.cameraCore capturePhoto:self.currentGrapicOutput options:options handle:^(UIImage *image){
         [self.delegate onCaptured:image];
     }];
@@ -200,7 +198,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
                 [connection setVideoMirrored:self.position = kBMCamPositionFront ? true : false];
             }
             if (connection.isVideoOrientationSupported) {
-                [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+                [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
             }
         }
         if ([self.captureSession canSetSessionPreset:preset]) {

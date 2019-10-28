@@ -16,10 +16,12 @@
 @interface  CameraCore: NSObject
 
 - (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMCamPosition) position;
+
 - (AVCaptureOutput *) getCaptureOutput:(BMTypeCamera)type;
 - (void)capturePhoto:(AVCaptureOutput *) photoOutput options:(struct photoCaptureOptions) options handle:(handlerAfterCapture) handlerAfterCapture;
 
 @property (nonatomic) dispatch_queue_t queue;
+@property (nonatomic) UIInterfaceOrientation  orientation;
 
 
 @end

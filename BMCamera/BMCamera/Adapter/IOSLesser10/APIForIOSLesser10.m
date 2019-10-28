@@ -28,7 +28,8 @@
     return AVCaptureStillImageOutput.new;
 }
 
-- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options {
+- (void)capturePhoto:(AVCaptureOutput *)capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions)options handlerAfterCapture:(handlerAfterCapture)handlerAfterCapture {
+    
     AVCaptureConnection  * connection = [capturePhotoOutput connectionWithMediaType:AVMediaTypeVideo];
     if (connection) {
         AVCaptureStillImageOutput * photoOutput = (AVCaptureStillImageOutput *) capturePhotoOutput ;
@@ -42,7 +43,7 @@
                     if (dataProvider) {
                         CGImageRef cgImage = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, kCGRenderingIntentDefault);
                         takenImage = [BMImageUtils finalizeUIImage:cgImage andOptions:options];
-                        
+                        handlerAfterCapture(takenImage);
                     }
                 }
             } else {
@@ -51,5 +52,6 @@
         }];
     }
 }
+
 
 @end

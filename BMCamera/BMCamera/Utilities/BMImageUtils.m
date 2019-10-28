@@ -22,10 +22,13 @@
             }
             
         case UIInterfaceOrientationLandscapeLeft:
+
             return posCam == kBMCamPositionBack ? UIImageOrientationDown : UIImageOrientationUpMirrored;
         case UIInterfaceOrientationLandscapeRight:
+
             return posCam == kBMCamPositionBack ? UIImageOrientationUp : UIImageOrientationDownMirrored;
         case UIInterfaceOrientationPortrait:
+            
             if (posCam == kBMCamPositionBack) {
                 return UIImageOrientationRight;
             } else {
@@ -45,6 +48,9 @@
     NSLog(@"previewSize w:%f, h:%f", previewSize.width, previewSize.height);
     CGImageRef finalCGImage = NULL;
     finalCGImage =  CGImageCreateWithImageInRect(cgImage, CGRectMake(0, 0, previewSize.width, previewSize.height));
+    CGSize derpreviewSize = CGSizeMake((CGFloat)CGImageGetWidth(finalCGImage), (CGFloat)CGImageGetHeight(finalCGImage));
+
+    NSLog(@"derpreviewSize w:%f, h:%f", derpreviewSize.width, derpreviewSize.height);
 
     UIImage * img = [UIImage imageWithCGImage:finalCGImage scale:1.0 orientation:[BMImageUtils imageOrientationWithInterfaceOrientation:options.interfaceOrientation posCam:options.camPos]];
     NSLog(@"width %f height  %f", img.size.width, img.size.height );

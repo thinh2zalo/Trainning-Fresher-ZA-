@@ -30,6 +30,15 @@
 
 }
 
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight))
+    {
+//        NSLog(@"UIDeviceOrientationLandscapeRight");
+    } else {
+//        NSLog(@"portrait");
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -44,7 +53,8 @@
     [self.preview setHidden:false];
     UIImageView * imgView = [[UIImageView alloc] initWithImage:image];
     imgView.frame = self.preview.bounds;
-    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    imgView.contentMode = UIViewContentModeScaleAspectFit;
+    NSLog(@"image %f, %f", image.size.width, image.size.height);
     [self.preview addSubview:imgView];
 }
 - (void)layoutUI {
@@ -96,6 +106,13 @@
 }
 
 - (void)onOffFlash {
+    if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight))
+    {
+        NSLog(@"UIDeviceOrientationLandscapeRight");
+    } else {
+        NSLog(@"portrait");
+    }
     switch (self.cameraView.flash) {
         case kBMTorchOn:
             [self.cameraView setFlash:kBMTorchOff];

@@ -8,13 +8,51 @@
 
 #import "CameraCore.h"
 #import "../CameraEnum/CameraEnum.h"
+#import <CoreMotion/CoreMotion.h>
+
 
 @interface CameraCore () <AVCapturePhotoCaptureDelegate>
+@property (strong, nonatomic) CMMotionManager * motionManager;
 @property (nonatomic, strong) id getVersionIOS ;
+
 @end
 
 
 @implementation CameraCore
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        CameraCore __weak * weakSelf = self;
+        self.motionManager = [[CMMotionManager alloc] init];
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue new]
+                                                 withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+                                                     if (!error) {
+                                                         self.orientation = [weakSelf getOrientationBy:accelerometerData.acceleration];
+                                                     } else {
+                                                         // handle error
+                                                     }
+                                                 }];
+        
+         }
+         return self;
+
+}
+
+- (UIInterfaceOrientation)getOrientationBy:(CMAcceleration)acceleration {
+    UIInterfaceOrientation newOrientation;
+    NSLog(@"Y: %f and X  : %f", ABS( acceleration.y ), ABS( acceleration.x ));
+    newOrientation =  ABS( acceleration.y ) < ABS( acceleration.x )
+    ?   acceleration.x > 0 ? UIInterfaceOrientationLandscapeLeft  :  UIInterfaceOrientationLandscapeRight
+    :   acceleration.y > 0 ? UIInterfaceOrientationPortraitUpsideDown : UIInterfaceOrientationPortrait;
+    if (newOrientation != self.orientation) {
+        self.orientation = newOrientation;
+    }
+    return newOrientation;
+    
+}
+
 
 - (AVCaptureDevice *) getCurrentCaptureDeviceWithPostion:(BMCamPosition) position{
     if (self.getVersionIOS) {
@@ -38,6 +76,8 @@
         default: return AVCaptureVideoDataOutput.new;
     }
 }
+
+
 
 - (id)getVersionIOS {
     if (!_getVersionIOS) {

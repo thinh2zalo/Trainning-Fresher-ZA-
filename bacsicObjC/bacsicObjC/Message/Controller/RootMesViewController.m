@@ -46,6 +46,9 @@
     }
 }
 
+
+
+
 - (void)switchToViewController:(UIViewController *)toVC {
     if (toVC.view.hidden || !toVC.view.superview) {
         for (UIViewController *each in self.viewControllers) {
