@@ -39,6 +39,8 @@ typedef void(^BlockOfBackground)(PhotoCaptureProcessor * photoCaptureProcessor);
             } else {
                 photoCaptureProcessor.completeHandler(photoCaptureProcessor, UIImage.new);
             }
+        } else {
+            // handle error
         }
     }];
 }
@@ -64,6 +66,8 @@ typedef void(^BlockOfBackground)(PhotoCaptureProcessor * photoCaptureProcessor);
                     return;
                 }
             }
+        } else {
+            // handle error
         }
         self.completeHandler(self, UIImage.new);
     }];

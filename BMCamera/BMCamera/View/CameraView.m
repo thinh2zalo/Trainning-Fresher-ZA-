@@ -73,7 +73,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         self.captureDevice.videoZoomFactor = zoomFactor;
         [self.captureDevice  unlockForConfiguration];
     } else {
-        NSLog(@"error");
+        // handle error
     }
 }
 
@@ -123,11 +123,12 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
     struct photoCaptureOptions options;
     options.camPos = kBMCamPositionBack;
     options.imageQulity = 90;
-    options.interfaceOrientation = UIInterfaceOrientationPortrait;
+    options.interfaceOrientation = UIInterfaceOrientationLandscapeRight;
     options.origin = CGPointZero;
     options.ratio = self.ratio;
-    
-    [self.cameraCore capturePhoto:self.currentGrapicOutput options:options];
+    [self.cameraCore capturePhoto:self.currentGrapicOutput options:options handle:^(UIImage *image){
+        [self.delegate onCaptured:image];
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -159,6 +160,9 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         }
         self.captureDevice = [self.cameraCore getCurrentCaptureDeviceWithPostion:position];
         AVCaptureDeviceInput *newDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:nil];
+        
+            // handle error
+        
 
         if ([self.captureSession canAddInput:newDeviceInput]) {
             [self.captureSession addInput:newDeviceInput];
@@ -196,7 +200,7 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
                 [connection setVideoMirrored:self.position = kBMCamPositionFront ? true : false];
             }
             if (connection.isVideoOrientationSupported) {
-                [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+                [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
             }
         }
         if ([self.captureSession canSetSessionPreset:preset]) {
@@ -218,7 +222,9 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
         }
         [self updateFrameRatio:ratio];
         
-    } else NSLog(@"error");
+    } else {
+        // handle error
+    }
 }
 
 - (void)updateFrameRatio:(BMRatioCamera) ratio {
@@ -247,24 +253,35 @@ typedef void(^BlockOfMain)(CameraView * cameraView);
             yCaseThreeFour = height - height_3_4;
             yCaseSquare = yCaseThreeFour ;
     }
+    [self.maskLayer setHidden:true];
     switch (ratio) {
         case kBMTHREE_FOUR: frame = CGRectMake(0, yCaseThreeFour, width, (width / 3 ) * 4);
             break;
         case kBMFULL: frame = bounds;
             break;
-        default: frame = CGRectMake(0, yCaseSquare , width, width);
+        case kBMSQUARE: frame = CGRectMake(0, yCaseSquare , width, width);
+            break;
+        case kBMCIRCLE: frame = CGRectMake(0, yCaseSquare , width, width);
+            self.maskLayer.frame = frame;
+            [self.maskLayer setHidden:false];
+            
     }
 
     _ratio = ratio;
-    CameraView * __weakSelf = self;
+    CameraView __weak * weakSelf = self;
     [UIView animateWithDuration:0.2 animations:^{
-        __weakSelf.frame = frame;
-        __weakSelf.captureVideoPreviewLayer.frame = self.bounds;
-        if (ratio == kBMCIRCLE) {
-            self->_maskLayer = [[MaskLayer alloc] initWithFrame:frame];
-            [self.layer addSublayer:self->_maskLayer];
-        }
+        weakSelf.frame = frame;
+        weakSelf.captureVideoPreviewLayer.frame = self.bounds;
+        
     }];
+}
+
+- (MaskLayer *)maskLayer {
+    if (!_maskLayer) {
+        self.maskLayer = [[MaskLayer alloc] initWithFrame:self.bounds];
+        [self.layer addSublayer: _maskLayer];
+    }
+    return _maskLayer;
 }
 
 - (void)updateTorch:(BMTorchCamera) flash {

@@ -17,6 +17,7 @@
 
 - (void)layoutSublayers {
     self.frame = _layerFrame;
+
 }
 
 - (instancetype) initWithFrame:(CGRect) frame {
@@ -32,9 +33,9 @@
 //        self.fillColor = [UIColor clearColor].CGColor;
         self.fillRule = kCAFillRuleEvenOdd;
         self.opacity = 0.3;
-        CIFilter *blur = [CIFilter filterWithName:@"CIGaussianBlur"];
-        [blur setDefaults];
-        self.backgroundFilters = [NSArray arrayWithObject:blur];
+//        self.backgroundColor  = ([UIColor whiteColor]).CGColor;
+
+
         
       
     }

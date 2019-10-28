@@ -24,9 +24,9 @@
     return nil;
 }
 
-- (void)capturePhoto:(AVCaptureOutput *) photoOutput options:(struct photoCaptureOptions) options{
+- (void)capturePhoto:(AVCaptureOutput *) photoOutput options:(struct photoCaptureOptions) options handle:(handlerAfterCapture) handlerAfterCapture{
     if (photoOutput) {
-        [self.getVersionIOS capturePhoto:photoOutput photoCaptureOptions:options];
+        [self.getVersionIOS capturePhoto:photoOutput photoCaptureOptions:options handlerAfterCapture:handlerAfterCapture];
     }
 }
 

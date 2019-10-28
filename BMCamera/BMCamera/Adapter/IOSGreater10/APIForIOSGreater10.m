@@ -8,7 +8,8 @@
 
 #import "APIForIOSGreater10.h"
 #import "../../CameraCore/CameraViewDelegate.h"
-@interface APIForIOSGreater10();
+#import "../../View/CameraView.h"
+@interface APIForIOSGreater10()
 @property (nonatomic, strong) NSMutableDictionary * progressPhotoCaptureProcessorsDict;
 
 @end
@@ -28,7 +29,7 @@
 }
 
 
-- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options {
+- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options handlerAfterCapture:(handlerAfterCapture)handlerAfterCapture  API_AVAILABLE(ios(10.0)) {
     AVCapturePhotoOutput * photoOutput = (AVCapturePhotoOutput *) capturePhotoOutput ;
     AVCapturePhotoSettings * setting = AVCapturePhotoSettings.new;
     if (photoOutput) {
@@ -38,7 +39,7 @@
             dispatch_async(self.queue, ^{
                 [self.progressPhotoCaptureProcessorsDict removeObjectForKey:[NSNumber numberWithUnsignedLongLong:processor.uniqueID]];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.delegate onCaptured:image];
+                    
                 });
             });
         }];

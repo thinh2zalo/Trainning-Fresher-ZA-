@@ -74,6 +74,15 @@
     }
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 - (void)switchCamera {
     
     if (self.cameraView.position == kBMCamPositionFront) {

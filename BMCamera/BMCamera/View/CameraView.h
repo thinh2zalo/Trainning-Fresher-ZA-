@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) BMTypeCamera type;
 @property (nonatomic) CGSize previewSize;
 - (void)takePicture;
+
 @property (nonatomic, weak) id <CameraViewDelegate> delegate;
 
 - (void) startCameraWithPosition:(BMCamPosition) position;

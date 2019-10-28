@@ -17,10 +17,11 @@
 #define DecodeProtocol_h
 
 @protocol GetAPIProtocol <NSObject>
+typedef void(^handlerAfterCapture)(UIImage * image);
 //@property (nonatomic, strong)
 - (AVCaptureDevice *) getCaptureDeviceWithPostion:(BMCamPosition) position;
 - (AVCaptureOutput *) getCaptureOutput;
-- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options ;
+- (void)capturePhoto:(AVCaptureOutput *) capturePhotoOutput photoCaptureOptions:(struct photoCaptureOptions) options handlerAfterCapture:(handlerAfterCapture) handlerAfterCapture ;
 
 @end
 
