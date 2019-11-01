@@ -104,9 +104,7 @@
     if ([cell isKindOfClass:ParentCell.class]) {
         [((ParentCell*)cell) updateContentInsideCell:contentToUpdate];
     }
-    if (indexPath.row == self.arrContents.count - 1) {
-        NSLog(@"do you here");
-    }
+   
     
 }
 
