@@ -1,0 +1,6 @@
+framework module Pods_NetworkAPI_NetworkAPIUITests {
+  umbrella header "Pods-NetworkAPI-NetworkAPIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

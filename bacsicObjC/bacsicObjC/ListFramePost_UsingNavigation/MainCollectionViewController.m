@@ -62,13 +62,11 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    NSLog(@"check");
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ParentsCell * cell;
-    NSLog(@"cell at %tu", indexPath.item);
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     if (!UIInterfaceOrientationIsPortrait(orientation)) {
         if (indexPath.item % 4 == 0) {
@@ -126,7 +124,6 @@
         }
     }
    
-    
     return CGSizeMake(widthOfCell, heightOfCell);
     
 }
@@ -150,6 +147,7 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
+        
         _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         
         

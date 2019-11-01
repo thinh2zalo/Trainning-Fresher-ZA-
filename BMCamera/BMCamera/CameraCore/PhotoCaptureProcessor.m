@@ -74,6 +74,8 @@ typedef void(^BlockOfBackground)(PhotoCaptureProcessor * photoCaptureProcessor);
  
 }
 
+
+
 - (void)async:(BlockOfBackground)blockOfBackground {
     PhotoCaptureProcessor * __weak weakSelf = self;
     dispatch_async(weakSelf.queue, ^(void){

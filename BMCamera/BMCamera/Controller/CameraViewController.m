@@ -45,8 +45,6 @@
     BMCamPosition pos = kBMCamPositionBack;
     [self.cameraView startCameraWithPosition:pos];
     self.preview.frame = self.cameraView.frame;
-
-
 }
 
 - (void)onCaptured:(UIImage *)image {
@@ -56,6 +54,7 @@
     imgView.contentMode = UIViewContentModeScaleAspectFit;
     NSLog(@"image %f, %f", image.size.width, image.size.height);
     [self.preview addSubview:imgView];
+    NSLog(@"self.preview  %f, %f", self.preview.frame.size.width, self.preview.frame.size.height);
 }
 - (void)layoutUI {
     self.cameraView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -64,7 +63,7 @@
     self.switchRatioBtn.frame = CGRectMake(self.view.frame.size.width/2 - 20 , 80/3, 30, 30);
     self.flashBtn.frame = CGRectMake(20, 80/3, 30, 30);
     self.switchCameraBtn.frame = CGRectMake(self.view.frame.size.width - 60, 80/3, 30, 30);
-    self.preview.frame = CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height);
+    self.preview.frame = self.view.bounds;
 }
 
 - (void)switchRatio {

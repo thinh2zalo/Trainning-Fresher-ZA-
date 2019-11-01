@@ -25,7 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       self.window.backgroundColor = [UIColor whiteColor];
-    RootMesViewController * navigationRootMes = [[RootMesViewController alloc] initWithRootViewController:[MessageViewController new]];
+    UINavigationController * navigationRootMes = [[UINavigationController alloc] initWithRootViewController:[MainCollectionViewController new]];
+    [navigationRootMes setNavigationBarHidden:YES];
     self.window.rootViewController = navigationRootMes;
     return YES;
 }

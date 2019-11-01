@@ -47,7 +47,7 @@
     NSLog(@"originalSize w:%f, h:%f", originalSize.width, originalSize.height);
     NSLog(@"previewSize w:%f, h:%f", previewSize.width, previewSize.height);
     CGImageRef finalCGImage = NULL;
-    finalCGImage =  CGImageCreateWithImageInRect(cgImage, CGRectMake(0, 0, previewSize.width, previewSize.height));
+    finalCGImage =  CGImageCreateWithImageInRect(cgImage, CGRectMake(0, 0, 3024, 3024));
     CGSize derpreviewSize = CGSizeMake((CGFloat)CGImageGetWidth(finalCGImage), (CGFloat)CGImageGetHeight(finalCGImage));
 
     NSLog(@"derpreviewSize w:%f, h:%f", derpreviewSize.width, derpreviewSize.height);
@@ -59,17 +59,18 @@
 }
 
 + (CGSize )getSizeBaseOnRatio:(CGSize) size ratio:(BMRatioCamera)ratio {
-    float height = size.height;
-    float width = size.width;
-    switch (ratio) {
-        case kBMTHREE_FOUR: return CGSizeMake(width, (width / 3 ) * 4);
-        
-        case kBMFULL: return CGSizeMake(width, height);
-            
-        default: return CGSizeMake(width, width);
+    return size;
+//    float height = size.height;
+//    float width = size.width;
+//    switch (ratio) {
+//        case kBMTHREE_FOUR: return CGSizeMake(width, (width / 3 ) * 4);
+//
+//        case kBMFULL: return CGSizeMake(width, height);
+//
+//        default: return CGSizeMake(width, width);
     }
     
     
-}
+//}
 
 @end

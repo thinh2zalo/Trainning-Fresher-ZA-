@@ -84,13 +84,16 @@
     
 }
 
+
+
 + (CGFloat) heightForText:(NSString*)string WithFontSize:(CGFloat) fontSize maxSize:(CGSize) maxSize {
+    
     if (![string isKindOfClass:NSString.class]) {
         string = @"";
     }
     CGFloat textHeight = - ALIGN_TOP;
     if (![string isEqualToString:@""]) {
-        
+
         UIFont* font = [UIFont systemFontOfSize:fontSize];
         NSDictionary* attribute = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
         NSAttributedString* attributeString = [[NSAttributedString alloc] initWithString:string attributes:attribute];

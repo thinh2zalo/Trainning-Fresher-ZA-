@@ -445,8 +445,8 @@
 		E7FDD3BA230595DB008D2C33 /* ListFramePost_UsingNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				E716741F2320EAD200D5D6E4 /* MainCollectionViewController.h */,
 				E71674202320EAD200D5D6E4 /* MainCollectionViewController.m */,
+				E716741F2320EAD200D5D6E4 /* MainCollectionViewController.h */,
 				E7FD20C623223A2D00F08FE1 /* AlertWindowViewController.h */,
 				E7FD20C723223A2D00F08FE1 /* AlertWindowViewController.m */,
 				E7FD20C323221BFB00F08FE1 /* AlertView.h */,

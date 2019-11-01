@@ -27,6 +27,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
 }
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout* flowLayout = UICollectionViewFlowLayout.new;
@@ -34,6 +35,7 @@
         flowLayout.minimumLineSpacing = 20;
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 0,  0 , self.view.frame.size.width / 3);
         flowLayout.minimumInteritemSpacing = 10;
+        
         flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
         

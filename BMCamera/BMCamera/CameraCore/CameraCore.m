@@ -42,7 +42,7 @@
 
 - (UIInterfaceOrientation)getOrientationBy:(CMAcceleration)acceleration {
     UIInterfaceOrientation newOrientation;
-    NSLog(@"Y: %f and X  : %f", ABS( acceleration.y ), ABS( acceleration.x ));
+//    NSLog(@"Y: %f and X  : %f", ABS( acceleration.y ), ABS( acceleration.x ));
     newOrientation =  ABS( acceleration.y ) < ABS( acceleration.x )
     ?   acceleration.x > 0 ? UIInterfaceOrientationLandscapeLeft  :  UIInterfaceOrientationLandscapeRight
     :   acceleration.y > 0 ? UIInterfaceOrientationPortraitUpsideDown : UIInterfaceOrientationPortrait;
@@ -67,6 +67,8 @@
         [self.getVersionIOS capturePhoto:photoOutput photoCaptureOptions:options handlerAfterCapture:handlerAfterCapture];
     }
 }
+
+
 
 - (AVCaptureOutput *) getCaptureOutput:(BMTypeCamera)type {
     switch (type) {

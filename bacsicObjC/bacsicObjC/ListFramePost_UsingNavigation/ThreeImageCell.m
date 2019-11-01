@@ -83,7 +83,6 @@
     }
     return heightOfCell;
     } else return 0;
-    
 }
 
 - (UIColor *)randomColor {
