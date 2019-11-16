@@ -14,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ParentCell : UITableViewCell
 @property (nonatomic, strong) UILabel * titleLabel;
-@property (nonatomic, strong) UILabel * timestampAndPublisherLable;
-@property (nonatomic, assign) CGFloat thumbnailHeight;
-@property (nonatomic, assign) CGFloat thumbnailWidth;
+@property (nonatomic, strong) UILabel * timestampAndPublisherLabel;
+
 - (void) updateContentInsideCell:(Content *)contentToUpdate;
 + (ParentCell *) shareInstance;
-
++ (CGFloat) thumbnailHeight;
++ (CGFloat) thumbnailWidth;
 @end
 
 NS_ASSUME_NONNULL_END

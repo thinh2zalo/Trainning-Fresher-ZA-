@@ -199,7 +199,8 @@
 				5213F6492368538F00BDA093 /* UILabel+Caculation.h */,
 				5213F64A2368538F00BDA093 /* UILabel+Caculation.m */,
 			);
-			path = Categories;
+			name = Categories;
+			path = ../../demoIGLK1/demoIGLK1/Categories;
 			sourceTree = "<group>";
 		};
 		5213F64C23688CEF00BDA093 /* NetWork */ = {

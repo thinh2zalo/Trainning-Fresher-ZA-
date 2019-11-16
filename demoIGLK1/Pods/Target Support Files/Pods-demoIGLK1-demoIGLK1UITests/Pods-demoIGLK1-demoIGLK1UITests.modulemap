@@ -1,0 +1,6 @@
+framework module Pods_demoIGLK1_demoIGLK1UITests {
+  umbrella header "Pods-demoIGLK1-demoIGLK1UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

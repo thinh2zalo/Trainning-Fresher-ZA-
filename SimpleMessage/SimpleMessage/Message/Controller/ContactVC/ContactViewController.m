@@ -66,7 +66,7 @@
     return [self.dictListContacts allKeys];
 }
 
-- (void) scrollViewDidStopScrolling {
+- (void)scrollViewDidStopScrolling {
 
     CGFloat range = maxHeaderHeight - minHeaderHeight;
     CGFloat midPoint = minHeaderHeight + (range / 2);
@@ -93,7 +93,7 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ContactCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:CONTACT_CELL forIndexPath:indexPath];
-    
+    NSLog(@"indexPath: %tu", indexPath.item);
     [(ContactCell *) cell updateContactCell:[self getArrayOfDict: self.dictListContacts andIndex:indexPath.section][indexPath.item]];
     return cell;
 }
@@ -158,6 +158,7 @@
     return headerAlphabet;
     
 }
+
 - (NSMutableArray<User *> *)arrContacts {
     if (!_arrContacts) {
         _arrContacts = [[FeedAPIContact queryContact] mutableCopy];

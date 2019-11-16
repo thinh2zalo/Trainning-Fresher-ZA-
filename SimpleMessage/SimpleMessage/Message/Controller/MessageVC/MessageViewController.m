@@ -25,13 +25,23 @@ BOOL isEditting;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.arrConversations =  [[self.feedAPI setupData] mutableCopy];
     self.headerView;
    [self.view layoutIfNeeded];
     heightOfHeader = self.headerView.frame.size.height;
     minHeaderHeight = heightOfHeader - 44;
     maxHeaderHeight = heightOfHeader;
+    
     self.tableView;
+    NSLog(@"before %tu", self.arrConversations.count);
+    ConversationModel * model = ConversationModel.new;
+    model.nameConversation = @"nguyen thi";
+    NSMutableArray * arr = [self.arrConversations copy];
+    [arr addObject:model];
+    NSLog(@"after %tu", self.arrConversations.count);
+
+
 
 }
 

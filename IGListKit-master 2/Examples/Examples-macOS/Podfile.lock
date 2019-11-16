@@ -1,0 +1,16 @@
+PODS:
+  - IGListDiffKit (3.4.0)
+
+DEPENDENCIES:
+  - IGListDiffKit (from `../../IGListDiffKit.podspec`)
+
+EXTERNAL SOURCES:
+  IGListDiffKit:
+    :path: "../../IGListDiffKit.podspec"
+
+SPEC CHECKSUMS:
+  IGListDiffKit: c780d5f336d276224575e231a982bcc04044b442
+
+PODFILE CHECKSUM: a5e65f00463ec091d58ee2241126ab30f6d2ee69
+
+COCOAPODS: 1.8.4

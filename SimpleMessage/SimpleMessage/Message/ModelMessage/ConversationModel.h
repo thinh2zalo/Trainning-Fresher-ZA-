@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *nameConversation;
 @property (nonatomic) BOOL  isGroupConversation;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

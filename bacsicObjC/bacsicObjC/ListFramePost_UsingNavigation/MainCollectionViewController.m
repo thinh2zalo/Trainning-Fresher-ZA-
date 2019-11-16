@@ -92,6 +92,7 @@
     
     return cell;
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"sizeForItemAtIndexPath");
     NSString * titleToCal = [self.arrContents objectAtIndex:indexPath.item].title;
@@ -139,7 +140,6 @@
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.minimumLineSpacing = 20;
         flowLayout.sectionInset = UIEdgeInsetsMake(ALIGN_TOP, ALIGN_LEFT,  ALIGN_TOP , ALIGN_LEFT);
-        
         flowLayout.minimumInteritemSpacing = 10;
         flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
