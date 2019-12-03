@@ -100,18 +100,13 @@
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    //    const Class cellClass = content.images.count == 3 ? [TripleImageCell class] : [SingleImageCell class];
+    const Class cellClass = [(Content *) object images].count == 3 ? [TripleImageCell class] : [SingleImageCell class];
     void (^configureBlock)(id item, __kindof UICollectionViewCell *cell) = ^(id item, __kindof UICollectionViewCell *cell) {
         Content * content = (Content *)item;
-        if (content.images.count == 3) {
-            [(TripleImageCell *) cell updateContentInsideCell:content];
-        } else {
-            [(SingleImageCell *) cell updateContentInsideCell:content];
-        }
+        [cell updateContentInsideCell:content];
     };
     CGSize (^sizeBlock)(id item, id<IGListCollectionContext> _Nullable collectionContext) = ^(id item, id<IGListCollectionContext> _Nullable collectionContext) {
         Content * content = (Content *)item;
-
         float heightOfCell  = content.images.count == 3 ? [TripleImageCell  heightOfCellWithTitle:content.title timestampAndPublisher:content.publicsherName] :  [SingleImageCell heightOfCell];
         return CGSizeMake(collectionContext.containerSize.width, heightOfCell);
     };

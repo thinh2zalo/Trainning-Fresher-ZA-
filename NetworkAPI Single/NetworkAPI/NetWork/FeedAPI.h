@@ -6,7 +6,7 @@
 //  Copyright © 2019 Steve. All rights reserved.
 //
 
-#define URLAPI @"https://api.baomoi.com/v1/contents/get/by-zone?api_key=ee7b8c7c7019f1b5c0674d41b125faf7&client_time=%20%20%201573644861&client_version=99.99.99&deviceName=iPhone%20XS&gy=402967000&img_size=a400x&os=ios&sig=47b93baee56a5c4d8fda5e0652441bf5&size=80&start=0&zone=c_0"
+#define URLAPI @"https://api.baomoi.com/v1/contents/get/by-zone?api_key=ee7b8c7c7019f1b5c0674d41b125faf7&client_time=%20%20%201574241701&client_version=99.99.99&deviceName=iPhone%20XS&gy=403267000&img_size=a400x&os=ios&sig=c539bfdfa4ed73ec40e1f4c4c4b265a4&size=80&start=0&zone=c_0"
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>

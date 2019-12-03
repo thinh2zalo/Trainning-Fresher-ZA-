@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				52B46962237B26BF00A9092C /* NSString+CompareTimeStamp.h */,
-				52B46963237B26BF00A9092C /* UILabel+Caculation.m */,
-				52B46964237B26BF00A9092C /* UILabel+Caculation.h */,
 				52B46965237B26BF00A9092C /* NSString+CompareTimeStamp.m */,
+				52B46964237B26BF00A9092C /* UILabel+Caculation.h */,
+				52B46963237B26BF00A9092C /* UILabel+Caculation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";

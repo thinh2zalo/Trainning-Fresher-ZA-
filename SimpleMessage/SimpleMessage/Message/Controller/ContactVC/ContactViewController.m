@@ -161,7 +161,7 @@
 
 - (NSMutableArray<User *> *)arrContacts {
     if (!_arrContacts) {
-        _arrContacts = [[FeedAPIContact queryContact] mutableCopy];
+        _arrContacts = [[FeedAPIContact sortListContactqueryContact] mutableCopy];
     }
     return _arrContacts;
 }

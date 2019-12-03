@@ -7,7 +7,7 @@
 //
 
 #import "NetworkManager.h"
-#import <AFNetworking/AFNetworking.h>
+#import "../../Pods/AFNetworking/AFNetworking/AFNetworking.h"
 #define ERROR_MSG_NO_DATA @"Request get no data"
 @interface NetworkManager()
 @property  (nonatomic, strong) NSURLSessionConfiguration* sessionConfiguration;
@@ -34,7 +34,7 @@
             NSString* errorMsg = [self getErrorMsg:error];
             completion(nil,errorMsg);
         } else {
-            NSDictionary * data = [(NSDictionary *) responseObject objectForKey:@"data"];
+            NSDictionary * data = [(NSDictionary *) responseObject objectForKey:@"result"];
             
             if (data) {
                 completion(data,nil);

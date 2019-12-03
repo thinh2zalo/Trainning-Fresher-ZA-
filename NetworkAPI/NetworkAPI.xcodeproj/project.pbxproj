@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1D07EA5477040BD83C39A32C /* Pods_NetworkAPI_NetworkAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6994F881744150E79BD150DD /* Pods_NetworkAPI_NetworkAPIUITests.framework */; };
+		520F26212386897600985A51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F26202386897600985A51 /* ViewController.m */; };
+		520F2627238689C900985A51 /* UILabel+Caculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F2624238689C900985A51 /* UILabel+Caculation.m */; };
+		520F2628238689C900985A51 /* NSString+CompareTimeStamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F2626238689C900985A51 /* NSString+CompareTimeStamp.m */; };
 		5213F63823682F0A00BDA093 /* SingleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F63723682F0A00BDA093 /* SingleImageCell.m */; };
 		5213F63B23682F1C00BDA093 /* TripleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F63A23682F1C00BDA093 /* TripleImageCell.m */; };
 		5213F63E23682F5300BDA093 /* ParentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F63D23682F5300BDA093 /* ParentCell.m */; };
 		5213F6402368406D00BDA093 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5213F63F2368406D00BDA093 /* icon_back.png */; };
 		5213F643236840B500BDA093 /* NavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F642236840B500BDA093 /* NavBarView.m */; };
-		5213F64B2368538F00BDA093 /* UILabel+Caculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F64A2368538F00BDA093 /* UILabel+Caculation.m */; };
 		5213F64F2368943300BDA093 /* FeedAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5213F64E2368943300BDA093 /* FeedAPI.m */; };
-		52203ED6236A85B80087862F /* NSString+CompareTimeStamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203ED5236A85B80087862F /* NSString+CompareTimeStamp.m */; };
 		52203EDC236AC0E00087862F /* ThumnailImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203EDB236AC0E00087862F /* ThumnailImage.m */; };
 		5223F06E2369C12600A6282C /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5223F0612369C11D00A6282C /* DataModel.m */; };
 		5223F06F2369C12600A6282C /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5223F0622369C11E00A6282C /* QuestionModel.m */; };
@@ -26,7 +27,6 @@
 		5223F0742369C12600A6282C /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5223F06B2369C12500A6282C /* ContentModel.m */; };
 		5223F0772369CDAB00A6282C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5223F0762369CDAB00A6282C /* NetworkManager.m */; };
 		52F584C12368220500F47A18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F584C02368220500F47A18 /* AppDelegate.m */; };
-		52F584C42368220500F47A18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F584C32368220500F47A18 /* ViewController.m */; };
 		52F584C72368220500F47A18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F584C52368220500F47A18 /* Main.storyboard */; };
 		52F584C92368220700F47A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F584C82368220700F47A18 /* Assets.xcassets */; };
 		52F584CC2368220700F47A18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F584CA2368220700F47A18 /* LaunchScreen.storyboard */; };
@@ -58,6 +58,12 @@
 		20250A0866D53661C145B758 /* Pods_NetworkAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D5FDBC28380434D916441C /* Pods-NetworkAPI-NetworkAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkAPI-NetworkAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-NetworkAPI-NetworkAPIUITests/Pods-NetworkAPI-NetworkAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4C98C9293B459FF4FEAFEEEB /* Pods-NetworkAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkAPI.debug.xcconfig"; path = "Target Support Files/Pods-NetworkAPI/Pods-NetworkAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		520F261F2386897400985A51 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		520F26202386897600985A51 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		520F2623238689C900985A51 /* NSString+CompareTimeStamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CompareTimeStamp.h"; sourceTree = "<group>"; };
+		520F2624238689C900985A51 /* UILabel+Caculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Caculation.m"; sourceTree = "<group>"; };
+		520F2625238689C900985A51 /* UILabel+Caculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Caculation.h"; sourceTree = "<group>"; };
+		520F2626238689C900985A51 /* NSString+CompareTimeStamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CompareTimeStamp.m"; sourceTree = "<group>"; };
 		5213F63623682F0A00BDA093 /* SingleImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleImageCell.h; sourceTree = "<group>"; };
 		5213F63723682F0A00BDA093 /* SingleImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleImageCell.m; sourceTree = "<group>"; };
 		5213F63923682F1C00BDA093 /* TripleImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripleImageCell.h; sourceTree = "<group>"; };
@@ -68,12 +74,8 @@
 		5213F641236840B500BDA093 /* NavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavBarView.h; sourceTree = "<group>"; };
 		5213F642236840B500BDA093 /* NavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavBarView.m; sourceTree = "<group>"; };
 		5213F6482368517D00BDA093 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		5213F6492368538F00BDA093 /* UILabel+Caculation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Caculation.h"; sourceTree = "<group>"; };
-		5213F64A2368538F00BDA093 /* UILabel+Caculation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Caculation.m"; sourceTree = "<group>"; };
 		5213F64D2368943300BDA093 /* FeedAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedAPI.h; sourceTree = "<group>"; };
 		5213F64E2368943300BDA093 /* FeedAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedAPI.m; sourceTree = "<group>"; };
-		52203ED4236A85B80087862F /* NSString+CompareTimeStamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CompareTimeStamp.h"; sourceTree = "<group>"; };
-		52203ED5236A85B80087862F /* NSString+CompareTimeStamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CompareTimeStamp.m"; sourceTree = "<group>"; };
 		52203EDA236AC0E00087862F /* ThumnailImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThumnailImage.h; sourceTree = "<group>"; };
 		52203EDB236AC0E00087862F /* ThumnailImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumnailImage.m; sourceTree = "<group>"; };
 		5223F0602369C11C00A6282C /* BoxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxModel.h; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		52F584BC2368220500F47A18 /* NetworkAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F584BF2368220500F47A18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52F584C02368220500F47A18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		52F584C22368220500F47A18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52F584C32368220500F47A18 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		52F584C62368220500F47A18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52F584C82368220700F47A18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F584CB2368220700F47A18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,11 +144,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520F2622238689C900985A51 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				520F2625238689C900985A51 /* UILabel+Caculation.h */,
+				520F2624238689C900985A51 /* UILabel+Caculation.m */,
+				520F2623238689C900985A51 /* NSString+CompareTimeStamp.h */,
+				520F2626238689C900985A51 /* NSString+CompareTimeStamp.m */,
+			);
+			name = Categories;
+			path = "../../NetworkAPI multiSingle/NetworkAPI/Categories";
+			sourceTree = "<group>";
+		};
 		5213F62E23682CEB00BDA093 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52F584C22368220500F47A18 /* ViewController.h */,
-				52F584C32368220500F47A18 /* ViewController.m */,
+				520F261F2386897400985A51 /* ViewController.h */,
+				520F26202386897600985A51 /* ViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,18 +203,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5213F63223682D1E00BDA093 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				52203ED4236A85B80087862F /* NSString+CompareTimeStamp.h */,
-				52203ED5236A85B80087862F /* NSString+CompareTimeStamp.m */,
-				5213F6492368538F00BDA093 /* UILabel+Caculation.h */,
-				5213F64A2368538F00BDA093 /* UILabel+Caculation.m */,
-			);
-			name = Categories;
-			path = ../../demoIGLK1/demoIGLK1/Categories;
-			sourceTree = "<group>";
-		};
 		5213F64C23688CEF00BDA093 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,8 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				5213F64C23688CEF00BDA093 /* NetWork */,
-				5213F63223682D1E00BDA093 /* Categories */,
 				5213F63023682CFF00BDA093 /* Model */,
+				520F2622238689C900985A51 /* Categories */,
 				5213F62F23682CF900BDA093 /* View */,
 				5213F62E23682CEB00BDA093 /* Controller */,
 				52F584BF2368220500F47A18 /* AppDelegate.h */,
@@ -537,7 +537,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52F584C42368220500F47A18 /* ViewController.m in Sources */,
 				5223F06E2369C12600A6282C /* DataModel.m in Sources */,
 				5223F0732369C12600A6282C /* NSDictionary+ParseJson.m in Sources */,
 				5223F06F2369C12600A6282C /* QuestionModel.m in Sources */,
@@ -545,16 +544,17 @@
 				5223F0742369C12600A6282C /* ContentModel.m in Sources */,
 				5213F64F2368943300BDA093 /* FeedAPI.m in Sources */,
 				52203EDC236AC0E00087862F /* ThumnailImage.m in Sources */,
+				520F2627238689C900985A51 /* UILabel+Caculation.m in Sources */,
 				5223F0712369C12600A6282C /* BodyModel.m in Sources */,
+				520F26212386897600985A51 /* ViewController.m in Sources */,
 				5213F643236840B500BDA093 /* NavBarView.m in Sources */,
 				52F584CF2368220700F47A18 /* main.m in Sources */,
 				5213F63B23682F1C00BDA093 /* TripleImageCell.m in Sources */,
 				5223F0722369C12600A6282C /* ImageModel.m in Sources */,
+				520F2628238689C900985A51 /* NSString+CompareTimeStamp.m in Sources */,
 				5223F0772369CDAB00A6282C /* NetworkManager.m in Sources */,
 				5213F63823682F0A00BDA093 /* SingleImageCell.m in Sources */,
 				52F584C12368220500F47A18 /* AppDelegate.m in Sources */,
-				5213F64B2368538F00BDA093 /* UILabel+Caculation.m in Sources */,
-				52203ED6236A85B80087862F /* NSString+CompareTimeStamp.m in Sources */,
 				5213F63E23682F5300BDA093 /* ParentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

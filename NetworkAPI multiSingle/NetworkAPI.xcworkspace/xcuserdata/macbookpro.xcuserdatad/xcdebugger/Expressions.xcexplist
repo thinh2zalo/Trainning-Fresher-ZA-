@@ -3,13 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__37-[NetworkManager request:completion:]_block_invoke:NetworkManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[valueOfSetting class]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[SingleImageCell layoutSubviews]:SingleImageCell.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.thumbnailHeight">
+               value = "self.thumbnailWidth">
             </PersistentString>
             <PersistentString
-               value = "self.thumbnailWidth">
+               value = "self.thumbnailHeight">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

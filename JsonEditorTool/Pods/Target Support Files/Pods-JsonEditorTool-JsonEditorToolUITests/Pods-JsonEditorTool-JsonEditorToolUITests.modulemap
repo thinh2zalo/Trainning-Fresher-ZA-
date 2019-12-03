@@ -1,0 +1,6 @@
+framework module Pods_JsonEditorTool_JsonEditorToolUITests {
+  umbrella header "Pods-JsonEditorTool-JsonEditorToolUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

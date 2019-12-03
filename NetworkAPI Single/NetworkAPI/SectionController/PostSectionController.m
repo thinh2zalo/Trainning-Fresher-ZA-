@@ -14,6 +14,7 @@
 @implementation PostSectionController {
     Content *content;
 }
+
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     float heightOfCell  = content.images.count == 3 ? [TripleImageCell  heightOfCellWithTitle:content.title timestampAndPublisher:content.publicsherName] :  [SingleImageCell heightOfCell];
     return CGSizeMake(self.collectionContext.containerSize.width, heightOfCell);

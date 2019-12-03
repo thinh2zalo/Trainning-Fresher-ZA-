@@ -20,6 +20,7 @@
         self.content =  [dict getNSString:@"content"];
         self.descriptionOfProject = [dict getNSString:@"description"];
     }
+   
     return  self;
 }
 @end
