@@ -14,7 +14,8 @@
 @implementation ArrContainer
 
 - (instancetype)initWithObject:(id)object andKey:(NSString *)key {
-    self = [super init];
+
+    self = [super initWithObject:object andKey:key];
     if (self) {
         self.key = key;
         self.value = NSMutableArray.new;

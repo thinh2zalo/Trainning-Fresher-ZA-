@@ -11,11 +11,23 @@
 
 @implementation JsonModel
 
+- (instancetype)initWithObject:(id)object andKey:(NSString *)key {
+    NSAssert(object != nil, @"object is null");
+
+    self = [super init];
+    if (self) {
+        self.key = key;
+        self.value = object;
+    }
+    return self;
+}
+
 - (id<NSObject>)diffIdentifier {
     return self.key;
 }
 
 - (TypeValue)typeValue {
+    
     if (!_typeValue) {
         if (SAFE_TYPE(self.value, NSMutableDictionary)) {
             _typeValue = typeValueDictionary;

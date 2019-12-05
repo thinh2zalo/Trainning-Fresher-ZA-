@@ -14,14 +14,15 @@
 @implementation DictContainer
 
 - (instancetype)initWithObject:(id)object andKey:(NSString *)key {
-    self = [super init];
+
+    self = [super initWithObject:object andKey:key];
     if (self) {
         self.value = NSMutableArray.new;
         self.key = key;
         self.typeValue = typeValueDictionary;
         NSDictionary * dict = (NSDictionary *)object;
-
-        for (NSString * key in [dict allKeys]) {
+        
+        for (NSString * key in dict) {
             id value = [dict objectForKey:key];
             if (SAFE_TYPE(value, NSDictionary)) {
                 DictContainer * dictContainer = [[DictContainer alloc] initWithObject:value andKey:key];

@@ -9,13 +9,6 @@
 #import "KeyValuePair.h"
 
 @implementation KeyValuePair
-- (instancetype)initWithObject:(id)object andKey:(NSString *)key {
-    self = [super init];
-    if (self) {
-        self.key = key;
-        self.value = object;
-    }
-    return self;
-}
+
 
 @end

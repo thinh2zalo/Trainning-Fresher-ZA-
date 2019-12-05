@@ -22,7 +22,7 @@
 @end
 
 @interface ViewController() <IGListAdapterDataSource, UISearchBarDelegate> {
-    NSNumber * firstNumberToSearch;
+    NSNumber * searchToken;
     NSString * textFilter;
 }
 @end
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     textFilter = @"";
-    firstNumberToSearch = @(42);
+    searchToken = @(42);
     
     NSURL * url = [NSURL URLWithString:URL];
     NSURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -76,17 +76,17 @@
 #pragma mark - IGListAdapterDataSource
 - (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
     if ([textFilter isEqual:@""]) {
-        return [@[firstNumberToSearch] arrayByAddingObjectsFromArray:[self.jsonModel value]];
+        return [@[searchToken] arrayByAddingObjectsFromArray:[self.jsonModel value]];
     } else {
         NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"key contains[cd] %@", textFilter];
         NSArray * subArr = [[self.jsonModel value] filteredArrayUsingPredicate:filterPredicate];
-        return [@[firstNumberToSearch] arrayByAddingObjectsFromArray:subArr];
+        return [@[searchToken] arrayByAddingObjectsFromArray:subArr];
     }
 }
 
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    if ((NSNumber *)object == firstNumberToSearch) {
+    if ((NSNumber *)object == searchToken) {
         SearchSectionController * searchSC = SearchSectionController.new;
         searchSC.delegate = self;
         return searchSC;
