@@ -13,9 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (Caculation)
 + (CGFloat)heightOfLableWithMaxLine:(UILabel *)label numberLine:(NSUInteger) numberLine withBoundingRect:(CGSize)maxSize;
-+ (CGFloat) heightOf1LineWithFrontSize:(UILabel *) label;
-+ (CGFloat) heightOfLabel:(UILabel *)label withBoundingRect:(CGSize)maxSize;
++ (CGFloat)heightOf1LineWithFrontSize:(UILabel *) label;
++ (CGFloat)heightOfLabel:(UILabel *)label withBoundingRect:(CGSize)maxSize;
 + (CGFloat)heightForText:(NSString*)string WithFontSize:(CGFloat) fontSize fontName:(NSString *)fontName maxSize:(CGSize) maxSize;
++ (CGFloat)widthForText:(NSString*)string WithFontSize:(CGFloat) fontSize fontName:(NSString *)fontName maxSize:(CGSize) maxSize;
++ (CGFloat)widthOfLabel:(UILabel *)label withBoundingRect:(CGSize)maxSize;
 
 @end
 

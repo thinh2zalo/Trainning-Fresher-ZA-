@@ -8,7 +8,7 @@
 
 #import "DictContainer.h"
 #import "../Define.h"
-#import "KeyValuePair2.h"
+#import "KeyValuePair.h"
 #import "ArrContainer.h"
 
 @implementation DictContainer
@@ -18,30 +18,29 @@
     if (self) {
         self.value = NSMutableArray.new;
         self.key = key;
+        self.typeValue = typeValueDictionary;
         NSDictionary * dict = (NSDictionary *)object;
 
         for (NSString * key in [dict allKeys]) {
             id value = [dict objectForKey:key];
             if (SAFE_TYPE(value, NSDictionary)) {
                 DictContainer * dictContainer = [[DictContainer alloc] initWithObject:value andKey:key];
-                [(NSMutableArray *)self.value addObject:dictContainer];
+                [self.value addObject:dictContainer];
             }
             else if (SAFE_TYPE(value, NSArray)) {
                 ArrContainer * arr = [[ArrContainer alloc] initWithObject:value andKey:key];
-                [(NSMutableArray *)self.value addObject:arr];
+                [self.value addObject:arr];
                 
             } else {
-                KeyValuePair2 * keyValue = KeyValuePair2.new;
+                KeyValuePair * keyValue = KeyValuePair.new;
                 keyValue.key = key;
                 keyValue.value = value;
-                [(NSMutableArray *)self.value addObject:keyValue];
+                [self.value addObject:keyValue];
             }
-            
         }
     }
     return self;
 }
-
 
 
 @end

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework

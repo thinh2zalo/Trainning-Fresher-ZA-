@@ -1,8 +1,8 @@
 //
-//  KeyValuePair.h
+//  KeyValuePair2.h
 //  JsonEditorTool
 //
-//  Created by Steve on 12/2/19.
+//  Created by Steve on 12/3/19.
 //  Copyright © 2019 Steve. All rights reserved.
 //
 
@@ -10,10 +10,7 @@
 #import "JsonModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KeyValuePair : NSObject <JsonModel>
-@property (nonatomic, strong) NSString * key;
-@property (nonatomic, strong) id value;
-
+@interface KeyValuePair : JsonModel
 
 @end
 

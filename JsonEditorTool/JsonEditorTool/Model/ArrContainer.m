@@ -9,6 +9,7 @@
 #import "ArrContainer.h"
 #import "../Define.h"
 #import "DictContainer.h"
+#import "KeyValuePair.h"
 
 @implementation ArrContainer
 
@@ -19,21 +20,22 @@
         self.value = NSMutableArray.new;
         NSArray * arr = (NSArray *)object;
         for (int i = 0 ; i < arr.count; i++) {
+            NSString * key = [NSString stringWithFormat:@"index %tu", i + 1];
             if (SAFE_TYPE(arr[i], NSDictionary)) {
-                DictContainer * dictContainer = [[DictContainer alloc] initWithObject:arr[i] andKey:[NSString stringWithFormat:@"%tu", i]];
+                DictContainer * dictContainer = [[DictContainer alloc] initWithObject:arr[i] andKey:key];
                 [self.value addObject:dictContainer];
             } else if (SAFE_TYPE(arr[i], NSArray)) {
-                ArrContainer * arrContainer = [[ArrContainer alloc] initWithObject:arr[i] andKey:[NSString stringWithFormat:@"%tu", i]];
+                ArrContainer * arrContainer = [[ArrContainer alloc] initWithObject:arr[i] andKey:key];
                 [self.value addObject:arrContainer];
             } else {
-                [self.value addObject:arr[i]];
+                JsonModel * arrWithoutKey = [[KeyValuePair alloc] initWithObject:arr[i] andKey:key];
+                [self.value addObject:arrWithoutKey];
+
             }
         }
     }
     return self;
 }
-
-
 
 
 

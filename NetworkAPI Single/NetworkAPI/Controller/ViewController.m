@@ -110,7 +110,7 @@
         float heightOfCell  = content.images.count == 3 ? [TripleImageCell  heightOfCellWithTitle:content.title timestampAndPublisher:content.publicsherName] :  [SingleImageCell heightOfCell];
         return CGSizeMake(collectionContext.containerSize.width, heightOfCell);
     };
-    return [[IGListSingleSectionController alloc] initWithCellClass:cellClass configureBlock:configureBlock sizeBlock:sizeBlock ];
+    return [[IGListSingleSectionController alloc] initWithCellClass:cellClass configureBlock:configureBlock sizeBlock:sizeBlock];
 }
 
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {

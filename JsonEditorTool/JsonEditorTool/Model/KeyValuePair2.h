@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JsonModel2.h"
+#import "JsonModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KeyValuePair2 : JsonModel2
+@interface KeyValuePair : JsonModel2
 
 @end
 

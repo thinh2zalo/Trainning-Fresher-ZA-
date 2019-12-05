@@ -26,7 +26,7 @@
 }
 
 - (void)request:(NSURLRequest *)request  completion:(CompletionBlock) completion {
-    
+
     NSURLSessionDataTask *dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error) {

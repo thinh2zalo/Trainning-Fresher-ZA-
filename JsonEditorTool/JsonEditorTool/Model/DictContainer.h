@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JsonModel2.h"
+#import "JsonModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DictContainer : JsonModel2
+@interface DictContainer : JsonModel
 @end
 
 NS_ASSUME_NONNULL_END
