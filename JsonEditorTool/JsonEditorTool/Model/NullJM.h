@@ -1,16 +1,17 @@
 //
-//  DictContainer.h
+//  NullJM.h
 //  JsonEditorTool
 //
-//  Created by Steve on 12/3/19.
+//  Created by Steve on 12/6/19.
 //  Copyright © 2019 Steve. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "JsonModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DictContainer : JsonModel
+@interface NullJM : JsonModel
+
 @end
 
 NS_ASSUME_NONNULL_END
