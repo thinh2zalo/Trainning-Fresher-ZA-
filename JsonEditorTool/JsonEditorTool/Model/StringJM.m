@@ -10,4 +10,8 @@
 
 @implementation StringJM
 
+
+- (TypeValue)getTypeValue {
+    return typeValueString;
+}
 @end

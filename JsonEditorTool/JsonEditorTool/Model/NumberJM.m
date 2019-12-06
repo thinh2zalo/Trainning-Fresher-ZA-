@@ -10,4 +10,9 @@
 
 @implementation NumberJM
 
+
+
+- (TypeValue)getTypeValue {
+    return typeValueNumber;
+}
 @end

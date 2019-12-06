@@ -9,5 +9,7 @@
 #import "NullJM.h"
 
 @implementation NullJM
-
+- (TypeValue)getTypeValue {
+    return typeValueNull;
+}
 @end

@@ -8,6 +8,8 @@ target 'JsonEditorTool' do
   # Pods for JsonEditorTool
      pod 'AFNetworking', '~> 3.0'
      pod 'IGListKit', '~> 3.4.0'
+     pod 'SCLAlertView-Objective-C'
+
 
 
   target 'JsonEditorToolTests' do

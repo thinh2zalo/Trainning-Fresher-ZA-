@@ -9,5 +9,7 @@
 #import "BoolJM.h"
 
 @implementation BoolJM
-
+- (TypeValue)getTypeValue {
+    return typeValueBool;
+}
 @end

@@ -8,7 +8,7 @@
 
 #import "ArrayJM.h"
 #import "../Define.h"
-#import "DictContainer.h"
+#import "DictionaryJM.h"
 #import "KeyValuePair.h"
 #import "JsonModelFactory.h"
 
@@ -21,13 +21,13 @@
         self.value = NSMutableArray.new;
         NSArray * arr = (NSArray *)object;
         for (int i = 0 ; i < arr.count; i++) {
+            NSString * key = [NSString stringWithFormat:@"index %tu", i + 1];
 
             if (SAFE_TYPE(arr[i], NSDictionary) || SAFE_TYPE(arr[i], NSArray)) {
                 JsonModel * jsonModel = [JsonModelFactory getJsonModel:arr[i] andKey:key];
                 [self.value addObject:jsonModel];
             
             } else {
-                NSString * key = [NSString stringWithFormat:@"index %tu", i + 1];
                 JsonModel * arrWithoutKey = [[JsonModel alloc] initWithObject:arr[i] andKey:key];
                 [self.value addObject:arrWithoutKey];
 
@@ -36,9 +36,9 @@
     }
     return self;
 }
+
 - (TypeValue)getTypeValue {
     return typeValueArray;
 }
-
 
 @end

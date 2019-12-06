@@ -25,7 +25,7 @@
 - (void)updateContentInsideCell:(JsonModel *)jsonModel {
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
-    switch (jsonModel.typeValue) {
+    switch ([jsonModel getTypeValue]) {
         case typeValueArray:
             self.valueLabel.text = [NSString stringWithFormat:@"%tu keys", [jsonModel.value count]];
             typeValue = @"Array";

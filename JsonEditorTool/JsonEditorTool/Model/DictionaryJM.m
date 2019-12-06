@@ -19,6 +19,8 @@
     self = [super initWithObject:object andKey:key];
     if (self) {
         self.value = NSMutableArray.new;
+//        self.typeValue = typeValueDictionary;
+
         NSDictionary * dict = (NSDictionary *)object;
         
         for (NSString * key in dict) {
@@ -30,9 +32,10 @@
     }
     return self;
 }
+
 - (TypeValue)getTypeValue {
     return typeValueDictionary;
-
 }
+
 
 @end

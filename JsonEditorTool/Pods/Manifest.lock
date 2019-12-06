@@ -19,20 +19,24 @@ PODS:
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - SCLAlertView-Objective-C (1.1.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - IGListKit (~> 3.4.0)
+  - SCLAlertView-Objective-C
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - IGListKit
+    - SCLAlertView-Objective-C
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  SCLAlertView-Objective-C: 2bb9be204bffaf24762a0e33fe6ca9645819b3b7
 
-PODFILE CHECKSUM: e2d2a82fb71616b5f0517e4f9e2fd7a981f13166
+PODFILE CHECKSUM: 548ba7a83cb205df0293fd347c29d50a66de97c7
 
 COCOAPODS: 1.8.0

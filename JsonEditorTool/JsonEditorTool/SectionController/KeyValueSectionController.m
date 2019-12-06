@@ -10,11 +10,14 @@
 #import "../View/InforJsonCell.h"
 #import "../Model/JsonModel.h"
 #import "../Controller/ViewController.h"
+#import "../Controller/AlertController.h"
+
 
 @interface KeyValueSectionController () {
     JsonModel * jsonModel;
-    
 }
+//@property (nonatomic, strong) AlertController * alert;
+
 @end
 @implementation KeyValueSectionController
 
@@ -53,7 +56,23 @@
     if (jsonModel.typeValue == typeValueArray || jsonModel.typeValue == typeValueDictionary) {
         UINavigationController *navController = self.viewController.navigationController;
         [navController pushViewController:viewController animated:YES];
+    } else {
+        
+        AlertController * alert  =  AlertController.new;
+        [alert showAlert:self.viewController];
+//        [self.viewController presentViewController:alert animated:NO completion:nil];
+        
+        // Using custom alert width
+//        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+        
     }
 }
+
+//- (AlertController *)alert {
+//    if (!_alert) {
+//        _alert = AlertController.new;
+//    }
+//    return _alert;
+//}
 
 @end

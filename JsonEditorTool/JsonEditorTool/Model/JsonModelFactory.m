@@ -8,8 +8,8 @@
 
 #import "JsonModelFactory.h"
 #import "JsonModel.h"
-#import "ArrContainer.h"
-#import "DictContainer.h"
+#import "ArrayJM.h"
+#import "DictionaryJM.h"
 #import "StringJM.h"
 #import "NumberJM.h"
 #import "BoolJM.h"
@@ -19,22 +19,21 @@
 @implementation JsonModelFactory
 + (JsonModel *) getJsonModel:(id) object andKey:(NSString *) key {
     JsonModel * jsonModel;
-//    Class classType;
     if (SAFE_TYPE(object, NSDictionary)) {
-        jsonModel = [[DictContainer alloc] initWithObject:object andKey:key];
+        jsonModel = [[DictionaryJM alloc] initWithObject:object andKey:key];
     }
     else if (SAFE_TYPE(object, NSArray)) {
-        jsonModel = [[ArrContainer alloc] initWithObject:object andKey:key];
+        jsonModel = [[ArrayJM alloc] initWithObject:object andKey:key];
     } else if (SAFE_TYPE(object, NSString)) {
-        jsonModel = [[ArrContainer alloc] initWithObject:object andKey:key];
-    } else if (SAFE_TYPE(object, NSNumber)){
+        jsonModel = [[StringJM alloc] initWithObject:object andKey:key];
+    } else if (SAFE_TYPE(object, NSNumber)) {
         NSString * nameClass  = [NSString stringWithFormat:@"%@",[object class]];
         if ([nameClass isEqual:@"__NSCFBoolean"]) {
             jsonModel = [[BoolJM alloc] initWithObject:object andKey:key];
         } else {
             jsonModel = [[NumberJM alloc] initWithObject:object andKey:key];
         }
-    } else  {
+    } else {
         jsonModel = [[NullJM alloc] initWithObject:object andKey:key];
     }
 

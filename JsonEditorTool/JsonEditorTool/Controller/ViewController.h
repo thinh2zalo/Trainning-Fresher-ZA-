@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../Model/DictContainer.h"
+#import "../Model/DictionaryJM.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic, strong) JsonModel * jsonModel;

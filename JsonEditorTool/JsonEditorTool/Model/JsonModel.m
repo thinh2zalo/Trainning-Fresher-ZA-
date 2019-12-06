@@ -26,29 +26,7 @@
     return self.key;
 }
 
-- (TypeValue)typeValue {
-    
-    if (!_typeValue) {
-        if (SAFE_TYPE(self.value, NSMutableDictionary)) {
-            _typeValue = typeValueDictionary;
-        } else if (SAFE_TYPE(self.value, NSMutableArray)) {
-            _typeValue = typeValueArray;
-        } else if (SAFE_TYPE(self.value, NSString)) {
-            _typeValue = typeValueString;
-        } else if (SAFE_TYPE(self.value, NSNumber)){
-            NSString * nameClass = [NSString stringWithFormat:@"%@", [self.value class]];
-            if ([nameClass isEqual:@"__NSCFBoolean"]) {
-                _typeValue = typeValueBool;
-            } else {
-                _typeValue = typeValueNumber;
-            }
-        } else  {
-            _typeValue = typeValueNull;
-        }
-       
-    }
-    return _typeValue;
-}
+
 
 // MARK: ListDiffable
 - (BOOL)isEqualToDiffableObject:(nullable id<IGListDiffable>)object {

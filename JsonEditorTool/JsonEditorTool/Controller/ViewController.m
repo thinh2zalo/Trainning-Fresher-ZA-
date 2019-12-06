@@ -42,7 +42,7 @@
             if ([response isKindOfClass:NSDictionary.class]) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
             
-                        self.jsonModel = [[DictContainer alloc] initWithObject:response andKey:@"result"];
+                        self.jsonModel = [[DictionaryJM alloc] initWithObject:response andKey:@"result"];
                     
                     dispatch_async(dispatch_get_main_queue(), ^(void){
                         [self setupUI];

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) id value;
-@property (nonatomic) TypeValue typeValue;
+@property (nonatomic, readonly, getter=getTypeValue) TypeValue typeValue;
 
 - (instancetype)initWithObject:(id) object andKey:(NSString *)key;
 

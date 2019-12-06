@@ -25,12 +25,19 @@
 		52338EB62398E04B00C19D6D /* forward_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52338EB52398E04A00C19D6D /* forward_icon.png */; };
 		52338EB92398FF1800C19D6D /* SearchSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EB82398FF1800C19D6D /* SearchSectionController.m */; };
 		52338EBC2399005100C19D6D /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EBB2399005100C19D6D /* SearchCell.m */; };
+		52338EBF2399F81A00C19D6D /* JsonModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EBE2399F81A00C19D6D /* JsonModelFactory.m */; };
+		52338EC22399FAA700C19D6D /* StringJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EC12399FAA700C19D6D /* StringJM.m */; };
+		52338EC52399FB8A00C19D6D /* NumberJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EC42399FB8A00C19D6D /* NumberJM.m */; };
+		52338EC82399FB9700C19D6D /* BoolJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EC72399FB9700C19D6D /* BoolJM.m */; };
+		52338ECB2399FCB700C19D6D /* NullJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECA2399FCB700C19D6D /* NullJM.m */; };
+		52338ECE239A413800C19D6D /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECD239A413800C19D6D /* AlertController.m */; };
 		52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1482394EC2500F6DBE8 /* NetworkManager.m */; };
 		52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1622395FB8D00F6DBE8 /* JsonModel.m */; };
-		52C9D1662395FB9B00F6DBE8 /* KeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1652395FB9B00F6DBE8 /* KeyValuePair.m */; };
-		52C9D1692395FBB000F6DBE8 /* DictContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1682395FBB000F6DBE8 /* DictContainer.m */; };
-		52C9D16C2395FBCA00F6DBE8 /* ArrContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D16B2395FBCA00F6DBE8 /* ArrContainer.m */; };
+		52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1682395FBB000F6DBE8 /* DictionaryJM.m */; };
+		52C9D16C2395FBCA00F6DBE8 /* ArrayJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D16B2395FBCA00F6DBE8 /* ArrayJM.m */; };
 		52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */; };
+		52D47C5F239A41D300655900 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D47C5E239A41D300655900 /* AlertView.m */; };
+		52D47C62239A9D4100655900 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D47C61239A9D4100655900 /* TextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,18 +92,32 @@
 		52338EB82398FF1800C19D6D /* SearchSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchSectionController.m; sourceTree = "<group>"; };
 		52338EBA2399005100C19D6D /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
 		52338EBB2399005100C19D6D /* SearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		52338EBD2399F81A00C19D6D /* JsonModelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonModelFactory.h; sourceTree = "<group>"; };
+		52338EBE2399F81A00C19D6D /* JsonModelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonModelFactory.m; sourceTree = "<group>"; };
+		52338EC02399FAA700C19D6D /* StringJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringJM.h; sourceTree = "<group>"; };
+		52338EC12399FAA700C19D6D /* StringJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringJM.m; sourceTree = "<group>"; };
+		52338EC32399FB8A00C19D6D /* NumberJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberJM.h; sourceTree = "<group>"; };
+		52338EC42399FB8A00C19D6D /* NumberJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberJM.m; sourceTree = "<group>"; };
+		52338EC62399FB9700C19D6D /* BoolJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoolJM.h; sourceTree = "<group>"; };
+		52338EC72399FB9700C19D6D /* BoolJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoolJM.m; sourceTree = "<group>"; };
+		52338EC92399FCB700C19D6D /* NullJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NullJM.h; sourceTree = "<group>"; };
+		52338ECA2399FCB700C19D6D /* NullJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NullJM.m; sourceTree = "<group>"; };
+		52338ECC239A413800C19D6D /* AlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
+		52338ECD239A413800C19D6D /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		52C9D1482394EC2500F6DBE8 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.m"; sourceTree = "<group>"; };
 		52C9D1492394EC2500F6DBE8 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.h"; sourceTree = "<group>"; };
 		52C9D1612395FB8D00F6DBE8 /* JsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonModel.h; sourceTree = "<group>"; };
 		52C9D1622395FB8D00F6DBE8 /* JsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonModel.m; sourceTree = "<group>"; };
-		52C9D1642395FB9B00F6DBE8 /* KeyValuePair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValuePair.h; sourceTree = "<group>"; };
-		52C9D1652395FB9B00F6DBE8 /* KeyValuePair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValuePair.m; sourceTree = "<group>"; };
-		52C9D1672395FBB000F6DBE8 /* DictContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictContainer.h; sourceTree = "<group>"; };
-		52C9D1682395FBB000F6DBE8 /* DictContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictContainer.m; sourceTree = "<group>"; };
-		52C9D16A2395FBCA00F6DBE8 /* ArrContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrContainer.h; sourceTree = "<group>"; };
-		52C9D16B2395FBCA00F6DBE8 /* ArrContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrContainer.m; sourceTree = "<group>"; };
+		52C9D1672395FBB000F6DBE8 /* DictionaryJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryJM.h; sourceTree = "<group>"; };
+		52C9D1682395FBB000F6DBE8 /* DictionaryJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryJM.m; sourceTree = "<group>"; };
+		52C9D16A2395FBCA00F6DBE8 /* ArrayJM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayJM.h; sourceTree = "<group>"; };
+		52C9D16B2395FBCA00F6DBE8 /* ArrayJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrayJM.m; sourceTree = "<group>"; };
 		52C9D16D2397BBC400F6DBE8 /* InforJsonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforJsonCell.h; sourceTree = "<group>"; };
 		52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InforJsonCell.m; sourceTree = "<group>"; };
+		52D47C5D239A41D300655900 /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		52D47C5E239A41D300655900 /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		52D47C60239A9D4100655900 /* TextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
+		52D47C61239A9D4100655900 /* TextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		60BB4AEA098FAEA5EB6F7C17 /* Pods-JsonEditorTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_JsonEditorToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +238,10 @@
 				52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */,
 				52338EBA2399005100C19D6D /* SearchCell.h */,
 				52338EBB2399005100C19D6D /* SearchCell.m */,
+				52D47C5D239A41D300655900 /* AlertView.h */,
+				52D47C5E239A41D300655900 /* AlertView.m */,
+				52D47C60239A9D4100655900 /* TextField.h */,
+				52D47C61239A9D4100655900 /* TextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +251,8 @@
 			children = (
 				5210F88E23910F8F0081FE67 /* ViewController.h */,
 				5210F88F23910F8F0081FE67 /* ViewController.m */,
+				52338ECC239A413800C19D6D /* AlertController.h */,
+				52338ECD239A413800C19D6D /* AlertController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,13 +262,21 @@
 			children = (
 				52C9D1612395FB8D00F6DBE8 /* JsonModel.h */,
 				52C9D1622395FB8D00F6DBE8 /* JsonModel.m */,
-				52C9D1642395FB9B00F6DBE8 /* KeyValuePair.h */,
-				52C9D1652395FB9B00F6DBE8 /* KeyValuePair.m */,
-				52C9D1672395FBB000F6DBE8 /* DictContainer.h */,
-				52C9D1682395FBB000F6DBE8 /* DictContainer.m */,
-				52C9D16A2395FBCA00F6DBE8 /* ArrContainer.h */,
-				52C9D16B2395FBCA00F6DBE8 /* ArrContainer.m */,
 				52338EAD2398789500C19D6D /* EnumTypeValueJson.h */,
+				52338EBD2399F81A00C19D6D /* JsonModelFactory.h */,
+				52338EBE2399F81A00C19D6D /* JsonModelFactory.m */,
+				52C9D16A2395FBCA00F6DBE8 /* ArrayJM.h */,
+				52C9D16B2395FBCA00F6DBE8 /* ArrayJM.m */,
+				52C9D1672395FBB000F6DBE8 /* DictionaryJM.h */,
+				52C9D1682395FBB000F6DBE8 /* DictionaryJM.m */,
+				52338EC02399FAA700C19D6D /* StringJM.h */,
+				52338EC12399FAA700C19D6D /* StringJM.m */,
+				52338EC32399FB8A00C19D6D /* NumberJM.h */,
+				52338EC42399FB8A00C19D6D /* NumberJM.m */,
+				52338EC62399FB9700C19D6D /* BoolJM.h */,
+				52338EC72399FB9700C19D6D /* BoolJM.m */,
+				52338EC92399FCB700C19D6D /* NullJM.h */,
+				52338ECA2399FCB700C19D6D /* NullJM.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,20 +562,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5210F89023910F8F0081FE67 /* ViewController.m in Sources */,
+				52338ECB2399FCB700C19D6D /* NullJM.m in Sources */,
 				5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */,
 				52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */,
 				5210F8C6239140BA0081FE67 /* HomeView.m in Sources */,
 				5210F89B23910F910081FE67 /* main.m in Sources */,
 				52338EB4239894E400C19D6D /* UILabel+Caculation.m in Sources */,
-				52C9D16C2395FBCA00F6DBE8 /* ArrContainer.m in Sources */,
-				52C9D1692395FBB000F6DBE8 /* DictContainer.m in Sources */,
+				52C9D16C2395FBCA00F6DBE8 /* ArrayJM.m in Sources */,
+				52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */,
+				52338EC22399FAA700C19D6D /* StringJM.m in Sources */,
 				5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */,
 				52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */,
+				52338EC82399FB9700C19D6D /* BoolJM.m in Sources */,
+				52338EC52399FB8A00C19D6D /* NumberJM.m in Sources */,
 				5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */,
+				52D47C62239A9D4100655900 /* TextField.m in Sources */,
+				52D47C5F239A41D300655900 /* AlertView.m in Sources */,
 				52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */,
 				52338EBC2399005100C19D6D /* SearchCell.m in Sources */,
-				52C9D1662395FB9B00F6DBE8 /* KeyValuePair.m in Sources */,
+				52338ECE239A413800C19D6D /* AlertController.m in Sources */,
 				52338EB92398FF1800C19D6D /* SearchSectionController.m in Sources */,
+				52338EBF2399F81A00C19D6D /* JsonModelFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
