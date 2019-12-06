@@ -18,7 +18,6 @@
     self = [super initWithObject:object andKey:key];
     if (self) {
         self.value = NSMutableArray.new;
-        self.key = key;
         self.typeValue = typeValueDictionary;
         NSDictionary * dict = (NSDictionary *)object;
         

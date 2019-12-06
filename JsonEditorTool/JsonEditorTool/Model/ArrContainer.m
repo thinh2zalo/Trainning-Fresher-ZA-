@@ -17,7 +17,6 @@
 
     self = [super initWithObject:object andKey:key];
     if (self) {
-        self.key = key;
         self.value = NSMutableArray.new;
         NSArray * arr = (NSArray *)object;
         for (int i = 0 ; i < arr.count; i++) {
