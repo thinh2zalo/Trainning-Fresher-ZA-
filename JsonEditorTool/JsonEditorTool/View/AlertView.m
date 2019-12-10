@@ -7,19 +7,14 @@
 //
 
 #import "AlertView.h"
-@interface AlertView ()
-@property (nonatomic, strong) UIView *separatorView;
-@property (nonatomic, assign) CGFloat separatorHeight;
+#import "../Model/JsonModekFactory.h"
 
-@property (nonatomic, strong) UILabel * keyAlertLabel;
-@property (nonatomic, strong) UILabel * valueAlertLabel;
-@property (nonatomic, strong) TextField * keyTextField;
-@property (nonatomic, strong) UITextView * valueTextView;
-@property (nonatomic, strong) UILabel * typeAlert;
-@property (nonatomic, strong) UIButton * cancelBtn;
-@property (nonatomic, strong) UIButton * saveBtn ;
+
+@interface AlertView ()
+@property (nonatomic, strong) JsonModel * jsonModel;
 
 @end
+
 
 @implementation AlertView
 
@@ -44,25 +39,86 @@
 
 }
 
-- (UIButton *)cancelBtn {
+- (void)updateContentInside:(JsonModel *) jsonModel {
+    NSString * value;
+    _jsonModel = jsonModel;
+    switch ([jsonModel getTypeValue]) {
+        case typeValueBool:
+            value = [jsonModel.value stringValue];
+            break;
+        case typeValueString:
+            value = jsonModel.value;
+            break;
+        case typeValueNumber:
+            value = [jsonModel.value stringValue];
+            break;
+        case typeValueArray:
+            [self.keyTextField setEnabled:NO];
+        default: break;
+            
+    }
+    [self.keyTextField setText:jsonModel.key];
+    [self.valueTextView setText:value];
+}
+
+- (void)cancelAlert {
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cancelAlert)]) {
+        [self.delegate cancelAlert];
+    }
+}
+
+- (void)saveAfterConfig {
+    id value;
+    NSNumberFormatter *f;
+    switch (_jsonModel.getTypeValue) {
+        case typeValueBool:
+            if ([self.valueTextView.text isEqualToString:@"0"]) {
+                  value = [NSNumber numberWithBool:0];
+            } else {
+                value = [NSNumber numberWithBool:1];
+
+            }
+            break;
+        case typeValueNumber:
+            f =[[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterDecimalStyle;
+            value = [f numberFromString:self.valueTextView.text];
+            
+            break;
+            
+        default:
+            value = self.valueTextView.text;
+    }
+    JsonModel * newJsonModel = [JsonModelFactory getJsonModel:value andKey:self.keyTextField.text];
+
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(saveAfterConfig:)]) {
+        [self.delegate saveAfterConfig:newJsonModel];
+    }
+}
+
+
+
+
+
+- (Button *)cancelBtn {
     if (!_cancelBtn) {
-        _cancelBtn = UIButton.new;
+        _cancelBtn = Button.new;
         _cancelBtn.backgroundColor = [UIColor redColor];
-        _cancelBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _cancelBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        _cancelBtn.layer.cornerRadius = 3.0f;
+        [_cancelBtn addTarget:self action:@selector(cancelAlert) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
         [self addSubview:_cancelBtn];
     }
     return _cancelBtn;
 }
 
-- (UIButton *)saveBtn {
+- (Button *)saveBtn {
     if (!_saveBtn) {
-        _saveBtn = UIButton.new;
+        _saveBtn = Button.new;
         _saveBtn.backgroundColor = [UIColor blueColor];
-        _saveBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _saveBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        _saveBtn.layer.cornerRadius = 3.0f;
+        [_saveBtn addTarget:self action:@selector(saveAfterConfig) forControlEvents:UIControlEventTouchUpInside];
+        [_saveBtn setTitle:@"save" forState:UIControlStateNormal];
         [self addSubview:_saveBtn];
     }
     return _saveBtn;

@@ -8,14 +8,14 @@
 
 #import "AlertController.h"
 #import "../Define.h"
-#import "../View/AlertView.h"
+#import "../Model/JsonModel.h"
 #define WINDOW_WIDTH 340
 
-@interface AlertController()
+@interface AlertController() 
 @property (nonatomic) CGFloat windowHeight;
 @property (nonatomic) CGFloat windowWidth;
-@property (nonatomic, strong) AlertView * contentView;
 @property (strong, nonatomic) UIImageView *backgroundView;
+@property (strong, nonatomic) JsonModel * jsonModel;
 @property (weak, nonatomic) UIViewController *rootViewController;
 
 
@@ -31,7 +31,9 @@
     }
     return self;
 }
+- (void)viewDidLoad {
 
+}
 - (void)setupViewWindowWidth:(CGFloat)windowWidth {
 
     self.windowWidth = windowWidth;
@@ -41,10 +43,14 @@
     _backgroundView.backgroundColor = [UIColor blackColor];
     _backgroundView.alpha = 0.7f;
 }
-- (void)showAlert:(UIViewController *)viewController {
+- (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel {
+    self.jsonModel = jsonModel;
     
     _rootViewController = viewController;
-
+    
+    [self.contentView updateContentInside:jsonModel];
+    
+    
     [_rootViewController addChildViewController:self];
     [_rootViewController.view addSubview:_backgroundView];
     [_rootViewController.view addSubview:self.view];
@@ -58,6 +64,9 @@
     self.contentView.frame = self.view.bounds;
 
 }
+
+
+
 
 - (void)fadeOut {
     [self fadeOutWithDuration:0.3f];
@@ -79,6 +88,7 @@
 - (AlertView *)contentView {
     if (!_contentView) {
         _contentView = AlertView.new;
+        
         _contentView.backgroundColor = [UIColor whiteColor];
         _contentView.layer.cornerRadius = 5.0f;
         _contentView.layer.masksToBounds = YES;
@@ -87,6 +97,9 @@
     }
     return _contentView;
 }
+
+
+
 
 
 @end

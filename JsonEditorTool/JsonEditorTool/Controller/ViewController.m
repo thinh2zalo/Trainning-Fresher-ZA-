@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UICollectionView * collectionView;
 @end
 
-@interface ViewController() <IGListAdapterDataSource, UISearchBarDelegate> {
+@interface ViewController() <IGListAdapterDataSource, UISearchBarDelegate, UICollectionViewDelegate, KeyValueSectionControllerDelegate> {
     NSNumber * searchToken;
     NSString * textFilter;
 }
@@ -41,9 +41,14 @@
             
             if ([response isKindOfClass:NSDictionary.class]) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-            
+
                         self.jsonModel = [[DictionaryJM alloc] initWithObject:response andKey:@"result"];
-                    
+                    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithDictionary:[self.jsonModel toDictionary]];
+                    self.jsonModel = [[DictionaryJM alloc] initWithObject:dict andKey:@"result"];
+                    if ([dict isEqualToDictionary:response]) {
+                        NSLog(@"if they run this block you gonna completly r");
+                    }
+//                    NSLog(@"%@", dict);
                     dispatch_async(dispatch_get_main_queue(), ^(void){
                         [self setupUI];
                     });
@@ -58,6 +63,15 @@
     }
     
 }
+
+#pragma mark - KeyValueSectionControllerDelegate
+
+- (void)performUpdate:(JsonModel *)oldObject andNewObject:(JsonModel *)newObject {
+    NSUInteger index = [[self.jsonModel value] indexOfObject:oldObject];
+    [[self.jsonModel value] replaceObjectAtIndex:index withObject:newObject];
+    [self.adapter performUpdatesAnimated:YES completion:nil];
+}
+
 
 - (void)setupUI {
     self.adapter.collectionView = self.collectionView;
@@ -75,9 +89,12 @@
 
 #pragma mark - IGListAdapterDataSource
 - (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
+    
+    
     if ([textFilter isEqual:@""]) {
         return [@[searchToken] arrayByAddingObjectsFromArray:[self.jsonModel value]];
     } else {
+
         NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"key contains[cd] %@", textFilter];
         NSArray * subArr = [[self.jsonModel value] filteredArrayUsingPredicate:filterPredicate];
         return [@[searchToken] arrayByAddingObjectsFromArray:subArr];
@@ -91,10 +108,14 @@
         searchSC.delegate = self;
         return searchSC;
     } else {
-        return KeyValueSectionController.new;
+        KeyValueSectionController * kv = KeyValueSectionController.new;
+        kv.delegate = self;
+        return kv;
     }
    
 }
+
+
 
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
     return nil;
@@ -114,8 +135,9 @@
     if (!_collectionView) {
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                              collectionViewLayout:[UICollectionViewFlowLayout new]];
-        [self.view addSubview:_collectionView];
         _collectionView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:_collectionView];
+     
 
     }
     return _collectionView;
@@ -125,6 +147,8 @@
     if (!_adapter) {
         _adapter = [[IGListAdapter alloc] initWithUpdater:[[IGListAdapterUpdater alloc] init]
                                            viewController:self];
+        _adapter.collectionViewDelegate = self;
+
         _adapter.dataSource = self;
     }
     return _adapter;
@@ -140,6 +164,16 @@
 //    return _homeView;
 //}
 
+
+
+
+//- (void)cancelAlert {
+//    <#code#>
+//}
+//
+//- (void)saveAfterConfig {
+//    <#code#>
+//}
 
 
 

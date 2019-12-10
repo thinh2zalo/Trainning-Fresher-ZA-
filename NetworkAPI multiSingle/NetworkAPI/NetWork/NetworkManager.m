@@ -35,7 +35,6 @@
             completion(nil,errorMsg);
         } else {
             NSDictionary * data = [(NSDictionary *) responseObject objectForKey:@"result"];
-            
             if (data) {
                 completion(data,nil);
             }else{

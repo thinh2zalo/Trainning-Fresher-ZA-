@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <IGListKit/IGListKit.h>
+#import "../View/AlertView.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol KeyValueSectionControllerDelegate <NSObject>
 
-@interface KeyValueSectionController : IGListSectionController
+- (void)performUpdate:(JsonModel *)oldObject andNewObject:(JsonModel *)newObject;
+
+@end
+@interface KeyValueSectionController : IGListSectionController 
+@property (nonatomic, weak) id <KeyValueSectionControllerDelegate> delegate;
 
 @end
 

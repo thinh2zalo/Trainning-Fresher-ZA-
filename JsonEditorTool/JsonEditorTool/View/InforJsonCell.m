@@ -54,7 +54,7 @@
 
             break;
         case typeValueBool:
-            self.valueLabel.text = [NSString stringWithFormat:@"%@", jsonModel ? @"YES" : @"NO"];
+            self.valueLabel.text = [NSString stringWithFormat:@"%@", [jsonModel.value  isEqual: @(1)] ? @"YES" : @"NO"];
             typeValue = @"Bool";
     }
     self.typeValueLabel.text = typeValue;

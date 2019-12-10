@@ -13,11 +13,13 @@
 #import "../Controller/AlertController.h"
 
 
-@interface KeyValueSectionController () {
-    JsonModel * jsonModel;
-}
-//@property (nonatomic, strong) AlertController * alert;
 
+@interface KeyValueSectionController ()<AlertViewProtocol> {
+    JsonModel * oldJsonModel;
+    JsonModel * newJsonModel;
+
+}
+@property (nonatomic, strong)  AlertController * alert;
 @end
 @implementation KeyValueSectionController
 
@@ -30,49 +32,58 @@
 }
 
 
+
 #pragma mark - override listSectionController
 
 - (NSInteger)numberOfItems {
     return 1;
 }
+
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     return CGSizeMake(self.collectionContext.containerSize.width, 70);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
     InforJsonCell * cell = [self.collectionContext dequeueReusableCellOfClass:InforJsonCell.class forSectionController:self atIndex:index];
-    [cell updateContentInsideCell:jsonModel];
+    [cell updateContentInsideCell:oldJsonModel];
     return cell;
 }
 
 - (void)didUpdateToObject:(id)object {
-    jsonModel = object;
+    oldJsonModel = object;
+    
+    
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    
     ViewController * viewController = ViewController.new;
-    viewController.jsonModel = jsonModel;
-    if (jsonModel.typeValue == typeValueArray || jsonModel.typeValue == typeValueDictionary) {
+    
+    viewController.jsonModel = oldJsonModel;
+    if (oldJsonModel.typeValue == typeValueArray || oldJsonModel.typeValue == typeValueDictionary) {
         UINavigationController *navController = self.viewController.navigationController;
         [navController pushViewController:viewController animated:YES];
     } else {
-        
-        AlertController * alert  =  AlertController.new;
-        [alert showAlert:self.viewController];
-//        [self.viewController presentViewController:alert animated:NO completion:nil];
-        
-        // Using custom alert width
-//        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
-        
+        _alert = AlertController.new;
+        _alert.contentView.delegate = self;
+        [_alert showAlert:self.viewController withJsonModel:oldJsonModel];
     }
+   
 }
 
-//- (AlertController *)alert {
-//    if (!_alert) {
-//        _alert = AlertController.new;
-//    }
-//    return _alert;
-//}
+
+- (void)cancelAlert {
+    [_alert fadeOut];
+}
+
+- (void)saveAfterConfig:(JsonModel *) jsonModel {
+    // check respone
+    if (self.delegate) {
+        [self.delegate performUpdate:oldJsonModel andNewObject:jsonModel];
+        
+    }
+    [_alert fadeOut];
+
+    
+}
 
 @end

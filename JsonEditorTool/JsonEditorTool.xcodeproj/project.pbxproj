@@ -20,6 +20,7 @@
 		5210F8B023910F910081FE67 /* JsonEditorToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8AF23910F910081FE67 /* JsonEditorToolUITests.m */; };
 		5210F8C6239140BA0081FE67 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8C5239140BA0081FE67 /* HomeView.m */; };
 		5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8C923926FC10081FE67 /* EndPoint.m */; };
+		521A0AEC239BC52100B8F631 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0AEB239BC52100B8F631 /* Button.m */; };
 		5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220A2C82397F21A007892CF /* KeyValueSectionController.m */; };
 		52338EB4239894E400C19D6D /* UILabel+Caculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EB2239894E400C19D6D /* UILabel+Caculation.m */; };
 		52338EB62398E04B00C19D6D /* forward_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52338EB52398E04A00C19D6D /* forward_icon.png */; };
@@ -82,6 +83,8 @@
 		5210F8C823926FC10081FE67 /* EndPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
 		5210F8C923926FC10081FE67 /* EndPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EndPoint.m; sourceTree = "<group>"; };
 		5210F8CB239274620081FE67 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		521A0AEA239BC52100B8F631 /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		521A0AEB239BC52100B8F631 /* Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		5220A2C72397F21A007892CF /* KeyValueSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueSectionController.h; sourceTree = "<group>"; };
 		5220A2C82397F21A007892CF /* KeyValueSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueSectionController.m; sourceTree = "<group>"; };
 		52338EAD2398789500C19D6D /* EnumTypeValueJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypeValueJson.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				52D47C5E239A41D300655900 /* AlertView.m */,
 				52D47C60239A9D4100655900 /* TextField.h */,
 				52D47C61239A9D4100655900 /* TextField.m */,
+				521A0AEA239BC52100B8F631 /* Button.h */,
+				521A0AEB239BC52100B8F631 /* Button.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */,
 				52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */,
 				52338EC82399FB9700C19D6D /* BoolJM.m in Sources */,
+				521A0AEC239BC52100B8F631 /* Button.m in Sources */,
 				52338EC52399FB8A00C19D6D /* NumberJM.m in Sources */,
 				5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */,
 				52D47C62239A9D4100655900 /* TextField.m in Sources */,

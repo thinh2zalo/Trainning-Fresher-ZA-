@@ -7,12 +7,15 @@
 //
 
 #import "JsonModel.h"
+#import "../View/AlertView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AlertController : UIViewController
-- (void)showAlert:(UIViewController *)viewController;
+@property (nonatomic, strong) AlertView * contentView;
+- (void)fadeOut;
 
+- (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel;
 @end
 
 NS_ASSUME_NONNULL_END

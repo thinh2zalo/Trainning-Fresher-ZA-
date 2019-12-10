@@ -35,6 +35,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self.delegate searchSectionController:self andDidChangeText:searchText];
 }
+
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
     [self.delegate searchSectionController:self andDidChangeText:searchBar.text];
 

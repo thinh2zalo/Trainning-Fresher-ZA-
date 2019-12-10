@@ -41,4 +41,23 @@
     return typeValueArray;
 }
 
+- (NSArray *)toArray {
+    NSMutableArray * tempArr  = NSMutableArray.new;
+//    NSMutableDictionary * dict = NSMutableDictionary.new;
+    for (JsonModel * jsonModel in self.value) {
+        switch (jsonModel.getTypeValue) {
+            case typeValueDictionary:
+                [tempArr addObject:[jsonModel toDictionary]];
+                break;
+            case typeValueArray:
+                [tempArr addObject:[jsonModel toArray]];
+                break;
+                
+            default:
+                [tempArr addObject:jsonModel.value];;
+        }
+    }
+    return [tempArr copy];
+}
+
 @end

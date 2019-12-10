@@ -19,7 +19,6 @@
     self = [super initWithObject:object andKey:key];
     if (self) {
         self.value = NSMutableArray.new;
-//        self.typeValue = typeValueDictionary;
 
         NSDictionary * dict = (NSDictionary *)object;
         
@@ -37,5 +36,29 @@
     return typeValueDictionary;
 }
 
+- (NSDictionary *)toDictionary{
+    NSMutableDictionary * tempDictionary = NSMutableDictionary.new;
+
+    for (JsonModel * jsonModel in self.value) {
+        NSDictionary * dict = NSDictionary.new;
+
+        switch (jsonModel.getTypeValue) {
+            case  typeValueDictionary:
+
+                dict = [jsonModel toDictionary];
+                [tempDictionary setValue:dict forKey:jsonModel.key];
+                break;
+                
+            case typeValueArray:
+                
+                [tempDictionary setValue:[jsonModel toArray] forKey:jsonModel.key];
+                break;
+            default:
+                [tempDictionary setValue:jsonModel.value forKey:jsonModel.key];
+
+        }
+    }
+    return [tempDictionary copy];
+}
 
 @end

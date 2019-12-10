@@ -14,4 +14,6 @@
 - (TypeValue)getTypeValue {
     return typeValueString;
 }
+
+
 @end
