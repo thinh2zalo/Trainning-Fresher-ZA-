@@ -30,6 +30,7 @@
 }
 -(void)writeData:(NSData *)data{
     [self.fileHandle writeData:data];
+    
 }
 - (void)use :(Block )block{
     if(self && block){

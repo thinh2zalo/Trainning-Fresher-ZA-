@@ -22,18 +22,11 @@
         NSArray * arr = (NSArray *)object;
         for (int i = 0 ; i < arr.count; i++) {
             NSString * key = [NSString stringWithFormat:@"index %tu", i + 1];
-
-            if (SAFE_TYPE(arr[i], NSDictionary) || SAFE_TYPE(arr[i], NSArray)) {
                 JsonModel * jsonModel = [JsonModelFactory getJsonModel:arr[i] andKey:key];
                 [self.value addObject:jsonModel];
-            
-            } else {
-                JsonModel * arrWithoutKey = [[JsonModel alloc] initWithObject:arr[i] andKey:key];
-                [self.value addObject:arrWithoutKey];
-
             }
         }
-    }
+    
     return self;
 }
 

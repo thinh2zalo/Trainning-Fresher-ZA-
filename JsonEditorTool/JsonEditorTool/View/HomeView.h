@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol HomeViewDelegate <NSObject>
+
+- (void)loadData;
+
+@end
+
 @interface HomeView : UIView
 @property (nonatomic, strong) UITextField * oSVField;
-@property (nonatomic, strong) UITextField * verField;
+@property (nonatomic, strong) TextField * verField;
 @property (nonatomic, strong) UIButton *  commitBtn;
+@property (nonatomic, strong) id <HomeViewDelegate> delegate;
 
 
 @end

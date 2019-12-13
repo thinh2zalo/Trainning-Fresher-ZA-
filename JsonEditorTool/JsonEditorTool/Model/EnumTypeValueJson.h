@@ -10,12 +10,15 @@
 #define EnumTypeValueJson_h
 
 typedef NS_ENUM(NSInteger, TypeValue){
+    typeValueBool,
+
     typeValueNumber,
     typeValueString,
-    typeValueBool,
-    typeValueNull,
-    typeValueDictionary,
     typeValueArray,
+
+    typeValueDictionary,
+    typeValueNull,
+
     
 };
 

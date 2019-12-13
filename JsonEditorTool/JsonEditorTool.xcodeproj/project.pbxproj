@@ -39,6 +39,49 @@
 		52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */; };
 		52D47C5F239A41D300655900 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D47C5E239A41D300655900 /* AlertView.m */; };
 		52D47C62239A9D4100655900 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D47C61239A9D4100655900 /* TextField.m */; };
+		52D4FB7823A13B68000418D5 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB7623A13B68000418D5 /* DLRadioButton.m */; };
+		52D4FB7B23A1484C000418D5 /* SeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB7A23A1484C000418D5 /* SeparatorView.m */; };
+		52D4FB9C23A23F81000418D5 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9323A23F81000418D5 /* InputStream.m */; };
+		52D4FB9D23A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9423A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m */; };
+		52D4FB9E23A23F81000418D5 /* NSFileManager+InteractWithFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9623A23F81000418D5 /* NSFileManager+InteractWithFile.m */; };
+		52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9723A23F81000418D5 /* OutputStream.m */; };
+		52D4FBA023A23F81000418D5 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9A23A23F81000418D5 /* HandleContentFile.m */; };
+		52D4FBA123A23F81000418D5 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9B23A23F81000418D5 /* Stream.m */; };
+		52E3AFAA23A375EE00AE85B1 /* ZASwipeExpansionStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5523A375EE00AE85B1 /* ZASwipeExpansionStyle.m */; };
+		52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5623A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m */; };
+		52E3AFAC23A375EE00AE85B1 /* ZASwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5B23A375EE00AE85B1 /* ZASwipeTableViewCell.m */; };
+		52E3AFAD23A375EE00AE85B1 /* ZADragTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5C23A375EE00AE85B1 /* ZADragTransitionLayout.m */; };
+		52E3AFAE23A375EE00AE85B1 /* ZASwipeActionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5D23A375EE00AE85B1 /* ZASwipeActionState.m */; };
+		52E3AFAF23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5F23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m */; };
+		52E3AFB023A375EE00AE85B1 /* ZARevealTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6523A375EE00AE85B1 /* ZARevealTransitionLayout.m */; };
+		52E3AFB123A375EE00AE85B1 /* ZASwipeExpansionTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6723A375EE00AE85B1 /* ZASwipeExpansionTarget.m */; };
+		52E3AFB223A375EE00AE85B1 /* ZASwipeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6A23A375EE00AE85B1 /* ZASwipeCollectionCell.m */; };
+		52E3AFB323A375EE00AE85B1 /* ZACompletionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6C23A375EE00AE85B1 /* ZACompletionAnimation.m */; };
+		52E3AFB423A375EE00AE85B1 /* ZASwipeCellContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */; };
+		52E3AFB623A375EE00AE85B1 /* ZASwipeExpansionTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */; };
+		52E3AFB823A375EE00AE85B1 /* ZASwipeCellOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */; };
+		52E3AFBA23A375EE00AE85B1 /* MailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */; };
+		52E3AFBC23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */; };
+		52E3AFBD23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */; };
+		52E3AFBE23A375EE00AE85B1 /* ZASwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */; };
+		52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */; };
+		52E3AFC023A375EE00AE85B1 /* MailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */; };
+		52E3AFC123A375EE00AE85B1 /* ZAActionsViewLayoutContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */; };
+		52E3AFC223A375EE00AE85B1 /* ZAScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8823A375EE00AE85B1 /* ZAScaleTransition.m */; };
+		52E3AFC323A375EE00AE85B1 /* ZASwipeActionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8923A375EE00AE85B1 /* ZASwipeActionsView.m */; };
+		52E3AFC623A375EE00AE85B1 /* ActionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8E23A375EE00AE85B1 /* ActionDescriptor.m */; };
+		52E3AFC723A375EE00AE85B1 /* ZASwipeActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8F23A375EE00AE85B1 /* ZASwipeActionButton.m */; };
+		52E3AFC823A375EE00AE85B1 /* ZAFillOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9023A375EE00AE85B1 /* ZAFillOption.m */; };
+		52E3AFC923A375EE00AE85B1 /* ZABorderTranstionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */; };
+		52E3AFCA23A375EE00AE85B1 /* MailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9523A375EE00AE85B1 /* MailViewController.m */; };
+		52E3AFCC23A375EE00AE85B1 /* MailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */; };
+		52E3AFCD23A375EE00AE85B1 /* UITableView+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */; };
+		52E3AFCE23A375EE00AE85B1 /* ZASwipeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */; };
+		52E3AFCF23A375EE00AE85B1 /* ZASwipeCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */; };
+		52E3AFD023A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */; };
+		52E3AFD123A375EE00AE85B1 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA323A375EE00AE85B1 /* IndicatorView.m */; };
+		52E3AFD323A375EE00AE85B1 /* ZACheckMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */; };
+		52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +164,92 @@
 		52D47C5E239A41D300655900 /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		52D47C60239A9D4100655900 /* TextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		52D47C61239A9D4100655900 /* TextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
+		52D4FB7623A13B68000418D5 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		52D4FB7723A13B68000418D5 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		52D4FB7923A1484C000418D5 /* SeparatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeparatorView.h; sourceTree = "<group>"; };
+		52D4FB7A23A1484C000418D5 /* SeparatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeparatorView.m; sourceTree = "<group>"; };
+		52D4FB9023A23F81000418D5 /* OutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
+		52D4FB9123A23F81000418D5 /* NSFileManager+InteractWithFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+InteractWithFile.h"; sourceTree = "<group>"; };
+		52D4FB9223A23F81000418D5 /* HandleContentFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleContentFile.h; sourceTree = "<group>"; };
+		52D4FB9323A23F81000418D5 /* InputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputStream.m; sourceTree = "<group>"; };
+		52D4FB9423A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ReadFlowChunks.m"; sourceTree = "<group>"; };
+		52D4FB9523A23F81000418D5 /* Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stream.h; sourceTree = "<group>"; };
+		52D4FB9623A23F81000418D5 /* NSFileManager+InteractWithFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+InteractWithFile.m"; sourceTree = "<group>"; };
+		52D4FB9723A23F81000418D5 /* OutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputStream.m; sourceTree = "<group>"; };
+		52D4FB9823A23F81000418D5 /* InputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
+		52D4FB9923A23F81000418D5 /* NSFileHandle+ReadFlowChunks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ReadFlowChunks.h"; sourceTree = "<group>"; };
+		52D4FB9A23A23F81000418D5 /* HandleContentFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleContentFile.m; sourceTree = "<group>"; };
+		52D4FB9B23A23F81000418D5 /* Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stream.m; sourceTree = "<group>"; };
+		52E3AF5423A375EE00AE85B1 /* ActionDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionDescriptor.h; sourceTree = "<group>"; };
+		52E3AF5523A375EE00AE85B1 /* ZASwipeExpansionStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionStyle.m; sourceTree = "<group>"; };
+		52E3AF5623A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionTransitioningContext.m; sourceTree = "<group>"; };
+		52E3AF5823A375EE00AE85B1 /* ZASwipeActionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionsView.h; sourceTree = "<group>"; };
+		52E3AF5923A375EE00AE85B1 /* ZAScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAScaleTransition.h; sourceTree = "<group>"; };
+		52E3AF5A23A375EE00AE85B1 /* ZAActionsViewLayoutContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAActionsViewLayoutContext.h; sourceTree = "<group>"; };
+		52E3AF5B23A375EE00AE85B1 /* ZASwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeTableViewCell.m; sourceTree = "<group>"; };
+		52E3AF5C23A375EE00AE85B1 /* ZADragTransitionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZADragTransitionLayout.m; sourceTree = "<group>"; };
+		52E3AF5D23A375EE00AE85B1 /* ZASwipeActionState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionState.m; sourceTree = "<group>"; };
+		52E3AF5F23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SwipeCellKit.m"; sourceTree = "<group>"; };
+		52E3AF6023A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionButtonWrapperView.h; sourceTree = "<group>"; };
+		52E3AF6123A375EE00AE85B1 /* ZASwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeTableCell.h; sourceTree = "<group>"; };
+		52E3AF6223A375EE00AE85B1 /* ZASwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellKit.h; sourceTree = "<group>"; };
+		52E3AF6523A375EE00AE85B1 /* ZARevealTransitionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZARevealTransitionLayout.m; sourceTree = "<group>"; };
+		52E3AF6623A375EE00AE85B1 /* ZABorderTranstionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABorderTranstionLayout.h; sourceTree = "<group>"; };
+		52E3AF6723A375EE00AE85B1 /* ZASwipeExpansionTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionTarget.m; sourceTree = "<group>"; };
+		52E3AF6823A375EE00AE85B1 /* ZAFillOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAFillOption.h; sourceTree = "<group>"; };
+		52E3AF6923A375EE00AE85B1 /* ZASwipeActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionButton.h; sourceTree = "<group>"; };
+		52E3AF6A23A375EE00AE85B1 /* ZASwipeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCollectionCell.m; sourceTree = "<group>"; };
+		52E3AF6B23A375EE00AE85B1 /* ZASwipeCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellHandler.h; sourceTree = "<group>"; };
+		52E3AF6C23A375EE00AE85B1 /* ZACompletionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZACompletionAnimation.m; sourceTree = "<group>"; };
+		52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCellContext.m; sourceTree = "<group>"; };
+		52E3AF6F23A375EE00AE85B1 /* UITableView+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SwipeCellKit.h"; sourceTree = "<group>"; };
+		52E3AF7023A375EE00AE85B1 /* ZASwipeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeAction.h; sourceTree = "<group>"; };
+		52E3AF7123A375EE00AE85B1 /* MailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCollectionViewCell.h; sourceTree = "<group>"; };
+		52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionTrigger.m; sourceTree = "<group>"; };
+		52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCellOptions.m; sourceTree = "<group>"; };
+		52E3AF7523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPanGestureRecognizer+SwipeCellKit.h"; sourceTree = "<group>"; };
+		52E3AF7823A375EE00AE85B1 /* ZACheckMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZACheckMark.h; sourceTree = "<group>"; };
+		52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailTableViewController.m; sourceTree = "<group>"; };
+		52E3AF7A23A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAScaleAndAlphaExpansion.h; sourceTree = "<group>"; };
+		52E3AF7B23A375EE00AE85B1 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorView.h; sourceTree = "<group>"; };
+		52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionAnimationTimingParameters.m; sourceTree = "<group>"; };
+		52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeAccessibilityCustomAction.m; sourceTree = "<group>"; };
+		52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeTableCell.m; sourceTree = "<group>"; };
+		52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionButtonWrapperView.m; sourceTree = "<group>"; };
+		52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCollectionViewController.m; sourceTree = "<group>"; };
+		52E3AF8323A375EE00AE85B1 /* UICollectionView+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SwipeCellKit.h"; sourceTree = "<group>"; };
+		52E3AF8423A375EE00AE85B1 /* ZASwipeActionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionState.h; sourceTree = "<group>"; };
+		52E3AF8523A375EE00AE85B1 /* ZADragTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZADragTransitionLayout.h; sourceTree = "<group>"; };
+		52E3AF8623A375EE00AE85B1 /* ZASwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeTableViewCell.h; sourceTree = "<group>"; };
+		52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAActionsViewLayoutContext.m; sourceTree = "<group>"; };
+		52E3AF8823A375EE00AE85B1 /* ZAScaleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAScaleTransition.m; sourceTree = "<group>"; };
+		52E3AF8923A375EE00AE85B1 /* ZASwipeActionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionsView.m; sourceTree = "<group>"; };
+		52E3AF8B23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionTransitioningContext.h; sourceTree = "<group>"; };
+		52E3AF8D23A375EE00AE85B1 /* ZASwipeExpansionStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionStyle.h; sourceTree = "<group>"; };
+		52E3AF8E23A375EE00AE85B1 /* ActionDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionDescriptor.m; sourceTree = "<group>"; };
+		52E3AF8F23A375EE00AE85B1 /* ZASwipeActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionButton.m; sourceTree = "<group>"; };
+		52E3AF9023A375EE00AE85B1 /* ZAFillOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFillOption.m; sourceTree = "<group>"; };
+		52E3AF9123A375EE00AE85B1 /* ZASwipeExpansionTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionTarget.h; sourceTree = "<group>"; };
+		52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABorderTranstionLayout.m; sourceTree = "<group>"; };
+		52E3AF9323A375EE00AE85B1 /* ZARevealTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZARevealTransitionLayout.h; sourceTree = "<group>"; };
+		52E3AF9423A375EE00AE85B1 /* ZASwipeable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeable.h; sourceTree = "<group>"; };
+		52E3AF9523A375EE00AE85B1 /* MailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailViewController.m; sourceTree = "<group>"; };
+		52E3AF9723A375EE00AE85B1 /* ZASwipeExpansionTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionTrigger.h; sourceTree = "<group>"; };
+		52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCollectionViewCell.m; sourceTree = "<group>"; };
+		52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SwipeCellKit.m"; sourceTree = "<group>"; };
+		52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeAction.m; sourceTree = "<group>"; };
+		52E3AF9B23A375EE00AE85B1 /* ZACompletionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZACompletionAnimation.h; sourceTree = "<group>"; };
+		52E3AF9C23A375EE00AE85B1 /* ZASwipeCellContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellContext.h; sourceTree = "<group>"; };
+		52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCellHandler.m; sourceTree = "<group>"; };
+		52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCollectionCell.h; sourceTree = "<group>"; };
+		52E3AF9F23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionAnimationTimingParameters.h; sourceTree = "<group>"; };
+		52E3AFA023A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeAccessibilityCustomAction.h; sourceTree = "<group>"; };
+		52E3AFA123A375EE00AE85B1 /* MailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailTableViewController.h; sourceTree = "<group>"; };
+		52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAScaleAndAlphaExpansion.m; sourceTree = "<group>"; };
+		52E3AFA323A375EE00AE85B1 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorView.m; sourceTree = "<group>"; };
+		52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZACheckMark.m; sourceTree = "<group>"; };
+		52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPanGestureRecognizer+SwipeCellKit.m"; sourceTree = "<group>"; };
+		52E3AFA923A375EE00AE85B1 /* ZASwipeCellOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellOptions.h; sourceTree = "<group>"; };
 		60BB4AEA098FAEA5EB6F7C17 /* Pods-JsonEditorTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_JsonEditorToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +324,9 @@
 		5210F88A23910F8F0081FE67 /* JsonEditorTool */ = {
 			isa = PBXGroup;
 			children = (
+				52E3AF5223A3756A00AE85B1 /* SwipeCell */,
+				52D4FB8F23A23F81000418D5 /* handleContentFile */,
+				52D4FB7523A13B68000418D5 /* DLRadioButton */,
 				52338EB1239894D700C19D6D /* Categories */,
 				5210F8C723926FAB0081FE67 /* Network */,
 				5210F8C3239140540081FE67 /* Model */,
@@ -247,6 +379,8 @@
 				52D47C61239A9D4100655900 /* TextField.m */,
 				521A0AEA239BC52100B8F631 /* Button.h */,
 				521A0AEB239BC52100B8F631 /* Button.m */,
+				52D4FB7923A1484C000418D5 /* SeparatorView.h */,
+				52D4FB7A23A1484C000418D5 /* SeparatorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +449,120 @@
 				52338EB2239894E400C19D6D /* UILabel+Caculation.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		52D4FB7523A13B68000418D5 /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				52D4FB7723A13B68000418D5 /* DLRadioButton.h */,
+				52D4FB7623A13B68000418D5 /* DLRadioButton.m */,
+			);
+			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		52D4FB8F23A23F81000418D5 /* handleContentFile */ = {
+			isa = PBXGroup;
+			children = (
+				52D4FB9023A23F81000418D5 /* OutputStream.h */,
+				52D4FB9123A23F81000418D5 /* NSFileManager+InteractWithFile.h */,
+				52D4FB9223A23F81000418D5 /* HandleContentFile.h */,
+				52D4FB9323A23F81000418D5 /* InputStream.m */,
+				52D4FB9423A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m */,
+				52D4FB9523A23F81000418D5 /* Stream.h */,
+				52D4FB9623A23F81000418D5 /* NSFileManager+InteractWithFile.m */,
+				52D4FB9723A23F81000418D5 /* OutputStream.m */,
+				52D4FB9823A23F81000418D5 /* InputStream.h */,
+				52D4FB9923A23F81000418D5 /* NSFileHandle+ReadFlowChunks.h */,
+				52D4FB9A23A23F81000418D5 /* HandleContentFile.m */,
+				52D4FB9B23A23F81000418D5 /* Stream.m */,
+			);
+			name = handleContentFile;
+			path = ../../bacsicObjC/bacsicObjC/handleContentFile;
+			sourceTree = "<group>";
+		};
+		52E3AF5223A3756A00AE85B1 /* SwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				52E3AF5323A375EE00AE85B1 /* SwipeCellKit */,
+			);
+			path = SwipeCell;
+			sourceTree = "<group>";
+		};
+		52E3AF5323A375EE00AE85B1 /* SwipeCellKit */ = {
+			isa = PBXGroup;
+			children = (
+				52E3AF5423A375EE00AE85B1 /* ActionDescriptor.h */,
+				52E3AF5523A375EE00AE85B1 /* ZASwipeExpansionStyle.m */,
+				52E3AF5623A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m */,
+				52E3AF5823A375EE00AE85B1 /* ZASwipeActionsView.h */,
+				52E3AF5923A375EE00AE85B1 /* ZAScaleTransition.h */,
+				52E3AF5A23A375EE00AE85B1 /* ZAActionsViewLayoutContext.h */,
+				52E3AF5B23A375EE00AE85B1 /* ZASwipeTableViewCell.m */,
+				52E3AF5C23A375EE00AE85B1 /* ZADragTransitionLayout.m */,
+				52E3AF5D23A375EE00AE85B1 /* ZASwipeActionState.m */,
+				52E3AF5F23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m */,
+				52E3AF6023A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.h */,
+				52E3AF6123A375EE00AE85B1 /* ZASwipeTableCell.h */,
+				52E3AF6223A375EE00AE85B1 /* ZASwipeCellKit.h */,
+				52E3AF6523A375EE00AE85B1 /* ZARevealTransitionLayout.m */,
+				52E3AF6623A375EE00AE85B1 /* ZABorderTranstionLayout.h */,
+				52E3AF6723A375EE00AE85B1 /* ZASwipeExpansionTarget.m */,
+				52E3AF6823A375EE00AE85B1 /* ZAFillOption.h */,
+				52E3AF6923A375EE00AE85B1 /* ZASwipeActionButton.h */,
+				52E3AF6A23A375EE00AE85B1 /* ZASwipeCollectionCell.m */,
+				52E3AF6B23A375EE00AE85B1 /* ZASwipeCellHandler.h */,
+				52E3AF6C23A375EE00AE85B1 /* ZACompletionAnimation.m */,
+				52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */,
+				52E3AF6F23A375EE00AE85B1 /* UITableView+SwipeCellKit.h */,
+				52E3AF7023A375EE00AE85B1 /* ZASwipeAction.h */,
+				52E3AF7123A375EE00AE85B1 /* MailCollectionViewCell.h */,
+				52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */,
+				52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */,
+				52E3AF7523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.h */,
+				52E3AF7823A375EE00AE85B1 /* ZACheckMark.h */,
+				52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */,
+				52E3AF7A23A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.h */,
+				52E3AF7B23A375EE00AE85B1 /* IndicatorView.h */,
+				52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */,
+				52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */,
+				52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */,
+				52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */,
+				52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */,
+				52E3AF8323A375EE00AE85B1 /* UICollectionView+SwipeCellKit.h */,
+				52E3AF8423A375EE00AE85B1 /* ZASwipeActionState.h */,
+				52E3AF8523A375EE00AE85B1 /* ZADragTransitionLayout.h */,
+				52E3AF8623A375EE00AE85B1 /* ZASwipeTableViewCell.h */,
+				52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */,
+				52E3AF8823A375EE00AE85B1 /* ZAScaleTransition.m */,
+				52E3AF8923A375EE00AE85B1 /* ZASwipeActionsView.m */,
+				52E3AF8B23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.h */,
+				52E3AF8D23A375EE00AE85B1 /* ZASwipeExpansionStyle.h */,
+				52E3AF8E23A375EE00AE85B1 /* ActionDescriptor.m */,
+				52E3AF8F23A375EE00AE85B1 /* ZASwipeActionButton.m */,
+				52E3AF9023A375EE00AE85B1 /* ZAFillOption.m */,
+				52E3AF9123A375EE00AE85B1 /* ZASwipeExpansionTarget.h */,
+				52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */,
+				52E3AF9323A375EE00AE85B1 /* ZARevealTransitionLayout.h */,
+				52E3AF9423A375EE00AE85B1 /* ZASwipeable.h */,
+				52E3AF9523A375EE00AE85B1 /* MailViewController.m */,
+				52E3AF9723A375EE00AE85B1 /* ZASwipeExpansionTrigger.h */,
+				52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */,
+				52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */,
+				52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */,
+				52E3AF9B23A375EE00AE85B1 /* ZACompletionAnimation.h */,
+				52E3AF9C23A375EE00AE85B1 /* ZASwipeCellContext.h */,
+				52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */,
+				52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */,
+				52E3AF9F23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.h */,
+				52E3AFA023A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.h */,
+				52E3AFA123A375EE00AE85B1 /* MailTableViewController.h */,
+				52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */,
+				52E3AFA323A375EE00AE85B1 /* IndicatorView.m */,
+				52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */,
+				52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */,
+				52E3AFA923A375EE00AE85B1 /* ZASwipeCellOptions.h */,
+			);
+			path = SwipeCellKit;
 			sourceTree = "<group>";
 		};
 		5E769A328216B148EC9E71F5 /* Frameworks */ = {
@@ -566,29 +814,72 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E3AFB023A375EE00AE85B1 /* ZARevealTransitionLayout.m in Sources */,
+				52D4FB9E23A23F81000418D5 /* NSFileManager+InteractWithFile.m in Sources */,
 				5210F89023910F8F0081FE67 /* ViewController.m in Sources */,
 				52338ECB2399FCB700C19D6D /* NullJM.m in Sources */,
 				5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */,
 				52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */,
+				52D4FB9C23A23F81000418D5 /* InputStream.m in Sources */,
+				52E3AFCE23A375EE00AE85B1 /* ZASwipeAction.m in Sources */,
+				52E3AFC223A375EE00AE85B1 /* ZAScaleTransition.m in Sources */,
 				5210F8C6239140BA0081FE67 /* HomeView.m in Sources */,
 				5210F89B23910F910081FE67 /* main.m in Sources */,
 				52338EB4239894E400C19D6D /* UILabel+Caculation.m in Sources */,
 				52C9D16C2395FBCA00F6DBE8 /* ArrayJM.m in Sources */,
+				52E3AFCA23A375EE00AE85B1 /* MailViewController.m in Sources */,
+				52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */,
+				52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */,
+				52E3AFB123A375EE00AE85B1 /* ZASwipeExpansionTarget.m in Sources */,
 				52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */,
 				52338EC22399FAA700C19D6D /* StringJM.m in Sources */,
 				5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */,
+				52E3AFC823A375EE00AE85B1 /* ZAFillOption.m in Sources */,
 				52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */,
+				52E3AFAD23A375EE00AE85B1 /* ZADragTransitionLayout.m in Sources */,
 				52338EC82399FB9700C19D6D /* BoolJM.m in Sources */,
+				52E3AFCF23A375EE00AE85B1 /* ZASwipeCellHandler.m in Sources */,
+				52E3AFBC23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m in Sources */,
+				52D4FB7823A13B68000418D5 /* DLRadioButton.m in Sources */,
+				52E3AFC723A375EE00AE85B1 /* ZASwipeActionButton.m in Sources */,
+				52D4FBA123A23F81000418D5 /* Stream.m in Sources */,
+				52E3AFB823A375EE00AE85B1 /* ZASwipeCellOptions.m in Sources */,
+				52D4FB9D23A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m in Sources */,
+				52E3AFC023A375EE00AE85B1 /* MailCollectionViewController.m in Sources */,
 				521A0AEC239BC52100B8F631 /* Button.m in Sources */,
 				52338EC52399FB8A00C19D6D /* NumberJM.m in Sources */,
+				52E3AFB223A375EE00AE85B1 /* ZASwipeCollectionCell.m in Sources */,
+				52E3AFCC23A375EE00AE85B1 /* MailCollectionViewCell.m in Sources */,
+				52E3AFB623A375EE00AE85B1 /* ZASwipeExpansionTrigger.m in Sources */,
 				5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */,
+				52E3AFBA23A375EE00AE85B1 /* MailTableViewController.m in Sources */,
+				52E3AFD323A375EE00AE85B1 /* ZACheckMark.m in Sources */,
+				52E3AFC123A375EE00AE85B1 /* ZAActionsViewLayoutContext.m in Sources */,
+				52E3AFAC23A375EE00AE85B1 /* ZASwipeTableViewCell.m in Sources */,
+				52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */,
+				52E3AFBE23A375EE00AE85B1 /* ZASwipeTableCell.m in Sources */,
 				52D47C62239A9D4100655900 /* TextField.m in Sources */,
 				52D47C5F239A41D300655900 /* AlertView.m in Sources */,
+				52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */,
 				52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */,
 				52338EBC2399005100C19D6D /* SearchCell.m in Sources */,
+				52E3AFBD23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m in Sources */,
+				52E3AFB323A375EE00AE85B1 /* ZACompletionAnimation.m in Sources */,
+				52E3AFCD23A375EE00AE85B1 /* UITableView+SwipeCellKit.m in Sources */,
+				52E3AFD023A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m in Sources */,
+				52E3AFB423A375EE00AE85B1 /* ZASwipeCellContext.m in Sources */,
+				52E3AFAF23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m in Sources */,
+				52E3AFAE23A375EE00AE85B1 /* ZASwipeActionState.m in Sources */,
 				52338ECE239A413800C19D6D /* AlertController.m in Sources */,
+				52E3AFC323A375EE00AE85B1 /* ZASwipeActionsView.m in Sources */,
+				52E3AFD123A375EE00AE85B1 /* IndicatorView.m in Sources */,
+				52E3AFAA23A375EE00AE85B1 /* ZASwipeExpansionStyle.m in Sources */,
+				52E3AFC923A375EE00AE85B1 /* ZABorderTranstionLayout.m in Sources */,
 				52338EB92398FF1800C19D6D /* SearchSectionController.m in Sources */,
+				52D4FBA023A23F81000418D5 /* HandleContentFile.m in Sources */,
+				52E3AFC623A375EE00AE85B1 /* ActionDescriptor.m in Sources */,
 				52338EBF2399F81A00C19D6D /* JsonModelFactory.m in Sources */,
+				52D4FB7B23A1484C000418D5 /* SeparatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +985,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -747,7 +1038,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

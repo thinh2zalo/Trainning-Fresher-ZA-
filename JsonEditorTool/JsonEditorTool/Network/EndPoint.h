@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * verStr;
 @property (nonatomic, strong) NSString * osStr;
 @property (nonatomic, strong) NSString * urlRequest;
+- (instancetype)initWithOs:(NSString *)os andVer:(NSString *)ver;
+
 @end
 
 NS_ASSUME_NONNULL_END

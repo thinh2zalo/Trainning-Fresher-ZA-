@@ -8,17 +8,31 @@
 
 #import "HomeView.h"
 #import "../Define.h"
+#import "TextField.h"
+
+@interface HomeView()
+
+@end
 @implementation HomeView
 
 - (void)layoutSubviews {
     float padding = 50;
-    self.oSVField.frame = CGRectMake(padding, SCREEN_MAIN_HEIGHT/3, (SCREEN_MAIN_WIDTH - 3 * padding) /2, 50);
-    self.verField.frame = CGRectMake(self.oSVField.frame.origin.x +   self.oSVField.frame.size.width + padding, self.oSVField.frame.origin.y, (SCREEN_MAIN_WIDTH - 3 * padding) /2, 50);
+    self.backgroundColor = [UIColor whiteColor];
+//    self.oSVField.frame = CGRectMake(padding, SCREEN_MAIN_HEIGHT/3, (SCREEN_MAIN_WIDTH - 3 * padding) /2, 50);
+    self.verField.frame = CGRectMake(self.oSVField.frame.origin.x +   self.oSVField.frame.size.width + padding, self.oSVField.frame.origin.y, 200, 50);
+    self.verField.center =  CGPointMake(self.frame.size.width/2, self.frame.size.height/3);
     self.commitBtn.frame = CGRectMake(padding,  self.oSVField.frame.origin.y + 50 + padding, (SCREEN_MAIN_WIDTH - 3 * padding) /2, 50);
+
 
 }
 
-- (UITextField *)oSVField {
+
+
+-(void) loadDataForMainScreen {
+    [self.delegate loadData];
+}
+
+- (TextField *)oSVField {
     if (!_oSVField) {
         _oSVField = UITextField.new;
         _oSVField.backgroundColor = [UIColor redColor];
@@ -27,10 +41,10 @@
     return _oSVField;
 }
 
-- (UITextField *)verField {
+- (TextField *)verField {
     if (!_verField) {
-        _verField = UITextField.new;
-        _verField.backgroundColor = [UIColor redColor];
+        _verField = TextField.new;
+//        _verField.backgroundColor = [UIColor redColor];
         [self addSubview:_verField];
     }
     return _verField;
@@ -40,7 +54,7 @@
     if (!_commitBtn) {
         _commitBtn = UIButton.new;
         _commitBtn.backgroundColor = [UIColor redColor];
-
+        [_commitBtn addTarget:self action:@selector(loadDataForMainScreen) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_commitBtn];
     }
     return _commitBtn;

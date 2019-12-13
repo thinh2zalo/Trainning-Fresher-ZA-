@@ -14,29 +14,47 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CADRACSwippableCell (0.0.1):
+    - ReactiveCocoa (~> 2.2)
+  - DLRadioButton (1.4.12)
   - IGListKit (3.4.0):
     - IGListKit/Default (= 3.4.0)
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - SCLAlertView-Objective-C (1.1.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - CADRACSwippableCell
+  - DLRadioButton (~> 1.4)
   - IGListKit (~> 3.4.0)
   - SCLAlertView-Objective-C
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - CADRACSwippableCell
+    - DLRadioButton
     - IGListKit
+    - ReactiveCocoa
     - SCLAlertView-Objective-C
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CADRACSwippableCell: 6935d451b910bcc035cbb465e4362640dc22670e
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SCLAlertView-Objective-C: 2bb9be204bffaf24762a0e33fe6ca9645819b3b7
 
-PODFILE CHECKSUM: 548ba7a83cb205df0293fd347c29d50a66de97c7
+PODFILE CHECKSUM: 485228d4203cb6a5061dd1e993898781f6162af4
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.8.4

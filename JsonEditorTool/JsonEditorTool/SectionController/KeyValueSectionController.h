@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol KeyValueSectionControllerDelegate <NSObject>
 
-- (void)performUpdate:(JsonModel *)oldObject andNewObject:(JsonModel *)newObject;
+- (void)performUpdate:(nullable JsonModel *)oldObject andNewObject:(nullable JsonModel * )newObject;
 
 @end
 @interface KeyValueSectionController : IGListSectionController 

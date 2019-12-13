@@ -9,9 +9,10 @@
 #import "AlertController.h"
 #import "../Define.h"
 #import "../Model/JsonModel.h"
+#import "../DLRadioButton/DLRadioButton.h"
 #define WINDOW_WIDTH 340
 
-@interface AlertController() 
+@interface AlertController()
 @property (nonatomic) CGFloat windowHeight;
 @property (nonatomic) CGFloat windowWidth;
 @property (strong, nonatomic) UIImageView *backgroundView;
@@ -37,18 +38,24 @@
 - (void)setupViewWindowWidth:(CGFloat)windowWidth {
 
     self.windowWidth = windowWidth;
-    self.windowHeight = 178.0f;
+    self.windowHeight = 280.0f;
     _backgroundView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _backgroundView.userInteractionEnabled = YES;
     _backgroundView.backgroundColor = [UIColor blackColor];
     _backgroundView.alpha = 0.7f;
+    
+    
 }
+
 - (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel {
-    self.jsonModel = jsonModel;
+    if (jsonModel) {
+        self.jsonModel = jsonModel;
+
+    }
     
     _rootViewController = viewController;
     
-    [self.contentView updateContentInside:jsonModel];
+    [self.alertView updateContentInside:jsonModel];
     
     
     [_rootViewController addChildViewController:self];
@@ -60,11 +67,10 @@
     [super viewWillLayoutSubviews];
     CGSize sz = CGSizeMake(SCREEN_MAIN_WIDTH, SCREEN_MAIN_HEIGHT);
     
-    self.view.frame = CGRectMake((sz.width-_windowWidth)/2, _windowHeight, _windowWidth, _windowHeight);
-    self.contentView.frame = self.view.bounds;
+    self.view.frame = CGRectMake((sz.width-_windowWidth)/2, 150, _windowWidth, _windowHeight);
+    self.alertView.frame = self.view.bounds;
 
 }
-
 
 
 
@@ -85,19 +91,18 @@
 }
 
 
-- (AlertView *)contentView {
-    if (!_contentView) {
-        _contentView = AlertView.new;
+- (AlertView *)alertView {
+    if (!_alertView) {
+        _alertView = AlertView.new;
         
-        _contentView.backgroundColor = [UIColor whiteColor];
-        _contentView.layer.cornerRadius = 5.0f;
-        _contentView.layer.masksToBounds = YES;
-        _contentView.layer.borderWidth = 0.5f;
-        [self.view addSubview:_contentView];
+        _alertView.backgroundColor = [UIColor whiteColor];
+        _alertView.layer.cornerRadius = 5.0f;
+        _alertView.layer.masksToBounds = YES;
+        _alertView.layer.borderWidth = 0.5f;
+        [self.view addSubview:_alertView];
     }
-    return _contentView;
+    return _alertView;
 }
-
 
 
 

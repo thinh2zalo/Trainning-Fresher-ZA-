@@ -22,19 +22,21 @@
     return self;
 }
 
+// MARK: ListDiffable
+
+
 - (id<NSObject>)diffIdentifier {
     return self.key;
 }
 
 
 
-// MARK: ListDiffable
 - (BOOL)isEqualToDiffableObject:(nullable id<IGListDiffable>)object {
     if (self == object) {
         return true;
     }
     JsonModel * jsonModel = (JsonModel *) object;
-    return  [self.value isEqual:jsonModel.value ];
+    return  self.value == jsonModel.value;
 }
 
 @end

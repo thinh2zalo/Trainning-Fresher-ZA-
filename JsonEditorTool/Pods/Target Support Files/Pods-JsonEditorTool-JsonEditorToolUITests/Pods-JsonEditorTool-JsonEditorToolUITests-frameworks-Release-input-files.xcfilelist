@@ -1,4 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool-JsonEditorToolUITests/Pods-JsonEditorTool-JsonEditorToolUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/CADRACSwippableCell/CADRACSwippableCell.framework
+${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework
 ${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework
+${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework
 ${BUILT_PRODUCTS_DIR}/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework
