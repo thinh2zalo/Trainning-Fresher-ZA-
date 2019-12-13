@@ -101,7 +101,7 @@
 //}
 
 - (void)prepareForReuse {
-
+    NSLog(@"self.valueLabel :%@", self.valueLabel.text);
     CGSize maxSize =  CGSizeMake(SCREEN_MAIN_WIDTH / 2, 99999);
     self.valueLabel.frame = CGRectMake(SCREEN_MAIN_WIDTH - [UILabel widthOfLabel:self.valueLabel withBoundingRect:maxSize] - 50, 17, [UILabel widthOfLabel:self.valueLabel withBoundingRect:maxSize] + 20, 40);
 }
