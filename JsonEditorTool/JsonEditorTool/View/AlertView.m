@@ -14,6 +14,7 @@
 
 
 @interface AlertView ()
+
 @property (nonatomic, strong) JsonModel * jsonModel;
 @property (nonatomic, strong) DLRadioButton *groupRadioBtn;
 @property (nonatomic) TypeValue typeValue;
@@ -29,7 +30,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
     self.typeAlert.frame = CGRectMake(150, 70, 40, 20);
     self.typeAlert.center = CGPointMake(self.frame.size.width  / 2,
                                         20);
@@ -40,44 +40,15 @@
     self.saveBtn.frame = CGRectMake(self.frame.size.width - 80, self.cancelBtn.frame.origin.y, self.cancelBtn.frame.size.width, self.cancelBtn.frame.size.height);
     _separatorHeight = (1 / [UIScreen mainScreen].scale);
     
-    self.groupRadioBtn = DLRadioButton.new;
-    CGRect  frameSeparator1 = CGRectMake(0,
-                                         50,
-                                         CGRectGetWidth(self.bounds),
-                                         _separatorHeight);
+   CGRect  frameSeparator1 = CGRectMake(0,
+                                           50,
+                                           CGRectGetWidth(self.bounds),
+                                           _separatorHeight);
     
     
     [self createSeperateLineWithFrame:frameSeparator1];
     
-    
-    CGRect frame = CGRectMake(10, frameSeparator1.origin.y + 10 , 100, 17);
-    self.firstRadioBtn = [self createRadioButtonWithFrame:frame Title:@"Bool" Color:[UIColor blackColor]];
-    
-    self.firstRadioBtn.typeValue = typeValueBool;
-    
-    // other buttons
-    NSArray *nameType = @[ @"Number", @"String", @"Array", @"Dictionary", @"Null"];
-    
-    NSInteger i = 1;
-    
-    NSMutableArray *otherButtons = [NSMutableArray new];
-    [otherButtons addObject:self.firstRadioBtn];
-    
-    for (NSString * type in nameType) {
-        float originX = 10, originY = frameSeparator1.origin.y + 10;
-        if (i > 2) {
-            originX = originX -  3 * 130;
-            originY = originY + 30;
-        }
-        
-        
-        CGRect frame = CGRectMake(originX + 130 * i, originY , 200, 20);
-        DLRadioButton *radioButton = [self createRadioButtonWithFrame:frame Title:type Color:[UIColor blackColor]];
-        [otherButtons addObject:radioButton];
-        i++;
-    }
-    [self.groupRadioBtn layoutIfNeeded];
-    self.groupRadioBtn.otherButtons = otherButtons;
+   
     
     CGRect  frameSeparator2 = CGRectMake(0,
                                          120,
@@ -99,11 +70,23 @@
     
     self.valueTextView.frame = CGRectMake(self.keyTextField.frame.origin.x,self.valueAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2, 200);
     [self ruleOfTextView:_jsonModel.typeValue];
+
     
 }
 
 
 - (void)ruleOfTextView:(TypeValue)typeValue {
+    
+    switch (_parentJsonModel.getTypeValue) {
+        case typeValueArray:
+            self.keyTextField.text = @"";
+            self.keyTextField.placeholder = _jsonModel.key;
+            [self.keyTextField setUserInteractionEnabled:NO];
+            break;
+            
+        default:
+            break;
+    }
     switch (typeValue) {
         case typeValueBool:
             [self.valueAlertLabel setHidden:NO];
@@ -113,14 +96,19 @@
         case typeValueNumber:
             [self.valueAlertLabel setHidden:NO];
             [self.valueTextView setHidden:NO];
+            self.valueTextView.keyboardType = UIKeyboardTypeTwitter;
             break;
         case typeValueString:
             [self.valueAlertLabel setHidden:NO];
             [self.valueTextView setHidden:NO];
+            self.valueTextView.keyboardType = UIKeyboardTypeDefault;
+
             break;
         case typeValueArray:
             [self.valueAlertLabel setHidden:YES];
             [self.valueTextView setHidden:YES];
+            self.valueTextView.keyboardType = UIKeyboardTypeDefault;
+
             break;
         case typeValueDictionary:
             [self.valueAlertLabel setHidden:YES];
@@ -130,14 +118,9 @@
         case typeValueNull:
             [self.valueAlertLabel setHidden:YES];
             [self.valueTextView setHidden:YES];
-            
-            break;
-        default:
-            break;
+        
     }
-    self.groupRadioBtn.otherButtons[1].selected = NO;
 
-    self.groupRadioBtn.otherButtons[typeValue].selected = YES;
 }
 
 - (void)updateContentInside:(JsonModel *) jsonModel {
@@ -155,12 +138,45 @@
             value = [jsonModel.value stringValue];
             break;
         case typeValueArray:
-            [self.keyTextField setEnabled:NO];
         default: break;
             
     }
     [self.keyTextField setText:jsonModel.key];
     [self.valueTextView setText:value];
+    self.groupRadioBtn = DLRadioButton.new;
+        CGRect  frameSeparator1 = CGRectMake(0,
+                                                  50,
+                                                  CGRectGetWidth(self.bounds),
+                                                  _separatorHeight);
+           
+       CGRect frame = CGRectMake(10, frameSeparator1.origin.y + 10 , 100, 30);
+       self.firstRadioBtn = [self createRadioButtonWithFrame:frame Title:@"Bool" Color:[UIColor blackColor]];
+       
+       self.firstRadioBtn.typeValue = typeValueBool;
+       
+       // other buttons
+       NSArray *nameType = @[@"Number", @"String", @"Array", @"Dictionary", @"Null"];
+       
+       NSInteger i = 1;
+       
+       NSMutableArray *otherButtons = [NSMutableArray new];
+       [otherButtons addObject:self.firstRadioBtn];
+       
+       for (NSString * type in nameType) {
+           float originX = 10, originY = frameSeparator1.origin.y + 10;
+           if (i > 2) {
+               originX = originX -  3 * 130;
+               originY = originY + 30;
+           }
+           
+           
+           CGRect frame = CGRectMake(originX + 130 * i, originY , 200, 30);
+           DLRadioButton *radioButton = [self createRadioButtonWithFrame:frame Title:type Color:[UIColor blackColor]];
+           [otherButtons addObject:radioButton];
+           i++;
+       }
+       self.groupRadioBtn.otherButtons = otherButtons;
+    self.groupRadioBtn.otherButtons[jsonModel.typeValue].selected = YES;
 }
 
 - (void)cancelAlert {
@@ -193,7 +209,12 @@
                 }
                 break;
             case typeValueDictionary:
-                value = NSDictionary.new;
+                if (self.jsonModel.getTypeValue == typeValueDictionary) {
+                    value = [self.jsonModel toDictionary];
+                } else {
+                    value = NSDictionary.new;
+                }
+                
                 break;
             case typeValueArray:
                 value = NSArray.new;
@@ -236,6 +257,8 @@
         [self ruleOfTextView:radioButton.typeValue];
         
     }
+    self.groupRadioBtn.otherButtons[_typeValue].selected = YES;
+
 }
 
 
@@ -243,7 +266,7 @@
 - (Button *)cancelBtn {
     if (!_cancelBtn) {
         _cancelBtn = Button.new;
-        _cancelBtn.backgroundColor = [UIColor redColor];
+        _cancelBtn.backgroundColor = [UIColor blueColor];
         [_cancelBtn addTarget:self action:@selector(cancelAlert) forControlEvents:UIControlEventTouchUpInside];
         [_cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
         [self addSubview:_cancelBtn];
@@ -284,7 +307,7 @@
 - (UILabel *)valueAlertLabel {
     if (!_valueAlertLabel) {
         _valueAlertLabel = UILabel.new;
-        _valueAlertLabel.text = @"value";
+        _valueAlertLabel.text = @"value :";
         
         [self addSubview:_valueAlertLabel];
         
@@ -336,24 +359,5 @@
     return radioButton;
 }
 
-//
-//- (DLRadioButton *)createRadioButtonWithFrame:(CGRect) frame Title:(NSString *)title Color:(UIColor *)color image:(UIImage *)image {
-//    DLRadioButton *radioButton = [[DLRadioButton alloc] initWithFrame:frame];
-//    //    radioButton.typeValue = [DLRadioButton getType:title];
-//    radioButton.titleLabel.font = [UIFont systemFontOfSize:14];
-//    [radioButton setTitle:title forState:UIControlStateNormal];
-//    [radioButton setTitleColor:color forState:UIControlStateNormal];
-//    radioButton.iconColor = color;
-//    radioButton.typeValue = [DLRadioButton getType:title];
-//
-//    //    [radioButton setIcon:image];
-//
-//    radioButton.indicatorColor = color;
-//    radioButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//    [radioButton addTarget:self action:@selector(logSelectedButton:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:radioButton];
-//
-//    return radioButton;
-//}
 @end
 

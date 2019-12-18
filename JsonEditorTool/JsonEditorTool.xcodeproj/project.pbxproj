@@ -18,7 +18,6 @@
 		5210F89B23910F910081FE67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F89A23910F910081FE67 /* main.m */; };
 		5210F8A523910F910081FE67 /* JsonEditorToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8A423910F910081FE67 /* JsonEditorToolTests.m */; };
 		5210F8B023910F910081FE67 /* JsonEditorToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8AF23910F910081FE67 /* JsonEditorToolUITests.m */; };
-		5210F8C6239140BA0081FE67 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8C5239140BA0081FE67 /* HomeView.m */; };
 		5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8C923926FC10081FE67 /* EndPoint.m */; };
 		521A0AEC239BC52100B8F631 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0AEB239BC52100B8F631 /* Button.m */; };
 		5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220A2C82397F21A007892CF /* KeyValueSectionController.m */; };
@@ -32,6 +31,11 @@
 		52338EC82399FB9700C19D6D /* BoolJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EC72399FB9700C19D6D /* BoolJM.m */; };
 		52338ECB2399FCB700C19D6D /* NullJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECA2399FCB700C19D6D /* NullJM.m */; };
 		52338ECE239A413800C19D6D /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECD239A413800C19D6D /* AlertController.m */; };
+		5258EB8123A54D36007C74FA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8023A54D36007C74FA /* EmptyView.m */; };
+		5258EB8623A7BB56007C74FA /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */; };
+		5258EB8D23A7D419007C74FA /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8B23A7D415007C74FA /* OrderedDictionary.m */; };
+		5258EB9223A8C304007C74FA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB9123A8C304007C74FA /* JSONKit.m */; };
+		5258EB9523A8E901007C74FA /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB9323A8E8FE007C74FA /* XMLReader.m */; };
 		52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1482394EC2500F6DBE8 /* NetworkManager.m */; };
 		52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1622395FB8D00F6DBE8 /* JsonModel.m */; };
 		52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1682395FBB000F6DBE8 /* DictionaryJM.m */; };
@@ -60,12 +64,10 @@
 		52E3AFB423A375EE00AE85B1 /* ZASwipeCellContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */; };
 		52E3AFB623A375EE00AE85B1 /* ZASwipeExpansionTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */; };
 		52E3AFB823A375EE00AE85B1 /* ZASwipeCellOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */; };
-		52E3AFBA23A375EE00AE85B1 /* MailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */; };
 		52E3AFBC23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */; };
 		52E3AFBD23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */; };
 		52E3AFBE23A375EE00AE85B1 /* ZASwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */; };
 		52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */; };
-		52E3AFC023A375EE00AE85B1 /* MailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */; };
 		52E3AFC123A375EE00AE85B1 /* ZAActionsViewLayoutContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */; };
 		52E3AFC223A375EE00AE85B1 /* ZAScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8823A375EE00AE85B1 /* ZAScaleTransition.m */; };
 		52E3AFC323A375EE00AE85B1 /* ZASwipeActionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8923A375EE00AE85B1 /* ZASwipeActionsView.m */; };
@@ -73,9 +75,6 @@
 		52E3AFC723A375EE00AE85B1 /* ZASwipeActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF8F23A375EE00AE85B1 /* ZASwipeActionButton.m */; };
 		52E3AFC823A375EE00AE85B1 /* ZAFillOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9023A375EE00AE85B1 /* ZAFillOption.m */; };
 		52E3AFC923A375EE00AE85B1 /* ZABorderTranstionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */; };
-		52E3AFCA23A375EE00AE85B1 /* MailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9523A375EE00AE85B1 /* MailViewController.m */; };
-		52E3AFCC23A375EE00AE85B1 /* MailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */; };
-		52E3AFCD23A375EE00AE85B1 /* UITableView+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */; };
 		52E3AFCE23A375EE00AE85B1 /* ZASwipeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */; };
 		52E3AFCF23A375EE00AE85B1 /* ZASwipeCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */; };
 		52E3AFD023A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */; };
@@ -121,8 +120,6 @@
 		5210F8AB23910F910081FE67 /* JsonEditorToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonEditorToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5210F8AF23910F910081FE67 /* JsonEditorToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonEditorToolUITests.m; sourceTree = "<group>"; };
 		5210F8B123910F910081FE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5210F8C4239140BA0081FE67 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
-		5210F8C5239140BA0081FE67 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		5210F8C823926FC10081FE67 /* EndPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
 		5210F8C923926FC10081FE67 /* EndPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EndPoint.m; sourceTree = "<group>"; };
 		5210F8CB239274620081FE67 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
@@ -150,6 +147,16 @@
 		52338ECA2399FCB700C19D6D /* NullJM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NullJM.m; sourceTree = "<group>"; };
 		52338ECC239A413800C19D6D /* AlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		52338ECD239A413800C19D6D /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
+		5258EB7F23A54D36007C74FA /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		5258EB8023A54D36007C74FA /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = "<group>"; };
+		5258EB8523A7BB55007C74FA /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = "<group>"; };
+		5258EB8B23A7D415007C74FA /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
+		5258EB8C23A7D419007C74FA /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		5258EB9023A8C2FF007C74FA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		5258EB9123A8C304007C74FA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		5258EB9323A8E8FE007C74FA /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		5258EB9423A8E901007C74FA /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		52C9D1482394EC2500F6DBE8 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.m"; sourceTree = "<group>"; };
 		52C9D1492394EC2500F6DBE8 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.h"; sourceTree = "<group>"; };
 		52C9D1612395FB8D00F6DBE8 /* JsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonModel.h; sourceTree = "<group>"; };
@@ -204,21 +211,17 @@
 		52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCellContext.m; sourceTree = "<group>"; };
 		52E3AF6F23A375EE00AE85B1 /* UITableView+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SwipeCellKit.h"; sourceTree = "<group>"; };
 		52E3AF7023A375EE00AE85B1 /* ZASwipeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeAction.h; sourceTree = "<group>"; };
-		52E3AF7123A375EE00AE85B1 /* MailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCollectionViewCell.h; sourceTree = "<group>"; };
 		52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionTrigger.m; sourceTree = "<group>"; };
 		52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeCellOptions.m; sourceTree = "<group>"; };
 		52E3AF7523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPanGestureRecognizer+SwipeCellKit.h"; sourceTree = "<group>"; };
 		52E3AF7823A375EE00AE85B1 /* ZACheckMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZACheckMark.h; sourceTree = "<group>"; };
-		52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailTableViewController.m; sourceTree = "<group>"; };
 		52E3AF7A23A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAScaleAndAlphaExpansion.h; sourceTree = "<group>"; };
 		52E3AF7B23A375EE00AE85B1 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorView.h; sourceTree = "<group>"; };
 		52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeExpansionAnimationTimingParameters.m; sourceTree = "<group>"; };
 		52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeAccessibilityCustomAction.m; sourceTree = "<group>"; };
 		52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeTableCell.m; sourceTree = "<group>"; };
 		52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeActionButtonWrapperView.m; sourceTree = "<group>"; };
-		52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCollectionViewController.m; sourceTree = "<group>"; };
 		52E3AF8323A375EE00AE85B1 /* UICollectionView+SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SwipeCellKit.h"; sourceTree = "<group>"; };
-		52E3AF8423A375EE00AE85B1 /* ZASwipeActionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeActionState.h; sourceTree = "<group>"; };
 		52E3AF8523A375EE00AE85B1 /* ZADragTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZADragTransitionLayout.h; sourceTree = "<group>"; };
 		52E3AF8623A375EE00AE85B1 /* ZASwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeTableViewCell.h; sourceTree = "<group>"; };
 		52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAActionsViewLayoutContext.m; sourceTree = "<group>"; };
@@ -233,10 +236,7 @@
 		52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABorderTranstionLayout.m; sourceTree = "<group>"; };
 		52E3AF9323A375EE00AE85B1 /* ZARevealTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZARevealTransitionLayout.h; sourceTree = "<group>"; };
 		52E3AF9423A375EE00AE85B1 /* ZASwipeable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeable.h; sourceTree = "<group>"; };
-		52E3AF9523A375EE00AE85B1 /* MailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailViewController.m; sourceTree = "<group>"; };
 		52E3AF9723A375EE00AE85B1 /* ZASwipeExpansionTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionTrigger.h; sourceTree = "<group>"; };
-		52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCollectionViewCell.m; sourceTree = "<group>"; };
-		52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SwipeCellKit.m"; sourceTree = "<group>"; };
 		52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASwipeAction.m; sourceTree = "<group>"; };
 		52E3AF9B23A375EE00AE85B1 /* ZACompletionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZACompletionAnimation.h; sourceTree = "<group>"; };
 		52E3AF9C23A375EE00AE85B1 /* ZASwipeCellContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellContext.h; sourceTree = "<group>"; };
@@ -244,7 +244,6 @@
 		52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCollectionCell.h; sourceTree = "<group>"; };
 		52E3AF9F23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeExpansionAnimationTimingParameters.h; sourceTree = "<group>"; };
 		52E3AFA023A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeAccessibilityCustomAction.h; sourceTree = "<group>"; };
-		52E3AFA123A375EE00AE85B1 /* MailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailTableViewController.h; sourceTree = "<group>"; };
 		52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAScaleAndAlphaExpansion.m; sourceTree = "<group>"; };
 		52E3AFA323A375EE00AE85B1 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorView.m; sourceTree = "<group>"; };
 		52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZACheckMark.m; sourceTree = "<group>"; };
@@ -324,6 +323,7 @@
 		5210F88A23910F8F0081FE67 /* JsonEditorTool */ = {
 			isa = PBXGroup;
 			children = (
+				5258EB8323A7BB0B007C74FA /* Utilities */,
 				52E3AF5223A3756A00AE85B1 /* SwipeCell */,
 				52D4FB8F23A23F81000418D5 /* handleContentFile */,
 				52D4FB7523A13B68000418D5 /* DLRadioButton */,
@@ -367,8 +367,6 @@
 		5210F8C02391403E0081FE67 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5210F8C4239140BA0081FE67 /* HomeView.h */,
-				5210F8C5239140BA0081FE67 /* HomeView.m */,
 				52C9D16D2397BBC400F6DBE8 /* InforJsonCell.h */,
 				52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */,
 				52338EBA2399005100C19D6D /* SearchCell.h */,
@@ -381,6 +379,8 @@
 				521A0AEB239BC52100B8F631 /* Button.m */,
 				52D4FB7923A1484C000418D5 /* SeparatorView.h */,
 				52D4FB7A23A1484C000418D5 /* SeparatorView.m */,
+				5258EB7F23A54D36007C74FA /* EmptyView.h */,
+				5258EB8023A54D36007C74FA /* EmptyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,6 +451,21 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		5258EB8323A7BB0B007C74FA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5258EB9423A8E901007C74FA /* XMLReader.h */,
+				5258EB9323A8E8FE007C74FA /* XMLReader.m */,
+				5258EB8C23A7D419007C74FA /* OrderedDictionary.h */,
+				5258EB8B23A7D415007C74FA /* OrderedDictionary.m */,
+				5258EB9023A8C2FF007C74FA /* JSONKit.h */,
+				5258EB9123A8C304007C74FA /* JSONKit.m */,
+				5258EB8523A7BB55007C74FA /* M13OrderedDictionary.h */,
+				5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		52D4FB7523A13B68000418D5 /* DLRadioButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,21 +530,17 @@
 				52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */,
 				52E3AF6F23A375EE00AE85B1 /* UITableView+SwipeCellKit.h */,
 				52E3AF7023A375EE00AE85B1 /* ZASwipeAction.h */,
-				52E3AF7123A375EE00AE85B1 /* MailCollectionViewCell.h */,
 				52E3AF7223A375EE00AE85B1 /* ZASwipeExpansionTrigger.m */,
 				52E3AF7423A375EE00AE85B1 /* ZASwipeCellOptions.m */,
 				52E3AF7523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.h */,
 				52E3AF7823A375EE00AE85B1 /* ZACheckMark.h */,
-				52E3AF7923A375EE00AE85B1 /* MailTableViewController.m */,
 				52E3AF7A23A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.h */,
 				52E3AF7B23A375EE00AE85B1 /* IndicatorView.h */,
 				52E3AF7E23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.m */,
 				52E3AF7F23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m */,
 				52E3AF8023A375EE00AE85B1 /* ZASwipeTableCell.m */,
 				52E3AF8123A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m */,
-				52E3AF8223A375EE00AE85B1 /* MailCollectionViewController.m */,
 				52E3AF8323A375EE00AE85B1 /* UICollectionView+SwipeCellKit.h */,
-				52E3AF8423A375EE00AE85B1 /* ZASwipeActionState.h */,
 				52E3AF8523A375EE00AE85B1 /* ZADragTransitionLayout.h */,
 				52E3AF8623A375EE00AE85B1 /* ZASwipeTableViewCell.h */,
 				52E3AF8723A375EE00AE85B1 /* ZAActionsViewLayoutContext.m */,
@@ -544,10 +555,7 @@
 				52E3AF9223A375EE00AE85B1 /* ZABorderTranstionLayout.m */,
 				52E3AF9323A375EE00AE85B1 /* ZARevealTransitionLayout.h */,
 				52E3AF9423A375EE00AE85B1 /* ZASwipeable.h */,
-				52E3AF9523A375EE00AE85B1 /* MailViewController.m */,
 				52E3AF9723A375EE00AE85B1 /* ZASwipeExpansionTrigger.h */,
-				52E3AF9823A375EE00AE85B1 /* MailCollectionViewCell.m */,
-				52E3AF9923A375EE00AE85B1 /* UITableView+SwipeCellKit.m */,
 				52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */,
 				52E3AF9B23A375EE00AE85B1 /* ZACompletionAnimation.h */,
 				52E3AF9C23A375EE00AE85B1 /* ZASwipeCellContext.h */,
@@ -555,7 +563,6 @@
 				52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */,
 				52E3AF9F23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.h */,
 				52E3AFA023A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.h */,
-				52E3AFA123A375EE00AE85B1 /* MailTableViewController.h */,
 				52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */,
 				52E3AFA323A375EE00AE85B1 /* IndicatorView.m */,
 				52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */,
@@ -820,19 +827,20 @@
 				52338ECB2399FCB700C19D6D /* NullJM.m in Sources */,
 				5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */,
 				52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */,
+				5258EB9223A8C304007C74FA /* JSONKit.m in Sources */,
 				52D4FB9C23A23F81000418D5 /* InputStream.m in Sources */,
 				52E3AFCE23A375EE00AE85B1 /* ZASwipeAction.m in Sources */,
 				52E3AFC223A375EE00AE85B1 /* ZAScaleTransition.m in Sources */,
-				5210F8C6239140BA0081FE67 /* HomeView.m in Sources */,
 				5210F89B23910F910081FE67 /* main.m in Sources */,
 				52338EB4239894E400C19D6D /* UILabel+Caculation.m in Sources */,
 				52C9D16C2395FBCA00F6DBE8 /* ArrayJM.m in Sources */,
-				52E3AFCA23A375EE00AE85B1 /* MailViewController.m in Sources */,
 				52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */,
 				52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */,
 				52E3AFB123A375EE00AE85B1 /* ZASwipeExpansionTarget.m in Sources */,
+				5258EB8623A7BB56007C74FA /* M13OrderedDictionary.m in Sources */,
 				52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */,
 				52338EC22399FAA700C19D6D /* StringJM.m in Sources */,
+				5258EB8D23A7D419007C74FA /* OrderedDictionary.m in Sources */,
 				5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */,
 				52E3AFC823A375EE00AE85B1 /* ZAFillOption.m in Sources */,
 				52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */,
@@ -845,27 +853,25 @@
 				52D4FBA123A23F81000418D5 /* Stream.m in Sources */,
 				52E3AFB823A375EE00AE85B1 /* ZASwipeCellOptions.m in Sources */,
 				52D4FB9D23A23F81000418D5 /* NSFileHandle+ReadFlowChunks.m in Sources */,
-				52E3AFC023A375EE00AE85B1 /* MailCollectionViewController.m in Sources */,
 				521A0AEC239BC52100B8F631 /* Button.m in Sources */,
 				52338EC52399FB8A00C19D6D /* NumberJM.m in Sources */,
 				52E3AFB223A375EE00AE85B1 /* ZASwipeCollectionCell.m in Sources */,
-				52E3AFCC23A375EE00AE85B1 /* MailCollectionViewCell.m in Sources */,
 				52E3AFB623A375EE00AE85B1 /* ZASwipeExpansionTrigger.m in Sources */,
 				5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */,
-				52E3AFBA23A375EE00AE85B1 /* MailTableViewController.m in Sources */,
 				52E3AFD323A375EE00AE85B1 /* ZACheckMark.m in Sources */,
 				52E3AFC123A375EE00AE85B1 /* ZAActionsViewLayoutContext.m in Sources */,
 				52E3AFAC23A375EE00AE85B1 /* ZASwipeTableViewCell.m in Sources */,
 				52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */,
+				5258EB8123A54D36007C74FA /* EmptyView.m in Sources */,
 				52E3AFBE23A375EE00AE85B1 /* ZASwipeTableCell.m in Sources */,
 				52D47C62239A9D4100655900 /* TextField.m in Sources */,
 				52D47C5F239A41D300655900 /* AlertView.m in Sources */,
 				52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */,
 				52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */,
+				5258EB9523A8E901007C74FA /* XMLReader.m in Sources */,
 				52338EBC2399005100C19D6D /* SearchCell.m in Sources */,
 				52E3AFBD23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m in Sources */,
 				52E3AFB323A375EE00AE85B1 /* ZACompletionAnimation.m in Sources */,
-				52E3AFCD23A375EE00AE85B1 /* UITableView+SwipeCellKit.m in Sources */,
 				52E3AFD023A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m in Sources */,
 				52E3AFB423A375EE00AE85B1 /* ZASwipeCellContext.m in Sources */,
 				52E3AFAF23A375EE00AE85B1 /* UICollectionView+SwipeCellKit.m in Sources */,
@@ -1038,6 +1044,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INSTALL_PATH[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

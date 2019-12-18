@@ -9,6 +9,7 @@
 #import "InforJsonCell.h"
 #import "../Define.h"
 #import "../Model/JsonModel.h"
+
 #import "../Categories/UILabel+Caculation.h"
 
 @interface InforJsonCell() 
@@ -38,7 +39,6 @@
 - (void)updateContentInsideCell:(JsonModel *)jsonModel {
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
-    NSLog(@"jsonModel: %@", jsonModel);
     switch ([jsonModel getTypeValue]) {
         case typeValueArray:
             self.valueLabel.text = [NSString stringWithFormat:@"%tu keys", [jsonModel.value count]];
@@ -66,7 +66,6 @@
             if ([jsonModel.value isKindOfClass:NSNumber.class]) {
                 self.valueLabel.text = [(NSNumber *)jsonModel.value stringValue];
             }
-            NSLog(@"go here number");
             typeValue = @"Number";
             break;
             
@@ -87,24 +86,7 @@
     
 }
 
-//- (void)setupSubView{
-//    self.stackView.axis = UILayoutConstraintAxisHorizontal;
-//    self.stackView.distribution = UIStackViewDistributionFillEqually;
-//    [self.stackView addArrangedSubview:self.visibleContainerView];
-//    [self.stackView addArrangedSubview:self.hiddenContainerView];
-//
-//    [self addSubview:self.scrollView];
-//    [self.scrollView addSubview:self.scrollView];
-//
-//
-//
-//}
 
-- (void)prepareForReuse {
-    NSLog(@"self.valueLabel :%@", self.valueLabel.text);
-    CGSize maxSize =  CGSizeMake(SCREEN_MAIN_WIDTH / 2, 99999);
-    self.valueLabel.frame = CGRectMake(SCREEN_MAIN_WIDTH - [UILabel widthOfLabel:self.valueLabel withBoundingRect:maxSize] - 50, 17, [UILabel widthOfLabel:self.valueLabel withBoundingRect:maxSize] + 20, 40);
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];

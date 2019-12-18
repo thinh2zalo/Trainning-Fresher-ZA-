@@ -36,7 +36,7 @@
         return true;
     }
     JsonModel * jsonModel = (JsonModel *) object;
-    return  self.value == jsonModel.value;
+    return  self.value == jsonModel.value && self.key == jsonModel.key ;
 }
 
 @end

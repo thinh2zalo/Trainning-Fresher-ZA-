@@ -62,7 +62,6 @@ NSString *const kSwipeCellKitCollectionEditingNotification = @"kSwipeCellKitColl
 }
 
 - (void)dealloc {
-    NSLog(@"Collection dealloc");
     
 }
 

@@ -19,6 +19,7 @@
         NSLog(@"path is error");
         return nil;
     }
+    
     self = [super init];
     if(self){
         if(![[NSFileManager defaultManager] fileExistsAtPath:outputFile ]){

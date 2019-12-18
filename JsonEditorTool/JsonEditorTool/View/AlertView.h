@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<AlertViewProtocol> delegate;
 @property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, assign) CGFloat separatorHeight;
+@property (nonatomic, strong) JsonModel * parentJsonModel;
 
 @property (nonatomic, strong) UILabel * keyAlertLabel;
 @property (nonatomic, strong) UILabel * valueAlertLabel;

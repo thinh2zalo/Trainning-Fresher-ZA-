@@ -20,6 +20,7 @@
 + (JsonModel *) getJsonModel:(id) object andKey:(NSString *) key {
     JsonModel * jsonModel;
     if (SAFE_TYPE(object, NSDictionary)) {
+       
         jsonModel = [[DictionaryJM alloc] initWithObject:object andKey:key];
     }
     else if (SAFE_TYPE(object, NSArray)) {
@@ -29,7 +30,6 @@
     } else if (SAFE_TYPE(object, NSNumber)) {
         NSString * nameClass  = [NSString stringWithFormat:@"%@",[object class]];
         if ([nameClass isEqual:@"__NSCFBoolean"]) {
-            NSLog(@"nameClass :%@", object);
             jsonModel = [[BoolJM alloc] initWithObject:object andKey:key];
         } else {
             jsonModel = [[NumberJM alloc] initWithObject:object andKey:key];

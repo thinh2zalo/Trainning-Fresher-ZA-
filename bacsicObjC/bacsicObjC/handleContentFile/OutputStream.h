@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Stream.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OutputStream : Stream

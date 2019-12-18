@@ -108,7 +108,6 @@
 }
 
 - (void)dealloc {
-    NSLog(@"Cell dealloc");
     
     @try {
         [self removeObserver:self forKeyPath:@"center"];

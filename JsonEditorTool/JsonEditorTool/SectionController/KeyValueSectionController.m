@@ -44,7 +44,6 @@
     ZASwipeCellOptions *options = [[ZASwipeCellOptions alloc] init];
     
     options.expansionStyle = orientation == ZASwipeActionsOrientationLeft ? [ZASwipeExpansionStyle selection] : [ZASwipeExpansionStyle destructive];
-//    options.transitionStyle = ZASwipeStateLeft;
     
     options.buttonSpacing = 11;
     
@@ -59,34 +58,20 @@
 
 - (NSArray<ZASwipeAction *> *)view:(UIView<ZASwipeCellParentViewProtocol> *)view editActionsForRowAtIndexPath:(NSIndexPath *)indexPath forOrientation:(ZASwipeActionsOrientation)orientation {
             __weak typeof(self) weakSelf = self;
-
-           ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
-               [weakSelf.delegate performUpdate:self->oldJsonModel andNewObject:nil];
-           }];
-    deleteAction.backgroundColor = [UIColor blueColor];
-    deleteAction.image = [UIImage imageNamed:@""];
-           return @[deleteAction];
-       
+    if (orientation == ZASwipeActionsOrientationRight) {
+        return nil;
+    } else {
+        ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
+                   [weakSelf.delegate performUpdate:self->oldJsonModel andNewObject:nil];
+               }];
+        deleteAction.backgroundColor = [UIColor blueColor];
+        deleteAction.image = [UIImage imageNamed:@"trash"];
+               return @[deleteAction];
+           
+    }
+           
 }
 
-//- (void)configureAction:(ZASwipeAction *)action withDescriptor:(ActionDescriptor *)descriptor {
-//    action.title = [descriptor titleForDisplayMode:self.buttonDisplayMode];
-//    action.image = [descriptor imageForStyle:self.buttonStyle inDisplayMode:self.buttonDisplayMode];
-//
-//    switch (self.buttonStyle) {
-//        case ButtonStyleBackgroundColor:
-//            action.backgroundColor = descriptor.color;
-//            break;
-//        case ButtonStyleCircular:
-//            action.backgroundColor = [UIColor clearColor];
-//            action.textColor = descriptor.color;
-//            action.font = [UIFont systemFontOfSize:13];
-//            action.transitionDelgate = [ZAScaleTransition defaultTransition];
-//            break;
-//        default:
-//            break;
-//    }
-//}
 
 
 #pragma mark - override listSectionController
@@ -103,6 +88,8 @@
     InforJsonCell * cell = [self.collectionContext dequeueReusableCellOfClass:InforJsonCell.class forSectionController:self atIndex:index];
     cell.delegate = self;
     [cell updateContentInsideCell:oldJsonModel];
+    [cell layoutSubviews];
+
     return cell;
 }
 
@@ -117,6 +104,7 @@
     viewController.jsonModel = oldJsonModel;
     if (oldJsonModel.typeValue == typeValueArray || oldJsonModel.typeValue == typeValueDictionary) {
         UINavigationController *navController = self.viewController.navigationController;
+        
         [navController pushViewController:viewController animated:YES];
     } else {
         _alert = AlertController.new;

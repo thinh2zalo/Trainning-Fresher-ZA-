@@ -9,6 +9,7 @@
 #import "AlertController.h"
 #import "../Define.h"
 #import "../Model/JsonModel.h"
+#import "../Controller/ViewController.h"
 #import "../DLRadioButton/DLRadioButton.h"
 #define WINDOW_WIDTH 340
 
@@ -52,15 +53,19 @@
         self.jsonModel = jsonModel;
 
     }
-    
-    _rootViewController = viewController;
+   _rootViewController = viewController;
     
     [self.alertView updateContentInside:jsonModel];
+    NSUInteger indexOfCurrentVC = [viewController.navigationController.childViewControllers indexOfObject:viewController];
+    if (indexOfCurrentVC > 0) {
+        ViewController * preVC = viewController.navigationController.childViewControllers[indexOfCurrentVC - 1];
+        self.alertView.parentJsonModel = [preVC jsonModel];
+    }
     
-    
-    [_rootViewController addChildViewController:self];
-    [_rootViewController.view addSubview:_backgroundView];
-    [_rootViewController.view addSubview:self.view];
+    [_rootViewController.navigationController addChildViewController:self];
+
+    [_rootViewController.navigationController.view addSubview:_backgroundView];
+    [_rootViewController.navigationController.view addSubview:self.view];
 }
 
 - (void)viewWillLayoutSubviews {
