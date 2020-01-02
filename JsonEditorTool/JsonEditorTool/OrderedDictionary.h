@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)dictionaryWithCapacity:(NSUInteger)count;
 - (instancetype)initWithCapacity:(NSUInteger)count;
-
+- (instancetype)initOrderDictWithDict:(NSDictionary *)dict andData:(NSData *)data;
 - (void)addEntriesFromDictionary:(NSDictionary<KeyType, ObjectType> *)otherDictionary;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(KeyType)key;

@@ -26,7 +26,7 @@
 
 
 - (id<NSObject>)diffIdentifier {
-    return self.key;
+    return self;
 }
 
 

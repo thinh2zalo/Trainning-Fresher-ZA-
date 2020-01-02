@@ -40,7 +40,7 @@
     for (JsonModel * jsonModel in self.value) {
         switch (jsonModel.getTypeValue) {
             case typeValueDictionary:
-                [tempArr addObject:[jsonModel toDictionary]];
+                [tempArr addObject:[jsonModel toOrderDictionary]];
                 break;
             case typeValueArray:
                 [tempArr addObject:[jsonModel toArray]];

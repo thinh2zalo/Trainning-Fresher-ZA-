@@ -36,7 +36,6 @@
 
 
 - (void)view:(UIView<ZASwipeCellParentViewProtocol> *)view didEndEdittingRowAtIndexPath:(NSIndexPath *)indexPath forOrientation:(ZASwipeActionsOrientation)orientation {
-    NSLog(@"check");
 }
 
 
@@ -52,7 +51,6 @@
 
 
 - (void)view:(UIView<ZASwipeCellParentViewProtocol> *)view willBeginEdittingRowAtIndexPath:(NSIndexPath *)indexPath forOrientation:(ZASwipeActionsOrientation)orientation {
-        NSLog(@"check");
 
 }
 
@@ -95,13 +93,12 @@
 
 - (void)didUpdateToObject:(id)object {
     oldJsonModel = object;
-    
-    
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
     ViewController * viewController = ViewController.new;
     viewController.jsonModel = oldJsonModel;
+
     if (oldJsonModel.typeValue == typeValueArray || oldJsonModel.typeValue == typeValueDictionary) {
         UINavigationController *navController = self.viewController.navigationController;
         
@@ -109,7 +106,6 @@
     } else {
         _alert = AlertController.new;
         _alert.alertView.delegate = self;
-
         [_alert showAlert:self.viewController withJsonModel:oldJsonModel];
     }
    
@@ -123,6 +119,7 @@
     // check respone
     
     if (self.delegate) {
+        NSLog(@"adress old :%@ , adress new : %@", oldJsonModel, jsonModel);
         [self.delegate performUpdate:oldJsonModel andNewObject:jsonModel];
         
     }

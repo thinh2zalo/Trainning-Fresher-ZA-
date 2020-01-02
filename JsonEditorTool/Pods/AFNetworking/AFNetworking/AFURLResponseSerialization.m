@@ -162,6 +162,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error
 {
+    
     [self validateResponse:(NSHTTPURLResponse *)response data:data error:error];
 
     return data;

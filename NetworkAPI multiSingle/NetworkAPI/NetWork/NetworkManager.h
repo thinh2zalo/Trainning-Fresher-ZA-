@@ -11,9 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^CompletionBlock)(id _Nullable response , NSString * _Nullable  errorMsg);
 @interface NetworkManager : NSObject
-+ (NetworkManager *) shareInstance;
+@property  (nonatomic, strong) NSData* rawData;
 
-- (void) request:(NSURLRequest *) request  completion:(CompletionBlock) completion;
++ (NetworkManager *) shareInstance;
+- (void)request:(NSURLRequest *)request  completion:(CompletionBlock) completion;
+- (NSData *)getData;
+
+
 
 @end
 

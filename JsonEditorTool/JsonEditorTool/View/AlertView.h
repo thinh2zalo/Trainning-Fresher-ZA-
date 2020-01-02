@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) TextField * keyTextField;
 @property (nonatomic, strong) UITextView * valueTextView;
 @property (nonatomic, strong) UILabel * typeAlert;
+@property (nonatomic, strong) UILabel * errorLable;
+
 @property (nonatomic, strong) Button * cancelBtn;
 @property (nonatomic, strong) Button * saveBtn;
 - (void)updateContentInside:(JsonModel *) jsonModel;

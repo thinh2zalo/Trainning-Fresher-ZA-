@@ -19,10 +19,18 @@
 #import "../DLRadioButton/DLRadioButton.h"
 #import "../View/Button.h"
 #import "../Network/EndPoint.h"
-#import <SCLAlertView.h>
-#import <MBProgressHUD.h>
+
 #import "../View/EmptyView.h"
 #import "OrderedDictionary.h"
+#import "../../Pods/AFNetworking/AFNetworking/AFNetworking.h"
+#import "JsonSerializationCustom.h"
+#import "ArrayJM.h"
+#import "BoolJM.h"
+#import "StringJM.h"
+#import "NullJM.h"
+#import "NumberJM.h"
+
+
 @interface ViewController () <SearchSectionControllerDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) NSDictionary * dict;
 @property (nonatomic, strong) IGListAdapter * adapter;
@@ -36,6 +44,8 @@
 @property (nonatomic, strong) EmptyView *  emptyView;
 @property (nonatomic, strong) UIView * backGroundSettingView ;
 @property (nonatomic, strong) NSString * osStr;
+@property (nonatomic, strong) NSMutableArray <JsonModel *> * allJsonModel;
+
 typedef NS_ENUM(NSInteger, TypeEditJson){
     typeAddNewJson,
     typeDeleteJson,
@@ -70,7 +80,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     }
     
 }
-//
+
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -96,13 +106,17 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     NSURL * url = [NSURL URLWithString:endPoint.urlRequest];
     NSURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [self.navigationController setNavigationBarHidden:NO];
-    
     [NetworkManager.shareInstance  request:request completion:^(id  _Nullable response, NSString * _Nullable errorMsg){
         
-        if ([response isKindOfClass:NSDictionary.class]) {
+        if ([response isKindOfClass:NSData.class]) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
                 
-                self.jsonModel = [[DictionaryJM alloc] initWithObject:response andKey:@"result"];
+                OrderedDictionary * orderDict = [JsonSerializationCustom JSONObjectWithData:response options:0 error:nil];
+                
+                OrderedDictionary * resultDict = [orderDict objectForKey:@"result"];
+                self.jsonModel = [[DictionaryJM alloc] initWithObject:resultDict andKey:@"results"];
+                self.allJsonModel = nil;
+                [self createDictSameLevel:(DictionaryJM *)self.jsonModel];
                 
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     [self setupUI];
@@ -120,11 +134,26 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 
 
+- (void)createDictSameLevel:(JsonModel *)jsonModel {
+    if ([jsonModel isKindOfClass:DictionaryJM.class] || [jsonModel isKindOfClass:ArrayJM.class ]) {
+        [self.allJsonModel addObject:jsonModel];
+        for (JsonModel * jm in jsonModel.value) {
+            if ([jm isKindOfClass:DictionaryJM.class] || [jm isKindOfClass:ArrayJM.class]) {
+                [self createDictSameLevel:jm];
+            }
+            else {
+                [self.allJsonModel addObject:jm];
+                
+            }
+        }
+        
+    }
+}
+
 - (BOOL)isAlreadyJsonModel:(JsonModel *)jsonModel inArray:(NSArray <JsonModel *> *) arrJsonModel{
     for (JsonModel * js in arrJsonModel) {
         if ([jsonModel.key isEqualToString: js.key]) {
             return true;
-            
         }
     }
     return false;
@@ -141,26 +170,61 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     return true;
 }
 
+- (void)editRootJM:(JsonModel *)rootJM oldJM:(JsonModel *) oldJM newJM:(JsonModel *)newJM {
+    NSMutableArray * arrRootAllJM = [(ViewController *)self.navigationController.childViewControllers.firstObject allJsonModel];
+     if (oldJM) {
+        for (JsonModel * JM in rootJM.value) {
+            if (JM == oldJM) {
+                if (newJM) {
+                    NSUInteger  index = [rootJM.value indexOfObject:oldJM];
+                    [rootJM.value replaceObjectAtIndex:index withObject:newJM];
+                } else {
+                    [rootJM.value removeObject:oldJM];
+                }
+                break;
+
+            } else {
+                if ([JM isKindOfClass:DictionaryJM.class] || [JM isKindOfClass:ArrayJM.class]) {
+                    [self editRootJM:JM oldJM:oldJM newJM:newJM];
+                }
+            }
+        }
+        
+        for (JsonModel * jm in arrRootAllJM) {
+            if (jm == oldJM) {
+                if (newJM) {
+                    NSUInteger  index = [arrRootAllJM indexOfObject:oldJM];
+                    [arrRootAllJM replaceObjectAtIndex:index withObject:newJM];
+
+                } else {
+                    [arrRootAllJM removeObject:oldJM];
+                }
+                break;
+            }
+        }
+    } else {
+        [rootJM.value addObject:newJM];
+        [arrRootAllJM addObject:newJM];
+
+    }
+}
+
 #pragma mark - KeyValueSectionControllerDelegate
 
 - (void)performUpdate:(JsonModel *)oldObject andNewObject:(JsonModel *)newObject {
-    NSLog(@"newObject%@", newObject);
-    NSUInteger index = [[self.jsonModel value] indexOfObject:oldObject];
-    if (oldObject && newObject) {
-        [[self.jsonModel value] replaceObjectAtIndex:index withObject:newObject];
-    } else if (!oldObject && newObject){
-        [[self.jsonModel value]  addObject:newObject];
-    } else {
-        [[self.jsonModel value] removeObject:oldObject];
-    }
+    JsonModel * rootJM = [self.navigationController.childViewControllers.firstObject jsonModel];
+    [self editRootJM:rootJM oldJM:oldObject newJM:newObject];
     [self.adapter performUpdatesAnimated:YES completion:nil];
-    
     
 }
 
 #pragma mark - save after add + edit name json
 
 - (void)cancelAlert {
+    for (JsonModel * jm in self.allJsonModel) {
+        NSLog(@"jm adress :%@", jm);
+    }
+    [self.adapter performUpdatesAnimated:YES completion:nil];
     [_alert fadeOut];
 }
 
@@ -182,6 +246,11 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
             [[self.jsonModel value] addObject:jsonModel];
             [self.adapter performUpdatesAnimated:YES completion:nil];
             [_alert fadeOut];
+        } else {
+            NSLog(@"Ngao ha thi");
+            [[_alert.alertView errorLable] setText:@"key is already exists"];
+            [[_alert.alertView errorLable] setHidden:NO];
+
         }
     }
 }
@@ -193,6 +262,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.jsonModel.key style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButtonItem;
     self.navigationItem.title = self.jsonModel.key;
+    
     self.emptyView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more_btn"] style:UIBarButtonItemStyleDone target:self action:@selector(moreFunction)];
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add_btn"] style:UIBarButtonItemStyleDone target:self action:@selector(addNewItem)];
@@ -211,7 +281,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 - (void)setUpSettingView {
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"change_icon"] style:UIBarButtonItemStyleDone target:self action:@selector(showSettingView)];
-           [self.navigationItem setLeftBarButtonItem:addItem];
+    [self.navigationItem setLeftBarButtonItem:addItem];
     
     self.grRadioBtn = DLRadioButton.new;
     self.verField.frame = CGRectMake(0,  0 , 200, 50);
@@ -250,9 +320,16 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
         if ([textFilter isEqual:@""]) {
             return [@[searchToken] arrayByAddingObjectsFromArray:[self.jsonModel value]];
         } else {
+            NSPredicate *predicateKey = [NSPredicate predicateWithFormat:@"key contains[cd] %@",textFilter];
+            NSPredicate *predicateType = [NSPredicate predicateWithFormat: @"self isKindOfClass: %@ OR self isKindOfClass: %@", NumberJM.class, StringJM.class];
             
-            NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"key contains[cd] %@", textFilter];
-            NSArray * subArr = [[self.jsonModel value] filteredArrayUsingPredicate:filterPredicate];
+            
+            NSPredicate *predicateValue = [NSPredicate predicateWithFormat:@"CAST(value,'NSString') contains[cd] %@" , textFilter];
+            NSPredicate *predicateValueAndType = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicateType, predicateValue]];
+            
+            
+            NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[predicateKey, predicateValueAndType]];
+            NSArray * subArr = [[(ViewController *)self.navigationController.viewControllers.firstObject allJsonModel] filteredArrayUsingPredicate:predicate];
             return [@[searchToken] arrayByAddingObjectsFromArray:subArr];
         }
     } else {
@@ -276,8 +353,6 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 }
 
 
-
-
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
     
     return self.emptyView;
@@ -287,7 +362,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 // sav
 - (NSString *)saveFile{
-    NSDictionary * dict = [[(ViewController *) self.navigationController.viewControllers.firstObject jsonModel] toDictionary];
+    OrderedDictionary * dict = [[(ViewController *) self.navigationController.viewControllers.firstObject jsonModel] toOrderDictionary];
     NSData *myData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingFragmentsAllowed error:nil];
     NSString * date = [NSString stringWithFormat:@"%@", [NSDate date]];
     NSString * path = [NSString stringWithFormat:@"%@/tmp/fileJson_%@.txt", NSHomeDirectory(),date];
@@ -344,7 +419,6 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 
 
-
 #pragma mark - lazy init
 
 - (UICollectionView *)collectionView {
@@ -353,6 +427,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
                                              collectionViewLayout:[UICollectionViewFlowLayout new]];
         _collectionView.backgroundColor = [UIColor whiteColor];
         
+        _collectionView.alwaysBounceVertical = YES;
         [_collectionView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
         [self.view addSubview:_collectionView];
     }
@@ -370,6 +445,13 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
         _adapter.dataSource = self;
     }
     return _adapter;
+}
+
+- (NSMutableArray<JsonModel *> *)allJsonModel {
+    if (!_allJsonModel) {
+        _allJsonModel = NSMutableArray.new;
+    }
+    return _allJsonModel;
 }
 
 - (EmptyView *)emptyView {

@@ -1,24 +1,9 @@
-//
-//  Define.h
-//  JsonEditorTool
-//
-//  Created by Steve on 11/30/19.
-//  Copyright © 2019 Steve. All rights reserved.
-//
-
-#ifndef Define_h
-#define Define_h
-
-#define SAFE_TYPE(pointer, type) [pointer isKindOfClass:type.class]
-#define SCREEN_MAIN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_MAIN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-#define URL @"https://data.baomoi.com/app.aspx?method=settings&os=ios&ver=99.99.99"
-#endif /* Define_h */
+#ifdef __clang__
 #define FOR_IN(type, var, collection) \
   for (type var in collection)\
   {
 #define END_FOR_IN(collection) }
-//#else
+#else
 void objc_enumerationMutation(id);
 #define FOR_IN(type, var, c) \
 do\
@@ -50,3 +35,4 @@ do\
                  count: 16]));\
   }\
 } while(0);
+#endif

@@ -110,6 +110,15 @@
     return nil;
 }
 
+
+
+- (instancetype)initw:(NSURL *)url
+{
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [self initWithPlistData:data];
+    return nil;
+}
+
 - (instancetype)initWithContentsOfURL:(NSURL *)url
 {
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -156,6 +165,7 @@
     }
     return self;
 }
+
 
 - (Class)classForCoder
 {
@@ -339,7 +349,21 @@
 {
     return [(MutableOrderedDictionary *)[self alloc] initWithCapacity:count];
 }
+- (instancetype)initOrderDictWithDict:(NSDictionary *)dict andData:(NSData *)data {
+    NSUInteger numberCount = [dict allKeys].count;
+    self = [self initWithCapacity:numberCount];
+    
+    for (NSString *key in [dict allKeys]) {
+        
+        NSUInteger index;
+        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
+//        [self insertObject:key forKey:<#(nonnull id)#> atIndex:<#(NSUInteger)#>]
+    }
+    
+    
+    return self;
+}
 - (instancetype)initWithObjects:(const __unsafe_unretained id [])objects forKeys:(const __unsafe_unretained id <NSCopying> [])keys count:(NSUInteger)count
 {
     if ((self = [super init]))

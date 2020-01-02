@@ -1,0 +1,2794 @@
+{
+  "result" : {
+    "settings" : {
+      "applicationId" : "id651979466",
+      "lastestVersion" : "19.01.04",
+      "originalUrlBottomTitle" : "Nguồn <publisherName>",
+      "titleUpdate" : "Bạn đã sử dụng phiên bản cũ!!!",
+      "messageUpdate" : "Hãy cập nhật ứng dụng để trải nghiệm các tính năng mới, hấp dẫn.",
+      "linkUpdate" : "https:\/\/itunes.apple.com\/app\/id651979466",
+      "buttonYes" : "Cập nhật",
+      "buttonNo" : "Để sau",
+      "statusUpdate" : 0,
+      "enableParse" : true,
+      "enableCrashlytics" : true,
+      "livescoreUrl" : "https:\/\/baomoi.com\/soccer\/app",
+      "commentCollapseMin" : 2,
+      "shareZalo" : true,
+      "loginFacebook" : false,
+      "shareFacebook" : true,
+      "shareFacebookMess" : true,
+      "zal" : true,
+      "zalInterval" : 604800,
+      "userLoZalInterval" : 259200,
+      "show_article_time_limit_off" : 1,
+      "show_comment_time_limit_off" : 3600,
+      "enableWebm" : true,
+      "inapp_noti_default_headline" : "Báo Mới",
+      "logArticles" : 3,
+      "logVideos" : 2,
+      "QoSLogReqLimit" : 50,
+      "QoSLogTimeLimit" : 0,
+      "QoSLogTimeLimitImages" : 0,
+      "impsLogTime" : 1000,
+      "impsLogSize" : 20,
+      "impsPollLogSize" : 1,
+      "timeReloadAds" : 5,
+      "defaultMode" : 0,
+      "defaultModeTablet" : 0,
+      "defaultModeIP5" : 1,
+      "maxArticles" : 600,
+      "maxVideos" : 200,
+      "maxHotComments" : 3,
+      "timeReloadApp" : 1800,
+      "smallPreset" : "a300,w200_r4x3,a400x",
+      "mediumPreset" : "a400,w200_r4x3,a500x",
+      "largePreset" : "a500,w300_r4x3,a700x",
+      "iPadPreset" : "a700,w400_r4x3,a800x",
+      "iPX_listArticleFontSize" : "18,20,22",
+      "iPX_feedArticleFontSize" : "18,20,22",
+      "iPX_listTitleFontSize" : 17,
+      "iPX_feedTitleFontSize" : 20,
+      "iP6_listArticleFontSize" : "18,20,22",
+      "iP6_feedArticleFontSize" : "18,20,22",
+      "iP6_listTitleFontSize" : 18,
+      "iP6_feedTitleFontSize" : 20,
+      "iP6P_listArticleFontSize" : "18,20,22",
+      "iP6P_feedArticleFontSize" : "18,20,22",
+      "iP6P_listTitleFontSize" : 18,
+      "iP6P_feedTitleFontSize" : 20,
+      "iPad_listArticleFontSize" : "22,24,26",
+      "iPad_feedArticleFontSize" : "24,26,28",
+      "iPad_listTitleFontSize" : 24,
+      "iPad_feedTitleFontSize" : 26,
+      "iP5_listArticleFontSize" : "18,20,22",
+      "iP5_feedArticleFontSize" : "20,22,24",
+      "iP5_listTitleFontSize" : 18,
+      "iP5_feedTitleFontSize" : 22,
+      "pageRequestCounter" : 15,
+      "showCounter" : true,
+      "showLastestNewsButton" : true,
+      "showSlideBanner" : false,
+      "videoFormat" : 0,
+      "wifi_chunkPreloadVideo" : 1,
+      "3g_chunkPreloadVideo" : 0,
+      "commentHints" : "Bình luận phải có ít nhất 3 chữ|Bình luận phải dùng tiếng Việt có dấu.|Bình luận không nói tục, chửi bậy.|Bình luận không chứa liên kết, quảng cáo.",
+      "feedName" : "Theo dõi",
+      "feedThumbURL" : [
+        "https:\/\/baomoi-static.zadn.vn\/Uploaded\/AppFeedThumb\/feedthumb1.jpg",
+        "https:\/\/baomoi-static.zadn.vn\/Uploaded\/AppFeedThumb\/feedthumb2.jpg",
+        "https:\/\/baomoi-static.zadn.vn\/Uploaded\/AppFeedThumb\/feedthumb3.jpg"
+      ],
+      "feedEmptyScreenMsg" : "Theo dõi thêm nguồn \nđể có thêm tin trong danh sách",
+      "defaultZoneNewsTab" : "c_0",
+      "fixedZones" : "Tin nóng|c_0,Tin mới|c_-1",
+      "defaultZones" : "Bóng đá VN|c_87,Bóng đá QT|c_86,Độc & Lạ|c_79,Tình yêu|c_139,Giải trí|c_52,Thế giới|c_119,Pháp luật|c_58,Xe 360|c_145,Công Nghệ|c_53,Ẩm thực|c_84,Làm đẹp|c_138,Sức khỏe|c_82,Du lịch|c_137",
+      "allZones" : "Tin mới|c_-1,Bóng đá VN|c_87,Bóng đá QT|c_86,Độc & Lạ|c_79,Tình yêu|c_139,Giải trí|c_52,Thế giới|c_119,Pháp luật|c_58,Xe 360|c_145,Công Nghệ|c_53,Ẩm thực|c_84,Làm đẹp|c_138,Sức khỏe|c_82,Du lịch|c_137,Nhà đất|c_147,Thời sự|c_144,Thiết bị - Phần cứng|c_136,Kinh tế|c_45,Giáo dục|c_59,Không gian - Kiến trúc|c_150,Thời trang|c_72,Test|top_145,Test 2|top_122",
+      "updatedZones" : "Bóng đá VN|c_87",
+      "excludedZones" : "",
+      "changedZones" : "k_Biển Đông|top_228,st_5|top_228",
+      "regions" : "Hà Nội|r_Hà Nội|29,TP. HCM|r_TP. HCM|50,An Giang|r_An Giang|67,Bắc Giang|r_Bắc Giang|98,Bắc Kạn|r_Bắc Kạn|97,Bạc Liêu|r_Bạc Liêu|94,Bắc Ninh|r_Bắc Ninh|99,Bến Tre|r_Bến Tre|71,Bình Định|r_Bình Định|77,Bình Dương|r_Bình Dương|61,Bình Phước|r_Bình Phước|93,Bình Thuận|r_Bình Thuận|86,BR-VT|r_BR-VT|72,Cà Mau|r_Cà Mau|69,Cần Thơ|r_Cần Thơ|65,Cao Bằng|r_Cao Bằng|11,Đà Nẵng|r_Đà Nẵng|43,Đăk Lăk|r_Đăk Lăk|47,Đăk Nông|r_Đăk Nông|48,Điện Biên|r_Điện Biên|27,Đồng Nai|r_Đồng Nai|60,Đồng Tháp|r_Đồng Tháp|66,Gia Lai|r_Gia Lai|81,Hà Giang|r_Hà Giang|23,Hà Nam|r_Hà Nam|90,Hà Tĩnh|r_Hà Tĩnh|38,Hải Dương|r_Hải Dương|34,Hải Phòng|r_Hải Phòng|15,Hậu Giang|r_Hậu Giang|95,Hòa Bình|r_Hòa Bình|28,Hưng Yên|r_Hưng Yên|89,Khánh Hòa|r_Khánh Hòa|79,Kiên Giang|r_Kiên Giang|68,Kon Tum|r_Kon Tum|82,Lai Châu|r_Lai Châu|25,Lâm Đồng|r_Lâm Đồng|49,Lạng Sơn|r_Lạng Sơn|12,Lào Cai|r_Lào Cai|24,Long An|r_Long An|62,Nam Định|r_Nam Định|18,Nghệ An|r_Nghệ An|37,Ninh Bình|r_Ninh Bình|35,Ninh Thuận|r_Ninh Thuận|85,Phú Thọ|r_Phú Thọ|19,Phú Yên|r_Phú Yên|78,Quảng Bình|r_Quảng Bình|73,Quảng Nam|r_Quảng Nam|92,Quảng Ngãi|r_Quảng Ngãi|76,Quảng Ninh|r_Quảng Ninh|14,Quảng Trị|r_Quảng Trị|74,Sóc Trăng|r_Sóc Trăng|83,Sơn La|r_Sơn La|26,Tây Ninh|r_Tây Ninh|70,Thái Bình|r_Thái Bình|17,Thái Nguyên|r_Thái Nguyên|20,Thanh Hóa|r_Thanh Hóa|36,Tiền Giang|r_Tiền Giang|63,Trà Vinh|r_Trà Vinh|84,TT Huế|r_TT Huế|75,Tuyên Quang|r_Tuyên Quang|22,Vĩnh Long|r_Vĩnh Long|64,Vĩnh Phúc|r_Vĩnh Phúc|88,Yên Bái|r_Yên Bái|21",
+      "domainIcon" : "http:\/\/s.baomoi.xdn.vn\/icon_publishers",
+      "topPublishers" : "Zing|p_119,Thanh Niên|p_19,VietnamNet|p_23,Tiền Phong|p_20,VnEconomy|p_3,Saigon Times|p_112,ICTNews|p_107,Lao Động|p_12000",
+      "defaultVideoZones" : [
+        {
+          "zoneName" : "Mới",
+          "zoneId" : "v_-1",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/New\/v_-1_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/New\/v_-1_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/New\/v_-1_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Ahihi",
+          "zoneId" : "v_12",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ahihi\/v_12_1_20181031_fixed.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ahihi\/v_12_2_20181031_fixed.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ahihi\/v_12_3_20181031_fixed.jpg"
+          ]
+        },
+        {
+          "zoneName" : "OMG",
+          "zoneId" : "v_47",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/OMG\/v_47_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/OMG\/v_47_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/OMG\/v_47_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "2Tek",
+          "zoneId" : "v_43",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Hightek\/v_43_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Hightek\/v_43_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Hightek\/v_43_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Bóng đá",
+          "zoneId" : "v_21",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/BongDa\/v_21_1_20181108.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/BongDa\/v_21_2_20181108.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/BongDa\/v_21_3_20181108.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Xinh",
+          "zoneId" : "v_59",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/GaiXinh\/v_59_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/GaiXinh\/v_59_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/GaiXinh\/v_59_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Cute quá",
+          "zoneId" : "v_40",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Cute\/v_40_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Cute\/v_40_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Cute\/v_40_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Showbiz",
+          "zoneId" : "v_6",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Showbiz\/v_6_1_20181226.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Showbiz\/v_6_2_20181226.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Showbiz\/v_6_3_20181226.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Sống",
+          "zoneId" : "v_37",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ngam\/v_37_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ngam\/v_37_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Ngam\/v_37_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Lifestyle",
+          "zoneId" : "v_16",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LifeStyle\/v_16_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LifeStyle\/v_16_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LifeStyle\/v_16_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Điệu",
+          "zoneId" : "v_45",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LamDep\/v_45_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LamDep\/v_45_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/LamDep\/v_45_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "News",
+          "zoneId" : "v_1",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/News\/v_1_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/News\/v_1_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/News\/v_1_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Top",
+          "zoneId" : "v_0",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_3_20181031.jpg"
+          ]
+        },
+        {
+          "zoneName" : "Test",
+          "zoneId" : "v_44",
+          "images" : [
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_1_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_2_20181031.jpg",
+            "https:\/\/baomoi-static.zadn.vn\/Uploaded\/VideoSubTabImgs\/Top\/v_0_3_20181031.jpg"
+          ]
+        }
+      ],
+      "pubProfileTabsName" : "1|Tổng hợp,9|Video test,13|Poll,15|Q&A",
+      "logChannels" : 2,
+      "maxChannelContents" : 10,
+      "channelFontSize" : "13,14,14",
+      "articleVideoMode" : 1,
+      "articleViewMode" : 1,
+      "tapForSoundShowingTime" : 1,
+      "tapForSoundText" : "Bấm video để mở tiếng",
+      "numberOfInsertedArticles" : 3,
+      "recommendListRefreshInterval" : 1800000,
+      "showRecommendGroup" : false,
+      "recommendGroupName" : "CÓ THỂ BẠN QUAN TÂM",
+      "recommendGroupBtnText" : "Xem thêm",
+      "suggestReplyCondition" : 3,
+      "hideArticleReasonsDefault" : "Bạo lực|content,Đồi trụy|content,Phản cảm|content,Xuyên tạc|content,Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương|content",
+      "popupHideArticleMsg" : "Vui lòng chọn các nguyên nhân khiến bạn không thích bài viết này để chúng tôi có thể đề xuất tin cho bạn tốt hơn",
+      "reportArticleReasons" : "Tin gốc đã gỡ|original_removed,Tin gốc đã cập nhật|original_updated,Bạo lực|content,Đồi trụy|content,Phản cảm|content,Xuyên tạc|content,Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương|content,Ý kiến khác...|other",
+      "popupReportArticleMsg" : "Vui lòng chọn các nguyên nhân bạn muốn báo cáo nội dung bài viết này",
+      "reportVideoReasons" : "Tin gốc đã gỡ|original_removed,Tin gốc đã cập nhật|original_updated,Bạo lực|content,Đồi trụy|content,Phản cảm|content,Xuyên tạc|content,Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương|content,Ý kiến khác...|other",
+      "popupReportVideoMsg" : "Vui lòng chọn các nguyên nhân bạn muốn báo cáo nội dung video này",
+      "reportCommentReasons" : "Bạo lực|comment,Đồi trụy|comment,Phản cảm|comment,Xuyên tạc|comment,Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương Kỳ thị địa phương|comment,Spam|comment,Ý kiến khác...|other",
+      "popupReportCommentMsg" : "Vui lòng chọn các nguyên nhân báo xấu bình luận này của người dùng %s",
+      "stepToShowTripleCell" : 0,
+      "appNavBarBg" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Bao_BD\/nav_bar_bg_default@3x.png",
+      "nativeAdsReportMessage" : "Chúng tôi sẽ cố gắng hạn chế hiển thị quảng cáo này đến bạn.",
+      "nativeAdsReportPopupMsg" : "Vui lòng chọn các nguyên nhân báo xấu quảng cáo này",
+      "articleVideoAutoPlay" : true,
+      "listVideoAutoPlay" : true,
+      "listVideoAutoPlayNext" : true,
+      "listTopCmtArticleCondition" : "10,20,100",
+      "articleTopCommentGroup" : true,
+      "replyLoadMoreAmount" : 8,
+      "coverageEnable" : true,
+      "articleCmtBoxHiddenEnable" : true,
+      "articleViewCloseBtnCondition" : 3,
+      "sectionBoxesEnable" : [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        20,
+        30,
+        40
+      ],
+      "content_type" : {
+        "article" : [
+          1
+        ],
+        "video" : [
+          9
+        ],
+        "topic" : [
+          5,
+          6,
+          7
+        ],
+        "qaQuestion" : [
+          15
+        ],
+        "qaAnswer" : [
+          16
+        ],
+        "poll" : [
+          13
+        ],
+        "comment" : [
+          18
+        ]
+      },
+      "qaHistorySize" : 10
+    },
+    "video_detail_v2" : {
+      "autonext_video_countdown" : 5,
+      "related_video_amount" : 5,
+      "related_video_collapsed_amount" : 5,
+      "anti_dup_queue_size" : 5,
+      "btn_next" : "Xem thêm nà",
+      "related_tab_name" : "Tổng hợp nà",
+      "comment_tab_name" : "Bình luận nà"
+    },
+    "image_preset" : {
+      "ratio" : {
+        "1x1" : "a<width>x<width>",
+        "4x3" : "w<width>_r4x3",
+        "16x9" : "a<width>",
+        "default" : "a<width>x"
+      },
+      "min_width" : 400,
+      "max_width" : 1200
+    },
+    "cluster_filter" : {
+      "default" : [
+        "c_"
+      ],
+      "whitelist" : [
+        "c_-1"
+      ],
+      "blacklist" : [
+        "r_TP. HCM",
+        "top_122",
+        "top_145"
+      ],
+      "gap_condition" : {
+        "coverage_article" : 10,
+        "video_coverage" : 5,
+        "video_coverage_move" : 5,
+        "video_article" : 10,
+        "video_article_move" : 10
+      }
+    },
+    "spotlight" : {
+      "spotlightIconUrl" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Spotlight\/nav_bar_spotlight_icon@3x_20181108.png",
+      "impsCountTimer" : 2,
+      "popupDailyShowingLimit" : 0,
+      "popupShowingInterval" : 1,
+      "popupMinItems" : 3,
+      "popupMaxItems" : 10,
+      "popupByTimestamp" : false,
+      "spotlightTitle" : "Đừng bỏ lỡ"
+    },
+    "localPush" : {
+      "pushTimer" : [
+        15,
+        20,
+        30,
+        7200,
+        7200
+      ],
+      "baseListTimeRange" : 21600,
+      "dailyMaxLocalPush" : 0,
+      "pushResource" : "c_-1",
+      "enableSoundAndVibaration" : false
+    },
+    "videoTabRedDot" : {
+      "avpsQueueSize" : 25,
+      "avbvpsQueueSize" : 15,
+      "sessionTimeOut" : 30,
+      "redDotShowingInterval" : 1800
+    },
+    "listArticleAdding" : {
+      "impressedArticlesCounter" : 3,
+      "impressedArticlesExpiredTime" : 86400,
+      "zone" : [
+        {
+          "targetZone" : "c_0",
+          "contentResource" : "c_145",
+          "index" : 0,
+          "amountOfArticles" : 10,
+          "impressedArticlesFilter" : true,
+          "timeRange" : 50000
+        },
+        {
+          "targetZone" : "c_53",
+          "contentResource" : "top_150",
+          "index" : 0,
+          "amountOfArticles" : 3,
+          "impressedArticlesFilter" : true,
+          "timeRange" : 50000
+        }
+      ]
+    },
+    "noConnectionMode" : {
+      "userSettingsTitle" : "Chế độ offline nà",
+      "userSettingsDescription" : "Chế độ offline cho phép người dùng đọc các tin nóng đã lưu lại khi không có kết nối mạng. Báo Mới sẽ chỉ lưu lại phần nội dung chữ để không tốn bộ nhớ máy. nà",
+      "confirmPopupMsg" : "Việc tắt chế độ offline sẽ khiến bạn không thể đọc tin khi mất mạng và việc cập nhật tin offline sẽ bị dừng lại. Bạn có chắc chắn muốn tắt? nà",
+      "offlineBtmBanner" : {
+        "networkBannerMsg" : "Không có kết nối mạng, vui lòng thử lại. nà",
+        "apiFailedBannerMsg" : "Không thể tải dữ liệu, vui lòng thử lại. nà",
+        "action" : "Không"
+      },
+      "connectedBtmBannerMsg" : {
+        "bannerMsg" : "Đừng bỏ lỡ tin mới. Cập nhật ngay! nà",
+        "action" : "Cập nhật"
+      },
+      "popupMsg" : {
+        "popupConfirmShowLocal" : "Bạn đang xem danh sách tin ở chế độ không có mạng nà",
+        "btnConfirmShowLocal" : "Đã hiểu nà",
+        "popupConfirmNetworkError" : "Không có kết nối mạng\n Danh sách tin sẽ được hiển thị ở chế độ đọc offline nà",
+        "btnConfirmNetworkError" : "Đã hiểu lun nà"
+      },
+      "cacheConfig" : {
+        "blackListPubs" : [
+
+        ],
+        "blackListContentIds" : [
+          "33273865",
+          "33279730",
+          "33279060"
+        ]
+      },
+      "articleExpireTime" : 500,
+      "localListSize" : 600,
+      "localPageSize" : 10,
+      "loadingScreenShowTime" : 10,
+      "articleScrolledThrough" : 3,
+      "retryFailedDetailCount" : 2,
+      "detailArticleTimeout" : 10
+    },
+    "placeHolder" : {
+      "commentToolbarDefault" : "Nhập bình luận...",
+      "replyToolbarDefault" : "Nhập trả lời...",
+      "placeHolderCycleTime" : 5000,
+      "suggestReplyTextbox" : "Nhập trả lời bình luận...|Tham gia bình luận...|Trả lời bình luận này...|Bạn nghĩ thế nào?|Nêu ý kiến của bạn...",
+      "videoCommentTextbox" : "Nhập bình luận...",
+      "commentKeyboardInput" : "Nhập bình luận...",
+      "replyKeyboardInput" : "Nhập trả lời...",
+      "commentToolbar" : {
+        "haveComment" : "Nhập bình luận...|Bạn nghĩ thế nào?|Nêu ý kiến của bạn...",
+        "noComment" : "Nhập bình luận...|Nêu ý kiến của bạn...|Tham gia bình luận..."
+      },
+      "replyToolbar" : {
+        "haveComment" : "Nhập trả lời...|Nêu ý kiến của bạn...|Bạn nghĩ thế nào?",
+        "noComment" : "Nhập trả lời...|Tham gia bình luận...|Nêu ý kiến của bạn..."
+      }
+    },
+    "listReadArticlesGroup" : {
+      "numberOfItems" : 2,
+      "groupName" : "ĐỌC GẦN ĐÂY",
+      "buttonText" : "Xem tất cả",
+      "ids" : [
+        {
+          "zoneId" : "c_0",
+          "index" : 22
+        },
+        {
+          "zoneId" : "c_-1",
+          "index" : 22
+        }
+      ]
+    },
+    "articleDetailExtendSection" : {
+      "articleExtend" : {
+        "addedItems" : 2,
+        "zoneId" : "c_86",
+        "refreshInterval" : 100000
+      },
+      "QAExtend" : {
+        "indexes" : [
+          1,
+          5,
+          9
+        ],
+        "zoneId" : "qa_-1",
+        "pageSize" : 15,
+        "refreshInterval" : 100000
+      }
+    },
+    "historyMng" : {
+      "notLogin" : {
+        "bannerMsg" : "Bạn đang xem lịch sử đọc trên thiết bị, đăng nhập để xem lịch sử đọc theo tài khoản của bạn.",
+        "bannerBtnText" : "Đăng nhập",
+        "popupMsg" : "Giữ lịch sử đọc trên thiết bị và tài khoản của bạn luôn thống nhất.",
+        "popupOpt1" : "Đồng bộ ngay",
+        "popupOpt2" : "Chỉ xem lịch sử đọc của tài khoản"
+      },
+      "loggedIn" : {
+        "bannerMsg" : "Giữ lịch sử đọc trên thiết bị và tài khoản của bạn luôn thống nhất.",
+        "bannerBtnText" : "Đồng bộ ngay"
+      }
+    },
+    "bookmarkMng" : {
+      "notLogin" : {
+        "bannerMsg" : "Bạn đang xem các tin đánh dấu trên thiết bị, đăng nhập để xem tin đánh dấu theo tài khoản của bạn.",
+        "bannerBtnText" : "Đăng nhập",
+        "popupMsg" : "Đồng bộ các tin đánh dấu trên thiết bị và tài khoản giúp các dữ liệu quan trọng không bị xóa.",
+        "popupOpt1" : "Đồng bộ ngay",
+        "popupOpt2" : "Chỉ xem tin đánh dấu của tài khoản"
+      },
+      "loggedIn" : {
+        "bannerMsg" : "Đồng bộ các tin đánh dấu trên thiết bị và tài khoản giúp các dữ liệu quan trọng không bị xóa.",
+        "bannerBtnText" : "Đồng bộ"
+      }
+    },
+    "userInfo" : {
+      "featureVer" : 1000,
+      "modifiedDate" : 1507722601,
+      "banner_1" : {
+
+      },
+      "banner_2" : {
+        "bannerTitle" : "Bạn chưa hài lòng với danh sách tin?",
+        "bannerMessage" : "Hãy để Báo Mới giới thiệu đến bạn các tin tức hay và phù hợp nhất",
+        "buttonText" : "Bắt đầu",
+        "popupMessage" : "Để có thể giới thiệu đến bạn các tin tức hay và phù hợp hơn, bạn vui lòng xác nhận một số thông tin sau đây.",
+        "popupBtnText" : "Xác nhận",
+        "ids" : [
+          {
+            "zoneId" : "c_0",
+            "index" : 5
+          }
+        ],
+        "defaultIds" : {
+          "index" : 5
+        }
+      }
+    },
+    "suggestedPublishers" : {
+      "groupName" : "NGUỒN TIN ĐỀ XUẤT",
+      "maxPublishers" : 10,
+      "position" : [
+        {
+          "zoneId" : "c_0",
+          "index" : 8
+        },
+        {
+          "zoneId" : "c_86",
+          "index" : 8
+        }
+      ],
+      "defaultPosition" : {
+
+      }
+    },
+    "inviteFriend" : {
+      "popup" : {
+        "counter" : 3,
+        "coverImg" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/InviteFriend2018\/all_age_gender_pattern-667h@3x.png",
+        "popupTitle" : "<username> đã gửi tặng bạn một phần quà",
+        "popupMsg" : "Đăng nhập để nhận quà, xem chi tiết trong trang Cá nhân.",
+        "popupMsgLoggedin" : "Xem phần quà được tặng ngay, chi tiết trong trang Cá nhân.",
+        "dialog" : {
+          "dialogMsg" : "Bạn có thể vào trang Cá nhân để xem lại thông tin về chương trình này",
+          "action" : "OK"
+        }
+      },
+      "targetScheme" : "baomoi:\/\/web?url=http:\/\/invite.baomoi.com\/home&openType=2&shareSession=true&requiredLogin=true&shareable=false",
+      "oneLinkID" : "Dfp0",
+      "af_web_dp" : "https:\/\/invite.baomoi.com\/lp",
+      "af_ios_url" : "https:\/\/invite.baomoi.com\/lpmb",
+      "loginFacebook" : false
+    },
+    "homePopup" : {
+
+    },
+    "personalTabBanner" : {
+
+    },
+    "eventTab" : {
+      "eventIcon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/SeaGame2019\/IOS\/tab_bar_icon_SG2019_normal@3x.png",
+      "eventIconSelected" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/SeaGame2019\/IOS\/tab_bar_icon_SG2019_selected@3x.png",
+      "eventIndex" : 2,
+      "tabBarBg" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/SeaGame2019\/IOS\/tab_bar_bg_02@3x.png",
+      "navBarBg" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/SeaGame2019\/IOS\/nav_bar_bg@3x.png",
+      "navBarTitle" : "SEAGAME 2019",
+      "navBarRightIcon" : "",
+      "navBarRightScheme" : "",
+      "navBarLeftIcon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/SeaGame2019\/IOS\/nav_bar_right_icon_SG2019@3x.png",
+      "navBarLeftScheme" : "",
+      "eventScheme" : "baomoi:\/\/web?url=http:\/\/invite.baomoi.com\/home&openType=2&shareSession=true&requiredLogin=true&shareable=false"
+    },
+    "articleSideCommentView" : {
+      "toolTipShowingTime" : 5000,
+      "reminderCounter" : "10",
+      "toolTipMessage" : "Vuốt qua trái để đọc bình luận"
+    },
+    "channelVideoTab" : {
+      "ids" : [
+        {
+          "zoneId" : "v_-1",
+          "channelIds" : "oa_10064,oa_10061,oa_10059,oa_10050,oa_10049",
+          "index" : 4
+        }
+      ],
+      "defaultIds" : {
+
+      }
+    },
+    "channelNewsTab" : {
+      "ids" : [
+        {
+          "zoneId" : "c_0",
+          "channelIds" : "oa_10064,oa_10061,oa_10059,oa_10050,oa_10049",
+          "index" : 6
+        },
+        {
+          "zoneId" : "c_-1",
+          "channelIds" : "oa_10064,oa_10061,oa_10059,oa_10050,oa_10049",
+          "index" : 5
+        }
+      ],
+      "defaultIds" : {
+
+      }
+    },
+    "qaNewsTab" : {
+      "ids" : [
+        {
+          "newsZoneId" : "feed",
+          "qaZoneId" : "qa_-1",
+          "qaIndexes" : "4,8,16,24,32,40,48"
+        },
+        {
+          "newsZoneId" : "c_0",
+          "qaZoneId" : "qa_-1",
+          "qaIndexes" : "5,10,60"
+        },
+        {
+          "newsZoneId" : "c_-1",
+          "qaZoneId" : "qa_-1",
+          "qaIndexes" : "0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,5,10,60"
+        }
+      ],
+      "defaultIds" : {
+        "qaZoneId" : "",
+        "qaIndexes" : "4,8,16,24,32,40,48"
+      },
+      "collapsedQuestionBody" : true
+    },
+    "qaRelatedView" : {
+      "title" : "Câu hỏi khác",
+      "relatedSize" : 50
+    },
+    "pollNewsTab" : {
+      "ids" : [
+        {
+          "newsZoneId" : "c_0",
+          "pollZoneId" : "poll_14",
+          "pollIndexes" : "1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75"
+        },
+        {
+          "newsZoneId" : "feed",
+          "pollZoneId" : "poll_13",
+          "pollIndexes" : "1,5,8,18,50"
+        }
+      ],
+      "defaultIds" : {
+        "pollZoneId" : "",
+        "pollIndexes" : "14,30,45,60,75,90,105"
+      },
+      "cmtBoxHint" : "Nêu ý kiến về bình chọn này"
+    },
+    "videoNewsTab" : {
+      "ids" : [
+        {
+          "newsZoneId" : "c_0",
+          "videoZoneId" : "v_1",
+          "videoIndexes" : "2,7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "feed",
+          "videoZoneId" : "v_1",
+          "videoIndexes" : "2,7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_-1",
+          "videoZoneId" : "v_1",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_87",
+          "videoZoneId" : "v_59",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_86",
+          "videoZoneId" : "v_59",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_119",
+          "videoZoneId" : "v_3",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_58",
+          "videoZoneId" : "v_4",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_139",
+          "videoZoneId" : "v_26",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_53",
+          "videoZoneId" : "v_43",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "c_145",
+          "videoZoneId" : "v_25",
+          "videoIndexes" : "7,14,21,28,38,53,68,83,98,113"
+        },
+        {
+          "newsZoneId" : "top_261",
+          "videoZoneId" : "v_67",
+          "videoIndexes" : "5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100"
+        }
+      ],
+      "defaultIds" : {
+
+      }
+    },
+    "blockPublisher" : {
+      "zoneIds" : [
+        "c_",
+        "v_1",
+        "v_43",
+        "top"
+      ],
+      "whiteList_off" : [
+        "c_-1"
+      ],
+      "enableArticleDetailExt" : false,
+      "enableQAExt" : false,
+      "maxBlockPublishers" : 11
+    },
+    "welcomeAds" : {
+      "id_test" : "184285561001308659",
+      "id" : "837193449818520415",
+      "apiTimeOut" : 3000,
+      "adSkip" : 0,
+      "adCountdown" : 35000,
+      "openType" : 1,
+      "titleSponsored" : ""
+    },
+    "mastheadBanner" : null,
+    "ads" : [
+      {
+        "id" : "1616466208561251680",
+        "modeType" : 3,
+        "index" : 3,
+        "distance" : 7,
+        "titleSponsored" : "TÀI TRỢ"
+      },
+      {
+        "id" : "1605344704280871437",
+        "modeType" : 31,
+        "index" : 0,
+        "distance" : 7,
+        "titleSponsored" : "TÀI TRỢ"
+      },
+      {
+        "id" : "898129359187428082",
+        "modeType" : 31,
+        "index" : 1,
+        "distance" : 7,
+        "titleSponsored" : "TÀI TRỢ"
+      },
+      {
+        "id" : "2465414516645002098",
+        "modeType" : 31,
+        "index" : 2,
+        "distance" : 7,
+        "titleSponsored" : "TÀI TRỢ"
+      }
+    ],
+    "articlePr" : [
+      {
+        "defaultId" : "2741339235968041473",
+        "ids" : [
+
+        ],
+        "index" : 2,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1466138728248853236",
+        "ids" : [
+
+        ],
+        "index" : 4,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "2529539834368194686",
+        "ids" : [
+
+        ],
+        "index" : 6,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      }
+    ],
+    "listPr" : [
+      {
+        "defaultId" : "1087287385419891217",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 5,
+        "openType" : 2,
+        "titleSponsored11" : "",
+        "allowReport" : true
+      },
+      {
+        "defaultId" : "1655263751952613907",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 85,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "allowReport" : true
+      },
+      {
+        "defaultId" : "2223299509293105685",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 21,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "allowReport" : true
+      },
+      {
+        "defaultId" : "2791258283639783959",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 28,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "allowReport" : true
+      },
+      {
+        "defaultId" : "544517812580205160",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 35,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1366363545586335406",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 45,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1078084735088425110",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 55,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1646122691452172520",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 65,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "2214096858961639658",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "top_1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_4"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_6"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_903"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_803"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_103"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 75,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "259959405833318969",
+        "ids" : [
+          {
+            "id" : "259959405833318969",
+            "zoneId" : "c_-1"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_105"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_107000"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_104"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_112"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_113"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_114"
+          },
+          {
+            "id" : "",
+            "zoneId" : "top_297"
+          }
+        ],
+        "index" : 25,
+        "openType" : 1,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "",
+        "ids" : [
+          {
+            "id" : "1241950600857876536",
+            "zoneId" : "c_0"
+          }
+        ],
+        "index" : 21,
+        "openType" : 1,
+        "large_mode_enable" : true
+      },
+      {
+        "defaultId" : "",
+        "ids" : [
+          {
+            "id" : "372040369878562655",
+            "zoneId" : "c_0"
+          }
+        ],
+        "index" : 5,
+        "openType" : 1
+      }
+    ],
+    "listPrBanner" : [
+      {
+        "defaultId" : "",
+        "ids" : [
+          {
+            "id" : "1835245928449538103",
+            "zoneId" : "c_0"
+          },
+          {
+            "id" : "1636862265220624244",
+            "zoneId" : "c_-1"
+          }
+        ],
+        "index" : 0,
+        "openType" : 1
+      },
+      {
+        "defaultId" : "",
+        "ids" : [
+          {
+            "id" : "2124783301804129173",
+            "zoneId" : "c_0"
+          }
+        ],
+        "index" : 18,
+        "openType" : 1
+      },
+      {
+        "defaultId" : "",
+        "ids" : [
+          {
+            "id" : "144158106756544314",
+            "zoneId" : "c_0"
+          }
+        ],
+        "index" : 161,
+        "openType" : 1
+      }
+    ],
+    "listVideoAds" : [
+      {
+        "defaultId" : "1531479160939576198",
+        "ids" : [
+          {
+            "id" : "307430734463203923",
+            "zoneId" : "c_0"
+          }
+        ],
+        "index" : 13,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem tiếp"
+      },
+      {
+        "defaultId" : "195264489547331328",
+        "ids" : [
+          {
+            "id" : "763232077166900994",
+            "zoneId" : "top_270"
+          }
+        ],
+        "index" : 8,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem tiếp"
+      },
+      {
+        "defaultId" : "1295029232630985210",
+        "ids" : [
+          {
+            "id" : "763232077166900994",
+            "zoneId" : "c_86"
+          },
+          {
+            "id" : "763232077166900994",
+            "zoneId" : "c_87"
+          },
+          {
+            "id" : "763232077166900994",
+            "zoneId" : "feed"
+          }
+        ],
+        "index" : 162,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem tiếp"
+      }
+    ],
+    "videoListPrBanner" : [
+      {
+        "defaultId" : "2124783301804129173",
+        "ids" : [
+          {
+            "id" : "1835245928449538103",
+            "zoneId" : "v_-1"
+          }
+        ],
+        "index" : 3,
+        "openType" : 1
+      },
+      {
+        "defaultId" : "2124783301804129173",
+        "ids" : [
+
+        ],
+        "index" : 30,
+        "openType" : 1
+      },
+      {
+        "defaultId" : "144158106756544314",
+        "ids" : [
+
+        ],
+        "index" : 60,
+        "openType" : 1
+      }
+    ],
+    "videoListPr" : [
+      {
+        "defaultId" : "1087287385419891217",
+        "ids" : [
+
+        ],
+        "index" : 5,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1655263751952613907",
+        "ids" : [
+
+        ],
+        "index" : 31,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "2223299509293105685",
+        "ids" : [
+
+        ],
+        "index" : 61,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      }
+    ],
+    "videoListVideoAds" : [
+      {
+        "defaultId" : "2291100185150322406",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "v_-1"
+          }
+        ],
+        "index" : 2,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      },
+      {
+        "defaultId" : "307430734463203923",
+        "ids" : [
+          {
+            "id" : "",
+            "zoneId" : "v_-1"
+          }
+        ],
+        "index" : 3,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      }
+    ],
+    "videoDetailPr" : [
+      {
+        "defaultId" : "231645168941890160",
+        "ids" : [
+
+        ],
+        "index" : 5,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "799612739381590642",
+        "ids" : [
+
+        ],
+        "index" : 25,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1367622108443015796",
+        "ids" : [
+
+        ],
+        "index" : 45,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      },
+      {
+        "defaultId" : "1935651251533871734",
+        "ids" : [
+
+        ],
+        "index" : 60,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ"
+      }
+    ],
+    "videoDetailPrBanner" : [
+      {
+        "defaultId" : "2124783301804129173",
+        "ids" : [
+
+        ],
+        "index" : 6,
+        "openType" : 2
+      },
+      {
+        "defaultId" : "1835245928449538103",
+        "ids" : [
+
+        ],
+        "index" : 27,
+        "openType" : 2
+      },
+      {
+        "defaultId" : "1091038609856231315",
+        "ids" : [
+
+        ],
+        "index" : 47,
+        "openType" : 2
+      }
+    ],
+    "videoDetailVideoAds" : [
+      {
+        "defaultId" : "1295029232630985210",
+        "ids" : [
+
+        ],
+        "index" : 2,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      },
+      {
+        "defaultId" : "307430734463203923",
+        "ids" : [
+
+        ],
+        "index" : 25,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      },
+      {
+        "defaultId" : "1531479160939576198",
+        "ids" : [
+
+        ],
+        "index" : 46,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      },
+      {
+        "defaultId" : "307430734463203923",
+        "ids" : [
+
+        ],
+        "index" : 61,
+        "openType" : 2,
+        "titleSponsored" : "Tài trợ",
+        "btnText" : "Xem thêm"
+      }
+    ],
+    "pollAds" : {
+      "bottom" : {
+        "id" : "2316978917886883052",
+        "titleSponsored" : "TÀI TRỢ",
+        "openType" : 2
+      }
+    },
+    "qaAds" : {
+      "questionBottom" : {
+        "id" : "70196734104925409",
+        "titleSponsored" : "TÀI TRỢ",
+        "openType" : 2
+      },
+      "questionRelated" : [
+        {
+          "id" : "638241218818962659",
+          "index" : 2,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2,
+          "allowReport" : true
+        },
+        {
+          "id" : "1087287385419891217",
+          "index" : 10,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2,
+          "allowReport" : true
+        },
+        {
+          "id" : "1655263751952613907",
+          "index" : 10,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2,
+          "allowReport" : true
+        }
+      ],
+      "questionAnswerList" : [
+        {
+          "id" : "663492078876456188",
+          "index" : 5,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "1231466246385923326",
+          "index" : 15,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "1799504271469147376",
+          "index" : 25,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "2366897896839148786",
+          "index" : 35,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "120159693522302199",
+          "index" : 45,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        }
+      ],
+      "answerBottom" : {
+        "id" : "1281420409710277828",
+        "titleSponsored" : "TÀI TRỢ",
+        "openType" : 2
+      }
+    },
+    "commentAds" : {
+      "articleBottom" : [
+        {
+          "id" : "800812907862915183",
+          "type" : 1,
+          "openType" : 2,
+          "titleSponsored" : "Tài trợ",
+          "allowReport" : true
+        },
+        {
+          "id" : "2417414941397447896",
+          "type" : 2,
+          "index" : 0,
+          "titleSponsored" : "Tài trợ article",
+          "openType" : 1
+        },
+        {
+          "id" : "170711922452690141",
+          "type" : 2,
+          "index" : 10,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "738677379768480991",
+          "type" : 2,
+          "index" : 50,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        }
+      ],
+      "articleSide" : [
+        {
+          "id" : "1835245928449538103",
+          "type" : 1,
+          "openType" : 1,
+          "titleSponsored" : "Tài trợ",
+          "allowReport" : true
+        },
+        {
+          "id" : "2468530189000733486",
+          "type" : 2,
+          "index" : 2,
+          "titleSponsored" : "Tài trợ side",
+          "openType" : 2
+        },
+        {
+          "id" : "221791985683886883",
+          "type" : 2,
+          "index" : 5,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "789748578187178789",
+          "type" : 2,
+          "index" : 40,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        }
+      ],
+      "video" : [
+        {
+          "id" : "1951011630837363506",
+          "type" : 1,
+          "openType" : 1,
+          "titleSponsored" : "Tài trợ video",
+          "allowReport" : true
+        },
+        {
+          "id" : "2519056167091008308",
+          "type" : 2,
+          "index" : 2,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "272273983309050633",
+          "type" : 2,
+          "index" : 2,
+          "titleSponsored" : "Tài trợ",
+          "openType_off" : 1
+        },
+        {
+          "id" : "840300875837043467",
+          "type" : 2,
+          "index" : 4,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 1
+        }
+      ],
+      "poll" : [
+        {
+          "id" : "2000999329266365208",
+          "type" : 1,
+          "openType_off" : 1,
+          "titleSponsored" : "Tài trợ",
+          "allowReport" : true
+        },
+        {
+          "id" : "2569010880171176730",
+          "type" : 2,
+          "index" : 0,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "3222264973659635510000",
+          "type" : 2,
+          "index" : 40,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "890255657636688657",
+          "type" : 2,
+          "index" : 60,
+          "titleSponsored" : "Tài trợ poll",
+          "openType" : 1
+        }
+      ],
+      "answerDetail" : [
+        {
+          "id" : "2051516373824664430",
+          "type" : 1,
+          "openType" : 1,
+          "titleSponsored" : "Tài trợ qa",
+          "allowReport" : true
+        },
+        {
+          "id" : "261949274035738710400000",
+          "type" : 2,
+          "index" : 2,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        },
+        {
+          "id" : "372769930203329381",
+          "type" : 2,
+          "index" : 30,
+          "titleSponsored" : "Tài trợ",
+          "openType_off" : 1
+        },
+        {
+          "id" : "940737586542375783",
+          "type" : 2,
+          "index" : 50,
+          "titleSponsored" : "Tài trợ",
+          "openType" : 2
+        }
+      ]
+    },
+    "video_ads_backup" : {
+      "off_ads_condition" : 70,
+      "time_out_condition" : 20,
+      "duration_condition" : 20,
+      "ids" : [
+        {
+          "id" : "751622441263395800",
+          "trigger_time" : 0,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo 1",
+          "skip_btn_text" : "Bỏ qua quảng cáo 1"
+        }
+      ]
+    },
+    "video_ads" : {
+      "off_ads_condition" : 50,
+      "time_out_condition" : 20,
+      "duration_condition" : 10,
+      "ids" : [
+        {
+          "id" : "2291100185150322406",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo fb 1",
+          "skip_btn_text" : "Bỏ qua quảng cáo fb 1"
+        },
+        {
+          "id" : "2379851771606955007",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 2,
+          "btn_text" : "Chi tiết quảng cáo adtima 2",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 2"
+        },
+        {
+          "id" : "1244402597687161851",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo FB 3",
+          "skip_btn_text" : "Bỏ qua quảng cáo FB 3"
+        },
+        {
+          "id" : "2455652730291057630",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo adtima 4",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 4"
+        },
+        {
+          "id" : "1812438337847784445",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 2,
+          "btn_text" : "Chi tiết quảng cáo fb 5",
+          "skip_btn_text" : "Bỏ qua quảng cáo fb 5"
+        },
+        {
+          "id" : "234691022309257772",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo adtima 6",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 6"
+        }
+      ]
+    },
+    "video_ads_video_v2_backup" : {
+      "off_ads_condition" : 50,
+      "time_out_condition" : 60000,
+      "duration_condition" : 30,
+      "ids" : [
+        {
+          "id" : "751622441263395800",
+          "trigger_time" : 0,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo 1",
+          "skip_btn_text" : "Bỏ qua quảng cáo 1"
+        }
+      ]
+    },
+    "video_ads_video_v2" : {
+      "off_ads_condition" : 50,
+      "time_out_condition" : 60000,
+      "duration_condition" : 10,
+      "ids" : [
+        {
+          "id" : "2291100185150322406",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo fb 1",
+          "skip_btn_text" : "Bỏ qua quảng cáo fb 1"
+        },
+        {
+          "id" : "2379851771606955007",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 2,
+          "btn_text" : "Chi tiết quảng cáo adtima 2",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 2"
+        },
+        {
+          "id" : "1244402597687161851",
+          "trigger_time" : 8,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo FB 3",
+          "skip_btn_text" : "Bỏ qua quảng cáo FB 3"
+        },
+        {
+          "id" : "2455652730291057630",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo adtima 4",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 4"
+        },
+        {
+          "id" : "1812438337847784445",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 2,
+          "btn_text" : "Chi tiết quảng cáo fb 5",
+          "skip_btn_text" : "Bỏ qua quảng cáo fb 5"
+        },
+        {
+          "id" : "234691022309257772",
+          "trigger_time" : 5,
+          "distance" : 0,
+          "open_type" : 1,
+          "btn_text" : "Chi tiết quảng cáo adtima 6",
+          "skip_btn_text" : "Bỏ qua quảng cáo adtima 6"
+        }
+      ]
+    },
+    "notificationRequest" : {
+      "featureVer" : 3001,
+      "newsTabBanner" : {
+        "sessionShowInterval" : 3,
+        "maxShowCount" : 200,
+        "bannerTitle" : "Đừng bỏ lỡ tin nóng",
+        "bannerMessage" : "Bật thông báo để nhận những tin tức nổi bật nhất",
+        "buttonText" : "Bắt đầu",
+        "ids" : [
+          {
+            "zoneId" : "c_0",
+            "index" : 80
+          },
+          {
+            "zoneId" : "c_145",
+            "index" : 10
+          },
+          {
+            "zoneId" : "c_-1",
+            "index" : 0
+          }
+        ],
+        "defaultIds" : {
+
+        }
+      },
+      "notiCenterBanner" : {
+        "remindBannerMsg" : "Thông báo đang bị tắt nà",
+        "buttonText" : "Mở lại nà",
+        "enableShowZoneView" : true,
+        "enableShowMoreTab" : true
+      }
+    },
+    "notifications" : {
+      "notiCenterTitle" : "Thông báo",
+      "notiCommentTitle" : "Bình luận của bạn có trả lời mới",
+      "notiTagTitle" : "Bạn được nhắc tới trong bình luận",
+      "enableCmtNotiPopupMsg" : "Bạn có muốn bật lại thông báo cho các bình luận?",
+      "contentNotiRedDot" : true,
+      "commentNotiRedDot" : true
+    },
+    "widgetSetting" : {
+      "widgets" : [
+        {
+          "id" : "w_0",
+          "title" : "Xem thêm",
+          "allowTintColor" : true,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconXemThem.png",
+          "targetScheme" : "baomoi:\/\/screen?screenId=widget_collection&screenTitle=Ti%E1%BB%87n+%C3%ADch"
+        },
+        {
+          "id" : "w_1",
+          "title" : "Lịch vạn niên",
+          "allowTintColor" : true,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconLichVanNien.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/lich-van-nien.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_2",
+          "title" : "Thời tiết",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconThoiTiet.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/thoi-tiet.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : true,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_3",
+          "title" : "Tỷ giá Ngoại tệ",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconTyGiaNgoaiTe.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/ty-gia-ngoai-te.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_4",
+          "title" : "Giá vàng",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconGiaVang.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/gia-vang.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_5",
+          "title" : "Kết quả xổ số",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconKetQuaXoSo.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/ket-qua-xo-so.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_6",
+          "title" : "Chứng khoán",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconChungKhoan.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/bang-gia-chung-khoan.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_7",
+          "title" : "Lịch truyền hình",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconLichTruyenHinh.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/lich-truyen-hinh.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_8",
+          "title" : "Lịch chiếu phim",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconLichChieuPhim.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/lich-chieu-phim.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_9",
+          "title" : "Cung hoàng đạo",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconCungHoangDao.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/cung-hoang-dao.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_10",
+          "title" : "Giá xăng, dầu",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconGiaXangDau.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/gia-xang-dau.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_11",
+          "title" : "Bảng giá xe ô tô",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconBangGiaXeOto.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/bang-gia-oto.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_12",
+          "title" : "Bảng giá xe máy",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconBangGiaXeMay.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/tien-ich\/bang-gia-xe-may.epi&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : false,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_13",
+          "title" : "Live score",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconLiveScore.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/baomoi.com\/soccer\/app&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true",
+          "requiredLogin" : true,
+          "highlight" : {
+            "isShow" : true,
+            "version" : 1,
+            "duration" : 86400000,
+            "endDate" : 1563161867
+          }
+        },
+        {
+          "id" : "w_17",
+          "title" : "Transport",
+          "allowTintColor" : false,
+          "icon" : "https:\/\/baomoi-static.zadn.vn\/Uploaded\/Features\/Widget\/iconTransport.png",
+          "targetScheme" : "baomoi:\/\/web?url=https:\/\/transport.services.zalo.me\/?utm_source=baomoi&utm_medium=profile&openType=2&shareSession=true&requiredLogin=false&shareable=true&showToolbar=true&screenTitle=Transport",
+          "requiredLogin" : true
+        }
+      ],
+      "widgetBlocks" : [
+        {
+          "title" : "TIỆN ÍCH",
+          "column_phone" : 4,
+          "column_tablet" : 6,
+          "widgetIds" : [
+            "w_13",
+            "w_1",
+            "w_2",
+            "w_3",
+            "w_4",
+            "w_5",
+            "w_6",
+            "w_0"
+          ],
+          "zoneId" : "c_0",
+          "index" : 5
+        },
+        {
+          "column_phone" : 4,
+          "column_tablet" : 4,
+          "widgetIds" : [
+            "w_13",
+            "w_1",
+            "w_2",
+            "w_0"
+          ],
+          "zoneId" : "c_0",
+          "index" : 8
+        },
+        {
+          "column_phone" : 3,
+          "column_tablet" : 6,
+          "widgetIds" : [
+            "w_8",
+            "w_9",
+            "w_10"
+          ],
+          "zoneId" : "c_-1",
+          "index" : 2
+        },
+        {
+          "widgetIds" : [
+            "w_13",
+            "w_16",
+            "w_13",
+            "w_1",
+            "w_2",
+            "w_3",
+            "w_4",
+            "w_0"
+          ],
+          "column_phone" : 4,
+          "column_tablet" : 4,
+          "zoneId" : "account_tab",
+          "index" : 7
+        }
+      ]
+    },
+    "shareSetting" : {
+      "version" : 22,
+      "articleTooltip" : "Chia sẻ tin tức cùng bạn bè",
+      "videoTooltip" : "Chia sẻ video cùng bạn bè",
+      "pollTooltip" : "Chia sẻ để xem bạn bè có cùng ý kiến hay không",
+      "qaTooltip" : "Chia sẻ câu đố để thử thách bạn bè",
+      "topicTooltip" : "Chia sẻ chủ đề và thảo luận cùng bạn bè",
+      "title" : "Chia sẻ nà",
+      "closeButtonTitle" : "Bỏ qua nà",
+      "articleScrollDepth" : 0,
+      "articleViewCount" : 0,
+      "videoViewCount" : 0,
+      "videoViewTime" : 10000,
+      "qaViewCount" : 3,
+      "shareItems" : [
+        {
+          "id" : "zalo_post",
+          "title" : "Đăng lên Zalo nà"
+        },
+        {
+          "id" : "zalo_message",
+          "title" : "Gửi tin nhắn Zalo nà"
+        },
+        {
+          "id" : "facebook",
+          "title" : "Đăng lên Facebook nà"
+        },
+        {
+          "id" : "messenger",
+          "title" : "Gửi tin nhắn Facebook nà"
+        },
+        {
+          "id" : "browser",
+          "title" : "Mở bằng Safari nà"
+        },
+        {
+          "id" : "origin",
+          "title" : "Xem link gốc nà"
+        },
+        {
+          "id" : "copy",
+          "title" : "Sao chép link nà"
+        },
+        {
+          "id" : "originalUrl_copy",
+          "title" : "Sao chép link gốc"
+        },
+        {
+          "id" : "originalUrl_origin",
+          "title" : "Mở link gốc"
+        },
+        {
+          "id" : "other",
+          "title" : "Khác nà"
+        }
+      ],
+      "article" : [
+        "zalo_message",
+        "zalo_post",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "qa" : [
+        "zalo_message",
+        "zalo_post",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "video" : [
+        "zalo_message",
+        "zalo_post",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "poll" : [
+        "zalo_message",
+        "zalo_post",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "topic" : [
+        "zalo_message",
+        "zalo_post",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "iab" : [
+        "zalo_message",
+        "zalo_post_off",
+        "facebook",
+        "messenger",
+        "browser",
+        "origin",
+        "copy",
+        "other"
+      ],
+      "originalUrl" : [
+        "originalUrl_origin",
+        "originalUrl_copy"
+      ]
+    },
+    "promotion" : {
+      "theme" : {
+        "reddotThemeCondition" : [
+          "dark",
+          "light"
+        ],
+        "personalTabTooltip" : {
+          "displayTime" : 10,
+          "message" : "Nà Đổi màu ứng dụng trong mục Themes Đổi màu ứng dụng trong mục Themes Đổi màu ứng dụng trong mục Themes Đổi màu ứng dụng trong mục Themes Đổi màu ứng dụng trong mục Themes",
+          "showLimit" : 3,
+          "versionCode" : 15
+        }
+      },
+      "displaySetting" : {
+        "moreBtnTooltip" : {
+          "displayTime" : 10,
+          "message" : "Nà Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây Đổi Theme, đổi Font tại đây",
+          "showLimit" : 3,
+          "versionCode" : 15
+        }
+      },
+      "share" : {
+        "article" : {
+          "paragraphCondition" : 7,
+          "showInterval" : 1,
+          "showButtonCondition" : 30,
+          "showBannerCondition" : 50,
+          "bannerDisplayTime" : 10,
+          "bannerMsg" : "Chia sẻ bài viết này",
+          "bannerBtnId" : "zalo_message",
+          "bannerBtnText" : "Gửi Zalo",
+          "bannerHaptic" : 5
+        },
+        "liveArticle" : {
+          "paragraphCondition" : 3,
+          "showInterval" : 0,
+          "showButtonCondition" : 20,
+          "showBannerCondition" : 40,
+          "bannerDisplayTime" : 10,
+          "bannerMsg" : "Chia sẻ bài viết này",
+          "bannerBtnId" : "zalo_message",
+          "bannerBtnText" : "Gửi Zalo",
+          "bannerHaptic" : 5
+        },
+        "videoV2" : {
+          "showInterval" : 0,
+          "showBannerCondition" : 30,
+          "bannerDisplayTime" : 10,
+          "bannerDelayShowTime" : 2,
+          "bannerMsg" : "Chia sẻ bài viết này",
+          "bannerBtnId" : "zalo_message",
+          "bannerBtnText" : "Gửi Zalo",
+          "bannerHaptic" : 5
+        }
+      }
+    },
+    "displaySetting" : {
+      "version" : 12,
+      "tooltip" : "Dễ dàng tuỳ chỉnh kích thước chữ, màu sắc.",
+      "closeButtonTitle" : "Đóng",
+      "themes" : [
+        "light",
+        "dark",
+        "pink",
+        "orange",
+        "gray"
+      ],
+      "fonts" : [
+        {
+          "id" : "san-serif",
+          "title" : "SF San-serif",
+          "lineHeight" : 1.1000000000000001,
+          "lineHeightDes" : 1.1000000000000001,
+          "lineHeightTitle" : 1.1000000000000001,
+          "lineHeightCaption" : 1.1000000000000001,
+          "default" : true
+        },
+        {
+          "id" : "bookerly",
+          "title" : "Bookerly",
+          "lineHeight" : 1.1000000000000001,
+          "lineHeightDes" : 1.1000000000000001,
+          "lineHeightTitle" : 1.1000000000000001,
+          "lineHeightCaption" : 1.1000000000000001
+        }
+      ],
+      "fontSizes" : [
+        {
+          "id" : "XXS",
+          "phone" : {
+            "title" : 20,
+            "desc" : 15,
+            "content" : 14,
+            "videoCaption" : 10,
+            "imageCaption" : 10,
+            "quote" : 14,
+            "originalUrl" : 13
+          },
+          "tablet" : {
+            "title" : 22,
+            "desc" : 17,
+            "content" : 16,
+            "videoCaption" : 10,
+            "imageCaption" : 10,
+            "quote" : 14,
+            "originalUrl" : 13
+          }
+        },
+        {
+          "id" : "XS",
+          "phone" : {
+            "title" : 22,
+            "desc" : 17,
+            "content" : 16,
+            "videoCaption" : 12,
+            "imageCaption" : 12,
+            "quote" : 16,
+            "originalUrl" : 12
+          },
+          "tablet" : {
+            "title" : 24,
+            "desc" : 19,
+            "content" : 18,
+            "videoCaption" : 12,
+            "imageCaption" : 12,
+            "quote" : 18,
+            "originalUrl" : 12
+          }
+        },
+        {
+          "id" : "S",
+          "phone" : {
+            "title" : 24,
+            "desc" : 19,
+            "content" : 18,
+            "videoCaption" : 13,
+            "imageCaption" : 13,
+            "quote" : 18,
+            "originalUrl" : 13
+          },
+          "tablet" : {
+            "title" : 26,
+            "desc" : 21,
+            "content" : 20,
+            "videoCaption" : 16,
+            "imageCaption" : 16,
+            "quote" : 20,
+            "originalUrl" : 16
+          }
+        },
+        {
+          "id" : "M",
+          "phone" : {
+            "title" : 26,
+            "desc" : 21,
+            "content" : 20,
+            "videoCaption" : 15,
+            "imageCaption" : 15,
+            "quote" : 20,
+            "originalUrl" : 15
+          },
+          "tablet" : {
+            "title" : 28,
+            "desc" : 23,
+            "content" : 22,
+            "videoCaption" : 18,
+            "imageCaption" : 18,
+            "quote" : 22,
+            "originalUrl" : 18
+          }
+        },
+        {
+          "id" : "L",
+          "phone" : {
+            "title" : 28,
+            "desc" : 23,
+            "content" : 22,
+            "videoCaption" : 20,
+            "imageCaption" : 20,
+            "quote" : 22,
+            "originalUrl" : 20
+          },
+          "tablet" : {
+            "title" : 30,
+            "desc" : 25,
+            "content" : 24,
+            "videoCaption" : 20,
+            "imageCaption" : 20,
+            "quote" : 24,
+            "originalUrl" : 20
+          }
+        },
+        {
+          "id" : "XL",
+          "phone" : {
+            "title" : 30,
+            "desc" : 25,
+            "content" : 24,
+            "videoCaption" : 19,
+            "imageCaption" : 19,
+            "quote" : 24,
+            "originalUrl" : 19
+          },
+          "tablet" : {
+            "title" : 32,
+            "desc" : 27,
+            "content" : 26,
+            "videoCaption" : 22,
+            "imageCaption" : 22,
+            "quote" : 26,
+            "originalUrl" : 22
+          }
+        },
+        {
+          "id" : "XXL",
+          "phone" : {
+            "title" : 32,
+            "desc" : 26,
+            "content" : 26,
+            "videoCaption" : 21,
+            "imageCaption" : 21,
+            "quote" : 26,
+            "originalUrl" : 21
+          },
+          "tablet" : {
+            "title" : 34,
+            "desc" : 28,
+            "content" : 28,
+            "videoCaption" : 24,
+            "imageCaption" : 24,
+            "quote" : 28,
+            "originalUrl" : 24
+          }
+        }
+      ]
+    },
+    "liveArticle" : {
+      "tabName" : {
+        "general" : "Thông tin",
+        "liveTicker" : "Tường thuật",
+        "comment" : "Bình luận"
+      },
+      "updateInterval" : 3,
+      "bannerMsg" : "Bài viết đã có cập nhật mới nà",
+      "bannerBtnText" : "Bấm để xem nà",
+      "emptyLiveTickerWording" : "Tường thuật sẽ sớm được cập nhật.\nĐừng bỏ lỡ nhé bạn!",
+      "emptyGeneralWording" : "Thông tin sẽ sớm được cập nhật.\nĐừng bỏ lỡ nhé bạn!",
+      "timeReload" : 5,
+      "updateBannerDelayTime" : 1,
+      "supportDataType" : {
+        "text" : [
+          "text"
+        ],
+        "video" : [
+          "video",
+          "video-youtube"
+        ],
+        "image" : [
+          "image"
+        ]
+      },
+      "addGeneralInfoToLiveTicker" : true
+    },
+    "liveStreamVideo" : {
+      "tabName" : {
+        "general" : "Thông tin",
+        "liveTicker" : "Tường thuật",
+        "comment" : "Bình luận"
+      },
+      "reactionURL" : [
+        "https:\/\/baomoi-static.zadn.vn\/Uploaded\/LiveStreamVideo\/Reactions\/19102201_Like.png"
+      ]
+    }
+  },
+  "error" : false,
+  "errorMsg" : "Success",
+  "serving_times" : 0,
+  "server_time" : 1577884218
+}

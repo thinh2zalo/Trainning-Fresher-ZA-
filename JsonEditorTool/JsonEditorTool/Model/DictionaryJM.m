@@ -26,7 +26,6 @@
             id value = [dict objectForKey:key];
             JsonModel * jsonModel = [JsonModelFactory getJsonModel:value andKey:key];
             [self.value addObject:jsonModel];
-
         }
     }
     return self;
@@ -36,8 +35,8 @@
     return typeValueDictionary;
 }
 
-- (NSDictionary *)toDictionary{
-    NSMutableDictionary * tempDictionary = NSMutableDictionary.new;
+- (MutableOrderedDictionary *)toOrderDictionary{
+    MutableOrderedDictionary * tempDictionary = MutableOrderedDictionary.new;
 
     for (JsonModel * jsonModel in self.value) {
         NSDictionary * dict = NSDictionary.new;
@@ -45,16 +44,16 @@
         switch (jsonModel.getTypeValue) {
             case  typeValueDictionary:
 
-                dict = [jsonModel toDictionary];
-                [tempDictionary setValue:dict forKey:jsonModel.key];
+                dict = [jsonModel toOrderDictionary];
+                [tempDictionary setObject:dict forKey:jsonModel.key];
                 break;
                 
             case typeValueArray:
                 
-                [tempDictionary setValue:[jsonModel toArray] forKey:jsonModel.key];
+                [tempDictionary setObject:[jsonModel toArray] forKey:jsonModel.key];
                 break;
             default:
-                [tempDictionary setValue:jsonModel.value forKey:jsonModel.key];
+                [tempDictionary setObject:jsonModel.value forKey:jsonModel.key];
 
         }
     }

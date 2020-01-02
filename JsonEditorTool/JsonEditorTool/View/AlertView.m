@@ -71,7 +71,8 @@
     self.valueTextView.frame = CGRectMake(self.keyTextField.frame.origin.x,self.valueAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2, 200);
     [self ruleOfTextView:_jsonModel.typeValue];
 
-    
+    self.errorLable.frame = CGRectMake(0, self.frame.size.height - 30,  166, 30);
+    self.errorLable.center = CGPointMake(self.frame.size.width/2,  self.frame.size.height - 30);
 }
 
 
@@ -124,6 +125,7 @@
 }
 
 - (void)updateContentInside:(JsonModel *) jsonModel {
+    [self.errorLable setHidden:YES];
     NSString * value;
     _jsonModel = jsonModel;
     _typeValue = jsonModel.typeValue;
@@ -170,7 +172,7 @@
            }
            
            
-           CGRect frame = CGRectMake(originX + 130 * i, originY , 200, 30);
+           CGRect frame = CGRectMake(originX + 130 * i, originY , 180, 30);
            DLRadioButton *radioButton = [self createRadioButtonWithFrame:frame Title:type Color:[UIColor blackColor]];
            [otherButtons addObject:radioButton];
            i++;
@@ -197,20 +199,19 @@
                         value = [NSNumber numberWithBool:0];
                     } else {
                         value = [NSNumber numberWithBool:1];
-                        
                     }
                 }
                 break;
             case typeValueNumber:
                 if (![self.keyTextField.text isEqualToString:@""]) {
-                    f =[[NSNumberFormatter alloc] init];
+                    f = [[NSNumberFormatter alloc] init];
                     f.numberStyle = NSNumberFormatterDecimalStyle;
                     value = [f numberFromString:self.valueTextView.text];
                 }
                 break;
             case typeValueDictionary:
                 if (self.jsonModel.getTypeValue == typeValueDictionary) {
-                    value = [self.jsonModel toDictionary];
+                    value = [self.jsonModel toOrderDictionary];
                 } else {
                     value = NSDictionary.new;
                 }
@@ -229,10 +230,13 @@
     }
     if (value) {
         JsonModel * newJsonModel = [JsonModelFactory getJsonModel:value andKey:self.keyTextField.text];
-        
+
         if (self.delegate && [self.delegate respondsToSelector:@selector(saveAfterConfig:)]) {
             [self.delegate saveAfterConfig:newJsonModel];
         }
+    } else {
+        self.errorLable.text = @"input is invalid type";
+        [self.errorLable setHidden:NO];
     }
     
 }
@@ -283,6 +287,15 @@
         [self addSubview:_saveBtn];
     }
     return _saveBtn;
+}
+
+- (UILabel *)errorLable {
+    if (!_errorLable) {
+        _errorLable = UILabel.new;
+        [_errorLable setTextColor:[UIColor redColor]];
+        [self insertSubview:_errorLable aboveSubview:self.valueTextView];
+    }
+    return _errorLable;
 }
 
 - (UILabel *)typeAlert {

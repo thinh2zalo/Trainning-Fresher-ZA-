@@ -24,26 +24,34 @@
 
 @implementation NetworkManager
 
-
++ (NetworkManager *)shareInstance {
+    static NetworkManager * networkManager = nil;
+    if (!networkManager) {
+        networkManager = NetworkManager.new;
+    }
+    return networkManager;
+}
 
 - (void)request:(NSURLRequest *)request  completion:(CompletionBlock) completion {
-    
     NSURLSessionDataTask *dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        
         if (error) {
             NSLog(@"Error: %@", error);
             NSString* errorMsg = [self getErrorMsg:error];
             completion(nil,errorMsg);
         } else {
-            NSDictionary * data = [(NSDictionary *) responseObject objectForKey:@"result"];
-            if (data) {
-                completion(data,nil);
-            }else{
-                completion(data,ERROR_MSG_NO_DATA);
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+            options:kNilOptions
+              error:&error];
+            
+            if (![[json objectForKey:@"errorMsg"]  isEqual: @"Not Exists"]) {
+                NSLog(@"VAO DAY HA ???");
+                completion(responseObject,nil);
+            } else {
+                completion(nil,ERROR_MSG_NO_DATA);
             }
         }
     }];
-   
-    
     [dataTask resume];
     
 }
@@ -70,9 +78,8 @@
 - (AFURLSessionManager *)sessionManager {
     if (!_sessionManager) {
         
-        
         _sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:self.sessionConfiguration];
-        _sessionManager.responseSerializer = self;
+        _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
     return _sessionManager;
 }

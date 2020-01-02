@@ -1,6 +1,0 @@
-framework module CADRACSwippableCell {
-  umbrella header "CADRACSwippableCell-umbrella.h"
-
-  export *
-  module * { export * }
-}

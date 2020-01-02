@@ -5,7 +5,7 @@
 //  Created by Steve on 12/3/19.
 //  Copyright © 2019 Steve. All rights reserved.
 //
-
+#import "OrderedDictionary.h"
 #import <Foundation/Foundation.h>
 #import <IGListKit/IGListKit.h>
 #import "EnumTypeValueJson.h"
@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) id value;
-@property (nonatomic, readonly, getter=getTypeValue) TypeValue typeValue;
+@property (nonatomic, getter=getTypeValue) TypeValue typeValue;
 
 - (instancetype)initWithObject:(id) object andKey:(NSString *)key;
 
-- (NSDictionary *)toDictionary;
+- (MutableOrderedDictionary *)toOrderDictionary;
 - (NSArray *)toArray;
 
 @end
