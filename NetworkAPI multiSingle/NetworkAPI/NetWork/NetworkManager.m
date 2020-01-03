@@ -36,7 +36,6 @@
     NSURLSessionDataTask *dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error) {
-            NSLog(@"Error: %@", error);
             NSString* errorMsg = [self getErrorMsg:error];
             completion(nil,errorMsg);
         } else {
@@ -45,7 +44,6 @@
               error:&error];
             
             if (![[json objectForKey:@"errorMsg"]  isEqual: @"Not Exists"]) {
-                NSLog(@"VAO DAY HA ???");
                 completion(responseObject,nil);
             } else {
                 completion(nil,ERROR_MSG_NO_DATA);

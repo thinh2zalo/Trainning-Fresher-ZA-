@@ -25,7 +25,9 @@
         for (NSString * key in dict) {
             id value = [dict objectForKey:key];
             JsonModel * jsonModel = [JsonModelFactory getJsonModel:value andKey:key];
+            jsonModel.parrent = self;
             [self.value addObject:jsonModel];
+
         }
     }
     return self;

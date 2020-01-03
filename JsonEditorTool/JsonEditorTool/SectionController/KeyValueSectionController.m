@@ -9,12 +9,12 @@
 #import "KeyValueSectionController.h"
 #import "../View/InforJsonCell.h"
 #import "../Model/JsonModel.h"
-#import "../Controller/ViewController.h"
+#import "../Controller/JETViewController.h"
 #import "../Controller/AlertController.h"
 
 
 
-@interface KeyValueSectionController ()<AlertViewProtocol, ZASwipeViewCellDelegate> {
+@interface KeyValueSectionController ()<ZASwipeViewCellDelegate> {
     JsonModel * oldJsonModel;
     JsonModel * newJsonModel;
 
@@ -91,12 +91,16 @@
     return cell;
 }
 
+- (BOOL)canMoveItemAtIndex:(NSInteger)index {
+    return true;
+}
+
 - (void)didUpdateToObject:(id)object {
     oldJsonModel = object;
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    ViewController * viewController = ViewController.new;
+    JETViewController * viewController = JETViewController.new;
     viewController.jsonModel = oldJsonModel;
 
     if (oldJsonModel.typeValue == typeValueArray || oldJsonModel.typeValue == typeValueDictionary) {
@@ -105,25 +109,22 @@
         [navController pushViewController:viewController animated:YES];
     } else {
         _alert = AlertController.new;
-        _alert.alertView.delegate = self;
+        
+        _alert.alertView.delegate = (JETViewController *)self.viewController;
         [_alert showAlert:self.viewController withJsonModel:oldJsonModel];
     }
    
 }
 
-- (void)cancelAlert {
-    [_alert fadeOut];
-}
-
-- (void)saveAfterConfig:(JsonModel *) jsonModel {
-    // check respone
-    
-    if (self.delegate) {
-        NSLog(@"adress old :%@ , adress new : %@", oldJsonModel, jsonModel);
-        [self.delegate performUpdate:oldJsonModel andNewObject:jsonModel];
-        
-    }
-    [_alert fadeOut];
-}
+//- (void)cancelAlert {
+//    [_alert fadeOut];
+//}
+//
+//- (void)convertJsonModel:(JsonModel *) jsonModel {
+//   if (self.delegate) {
+//        [self.delegate performUpdate:oldJsonModel andNewObject:jsonModel];
+//    }
+//    [_alert fadeOut];
+//}
 
 @end

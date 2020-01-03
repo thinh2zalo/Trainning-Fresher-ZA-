@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "../Model/JsonModel.h"
+#import "../View/AlertView.h"
 #import "../SwipeCell/SwipeCellKit/ZASwipeCellKit.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InforJsonCell : ZASwipeCollectionCell
+@interface InforJsonCell : ZASwipeCollectionCell 
 @property (nonatomic, strong)  UILabel * keyLable;
 @property (nonatomic, strong)  UILabel * typeValueLabel;
 @property (nonatomic, strong)  UILabel * valueLabel;

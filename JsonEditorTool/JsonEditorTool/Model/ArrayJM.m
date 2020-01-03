@@ -21,8 +21,9 @@
         self.value = NSMutableArray.new;
         NSArray * arr = (NSArray *)object;
         for (int i = 0 ; i < arr.count; i++) {
-            NSString * key = [NSString stringWithFormat:@"index %tu", i + 1];
+            NSString * key = [NSString stringWithFormat:@"INDEX_ %tu", i + 1];
                 JsonModel * jsonModel = [JsonModelFactory getJsonModel:arr[i] andKey:key];
+            jsonModel.parrent = self;
                 [self.value addObject:jsonModel];
             }
         }

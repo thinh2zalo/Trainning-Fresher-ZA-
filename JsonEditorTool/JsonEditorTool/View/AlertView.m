@@ -11,7 +11,8 @@
 #import "../Categories/UILabel+Caculation.h"
 #import "../DLRadioButton/DLRadioButton.h"
 #import "../Model/EnumTypeValueJson.h"
-
+#import "JETViewController.h"
+#import "InforJsonCell.h"
 
 @interface AlertView ()
 
@@ -30,6 +31,9 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+  
+    
+//    
     self.typeAlert.frame = CGRectMake(150, 70, 40, 20);
     self.typeAlert.center = CGPointMake(self.frame.size.width  / 2,
                                         20);
@@ -230,9 +234,12 @@
     }
     if (value) {
         JsonModel * newJsonModel = [JsonModelFactory getJsonModel:value andKey:self.keyTextField.text];
-
-        if (self.delegate && [self.delegate respondsToSelector:@selector(saveAfterConfig:)]) {
-            [self.delegate saveAfterConfig:newJsonModel];
+        if (self.jsonModel) {
+            newJsonModel.parrent = self.jsonModel.parrent;
+        }
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(convertJsonModel:toJsonModel:)]) {
+            [self.delegate convertJsonModel:self.jsonModel toJsonModel:newJsonModel];
         }
     } else {
         self.errorLable.text = @"input is invalid type";
@@ -282,7 +289,7 @@
     if (!_saveBtn) {
         _saveBtn = Button.new;
         _saveBtn.backgroundColor = [UIColor blueColor];
-        [_saveBtn addTarget:self action:@selector(saveAfterConfig) forControlEvents:UIControlEventTouchUpInside];
+        [_saveBtn addTarget:self action:@selector(convertJsonModel: toJsonModel:) forControlEvents:UIControlEventTouchUpInside];
         [_saveBtn setTitle:@"save" forState:UIControlStateNormal];
         [self addSubview:_saveBtn];
     }

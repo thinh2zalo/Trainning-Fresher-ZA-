@@ -6,7 +6,7 @@
 //  Copyright © 2019 Steve. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "JETViewController.h"
 #import "Define.h"
 #import "../Network/NetworkManager.h"
 #import <IGListKit/IGListKit.h>
@@ -31,7 +31,7 @@
 #import "NumberJM.h"
 
 
-@interface ViewController () <SearchSectionControllerDelegate, UITextFieldDelegate>
+@interface JETViewController () <SearchSectionControllerDelegate, UITextFieldDelegate, IGListAdapterMoveDelegate>
 @property (nonatomic, strong) NSDictionary * dict;
 @property (nonatomic, strong) IGListAdapter * adapter;
 @property (nonatomic, strong) UICollectionView * collectionView;
@@ -43,6 +43,11 @@
 @property (nonatomic, strong) UIView *  settingView;
 @property (nonatomic, strong) EmptyView *  emptyView;
 @property (nonatomic, strong) UIView * backGroundSettingView ;
+@property (nonatomic, strong) UILabel * errorMessLabel ;
+@property (nonatomic, strong) UIGestureRecognizer  * longPress ;
+
+ 
+
 @property (nonatomic, strong) NSString * osStr;
 @property (nonatomic, strong) NSMutableArray <JsonModel *> * allJsonModel;
 
@@ -54,13 +59,13 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 @property (nonatomic, assign) TypeEditJson  typeEditJson;
 @end
 
-@interface ViewController() <IGListAdapterDataSource, UISearchBarDelegate, UICollectionViewDelegate, KeyValueSectionControllerDelegate, AlertViewProtocol> {
+@interface JETViewController() <IGListAdapterDataSource, UISearchBarDelegate, UICollectionViewDelegate, KeyValueSectionControllerDelegate> {
     NSNumber * searchToken;
     NSString * textFilter;
 }
 @end
 
-@implementation ViewController
+@implementation JETViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -126,13 +131,12 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
                 });
             });
         } else {
-            NSLog(@"%@", errorMsg);
+            self.errorMessLabel.text = errorMsg;
+            [self.errorMessLabel setHidden:NO];
         }
     }];
     
 }
-
-
 
 - (void)createDictSameLevel:(JsonModel *)jsonModel {
     if ([jsonModel isKindOfClass:DictionaryJM.class] || [jsonModel isKindOfClass:ArrayJM.class ]) {
@@ -170,43 +174,39 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     return true;
 }
 
+
+
 - (void)editRootJM:(JsonModel *)rootJM oldJM:(JsonModel *) oldJM newJM:(JsonModel *)newJM {
-    NSMutableArray * arrRootAllJM = [(ViewController *)self.navigationController.childViewControllers.firstObject allJsonModel];
-     if (oldJM) {
-        for (JsonModel * JM in rootJM.value) {
-            if (JM == oldJM) {
-                if (newJM) {
-                    NSUInteger  index = [rootJM.value indexOfObject:oldJM];
-                    [rootJM.value replaceObjectAtIndex:index withObject:newJM];
-                } else {
-                    [rootJM.value removeObject:oldJM];
-                }
-                break;
-
-            } else {
-                if ([JM isKindOfClass:DictionaryJM.class] || [JM isKindOfClass:ArrayJM.class]) {
-                    [self editRootJM:JM oldJM:oldJM newJM:newJM];
-                }
-            }
+    NSMutableArray * arrRootAllJM = [(JETViewController *)self.navigationController.childViewControllers.firstObject allJsonModel];
+    if (oldJM) {
+        JsonModel *parrentOfOldJM = oldJM.parrent;
+        if (newJM) {
+            NSUInteger index =   [parrentOfOldJM.value indexOfObject:oldJM];
+            [parrentOfOldJM.value replaceObjectAtIndex:index withObject:newJM];
+            NSUInteger index2 = [arrRootAllJM indexOfObject:oldJM];
+            [arrRootAllJM replaceObjectAtIndex:index2 withObject:newJM];
         }
-        
-        for (JsonModel * jm in arrRootAllJM) {
-            if (jm == oldJM) {
-                if (newJM) {
-                    NSUInteger  index = [arrRootAllJM indexOfObject:oldJM];
-                    [arrRootAllJM replaceObjectAtIndex:index withObject:newJM];
-
-                } else {
-                    [arrRootAllJM removeObject:oldJM];
-                }
-                break;
-            }
+        else {
+            [parrentOfOldJM.value removeObject:oldJM];
+            [arrRootAllJM removeObject:oldJM];
         }
     } else {
-        [rootJM.value addObject:newJM];
-        [arrRootAllJM addObject:newJM];
-
+        if (newJM) {
+            [rootJM.value addObject:newJM];
+            [arrRootAllJM addObject:newJM];
+            
+        }
     }
+    
+}
+
+
+#pragma mark - IGListAdapterMoveDelegate
+
+- (void)listAdapter:(IGListAdapter *)listAdapter moveObject:(id)object from:(NSArray *)previousObjects to:(NSArray *)objects {
+    NSRange range = NSMakeRange(1, objects.count - 1);
+    self.jsonModel.value = [NSMutableArray arrayWithArray:[objects subarrayWithRange:range]];
+    
 }
 
 #pragma mark - KeyValueSectionControllerDelegate
@@ -220,40 +220,45 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 #pragma mark - save after add + edit name json
 
+
+
+
+#pragma mark - AlertViewPotocol
+
+- (void)convertJsonModel:(JsonModel *)oldJM toJsonModel:(JsonModel *)newJM {
+    if (self.typeEditJson == typeEditNameJson) {
+
+           NSInteger indexVC = [self.navigationController.childViewControllers indexOfObject:self];
+           JETViewController * vc =  self.navigationController.childViewControllers[indexVC -1];
+           if ([vc isKindOfClass:JETViewController.class]) {
+               NSInteger indexOfObject = [vc.jsonModel.value indexOfObject:self.jsonModel];
+               [vc.jsonModel.value replaceObjectAtIndex:indexOfObject withObject:oldJM];
+               [vc.adapter performUpdatesAnimated:NO completion:nil];
+               self.navigationItem.title = oldJM.key;
+               [_alert fadeOut];
+           }
+
+       } else {
+           if (![self isAlreadyJsonModel:oldJM inArray:[self.jsonModel value]]) {
+               oldJM.parrent = self.jsonModel;
+               [[self.jsonModel value] addObject:oldJM];
+               [[(JETViewController *)self.navigationController.childViewControllers.firstObject allJsonModel] addObject:oldJM];
+               [self.adapter performUpdatesAnimated:YES completion:nil];
+               [_alert fadeOut];
+           } else {
+               [[_alert.alertView errorLable] setText:@"key is already exists"];
+               [[_alert.alertView errorLable] setHidden:NO];
+
+           }
+       }
+}
+
 - (void)cancelAlert {
-    for (JsonModel * jm in self.allJsonModel) {
-        NSLog(@"jm adress :%@", jm);
-    }
     [self.adapter performUpdatesAnimated:YES completion:nil];
     [_alert fadeOut];
 }
 
-- (void)saveAfterConfig:(JsonModel *) jsonModel {
-    if (self.typeEditJson == typeEditNameJson) {
-        
-        NSInteger indexVC = [self.navigationController.childViewControllers indexOfObject:self];
-        ViewController * vc = self.navigationController.childViewControllers[indexVC -1];
-        if ([vc isKindOfClass:ViewController.class]) {
-            NSInteger indexOfObject = [vc.jsonModel.value indexOfObject:self.jsonModel];
-            [vc.jsonModel.value replaceObjectAtIndex:indexOfObject withObject:jsonModel];
-            [vc.adapter performUpdatesAnimated:NO completion:nil];
-            self.navigationItem.title = jsonModel.key;
-            [_alert fadeOut];
-        }
-        
-    } else {
-        if (![self isAlreadyJsonModel:jsonModel inArray:[self.jsonModel value]]) {
-            [[self.jsonModel value] addObject:jsonModel];
-            [self.adapter performUpdatesAnimated:YES completion:nil];
-            [_alert fadeOut];
-        } else {
-            NSLog(@"Ngao ha thi");
-            [[_alert.alertView errorLable] setText:@"key is already exists"];
-            [[_alert.alertView errorLable] setHidden:NO];
 
-        }
-    }
-}
 
 #pragma mark - set update view
 
@@ -280,6 +285,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 }
 
 - (void)setUpSettingView {
+    
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"change_icon"] style:UIBarButtonItemStyleDone target:self action:@selector(showSettingView)];
     [self.navigationItem setLeftBarButtonItem:addItem];
     
@@ -297,7 +303,11 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     self.commitBtn.frame = CGRectMake(40,  self.oSVField.frame.origin.y + 50 + 40, 200, 40);
     self.commitBtn.center = CGPointMake(self.settingView.frame.size.width/2, iosBtn.frame.origin.y + 70);
     
-    self.grRadioBtn.otherButtons = @[androidBtn, iosBtn] ;
+    self.errorMessLabel.frame = CGRectMake(0, self.commitBtn.frame.origin.y
+                                           + 40, 166, 30);
+    self.errorMessLabel.center = CGPointMake(self.view.frame.size.width/2, self.commitBtn.frame.origin.y + 70);
+    [self.errorMessLabel setHidden:YES];
+    self.grRadioBtn.otherButtons = @[androidBtn, iosBtn];
     self.grRadioBtn.otherButtons[1].selected = YES;
 }
 
@@ -307,29 +317,41 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     
     [self.adapter performUpdatesAnimated:YES completion:nil];
 }
-- (void)addNewItem {
-    _alert = AlertController.new;
-    _alert.alertView.delegate = self;
-    [_alert showAlert:self withJsonModel:nil];
+
+
+- (void)noHandle {
+    
 }
 
 #pragma mark - IGListAdapterDataSource
 - (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
-    NSLog(@"updateObejct ");
+    
+    if ([self.collectionView.gestureRecognizers containsObject:self.longPress]) {
+        [self.collectionView removeGestureRecognizer:self.longPress];
+    }
+    
+    self.longPress = [self.longPress initWithTarget:self action:@selector(handleLongPress:)];
     if ([[self.jsonModel value] count] > 0) {
         if ([textFilter isEqual:@""]) {
+            [self.collectionView addGestureRecognizer:self.longPress];
+            
             return [@[searchToken] arrayByAddingObjectsFromArray:[self.jsonModel value]];
         } else {
-            NSPredicate *predicateKey = [NSPredicate predicateWithFormat:@"key contains[cd] %@",textFilter];
+            
+            self.longPress = [self.longPress initWithTarget:self action:@selector(noHandle)];
+            
+            NSPredicate *predicateIndex = [NSPredicate predicateWithFormat:@"key != %@", @"INDEX_"];
+            
+            NSPredicate *predicateKey = [NSPredicate predicateWithFormat:@"key contains[cd] %@ AND NOT (key contains[cd] %@)" ,textFilter, @"INDEX_"];
             NSPredicate *predicateType = [NSPredicate predicateWithFormat: @"self isKindOfClass: %@ OR self isKindOfClass: %@", NumberJM.class, StringJM.class];
             
             
             NSPredicate *predicateValue = [NSPredicate predicateWithFormat:@"CAST(value,'NSString') contains[cd] %@" , textFilter];
-            NSPredicate *predicateValueAndType = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicateType, predicateValue]];
+            NSPredicate *predicateValueAndType = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicateType, predicateValue, predicateIndex]];
             
             
             NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[predicateKey, predicateValueAndType]];
-            NSArray * subArr = [[(ViewController *)self.navigationController.viewControllers.firstObject allJsonModel] filteredArrayUsingPredicate:predicate];
+            NSArray * subArr = [[(JETViewController *)self.navigationController.viewControllers.firstObject allJsonModel] filteredArrayUsingPredicate:predicate];
             return [@[searchToken] arrayByAddingObjectsFromArray:subArr];
         }
     } else {
@@ -360,9 +382,40 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 #pragma mark - handle when touch button
 
+- (void)addNewItem {
+    _alert = AlertController.new;
+    _alert.alertView.delegate = self;
+    [_alert showAlert:self withJsonModel:nil];
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gesture {
+    switch (gesture.state) {
+        case UIGestureRecognizerStateBegan: {
+            CGPoint location = [gesture locationInView:self.collectionView];
+            NSIndexPath * indexOfItemSeleted = [self.collectionView indexPathForItemAtPoint:location];
+            [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexOfItemSeleted];
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged: {
+            CGPoint position = [gesture locationInView:self.collectionView];
+            [self.collectionView updateInteractiveMovementTargetPosition:position ];
+            
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+            [self.collectionView endInteractiveMovement];
+            break;
+            
+            
+        default:
+            [self.collectionView cancelInteractiveMovement];
+            break;
+    }
+}
 // sav
 - (NSString *)saveFile{
-    OrderedDictionary * dict = [[(ViewController *) self.navigationController.viewControllers.firstObject jsonModel] toOrderDictionary];
+    OrderedDictionary * dict = [[(JETViewController *) self.navigationController.viewControllers.firstObject jsonModel] toOrderDictionary];
     NSData *myData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingFragmentsAllowed error:nil];
     NSString * date = [NSString stringWithFormat:@"%@", [NSDate date]];
     NSString * path = [NSString stringWithFormat:@"%@/tmp/fileJson_%@.txt", NSHomeDirectory(),date];
@@ -386,7 +439,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 - (void)moreFunction {
     UIAlertController* moreFunction = [UIAlertController alertControllerWithTitle:@"more" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    __weak ViewController *weakSelf = self;
+    __weak JETViewController *weakSelf = self;
     
     UIAlertAction* shareMessage = [UIAlertAction actionWithTitle:@"share file" style:UIAlertActionStyleDestructive
                                                          handler:^(UIAlertAction * action) {
@@ -420,7 +473,14 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 
 
 #pragma mark - lazy init
-
+- (UILabel *)errorMessLabel {
+    if (!_errorMessLabel) {
+        _errorMessLabel = UILabel.new;
+        _errorMessLabel.textColor = [UIColor redColor];
+        [self.settingView addSubview:_errorMessLabel];
+    }
+    return _errorMessLabel;
+}
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
@@ -441,6 +501,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
         _adapter = [[IGListAdapter alloc] initWithUpdater:[[IGListAdapterUpdater alloc] init]
                                            viewController:self];
         _adapter.collectionViewDelegate = self;
+        _adapter.moveDelegate = self;
         _adapter.collectionView = self.collectionView;
         _adapter.dataSource = self;
     }
@@ -502,7 +563,12 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     return _settingView;
 }
 
-
+- (UIGestureRecognizer *)longPress {
+    if (!_longPress) {
+        _longPress = UILongPressGestureRecognizer.new;
+    }
+    return _longPress;
+}
 - (DLRadioButton *)createRadioButtonWithFrame:(CGRect) frame Title:(NSString *)title Color:(UIColor *)color
 {
     DLRadioButton *radioButton = [[DLRadioButton alloc] initWithFrame:frame];
@@ -519,6 +585,8 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
     
     return radioButton;
 }
+
+
 
 
 @end

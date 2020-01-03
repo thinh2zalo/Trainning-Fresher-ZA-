@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "JETViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UINavigationController * navigationRootMes = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    UINavigationController * navigationRootMes = [[UINavigationController alloc] initWithRootViewController:[JETViewController new]];
     self.window.rootViewController = navigationRootMes;
     return YES;
 }

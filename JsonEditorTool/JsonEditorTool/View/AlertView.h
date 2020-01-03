@@ -12,15 +12,15 @@
 #import "../Model/JsonModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol  AlertViewProtocol <NSObject>
+@protocol AlertViewProtocol <NSObject>
 
 - (void)cancelAlert;
-- (void)saveAfterConfig:(JsonModel *)jsonModel;
+- (void)convertJsonModel:(JsonModel *)oldJM toJsonModel:(JsonModel *)newJM;
 
 @end
 
 @interface AlertView : UIView
-@property (nonatomic, weak) id<AlertViewProtocol> delegate;
+@property (nonatomic, assign) id <AlertViewProtocol> delegate;
 @property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, assign) CGFloat separatorHeight;
 @property (nonatomic, strong) JsonModel * parentJsonModel;

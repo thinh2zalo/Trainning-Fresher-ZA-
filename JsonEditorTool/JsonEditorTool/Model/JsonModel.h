@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) id value;
-@property (nonatomic, getter=getTypeValue) TypeValue typeValue;
+@property (nonatomic, strong) JsonModel * parrent;
+
+@property (nonatomic,readonly,getter=getTypeValue) TypeValue typeValue;
 
 - (instancetype)initWithObject:(id) object andKey:(NSString *)key;
 

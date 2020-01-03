@@ -11,7 +11,7 @@
 		288732C950488975099B7548 /* Pods_JsonEditorTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */; };
 		4E0E53B061758FA33CC312F1 /* Pods_JsonEditorToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64834E320E94098436A245 /* Pods_JsonEditorToolTests.framework */; };
 		5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F88C23910F8F0081FE67 /* AppDelegate.m */; };
-		5210F89023910F8F0081FE67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F88F23910F8F0081FE67 /* ViewController.m */; };
+		5210F89023910F8F0081FE67 /* JETViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F88F23910F8F0081FE67 /* JETViewController.m */; };
 		5210F89323910F8F0081FE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5210F89123910F8F0081FE67 /* Main.storyboard */; };
 		5210F89523910F910081FE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5210F89423910F910081FE67 /* Assets.xcassets */; };
 		5210F89823910F910081FE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5210F89623910F910081FE67 /* LaunchScreen.storyboard */; };
@@ -109,8 +109,8 @@
 		5210F88823910F8F0081FE67 /* JsonEditorTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonEditorTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5210F88B23910F8F0081FE67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5210F88C23910F8F0081FE67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5210F88E23910F8F0081FE67 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5210F88F23910F8F0081FE67 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5210F88E23910F8F0081FE67 /* JETViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JETViewController.h; sourceTree = "<group>"; };
+		5210F88F23910F8F0081FE67 /* JETViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JETViewController.m; sourceTree = "<group>"; };
 		5210F89223910F8F0081FE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5210F89423910F910081FE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5210F89723910F910081FE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -395,8 +395,8 @@
 		5210F8C22391404E0081FE67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5210F88E23910F8F0081FE67 /* ViewController.h */,
-				5210F88F23910F8F0081FE67 /* ViewController.m */,
+				5210F88E23910F8F0081FE67 /* JETViewController.h */,
+				5210F88F23910F8F0081FE67 /* JETViewController.m */,
 				52338ECC239A413800C19D6D /* AlertController.h */,
 				52338ECD239A413800C19D6D /* AlertController.m */,
 			);
@@ -835,7 +835,7 @@
 			files = (
 				52E3AFB023A375EE00AE85B1 /* ZARevealTransitionLayout.m in Sources */,
 				52D4FB9E23A23F81000418D5 /* NSFileManager+InteractWithFile.m in Sources */,
-				5210F89023910F8F0081FE67 /* ViewController.m in Sources */,
+				5210F89023910F8F0081FE67 /* JETViewController.m in Sources */,
 				52338ECB2399FCB700C19D6D /* NullJM.m in Sources */,
 				5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */,
 				52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */,

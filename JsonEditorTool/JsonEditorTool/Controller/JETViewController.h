@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "../Model/DictionaryJM.h"
+#import "../View/AlertView.h"
 
-@interface ViewController : UIViewController
+@interface JETViewController : UIViewController  <AlertViewProtocol>
 @property (nonatomic, strong) JsonModel * jsonModel;
 
 

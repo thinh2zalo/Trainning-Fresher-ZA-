@@ -9,10 +9,10 @@
 #import "InforJsonCell.h"
 #import "../Define.h"
 #import "../Model/JsonModel.h"
-
+#import "../View/AlertView.h"
 #import "../Categories/UILabel+Caculation.h"
 
-@interface InforJsonCell() 
+@interface InforJsonCell()
 @property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, assign) CGFloat separatorHeight;
 @property (nonatomic, strong) UIImageView *forwardIconImg;
@@ -39,6 +39,7 @@
 - (void)updateContentInsideCell:(JsonModel *)jsonModel {
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
+    
     switch ([jsonModel getTypeValue]) {
         case typeValueArray:
             self.valueLabel.text = [NSString stringWithFormat:@"%tu keys", [jsonModel.value count]];
@@ -187,5 +188,8 @@
     }
     return _hiddenContainerView;
 }
+
+
+
 
 @end
