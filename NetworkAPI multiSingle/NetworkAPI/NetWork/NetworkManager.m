@@ -8,10 +8,8 @@
 
 #import "NetworkManager.h"
 #import "../../Pods/AFNetworking/AFNetworking/AFNetworking.h"
-#import "M13OrderedDictionary.h"
 #import "HandleContentFile.h"
 #import "OrderedDictionary.h"
-#import "XMLReader.h"
 #import "JSONKit.h"
 #define ERROR_MSG_NO_DATA @"Request get no data"
 
@@ -39,14 +37,14 @@
             NSString* errorMsg = [self getErrorMsg:error];
             completion(nil,errorMsg);
         } else {
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+            NSDictionary* dictJson = [NSJSONSerialization JSONObjectWithData:responseObject
             options:kNilOptions
               error:&error];
             
-            if (![[json objectForKey:@"errorMsg"]  isEqual: @"Not Exists"]) {
+            if (![[dictJson objectForKey:@"errorMsg"]  isEqual: @"Not Exists"]) {
                 completion(responseObject,nil);
             } else {
-                completion(nil,ERROR_MSG_NO_DATA);
+                completion(nil,[NSString stringWithFormat:@"errorMsg: %@",[dictJson objectForKey:@"errorMsg"]]);
             }
         }
     }];

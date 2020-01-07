@@ -880,7 +880,7 @@
     if (_isDequeuingCell || _isSendingWorkingRangeDisplayUpdates) {
         return nil;
     }
-
+    
     NSIndexPath *indexPath = [self indexPathForSectionController:sectionController index:index usePreviousIfInUpdateBlock:YES];
     // prevent querying the collection view if it isn't fully reloaded yet for the current data set
     if (indexPath != nil

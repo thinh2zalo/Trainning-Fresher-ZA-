@@ -16,7 +16,6 @@
 
 @interface AlertView ()
 
-@property (nonatomic, strong) JsonModel * jsonModel;
 @property (nonatomic, strong) DLRadioButton *groupRadioBtn;
 @property (nonatomic) TypeValue typeValue;
 
@@ -73,7 +72,7 @@
     self.keyTextField.frame = CGRectMake(self.frame.size.width / 3 - 20 , self.keyAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2 , 30 );
     
     self.valueTextView.frame = CGRectMake(self.keyTextField.frame.origin.x,self.valueAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2, 200);
-    [self ruleOfTextView:_jsonModel.typeValue];
+    [self ruleOfTextView:_JSOld.typeValue];
 
     self.errorLable.frame = CGRectMake(0, self.frame.size.height - 30,  166, 30);
     self.errorLable.center = CGPointMake(self.frame.size.width/2,  self.frame.size.height - 30);
@@ -85,7 +84,7 @@
     switch (_parentJsonModel.getTypeValue) {
         case typeValueArray:
             self.keyTextField.text = @"";
-            self.keyTextField.placeholder = _jsonModel.key;
+            self.keyTextField.placeholder = _JSOld.key;
             [self.keyTextField setUserInteractionEnabled:NO];
             break;
             
@@ -121,6 +120,7 @@
             
             break;
         case typeValueNull:
+            
             [self.valueAlertLabel setHidden:YES];
             [self.valueTextView setHidden:YES];
         
@@ -131,7 +131,8 @@
 - (void)updateContentInside:(JsonModel *) jsonModel {
     [self.errorLable setHidden:YES];
     NSString * value;
-    _jsonModel = jsonModel;
+    _JSOld = jsonModel;
+
     _typeValue = jsonModel.typeValue;
     switch ([jsonModel getTypeValue]) {
         case typeValueBool:
@@ -186,9 +187,8 @@
 }
 
 - (void)cancelAlert {
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cancelAlert)]) {
-        [self.delegate cancelAlert];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cancelAlert:)]) {
+        [self.delegate cancelAlert:self];
     }
 }
 
@@ -214,8 +214,8 @@
                 }
                 break;
             case typeValueDictionary:
-                if (self.jsonModel.getTypeValue == typeValueDictionary) {
-                    value = [self.jsonModel toOrderDictionary];
+                if (self.JSOld.getTypeValue == typeValueDictionary) {
+                    value = [self.JSOld toOrderDictionary];
                 } else {
                     value = NSDictionary.new;
                 }
@@ -233,13 +233,14 @@
         
     }
     if (value) {
-        JsonModel * newJsonModel = [JsonModelFactory getJsonModel:value andKey:self.keyTextField.text];
-        if (self.jsonModel) {
-            newJsonModel.parrent = self.jsonModel.parrent;
+        _JSNew  = [JsonModelFactory getJsonModel:value andKey:self.keyTextField.text];
+        if (self.JSOld) {
+            _JSNew.parrent = self.JSOld.parrent;
+            
         }
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(convertJsonModel:toJsonModel:)]) {
-            [self.delegate convertJsonModel:self.jsonModel toJsonModel:newJsonModel];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(performUpdate:)]) {
+            [self.delegate performUpdate:self];
         }
     } else {
         self.errorLable.text = @"input is invalid type";
@@ -247,6 +248,7 @@
     }
     
 }
+
 
 
 - (UIView * )createSeperateLineWithFrame:(CGRect)rect {
@@ -289,7 +291,7 @@
     if (!_saveBtn) {
         _saveBtn = Button.new;
         _saveBtn.backgroundColor = [UIColor blueColor];
-        [_saveBtn addTarget:self action:@selector(convertJsonModel: toJsonModel:) forControlEvents:UIControlEventTouchUpInside];
+        [_saveBtn addTarget:self action:@selector(saveAfterConfig) forControlEvents:UIControlEventTouchUpInside];
         [_saveBtn setTitle:@"save" forState:UIControlStateNormal];
         [self addSubview:_saveBtn];
     }

@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)  UILabel * keyLable;
 @property (nonatomic, strong)  UILabel * typeValueLabel;
 @property (nonatomic, strong)  UILabel * valueLabel;
-- (void) updateContentInsideCell:(JsonModel *)jsonModel;
+@property (nonatomic, strong)  UILabel * hierarchiLabel;
+- (void) updateContentInsideCell:(JsonModel *)jsonModel isSearching:(BOOL) isSearching;
 
 @end
 

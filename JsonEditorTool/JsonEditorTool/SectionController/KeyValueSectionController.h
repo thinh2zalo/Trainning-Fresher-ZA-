@@ -11,13 +11,10 @@
 #import "../View/AlertView.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol KeyValueSectionControllerDelegate <NSObject>
 
-- (void)performUpdate:(nullable JsonModel *)oldObject andNewObject:(nullable JsonModel * )newObject;
+@interface KeyValueSectionController : IGListSectionController
 
-@end
-@interface KeyValueSectionController : IGListSectionController 
-@property (nonatomic, weak) id <KeyValueSectionControllerDelegate> delegate;
+@property (nonatomic) BOOL isSearching;
 
 @end
 

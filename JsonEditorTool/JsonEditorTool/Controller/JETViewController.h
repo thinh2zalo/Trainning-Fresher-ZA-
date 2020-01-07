@@ -12,7 +12,7 @@
 
 @interface JETViewController : UIViewController  <AlertViewProtocol>
 @property (nonatomic, strong) JsonModel * jsonModel;
-
+-(void)deleteJson:(JsonModel *)JM;
 
 @end
 

@@ -32,10 +32,8 @@
 		52338ECB2399FCB700C19D6D /* NullJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECA2399FCB700C19D6D /* NullJM.m */; };
 		52338ECE239A413800C19D6D /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338ECD239A413800C19D6D /* AlertController.m */; };
 		5258EB8123A54D36007C74FA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8023A54D36007C74FA /* EmptyView.m */; };
-		5258EB8623A7BB56007C74FA /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */; };
 		5258EB8D23A7D419007C74FA /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB8B23A7D415007C74FA /* OrderedDictionary.m */; };
 		5258EB9223A8C304007C74FA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB9123A8C304007C74FA /* JSONKit.m */; };
-		5258EB9523A8E901007C74FA /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258EB9323A8E8FE007C74FA /* XMLReader.m */; };
 		52C9D14B2394EC2500F6DBE8 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1482394EC2500F6DBE8 /* NetworkManager.m */; };
 		52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1622395FB8D00F6DBE8 /* JsonModel.m */; };
 		52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D1682395FBB000F6DBE8 /* DictionaryJM.m */; };
@@ -83,6 +81,7 @@
 		52E3AFD123A375EE00AE85B1 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA323A375EE00AE85B1 /* IndicatorView.m */; };
 		52E3AFD323A375EE00AE85B1 /* ZACheckMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */; };
 		52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */; };
+		52F11F0C23C4DF0C00D5245F /* TJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,14 +150,10 @@
 		52338ECD239A413800C19D6D /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		5258EB7F23A54D36007C74FA /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		5258EB8023A54D36007C74FA /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
-		5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = "<group>"; };
-		5258EB8523A7BB55007C74FA /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = "<group>"; };
 		5258EB8B23A7D415007C74FA /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		5258EB8C23A7D419007C74FA /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		5258EB9023A8C2FF007C74FA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		5258EB9123A8C304007C74FA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		5258EB9323A8E8FE007C74FA /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
-		5258EB9423A8E901007C74FA /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		52C9D1482394EC2500F6DBE8 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.m"; sourceTree = "<group>"; };
 		52C9D1492394EC2500F6DBE8 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = "../../../NetworkAPI multiSingle/NetworkAPI/NetWork/NetworkManager.h"; sourceTree = "<group>"; };
 		52C9D1612395FB8D00F6DBE8 /* JsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonModel.h; sourceTree = "<group>"; };
@@ -256,6 +251,8 @@
 		52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZACheckMark.m; sourceTree = "<group>"; };
 		52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPanGestureRecognizer+SwipeCellKit.m"; sourceTree = "<group>"; };
 		52E3AFA923A375EE00AE85B1 /* ZASwipeCellOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellOptions.h; sourceTree = "<group>"; };
+		52F11F0A23C4DF0700D5245F /* TJActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJActivityViewController.h; sourceTree = "<group>"; };
+		52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJActivityViewController.m; sourceTree = "<group>"; };
 		60BB4AEA098FAEA5EB6F7C17 /* Pods-JsonEditorTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_JsonEditorToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -461,16 +458,14 @@
 		5258EB8323A7BB0B007C74FA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				5258EB9423A8E901007C74FA /* XMLReader.h */,
-				5258EB9323A8E8FE007C74FA /* XMLReader.m */,
 				5258EB8C23A7D419007C74FA /* OrderedDictionary.h */,
+				52F11F0A23C4DF0700D5245F /* TJActivityViewController.h */,
+				52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */,
 				5258EB8B23A7D415007C74FA /* OrderedDictionary.m */,
 				5258EB9023A8C2FF007C74FA /* JSONKit.h */,
 				52E2A83C23BCCC5800BC42D9 /* NSJSONSerialization.h */,
 				52E2A83923BCC91700BC42D9 /* NSJSONSerialization.m */,
 				5258EB9123A8C304007C74FA /* JSONKit.m */,
-				5258EB8523A7BB55007C74FA /* M13OrderedDictionary.h */,
-				5258EB8423A7BB51007C74FA /* M13OrderedDictionary.m */,
 				52E2A83B23BCCB4000BC42D9 /* Enum.h */,
 				52E2A83D23BCCD6100BC42D9 /* JsonSerializationCustom.h */,
 				52E2A83E23BCCD6100BC42D9 /* JsonSerializationCustom.m */,
@@ -838,6 +833,7 @@
 				5210F89023910F8F0081FE67 /* JETViewController.m in Sources */,
 				52338ECB2399FCB700C19D6D /* NullJM.m in Sources */,
 				5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */,
+				52F11F0C23C4DF0C00D5245F /* TJActivityViewController.m in Sources */,
 				52C9D16F2397BBC400F6DBE8 /* InforJsonCell.m in Sources */,
 				5258EB9223A8C304007C74FA /* JSONKit.m in Sources */,
 				52D4FB9C23A23F81000418D5 /* InputStream.m in Sources */,
@@ -849,7 +845,6 @@
 				52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */,
 				52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */,
 				52E3AFB123A375EE00AE85B1 /* ZASwipeExpansionTarget.m in Sources */,
-				5258EB8623A7BB56007C74FA /* M13OrderedDictionary.m in Sources */,
 				52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */,
 				52338EC22399FAA700C19D6D /* StringJM.m in Sources */,
 				5258EB8D23A7D419007C74FA /* OrderedDictionary.m in Sources */,
@@ -882,7 +877,6 @@
 				52D47C5F239A41D300655900 /* AlertView.m in Sources */,
 				52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */,
 				52C9D1632395FB8D00F6DBE8 /* JsonModel.m in Sources */,
-				5258EB9523A8E901007C74FA /* XMLReader.m in Sources */,
 				52338EBC2399005100C19D6D /* SearchCell.m in Sources */,
 				52E3AFBD23A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.m in Sources */,
 				52E3AFB323A375EE00AE85B1 /* ZACompletionAnimation.m in Sources */,

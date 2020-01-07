@@ -29,6 +29,7 @@
     self = [super init];
     if (self) {
         [self setupViewWindowWidth:WINDOW_WIDTH];
+        self.alertView.alertController = self;
         
     }
     return self;
@@ -39,19 +40,16 @@
 - (void)setupViewWindowWidth:(CGFloat)windowWidth {
 
     self.windowWidth = windowWidth;
-    self.windowHeight = 280.0f;
+    self.windowHeight = 310.0f;
     _backgroundView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _backgroundView.userInteractionEnabled = YES;
     _backgroundView.backgroundColor = [UIColor blackColor];
     _backgroundView.alpha = 0.7f;
-    
-    
 }
 
 - (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel {
     if (jsonModel) {
         self.jsonModel = jsonModel;
-
     }
    _rootViewController = viewController;
     
@@ -77,8 +75,6 @@
 
 }
 
-
-
 - (void)fadeOut {
     [self fadeOutWithDuration:0.3f];
 }
@@ -99,7 +95,7 @@
 - (AlertView *)alertView {
     if (!_alertView) {
         _alertView = AlertView.new;
-        
+    
         _alertView.backgroundColor = [UIColor whiteColor];
         _alertView.layer.cornerRadius = 5.0f;
         _alertView.layer.masksToBounds = YES;

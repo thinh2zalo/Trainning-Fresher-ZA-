@@ -3,46 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "__29-[ViewController viewDidLoad]_block_invoke:ViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "container">
-            </PersistentString>
-            <PersistentString
-               value = "container.arrJsonModel">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[ViewController objectsForListAdapter:]:ViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[IGListAdapter performUpdatesAnimated:completion:]:IGListAdapter.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[AlertView ruleOfTextView:]:AlertView.m">
-      </ContextState>
-      <ContextState
-         contextName = "__30-[ViewController moreFunction]_block_invoke_2:ViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[vc.jsonModel toDictionary]">
-            </PersistentString>
-            <PersistentString
-               value = "vc.jsonModel.value">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[AlertView saveAfterConfig]:AlertView.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[ViewController viewWillAppear:]:ViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]:IGListAdapterUpdater.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "IGListDiffExperiment(fromObjects, toObjects, IGListDiffEquality, experiments)">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[ViewController saveAfterConfig:]:ViewController.m">
       </ContextState>
       <ContextState
          contextName = "+[JsonModelFactory getJsonModel:andKey:]:JsonModelFactory.m">
@@ -53,12 +17,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ViewController saveFile]:ViewController.m">
+         contextName = "-[IGListAdapter(UICollectionView) collectionView:layout:sizeForItemAtIndexPath:]:IGListAdapter+UICollectionView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AlertView saveAfterConfig]:AlertView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]:IGListAdapterUpdater.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.jsonModel.value">
+               value = "IGListDiffExperiment(fromObjects, toObjects, IGListDiffEquality, experiments)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[IGListAdapter performUpdatesAnimated:completion:]:IGListAdapter.m">
       </ContextState>
       <ContextState
          contextName = "mach_msg_trap:(null)">
@@ -72,25 +45,99 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ViewController saveFile]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.jsonModel.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[IGListAdapterUpdater performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:]:IGListAdapterUpdater.m">
+      </ContextState>
+      <ContextState
+         contextName = "__29-[ViewController viewDidLoad]_block_invoke:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "container">
+            </PersistentString>
+            <PersistentString
+               value = "container.arrJsonModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[KeyValueSectionController cellForItemAtIndex:]:KeyValueSectionController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[JETViewController objectsForListAdapter:]:JETViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.adapter sectionControllerForObject:0]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.adapter sectionControllerForObject:[subArr objectAtIndex:0]]">
+            </PersistentString>
+            <PersistentString
+               value = "[subArr objectAtIndex:0]]">
+            </PersistentString>
+            <PersistentString
+               value = "kvSC">
+            </PersistentString>
+            <PersistentString
+               value = "[self.adapter sectionControllerForObject:[subArr objectAtIndex:i]]">
+            </PersistentString>
+            <PersistentString
+               value = "[subArr objectAtIndex:i]]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.adapter sectionControllerForObject:js]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.adapter sectionControllerForObject:[subArr objectAtIndex:1]]">
+            </PersistentString>
+            <PersistentString
+               value = "[(JETViewController *)self.navigationController.viewControllers.firstObject allJsonModel]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__30-[JETViewController loadData:]_block_invoke_2:JETViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController viewWillAppear:]:ViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[DictionaryJM toDictionary]:DictionaryJM.m">
       </ContextState>
       <ContextState
-         contextName = "-[ViewController objectsForListAdapter:]:ViewController.m">
+         contextName = "-[AlertView ruleOfTextView:]:AlertView.m">
       </ContextState>
       <ContextState
-         contextName = "-[ViewController viewDidLoad]:ViewController.m">
+         contextName = "-[JETViewController performUpdate:]:JETViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[DictContainer initWithObject:andKey:]:DictContainer.m">
       </ContextState>
       <ContextState
-         contextName = "-[ViewController saveAfterConfig:]:ViewController.m">
+         contextName = "-[IGListAdapter(UICollectionView) collectionView:cellForItemAtIndexPath:]:IGListAdapter+UICollectionView.m">
+      </ContextState>
+      <ContextState
+         contextName = "__30-[ViewController moreFunction]_block_invoke_2:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[vc.jsonModel toDictionary]">
+            </PersistentString>
+            <PersistentString
+               value = "vc.jsonModel.value">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "__37-[NetworkManager request:completion:]_block_invoke:NetworkManager.m">
       </ContextState>
       <ContextState
-         contextName = "-[IGListAdapterUpdater performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:]:IGListAdapterUpdater.m">
+         contextName = "-[ViewController viewDidLoad]:ViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[AlertController showAlert:withJsonModel:]:AlertController.m">
@@ -99,6 +146,12 @@
                value = "[(ViewController *)_rootViewController jsonModel]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InforJsonCell updateContentInsideCell:isSearching:]:InforJsonCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[JETViewController deleteJson:]:JETViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[InforJsonCell updateContentInsideCell:]:InforJsonCell.m">

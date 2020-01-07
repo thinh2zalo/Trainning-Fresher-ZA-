@@ -36,10 +36,9 @@
 }
 
 
-- (void)updateContentInsideCell:(JsonModel *)jsonModel {
+- (void)updateContentInsideCell:(JsonModel *)jsonModel  isSearching:(BOOL)isSearching{
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
-    
     switch ([jsonModel getTypeValue]) {
         case typeValueArray:
             self.valueLabel.text = [NSString stringWithFormat:@"%tu keys", [jsonModel.value count]];
@@ -80,11 +79,35 @@
         case typeValueBool:
             self.iconTypeImg.image = [UIImage imageNamed:@"Bool"];
             self.valueLabel.text = [NSString stringWithFormat:@"%@", [jsonModel.value  isEqual: @(1)] ? @"YES" : @"NO"];
-            NSLog(@"go here bool");
             typeValue = @"Bool";
     }
-    self.typeValueLabel.text = typeValue;
     
+    self.typeValueLabel.text = typeValue;
+    if (isSearching) {
+        [self.hierarchiLabel setHidden:NO];
+        JsonModel * js = jsonModel;
+        NSString * levelJSontext = NSString.new;
+        NSMutableArray <NSString *> *levelJson = NSMutableArray.new;
+        while (js.parrent) {
+            [levelJson addObject:js.parrent.key];
+            js = js.parrent;
+        }
+        for (NSInteger i = levelJson.count - 1 ; i >= 0 ; i --) {
+            if (levelJson[i].length > 12) {
+                levelJson[i] = [levelJson[i] substringToIndex:12];
+                levelJson[i] = [NSString stringWithFormat:@"%@...",levelJson[i]];
+            }
+            levelJSontext = [NSString stringWithFormat:@"%@ > %@ ", levelJSontext, levelJson[i]];
+        }
+       levelJSontext = [levelJSontext substringFromIndex:11];
+        if ([levelJSontext isEqualToString:@""]) {
+            levelJSontext = @">";
+        }
+        self.hierarchiLabel.text = levelJSontext;
+       } else {
+            [self.hierarchiLabel setHidden:YES];
+
+       }
 }
 
 
@@ -105,6 +128,7 @@
                                           CGRectGetHeight(self.bounds) - _separatorHeight,
                                           CGRectGetWidth(self.bounds),
                                           _separatorHeight);
+     self.hierarchiLabel.frame = CGRectMake(20, self.typeValueLabel.frame.origin.y + 30, 330, 20);
     
     
 }
@@ -163,7 +187,15 @@
     return _separatorView;
     
 }
+- (UILabel *)hierarchiLabel {
+    if (!_hierarchiLabel) {
+        _hierarchiLabel = UILabel.new;
+        [_hierarchiLabel setFont:[UIFont systemFontOfSize:12]];
 
+        [self addSubview:_hierarchiLabel];
+    }
+    return _hierarchiLabel;
+}
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = UIScrollView.new;

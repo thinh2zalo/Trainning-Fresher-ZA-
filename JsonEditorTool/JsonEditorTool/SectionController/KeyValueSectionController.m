@@ -42,7 +42,7 @@
 - (ZASwipeCellOptions *)view:(UIView<ZASwipeCellParentViewProtocol> *)view editActionsOptionsForRowAtIndexPath:(NSIndexPath *)indexPath forOrientation:(ZASwipeActionsOrientation)orientation {
     ZASwipeCellOptions *options = [[ZASwipeCellOptions alloc] init];
     
-    options.expansionStyle = orientation == ZASwipeActionsOrientationLeft ? [ZASwipeExpansionStyle selection] : [ZASwipeExpansionStyle destructive];
+    options.expansionStyle = orientation == ZASwipeActionsOrientationRight ? [ZASwipeExpansionStyle selection] : [ZASwipeExpansionStyle destructive];
     
     options.buttonSpacing = 11;
     
@@ -57,19 +57,24 @@
 - (NSArray<ZASwipeAction *> *)view:(UIView<ZASwipeCellParentViewProtocol> *)view editActionsForRowAtIndexPath:(NSIndexPath *)indexPath forOrientation:(ZASwipeActionsOrientation)orientation {
             __weak typeof(self) weakSelf = self;
     if (orientation == ZASwipeActionsOrientationRight) {
-        return nil;
+         ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
+                          [(JETViewController *)weakSelf.viewController deleteJson:self->oldJsonModel];
+                      }];
+               deleteAction.backgroundColor = [UIColor blueColor];
+               deleteAction.image = [UIImage imageNamed:@"trash"];
+                      return @[deleteAction];
     } else {
-        ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
-                   [weakSelf.delegate performUpdate:self->oldJsonModel andNewObject:nil];
-               }];
-        deleteAction.backgroundColor = [UIColor blueColor];
-        deleteAction.image = [UIImage imageNamed:@"trash"];
-               return @[deleteAction];
+        return nil;
+//        ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
+//                   [(JETViewController *)weakSelf.viewController deleteJson:self->oldJsonModel];
+//               }];
+//        deleteAction.backgroundColor = [UIColor blueColor];
+//        deleteAction.image = [UIImage imageNamed:@"trash"];
+//               return @[deleteAction];
            
     }
            
 }
-
 
 
 #pragma mark - override listSectionController
@@ -79,13 +84,19 @@
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-    return CGSizeMake(self.collectionContext.containerSize.width, 80);
+    CGSize size = CGSizeMake(self.collectionContext.containerSize.width, 80);
+    if (_isSearching) {
+        size = CGSizeMake(self.collectionContext.containerSize.width, 120);
+    }
+
+    return size;
 }
+
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
     InforJsonCell * cell = [self.collectionContext dequeueReusableCellOfClass:InforJsonCell.class forSectionController:self atIndex:index];
     cell.delegate = self;
-    [cell updateContentInsideCell:oldJsonModel];
+    [cell updateContentInsideCell:oldJsonModel isSearching:_isSearching];
     [cell layoutSubviews];
 
     return cell;
@@ -109,22 +120,13 @@
         [navController pushViewController:viewController animated:YES];
     } else {
         _alert = AlertController.new;
-        
+        _alert.alertView.typeEditJson = ktypeEditJson;
         _alert.alertView.delegate = (JETViewController *)self.viewController;
         [_alert showAlert:self.viewController withJsonModel:oldJsonModel];
     }
    
 }
 
-//- (void)cancelAlert {
-//    [_alert fadeOut];
-//}
-//
-//- (void)convertJsonModel:(JsonModel *) jsonModel {
-//   if (self.delegate) {
-//        [self.delegate performUpdate:oldJsonModel andNewObject:jsonModel];
-//    }
-//    [_alert fadeOut];
-//}
+
 
 @end

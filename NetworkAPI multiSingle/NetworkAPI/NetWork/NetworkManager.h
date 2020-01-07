@@ -15,7 +15,6 @@ typedef void(^CompletionBlock)(id _Nullable response , NSString * _Nullable  err
 
 + (NetworkManager *) shareInstance;
 - (void)request:(NSURLRequest *)request  completion:(CompletionBlock) completion;
-- (NSData *)getData;
 
 
 
