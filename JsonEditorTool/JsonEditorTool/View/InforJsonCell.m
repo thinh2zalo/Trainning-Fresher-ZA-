@@ -21,21 +21,84 @@
 @property (nonatomic, strong) UIStackView  * stackView;
 @property (nonatomic, strong) UIView * visibleContainerView;
 @property (nonatomic, strong) UIView * hiddenContainerView;
+@property (nonatomic, strong) UIView * actionView;
+
+@property (nonatomic, strong) UIPanGestureRecognizer * panGesture;
+@property (nonatomic, strong) UITapGestureRecognizer * tapGesture;
+
+
+typedef NS_ENUM(NSInteger, ActionOrientation) {
+    kActionOrientationLeft = 0,
+    kActionOrientationRight = 1
+};
 
 @end
 
 @implementation InforJsonCell
 
-
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
-        }
-    return self;
+//       _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+//        _panGesture.delegate = self;
+//       _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+//         [self addGestureRecognizer:self.panGesture];
+//         [self addGestureRecognizer:self.tapGesture];
+   
+ }
+     return self;
+}
+- (void)prepareForReuse {
+//    self.actionView = nil;
+}
+//- (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
+//      if (panGesture == nil) {
+//          return;
+//      }
+//    switch (panGesture.state) {
+//        case UIGestureRecognizerStateBegan: {
+//            
+//
+//            [self configureActionsView];
+//            
+//
+//        }
+//            
+//            break;
+//        case UIGestureRecognizerStateChanged:{
+//            CGPoint velocity = [panGesture translationInView:self];
+//            NSLog(@"velocity %f", velocity.x);
+//            self.contentView.frame = CGRectMake(velocity.x, 0, self.frame.size.width, self.frame.size.height);
+//            self.actionView.frame = CGRectMake(self.frame.size.width + velocity.x, 0, self.frame.size.width, self.frame.size.height);
+//
+//        }
+//        
+//        break;
+//        
+//        case UIGestureRecognizerStateEnded:{
+//            
+//        }
+//        
+//        break;
+//        default:
+//            break;
+//    }
+//}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return true;
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
+- (void)configureActionsView{
+    self.actionView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.height, self.frame.size.height);
+    
+}
 
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGesture {
+    NSLog(@"handleTapGesture");
+}
 - (void)updateContentInsideCell:(JsonModel *)jsonModel  isSearching:(BOOL)isSearching{
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
@@ -133,12 +196,21 @@
     
 }
 
+- (UIView *)actionView {
+    if (!_actionView) {
+        _actionView = UIView.new;
+        _actionView.backgroundColor = [UIColor redColor];
+        [self insertSubview:_actionView aboveSubview:self.contentView];
+    }
+    return _actionView;
+}
+
 - (UIImageView *)forwardIconImg {
     if (!_forwardIconImg) {
         _forwardIconImg = UIImageView.new;
         _forwardIconImg.image = [UIImage imageNamed:@"forward_icon"];
         _forwardIconImg.alpha = 0.4;
-        [self addSubview:_forwardIconImg];
+        [self.contentView addSubview:_forwardIconImg];
     }
     return _forwardIconImg;
 }
@@ -146,7 +218,7 @@
 - (UIImageView *)iconTypeImg {
     if (!_iconTypeImg) {
         _iconTypeImg = UIImageView.new;
-        [self addSubview:_iconTypeImg];
+        [self.contentView addSubview:_iconTypeImg];
     }
     return _iconTypeImg;
 }
@@ -155,7 +227,7 @@
     if (!_typeValueLabel) {
         _typeValueLabel = UILabel.new;
         [_typeValueLabel setFont:[UIFont systemFontOfSize:12]];
-        [self addSubview:_typeValueLabel];
+        [self.contentView addSubview:_typeValueLabel];
     }
     return _typeValueLabel;
 }
@@ -163,7 +235,7 @@
 - (UILabel *)keyLable {
     if (!_keyLable) {
         _keyLable = UILabel.new;
-        [self addSubview:_keyLable];
+        [self.contentView addSubview:_keyLable];
     }
     return _keyLable;
 }
@@ -172,7 +244,7 @@
     if (!_valueLabel) {
         _valueLabel = UILabel.new;
         [_valueLabel setFont:[UIFont systemFontOfSize:16]];
-        [self addSubview:_valueLabel];
+        [self.contentView addSubview:_valueLabel];
     }
     return _valueLabel;
 }

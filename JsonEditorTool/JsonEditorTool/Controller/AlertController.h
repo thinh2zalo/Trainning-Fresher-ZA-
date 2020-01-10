@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) AlertView * alertView;
 - (void)fadeOut;
 
-- (void)showAlert:(UIViewController *)viewController withJsonModel:(nullable JsonModel *) jsonModel;
+- (void)showAlert:(UIViewController *)viewController withJsonModel:(nullable JsonModel *) jsonModel typeAlert:(NSString *)typeAlert;
 @end
 
 NS_ASSUME_NONNULL_END

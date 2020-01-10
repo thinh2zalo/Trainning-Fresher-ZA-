@@ -49,7 +49,6 @@
 		52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9723A23F81000418D5 /* OutputStream.m */; };
 		52D4FBA023A23F81000418D5 /* HandleContentFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9A23A23F81000418D5 /* HandleContentFile.m */; };
 		52D4FBA123A23F81000418D5 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4FB9B23A23F81000418D5 /* Stream.m */; };
-		52E2A83A23BCC91700BC42D9 /* NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E2A83923BCC91700BC42D9 /* NSJSONSerialization.m */; };
 		52E2A83F23BCCD6100BC42D9 /* JsonSerializationCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E2A83E23BCCD6100BC42D9 /* JsonSerializationCustom.m */; };
 		52E3AFAA23A375EE00AE85B1 /* ZASwipeExpansionStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5523A375EE00AE85B1 /* ZASwipeExpansionStyle.m */; };
 		52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AF5623A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m */; };
@@ -184,9 +183,7 @@
 		52D4FB9923A23F81000418D5 /* NSFileHandle+ReadFlowChunks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+ReadFlowChunks.h"; sourceTree = "<group>"; };
 		52D4FB9A23A23F81000418D5 /* HandleContentFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleContentFile.m; sourceTree = "<group>"; };
 		52D4FB9B23A23F81000418D5 /* Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stream.m; sourceTree = "<group>"; };
-		52E2A83923BCC91700BC42D9 /* NSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSJSONSerialization.m; sourceTree = "<group>"; };
 		52E2A83B23BCCB4000BC42D9 /* Enum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
-		52E2A83C23BCCC5800BC42D9 /* NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSJSONSerialization.h; sourceTree = "<group>"; };
 		52E2A83D23BCCD6100BC42D9 /* JsonSerializationCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonSerializationCustom.h; sourceTree = "<group>"; };
 		52E2A83E23BCCD6100BC42D9 /* JsonSerializationCustom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonSerializationCustom.m; sourceTree = "<group>"; };
 		52E3AF5423A375EE00AE85B1 /* ActionDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionDescriptor.h; sourceTree = "<group>"; };
@@ -446,6 +443,13 @@
 			path = SectionController;
 			sourceTree = "<group>";
 		};
+		5224D90B23C83FF6003E47B5 /* JETSwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = JETSwipeCell;
+			sourceTree = "<group>";
+		};
 		52338EB1239894D700C19D6D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,8 +467,6 @@
 				52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */,
 				5258EB8B23A7D415007C74FA /* OrderedDictionary.m */,
 				5258EB9023A8C2FF007C74FA /* JSONKit.h */,
-				52E2A83C23BCCC5800BC42D9 /* NSJSONSerialization.h */,
-				52E2A83923BCC91700BC42D9 /* NSJSONSerialization.m */,
 				5258EB9123A8C304007C74FA /* JSONKit.m */,
 				52E2A83B23BCCB4000BC42D9 /* Enum.h */,
 				52E2A83D23BCCD6100BC42D9 /* JsonSerializationCustom.h */,
@@ -505,6 +507,7 @@
 		52E3AF5223A3756A00AE85B1 /* SwipeCell */ = {
 			isa = PBXGroup;
 			children = (
+				5224D90B23C83FF6003E47B5 /* JETSwipeCell */,
 				52E3AF5323A375EE00AE85B1 /* SwipeCellKit */,
 			);
 			path = SwipeCell;
@@ -872,7 +875,6 @@
 				52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */,
 				5258EB8123A54D36007C74FA /* EmptyView.m in Sources */,
 				52E3AFBE23A375EE00AE85B1 /* ZASwipeTableCell.m in Sources */,
-				52E2A83A23BCC91700BC42D9 /* NSJSONSerialization.m in Sources */,
 				52D47C62239A9D4100655900 /* TextField.m in Sources */,
 				52D47C5F239A41D300655900 /* AlertView.m in Sources */,
 				52E3AFBF23A375EE00AE85B1 /* ZASwipeActionButtonWrapperView.m in Sources */,

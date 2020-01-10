@@ -65,12 +65,7 @@
                       return @[deleteAction];
     } else {
         return nil;
-//        ZASwipeAction *deleteAction = [[ZASwipeAction alloc] initWithStyle:ZASwipeActionStyleDestructive title:nil handler:^(ZASwipeAction *action, NSIndexPath *indexPath) {
-//                   [(JETViewController *)weakSelf.viewController deleteJson:self->oldJsonModel];
-//               }];
-//        deleteAction.backgroundColor = [UIColor blueColor];
-//        deleteAction.image = [UIImage imageNamed:@"trash"];
-//               return @[deleteAction];
+
            
     }
            
@@ -86,7 +81,7 @@
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     CGSize size = CGSizeMake(self.collectionContext.containerSize.width, 80);
     if (_isSearching) {
-        size = CGSizeMake(self.collectionContext.containerSize.width, 120);
+        size = CGSizeMake(self.collectionContext.containerSize.width, 105);
     }
 
     return size;
@@ -122,7 +117,7 @@
         _alert = AlertController.new;
         _alert.alertView.typeEditJson = ktypeEditJson;
         _alert.alertView.delegate = (JETViewController *)self.viewController;
-        [_alert showAlert:self.viewController withJsonModel:oldJsonModel];
+        [_alert showAlert:self.viewController withJsonModel:oldJsonModel typeAlert:@"edit"];
     }
    
 }

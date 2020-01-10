@@ -35,7 +35,7 @@
 #import "NumberJM.h"
 
 
-@interface JETViewController () <SearchSectionControllerDelegate, UITextFieldDelegate, IGListAdapterMoveDelegate>
+@interface JETViewController () <SearchSectionControllerDelegate, UITextFieldDelegate, IGListAdapterMoveDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) NSDictionary * dict;
 @property (nonatomic, strong) IGListAdapter * adapter;
 @property (nonatomic, strong) UICollectionView * collectionView;
@@ -48,10 +48,8 @@
 @property (nonatomic, strong) EmptyView *  emptyView;
 @property (nonatomic, strong) UIView * backGroundSettingView ;
 @property (nonatomic, strong) UILabel * errorMessLabel ;
+@property (nonatomic, strong) UISearchBar * searchBar ;
 @property (nonatomic, strong) UIGestureRecognizer  * longPress ;
-
-
-
 @property (nonatomic, strong) NSString * osStr;
 @property (nonatomic, strong) NSMutableArray <JsonModel *> * allJsonModel;
 
@@ -75,6 +73,7 @@
     searchToken = @(42);
     searchTypeKey = true;
     self.osStr = @"ios";
+    self.view.backgroundColor = [UIColor whiteColor];
     if (!_jsonModel) {
         self.backGroundSettingView.frame = self.view.bounds;
         self.backGroundSettingView.backgroundColor = [UIColor whiteColor];
@@ -88,12 +87,10 @@
     
 }
 
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.collectionView.frame = self.view.bounds;
+    self.collectionView.frame =CGRectMake(0, 88 + 55, self.view.frame.size.width, self.view.frame.size.height - 88 - 55);
 }
-
 
 
 - (void)commitEndpoint {
@@ -115,8 +112,20 @@
     [NetworkManager.shareInstance  request:request completion:^(id  _Nullable response, NSString * _Nullable errorMsg){
         
         if ([response isKindOfClass:NSData.class]) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
                 
+                
+                NSDictionary * CHECK = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error
+                                                                              :nil];
+                
+                   NSData *myData = [NSJSONSerialization dataWithJSONObject:CHECK options:NSJSONWritingFragmentsAllowed error:nil];
+                   NSString * date = [NSString stringWithFormat:@"%@", [NSDate date]];
+                   NSString * path = [NSString stringWithFormat:@"%@/tmp/hoaithi_%@.txt", NSHomeDirectory(),date];
+                
+                   
+                   OutputStream * output = [[OutputStream alloc]initWithPath: path];
+                   [output writeData:myData];
+                    
                 OrderedDictionary * orderDict = [JsonSerializationCustom JSONObjectWithData:response options:0 error:nil];
                 
                 OrderedDictionary * resultDict = [orderDict objectForKey:@"result"];
@@ -156,10 +165,7 @@
         return nil;
     }
    
-
 }
-
-
 
 - (BOOL)isAlreadyJsonModel:(JsonModel *)jsonModel inArray:(NSArray <JsonModel *> *) arrJsonModel{
     for (JsonModel * js in arrJsonModel) {
@@ -172,6 +178,7 @@
 #pragma mark - textFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+     
     NSString * text = [textField.text stringByReplacingCharactersInRange:range withString:string];
     if ([text isEqualToString:@""]) {
         [self.commitBtn setUserInteractionEnabled:NO];
@@ -188,7 +195,21 @@
     JsonModel * parentsJS = JM.parrent;
     NSUInteger index = [parentsJS.value indexOfObject:JM];
     [parentsJS.value removeObjectAtIndex:index];
-  
+    
+    NSInteger indexVC = [self.navigationController.childViewControllers indexOfObject:self];
+    
+    JETViewController * vc = JETViewController.new;
+    if (indexVC - 1 >= 0) {
+           vc =  self.navigationController.childViewControllers[indexVC -1];
+    }
+    if ([vc isKindOfClass:JETViewController.class]) {
+        
+        KeyValueSectionController * kvSC = [vc.adapter sectionControllerForObject:JM.parrent];
+        [kvSC.collectionContext performBatchAnimated:YES updates:^(id<IGListBatchContext> batchContext) {
+            
+            [batchContext reloadSectionController:kvSC];
+        } completion:nil];
+    }
 
     NSMutableArray <JsonModel *> * rootJM = [self.navigationController.childViewControllers.firstObject allJsonModel];
     
@@ -201,8 +222,7 @@
 #pragma mark - IGListAdapterMoveDelegate
 
 - (void)listAdapter:(IGListAdapter *)listAdapter moveObject:(id)object from:(NSArray *)previousObjects to:(NSArray *)objects {
-    NSRange range = NSMakeRange(1, objects.count - 1);
-    self.jsonModel.value = [NSMutableArray arrayWithArray:[objects subarrayWithRange:range]];
+    self.jsonModel.value = [NSMutableArray arrayWithArray:objects];
     
 }
 
@@ -241,26 +261,21 @@
             break;
         case ktypeEditNameJson: {
             NSInteger indexVC = [self.navigationController.childViewControllers indexOfObject:self];
-            JETViewController * vc =  self.navigationController.childViewControllers[indexVC -1];
+                        JETViewController * vc =  self.navigationController.childViewControllers[indexVC -1];
             if ([vc isKindOfClass:JETViewController.class]) {
-                NSInteger indexOfObject = [vc.jsonModel.value indexOfObject:self.jsonModel];
-                [vc.jsonModel.value replaceObjectAtIndex:indexOfObject withObject:alertView.JSNew];
-                KeyValueSectionController * kvSC = [self.adapter sectionControllerForObject:vc.jsonModel];
-                 [kvSC.collectionContext performBatchAnimated:YES updates:^(id<IGListBatchContext> batchContext) {
-
-                                     [batchContext reloadSectionController:kvSC];
-                                   } completion:nil];
-                
-                [vc.adapter performUpdatesAnimated:NO completion:nil];
+                alertView.JSOld.key = alertView.JSNew.key;
+                KeyValueSectionController * kvSC = [vc.adapter sectionControllerForObject:alertView.JSOld];
+                [kvSC.collectionContext performBatchAnimated:YES updates:^(id<IGListBatchContext> batchContext) {
+                    
+                    [batchContext reloadSectionController:kvSC];
+                } completion:nil];
+            }
+            
                 self.navigationItem.title = alertView.JSNew.key;
                 [_alert fadeOut];
             }
         }
-            
-            break;
-        default:
-            break;
-    }
+ 
 }
 
 - (void)cancelAlert:(AlertView *)alertView {
@@ -269,12 +284,26 @@
 }
 
 #pragma mark - set update view
+//- (void)viewWillAppear:(BOOL)animated {
+//
+//
+//
+//
+//}
+-(void)viewWillDisappear:(BOOL)animated {
+    self.searchBar.text = @"";
+    [self.adapter performUpdatesAnimated:NO completion:nil];
 
+
+}
 - (void)setupUI {
     [self adapter];
     [self.backGroundSettingView setHidden:YES];
-
+        self.searchBar.frame = CGRectMake(0, 88, self.view.frame.size.width, 50);
+    
+    
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.jsonModel.key style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     self.navigationItem.backBarButtonItem = backButtonItem;
     self.navigationItem.title = self.jsonModel.key;
     
@@ -324,6 +353,7 @@
 
 #pragma mark - SearchSectionControllerDelegate
 - (void)searchSectionController:(IGListSectionController *)sectionController andDidChangeText:(NSString *)text {
+
     textFilter = text;
     if (![textFilter isEqualToString:@""]) {
         isSearching = true;
@@ -358,9 +388,9 @@
                 
             }
             
-            return [@[searchToken] arrayByAddingObjectsFromArray:[self.jsonModel value]];
+            return  [self.jsonModel value];
         } else {
-            
+         
             self.longPress = [self.longPress initWithTarget:self action:@selector(noHandle)];
 
             
@@ -389,7 +419,7 @@
                     } completion:nil];
 
             }
-            return [@[searchToken] arrayByAddingObjectsFromArray:subArr];
+            return subArr;
         }
     } else {
         return nil;
@@ -425,50 +455,65 @@
     return self.emptyView;
 }
 
+// MARK: UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    textFilter = searchText;
+    if (![textFilter isEqualToString:@""]) {
+          isSearching = true;
+      } else {
+          isSearching = false;
+      }
+
+    JETViewController * vc = self.navigationController.childViewControllers.lastObject;
+    
+      [vc.adapter performUpdatesAnimated:YES completion:nil];
+}
+
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    textFilter = searchBar.text;
+
+    if (![textFilter isEqualToString:@""]) {
+          isSearching = true;
+      } else {
+          isSearching = false;
+      }
+      [self.adapter performUpdatesAnimated:YES completion:nil];
+
+}
 #pragma mark - handle when touch button
 - (void) noHandle {
     
 }
 
 -(void)shareToMessenger {
-    
-    FBSDKShareMessengerURLActionButton *urlButton = [[FBSDKShareMessengerURLActionButton alloc] init];
-    urlButton.title = @"Visit Facebook";
-    urlButton.url = [NSURL URLWithString:@"https://www.facebook.com"];
-
-    NSURL *mediaURL = [NSURL URLWithString:@"https://www.facebook.com/dtvu.216/videos/t.100009633691413/875406852551372/?type=2&video_source=user_video_tab"];
-    FBSDKShareMessengerMediaTemplateContent *content =  [[FBSDKShareMessengerMediaTemplateContent alloc] initWithMediaURL:mediaURL];
-//    content.pageID = // Your page ID, required
-    content.mediaType = FBSDKShareMessengerMediaTemplateMediaTypeVideo;
-    content.button = urlButton;
-
-    FBSDKMessageDialog *messageDialog = [[FBSDKMessageDialog alloc] init];
-    messageDialog.shareContent = content;
-
-    if ([messageDialog canShow]) {
-        [messageDialog show];
-    }
+   
 }
 
 - (void)addNewItem {
     _alert = AlertController.new;
     _alert.alertView.delegate = self;
     _alert.alertView.typeEditJson = ktypeAddNewJson;
-    [_alert showAlert:self withJsonModel:nil];
+    [_alert showAlert:self withJsonModel:nil typeAlert:@"Add"];
 }
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)gesture {
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan: {
             CGPoint location = [gesture locationInView:self.collectionView];
+
             NSIndexPath * indexOfItemSeleted = [self.collectionView indexPathForItemAtPoint:location];
-            [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexOfItemSeleted];
+          
+                [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexOfItemSeleted];
+            
+            
         }
             break;
             
         case UIGestureRecognizerStateChanged: {
             CGPoint position = [gesture locationInView:self.collectionView];
-            [self.collectionView updateInteractiveMovementTargetPosition:position ];
+            [self.collectionView updateInteractiveMovementTargetPosition:position];
             
         }
             break;
@@ -500,7 +545,6 @@
     id fileURL = [[NSURL alloc] initFileURLWithPath:[self saveFile]];
     if (fileURL) {
         TJActivityViewController * ac = [[TJActivityViewController alloc] initWithActivityItems:@[fileURL] applicationActivities:nil];
-//        UIActivityViewController * ac = [[UIActivityViewController alloc] initWithActivityItems:@[fileURL] applicationActivities:nil];
         [self presentViewController:ac animated:YES completion:nil];
     }
     
@@ -511,7 +555,7 @@
     
     __weak JETViewController *weakSelf = self;
     
-    UIAlertAction* shareMessage = [UIAlertAction actionWithTitle:@"send messenger" style:UIAlertActionStyleDestructive
+    UIAlertAction* shareMessage = [UIAlertAction actionWithTitle:@"send messenger" style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action) {
         [self shareMessenger];
     }];
@@ -522,14 +566,24 @@
     UIAlertAction* searchKey = [UIAlertAction actionWithTitle:NSLocalizedString(@"search Key", nil) style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action) {
         self->searchTypeKey = true;
-        [self->_adapter performUpdatesAnimated:YES completion:nil];
-        
-        
-    }];
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]
+               atScrollPosition:UICollectionViewScrollPositionTop
+                       animated:YES];
+        [self.adapter performUpdatesAnimated:YES completion:nil];
+        [self->_searchBar becomeFirstResponder];
+  }];
+   
+    
     UIAlertAction* searchValue = [UIAlertAction actionWithTitle:NSLocalizedString(@"search Value", nil) style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * action) {
           self->searchTypeKey = NO;
-        [self->_adapter performUpdatesAnimated:YES completion:nil];
+          [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]
+          atScrollPosition:UICollectionViewScrollPositionTop
+                  animated:YES];
+        [self.adapter performUpdatesAnimated:YES completion:nil];
+
+        [self->_searchBar becomeFirstResponder];
+
 
        }];
     UIAlertAction* editKey = [UIAlertAction actionWithTitle:NSLocalizedString(@"edit key", nil) style:UIAlertActionStyleDefault
@@ -538,7 +592,7 @@
         weakSelf.alert = AlertController.new;
         weakSelf.alert.alertView.delegate = self;
         weakSelf.alert.alertView.typeEditJson = ktypeEditNameJson;
-        [weakSelf.alert showAlert:weakSelf withJsonModel:weakSelf.jsonModel];
+        [weakSelf.alert showAlert:weakSelf withJsonModel:weakSelf.jsonModel typeAlert:@"NameKey"];
         
     }];
     
@@ -549,9 +603,7 @@
    
     if ([self.navigationController.childViewControllers indexOfObject:self] != 0) {
         [moreFunction addAction:editKey];
-        
     }
-    
     [self presentViewController:moreFunction animated:YES completion:nil];
     
 }
@@ -569,10 +621,11 @@
 }
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
+    
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                              collectionViewLayout:[UICollectionViewFlowLayout new]];
         _collectionView.backgroundColor = [UIColor whiteColor];
-        
+        _collectionView.alwaysBounceVertical = YES;
         [_collectionView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
         [self.view addSubview:_collectionView];
     }
@@ -593,12 +646,12 @@
     return _adapter;
 }
 
-//- (NSMutableArray<JsonModel *> *)allJsonModel {
-//    if (!_allJsonModel) {
-//        _allJsonModel = NSMutableArray.new;
-//    }
-//    return _allJsonModel;
-//}
+- (NSMutableArray<JsonModel *> *)allJsonModel {
+    if (!_allJsonModel) {
+        _allJsonModel = NSMutableArray.new;
+    }
+    return _allJsonModel;
+}
 
 - (EmptyView *)emptyView {
     if (!_emptyView) {
@@ -638,6 +691,14 @@
         [self.settingView addSubview:_commitBtn];
     }
     return _commitBtn;
+}
+-(UISearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = UISearchBar.new;
+        _searchBar.delegate = self;
+        [self.view addSubview:_searchBar];
+    }
+    return _searchBar;
 }
 
 - (UIView *)settingView {

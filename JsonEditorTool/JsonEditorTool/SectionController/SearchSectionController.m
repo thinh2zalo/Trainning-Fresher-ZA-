@@ -26,20 +26,33 @@
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
     SearchCell * cell = [self.collectionContext dequeueReusableCellOfClass:SearchCell.class forSectionController:self atIndex:index];
+    
+    if ([cell.searchBar canBecomeFirstResponder]) {
+        [cell.searchBar becomeFirstResponder];
+
+        NSLog(@"thi2");
+    }
+ 
     cell.searchBar.delegate = self;
     return cell;
 }
 
-// MARK: UISearchBarDelegate
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    [self.delegate searchSectionController:self andDidChangeText:searchText];
+- (BOOL)canMoveItemAtIndex:(NSInteger)index {
+    return NO;
 }
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self.delegate searchSectionController:self andDidChangeText:searchBar.text];
-
-}
+//
+//// MARK: UISearchBarDelegate
+//
+//- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+//    [self.delegate searchSectionController:self andDidChangeText:searchText];
+//}
+//
+//
+//
+//- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+//    [self.delegate searchSectionController:self andDidChangeText:searchBar.text];
+//
+//}
 
 
 

@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, TypeEditJson){
     ktypeAddNewJson,
-    ktypeDeleteJson,
     ktypeEditNameJson,
     ktypeEditJson
 };
@@ -49,7 +48,7 @@ typedef NS_ENUM(NSInteger, TypeEditJson){
 @property (nonatomic, strong) JsonModel * JSOld;
 @property (nonatomic, strong) Button * cancelBtn;
 @property (nonatomic, strong) Button * saveBtn;
-- (void)updateContentInside:(JsonModel *) jsonModel;
+- (void)updateContentInside:(JsonModel *) jsonModel withAlert:(NSString*)typeAlert;
 
 
 @end

@@ -3,7 +3,7 @@
 //  ZaloMessageUI
 //
 //  Created by CPU11713 on 3/30/17.
-//  Copyright © 2017 CPU11713. All rights reserved.
+//  Copyright © 20z17 CPU11713. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

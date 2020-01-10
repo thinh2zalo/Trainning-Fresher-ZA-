@@ -71,11 +71,11 @@
     [self createSeperateLineWithFrame:frameSeparator3];
     self.keyTextField.frame = CGRectMake(self.frame.size.width / 3 - 20 , self.keyAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2 , 30 );
     
-    self.valueTextView.frame = CGRectMake(self.keyTextField.frame.origin.x,self.valueAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2, 200);
+    self.valueTextView.frame = CGRectMake(self.keyTextField.frame.origin.x,self.valueAlertLabel.frame.origin.y , (self.frame.size.width / 3 ) * 2, 120);
     [self ruleOfTextView:_JSOld.typeValue];
 
     self.errorLable.frame = CGRectMake(0, self.frame.size.height - 30,  166, 30);
-    self.errorLable.center = CGPointMake(self.frame.size.width/2,  self.frame.size.height - 30);
+    self.errorLable.center = CGPointMake(self.frame.size.width/2,  self.frame.size.height - 10);
 }
 
 
@@ -120,7 +120,6 @@
             
             break;
         case typeValueNull:
-            
             [self.valueAlertLabel setHidden:YES];
             [self.valueTextView setHidden:YES];
         
@@ -128,11 +127,10 @@
 
 }
 
-- (void)updateContentInside:(JsonModel *) jsonModel {
+- (void)updateContentInside:(JsonModel *) jsonModel withAlert:(nonnull NSString *)typeAlert{
     [self.errorLable setHidden:YES];
     NSString * value;
     _JSOld = jsonModel;
-
     _typeValue = jsonModel.typeValue;
     switch ([jsonModel getTypeValue]) {
         case typeValueBool:
@@ -148,6 +146,7 @@
         default: break;
             
     }
+    self.typeAlert.text = typeAlert;
     [self.keyTextField setText:jsonModel.key];
     [self.valueTextView setText:value];
     self.groupRadioBtn = DLRadioButton.new;
@@ -179,6 +178,7 @@
            
            CGRect frame = CGRectMake(originX + 130 * i, originY , 180, 30);
            DLRadioButton *radioButton = [self createRadioButtonWithFrame:frame Title:type Color:[UIColor blackColor]];
+           
            [otherButtons addObject:radioButton];
            i++;
        }
@@ -198,10 +198,11 @@
     if (![self.keyTextField.text isEqualToString:@""]) {
         switch (_typeValue) {
             case typeValueBool:
-                if (![self.keyTextField.text isEqualToString:@""]) {
-                    if ([self.valueTextView.text isEqualToString:@"0"]) {
+                {
+                    if ([self.valueTextView.text isEqualToString:@"0"] || [[self.valueTextView.text lowercaseString] isEqualToString:@"false"]) {
                         value = [NSNumber numberWithBool:0];
-                    } else {
+                    } else if([self.valueTextView.text isEqualToString:@"1"] ||
+                              [[self.valueTextView.text lowercaseString] isEqualToString:@"true"]) {
                         value = [NSNumber numberWithBool:1];
                     }
                 }
@@ -310,7 +311,6 @@
 - (UILabel *)typeAlert {
     if (!_typeAlert) {
         _typeAlert = UILabel.new;
-        _typeAlert.text = @"Edit ";
         [self addSubview:_typeAlert];
     }
     return _typeAlert;

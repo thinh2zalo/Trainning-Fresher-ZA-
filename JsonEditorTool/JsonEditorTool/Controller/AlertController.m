@@ -40,20 +40,20 @@
 - (void)setupViewWindowWidth:(CGFloat)windowWidth {
 
     self.windowWidth = windowWidth;
-    self.windowHeight = 310.0f;
+    self.windowHeight = 320.0f;
     _backgroundView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _backgroundView.userInteractionEnabled = YES;
     _backgroundView.backgroundColor = [UIColor blackColor];
     _backgroundView.alpha = 0.7f;
 }
 
-- (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel {
+- (void)showAlert:(UIViewController *)viewController withJsonModel:(JsonModel *) jsonModel typeAlert:(NSString *)typeAlert{
     if (jsonModel) {
         self.jsonModel = jsonModel;
     }
    _rootViewController = viewController;
-    
-    [self.alertView updateContentInside:jsonModel];
+    [self.alertView updateContentInside:jsonModel withAlert: typeAlert];
+   
     NSUInteger indexOfCurrentVC = [viewController.navigationController.childViewControllers indexOfObject:viewController];
     if (indexOfCurrentVC > 0) {
         JETViewController * preVC = viewController.navigationController.childViewControllers[indexOfCurrentVC - 1];
