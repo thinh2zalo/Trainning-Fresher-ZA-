@@ -48,8 +48,9 @@
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan: {
             target.context.originalCenter = target.center.x;
-            
+            NSLog(@"target originalCenter %f", target.center.x);
             if (target.context.state == ZASwipeStateCenter || target.context.state == ZASwipeStateAnimatingToCenter) {
+                NSLog(@"ZASwipeStateCenter");
                 CGPoint velocity = [gesture velocityInView:target];
                 ZASwipeActionsOrientation orientation = velocity.x > 0 ? ZASwipeActionsOrientationLeft : ZASwipeActionsOrientationRight;
                 [self showActionsViewForOrientation:orientation];
@@ -63,14 +64,14 @@
             
             CGFloat translation = [gesture translationInView:target].x;
             target.context.scrollRatio = 1.0;
-            
             // Check if dragging past the center of the oppsite direction of action view
-            if ( (translation + target.context.originalCenter - CGRectGetMidX(target.bounds)) * target.context.actionsView.orientation > 0) {
+            if ((translation + target.context.originalCenter - CGRectGetMidX(target.bounds)) * target.context.actionsView.orientation > 0) {
                 CGPoint center = target.center;
                 center.x = [gesture elasticTranslationInView:target withLimit:CGSizeZero fromOriginalCenter:CGPointMake(target.context.originalCenter, 0)].x;
                 target.center = center;
-                
                 target.context.scrollRatio = target.context.elasticScrollRatio;
+                NSLog(@"CGPoint %f", CGRectGetMidX(target.bounds));
+
                 return;
             }
             
@@ -79,8 +80,8 @@
                 BOOL expanded = [expansionStyle shouldExpandView:target ByGesture:gesture inSuperView:target.parentView];
                 CGFloat targetOffset = [expansionStyle targetOffsetForView:target inSuperview:target.parentView];
                 CGFloat currentOffset = fabs(translation + target.context.originalCenter - CGRectGetMidX(target.bounds));
-                
                 if (expanded && !target.context.actionsView.expanded && targetOffset > currentOffset) {
+                    NSLog(@"log target.context.action ");
                     CGFloat centerForTranslationToEdge = CGRectGetMidX(target.bounds) - targetOffset * target.context.actionsView.orientation;
                     CGFloat delta = centerForTranslationToEdge - target.context.originalCenter;
                     
@@ -88,9 +89,12 @@
                     [gesture setTranslation:CGPointMake(delta, 0) inView:target.superview];
                 }
                 else {
+
                     CGPoint center = target.center;
                     center.x = [gesture elasticTranslationInView:target withLimit:CGSizeMake(targetOffset, 0) fromOriginalCenter:CGPointMake(target.context.originalCenter, 0)].x;
                     target.center = center;
+                    NSLog(@"!!!log target.context.action %f",  center.x);
+
                 }
                 
                 target.context.actionsView.expanded = expanded;
@@ -118,6 +122,7 @@
             target.context.state = [self targetStateForVelocity:velocity];
             
             if (target.context.actionsView.expanded == YES && target.context.actionsView.expandableAction) {
+                NSLog(@"performAction");
                 [self performAction:target.context.actionsView.expandableAction];
             }
             else {
@@ -127,7 +132,7 @@
                 
                 [self animateWithDuration:0.7 toOffset:targetOffset withInitialVelocity:normalizedVelocity completion:^{
                     if (target.context.state == ZASwipeStateCenter) {
-                        [self reset];
+//                        [self reset];
                     }
                 }];
                 
@@ -204,7 +209,7 @@
     else {
         pinHorizontal = [actionsView.leftAnchor constraintEqualToAnchor:self.swipeCell.rightAnchor];
     }
-    [NSLayoutConstraint activateConstraints:@[height, width, top, pinHorizontal]];
+//    [NSLayoutConstraint activateConstraints:@[height, width, top, pinHorizontal]];
     
     self.swipeCell.context.actionsView = actionsView;
     [self notifyEditingStateChangeIsActive:YES];

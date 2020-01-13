@@ -14,7 +14,7 @@
 
 
 
-@interface KeyValueSectionController ()<ZASwipeViewCellDelegate> {
+@interface KeyValueSectionController ()<ZASwipeViewCellDelegate, InformationCellDelegate> {
     JsonModel * oldJsonModel;
     JsonModel * newJsonModel;
 
@@ -91,10 +91,17 @@
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
     InforJsonCell * cell = [self.collectionContext dequeueReusableCellOfClass:InforJsonCell.class forSectionController:self atIndex:index];
     cell.delegate = self;
+    [cell setExclusiveTouch:YES];
+    [cell.contentView setExclusiveTouch:YES];
     [cell updateContentInsideCell:oldJsonModel isSearching:_isSearching];
     [cell layoutSubviews];
 
     return cell;
+}
+
+- (void)deleteJson:(JsonModel *)js {
+    NSLog(@"deleteJson");
+     [(JETViewController *)self.viewController deleteJson:js];
 }
 
 - (BOOL)canMoveItemAtIndex:(NSInteger)index {

@@ -12,19 +12,17 @@
 #import "../View/AlertView.h"
 #import "../Categories/UILabel+Caculation.h"
 
-@interface InforJsonCell()
+@interface InforJsonCell() 
 @property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, assign) CGFloat separatorHeight;
 @property (nonatomic, strong) UIImageView *forwardIconImg;
 @property (nonatomic, strong) UIImageView *iconTypeImg;
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, strong) UIStackView  * stackView;
+@property (nonatomic, strong) JsonModel  * jsonModel;
 @property (nonatomic, strong) UIView * visibleContainerView;
 @property (nonatomic, strong) UIView * hiddenContainerView;
-@property (nonatomic, strong) UIView * actionView;
 
-@property (nonatomic, strong) UIPanGestureRecognizer * panGesture;
-@property (nonatomic, strong) UITapGestureRecognizer * tapGesture;
 
 
 typedef NS_ENUM(NSInteger, ActionOrientation) {
@@ -36,70 +34,10 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
 
 @implementation InforJsonCell
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-//       _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-//        _panGesture.delegate = self;
-//       _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-//         [self addGestureRecognizer:self.panGesture];
-//         [self addGestureRecognizer:self.tapGesture];
-   
- }
-     return self;
-}
-- (void)prepareForReuse {
-//    self.actionView = nil;
-}
-//- (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
-//      if (panGesture == nil) {
-//          return;
-//      }
-//    switch (panGesture.state) {
-//        case UIGestureRecognizerStateBegan: {
-//            
-//
-//            [self configureActionsView];
-//            
-//
-//        }
-//            
-//            break;
-//        case UIGestureRecognizerStateChanged:{
-//            CGPoint velocity = [panGesture translationInView:self];
-//            NSLog(@"velocity %f", velocity.x);
-//            self.contentView.frame = CGRectMake(velocity.x, 0, self.frame.size.width, self.frame.size.height);
-//            self.actionView.frame = CGRectMake(self.frame.size.width + velocity.x, 0, self.frame.size.width, self.frame.size.height);
-//
-//        }
-//        
-//        break;
-//        
-//        case UIGestureRecognizerStateEnded:{
-//            
-//        }
-//        
-//        break;
-//        default:
-//            break;
-//    }
-//}
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return true;
-}
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    return YES;
-}
-- (void)configureActionsView{
-    self.actionView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.height, self.frame.size.height);
-    
-}
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)tapGesture {
-    NSLog(@"handleTapGesture");
-}
 - (void)updateContentInsideCell:(JsonModel *)jsonModel  isSearching:(BOOL)isSearching{
+    self.jsonModel = jsonModel;
     self.keyLable.text = jsonModel.key;
     NSString * typeValue;
     switch ([jsonModel getTypeValue]) {
@@ -112,20 +50,20 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
         case typeValueDictionary:
             self.valueLabel.text = [NSString stringWithFormat:@"%tu keys", [jsonModel.value count]];
             self.iconTypeImg.image = [UIImage imageNamed:@"Dictionary"];
-
+            
             typeValue = @"Dictionary";
             break;
             
         case typeValueString:
             self.iconTypeImg.image = [UIImage imageNamed:@"String"];
-
+            
             self.valueLabel.text = jsonModel.value;
             typeValue = @"String";
             break;
             
         case typeValueNumber:
             self.iconTypeImg.image = [UIImage imageNamed:@"Number"];
-
+            
             if ([jsonModel.value isKindOfClass:NSNumber.class]) {
                 self.valueLabel.text = [(NSNumber *)jsonModel.value stringValue];
             }
@@ -134,10 +72,10 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
             
         case typeValueNull:
             self.iconTypeImg.image = [UIImage imageNamed:@"Null"];
-
+            
             self.valueLabel.text = @"Null";
             typeValue = @"Null";
-
+            
             break;
         case typeValueBool:
             self.iconTypeImg.image = [UIImage imageNamed:@"Bool"];
@@ -162,22 +100,22 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
             }
             levelJSontext = [NSString stringWithFormat:@"%@ > %@ ", levelJSontext, levelJson[i]];
         }
-       levelJSontext = [levelJSontext substringFromIndex:11];
+        levelJSontext = [levelJSontext substringFromIndex:11];
         if ([levelJSontext isEqualToString:@""]) {
             levelJSontext = @">";
         }
         self.hierarchiLabel.text = levelJSontext;
-       } else {
-            [self.hierarchiLabel setHidden:YES];
-
-       }
+    } else {
+        [self.hierarchiLabel setHidden:YES];
+        
+    }
 }
 
 
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+    self.contentView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     
     self.keyLable.frame = CGRectMake(20, 15, (SCREEN_MAIN_WIDTH - 60 ) / 2, 20);
     self.typeValueLabel.frame = CGRectMake(45, 40, 200, 20);
@@ -191,19 +129,16 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
                                           CGRectGetHeight(self.bounds) - _separatorHeight,
                                           CGRectGetWidth(self.bounds),
                                           _separatorHeight);
-     self.hierarchiLabel.frame = CGRectMake(20, self.typeValueLabel.frame.origin.y + 30, 330, 20);
+    self.hierarchiLabel.frame = CGRectMake(20, self.typeValueLabel.frame.origin.y + 30, 330, 20);
     
     
 }
 
-- (UIView *)actionView {
-    if (!_actionView) {
-        _actionView = UIView.new;
-        _actionView.backgroundColor = [UIColor redColor];
-        [self insertSubview:_actionView aboveSubview:self.contentView];
-    }
-    return _actionView;
+- (void)deleteCell {
+    [self hideSwipeCell];
+    [self.delegate deleteJson:self.jsonModel];
 }
+
 
 - (UIImageView *)forwardIconImg {
     if (!_forwardIconImg) {
@@ -263,7 +198,7 @@ typedef NS_ENUM(NSInteger, ActionOrientation) {
     if (!_hierarchiLabel) {
         _hierarchiLabel = UILabel.new;
         [_hierarchiLabel setFont:[UIFont systemFontOfSize:12]];
-
+        
         [self addSubview:_hierarchiLabel];
     }
     return _hierarchiLabel;

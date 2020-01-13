@@ -34,7 +34,7 @@ NSString *const kSwipeCellKitCollectionEditingNotification = @"kSwipeCellKitColl
 - (void)setGestureEnabled:(BOOL)enabled {
     for (UIGestureRecognizer *gesture in self.gestureRecognizers) {
         if (gesture != self.panGestureRecognizer) {
-            [gesture setEnabled:enabled];
+//            [gesture setEnabled:enabled];
         }
     }
 }

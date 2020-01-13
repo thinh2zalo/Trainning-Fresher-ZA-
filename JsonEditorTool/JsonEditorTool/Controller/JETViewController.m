@@ -113,27 +113,13 @@
         
         if ([response isKindOfClass:NSData.class]) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-                
-                
-                NSDictionary * CHECK = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error
-                                                                              :nil];
-                
-                   NSData *myData = [NSJSONSerialization dataWithJSONObject:CHECK options:NSJSONWritingFragmentsAllowed error:nil];
-                   NSString * date = [NSString stringWithFormat:@"%@", [NSDate date]];
-                   NSString * path = [NSString stringWithFormat:@"%@/tmp/hoaithi_%@.txt", NSHomeDirectory(),date];
-                
-                   
-                   OutputStream * output = [[OutputStream alloc]initWithPath: path];
-                   [output writeData:myData];
-                    
+                NSLog(@"cheee");
                 OrderedDictionary * orderDict = [JsonSerializationCustom JSONObjectWithData:response options:0 error:nil];
                 
                 OrderedDictionary * resultDict = [orderDict objectForKey:@"result"];
                 self.jsonModel = [[DictionaryJM alloc] initWithObject:resultDict andKey:@"results"];
                 self.allJsonModel = nil;
-//                [self.jsonModel.value removeObjectAtIndex:0];
                 self.allJsonModel = [self createDictSameLevel:self.jsonModel.value];
-
 
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     [self.navigationController setNavigationBarHidden:NO];
@@ -297,7 +283,7 @@
 
 }
 - (void)setupUI {
-    [self adapter];
+    [self.adapter performUpdatesAnimated:NO completion:nil];
     [self.backGroundSettingView setHidden:YES];
         self.searchBar.frame = CGRectMake(0, 88, self.view.frame.size.width, 50);
     

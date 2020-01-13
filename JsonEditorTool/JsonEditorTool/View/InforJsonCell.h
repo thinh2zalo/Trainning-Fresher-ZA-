@@ -10,15 +10,26 @@
 #import <UIKit/UIKit.h>
 #import "../Model/JsonModel.h"
 #import "../View/AlertView.h"
+#import "JETCell.h"
 #import "../SwipeCell/SwipeCellKit/ZASwipeCellKit.h"
 NS_ASSUME_NONNULL_BEGIN
+@protocol InformationCellDelegate <NSObject>
 
-@interface InforJsonCell : ZASwipeCollectionCell 
+- (void)deleteJson:(JsonModel *)js;
+
+@end
+@interface InforJsonCell : JETCell
+
 @property (nonatomic, strong)  UILabel * keyLable;
 @property (nonatomic, strong)  UILabel * typeValueLabel;
 @property (nonatomic, strong)  UILabel * valueLabel;
+@property (nonatomic, strong)  id<InformationCellDelegate>  delegate;
 @property (nonatomic, strong)  UILabel * hierarchiLabel;
+
+
 - (void) updateContentInsideCell:(JsonModel *)jsonModel isSearching:(BOOL) isSearching;
+
+
 
 @end
 

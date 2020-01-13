@@ -21,6 +21,7 @@
 		5210F8CA23926FC10081FE67 /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F8C923926FC10081FE67 /* EndPoint.m */; };
 		521A0AEC239BC52100B8F631 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0AEB239BC52100B8F631 /* Button.m */; };
 		5220A2C92397F21A007892CF /* KeyValueSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220A2C82397F21A007892CF /* KeyValueSectionController.m */; };
+		5224D90E23CC4A63003E47B5 /* JETCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5224D90D23CC4A63003E47B5 /* JETCell.m */; };
 		52338EB4239894E400C19D6D /* UILabel+Caculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EB2239894E400C19D6D /* UILabel+Caculation.m */; };
 		52338EB62398E04B00C19D6D /* forward_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52338EB52398E04A00C19D6D /* forward_icon.png */; };
 		52338EB92398FF1800C19D6D /* SearchSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52338EB82398FF1800C19D6D /* SearchSectionController.m */; };
@@ -127,6 +128,8 @@
 		521A0AEB239BC52100B8F631 /* Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		5220A2C72397F21A007892CF /* KeyValueSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueSectionController.h; sourceTree = "<group>"; };
 		5220A2C82397F21A007892CF /* KeyValueSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueSectionController.m; sourceTree = "<group>"; };
+		5224D90C23CC4A63003E47B5 /* JETCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JETCell.h; sourceTree = "<group>"; };
+		5224D90D23CC4A63003E47B5 /* JETCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JETCell.m; sourceTree = "<group>"; };
 		52338EAD2398789500C19D6D /* EnumTypeValueJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypeValueJson.h; sourceTree = "<group>"; };
 		52338EB2239894E400C19D6D /* UILabel+Caculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Caculation.m"; sourceTree = "<group>"; };
 		52338EB3239894E400C19D6D /* UILabel+Caculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Caculation.h"; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 			children = (
 				52C9D16D2397BBC400F6DBE8 /* InforJsonCell.h */,
 				52C9D16E2397BBC400F6DBE8 /* InforJsonCell.m */,
+				5224D90C23CC4A63003E47B5 /* JETCell.h */,
+				5224D90D23CC4A63003E47B5 /* JETCell.m */,
 				52338EBA2399005100C19D6D /* SearchCell.h */,
 				52338EBB2399005100C19D6D /* SearchCell.m */,
 				52D47C5D239A41D300655900 /* AlertView.h */,
@@ -534,7 +539,6 @@
 				52E3AF6723A375EE00AE85B1 /* ZASwipeExpansionTarget.m */,
 				52E3AF6823A375EE00AE85B1 /* ZAFillOption.h */,
 				52E3AF6923A375EE00AE85B1 /* ZASwipeActionButton.h */,
-				52E3AF6A23A375EE00AE85B1 /* ZASwipeCollectionCell.m */,
 				52E3AF6B23A375EE00AE85B1 /* ZASwipeCellHandler.h */,
 				52E3AF6C23A375EE00AE85B1 /* ZACompletionAnimation.m */,
 				52E3AF6D23A375EE00AE85B1 /* ZASwipeCellContext.m */,
@@ -569,14 +573,15 @@
 				52E3AF9A23A375EE00AE85B1 /* ZASwipeAction.m */,
 				52E3AF9B23A375EE00AE85B1 /* ZACompletionAnimation.h */,
 				52E3AF9C23A375EE00AE85B1 /* ZASwipeCellContext.h */,
-				52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */,
-				52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */,
 				52E3AF9F23A375EE00AE85B1 /* ZASwipeExpansionAnimationTimingParameters.h */,
 				52E3AFA023A375EE00AE85B1 /* ZASwipeAccessibilityCustomAction.h */,
 				52E3AFA223A375EE00AE85B1 /* ZAScaleAndAlphaExpansion.m */,
 				52E3AFA323A375EE00AE85B1 /* IndicatorView.m */,
 				52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */,
+				52E3AF9D23A375EE00AE85B1 /* ZASwipeCellHandler.m */,
 				52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */,
+				52E3AF9E23A375EE00AE85B1 /* ZASwipeCollectionCell.h */,
+				52E3AF6A23A375EE00AE85B1 /* ZASwipeCollectionCell.m */,
 				52E3AFA923A375EE00AE85B1 /* ZASwipeCellOptions.h */,
 			);
 			path = SwipeCellKit;
@@ -848,6 +853,7 @@
 				52D4FB9F23A23F81000418D5 /* OutputStream.m in Sources */,
 				52E3AFAB23A375EE00AE85B1 /* ZASwipeActionTransitioningContext.m in Sources */,
 				52E3AFB123A375EE00AE85B1 /* ZASwipeExpansionTarget.m in Sources */,
+				5224D90E23CC4A63003E47B5 /* JETCell.m in Sources */,
 				52C9D1692395FBB000F6DBE8 /* DictionaryJM.m in Sources */,
 				52338EC22399FAA700C19D6D /* StringJM.m in Sources */,
 				5258EB8D23A7D419007C74FA /* OrderedDictionary.m in Sources */,
