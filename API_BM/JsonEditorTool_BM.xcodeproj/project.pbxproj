@@ -1,0 +1,883 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DE1AF3365F8A86AC8A82F71 /* Pods_JsonEditorTool_BM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6D454ECD43B9BD889C639D /* Pods_JsonEditorTool_BM.framework */; };
+		2525CC6451E38BD7CF5CE1F2 /* Pods_JsonEditorTool_BMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5CFEB1F5B1C67C8453387 /* Pods_JsonEditorTool_BMTests.framework */; };
+		3BFD34CD38CB9E1905914332 /* Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B0F41028F61C309FCC2 /* Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework */; };
+		BF53B03E23D009AD009A9E98 /* NumberJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B02923D009AC009A9E98 /* NumberJM.m */; };
+		BF53B03F23D009AD009A9E98 /* DictionaryJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B02A23D009AC009A9E98 /* DictionaryJM.m */; };
+		BF53B04023D009AD009A9E98 /* JsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B02B23D009AC009A9E98 /* JsonModel.m */; };
+		BF53B04123D009AD009A9E98 /* BoolJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B02D23D009AC009A9E98 /* BoolJM.m */; };
+		BF53B04223D009AD009A9E98 /* KeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B02E23D009AC009A9E98 /* KeyValuePair.m */; };
+		BF53B04323D009AD009A9E98 /* ArrayJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B03023D009AC009A9E98 /* ArrayJM.m */; };
+		BF53B04423D009AD009A9E98 /* NullJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B03223D009AC009A9E98 /* NullJM.m */; };
+		BF53B04523D009AD009A9E98 /* JsonModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B03423D009AC009A9E98 /* JsonModelFactory.m */; };
+		BF53B04623D009AD009A9E98 /* StringJM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B03923D009AC009A9E98 /* StringJM.m */; };
+		BF53B23323D00B46009A9E98 /* JsonSerializationCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B22A23D00B45009A9E98 /* JsonSerializationCustom.m */; };
+		BF53B23523D00B46009A9E98 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B22C23D00B45009A9E98 /* OrderedDictionary.m */; };
+		BF53B24023D015DB009A9E98 /* FeedAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B23A23D015DB009A9E98 /* FeedAPI.m */; };
+		BF53B24123D015DB009A9E98 /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B23D23D015DB009A9E98 /* EndPoint.m */; };
+		BF53B24323D015DB009A9E98 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53B23F23D015DB009A9E98 /* NetworkManager.m */; };
+		BF76604123CEC5DD001646BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76604023CEC5DD001646BF /* AppDelegate.m */; };
+		BF76604423CEC5DD001646BF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76604323CEC5DD001646BF /* SceneDelegate.m */; };
+		BF76604723CEC5DE001646BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76604623CEC5DE001646BF /* ViewController.m */; };
+		BF76604A23CEC5DE001646BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF76604823CEC5DE001646BF /* Main.storyboard */; };
+		BF76604C23CEC5DF001646BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF76604B23CEC5DF001646BF /* Assets.xcassets */; };
+		BF76604F23CEC5DF001646BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF76604D23CEC5DF001646BF /* LaunchScreen.storyboard */; };
+		BF76605223CEC5DF001646BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76605123CEC5DF001646BF /* main.m */; };
+		BF76605C23CEC5DF001646BF /* JsonEditorTool_BMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76605B23CEC5DF001646BF /* JsonEditorTool_BMTests.m */; };
+		BF76606723CEC5DF001646BF /* JsonEditorTool_BMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76606623CEC5DF001646BF /* JsonEditorTool_BMUITests.m */; };
+		BF76607723CEF187001646BF /* ManagerRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BF76607623CEF187001646BF /* ManagerRecord.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF76605823CEC5DF001646BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF76603423CEC5DD001646BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF76603B23CEC5DD001646BF;
+			remoteInfo = JsonEditorTool_BM;
+		};
+		BF76606323CEC5DF001646BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF76603423CEC5DD001646BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF76603B23CEC5DD001646BF;
+			remoteInfo = JsonEditorTool_BM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14A5CFEB1F5B1C67C8453387 /* Pods_JsonEditorTool_BMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_BMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A319B0F41028F61C309FCC2 /* Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE20704BFD8B6B7112C91FD /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7FCEBC5D446ACC54268DFC34 /* Pods-JsonEditorTool_BMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BMTests.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BMTests/Pods-JsonEditorTool_BMTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8F611582A9EAAABA46BA799 /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF53B02723D009AC009A9E98 /* NullJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullJM.h; sourceTree = "<group>"; };
+		BF53B02823D009AC009A9E98 /* StringJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringJM.h; sourceTree = "<group>"; };
+		BF53B02923D009AC009A9E98 /* NumberJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberJM.m; sourceTree = "<group>"; };
+		BF53B02A23D009AC009A9E98 /* DictionaryJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryJM.m; sourceTree = "<group>"; };
+		BF53B02B23D009AC009A9E98 /* JsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonModel.m; sourceTree = "<group>"; };
+		BF53B02C23D009AC009A9E98 /* JsonModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonModelFactory.h; sourceTree = "<group>"; };
+		BF53B02D23D009AC009A9E98 /* BoolJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoolJM.m; sourceTree = "<group>"; };
+		BF53B02E23D009AC009A9E98 /* KeyValuePair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValuePair.m; sourceTree = "<group>"; };
+		BF53B02F23D009AC009A9E98 /* JsonModekFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonModekFactory.h; sourceTree = "<group>"; };
+		BF53B03023D009AC009A9E98 /* ArrayJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayJM.m; sourceTree = "<group>"; };
+		BF53B03123D009AC009A9E98 /* DictContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictContainer.h; sourceTree = "<group>"; };
+		BF53B03223D009AC009A9E98 /* NullJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullJM.m; sourceTree = "<group>"; };
+		BF53B03323D009AC009A9E98 /* BoolJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoolJM.h; sourceTree = "<group>"; };
+		BF53B03423D009AC009A9E98 /* JsonModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonModelFactory.m; sourceTree = "<group>"; };
+		BF53B03523D009AC009A9E98 /* ArrContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrContainer.h; sourceTree = "<group>"; };
+		BF53B03623D009AC009A9E98 /* DictionaryJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryJM.h; sourceTree = "<group>"; };
+		BF53B03723D009AC009A9E98 /* JsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonModel.h; sourceTree = "<group>"; };
+		BF53B03823D009AC009A9E98 /* NumberJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberJM.h; sourceTree = "<group>"; };
+		BF53B03923D009AC009A9E98 /* StringJM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringJM.m; sourceTree = "<group>"; };
+		BF53B03A23D009AC009A9E98 /* ArrayJM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayJM.h; sourceTree = "<group>"; };
+		BF53B03B23D009AC009A9E98 /* KeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValuePair.h; sourceTree = "<group>"; };
+		BF53B03C23D009AC009A9E98 /* EnumTypeValueJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumTypeValueJson.h; sourceTree = "<group>"; };
+		BF53B03D23D009AC009A9E98 /* KeyValuePair2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValuePair2.h; sourceTree = "<group>"; };
+		BF53B04723D009D6009A9E98 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		BF53B22A23D00B45009A9E98 /* JsonSerializationCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonSerializationCustom.m; sourceTree = "<group>"; };
+		BF53B22C23D00B45009A9E98 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
+		BF53B22D23D00B45009A9E98 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		BF53B23023D00B46009A9E98 /* JsonSerializationCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonSerializationCustom.h; sourceTree = "<group>"; };
+		BF53B23123D00B46009A9E98 /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
+		BF53B23723D00BE8009A9E98 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		BF53B23923D015DB009A9E98 /* EndPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
+		BF53B23A23D015DB009A9E98 /* FeedAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAPI.m; sourceTree = "<group>"; };
+		BF53B23B23D015DB009A9E98 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		BF53B23C23D015DB009A9E98 /* FeedAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedAPI.h; sourceTree = "<group>"; };
+		BF53B23D23D015DB009A9E98 /* EndPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndPoint.m; sourceTree = "<group>"; };
+		BF53B23F23D015DB009A9E98 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		BF76603C23CEC5DD001646BF /* JsonEditorTool_BM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonEditorTool_BM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF76603F23CEC5DD001646BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF76604023CEC5DD001646BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF76604223CEC5DD001646BF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		BF76604323CEC5DD001646BF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		BF76604523CEC5DD001646BF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF76604623CEC5DE001646BF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF76604923CEC5DE001646BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF76604B23CEC5DF001646BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF76604E23CEC5DF001646BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF76605023CEC5DF001646BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF76605123CEC5DF001646BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF76605723CEC5DF001646BF /* JsonEditorTool_BMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonEditorTool_BMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF76605B23CEC5DF001646BF /* JsonEditorTool_BMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonEditorTool_BMTests.m; sourceTree = "<group>"; };
+		BF76605D23CEC5DF001646BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF76606223CEC5DF001646BF /* JsonEditorTool_BMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonEditorTool_BMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF76606623CEC5DF001646BF /* JsonEditorTool_BMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonEditorTool_BMUITests.m; sourceTree = "<group>"; };
+		BF76606823CEC5DF001646BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF76607523CEF187001646BF /* ManagerRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerRecord.h; sourceTree = "<group>"; };
+		BF76607623CEF187001646BF /* ManagerRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerRecord.m; sourceTree = "<group>"; };
+		D4881C323FE83DFEBAF1C34E /* Pods-JsonEditorTool_BM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BM.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BM/Pods-JsonEditorTool_BM.debug.xcconfig"; sourceTree = "<group>"; };
+		DC6D454ECD43B9BD889C639D /* Pods_JsonEditorTool_BM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_BM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BDD56BD782172FBA743892 /* Pods-JsonEditorTool_BMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BMTests.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BMTests/Pods-JsonEditorTool_BMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA490DD98A84253AD28B5AB2 /* Pods-JsonEditorTool_BM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool_BM.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool_BM/Pods-JsonEditorTool_BM.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF76603923CEC5DD001646BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DE1AF3365F8A86AC8A82F71 /* Pods_JsonEditorTool_BM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76605423CEC5DF001646BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2525CC6451E38BD7CF5CE1F2 /* Pods_JsonEditorTool_BMTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76605F23CEC5DF001646BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BFD34CD38CB9E1905914332 /* Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E73CF5C3A3E326B97E83B04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4881C323FE83DFEBAF1C34E /* Pods-JsonEditorTool_BM.debug.xcconfig */,
+				FA490DD98A84253AD28B5AB2 /* Pods-JsonEditorTool_BM.release.xcconfig */,
+				A8F611582A9EAAABA46BA799 /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.debug.xcconfig */,
+				7CE20704BFD8B6B7112C91FD /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.release.xcconfig */,
+				F1BDD56BD782172FBA743892 /* Pods-JsonEditorTool_BMTests.debug.xcconfig */,
+				7FCEBC5D446ACC54268DFC34 /* Pods-JsonEditorTool_BMTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF53B02623D009AC009A9E98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF53B02723D009AC009A9E98 /* NullJM.h */,
+				BF53B02823D009AC009A9E98 /* StringJM.h */,
+				BF53B02923D009AC009A9E98 /* NumberJM.m */,
+				BF53B02A23D009AC009A9E98 /* DictionaryJM.m */,
+				BF53B02B23D009AC009A9E98 /* JsonModel.m */,
+				BF53B02C23D009AC009A9E98 /* JsonModelFactory.h */,
+				BF53B02D23D009AC009A9E98 /* BoolJM.m */,
+				BF53B02E23D009AC009A9E98 /* KeyValuePair.m */,
+				BF53B02F23D009AC009A9E98 /* JsonModekFactory.h */,
+				BF53B03023D009AC009A9E98 /* ArrayJM.m */,
+				BF53B03123D009AC009A9E98 /* DictContainer.h */,
+				BF53B03223D009AC009A9E98 /* NullJM.m */,
+				BF53B03323D009AC009A9E98 /* BoolJM.h */,
+				BF53B03423D009AC009A9E98 /* JsonModelFactory.m */,
+				BF53B03523D009AC009A9E98 /* ArrContainer.h */,
+				BF53B03623D009AC009A9E98 /* DictionaryJM.h */,
+				BF53B03723D009AC009A9E98 /* JsonModel.h */,
+				BF53B03823D009AC009A9E98 /* NumberJM.h */,
+				BF53B03923D009AC009A9E98 /* StringJM.m */,
+				BF53B03A23D009AC009A9E98 /* ArrayJM.h */,
+				BF53B03B23D009AC009A9E98 /* KeyValuePair.h */,
+				BF53B03C23D009AC009A9E98 /* EnumTypeValueJson.h */,
+				BF53B03D23D009AC009A9E98 /* KeyValuePair2.h */,
+				BF53B04723D009D6009A9E98 /* Model.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF53B22923D00AA7009A9E98 /* Unitity */ = {
+			isa = PBXGroup;
+			children = (
+				BF53B23123D00B46009A9E98 /* Enum.h */,
+				BF53B23023D00B46009A9E98 /* JsonSerializationCustom.h */,
+				BF53B22A23D00B45009A9E98 /* JsonSerializationCustom.m */,
+				BF53B22D23D00B45009A9E98 /* OrderedDictionary.h */,
+				BF53B22C23D00B45009A9E98 /* OrderedDictionary.m */,
+			);
+			name = Unitity;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BF53B23823D015DB009A9E98 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BF53B23923D015DB009A9E98 /* EndPoint.h */,
+				BF53B23D23D015DB009A9E98 /* EndPoint.m */,
+				BF53B23A23D015DB009A9E98 /* FeedAPI.m */,
+				BF53B23C23D015DB009A9E98 /* FeedAPI.h */,
+				BF53B23B23D015DB009A9E98 /* NetworkManager.h */,
+				BF53B23F23D015DB009A9E98 /* NetworkManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BF76603323CEC5DD001646BF = {
+			isa = PBXGroup;
+			children = (
+				BF76603E23CEC5DD001646BF /* JsonEditorTool_BM */,
+				BF76605A23CEC5DF001646BF /* JsonEditorTool_BMTests */,
+				BF76606523CEC5DF001646BF /* JsonEditorTool_BMUITests */,
+				BF76603D23CEC5DD001646BF /* Products */,
+				7E73CF5C3A3E326B97E83B04 /* Pods */,
+				F8134F1BB5B1EF197EAD7D4C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF76603D23CEC5DD001646BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF76603C23CEC5DD001646BF /* JsonEditorTool_BM.app */,
+				BF76605723CEC5DF001646BF /* JsonEditorTool_BMTests.xctest */,
+				BF76606223CEC5DF001646BF /* JsonEditorTool_BMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF76603E23CEC5DD001646BF /* JsonEditorTool_BM */ = {
+			isa = PBXGroup;
+			children = (
+				BF53B23723D00BE8009A9E98 /* Define.h */,
+				BF53B23823D015DB009A9E98 /* Network */,
+				BF53B22923D00AA7009A9E98 /* Unitity */,
+				BF53B02623D009AC009A9E98 /* Model */,
+				BF76607423CEC5EF001646BF /* ManageRecord */,
+				BF76603F23CEC5DD001646BF /* AppDelegate.h */,
+				BF76604023CEC5DD001646BF /* AppDelegate.m */,
+				BF76604223CEC5DD001646BF /* SceneDelegate.h */,
+				BF76604323CEC5DD001646BF /* SceneDelegate.m */,
+				BF76604523CEC5DD001646BF /* ViewController.h */,
+				BF76604623CEC5DE001646BF /* ViewController.m */,
+				BF76604823CEC5DE001646BF /* Main.storyboard */,
+				BF76604B23CEC5DF001646BF /* Assets.xcassets */,
+				BF76604D23CEC5DF001646BF /* LaunchScreen.storyboard */,
+				BF76605023CEC5DF001646BF /* Info.plist */,
+				BF76605123CEC5DF001646BF /* main.m */,
+			);
+			path = JsonEditorTool_BM;
+			sourceTree = "<group>";
+		};
+		BF76605A23CEC5DF001646BF /* JsonEditorTool_BMTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF76605B23CEC5DF001646BF /* JsonEditorTool_BMTests.m */,
+				BF76605D23CEC5DF001646BF /* Info.plist */,
+			);
+			path = JsonEditorTool_BMTests;
+			sourceTree = "<group>";
+		};
+		BF76606523CEC5DF001646BF /* JsonEditorTool_BMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF76606623CEC5DF001646BF /* JsonEditorTool_BMUITests.m */,
+				BF76606823CEC5DF001646BF /* Info.plist */,
+			);
+			path = JsonEditorTool_BMUITests;
+			sourceTree = "<group>";
+		};
+		BF76607423CEC5EF001646BF /* ManageRecord */ = {
+			isa = PBXGroup;
+			children = (
+				BF76607523CEF187001646BF /* ManagerRecord.h */,
+				BF76607623CEF187001646BF /* ManagerRecord.m */,
+			);
+			name = ManageRecord;
+			sourceTree = "<group>";
+		};
+		F8134F1BB5B1EF197EAD7D4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC6D454ECD43B9BD889C639D /* Pods_JsonEditorTool_BM.framework */,
+				2A319B0F41028F61C309FCC2 /* Pods_JsonEditorTool_BM_JsonEditorTool_BMUITests.framework */,
+				14A5CFEB1F5B1C67C8453387 /* Pods_JsonEditorTool_BMTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF76603B23CEC5DD001646BF /* JsonEditorTool_BM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF76606B23CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BM" */;
+			buildPhases = (
+				7C6251B16DE4825D1E090D7F /* [CP] Check Pods Manifest.lock */,
+				BF76603823CEC5DD001646BF /* Sources */,
+				BF76603923CEC5DD001646BF /* Frameworks */,
+				BF76603A23CEC5DD001646BF /* Resources */,
+				BEDEF7A9AB90E51FC6137CAA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JsonEditorTool_BM;
+			productName = JsonEditorTool_BM;
+			productReference = BF76603C23CEC5DD001646BF /* JsonEditorTool_BM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF76605623CEC5DF001646BF /* JsonEditorTool_BMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF76606E23CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BMTests" */;
+			buildPhases = (
+				8AF76A2A244EC36800C873E3 /* [CP] Check Pods Manifest.lock */,
+				BF76605323CEC5DF001646BF /* Sources */,
+				BF76605423CEC5DF001646BF /* Frameworks */,
+				BF76605523CEC5DF001646BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF76605923CEC5DF001646BF /* PBXTargetDependency */,
+			);
+			name = JsonEditorTool_BMTests;
+			productName = JsonEditorTool_BMTests;
+			productReference = BF76605723CEC5DF001646BF /* JsonEditorTool_BMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF76606123CEC5DF001646BF /* JsonEditorTool_BMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF76607123CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BMUITests" */;
+			buildPhases = (
+				54E173FC2BF2671FCAE5DE82 /* [CP] Check Pods Manifest.lock */,
+				BF76605E23CEC5DF001646BF /* Sources */,
+				BF76605F23CEC5DF001646BF /* Frameworks */,
+				BF76606023CEC5DF001646BF /* Resources */,
+				4BF994D9FB3ACBAECDAB7600 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF76606423CEC5DF001646BF /* PBXTargetDependency */,
+			);
+			name = JsonEditorTool_BMUITests;
+			productName = JsonEditorTool_BMUITests;
+			productReference = BF76606223CEC5DF001646BF /* JsonEditorTool_BMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF76603423CEC5DD001646BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = vincent;
+				TargetAttributes = {
+					BF76603B23CEC5DD001646BF = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					BF76605623CEC5DF001646BF = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = BF76603B23CEC5DD001646BF;
+					};
+					BF76606123CEC5DF001646BF = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = BF76603B23CEC5DD001646BF;
+					};
+				};
+			};
+			buildConfigurationList = BF76603723CEC5DD001646BF /* Build configuration list for PBXProject "JsonEditorTool_BM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF76603323CEC5DD001646BF;
+			productRefGroup = BF76603D23CEC5DD001646BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF76603B23CEC5DD001646BF /* JsonEditorTool_BM */,
+				BF76605623CEC5DF001646BF /* JsonEditorTool_BMTests */,
+				BF76606123CEC5DF001646BF /* JsonEditorTool_BMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF76603A23CEC5DD001646BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF76604F23CEC5DF001646BF /* LaunchScreen.storyboard in Resources */,
+				BF76604C23CEC5DF001646BF /* Assets.xcassets in Resources */,
+				BF76604A23CEC5DE001646BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76605523CEC5DF001646BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76606023CEC5DF001646BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BF994D9FB3ACBAECDAB7600 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54E173FC2BF2671FCAE5DE82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C6251B16DE4825D1E090D7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JsonEditorTool_BM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AF76A2A244EC36800C873E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JsonEditorTool_BMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEDEF7A9AB90E51FC6137CAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM/Pods-JsonEditorTool_BM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM/Pods-JsonEditorTool_BM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool_BM/Pods-JsonEditorTool_BM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF76603823CEC5DD001646BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF76604723CEC5DE001646BF /* ViewController.m in Sources */,
+				BF53B04223D009AD009A9E98 /* KeyValuePair.m in Sources */,
+				BF53B04023D009AD009A9E98 /* JsonModel.m in Sources */,
+				BF76604123CEC5DD001646BF /* AppDelegate.m in Sources */,
+				BF53B23523D00B46009A9E98 /* OrderedDictionary.m in Sources */,
+				BF53B23323D00B46009A9E98 /* JsonSerializationCustom.m in Sources */,
+				BF53B24123D015DB009A9E98 /* EndPoint.m in Sources */,
+				BF76605223CEC5DF001646BF /* main.m in Sources */,
+				BF53B24323D015DB009A9E98 /* NetworkManager.m in Sources */,
+				BF53B24023D015DB009A9E98 /* FeedAPI.m in Sources */,
+				BF53B04423D009AD009A9E98 /* NullJM.m in Sources */,
+				BF53B03F23D009AD009A9E98 /* DictionaryJM.m in Sources */,
+				BF53B04523D009AD009A9E98 /* JsonModelFactory.m in Sources */,
+				BF76604423CEC5DD001646BF /* SceneDelegate.m in Sources */,
+				BF76607723CEF187001646BF /* ManagerRecord.m in Sources */,
+				BF53B04323D009AD009A9E98 /* ArrayJM.m in Sources */,
+				BF53B03E23D009AD009A9E98 /* NumberJM.m in Sources */,
+				BF53B04123D009AD009A9E98 /* BoolJM.m in Sources */,
+				BF53B04623D009AD009A9E98 /* StringJM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76605323CEC5DF001646BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF76605C23CEC5DF001646BF /* JsonEditorTool_BMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF76605E23CEC5DF001646BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF76606723CEC5DF001646BF /* JsonEditorTool_BMUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF76605923CEC5DF001646BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF76603B23CEC5DD001646BF /* JsonEditorTool_BM */;
+			targetProxy = BF76605823CEC5DF001646BF /* PBXContainerItemProxy */;
+		};
+		BF76606423CEC5DF001646BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF76603B23CEC5DD001646BF /* JsonEditorTool_BM */;
+			targetProxy = BF76606323CEC5DF001646BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF76604823CEC5DE001646BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF76604923CEC5DE001646BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF76604D23CEC5DF001646BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF76604E23CEC5DF001646BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF76606923CEC5DF001646BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BF76606A23CEC5DF001646BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF76606C23CEC5DF001646BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4881C323FE83DFEBAF1C34E /* Pods-JsonEditorTool_BM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF76606D23CEC5DF001646BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA490DD98A84253AD28B5AB2 /* Pods-JsonEditorTool_BM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF76606F23CEC5DF001646BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BDD56BD782172FBA743892 /* Pods-JsonEditorTool_BMTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JsonEditorTool_BM.app/JsonEditorTool_BM";
+			};
+			name = Debug;
+		};
+		BF76607023CEC5DF001646BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FCEBC5D446ACC54268DFC34 /* Pods-JsonEditorTool_BMTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JsonEditorTool_BM.app/JsonEditorTool_BM";
+			};
+			name = Release;
+		};
+		BF76607223CEC5DF001646BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F611582A9EAAABA46BA799 /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JsonEditorTool_BM;
+			};
+			name = Debug;
+		};
+		BF76607323CEC5DF001646BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CE20704BFD8B6B7112C91FD /* Pods-JsonEditorTool_BM-JsonEditorTool_BMUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = JsonEditorTool_BMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ZBM.JsonEditorTool-BMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JsonEditorTool_BM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF76603723CEC5DD001646BF /* Build configuration list for PBXProject "JsonEditorTool_BM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF76606923CEC5DF001646BF /* Debug */,
+				BF76606A23CEC5DF001646BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF76606B23CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF76606C23CEC5DF001646BF /* Debug */,
+				BF76606D23CEC5DF001646BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF76606E23CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF76606F23CEC5DF001646BF /* Debug */,
+				BF76607023CEC5DF001646BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF76607123CEC5DF001646BF /* Build configuration list for PBXNativeTarget "JsonEditorTool_BMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF76607223CEC5DF001646BF /* Debug */,
+				BF76607323CEC5DF001646BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF76603423CEC5DD001646BF /* Project object */;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ManagerRecord parseJson:]:ManagerRecord.m">
+      </ContextState>
+      <ContextState
+         contextName = "__29-[ViewController viewDidLoad]_block_invoke_2:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController indicator]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__32-[ManagerRecord fetchAllModels:]_block_invoke_2:ManagerRecord.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController viewDidLoad]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__35-[ManagerRecord fetchAllJsonModel:]_block_invoke:ManagerRecord.m">
+      </ContextState>
+      <ContextState
+         contextName = "__37-[ManagerRecord requestWithEndpoind:]_block_invoke:ManagerRecord.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ManagerRecord fetchAllJsonModel:]:ManagerRecord.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
