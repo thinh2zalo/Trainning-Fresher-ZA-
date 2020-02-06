@@ -1,6 +1,0 @@
-framework module Pods_JsonEditorTool_BMTests {
-  umbrella header "Pods-JsonEditorTool_BMTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
