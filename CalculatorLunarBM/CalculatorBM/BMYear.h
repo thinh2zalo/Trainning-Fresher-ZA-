@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSArray * DiaChi;
 + (NSString*)yearOfVietnames:(int)sYear;
 +(BOOL)isLeapLunarYear:(int)lYear;
++ (int)getLeapMonthOffset:(int)a11 timeZone:(int)timeZone;
 
 @end
 

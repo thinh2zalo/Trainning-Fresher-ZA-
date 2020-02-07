@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (int)jdFromDate:(int)dd mm:(int)mm yy:(int)yy;
 +  (NSMutableArray*)jdToDate:(int)jd;
 + (int)getNewMoonDay:(int)k timeZone:(int)timeZone;
++ (int)getSunLongitude:(int)jdn timeZone:(int)timeZone;
 
 //+ (BOOL)isValidDate;
 @end
