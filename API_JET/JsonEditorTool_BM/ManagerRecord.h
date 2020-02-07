@@ -22,13 +22,13 @@ typedef void(^completionBlock)(JsonModel  * _Nullable results , NSString * _Null
 - (void)setEndpoint:(EndPoint *)endPoint;
 
 - (void)start:(completionBlock)completion;
-// remove JsonModel with keyName in table with TableName
+// remove JsonModel with keyName in table with tableName
 - (void)removeModelFormTableName:(NSString *)tableName andKey:(NSString *)key andCompletion:(isSuccessBlock) completion;
 // insert JsonModel in tableName at index
 - (void)insertJsonModel:(JsonModel *)JM inTableName:(NSString *)tableName atIndex:(NSUInteger)index completion:(isSuccessBlock) completion;
 // search JsonModel with tableName ex:settings.applicationId
 - (JsonModel *)fetchJsonModel:(NSString *)tableName;
-// insert + remove at current jsonModel which showed UI
+// insert + remove at current jsonModel which showed on UI
 - (void)insertJsonModel:(JsonModel *)JM  atIndex:(NSUInteger)index completion:(isSuccessBlock) completion;
 - (void)removeJsonModelWithKey:(NSString *)key completionBlock:(isSuccessBlock)completion;
 // set currentJsonmodel which showed on UI

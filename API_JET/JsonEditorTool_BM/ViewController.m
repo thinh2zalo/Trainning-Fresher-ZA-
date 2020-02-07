@@ -9,6 +9,7 @@
 #import "NetworkManager.h"
 #import "ViewController.h"
 #import "EndPoint.h"
+#import "LunarSolarCalendarConverter.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
@@ -22,6 +23,7 @@
     EndPoint * endPoint = EndPoint.new;
     endPoint.osStr = @"ios";
     endPoint.verStr = @"99.99.99";
+    
     [ManagerRecord.shareInstance setEndpoint:endPoint];
     [self.indicator startAnimating];
     [ManagerRecord.shareInstance start:^(JsonModel * response, NSString * errorMSG) {
@@ -29,7 +31,6 @@
         if (!errorMSG) {
             JsonModel * modelToShow = [ManagerRecord.shareInstance fetchJsonModel:@"settings"];
             [ManagerRecord.shareInstance setCurrentJsonModelWithKey:@"settings"];
-        
             JsonModel *JMM  = [ManagerRecord.shareInstance  fetchJsonModel:@"settings.applicationId"];
          
         } else {
@@ -39,6 +40,8 @@
    
     
 }
+
+
 - (UIActivityIndicatorView *)indicator {
     if (!_indicator) {
         _indicator = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

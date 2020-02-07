@@ -10,10 +10,12 @@
 #import "NetworkManager.h"
 #import "JsonSerializationCustom.h"
 #define ERROR_MSG @"Request incorrect tableName"
+#define ALL @"all"
 
 @interface ManagerRecord()
 @property (nonatomic, strong) dispatch_queue_t queue;
 @property (nonatomic, strong) JsonModel * allJsonModel;
+
 @property (nonatomic, strong) JsonModel * currentJsonModel;
 @property (nonatomic, strong) EndPoint * currentEndPoint;
 
@@ -27,63 +29,66 @@
         shareInstance = ManagerRecord.new;
     });
     return shareInstance;
+    
 }
 
 
 
 - (void)start:(completionBlock)completion {
-    if (!completion) {
-        return;
+    if (completion) {
+          if (self.allJsonModel) {
+             completion(self.allJsonModel, nil);
+         } else {
+             [self loadData:^(id results, NSString *errorMess) {
+                 if (!errorMess) {
+                     [self parseJson:results];
+                     completion(self.allJsonModel, nil);
+                 } else {
+                     NSLog(@"error :%@", errorMess);
+                 }
+             }];
+         }
     }
-    if (self.allJsonModel) {
-        completion(self.allJsonModel, nil);
-    } else {
-        [self loadData:^(id results, NSString *errorMess) {
-            if ([results isKindOfClass:NSData.class]) {
-                [self parseJson:results];
-                completion(self.allJsonModel, nil);
-            }
-        }];
-    }
+ 
 }
 
-- (void)insertJsonModel:(JsonModel *)JM inTableName:(NSString *)tableName atIndex:(NSUInteger)index completion:(isSuccessBlock) completion {
-    if (!completion) {
-        return;
+- (void)insertJsonModel:(JsonModel *)jM inTableName:(NSString *)tableName atIndex:(NSUInteger)index completion:(isSuccessBlock) completion {
+    if (completion) {
+            JsonModel * results = [self fetchJsonModel:tableName];
+        if ([results.value isKindOfClass:NSMutableArray.class]) {
+            [results.value insertObject:jM atIndex:index];
+            completion(true);
+        } else {
+            completion(false);
+        }
     }
-    JsonModel * results = [self fetchJsonModel:tableName];
-    if ([results.value isKindOfClass:NSMutableArray.class]) {
-        [results.value insertObject:JM atIndex:index];
-        completion(true);
-    } else {
-        completion(false);
-    }
+
 }
 
 
 - (void)removeModelFormTableName:(NSString *)tableName andKey:(NSString *)key andCompletion:(isSuccessBlock)completion {
-    if (!completion) {
-        return;
+    if (completion) {
+         JsonModel * results = [self fetchJsonModel:tableName];
+           if ([results.value isKindOfClass:NSMutableArray.class]) {
+               NSUInteger index = [self indexOfKey:key  inArray:results.value];
+               if (index != -1) {
+                   [results.value removeObjectAtIndex:index];
+                   completion(true);
+               }
+           } else {
+               completion(false);
+           }
     }
-    JsonModel * results = [self fetchJsonModel:tableName];
-    if ([results.value isKindOfClass:NSMutableArray.class]) {
-        NSUInteger index = [self indexOfKey:key  inArray:results.value];
-        if (index != -1) {
-            [results.value removeObjectAtIndex:index];
-            completion(true);
-        }
-    } else {
-        completion(false);
-    }
+   
     
 }
 
 - (void)insertJsonModel:(JsonModel *)JM  atIndex:(NSUInteger)index completion:(isSuccessBlock) completion {
-    if (!completion && !self.currentJsonModel) {
-        return;
+    if (completion && !self.currentJsonModel) {
+         [self.currentJsonModel.value insertObject:JM atIndex:index];
+          completion(true);
     }
-    [self.currentJsonModel.value insertObject:JM atIndex:index];
-    completion(true);
+  
 }
 
 
@@ -104,9 +109,7 @@
 
 
 - (void)setCurrentJsonModelWithKey:(NSString *)levelKey {
-    if (!levelKey) {
-        return;
-    } else {
+    if (levelKey) {
         self.currentJsonModel = [self getJsonModelToEditAtLevelKey:levelKey];
     }
 }
@@ -114,27 +117,10 @@
 
 // search  JsonModel
 - (JsonModel *)fetchJsonModel:(NSString *)levelKey {
-    if ([levelKey isEqualToString:@"all"]) {
+    if ([levelKey isEqualToString:ALL]) {
         return self.allJsonModel;
     }
-    NSArray * arr = [levelKey componentsSeparatedByString:@"."];
-    JsonModel *tempJsonModel = self.allJsonModel;
-    BOOL isStringCorrect;
-    
-    for (NSUInteger i = 0 ; i < arr.count; i++) {
-        isStringCorrect = false;
-        for (JsonModel *jm in tempJsonModel.value) {
-            if ([jm.key isEqualToString:arr[i]]) {
-                isStringCorrect = true;
-                tempJsonModel = jm;
-                break;
-            }
-        }
-        if (!isStringCorrect) {
-            return nil;
-        }
-    }
-    return [tempJsonModel copy] ;
+    return [[self getJsonModelToEditAtLevelKey:levelKey] copy];
 }
 
 - (void)parseJson:(NSData *)data {
@@ -185,7 +171,7 @@
             return nil;
         }
     }
-    return tempJsonModel ;
+    return tempJsonModel;
 }
 
 - (NSUInteger)indexOfKey:(NSString *)key inArray:(NSArray <JsonModel *> *)table {
