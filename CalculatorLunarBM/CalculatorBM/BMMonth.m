@@ -7,12 +7,12 @@
 //
 
 #import "BMMonth.h"
-#import "CanChi.h"
+#import "LunarUtils.h"
 
 @implementation BMMonth
 + (NSString*)monthOfVietnames:(int)lMonth andYear:(int)lYear{
      int CANDay = (lYear * 12 + lMonth + 3) % 10;
-     return [NSString stringWithFormat:@"%@ %@",CanChi.getThienCan[CANDay % 10], CanChi.getDiaChi[(lMonth + 1) % 12]];
+     return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10], LunarUtils.getDiaChi[(lMonth + 1) % 12]];
 }
 
 @end

@@ -15,11 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSUInteger yearLunar;
 @property (assign) NSUInteger yearSolar;
 
-extern NSArray * DiaChi;
 + (NSString*)yearOfVietnames:(int)sYear;
-+(BOOL)isLeapLunarYear:(int)lYear;
-+ (int)getLeapMonthOffset:(int)a11 timeZone:(int)timeZone;
-
++ (BOOL)isLeapLunarYear:(int)lYear;
++ (int)getLeapMonth:(int)sYear;
 @end
 
 NS_ASSUME_NONNULL_END
