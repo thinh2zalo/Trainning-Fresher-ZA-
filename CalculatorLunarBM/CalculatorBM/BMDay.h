@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BMDay : NSObject
 @property (assign) NSUInteger lunarDay;
 @property (assign) NSUInteger solarDay;
-+ (NSString*)dayOfVietnamese:(int)day :(int)month :(int)year;
-- (BMDay *)initWithSDay:(int)sDay;
-- (BMDay *)initWithSDay:(int)sDay andLDay:(int)lDay;
++ (NSString*)dayOfVietnamese:(NSInteger)day :(NSInteger)month :(NSInteger)year;
+- (BMDay *)initWithSDay:(NSInteger)sDay;
+- (BMDay *)initWithSDay:(NSInteger)sDay andLDay:(NSInteger)lDay;
 
 @end
 

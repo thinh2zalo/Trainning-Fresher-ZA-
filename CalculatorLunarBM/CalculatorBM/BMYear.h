@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSUInteger lunarYear;
 @property (assign) NSUInteger solarYear;
 
-+ (NSString*)yearOfVietnames:(int)sYear;
-+ (BOOL)isLeapLunarYear:(int)lYear;
-+ (int)getLeapMonth:(int)sYear;
-- (BMYear *)initWithSYear:(int)sMonth;
-- (BMYear *)initWithSYear:(int)sMonth andLYear:(int)lMonth;
+- (NSString*)namCanChi;
++ (BOOL)isLeapLunarYear:(NSInteger)lYear;
++ (NSInteger)getLeapMonth:(NSInteger)sYear;
+- (BMYear *)initWithSYear:(NSInteger)sMonth;
+- (BMYear *)initWithSYear:(NSInteger)sMonth andLYear:(NSInteger)lMonth;
 
 @end
 

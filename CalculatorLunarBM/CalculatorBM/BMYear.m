@@ -11,13 +11,13 @@
 @implementation BMYear
 
 
-+ (NSString*)yearOfVietnames:(int)year{
-    return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[(year + 6) % 10] , LunarUtils.getDiaChi[(year + 8) % 12]];;
+- (NSString*)namCanChi {
+    return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[(self.lunarYear + 6) % 10] , LunarUtils.getDiaChi[(self.lunarYear + 8) % 12]];;
 }
 
-+ (BOOL)isLeapLunarYear:(int)lYear {
-    int a11 = [LunarUtils getLunarMonth11:lYear timeZone:LOCAL_TIMEZONE];
-    int b11 = [LunarUtils getLunarMonth11:lYear - 1 timeZone:LOCAL_TIMEZONE];
++ (BOOL)isLeapLunarYear:(NSInteger)lYear {
+    NSInteger a11 = [LunarUtils getLunarMonth11:lYear timeZone:LOCAL_TIMEZONE];
+    NSInteger b11 = [LunarUtils getLunarMonth11:lYear - 1 timeZone:LOCAL_TIMEZONE];
 
     if (a11 - b11 > 365) {
         return true;
@@ -26,18 +26,18 @@
 }
 
 
-+ (int)getLeapMonth:(int)yy {
++ (NSInteger)getLeapMonth:(NSInteger)yy {
     if ([self isLeapLunarYear:yy]) {
         return [LunarUtils getLeapMonthOffset:yy timeZone:7] - 2;
     }
     return -1;
 }
 
-- (BMYear *)initWithSYear:(int)sMonth{
+- (BMYear *)initWithSYear:(NSInteger)sMonth{
     return  [self initWithSYear:sMonth andLYear:0];
 }
 
-- (BMYear *)initWithSYear:(int)sMonth andLYear:(int)lMonth {
+- (BMYear *)initWithSYear:(NSInteger)sMonth andLYear:(NSInteger)lMonth {
     self = [super init];
     if (self) {
         self.solarYear = sMonth;

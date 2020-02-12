@@ -11,7 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BMDate : NSObject
-- (instancetype)initDate:(int)dd :(int)mm :(int)yy;
+- (instancetype)initDate:(NSString *)stringDate;
+- (instancetype)initDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
+- (NSString*)getNgayCanChi;
+- (NSString *)getThangCanChi;
+- (NSString *)getNamCanChi;
+- (NSInteger)getLunarDay;
+- (NSInteger)getLunarMonth;
+- (NSInteger)getlunarYear;
+- (NSString*)dayOfWeek;
 
 @end
 

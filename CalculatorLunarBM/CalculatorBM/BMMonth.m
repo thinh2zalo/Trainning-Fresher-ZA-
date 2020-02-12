@@ -10,18 +10,18 @@
 #import "LunarUtils.h"
 
 @implementation BMMonth
-+ (NSString*)monthOfVietnames:(int)lMonth andYear:(int)lYear{
++ (NSString*)monthOfVietnames:(NSInteger)lMonth andYear:(NSInteger)lYear{
      int CANDay = (lYear * 12 + lMonth + 3) % 10;
      return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10], LunarUtils.getDiaChi[(lMonth + 1) % 12]];
 }
 
 
 
-- (BMMonth *)initWithSMonth:(int)sMonth{
+- (BMMonth *)initWithSMonth:(NSInteger)sMonth{
     return  [self initWithSMonth:sMonth andLMonth:0];
 }
 
-- (BMMonth *)initWithSMonth:(int)sMonth andLMonth:(int)lMonth {
+- (BMMonth *)initWithSMonth:(NSInteger)sMonth andLMonth:(NSInteger)lMonth {
     self = [super init];
     if (self) {
         self.solarMonth = sMonth;

@@ -8,27 +8,29 @@
 #import <Foundation/Foundation.h>
 #define LOCAL_TIMEZONE 7
 #define PI 3.1415926535897932
+#import "define.h"
+
 @interface LunarUtils : NSObject {
 
 }
 + (NSArray *)getDiaChi;
 + (NSArray *)getThienCan;
-+ (double)NewMoon:(int)k;
++ (double)NewMoon:(NSInteger)k;
 + (double)SunLongitude:(double)jdn;
 
 
 // convert lunar to solar
-+(NSMutableArray*) convertLunar2Solar:(int)lunarDay lunarMonth:(int)lunarMonth lunarYear:(int)lunarYear lunarLeap:(int)lunarLeap timeZone:(int)timeZone;
++(NSMutableArray*) convertLunar2Solar:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth lunarYear:(NSInteger)lunarYear lunarLeap:(NSInteger)lunarLeap timeZone:(NSInteger)timeZone;
 // convert solar to lunar
 
-+(NSMutableArray*) convertSolar2Lunar:(int)dd mm:(int)mm yy:(int)yy timeZone:(int)timeZone;
-+(int)jdFromDate:(int)dd mm:(int)mm yy:(int)yy;
-+(NSMutableArray*)jdToDate:(int)jd;
++(NSMutableDictionary*) convertSolar2Lunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
++(NSInteger)jdFromDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy;
++(NSMutableArray*)jdToDate:(NSInteger)jd;
 
-+(int)getNewMoonDay:(int)k timeZone:(int)timeZone;
-+(int)getSunLongitude:(int)jdn timeZone:(int)timeZone;
-+(int)getLeapMonthOffset:(int)a11 timeZone:(int)timeZone;
-+(int)getLunarMonth11:(int)yy timeZone:(int)timeZone;
++(NSInteger)getNewMoonDay:(NSInteger)k timeZone:(NSInteger)timeZone;
++(NSInteger)getSunLongitude:(NSInteger)jdn timeZone:(NSInteger)timeZone;
++(NSInteger)getLeapMonthOffset:(NSInteger)a11 timeZone:(NSInteger)timeZone;
++(NSInteger)getLunarMonth11:(NSInteger)yy timeZone:(NSInteger)timeZone;
 
 
 

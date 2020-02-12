@@ -7,12 +7,20 @@
 //
 
 #import "LunarUtils.h"
-
 @interface LunarUtils ()
 
 @end
 
 @implementation LunarUtils
++ (NSMutableDictionary*)getHoroscopeDayInfo:(int)D :(int)M :(int)Y{
+    NSMutableDictionary *dayInfo = [[NSMutableDictionary alloc] init];
+    [dayInfo setObject:[NSString stringWithFormat:@"%d",D] forKey:@"Day"];
+    [dayInfo setObject:[NSString stringWithFormat:@"%d",M] forKey:@"Month"];
+    [dayInfo setObject:[NSString stringWithFormat:@"%d",Y] forKey:@"Year"];
+//    NSMutableArray *lunar = [self convertSolar2Lunar:D mm:M yy:Y timeZone:LOCAL_TIMEZONE];
+    
+     return dayInfo;
+}
 
 + (NSArray *)getDiaChi {
     static NSArray *diaChi;
@@ -33,7 +41,7 @@
     return thienCan;
 }
 
-+ (double)NewMoon:(int)k{
++ (double)NewMoon:(NSInteger)k{
     double T = k/1236.85; // Time in Julian centuries from 1900 January 0.5
     double T2 = T * T;
     double T3 = T2 * T;
@@ -74,12 +82,8 @@
     return L;
 }
 
-
-
-
-
-+(int)jdFromDate:(int)dd mm:(int)mm yy:(int)yy {
-    int a, y, m, jd;
++ (NSInteger)jdFromDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy {
+    NSInteger a, y, m, jd;
     a = floor((14 - mm) / 12);
     y = yy+4800-a;
     m = mm+12*a-3;
@@ -89,9 +93,9 @@
     }    return jd;
 }
 
-+(NSMutableArray*)jdToDate:(int)jd {
++(NSMutableArray*)jdToDate:(NSInteger)jd {
     NSMutableArray *arr=[[NSMutableArray alloc] init];
-    int a, b, c, d, e, m, day, month, year;
+    NSInteger a, b, c, d, e, m, day, month, year;
     if (jd > 2299160) { // After 5/10/1582, Gregorian calendar
         a = jd + 32044;
         b = floor((4*a+3)/146097);
@@ -112,7 +116,7 @@
     return arr;
 }
 
-+(double)newMoonDay:(int)k {
++(double)newMoonDay:(NSInteger)k {
     double T, T2, T3, dr, Jd1, M, Mpr, F, C1, deltat,JdNew;
     
     T = k/1236.85; // Time in Julian centuries from 1900 January 0.5
@@ -141,10 +145,10 @@
     
 }
 
-+ (int)getNewMoonDay:(int)k timeZone:(int)timeZone {
++ (NSInteger)getNewMoonDay:(NSInteger)k timeZone:(NSInteger)timeZone {
     return  floorf([self newMoonDay:k] + 0.5 +  (float)timeZone/24) ;
 }
-+(int)getSunLongitude:(int)jdn timeZone:(int)timeZone {
++(NSInteger)getSunLongitude:(NSInteger)jdn timeZone:(NSInteger)timeZone {
     return floor([self sunLongitude:(jdn - 0.5 -  (float)timeZone/24)]/ PI*6);
 }
 
@@ -164,8 +168,8 @@
     return L;
 }
 
-+(int)getLeapMonthOffset:(int)a11 timeZone:(int)timeZone {
-    int k, last, arc, i;
++(NSInteger)getLeapMonthOffset:(NSInteger)a11 timeZone:(NSInteger)timeZone {
+    NSInteger k, last, arc, i;
     k = floor((a11 - 2415021.076998695) / 29.530588853 + 0.5);
     last = 0;
     i = 1; // We start with the month following lunar month 11
@@ -178,8 +182,8 @@
     return i-1;
 }
 
-+(int)getLunarMonth11:(int)yy timeZone:(int)timeZone {
-    int k, off, nm, sunLong;
++(NSInteger)getLunarMonth11:(NSInteger)yy timeZone:(NSInteger)timeZone {
+    NSInteger k, off, nm, sunLong;
     off = [self jdFromDate:31 mm:12 yy:yy] - 2415021;
     k = floor(off / 29.530588853);
     nm = [self getNewMoonDay:k timeZone:7];
@@ -190,9 +194,9 @@
     return nm;
 }
 
-+(NSMutableArray*)convertSolar2Lunar:(int)dd mm:(int)mm yy:(int)yy timeZone:(int)timeZone {
++(NSMutableDictionary *)convertSolar2Lunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone {
  
-    int k, dayNumber, monthStart, a11, b11, diff, leapMonthDiff, lunarDay, lunarMonth, lunarYear, lunarLeap;
+    NSInteger k, dayNumber, monthStart, a11, b11, diff, leapMonthDiff, lunarDay, lunarMonth, lunarYear, lunarLeap;
     dayNumber = [self jdFromDate:dd mm:mm yy:yy];
     k = floor((dayNumber - 2415021.076998695) / 29.530588853);
     monthStart = [self getNewMoonDay:k+1 timeZone:timeZone];
@@ -231,19 +235,19 @@
     if (lunarMonth >= 11 && diff < 4) {
         lunarYear -= 1;
     }
-    NSMutableArray *arr=[[NSMutableArray alloc] init];
-    [arr addObject:[NSNumber numberWithDouble:lunarDay]];
-    [arr addObject:[NSNumber numberWithDouble:lunarMonth]];
-    [arr addObject:[NSNumber numberWithDouble:lunarYear]];
-    [arr addObject:[NSNumber numberWithDouble:lunarLeap]];
+    NSMutableDictionary *dict=[[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithInteger:lunarDay] forKey:LUNARDAY];
+    [dict setObject:[NSNumber numberWithInteger:lunarMonth] forKey:LUNARMONTH];
+    [dict setObject:[NSNumber numberWithInteger:lunarYear] forKey:LUNARYEAR];
+    [dict setObject:[NSNumber numberWithInteger:lunarLeap] forKey:LUNARLEAP];
     
-    return arr;
+    return dict;
 }
 
-+(NSMutableArray*) convertLunar2Solar:(int)lunarDay lunarMonth:(int)lunarMonth lunarYear:(int)lunarYear lunarLeap:(int)lunarLeap timeZone:(int)timeZone {
++(NSMutableArray*) convertLunar2Solar:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth lunarYear:(NSInteger)lunarYear lunarLeap:(NSInteger)lunarLeap timeZone:(NSInteger)timeZone {
     
     double k, a11, b11, off, leapOff, leapMonth, monthStart;
-    int jd;
+    NSInteger jd;
     if (lunarMonth < 11) {
         a11 = [self getLunarMonth11:lunarYear-1 timeZone:timeZone];
         b11 = [self getLunarMonth11:lunarYear timeZone:timeZone];
