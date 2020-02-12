@@ -10,6 +10,7 @@
 #import "BMYear.h"
 #import "BMMonth.h"
 #import "BMDay.h"
+#import "LunarUtils.h"
 
 
 @interface BMDate ()
@@ -21,6 +22,13 @@
 @end
 @implementation BMDate
 
-- (instancetype)initDate:(int)dd :(int)mm :(int)yy;
+- (instancetype)initDate:(int)dd :(int)mm :(int)yy {
+    NSArray * _lunarDayInfor = [LunarUtils ]
+    self.day = [[BMDay alloc]initWithSDay:dd];
+    self.month = [[BMMonth alloc]initWithSMonth:mm];
+    self.year = [[BMYear alloc] initWithSYear:yy];
+
+    return self;
+}
 
 @end

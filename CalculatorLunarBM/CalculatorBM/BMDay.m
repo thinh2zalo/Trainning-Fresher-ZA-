@@ -12,6 +12,7 @@
 @implementation BMDay
 
 
+
 + (NSString*)dayOfVietnamese:(int)day :(int)month :(int)year{
     int CANDay = floor([LunarUtils jdFromDate:day mm:month yy:year] + 9.5);
     int CHIDay = floor([LunarUtils jdFromDate:day mm:month yy:year] + 1.5);
@@ -28,5 +29,19 @@
     if (X%7 == 5 ) return @"Thứ năm";
     if (X%7 == 6 ) return @"Thứ sáu";
     return @"Chủ nhật";
+}
+
+
+- (BMDay *)initWithSDay:(int)sDay{
+    return  [self initWithSDay:sDay andLDay:0];
+}
+
+- (BMDay *)initWithSDay:(int)sDay andLDay:(int)lDay {
+    self = [super init];
+    if (self) {
+        self.solarDay = sDay;
+        self.lunarDay = lDay;
+    }
+    return self;
 }
 @end

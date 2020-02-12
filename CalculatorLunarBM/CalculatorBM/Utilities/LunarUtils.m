@@ -33,9 +33,6 @@
     return thienCan;
 }
 
-
-
-
 + (double)NewMoon:(int)k{
     double T = k/1236.85; // Time in Julian centuries from 1900 January 0.5
     double T2 = T * T;

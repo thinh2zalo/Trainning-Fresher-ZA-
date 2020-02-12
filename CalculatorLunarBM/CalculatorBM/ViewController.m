@@ -10,6 +10,7 @@
 #import "BMYear.h"
 #import "BMMonth.h"
 #import "BMDay.h"
+#import "BMDate.h"
 #import "LunarUtils.h"
 
 @interface ViewController ()
@@ -24,7 +25,7 @@
     NSLog(@"month :%@", [BMMonth monthOfVietnames:12 andYear:2020]);
     NSLog(@"day :%@", [BMDay dayOfVietnamese:30 :4 :2020]);
     NSLog(@"jdFromDate :%d", [LunarUtils jdFromDate:14 mm:4 yy:2]);
-  
+    BMDate * bmDate = [[BMDate alloc] initDate:24 :10 :2020];
 
 
 

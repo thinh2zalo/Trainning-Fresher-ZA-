@@ -15,4 +15,18 @@
      return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10], LunarUtils.getDiaChi[(lMonth + 1) % 12]];
 }
 
+
+
+- (BMMonth *)initWithSMonth:(int)sMonth{
+    return  [self initWithSMonth:sMonth andLMonth:0];
+}
+
+- (BMMonth *)initWithSMonth:(int)sMonth andLMonth:(int)lMonth {
+    self = [super init];
+    if (self) {
+        self.solarMonth = sMonth;
+        self.lunarMonth = lMonth;
+    }
+    return self;
+}
 @end

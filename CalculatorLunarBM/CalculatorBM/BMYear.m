@@ -33,6 +33,19 @@
     return -1;
 }
 
+- (BMYear *)initWithSYear:(int)sMonth{
+    return  [self initWithSYear:sMonth andLYear:0];
+}
+
+- (BMYear *)initWithSYear:(int)sMonth andLYear:(int)lMonth {
+    self = [super init];
+    if (self) {
+        self.solarYear = sMonth;
+        self.lunarYear = lMonth;
+    }
+    return self;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

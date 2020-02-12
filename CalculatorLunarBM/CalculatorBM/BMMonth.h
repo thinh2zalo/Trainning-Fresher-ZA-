@@ -11,9 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BMMonth : NSObject
-@property (assign) NSUInteger monthLunar;
-@property (assign) NSUInteger monthSolar;
+@property (assign) NSUInteger lunarMonth;
+@property (assign) NSUInteger solarMonth;
 + (NSString*)monthOfVietnames:(int)lMonth andYear:(int)lYear;
+- (BMMonth *)initWithSMonth:(int)sMonth;
+- (BMMonth *)initWithSMonth:(int)sMonth andLMonth:(int)lMonth;
 
 @end
 
