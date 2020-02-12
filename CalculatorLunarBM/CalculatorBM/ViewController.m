@@ -13,8 +13,12 @@
 #import "BMDate.h"
 #import "LunarUtils.h"
 #import "LunarCalendarView.h"
+#import "SolarCalenDarView.h"
+
 @interface ViewController ()
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
+@property (nonatomic, strong) SolarCalenDarView * solarCalenDarView;
+
 @property (nonatomic, strong) UIImageView * backgroundTemp;
 @property (nonatomic, strong) UITextField * inputDateTF;
 @property (nonatomic, strong) UIButton * commitBtn;
@@ -54,11 +58,13 @@
 
 - (void)loadUI {
     self.backgroundTemp.frame = self.view.bounds;
+    self.solarCalenDarView.frame = self.view.bounds;
     self.lunarCalendarView.frame = CGRectMake(0, HEIGHT_SCREEN - 160, WITDTH_SCREEN, 130);
     self.inputDateTF.frame = CGRectMake(0, 0, 200, 50);
     self.inputDateTF.center = self.view.center;
      self.commitBtn.frame = CGRectMake(0, 0, 100, 40);
     self.commitBtn.center = CGPointMake(self.view.frame.size.width/2, self.inputDateTF.frame.origin.y + 80);
+    
     
 }
 - (void)commitDate {
@@ -71,24 +77,16 @@
         NSLog(@"incorrect format");
     } else {
         BMDate *newDate = [[BMDate alloc] initDate:self.inputDateTF.text];
-               [self.lunarCalendarView loadDateWithInput:newDate];
-               [self dismissKeyboard];
+                [self dismissKeyboard];
+                [self.lunarCalendarView loadDateWithInput:newDate];
+                [self.solarCalenDarView loadDateWithInput:newDate];
     }
-  
-    
 }
 
 -(void)dismissKeyboard {
     [self.inputDateTF resignFirstResponder];
 }
-- (LunarCalendarView *)lunarCalendarView {
-    if (!_lunarCalendarView) {
-        _lunarCalendarView = LunarCalendarView.new;
-        
-        [self.view addSubview:_lunarCalendarView];
-    }
-    return _lunarCalendarView;
-}
+
 - (UIImageView *)backgroundTemp {
     if (!_backgroundTemp) {
         _backgroundTemp = UIImageView.new;
@@ -102,7 +100,7 @@
 - (UITextField *)inputDateTF {
     if (!_inputDateTF) {
         _inputDateTF = UITextField.new;
-        _inputDateTF.placeholder = @"input date";
+        _inputDateTF.placeholder = @"dd/mm/yy";
         _inputDateTF.layer.borderColor = [UIColor grayColor].CGColor;
      
         _inputDateTF.borderStyle = UITextBorderStyleRoundedRect;
@@ -127,5 +125,19 @@
     return _commitBtn;
 }
 
-
+- (SolarCalenDarView *)solarCalenDarView {
+    if (!_solarCalenDarView) {
+        _solarCalenDarView = SolarCalenDarView.new;
+        [self.view addSubview:_solarCalenDarView];
+    }
+    return _solarCalenDarView;
+}
+- (LunarCalendarView *)lunarCalendarView {
+    if (!_lunarCalendarView) {
+        _lunarCalendarView = LunarCalendarView.new;
+        
+        [self.view addSubview:_lunarCalendarView];
+    }
+    return _lunarCalendarView;
+}
 @end

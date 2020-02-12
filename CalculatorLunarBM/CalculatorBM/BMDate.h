@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getLunarDay;
 - (NSInteger)getLunarMonth;
 - (NSInteger)getlunarYear;
+- (NSInteger)getSolarDay;
+- (NSInteger)getSolarMonth;
+- (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
 
 @end

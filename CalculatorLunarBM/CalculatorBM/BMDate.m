@@ -82,6 +82,18 @@
     return self.year.lunarYear;
 }
 
+- (NSInteger)getSolarDay {
+    return self.day.solarDay;
+}
+
+-(NSInteger)getSolarMonth {
+    return self.month.solarMonth;
+}
+
+-(NSInteger)getSolarYear {
+    return self.year.solarYear;
+}
+
 - (NSString*)dayOfWeek{
     int X = floor(self.jdn + 2.5);
     if (X%7 == 0 ) return @"Thứ bảy";

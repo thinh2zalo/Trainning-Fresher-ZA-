@@ -23,6 +23,7 @@
 		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
+		BF8A039123F3FD7700C79D96 /* SolarCalenDarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A039023F3FD7700C79D96 /* SolarCalenDarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		BF80ABB723F3024800AC5C3B /* BMDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDate.h; sourceTree = "<group>"; };
 		BF80ABB823F3024800AC5C3B /* BMDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDate.m; sourceTree = "<group>"; };
 		BF80ABBA23F3A12600AC5C3B /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		BF8A038F23F3FD7700C79D96 /* SolarCalenDarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarCalenDarView.h; sourceTree = "<group>"; };
+		BF8A039023F3FD7700C79D96 /* SolarCalenDarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarCalenDarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 			children = (
 				BF05D80F23F3B7B0007ABE89 /* LunarCalendarView.h */,
 				BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */,
+				BF8A038F23F3FD7700C79D96 /* SolarCalenDarView.h */,
+				BF8A039023F3FD7700C79D96 /* SolarCalenDarView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */,
 				BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */,
 				BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */,
+				BF8A039123F3FD7700C79D96 /* SolarCalenDarView.m in Sources */,
 				BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */,
 				BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */,
 			);

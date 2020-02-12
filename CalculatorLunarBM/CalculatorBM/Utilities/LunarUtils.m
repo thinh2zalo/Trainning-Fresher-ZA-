@@ -146,7 +146,7 @@
 }
 
 + (NSInteger)getNewMoonDay:(NSInteger)k timeZone:(NSInteger)timeZone {
-    return  floorf([self newMoonDay:k] + 0.5 +  (float)timeZone/24) ;
+    return  floor([self newMoonDay:k] + 0.5 +  (float)timeZone/24) ;
 }
 +(NSInteger)getSunLongitude:(NSInteger)jdn timeZone:(NSInteger)timeZone {
     return floor([self sunLongitude:(jdn - 0.5 -  (float)timeZone/24)]/ PI*6);
@@ -195,11 +195,12 @@
 }
 
 +(NSMutableDictionary *)convertSolar2Lunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone {
- 
+   
     NSInteger k, dayNumber, monthStart, a11, b11, diff, leapMonthDiff, lunarDay, lunarMonth, lunarYear, lunarLeap;
     dayNumber = [self jdFromDate:dd mm:mm yy:yy];
     k = floor((dayNumber - 2415021.076998695) / 29.530588853);
     monthStart = [self getNewMoonDay:k+1 timeZone:timeZone];
+    
     
     if (monthStart > dayNumber) {
         monthStart = [self getNewMoonDay:k timeZone:timeZone];

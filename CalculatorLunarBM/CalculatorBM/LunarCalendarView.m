@@ -29,10 +29,6 @@
 @property (nonatomic, strong) UIView *separatorView2;
 @property (nonatomic, strong) UIView *backgroundView;
 
-@property (nonatomic, strong) UILabel * solarDayLabel;
-@property (nonatomic, strong) UILabel * solarMonthLabel;
-@property (nonatomic, strong) UILabel * solarYearLabel;
-@property (nonatomic, strong) UILabel * dayOfWeekLabel;
 
 
 @end
@@ -66,20 +62,20 @@
     
     self.lunarDayTitleLabel.frame = CGRectMake(0, self.lunarDayView.frame.origin.y, self.lunarDayView.frame.size.width,heightLabel);
     
-    self.lunarDayLabel.frame = CGRectMake(self.lunarDayTitleLabel.frame.origin.x, self.lunarDayView.frame.size.height/4, self.lunarDayView.frame.size.width,heightLabel);
+    self.lunarDayLabel.frame = CGRectMake(self.lunarDayTitleLabel.frame.origin.x, heightLabel, self.lunarDayView.frame.size.width,heightLabel);
     
-     self.canChiDayLabel.frame = CGRectMake(self.lunarDayTitleLabel.frame.origin.x, (self.lunarDayView.frame.size.height/4) * 3 , self.lunarDayView.frame.size.width,heightLabel);
+     self.canChiDayLabel.frame = CGRectMake(self.lunarDayTitleLabel.frame.origin.x, heightLabel * 3 , self.lunarDayView.frame.size.width,heightLabel);
     
     // lunarMonthView
     self.lunarMonthView.frame = CGRectMake((self.frame.size.width/3) * 2, self.hourView.frame.origin.y , self.hourView.frame.size.width, self.frame.size.height);
     
     self.lunarMonthTitleLabel.frame = CGRectMake(0, 0, self.lunarMonthView.frame.size.width, heightLabel);
     
-     self.lunarMonthLabel.frame = CGRectMake(0, self.lunarMonthView.frame.size.height/4, self.lunarMonthView.frame.size.width, heightLabel);
+     self.lunarMonthLabel.frame = CGRectMake(0, heightLabel, self.lunarMonthView.frame.size.width, heightLabel);
 //
-     self.canChiMonthLabel.frame = CGRectMake(0,  (self.lunarMonthView.frame.size.height/4) * 2 + 10, self.lunarMonthView.frame.size.width, heightLabel);
+     self.canChiMonthLabel.frame = CGRectMake(0,  heightLabel * 2 + 10, self.lunarMonthView.frame.size.width, heightLabel);
 ////
-     self.canChiYearLabel.frame = CGRectMake(0,  (self.lunarMonthView.frame.size.height/4) * 3, self.lunarMonthView.frame.size.width, heightLabel);
+     self.canChiYearLabel.frame = CGRectMake(0,  heightLabel * 3, self.lunarMonthView.frame.size.width, heightLabel);
     
     self.separatorView.frame = CGRectMake(self.frame.size.width/3,
                                           0,
@@ -283,27 +279,6 @@
     return _backgroundView;
 }
 
-- (UILabel *)dayOfWeekLabel {
-    if (!_dayOfWeekLabel) {
-        _dayOfWeekLabel = UILabel.new;
-        [_dayOfWeekLabel setFont:[UIFont boldSystemFontOfSize:40]];
-                                                    _dayOfWeekLabel.textColor = [UIColor whiteColor];
-                                                    _dayOfWeekLabel.textAlignment = NSTextAlignmentCenter;
-                                             _dayOfWeekLabel.text = @"Thứ 7";
-        [self addSubview:_dayOfWeekLabel];
-    }
-    return _dayOfWeekLabel;
-}
 
-- (UILabel *)solarDayLabel {
-    if (!_solarDayLabel) {
-        _solarDayLabel = UILabel.new;
-        [_solarDayLabel setFont:[UIFont boldSystemFontOfSize:40]];
-                                             _solarDayLabel.textColor = [UIColor whiteColor];
-                                             _solarDayLabel.textAlignment = NSTextAlignmentCenter;
-                                      _solarDayLabel.text = @"Can Chi Year";
-        [self addSubview:_solarDayLabel];
-    }
-    return _solarDayLabel;
-}
+
 @end
