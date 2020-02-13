@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LunarCalendarView : UIView
 - (void)loadDateWithInput:(BMDate *)date;
+
 @end
 
 NS_ASSUME_NONNULL_END

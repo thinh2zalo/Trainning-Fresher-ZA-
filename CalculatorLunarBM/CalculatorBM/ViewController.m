@@ -13,15 +13,19 @@
 #import "BMDate.h"
 #import "LunarUtils.h"
 #import "LunarCalendarView.h"
-#import "SolarCalenDarView.h"
+#import "SolarCalendarView.h"
+#import "LunarDatePickerView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
-@property (nonatomic, strong) SolarCalenDarView * solarCalenDarView;
+@property (nonatomic, strong) SolarCalendarView * solarCalenDarView;
 
 @property (nonatomic, strong) UIImageView * backgroundTemp;
 @property (nonatomic, strong) UITextField * inputDateTF;
 @property (nonatomic, strong) UIButton * commitBtn;
+@property (nonatomic, strong) LunarDatePickerView * lunarDatePickerView;
+
+
 
 
 
@@ -44,16 +48,13 @@
 //    NSLog(@"ngay can chi %@", bmDate.getNgayCanChi);
 //    NSLog(@"thang can chi %@", bmDate.getThangCanChi);
 //    NSLog(@"nam can chi %@", bmDate.getNamCanChi);
-    
-   
-
-
-    
     [self loadUI];
 
+}
 
-    
-    // Do any additional setup after loading the view.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    LunarDatePickerView *datePicker = LunarDatePickerView.new;
+    [datePicker show];
 }
 
 - (void)loadUI {
@@ -64,8 +65,7 @@
     self.inputDateTF.center = self.view.center;
      self.commitBtn.frame = CGRectMake(0, 0, 100, 40);
     self.commitBtn.center = CGPointMake(self.view.frame.size.width/2, self.inputDateTF.frame.origin.y + 80);
-    
-    
+  
 }
 - (void)commitDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -113,6 +113,8 @@
     
 }
 
+
+
 - (UIButton *)commitBtn {
     if (!_commitBtn) {
         _commitBtn = UIButton.new;
@@ -125,9 +127,9 @@
     return _commitBtn;
 }
 
-- (SolarCalenDarView *)solarCalenDarView {
+- (SolarCalendarView *)solarCalenDarView {
     if (!_solarCalenDarView) {
-        _solarCalenDarView = SolarCalenDarView.new;
+        _solarCalenDarView = SolarCalendarView.new;
         [self.view addSubview:_solarCalenDarView];
     }
     return _solarCalenDarView;
@@ -139,5 +141,13 @@
         [self.view addSubview:_lunarCalendarView];
     }
     return _lunarCalendarView;
+}
+ 
+- (LunarDatePickerView *)lunarDatePickerView {
+    if (!_lunarDatePickerView) {
+        _lunarDatePickerView = LunarDatePickerView.new;
+        
+    }
+    return _lunarDatePickerView;
 }
 @end

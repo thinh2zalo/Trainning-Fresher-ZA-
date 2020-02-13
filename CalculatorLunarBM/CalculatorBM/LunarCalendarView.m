@@ -72,9 +72,9 @@
     self.lunarMonthTitleLabel.frame = CGRectMake(0, 0, self.lunarMonthView.frame.size.width, heightLabel);
     
      self.lunarMonthLabel.frame = CGRectMake(0, heightLabel, self.lunarMonthView.frame.size.width, heightLabel);
-//
+
      self.canChiMonthLabel.frame = CGRectMake(0,  heightLabel * 2 + 10, self.lunarMonthView.frame.size.width, heightLabel);
-////
+
      self.canChiYearLabel.frame = CGRectMake(0,  heightLabel * 3, self.lunarMonthView.frame.size.width, heightLabel);
     
     self.separatorView.frame = CGRectMake(self.frame.size.width/3,
@@ -94,6 +94,7 @@
     self.lunarMonthLabel.text = [NSString stringWithFormat:@"%tu", [date getLunarMonth]];
     self.canChiMonthLabel.text = [date getThangCanChi];
     self.canChiYearLabel.text = [date getNamCanChi];
+    
 }
 
 

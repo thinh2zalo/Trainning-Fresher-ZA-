@@ -6,9 +6,9 @@
 //  Copyright © 2020 vincent. All rights reserved.
 //
 
-#import "SolarCalenDarView.h"
+#import "SolarCalendarView.h"
 
-@interface SolarCalenDarView()
+@interface SolarCalendarView()
 @property (nonatomic, strong) UILabel * solarDayLabel;
 @property (nonatomic, strong) UILabel * solarMonthLabel;
 @property (nonatomic, strong) UILabel * solarMonthAndYearLabel;
@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UILabel * dayOfWeekLabel;
 
 @end
-@implementation SolarCalenDarView
+@implementation SolarCalendarView
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SolarCalenDarView : UIView
+@interface SolarCalendarView : UIView
 - (void)loadDateWithInput:(BMDate *)date;
 
 @end

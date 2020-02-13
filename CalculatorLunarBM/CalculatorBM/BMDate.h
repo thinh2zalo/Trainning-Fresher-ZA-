@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getSolarMonth;
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
++ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month;
 
 @end
 

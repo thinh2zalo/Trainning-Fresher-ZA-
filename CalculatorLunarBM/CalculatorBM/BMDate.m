@@ -55,6 +55,35 @@
     return self;
 }
 
++ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month {
+    BOOL isLeapYear = year % 4 == 0 ? (year % 100 == 0 ? (year % 400 == 0 ? YES : NO) : YES) : NO;
+    switch (month) {
+        case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+        {
+            return 31;
+            break;
+        }
+        case 4:case 6:case 9:case 11:
+        {
+            return 30;
+            break;
+        }
+        case 2:
+        {
+            if (isLeapYear) {
+                return 29;
+                break;
+            } else {
+                return 28;
+                break;
+            }
+        }
+        default:
+            break;
+    }
+    return 0;
+}
+
 - (NSString*)getNgayCanChi {
     NSInteger CANDay = floor(self.jdn + 9.5);
     NSInteger CHIDay = floor(self.jdn + 1.5);

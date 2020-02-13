@@ -15,6 +15,7 @@
 
 #define HEIGHT_SCREEN [[UIScreen mainScreen] bounds].size.height
 #define WITDTH_SCREEN [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_BOUNDS [UIScreen mainScreen].bounds
 
 
 #define SAFE_TYPE(OBJECT, TYPE) [OBJECT isKindOfClass:[TYPE class]]
