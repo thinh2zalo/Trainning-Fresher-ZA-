@@ -12,6 +12,7 @@
 #define LUNARMONTH @"lunarMonth"
 #define LUNARYEAR @"lunarYear"
 #define LUNARLEAP @"lunaLeap"
+#define LOCAL_TIMEZONE 7
 
 #define HEIGHT_SCREEN [[UIScreen mainScreen] bounds].size.height
 #define WITDTH_SCREEN [[UIScreen mainScreen] bounds].size.width

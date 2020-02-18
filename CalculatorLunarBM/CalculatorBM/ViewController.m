@@ -39,14 +39,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-
-         [self.view addGestureRecognizer:tap];
-    BMDate * bmDate2 = [[BMDate alloc] initDate:3 :12 :2033 andTimeZone:7];
-    
-    
+        [self.view addGestureRecognizer:tap];
+        BMDate * bmDate2 = [[BMDate alloc] initDateWithLunarDate:14 :4 :2020 isLeapMonth:YES andTimeZone:7];
+        
+        
 //        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
 //    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
-    [BMDate getDaysInYear:0 month:0 andTypeOfCalendar:TypeCalendarAmLich];
+
+        [BMDate getDaysInYear:0 month:0 andTypeOfCalendar:TypeCalendarAmLich];
 //    BMDate * bmDate3 = [BMDate getCurrentDateComponents];
 //    NSLog(@"ngay am lich %tu", bmDate.getLunarDay);
 //    NSLog(@"thang am lich %tu", bmDate.getLunarMonth);

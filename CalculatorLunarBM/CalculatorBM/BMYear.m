@@ -25,6 +25,18 @@
       return self;
 }
 
+- (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone {
+//    if (![BMDate validDate:lunarDay month:solarMonth year:lunarYear]) {
+//        return nil;
+//    }
+    self = [super init];
+    if (self) {
+        self.lunarYear = lunarYear;
+        self.solarYear = [LunarUtils getSolarYearWithLunarDate:lunarDay mm:lunarMonth yy:lunarYear isLeapMonth:isLeapMonth timeZone:timeZone];
+    }
+    return self;
+}
+
 
 - (BMYear *)initWithSYear:(NSInteger)sMonth {
     return  [self initWithSYear:sMonth andLYear:0];
@@ -54,7 +66,7 @@
 // class method
 + (BOOL)isLeapSolarYear:(NSInteger)solarYear {
      BOOL isLeapYear = false;
-       if ((solarYear % 4 == 0 && solarYear % 100 != 0) || ( solarYear % 400 )) {
+       if ((solarYear % 4 == 0 && solarYear % 100 != 0) || ( solarYear % 400 == 0 )) {
            isLeapYear = true;
        }
        return isLeapYear;

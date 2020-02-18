@@ -18,7 +18,20 @@
     self = [super init];
     if (self) {
         self.solarDay = solarDay;
-        self.lunarDay = [LunarUtils getLunarDayWithDateSolar:solarDay mm:solarMonth yy:solarYear timeZone:LOCAL_TIMEZONE];
+        self.lunarDay = [LunarUtils getLunarDayWithSolarDate:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone {
+//    if (![BMDate validDate:lunarDay month:solarMonth year:lunarYear]) {
+//        return nil;
+//    }
+    self = [super init];
+    if (self) {
+        self.lunarDay = lunarDay;
+        self.solarDay = [LunarUtils getSolarDayWithLunarDate:lunarDay mm:lunarMonth yy:lunarYear isLeapMonth:isLeapMonth timeZone:timeZone];
         
     }
     return self;

@@ -6,7 +6,6 @@
 //  Copyright © 2020 vincent. All rights reserved.
 //
 #import <Foundation/Foundation.h>
-#define LOCAL_TIMEZONE 7
 #define PI 3.1415926535897932
 #import "define.h"
 
@@ -31,10 +30,15 @@
 +(NSInteger)getSunLongitude:(NSInteger)jdn timeZone:(NSInteger)timeZone;
 +(NSInteger)getLunarMonth11:(NSInteger)yy timeZone:(NSInteger)timeZone;
 
-+ (NSInteger)getLunarDayWithDateSolar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
++ (NSInteger)getLunarDayWithSolarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
 + (NSInteger)getLunarMonthWithDateSolar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
 + (NSInteger )getLunarYearWithDateSolar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
 
 +(NSInteger)getLeapMonthOffset:(NSInteger)a11 timeZone:(NSInteger)timeZone;
++(BOOL)isLeapMonth:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
+
++ (NSInteger)getSolarDayWithLunarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone;
++ (NSInteger)getSolarMonthWithLunarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone;
++ (NSInteger)getSolarYearWithLunarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone;
 @end
 
