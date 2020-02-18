@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "define.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BMDate : NSObject
-- (instancetype)initDate:(NSString *)stringDate;
-- (instancetype)initDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
+- (instancetype)initDate:(NSString *)stringDate andTimeZone:(NSInteger)timeZone;
+- (instancetype)initDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone;
 - (NSString*)getNgayCanChi;
 - (NSString *)getThangCanChi;
 - (NSString *)getNamCanChi;
@@ -23,7 +23,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getSolarMonth;
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
+
++ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar;
+
 + (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month;
++ (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear;
++ (NSArray *)getMonthArr:(NSInteger)year andTypeCalendar:(TypeOfCalendar)typeOfCalendar;
++ (NSArray *)getTypeCalendars;
++ (NSArray *)getDayArr:(NSInteger)year month:(NSInteger)month;
++ (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
++ (NSDateComponents *)getCurrentDateComponents;
++ (BMDate *)getCurrentDate;
 
 @end
 

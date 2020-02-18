@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BMDate.h"
+#import "define.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LunarDatePickerView : UIView
+@property (nonatomic, strong) BMDate * selectDate;
+@property (nonatomic) TypeOfCalendar typeOfCalendar;
+
+
 - (void)show;
 @end
 

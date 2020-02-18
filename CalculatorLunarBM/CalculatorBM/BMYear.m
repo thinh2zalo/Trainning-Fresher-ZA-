@@ -7,33 +7,26 @@
 //
 
 #import "BMYear.h"
+
 #import "LunarUtils.h"
+#import "BMDate.h"
 @implementation BMYear
 
-
-- (NSString*)namCanChi {
-    return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[(self.lunarYear + 6) % 10] , LunarUtils.getDiaChi[(self.lunarYear + 8) % 12]];;
-}
-
-+ (BOOL)isLeapLunarYear:(NSInteger)lYear {
-    NSInteger a11 = [LunarUtils getLunarMonth11:lYear timeZone:LOCAL_TIMEZONE];
-    NSInteger b11 = [LunarUtils getLunarMonth11:lYear - 1 timeZone:LOCAL_TIMEZONE];
-
-    if (a11 - b11 > 365) {
-        return true;
+- (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone {
+    
+    if (![BMDate validDate:solarDay month:solarMonth year:solarYear]) {
+        return nil;
     }
-    return false;
+    self = [super init];
+      if (self) {
+          self.solarYear = solarYear;
+          self.lunarYear = [LunarUtils getLunarYearWithDateSolar:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
+      }
+      return self;
 }
 
 
-+ (NSInteger)getLeapMonth:(NSInteger)yy {
-    if ([self isLeapLunarYear:yy]) {
-        return [LunarUtils getLeapMonthOffset:yy timeZone:7] - 2;
-    }
-    return -1;
-}
-
-- (BMYear *)initWithSYear:(NSInteger)sMonth{
+- (BMYear *)initWithSYear:(NSInteger)sMonth {
     return  [self initWithSYear:sMonth andLYear:0];
 }
 
@@ -45,6 +38,57 @@
     }
     return self;
 }
+
+- (BOOL)isLeapLunarYear {
+    return [BMYear isLeapLunarYear:self.lunarYear];
+}
+
+-(BOOL)isLeapSolarYear {
+    return [BMYear isLeapSolarYear:self.solarYear];
+}
+
+- (NSString*)namCanChi {
+    return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[(self.lunarYear + 6) % 10] , LunarUtils.getDiaChi[(self.lunarYear + 8) % 12]];;
+}
+
+// class method
++ (BOOL)isLeapSolarYear:(NSInteger)solarYear {
+     BOOL isLeapYear = false;
+       if ((solarYear % 4 == 0 && solarYear % 100 != 0) || ( solarYear % 400 )) {
+           isLeapYear = true;
+       }
+       return isLeapYear;
+}
+
+
++ (BOOL)isLeapLunarYear:(NSInteger)lYear {
+    NSInteger a11 = [LunarUtils getLunarMonth11:lYear timeZone:LOCAL_TIMEZONE];
+    NSInteger b11 = [LunarUtils getLunarMonth11:lYear - 1 timeZone:LOCAL_TIMEZONE];
+    NSInteger offset = [LunarUtils getLeapMonthOffset:a11 timeZone:LOCAL_TIMEZONE];
+    if (a11 - b11 > 365 || offset <= 2) {
+        return true;
+    }
+    
+    return false;
+}
+
+
+
++ (NSInteger)getLeapMonth:(NSInteger)yy {
+    if ([self isLeapLunarYear:yy]) {
+        NSInteger a11 = [LunarUtils getLunarMonth11:yy timeZone:LOCAL_TIMEZONE];
+        NSInteger b11 = [LunarUtils getLunarMonth11:yy - 1 timeZone:LOCAL_TIMEZONE];
+        NSInteger offsetA11 = [LunarUtils getLeapMonthOffset:a11 timeZone:LOCAL_TIMEZONE];
+        NSInteger offsetB11 = [LunarUtils getLeapMonthOffset:b11 timeZone:LOCAL_TIMEZONE];
+        if (offsetA11 < 3 ) {
+            return 12 - offsetA11;
+        } else {
+           return  offsetB11 - 2;
+        }
+    }
+    return -1;
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

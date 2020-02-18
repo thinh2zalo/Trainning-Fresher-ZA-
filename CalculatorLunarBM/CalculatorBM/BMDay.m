@@ -7,16 +7,22 @@
 //
 
 #import "BMDay.h"
+#import "BMDate.h"
 #import "LunarUtils.h"
 
 @implementation BMDay
-
-
-
-
-
-
-
+- (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone {
+    if (![BMDate validDate:solarDay month:solarMonth year:solarYear]) {
+        return nil;
+    }
+    self = [super init];
+    if (self) {
+        self.solarDay = solarDay;
+        self.lunarDay = [LunarUtils getLunarDayWithDateSolar:solarDay mm:solarMonth yy:solarYear timeZone:LOCAL_TIMEZONE];
+        
+    }
+    return self;
+}
 
 - (BMDay *)initWithSDay:(NSInteger)sDay{
     return  [self initWithSDay:sDay andLDay:0];
@@ -30,4 +36,5 @@
     }
     return self;
 }
+
 @end

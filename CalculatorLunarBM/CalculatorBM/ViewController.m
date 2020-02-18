@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) UIImageView * backgroundTemp;
 @property (nonatomic, strong) UITextField * inputDateTF;
+@property (nonatomic, strong) BMDate * date;
+
 @property (nonatomic, strong) UIButton * commitBtn;
 @property (nonatomic, strong) LunarDatePickerView * lunarDatePickerView;
 
@@ -39,7 +41,13 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
 
          [self.view addGestureRecognizer:tap];
-    BMDate * bmDate = [[BMDate alloc] initDate:19 :2 :2034];
+    BMDate * bmDate2 = [[BMDate alloc] initDate:3 :12 :2033 andTimeZone:7];
+    
+    
+//        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
+//    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
+    [BMDate getDaysInYear:0 month:0 andTypeOfCalendar:TypeCalendarAmLich];
+//    BMDate * bmDate3 = [BMDate getCurrentDateComponents];
 //    NSLog(@"ngay am lich %tu", bmDate.getLunarDay);
 //    NSLog(@"thang am lich %tu", bmDate.getLunarMonth);
 //    NSLog(@"nam am lich %tu", bmDate.getlunarYear);
@@ -54,6 +62,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     LunarDatePickerView *datePicker = LunarDatePickerView.new;
+   
+    datePicker.typeOfCalendar = TypeCalendarDuongLich;
+    datePicker.selectDate = self.date;
     [datePicker show];
 }
 
@@ -76,10 +87,11 @@
     if(date == nil) {
         NSLog(@"incorrect format");
     } else {
-        BMDate *newDate = [[BMDate alloc] initDate:self.inputDateTF.text];
+        BMDate *newDate = [[BMDate alloc] initDate:self.inputDateTF.text andTimeZone:LOCAL_TIMEZONE];
+        self.date = newDate;
                 [self dismissKeyboard];
-                [self.lunarCalendarView loadDateWithInput:newDate];
-                [self.solarCalenDarView loadDateWithInput:newDate];
+                [self.lunarCalendarView loadDateWithInput:self.date];
+                [self.solarCalenDarView loadDateWithInput:self.date];
     }
 }
 
@@ -112,8 +124,6 @@
     return _inputDateTF;
     
 }
-
-
 
 - (UIButton *)commitBtn {
     if (!_commitBtn) {

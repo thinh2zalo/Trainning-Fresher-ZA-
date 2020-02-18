@@ -20,7 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)getLeapMonth:(NSInteger)sYear;
 - (BMYear *)initWithSYear:(NSInteger)sMonth;
 - (BMYear *)initWithSYear:(NSInteger)sMonth andLYear:(NSInteger)lMonth;
+- (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone;
++ (NSDateComponents *)getCurrentDateComponents;
 
+-(BOOL)isLeapSolarYear;
+-(BOOL)isLeapLunarYear;
 @end
 
 NS_ASSUME_NONNULL_END

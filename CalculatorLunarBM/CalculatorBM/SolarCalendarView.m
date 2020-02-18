@@ -32,7 +32,6 @@
     self.solarDayLabel.frame = CGRectMake(0, 0, 200, 200);
     self.solarDayLabel.center = CGPointMake(self.frame.size.width/2, 180);
     self.dayOfWeekLabel.frame = CGRectMake(0, 0, 150, 40);
-
     self.dayOfWeekLabel.center = CGPointMake(self.frame.size.width/2, 270);
 }
 

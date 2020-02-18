@@ -18,7 +18,7 @@
 @property (nonatomic, strong)BMMonth *month;
 @property (nonatomic, strong)BMYear *year;
 @property (nonatomic, strong) NSString *dayOfWeek;
-@property (assign) NSInteger jdn;
+@property (assign) NSInteger julianDayNumber;
 
 
 
@@ -26,88 +26,65 @@
 @implementation BMDate
 
 
-- (instancetype)initDate:(NSString *)date {
-    NSArray * dayStrArr = [date componentsSeparatedByString:@"/"];
-    NSUInteger day = [dayStrArr[0] integerValue];
-    NSUInteger month = [dayStrArr[1] integerValue];
-    NSUInteger year = [dayStrArr[2] integerValue];
-    return [self initDate:day :month :year];
-
+- (instancetype)initDate:(NSString *)dateStr andTimeZone:(NSInteger)timeZone{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+       dateFormatter.dateFormat = @"dd/MM/yyyy";
+    NSDate * date = [dateFormatter dateFromString:dateStr];
+    if (date == nil) {
+        return nil;
+    }
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date];
+    return [self initDate:components.day :components.month :components.year andTimeZone:timeZone];
 }
-- (instancetype)initDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy {
+
+-  (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy {
+    self = [self initDate:dd :mm :yy andTimeZone:LOCAL_TIMEZONE];
+    if (self) {
+        return self;
+    }
+    return nil;
+}
+
+
+- (instancetype)initDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone{
+    if (![BMDate validDate:dd month:mm year:yy]) {
+        return nil;
+    }
     self = [super init];
     if (self) {
-        NSDictionary * _lunarDayInfor = [LunarUtils convertSolar2Lunar:dd mm:mm yy:yy timeZone:LOCAL_TIMEZONE];
-           NSNumber * lunarDay = [_lunarDayInfor objectForKey:LUNARDAY];
-           NSNumber * lunarMonth = [_lunarDayInfor objectForKey:LUNARMONTH];
-           NSNumber * lunarYear = [_lunarDayInfor objectForKey:LUNARYEAR];
-           NSNumber * lunarLeep = [_lunarDayInfor objectForKey:LUNARLEAP];
-            
-           if (SAFE_TYPE(lunarDay, NSNumber) && SAFE_TYPE(lunarMonth, NSNumber) && SAFE_TYPE(lunarYear, NSNumber) && SAFE_TYPE(lunarLeep, NSNumber)) {
-               self.day = [[BMDay alloc] initWithSDay:dd andLDay:lunarDay.integerValue];
-               self.month = [[BMMonth alloc] initWithSMonth:mm andLMonth:lunarMonth.integerValue];
-               self.year = [[BMYear alloc] initWithSYear:yy andLYear:lunarYear.integerValue];
-               self.jdn = [LunarUtils jdFromDate:dd mm:mm yy:yy];
-               
+        
+        self.day = [[BMDay alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
+               self.month = [[BMMonth alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
+               self.year = [[BMYear alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
+               self.julianDayNumber = [LunarUtils jdFromDate:dd mm:mm yy:yy];
            }
-    }
-   
     return self;
 }
 
-+ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month {
-    BOOL isLeapYear = year % 4 == 0 ? (year % 100 == 0 ? (year % 400 == 0 ? YES : NO) : YES) : NO;
-    switch (month) {
-        case 1:case 3:case 5:case 7:case 8:case 10:case 12:
-        {
-            return 31;
-            break;
-        }
-        case 4:case 6:case 9:case 11:
-        {
-            return 30;
-            break;
-        }
-        case 2:
-        {
-            if (isLeapYear) {
-                return 29;
-                break;
-            } else {
-                return 28;
-                break;
-            }
-        }
-        default:
-            break;
-    }
-    return 0;
-}
-
 - (NSString*)getNgayCanChi {
-    NSInteger CANDay = floor(self.jdn + 9.5);
-    NSInteger CHIDay = floor(self.jdn + 1.5);
+    NSInteger CANDay = floor(self.julianDayNumber + 9.5);
+    NSInteger CHIDay = floor(self.julianDayNumber + 1.5);
     return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10],LunarUtils.getDiaChi[CHIDay % 12]];
 }
 
 - (NSString *)getThangCanChi {
     NSInteger CANDay = (self.year.lunarYear * 12 + self.month.lunarMonth + 3) % 10;
     return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10], LunarUtils.getDiaChi[(self.month.lunarMonth + 1) % 12]];
-    
 }
 
 - (NSString *)getNamCanChi {
     return [self.year namCanChi];
 }
+
 - (NSInteger)getLunarDay {
     return self.day.lunarDay;
 }
 
--(NSInteger)getLunarMonth {
+- (NSInteger)getLunarMonth {
     return self.month.lunarMonth;
 }
 
--(NSInteger)getlunarYear {
+- (NSInteger)getlunarYear {
     return self.year.lunarYear;
 }
 
@@ -123,20 +100,134 @@
     return self.year.solarYear;
 }
 
+- (BOOL)isLeapLunarYear {
+    return [self.year isLeapLunarYear];
+}
+
+- (BOOL)isLeapSolarYear {
+    return [self.year isLeapSolarYear];
+}
+
 - (NSString*)dayOfWeek{
-    int X = floor(self.jdn + 2.5);
-    if (X%7 == 0 ) return @"Thứ bảy";
-    if (X%7 == 1 ) return @"Chủ nhật";
-    if (X%7 == 2 ) return @"Thứ hai";
-    if (X%7 == 3 ) return @"Thứ ba";
-    if (X%7 == 4 ) return @"Thứ tư";
-    if (X%7 == 5 ) return @"Thứ năm";
-    if (X%7 == 6 ) return @"Thứ sáu";
-    return @"Chủ nhật";
+    int X = floor(self.julianDayNumber + 2.5);
+    if (X%7 == 0 ) return THU7;
+    if (X%7 == 1 ) return CHUNHAT;
+    if (X%7 == 2 ) return THU2;
+    if (X%7 == 3 ) return THU3;
+    if (X%7 == 4 ) return THU4;
+    if (X%7 == 5 ) return THU5;
+    if (X%7 == 6 ) return THU6;
+    return CHUNHAT;
+}
+
+
++ (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year {
+    NSString *dateStr = [NSString stringWithFormat:@"%tu/%tu/%tu",day,month,year];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+          dateFormatter.dateFormat = @"dd/MM/yyyy";
+       NSDate * date = [dateFormatter dateFromString:dateStr];
+    if (date) {
+        return true;
+    }
+    return false;
+}
+
++ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar {
+   // check input
+  
+    if (typeOfCalendar == TypeCalendarAmLich) {
+        NSInteger k11, dayStartMonth, dayEndMonth , totalDay;
+        NSInteger a11 = [LunarUtils getLunarMonth11:year timeZone:LOCAL_TIMEZONE];
+        k11 = floor((a11 - 2415021.076998695) / 29.530588853);
+       
+        dayStartMonth = [LunarUtils getNewMoonDay:k11-10 + month - 1 timeZone:LOCAL_TIMEZONE];
+        dayEndMonth =   [LunarUtils getNewMoonDay:k11-10 + month timeZone:LOCAL_TIMEZONE];
+        totalDay = dayEndMonth - dayStartMonth;
+        return  totalDay;
+    } else {
+        Month monthEnum = (Month)month;
+           BOOL isLeapYear = [BMYear isLeapLunarYear:year];
+           switch (monthEnum) {
+               case Thang1:case Thang3:case Thang5:case Thang7:case Thang8:case Thang10:case Thang12: {
+                   return 31;
+                   break;
+               }
+               case Thang4:case Thang6:case Thang9:case Thang11: {
+                   return 30;
+                   break;
+               }
+               case Thang2: {
+                   if (isLeapYear) {
+                       return 29;
+                       break;
+                   } else {
+                       return 28;
+                       break;
+                   }
+               }
+               default:
+                   break;
+           }
+           return 0;
+    }
+   
+}
+
++ (NSDateComponents *)getCurrentDateComponents {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSInteger units = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+      NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSLog(@"date :%@", [dateFormatter stringFromDate:[NSDate date]]);
+    NSDateComponents *components =  [gregorian components:units fromDate:[NSDate date]];
+         return [gregorian components:units fromDate:[NSDate date]];
+}
+
++ (BMDate *)getCurrentDate {
+    BMDate * currentDate  = [[BMDate alloc] initLocalDate:[self getCurrentDateComponents].day :[self getCurrentDateComponents].month  :[self getCurrentDateComponents].year ];
+    return currentDate;
+    
+}
+
++ (NSArray *)getDayArr:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar{
+    NSInteger startDay = 1;
+    NSInteger endDay = [BMDate getDaysInYear:year month:month andTypeOfCalendar:typeOfCalendar];
+    NSMutableArray *tempArr = [NSMutableArray array];
+    for (NSInteger i = startDay; i <= endDay; i++) {
+        [tempArr addObject:[NSString stringWithFormat:@"%@", @(i)]];
+    }
+    return tempArr ;
 }
 
 
 
++ (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear {
+    NSMutableArray *tempArr = [NSMutableArray array];
+    for (NSInteger i = startYear; i <= endYear; i++) {
+        [tempArr addObject:[@(i) stringValue]];
+    }
+    return tempArr;
+}
+
++ (NSArray *)getMonthArr:(NSInteger)year andTypeCalendar:(TypeOfCalendar)typeOfCalendar {
+    
+    NSInteger startMonth = 1;
+    NSInteger endMonth = 12;
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:(endMonth - startMonth + 1)];
+    for (NSInteger i = startMonth; i <= endMonth; i++) {
+        [tempArr addObject:[@(i) stringValue]];
+    }
+    if (typeOfCalendar == TypeCalendarAmLich && [BMYear isLeapLunarYear:year]) {
+        NSInteger leapMonth = [BMYear getLeapMonth:year];
+        NSString *leapMonthStr = [NSString stringWithFormat:@"%tu+", leapMonth];
+        [tempArr insertObject:leapMonthStr atIndex:leapMonth];
+    }
+   return tempArr;
+}
+
++ (NSArray *)getTypeCalendars {
+    return @[AMLICH, DUONGLICH];
+}
 
 
 @end

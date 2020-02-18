@@ -94,7 +94,6 @@
     self.lunarMonthLabel.text = [NSString stringWithFormat:@"%tu", [date getLunarMonth]];
     self.canChiMonthLabel.text = [date getThangCanChi];
     self.canChiYearLabel.text = [date getNamCanChi];
-    
 }
 
 
@@ -106,7 +105,6 @@
         [self addSubview:_hourView];
     }
     return _hourView;
-    
 }
 
 - (UILabel *)hourCanChiLabel {

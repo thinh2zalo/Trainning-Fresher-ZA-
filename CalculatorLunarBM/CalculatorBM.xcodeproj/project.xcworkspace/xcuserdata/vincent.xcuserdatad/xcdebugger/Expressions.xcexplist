@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[BMDate initDate:andTimeZone:]:BMDate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController viewDidLoad]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "bmDate3">
+            </PersistentString>
+            <PersistentString
+               value = "bmDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
