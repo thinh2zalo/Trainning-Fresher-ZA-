@@ -79,23 +79,24 @@
     if (self.monthIndex > self.monthArr.count - 1 || self.yearIndex > self.yearArr.count - 1 || self.dayIndex > self.dayArr.count - 1 ) {
         return;
     }
-    
-    NSInteger year = [self.yearArr[self.yearIndex] integerValue];
-    NSInteger month = [self.monthArr[self.monthIndex] integerValue];
-    NSInteger day = [self.dayArr[self.dayIndex] integerValue];
-    NSLog(@"%tu, %tu, %tu", day, year, month);
-    BOOL isLeapMonth = false;
-    if ([BMYear isLeapLunarYear:year]) {
-        if (self.monthIndex == [BMYear getLeapMonth:year]) {
-            isLeapMonth = true;
+    if (typeOfColumnPicker != ColumnTypeCalendar) {
+        NSInteger year = [self.yearArr[self.yearIndex] integerValue];
+        NSInteger month = [self.monthArr[self.monthIndex] integerValue];
+        NSInteger day = [self.dayArr[self.dayIndex] integerValue];
+        BOOL isLeapMonth = false;
+        if ([BMYear isLeapLunarYear:year]) {
+            if (self.monthIndex == [BMYear getLeapLunarMonth:year]) {
+                isLeapMonth = true;
+            }
+        }
+        if (self.typeOfCalendar == TypeCalendarAmLich) {
+            self.selectDate = [[BMDate alloc] initDateWithLunarDate:day :month :year isLeapMonth:isLeapMonth andTimeZone:LOCAL_TIMEZONE];
+            
+        } else {
+            self.selectDate = [[BMDate alloc] initDateWithSolarDate:day :month :year andTimeZone:LOCAL_TIMEZONE];
         }
     }
-    if (self.typeOfCalendar == TypeCalendarAmLich) {
-        self.selectDate = [[BMDate alloc] initDateWithLunarDate:day :month :year isLeapMonth:isLeapMonth andTimeZone:LOCAL_TIMEZONE];
-        
-    } else {
-        self.selectDate = [[BMDate alloc] initDateWithSolarDate:day :month :year andTimeZone:LOCAL_TIMEZONE];
-    }
+    
     [self scrollToSelectDate:self.selectDate andTypeOfCalendar:self.typeOfCalendar animated:YES];
 }
 
@@ -183,18 +184,6 @@
     }];
 }
 
-- (void)reloadDateArrayWithUpdateYear:(BOOL)updateYear updateMonth:(BOOL)updateMonth updateDay:(BOOL)updateDay {
-    if (self.yearArr.count == 0 || self.monthArr.count == 0 || self.dayArr == 0) {
-        return;
-    }
-    if (updateMonth) {
-       self.monthArr = [BMDate getMonthArr:[self.yearArr[self.yearIndex] integerValue] andTypeCalendar:self.typeOfCalendar];
-    }
-    if (updateDay) {
-        self.dayArr = [BMDate getDayArr:[self.yearArr[self.yearIndex] integerValue] month:[self.monthArr[self.monthIndex] integerValue] andTypeOfCalendar:self.typeOfCalendar];
-    }
-    
-}
 
 - (void)removeLunarDatePicker {
     [UIView animateWithDuration:0.2 animations:^{
@@ -241,6 +230,24 @@
     }
     
 }
+
+- (void)reloadDateArrayWithUpdateYear:(BOOL)updateYear updateMonth:(BOOL)updateMonth updateDay:(BOOL)updateDay {
+    if (self.yearArr.count == 0) {
+        return;
+    }
+    if (updateMonth) {
+       self.monthArr = [BMDate getMonthArr:[self.yearArr[self.yearIndex] integerValue] andTypeCalendar:self.typeOfCalendar];
+    }
+    if (self.monthArr.count == 0) {
+           return;
+    }
+    if (updateDay) {
+        self.dayArr = [BMDate getDayArr:[self.yearArr[self.yearIndex] integerValue] month:[self.monthArr[self.monthIndex] integerValue] andTypeOfCalendar:self.typeOfCalendar];
+    }
+    
+}
+
+// lazy init
 
 - (UIPickerView *)lunarDatePickerView {
     if (!_lunarDatePickerView) {

@@ -20,15 +20,13 @@
     self = [super init];
       if (self) {
           self.solarYear = solarYear;
-          self.lunarYear = [LunarUtils getLunarYearWithDateSolar:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
+          self.lunarYear = [LunarUtils getLunarYearWithSolarDate:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
       }
       return self;
 }
 
 - (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone {
-//    if (![BMDate validDate:lunarDay month:solarMonth year:lunarYear]) {
-//        return nil;
-//    }
+// check input
     self = [super init];
     if (self) {
         self.lunarYear = lunarYear;
@@ -86,10 +84,10 @@
 
 
 
-+ (NSInteger)getLeapMonth:(NSInteger)yy {
++ (NSInteger)getLeapLunarMonth:(NSInteger)yy {
     if ([self isLeapLunarYear:yy]) {
-        NSInteger a11 = [LunarUtils getLunarMonth11:yy timeZone:LOCAL_TIMEZONE];
-        NSInteger b11 = [LunarUtils getLunarMonth11:yy - 1 timeZone:LOCAL_TIMEZONE];
+        NSInteger a11 = [LunarUtils getLunarMonth11:yy timeZone:LOCAL_TIMEZONE]; // ngay dau tien cuar thang chua  dong tri cua nam yy
+        NSInteger b11 = [LunarUtils getLunarMonth11:yy - 1 timeZone:LOCAL_TIMEZONE]; // ngay dau tien cua thang chua dong tri cua nam truoc do yy - 1
         NSInteger offsetA11 = [LunarUtils getLeapMonthOffset:a11 timeZone:LOCAL_TIMEZONE];
         NSInteger offsetB11 = [LunarUtils getLeapMonthOffset:b11 timeZone:LOCAL_TIMEZONE];
         if (offsetA11 < 3 ) {

@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 -  (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
 - (instancetype)initDateWithLunarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth andTimeZone:(NSInteger)timeZone;
 - (BOOL)isLeapLunarMonth;
-- (BOOL)isLeapSolarMonth;
+
+- (BOOL)isLeapLunarYear;
+- (BOOL)isLeapSolarYear;
 
 - (NSString*)getNgayCanChi;
 - (NSString *)getThangCanChi;
@@ -31,7 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar;
 
-+ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month;
 + (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear;
 + (NSArray *)getMonthArr:(NSInteger)year andTypeCalendar:(TypeOfCalendar)typeOfCalendar;
 + (NSArray *)getTypeCalendars;

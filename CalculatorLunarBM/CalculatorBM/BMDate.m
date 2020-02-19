@@ -239,14 +239,13 @@
     for (NSInteger i = startMonth; i <= endMonth; i++) {
         [tempArr addObject:[@(i) stringValue]];
     }
-    if (typeOfCalendar == TypeCalendarAmLich) {
-        NSLog(@"check lunaryear :%tu", year);
-    }
+    
     if (typeOfCalendar == TypeCalendarAmLich && [BMYear isLeapLunarYear:year]) {
-        NSInteger leapMonth = [BMYear getLeapMonth:year];
-        NSLog(@"checkk");
+        NSInteger leapMonth = [BMYear getLeapLunarMonth:year];
         NSString *leapMonthStr = [NSString stringWithFormat:@"%tu+", leapMonth];
-        [tempArr insertObject:leapMonthStr atIndex:leapMonth];
+        if ([leapMonthStr isKindOfClass:NSString.class]) {
+             [tempArr insertObject:leapMonthStr atIndex:leapMonth];
+        }
     }
     return tempArr;
 }
