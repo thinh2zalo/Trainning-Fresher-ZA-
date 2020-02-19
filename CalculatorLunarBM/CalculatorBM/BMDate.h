@@ -15,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initDateWithSolarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone;
 -  (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
 - (instancetype)initDateWithLunarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth andTimeZone:(NSInteger)timeZone;
-- (BOOL)isLeapLunarMonth;
 
+- (BOOL)isLeapLunarMonth;
 - (BOOL)isLeapLunarYear;
 - (BOOL)isLeapSolarYear;
+
++ (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
 
 
 - (NSString*)getNgayCanChi;
@@ -32,13 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
 -(NSInteger)getLeapLunarMonth;
-+ (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar;
+
+
++ (NSInteger)getDaysInLunarYear:(NSInteger)year month:(NSInteger)month leapMonth:(NSInteger)leapMonth;
+
++ (NSArray *) getSolarDayArr:(NSInteger)year month:(NSInteger)month;
++ (NSArray *) getLunarDayArr:(NSInteger)year month:(NSInteger)month isLeapMonth:(BOOL)isLeapMonth;
 
 + (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear;
 + (NSArray *)getMonthArr:(NSInteger)year andTypeCalendar:(TypeOfCalendar)typeOfCalendar;
 + (NSArray *)getTypeCalendars;
 + (NSArray *)getDayArr:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar;
-+ (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
 + (NSDateComponents *)getCurrentDateComponents;
 + (BMDate *)getCurrentDate;
 

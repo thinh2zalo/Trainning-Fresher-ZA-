@@ -45,8 +45,10 @@
         
 //        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
 //    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
-
-        [BMDate getDaysInYear:0 month:0 andTypeOfCalendar:TypeCalendarAmLich];
+    [BMDate getDayArr:2020 month:4 andTypeOfCalendar:TypeCalendarAmLich];
+    NSInteger check2 = [LunarUtils jdFromLunarDate:1 mm:1 yy:2020 lunarLeap:0 andTimeZone:7];
+    NSArray * array = [LunarUtils jdToDate:check2];
+    NSLog(@"%@ %@ %@", array[0], array[1], array[2]);
 //    BMDate * bmDate3 = [BMDate getCurrentDateComponents];
 //    NSLog(@"ngay am lich %tu", bmDate.getLunarDay);
 //    NSLog(@"thang am lich %tu", bmDate.getLunarMonth);
@@ -115,7 +117,7 @@
 - (UITextField *)inputDateTF {
     if (!_inputDateTF) {
         _inputDateTF = UITextField.new;
-        _inputDateTF.placeholder = @"dd/mm/yy";
+        _inputDateTF.placeholder = @"dd/mm/yyyy";
         _inputDateTF.layer.borderColor = [UIColor grayColor].CGColor;
      
         _inputDateTF.borderStyle = UITextBorderStyleRoundedRect;
