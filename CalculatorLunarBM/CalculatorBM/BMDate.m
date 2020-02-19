@@ -73,6 +73,10 @@
     return self;
 }
 
+-(NSInteger)getLeapLunarMonth {
+    return [self.year getLeapLunarMonth];
+}
+
 - (BOOL)isLeapLunarMonth {
     return [LunarUtils isLeapMonth:self.getSolarDay mm:self.getSolarMonth yy:self.getSolarYear timeZone:LOCAL_TIMEZONE];
 }
@@ -214,10 +218,6 @@
     for (NSInteger i = startDay; i <= endDay; i++) {
         [tempArr addObject:[NSString stringWithFormat:@"%@", @(i)]];
     }
-    if (typeOfCalendar == TypeCalendarAmLich) {
-        NSLog(@"am lichhhh enday:%tu", endDay);
-    }
-    
     return tempArr ;
 }
 

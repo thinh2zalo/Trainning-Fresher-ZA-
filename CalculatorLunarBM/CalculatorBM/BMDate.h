@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isLeapLunarYear;
 - (BOOL)isLeapSolarYear;
 
+
 - (NSString*)getNgayCanChi;
 - (NSString *)getThangCanChi;
 - (NSString *)getNamCanChi;
@@ -30,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getSolarMonth;
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
-
+-(NSInteger)getLeapLunarMonth;
 + (NSUInteger)getDaysInYear:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar;
 
 + (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear;

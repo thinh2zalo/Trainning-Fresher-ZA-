@@ -61,6 +61,11 @@
     return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[(self.lunarYear + 6) % 10] , LunarUtils.getDiaChi[(self.lunarYear + 8) % 12]];;
 }
 
+- (NSInteger)getLeapLunarMonth {
+   return  [BMYear getLeapLunarMonth:self.lunarYear];
+}
+
+
 // class method
 + (BOOL)isLeapSolarYear:(NSInteger)solarYear {
      BOOL isLeapYear = false;
@@ -86,7 +91,7 @@
 
 + (NSInteger)getLeapLunarMonth:(NSInteger)yy {
     if ([self isLeapLunarYear:yy]) {
-        NSInteger a11 = [LunarUtils getLunarMonth11:yy timeZone:LOCAL_TIMEZONE]; // ngay dau tien cuar thang chua  dong tri cua nam yy
+        NSInteger a11 = [LunarUtils getLunarMonth11:yy timeZone:LOCAL_TIMEZONE]; // ngay dau tien cua thang chua  dong tri cua nam yy
         NSInteger b11 = [LunarUtils getLunarMonth11:yy - 1 timeZone:LOCAL_TIMEZONE]; // ngay dau tien cua thang chua dong tri cua nam truoc do yy - 1
         NSInteger offsetA11 = [LunarUtils getLeapMonthOffset:a11 timeZone:LOCAL_TIMEZONE];
         NSInteger offsetB11 = [LunarUtils getLeapMonthOffset:b11 timeZone:LOCAL_TIMEZONE];

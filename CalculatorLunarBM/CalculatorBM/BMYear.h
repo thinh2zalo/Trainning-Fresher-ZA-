@@ -15,17 +15,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSUInteger lunarYear;
 @property (assign) NSUInteger solarYear;
 
-- (NSString*)namCanChi;
-+ (BOOL)isLeapLunarYear:(NSInteger)lYear;
-+ (NSInteger)getLeapLunarMonth:(NSInteger)lYear;
+
 - (BMYear *)initWithSYear:(NSInteger)sMonth;
 - (BMYear *)initWithSYear:(NSInteger)sMonth andLYear:(NSInteger)lMonth;
 - (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone;
 - (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone;
 + (NSDateComponents *)getCurrentDateComponents;
 
-+ (BOOL)isLeapSolarYear:(NSInteger)solarYear;
 
+- (NSString*)namCanChi;
++ (NSInteger)getLeapLunarMonth:(NSInteger)lYear;
+
++ (BOOL)isLeapSolarYear:(NSInteger)solarYear;
++ (BOOL)isLeapLunarYear:(NSInteger)lYear;
+
+
+- (NSInteger)getLeapLunarMonth;
 -(BOOL)isLeapSolarYear;
 -(BOOL)isLeapLunarYear;
 @end
