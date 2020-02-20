@@ -42,10 +42,9 @@
         [self.view addGestureRecognizer:tap];
         BMDate * bmDate2 = [[BMDate alloc] initDateWithLunarDate:14 :4 :2020 isLeapMonth:YES andTimeZone:7];
         
-        
 //        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
 //    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
-    [BMDate getDayArr:2020 month:4 andTypeOfCalendar:TypeCalendarAmLich];
+//    [BMDate getDayArr:2020 month:4 andTypeOfCalendar:TypeCalendarAmLich];
     NSInteger check2 = [LunarUtils jdFromLunarDate:1 mm:1 yy:2020 lunarLeap:0 andTimeZone:7];
     NSArray * array = [LunarUtils jdToDate:check2];
     NSLog(@"%@ %@ %@", array[0], array[1], array[2]);
@@ -161,7 +160,6 @@
 - (LunarDatePickerView *)lunarDatePickerView {
     if (!_lunarDatePickerView) {
         _lunarDatePickerView = LunarDatePickerView.new;
-        
     }
     return _lunarDatePickerView;
 }

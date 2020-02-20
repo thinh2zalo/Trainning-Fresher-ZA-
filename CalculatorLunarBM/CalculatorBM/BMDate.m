@@ -186,6 +186,10 @@
     return 0;
 }
 
+-(BOOL)bmDate_compare:(BMDate *)date {
+    return self.julianDayNumber >= date.julianDayNumber ? true : false;
+}
+
 + (NSInteger)getDaysInLunarYear:(NSInteger)year month:(NSInteger)month leapMonth:(NSInteger)leapMonth {
     
     NSInteger startDayOfMonth = [LunarUtils jdFromLunarDate:1 mm:month yy:year lunarLeap:leapMonth andTimeZone:LOCAL_TIMEZONE];
@@ -256,6 +260,23 @@
 
 + (NSArray *)getDayArr:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar{
     NSInteger startDay = 1;
+     NSInteger endDay;
+     if (typeOfCalendar == TypeCalendarAmLich) {
+         NSInteger leapMonth = 0;
+         endDay = [BMDate getDaysInLunarYear:year month:month leapMonth:leapMonth];
+     } else {
+         endDay = [BMDate getDaysInSolarYear:year month:month];
+     }
+    
+     NSMutableArray *tempArr = [NSMutableArray array];
+     for (NSInteger i = startDay; i <= endDay; i++) {
+         [tempArr addObject:[NSString stringWithFormat:@"%@", @(i)]];
+     }
+     return tempArr ;
+}
+
++ (NSArray *)getDayArr:(NSInteger)year month:(NSInteger)month andTypeOfCalendar:(TypeOfCalendar) typeOfCalendar{
+    NSInteger startDay = 1;
     NSInteger endDay;
     if (typeOfCalendar == TypeCalendarAmLich) {
         NSInteger leapMonth = 0;
@@ -270,8 +291,6 @@
     }
     return tempArr ;
 }
-
-
 
 + (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear {
     NSMutableArray *tempArr = [NSMutableArray array];

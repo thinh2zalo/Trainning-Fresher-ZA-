@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isLeapLunarYear;
 - (BOOL)isLeapSolarYear;
 + (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
+-(BOOL)bmDate_compare:(BMDate *)date;
 
 
 // function Public API

@@ -20,7 +20,13 @@
 #define AMLICH @"Âm"
 #define DUONGLICH @"Dương Lịch"
 #define STARTYEAR 1911
+#define STARTMONTH 1
+#define STARTDAY 1
+
 #define ENDYEAR 2099
+#define ENDMONTH 12
+#define ENDDAY 31
+
 
 // define dayOfWeek
 #define THU2 @"Thứ Hai"
