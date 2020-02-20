@@ -12,10 +12,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LunarDatePickerView : UIView
+/** @property selectDate
+*   @brief   Set the selected time */
 @property (nonatomic, strong) BMDate * selectDate;
+/** @property minDate
+*   @brief   set min Date in datePicker*/
 @property (nonatomic, strong) BMDate * minDate;
+/** @property maxDate
+*   @brief   set max Date in datePicker*/
 @property (nonatomic, strong) BMDate * maxDate;
-
+/** @property typeOfCalendar
+*   @brief   set type of calendar  lunar calendar || solar calendar */
 @property (nonatomic) TypeOfCalendar typeOfCalendar;
 
 

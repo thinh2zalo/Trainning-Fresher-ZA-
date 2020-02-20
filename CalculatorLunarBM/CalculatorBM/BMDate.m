@@ -299,7 +299,7 @@
     return tempArr;
 }
 
-+ (NSArray *)getTypeCalendars {
++ (NSArray *)getTypeCalendarArr {
     return @[AMLICH, DUONGLICH];
 }
 

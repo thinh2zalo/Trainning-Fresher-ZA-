@@ -27,6 +27,7 @@
 @property(nonatomic, assign) NSInteger dayIndex;
 @property(nonatomic, assign) NSInteger typeCalendarIndex;
 
+@property(nonatomic, strong) BMDate  *mSelectDate;
 
 
 @end
@@ -42,13 +43,13 @@
             self.typeOfCalendar = (TypeOfCalendar)self.typeCalendarIndex;
             
             if (self.typeOfCalendar == TypeCalendarAmLich) {
-                self.yearIndex = self.selectDate.getlunarYear - STARTYEAR;
-                self.monthIndex = self.selectDate.getLunarMonth - 1;
-                self.dayIndex = self.selectDate.getLunarDay - 1;
+                self.yearIndex = self.mSelectDate.getlunarYear - STARTYEAR;
+                self.monthIndex = self.mSelectDate.getLunarMonth - 1;
+                self.dayIndex = self.mSelectDate.getLunarDay - 1;
             } else {
-                self.yearIndex = self.selectDate.getSolarYear - STARTYEAR;
-                self.monthIndex = self.selectDate.getSolarMonth - 1;
-                self.dayIndex = self.selectDate.getSolarDay - 1;
+                self.yearIndex = self.mSelectDate.getSolarYear - STARTYEAR;
+                self.monthIndex = self.mSelectDate.getSolarMonth - 1;
+                self.dayIndex = self.mSelectDate.getSolarDay - 1;
             }
             [self reloadDateArrayWithUpdateMonth:YES updateDay:YES];
             [self.lunarDatePickerView reloadComponent:ColumnMonth];
@@ -56,24 +57,28 @@
             break;
         case ColumnYear:
             self.yearIndex = row;
-            if (self.typeOfCalendar == TypeCalendarAmLich) { // Set monthindex accordingly in type AmLich
+         
+
+            if (self.typeOfCalendar == TypeCalendarAmLich) {
                 NSInteger diff = 0;
                 NSInteger  lunarLeapMonth = 0;
                 NSInteger selectYear = [self.yearArr[self.yearIndex] integerValue];
                 NSArray * monthArrOfThisYear = [BMDate getMonthArr:selectYear andTypeCalendar:self.typeOfCalendar];
                 diff = monthArrOfThisYear.count - self.monthArr.count ;
                 if (diff < 0) {
-                    lunarLeapMonth = [BMYear getLeapLunarMonth:self.selectDate.getlunarYear];
+                    lunarLeapMonth = [BMYear getLeapLunarMonth:self.mSelectDate.getlunarYear];
                 }
                 if (diff > 0) {
                     lunarLeapMonth = [BMYear getLeapLunarMonth:selectYear];
                 }
-                if ((self.monthIndex > lunarLeapMonth && diff != 0) || (self.monthIndex == lunarLeapMonth && diff > 0)) {
-                    self.monthIndex = self.monthIndex + diff;
+                if (self.monthIndex > lunarLeapMonth && diff != 0) {
+                     self.monthIndex = self.monthIndex + diff;
                 }
-                
+                if (self.monthIndex == lunarLeapMonth && diff > 0) {
+                     self.monthIndex = self.monthIndex + diff;
+                }
             }
-            
+           
             [self reloadDateArrayWithUpdateMonth:YES updateDay:YES];
             [self.lunarDatePickerView reloadComponent:ColumnMonth];
             [self.lunarDatePickerView reloadComponent:ColumnDay];
@@ -106,12 +111,12 @@
             }
         }
         if (self.typeOfCalendar == TypeCalendarAmLich) {
-            self.selectDate = [[BMDate alloc] initDateWithLunarDate:day :month :year isLeapMonth:isLeapMonth andTimeZone:LOCAL_TIMEZONE];
+            self.mSelectDate = [[BMDate alloc] initDateWithLunarDate:day :month :year isLeapMonth:isLeapMonth andTimeZone:LOCAL_TIMEZONE];
         } else {
-            self.selectDate = [[BMDate alloc] initDateWithSolarDate:day :month :year andTimeZone:LOCAL_TIMEZONE];
+            self.mSelectDate = [[BMDate alloc] initDateWithSolarDate:day :month :year andTimeZone:LOCAL_TIMEZONE];
         }
     } else {
-        [self scrollToSelectDate:self.selectDate andTypeOfCalendar:self.typeOfCalendar animated:NO];
+        [self scrollToSelectDate:self.mSelectDate andTypeOfCalendar:self.typeOfCalendar animated:NO];
     }
 }
 
@@ -225,7 +230,7 @@
 - (void)loadData {
     [self handlerDefaultSelectDate];
     [self initDateArray];
-    [self scrollToSelectDate:self.selectDate andTypeOfCalendar:self.typeOfCalendar animated:NO];
+    [self scrollToSelectDate:self.mSelectDate andTypeOfCalendar:self.typeOfCalendar animated:NO];
 }
 
 - (void)handlerDefaultSelectDate {
@@ -234,21 +239,24 @@
     }
     if (!_typeOfCalendar) {
         self.typeOfCalendar = TypeCalendarDuongLich;
-        
     }
 }
 
 -(void)initDateArray {
-    self.typeCalendarArr = [BMDate getTypeCalendars];
+    self.typeCalendarArr = [BMDate getTypeCalendarArr];
     if (self.typeOfCalendar == TypeCalendarDuongLich) {
-        self.dayArr = [BMDate getDayArr:self.selectDate.getSolarYear month:self.selectDate.getSolarMonth andTypeOfCalendar:self.typeOfCalendar];
-        self.monthArr = [BMDate getMonthArr:self.selectDate.getSolarYear andTypeCalendar:self.typeOfCalendar];
+        self.dayArr = [BMDate getSolarDayArr:self.mSelectDate.getSolarDay month:self.mSelectDate.getSolarMonth];
+        self.monthArr = [BMDate getMonthArr:self.mSelectDate.getSolarYear andTypeCalendar:TypeCalendarDuongLich];
         self.yearArr = [BMDate getYearArrWithStartYear:STARTYEAR andEndYear:ENDYEAR];
     }
 }
 
 - (void)setSelectDate:(BMDate *)selectDate {
+    if (!selectDate) {
+        return;
+    }
     _selectDate = selectDate;
+    _mSelectDate = selectDate;
     if (_lunarDatePickerView) {
         [self loadData];
     }
