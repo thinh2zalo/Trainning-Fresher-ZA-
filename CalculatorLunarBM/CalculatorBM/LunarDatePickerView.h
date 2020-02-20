@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LunarDatePickerView : UIView
 @property (nonatomic, strong) BMDate * selectDate;
+@property (nonatomic, strong) BMDate * minDate;
+@property (nonatomic, strong) BMDate * maxDate;
+
 @property (nonatomic) TypeOfCalendar typeOfCalendar;
 
 

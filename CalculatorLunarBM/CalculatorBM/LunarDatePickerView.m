@@ -56,9 +56,7 @@
             break;
         case ColumnYear:
             self.yearIndex = row;
-         
-
-            if (self.typeOfCalendar == TypeCalendarAmLich) {
+            if (self.typeOfCalendar == TypeCalendarAmLich) { // Set monthindex accordingly in type AmLich
                 NSInteger diff = 0;
                 NSInteger  lunarLeapMonth = 0;
                 NSInteger selectYear = [self.yearArr[self.yearIndex] integerValue];
@@ -70,14 +68,12 @@
                 if (diff > 0) {
                     lunarLeapMonth = [BMYear getLeapLunarMonth:selectYear];
                 }
-                if (self.monthIndex > lunarLeapMonth && diff != 0) {
-                     self.monthIndex = self.monthIndex + diff;
+                if ((self.monthIndex > lunarLeapMonth && diff != 0) || (self.monthIndex == lunarLeapMonth && diff > 0)) {
+                    self.monthIndex = self.monthIndex + diff;
                 }
-                if (self.monthIndex == lunarLeapMonth && diff > 0) {
-                     self.monthIndex = self.monthIndex + diff;
-                }
+                
             }
-           
+            
             [self reloadDateArrayWithUpdateMonth:YES updateDay:YES];
             [self.lunarDatePickerView reloadComponent:ColumnMonth];
             [self.lunarDatePickerView reloadComponent:ColumnDay];
@@ -234,8 +230,11 @@
 
 - (void)handlerDefaultSelectDate {
     if (!_selectDate) {
-        self.typeOfCalendar = TypeCalendarDuongLich;
         self.selectDate = [BMDate getCurrentDate];
+    }
+    if (!_typeOfCalendar) {
+        self.typeOfCalendar = TypeCalendarDuongLich;
+        
     }
 }
 
@@ -245,6 +244,13 @@
         self.dayArr = [BMDate getDayArr:self.selectDate.getSolarYear month:self.selectDate.getSolarMonth andTypeOfCalendar:self.typeOfCalendar];
         self.monthArr = [BMDate getMonthArr:self.selectDate.getSolarYear andTypeCalendar:self.typeOfCalendar];
         self.yearArr = [BMDate getYearArrWithStartYear:STARTYEAR andEndYear:ENDYEAR];
+    }
+}
+
+- (void)setSelectDate:(BMDate *)selectDate {
+    _selectDate = selectDate;
+    if (_lunarDatePickerView) {
+        [self loadData];
     }
 }
 
