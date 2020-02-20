@@ -291,7 +291,6 @@
     
     if (typeOfCalendar == TypeCalendarAmLich && [BMYear isLeapLunarYear:year]) {
         NSInteger leapMonth = [BMYear getLeapLunarMonth:year];
-        NSLog(@"leapMonth: %tu", leapMonth);
         NSString *leapMonthStr = [NSString stringWithFormat:@"%tu+", leapMonth];
         if ([leapMonthStr isKindOfClass:NSString.class] && leapMonth <= tempArr.count) {
              [tempArr insertObject:leapMonthStr atIndex:leapMonth];

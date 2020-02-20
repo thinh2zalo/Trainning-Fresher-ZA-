@@ -55,12 +55,12 @@
             [self.lunarDatePickerView reloadComponent:ColumnDay];
             break;
         case ColumnYear:
-            
             self.yearIndex = row;
-            NSInteger diff = 0;
-            NSInteger  lunarLeapMonth = 0;
+         
 
             if (self.typeOfCalendar == TypeCalendarAmLich) {
+                NSInteger diff = 0;
+                NSInteger  lunarLeapMonth = 0;
                 NSInteger selectYear = [self.yearArr[self.yearIndex] integerValue];
                 NSArray * monthArrOfThisYear = [BMDate getMonthArr:selectYear andTypeCalendar:self.typeOfCalendar];
                 diff = monthArrOfThisYear.count - self.monthArr.count ;
@@ -70,18 +70,18 @@
                 if (diff > 0) {
                     lunarLeapMonth = [BMYear getLeapLunarMonth:selectYear];
                 }
-                if (self.monthIndex >= lunarLeapMonth && diff != 0) {
+                if (self.monthIndex > lunarLeapMonth && diff != 0) {
+                     self.monthIndex = self.monthIndex + diff;
+                }
+                if (self.monthIndex == lunarLeapMonth && diff > 0) {
                      self.monthIndex = self.monthIndex + diff;
                 }
             }
            
             [self reloadDateArrayWithUpdateMonth:YES updateDay:YES];
-            
             [self.lunarDatePickerView reloadComponent:ColumnMonth];
             [self.lunarDatePickerView reloadComponent:ColumnDay];
-          
             [self.lunarDatePickerView selectRow:self.monthIndex inComponent:ColumnMonth animated:NO];
-
             break;
         case ColumnMonth:
             self.monthIndex = row;
@@ -115,7 +115,6 @@
             self.selectDate = [[BMDate alloc] initDateWithSolarDate:day :month :year andTimeZone:LOCAL_TIMEZONE];
         }
     } else {
-        NSLog(@"scrollToSelectDate");
         [self scrollToSelectDate:self.selectDate andTypeOfCalendar:self.typeOfCalendar animated:NO];
     }
 }
