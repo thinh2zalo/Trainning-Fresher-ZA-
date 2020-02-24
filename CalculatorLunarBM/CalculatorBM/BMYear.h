@@ -24,9 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 // get infor with this year
 - (NSString*)namCanChi;
 + (NSInteger)getLeapLunarMonth:(NSInteger)lYear;
+
+// các hàm kiểm tra năm hiện tại có nhuận hay không ( class methods )
+ 
 + (BOOL)isLeapSolarYear:(NSInteger)solarYear;
 + (BOOL)isLeapLunarYear:(NSInteger)lYear;
 - (NSInteger)getLeapLunarMonth;
+// các hàm kiểm tra năm hiện tại có nhuận hay không. 
 -(BOOL)isLeapSolarYear;
 -(BOOL)isLeapLunarYear;
 @end

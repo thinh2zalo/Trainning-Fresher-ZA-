@@ -41,7 +41,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:tap];
         BMDate * bmDate2 = [[BMDate alloc] initDateWithLunarDate:14 :4 :2020 isLeapMonth:YES andTimeZone:7];
-        
+//        BMDate * bmDate3 = [[BMDate alloc] initDateWithSolarDate:1 :1 :2000 andTimeZone:7];
+
 //        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
 //    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
 //    [BMDate getDayArr:2020 month:4 andTypeOfCalendar:TypeCalendarAmLich];

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BMDay : NSObject
 @property (assign) NSUInteger lunarDay;
 @property (assign) NSUInteger solarDay;
+// các hàm khởi tạo
 - (BMDay *)initWithSDay:(NSInteger)sDay;
 - (BMDay *)initWithSDay:(NSInteger)sDay andLDay:(NSInteger)lDay;
 

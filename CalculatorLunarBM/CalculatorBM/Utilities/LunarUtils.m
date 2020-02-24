@@ -362,7 +362,39 @@
     
     return dict;
 }
- 
+
++ (NSInteger)jdFromLunarDate:(NSInteger)lunarDay mm:(NSInteger)lunarMonth yy:(NSInteger)lunarYear isLunarLeap:(BOOL)isLunarLeap andTimeZone:(NSInteger) timeZone {
+    double k, a11, b11, off, leapOff, leapMonth, monthStart;
+      NSInteger jd;
+      if (lunarMonth < 11) {
+          a11 = [self getLunarMonth11:lunarYear-1 timeZone:timeZone];
+          b11 = [self getLunarMonth11:lunarYear timeZone:timeZone];
+      } else {
+          a11 = [self getLunarMonth11:lunarYear timeZone:timeZone];
+          b11 = [self getLunarMonth11:lunarYear+1 timeZone:timeZone];
+      }
+      off = lunarMonth - 11;
+      if (off < 0) {
+          off = off + 12;
+      }
+      if (b11 - a11 > 365) {
+          leapOff = [self getLeapMonthOffset:a11 timeZone:timeZone];
+          leapMonth = leapOff - 2;
+          if (leapMonth < 0) {
+              leapMonth += 12;
+          }
+          if (isLunarLeap && lunarMonth != leapMonth) {
+          } else if (isLunarLeap || off >= leapOff) {
+              off += 1;
+          }
+      }
+    
+      k = floor(0.5 + (a11 - 2415021.076998695) / 29.530588853);
+      monthStart = [self getNewMoonDay:k+off timeZone:timeZone];
+      jd = monthStart + lunarDay - 1;
+    return jd;
+}
+ // loai bo~
 + (NSInteger)jdFromLunarDate:(NSInteger)lunarDay mm:(NSInteger)lunarMonth yy:(NSInteger)lunarYear lunarLeap:(NSInteger)lunarLeap andTimeZone:(NSInteger) timeZone {
     double k, a11, b11, off, leapOff, leapMonth, monthStart;
       NSInteger jd;

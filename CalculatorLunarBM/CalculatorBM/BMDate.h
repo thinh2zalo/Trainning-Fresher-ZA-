@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "define.h"
+#import "BMYear.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BMDate : NSObject
@@ -16,41 +17,42 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initDateWithSolarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone;
 -  (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
 - (instancetype)initDateWithLunarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth andTimeZone:(NSInteger)timeZone;
-// check infor about leap month or leap year
+// kiểm tra tháng hiện tại có phải tháng nhuận hay không ?
 - (BOOL)isLeapLunarMonth;
+// kiểm tra có phải năm nhuận trong dương lịch hay không
 - (BOOL)isLeapLunarYear;
+// kiểm tra có phải năm nhuận trong âm lịch hay không
 - (BOOL)isLeapSolarYear;
+// valiedate một ngày dương lịch
 + (BOOL)validDate:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
+// so sánh 2 ngày. true ngày so sánh lớn hơn ngày nhập
 -(BOOL)bmDate_compare:(BMDate *)date;
 
 
 // function Public API
+// get ngày tháng năm trong hệ can chi
 - (NSString*)getNgayCanChi;
 - (NSString *)getThangCanChi;
 - (NSString *)getNamCanChi;
+
+// get ngày tháng năm âm lịch
 - (NSInteger)getLunarDay;
 - (NSInteger)getLunarMonth;
 - (NSInteger)getlunarYear;
+// get ngày tháng năm dương lịch
 - (NSInteger)getSolarDay;
 - (NSInteger)getSolarMonth;
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
+// get tháng nhuận trong năm
 -(NSInteger)getLeapLunarMonth;
 
+// gét ngày tháng năm với một kiểu lịch nào đo
+- (NSInteger)getDayWithTypeCalendar:(TypeOfCalendar)typeOfCalendar;
+- (NSInteger)getMonthWithTypeCalendar:(TypeOfCalendar)typeOfCalendar;
+- (NSInteger)getYearWithTypeCalendar:(TypeOfCalendar)typeOfCalendar;
+- (NSInteger)getIndexOfMonthInYear:(TypeOfCalendar)typeOfCalendar;
 
-+ (NSInteger)getDaysInLunarYear:(NSInteger)year month:(NSInteger)month leapMonth:(NSInteger)leapMonth;
-
-
-// create array contained unit time ( day, month, year )
-+ (NSArray *)getYearArrWithStartYear:(NSInteger)startYear andEndYear:(NSInteger)endYear;
-+ (NSArray *)getMonthArr:(NSInteger)year andTypeCalendar:(TypeOfCalendar)typeOfCalendar;
-+ (NSArray *)getTypeCalendarArr;
-// day
-+ (NSArray *) getSolarDayArr:(NSInteger)year month:(NSInteger)month;
-+ (NSArray *) getLunarDayArr:(NSInteger)year month:(NSInteger)month isLeapMonth:(BOOL)isLeapMonth;
-// create current BMDate;
-+ (NSDateComponents *)getCurrentDateComponents;
-+ (BMDate *)getCurrentDate;
 
 @end
 

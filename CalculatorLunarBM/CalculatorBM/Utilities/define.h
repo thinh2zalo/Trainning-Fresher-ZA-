@@ -19,14 +19,14 @@
 #define SCREEN_BOUNDS [UIScreen mainScreen].bounds
 #define AMLICH @"Âm"
 #define DUONGLICH @"Dương Lịch"
-#define STARTYEAR 1911
+#define STARTYEAR 1904
 #define STARTMONTH 1
 #define STARTDAY 1
-
+#define DAYFORMAT @"dd/mm/yyyy"
 #define ENDYEAR 2099
 #define ENDMONTH 12
 #define ENDDAY 31
-
+#define PLUS @"+"
 
 // define dayOfWeek
 #define THU2 @"Thứ Hai"

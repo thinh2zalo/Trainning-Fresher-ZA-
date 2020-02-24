@@ -28,21 +28,21 @@
         self.motionManager = [[CMMotionManager alloc] init];
         [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue new]
                                                  withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-                                                     if (!error) {
-                                                         self.orientation = [weakSelf getOrientationBy:accelerometerData.acceleration];
-                                                     } else {
-                                                         // handle error
-                                                     }
-                                                 }];
+            if (!error) {
+                self.orientation = [weakSelf getOrientationBy:accelerometerData.acceleration];
+            } else {
+                // handle error
+            }
+        }];
         
-         }
-         return self;
-
+    }
+    return self;
+    
 }
 
 - (UIInterfaceOrientation)getOrientationBy:(CMAcceleration)acceleration {
     UIInterfaceOrientation newOrientation;
-//    NSLog(@"Y: %f and X  : %f", ABS( acceleration.y ), ABS( acceleration.x ));
+    //    NSLog(@"Y: %f and X  : %f", ABS( acceleration.y ), ABS( acceleration.x ));
     newOrientation =  ABS( acceleration.y ) < ABS( acceleration.x )
     ?   acceleration.x > 0 ? UIInterfaceOrientationLandscapeLeft  :  UIInterfaceOrientationLandscapeRight
     :   acceleration.y > 0 ? UIInterfaceOrientationPortraitUpsideDown : UIInterfaceOrientationPortrait;
@@ -83,14 +83,14 @@
 
 - (id)getVersionIOS {
     if (!_getVersionIOS) {
-
+        
         if (SYSTEM_VERSION_LESS_THAN(@"10.0")) {
             _getVersionIOS = APIForIOSLesser10.new;
             return _getVersionIOS;
         }
         else     _getVersionIOS = APIForIOSGreater10.new;
-            return _getVersionIOS;
-        }
+        return _getVersionIOS;
+    }
     
     return _getVersionIOS;
 }

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BMMonth : NSObject
 @property (assign) NSUInteger lunarMonth;
 @property (assign) NSUInteger solarMonth;
-
+// các hàm khởi tạo
 - (BMMonth *)initWithSMonth:(NSInteger)sMonth;
 - (BMMonth *)initWithSMonth:(NSInteger)sMonth andLMonth:(NSInteger)lMonth;
 - (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone;

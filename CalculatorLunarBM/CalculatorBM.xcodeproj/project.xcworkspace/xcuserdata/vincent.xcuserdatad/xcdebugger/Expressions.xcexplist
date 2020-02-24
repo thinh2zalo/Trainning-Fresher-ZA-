@@ -3,18 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[LunarDatePickerView scrollToSelectDate:andTypeOfCalendar:animated:]:LunarDatePickerView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LunarDatePickerView pickerView:didSelectRow:inComponent:]:LunarDatePickerView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[LunarDatePickerView reloadDateArrayWithUpdateYear:updateMonth:updateDay:]:LunarDatePickerView.m">
          <PersistentStrings>
             <PersistentString
                value = "[self.yearArr[self.yearIndex] integerValue]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[BMDate initDate:andTimeZone:]:BMDate.m">
-      </ContextState>
-      <ContextState
-         contextName = "__44-[LunarDatePickerView removeLunarDatePicker]_block_invoke:LunarDatePickerView.m">
       </ContextState>
       <ContextState
          contextName = "-[ViewController viewDidLoad]:ViewController.m">
@@ -28,7 +33,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[LunarDatePickerView pickerView:didSelectRow:inComponent:]:LunarDatePickerView.m">
+         contextName = "__44-[LunarDatePickerView removeLunarDatePicker]_block_invoke:LunarDatePickerView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LunarDatePickerView handlerMinMaxDate]:LunarDatePickerView.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[BMDate getYearArrWithStartYear:andEndYear:andTypeOfCalendar:]:BMDate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BMDate initDate:andTimeZone:]:BMDate.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
