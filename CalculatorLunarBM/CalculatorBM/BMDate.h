@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 // so sánh 2 ngày. true ngày so sánh lớn hơn ngày nhập
 -(BOOL)bmDate_compare:(BMDate *)date;
 
+- (NSInteger)getJulianDayNumber;
+
 
 // function Public API
 // get ngày tháng năm trong hệ can chi
@@ -55,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BMDate *)getCurrentDate ;
 + (NSDateComponents *)getCurrentDateComponents;
++ (NSString*)dayOfWeek:(NSInteger)jdn;
 
 @end
 

@@ -29,13 +29,13 @@
 #define PLUS @"+"
 
 // define dayOfWeek
-#define THU2 @"Thứ Hai"
-#define THU3 @"Thứ Ba"
-#define THU4 @"Thứ Tư"
-#define THU5 @"Thứ Năm"
-#define THU6 @"Thứ Sáu"
-#define THU7 @"Thứ Bảy"
-#define CHUNHAT @"Chủ Nhật"
+#define THU2 @"T.Hai"
+#define THU3 @"T.Ba"
+#define THU4 @"T.Tư"
+#define THU5 @"T.Năm"
+#define THU6 @"T.Sáu"
+#define THU7 @"T.Bảy"
+#define CHUNHAT @"CN"
 
 
 typedef NS_ENUM(NSUInteger, TypeOfColumnPicker) {
@@ -46,8 +46,8 @@ typedef NS_ENUM(NSUInteger, TypeOfColumnPicker) {
 };
 
 typedef NS_ENUM(NSUInteger, TypeOfCalendar) {
-    TypeCalendarAmLich,
-    TypeCalendarDuongLich
+    TypeCalendarAmLich = 0,
+    TypeCalendarDuongLich = 1
 };
 
 typedef NS_ENUM(NSUInteger, Month) {

@@ -10,6 +10,7 @@
 #import "BMDate.h"
 #import "define.h"
 NS_ASSUME_NONNULL_BEGIN
+@protocol BMDatePickerViewDelegate;
 
 @interface BMDatePickerView : UIView
 /** @property selectDate
@@ -25,8 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 *   @brief   set type of calendar  lunar calendar || solar calendar */
 @property (nonatomic) TypeOfCalendar typeOfCalendar;
 
+@property(nullable,nonatomic,weak) id<BMDatePickerViewDelegate> delegate;                  // default is nil. weak reference
 
 - (void)show;
 @end
 
+@protocol BMDatePickerViewDelegate <NSObject>
+
+@optional
+- (void)didSelectDate:(BMDate *)bmDate;
+
+@end
 NS_ASSUME_NONNULL_END

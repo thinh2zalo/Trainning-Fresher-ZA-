@@ -6,7 +6,10 @@
          contextName = "-[LunarDatePickerView scrollToSelectDate:andTypeOfCalendar:animated:]:LunarDatePickerView.m">
       </ContextState>
       <ContextState
-         contextName = "-[LunarDatePickerView pickerView:didSelectRow:inComponent:]:LunarDatePickerView.m">
+         contextName = "-[BMDate initDate:andTimeZone:]:BMDate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BMDatePickerView pickerView:viewForRow:forComponent:reusingView:]:BMDatePickerView.m">
          <PersistentStrings>
             <PersistentString
                value = "">
@@ -42,7 +45,12 @@
          contextName = "+[BMDate getYearArrWithStartYear:andEndYear:andTypeOfCalendar:]:BMDate.m">
       </ContextState>
       <ContextState
-         contextName = "-[BMDate initDate:andTimeZone:]:BMDate.m">
+         contextName = "-[LunarDatePickerView pickerView:didSelectRow:inComponent:]:LunarDatePickerView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

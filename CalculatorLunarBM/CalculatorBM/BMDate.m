@@ -19,6 +19,8 @@
 @property (nonatomic, strong)BMYear *year;
 @property (nonatomic, strong) NSString *dayOfWeek;
 @property (assign) NSInteger julianDayNumber;
+@property (assign) NSInteger timeZone;
+
 
 @end
 @implementation BMDate
@@ -52,6 +54,8 @@
         self.day = [[BMDay alloc] initWithLunarDay:dd lunarMonth:mm solarYear:yy isLeapMonth:isLeapMonth timeZone:timeZone];
         self.month = [[BMMonth alloc] initWithLunarDay:dd lunarMonth:mm solarYear:yy isLeapMonth:isLeapMonth timeZone:timeZone];
         self.year = [[BMYear alloc] initWithLunarDay:dd lunarMonth:mm solarYear:yy isLeapMonth:isLeapMonth timeZone:timeZone];
+        self.julianDayNumber = [LunarUtils jdFromSolarDate:self.day.solarDay mm:self.month.solarMonth yy:self.year.solarYear];
+        self.timeZone = timeZone;
     }
     return self;
 }
@@ -66,6 +70,7 @@
         self.day = [[BMDay alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
         self.month = [[BMMonth alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
         self.year = [[BMYear alloc] initWithSolarDay:dd solarMonth:mm solarYear:yy timeZone:timeZone];
+        self.timeZone = timeZone;
         self.julianDayNumber = [LunarUtils jdFromSolarDate:dd mm:mm yy:yy];
     }
     return self;
@@ -79,7 +84,7 @@
 }
 
 - (BOOL)isLeapLunarMonth {
-    return [LunarUtils isLeapMonth:self.getSolarDay mm:self.getSolarMonth yy:self.getSolarYear timeZone:LOCAL_TIMEZONE];
+    return [LunarUtils isLeapMonth:self.getSolarDay mm:self.getSolarMonth yy:self.getSolarYear timeZone:self.timeZone];
 }
 
 - (BOOL)isLeapSolarMonth {
@@ -90,6 +95,10 @@
     NSInteger CANDay = floor(self.julianDayNumber + 9.5);
     NSInteger CHIDay = floor(self.julianDayNumber + 1.5);
     return [NSString stringWithFormat:@"%@ %@",LunarUtils.getThienCan[CANDay % 10],LunarUtils.getDiaChi[CHIDay % 12]];
+}
+
+- (NSInteger)getJulianDayNumber {
+    return self.julianDayNumber;
 }
 
 - (NSString *)getThangCanChi {
@@ -134,7 +143,7 @@
 }
 
 - (NSString*)dayOfWeek {
-    int X = floor(self.julianDayNumber + 2.5);
+    NSInteger X = floor(self.julianDayNumber + 2.5);
     if (X%7 == 0 ) return THU7;
     if (X%7 == 1 ) return CHUNHAT;
     if (X%7 == 2 ) return THU2;
@@ -143,6 +152,18 @@
     if (X%7 == 5 ) return THU5;
     if (X%7 == 6 ) return THU6;
     return CHUNHAT;
+}
+
++ (NSString *)dayOfWeek:(NSInteger)jdn {
+    NSInteger X = floor(jdn + 2.5);
+      if (X%7 == 0 ) return THU7;
+      if (X%7 == 1 ) return CHUNHAT;
+      if (X%7 == 2 ) return THU2;
+      if (X%7 == 3 ) return THU3;
+      if (X%7 == 4 ) return THU4;
+      if (X%7 == 5 ) return THU5;
+      if (X%7 == 6 ) return THU6;
+      return CHUNHAT;
 }
 
 
@@ -190,6 +211,7 @@
     }
     return [self getSolarDay];
 }
+
 -(BOOL)bmDate_compare:(BMDate *)date {
     return self.julianDayNumber >= date.julianDayNumber ? true : false;
     
@@ -198,7 +220,6 @@
 + (BMDate *)getCurrentDate {
     BMDate * currentDate  = [[BMDate alloc] initLocalDate:[self getCurrentDateComponents].day :[self getCurrentDateComponents].month  :[self getCurrentDateComponents].year ];
     return currentDate;
-    
 }
 
 + (NSDateComponents *)getCurrentDateComponents {

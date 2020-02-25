@@ -20,8 +20,7 @@
     if (self) {
         self.lunarMonth = [LunarUtils getLunarMonthWithSolarDate:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
         self.solarMonth = solarMonth;
-        
-        }
+    }
     return self;
 }
 

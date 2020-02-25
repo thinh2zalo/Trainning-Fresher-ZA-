@@ -16,7 +16,7 @@
 #import "SolarCalendarView.h"
 #import "BMDatePickerView.h"
 
-@interface ViewController ()
+@interface ViewController () <BMDatePickerViewDelegate>
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
 @property (nonatomic, strong) SolarCalendarView * solarCalenDarView;
 
@@ -41,23 +41,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:tap];
         BMDate * bmDate2 = [[BMDate alloc] initDateWithLunarDate:14 :4 :2020 isLeapMonth:YES andTimeZone:7];
-//        BMDate * bmDate3 = [[BMDate alloc] initDateWithSolarDate:1 :1 :2000 andTimeZone:7];
-
-//        NSLog(@"month :%@", [BMDate getMonthArr:2033 andTypeCalendar:TypeCalendarAmLich]);
-//    [LunarUtils convertSolarToLunar:11 mm:11 yy:1985 timeZone:7];
-//    [BMDate getDayArr:2020 month:4 andTypeOfCalendar:TypeCalendarAmLich];
-    NSInteger check2 = [LunarUtils jdFromLunarDate:1 mm:1 yy:2020 lunarLeap:0 andTimeZone:7];
-    NSArray * array = [LunarUtils jdToDate:check2];
-    NSLog(@"%@ %@ %@", array[0], array[1], array[2]);
-//    BMDate * bmDate3 = [BMDate getCurrentDateComponents];
-//    NSLog(@"ngay am lich %tu", bmDate.getLunarDay);
-//    NSLog(@"thang am lich %tu", bmDate.getLunarMonth);
-//    NSLog(@"nam am lich %tu", bmDate.getlunarYear);
-//    NSLog(@"thu %@", bmDate.dayOfWeek);
-//
-//    NSLog(@"ngay can chi %@", bmDate.getNgayCanChi);
-//    NSLog(@"thang can chi %@", bmDate.getThangCanChi);
-//    NSLog(@"nam can chi %@", bmDate.getNamCanChi);
+    
     [self loadUI];
 
 }
@@ -70,7 +54,14 @@
    
     datePicker.typeOfCalendar = TypeCalendarDuongLich;
     datePicker.selectDate = self.date;
+    datePicker.delegate = self;
     [datePicker show];
+}
+
+// BMDatePickerViewDelegate
+- (void)didSelectDate:(BMDate *)bmDate {
+   [self.lunarCalendarView loadDateWithInput:bmDate];
+   [self.solarCalenDarView loadDateWithInput:bmDate];
 }
 
 - (void)loadUI {

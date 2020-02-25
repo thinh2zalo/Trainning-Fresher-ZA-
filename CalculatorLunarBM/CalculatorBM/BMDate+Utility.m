@@ -66,6 +66,7 @@
 }
 
 
+
 + (NSArray *)getMonthArr:(NSInteger)year minDate:(BMDate *)minDate maxDate:(BMDate *)maxDate  andTypeCalendar:(TypeOfCalendar)typeOfCalendar {
     NSInteger startMonth = 1;
     NSInteger endMonth = 12;

@@ -13,8 +13,9 @@
 #import "BMDate+Utility.h"
 
 
+
 @interface BMDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
-@property (nonatomic, strong) UIPickerView * lunarDatePickerView;
+@property (nonatomic, strong) UIPickerView * datePickerView;
 @property (nonatomic, strong) UIView * alertView;
 @property (nonatomic, strong) UIView * maskView;
 
@@ -27,6 +28,9 @@
 @property(nonatomic, assign) NSInteger monthIndex;
 @property(nonatomic, assign) NSInteger dayIndex;
 @property(nonatomic, assign) NSInteger typeCalendarIndex;
+
+@property (nonatomic, strong) UIButton *doneBtn;
+@property (nonatomic, strong) UIButton *cabcelBtn;
 
 @property(nonatomic, assign) TypeOfCalendar  mTypeOfCalendar;
 @property(nonatomic, strong) BMDate  *mSelectDate;
@@ -46,25 +50,25 @@
             self.typeCalendarIndex = row;
             self.mTypeOfCalendar = [self.typeCalendarArr[self.typeCalendarIndex] integerValue];
             [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
-            [self.lunarDatePickerView reloadComponent:ColumnYear];
-            [self.lunarDatePickerView reloadComponent:ColumnMonth];
-            [self.lunarDatePickerView reloadComponent:ColumnDay];
+            [self.datePickerView reloadComponent:ColumnYear];
+            [self.datePickerView reloadComponent:ColumnMonth];
+            [self.datePickerView reloadComponent:ColumnDay];
             [self scrollToSelectDate:NO];
             break;
             
         case ColumnYear:
             self.yearIndex = row;
             [self reloadArraysAndIndexs:NO UpdateMonth:YES updateDay:YES];
-            [self.lunarDatePickerView reloadComponent:ColumnMonth];
-            [self.lunarDatePickerView reloadComponent:ColumnDay];
+            [self.datePickerView reloadComponent:ColumnMonth];
+            [self.datePickerView reloadComponent:ColumnDay];
             [self newDateWithConfig];
-            [self scrollToSelectDate:NO];
+//            [self scrollToSelectDate:NO];
             break;
             
         case ColumnMonth:
             self.monthIndex = row;
             [self reloadArraysAndIndexs:NO UpdateMonth:NO updateDay:YES];
-            [self.lunarDatePickerView reloadComponent:ColumnDay];
+            [self.datePickerView reloadComponent:ColumnDay];
             [self newDateWithConfig];
             break;
             
@@ -75,12 +79,13 @@
         default:
             break;
     }
-
+    
 }
 
--(void)newDateWithConfig {
+
+- (void)newDateWithConfig {
     NSInteger year = [self.yearArr[self.yearIndex] integerValue];
-    NSString * monthStr = self.monthArr[self.monthIndex] ;
+    NSString * monthStr = self.monthArr[self.monthIndex];
     BOOL isLeapLunarMonth = false;
     if ([monthStr containsString:PLUS]) {
         isLeapLunarMonth = true;
@@ -117,14 +122,12 @@
     }
     switch (typeOfColumnPicker) {
         case ColumnTypeCalendar:
-            if (self.typeCalendarArr[row] == TypeCalendarAmLich) {
-                label.text = AMLICH;
-            } else {
-                label.text = DUONGLICH;
-            }
+            label.text = [self getTypeCalendarText:row];
             break;
         case ColumnDay:
-            label.text = self.dayArr[row];
+            label.text = [self getDayText:row];
+            NSLog(@"getType :%@", [self getDayText:row]);
+
             break;
         case ColumnMonth:
             label.text = self.monthArr[row];
@@ -143,7 +146,7 @@
     self.frame = SCREEN_BOUNDS;
     [self addSubview:self.maskView];
     [self addSubview:self.alertView];
-    
+    [self.alertView addSubview:self.doneBtn];
     self.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     UIWindow *keyWindow;
     if (@available(iOS 13.0, *)) {
@@ -201,7 +204,7 @@
 - (void)show {
     [self loadData];
     [self setupUI];
-    [self.alertView addSubview:self.lunarDatePickerView];
+    [self.alertView addSubview:self.datePickerView];
 }
 
 // handle data
@@ -209,7 +212,7 @@
     [self handlerMinMaxDate];
     [self handlerDefaultSelectDate];
     [self initDateArray];
-    [self.lunarDatePickerView reloadAllComponents];
+    [self.datePickerView reloadAllComponents];
     [self scrollToSelectDate:NO];
 }
 
@@ -249,8 +252,6 @@
     [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
 }
 
-
-
 - (void)reloadArraysAndIndexs:(BOOL)updateYear UpdateMonth:(BOOL)updateMonth updateDay:(BOOL)updateDay {
     
     if (updateYear) {
@@ -262,7 +263,7 @@
     if (self.yearIndex > self.yearArr.count - 1) {
         return;
     }
-
+    
     NSInteger year = [self.yearArr[self.yearIndex] integerValue] ;
     if (updateMonth) {
         // getMonthArr
@@ -304,16 +305,21 @@
     return index;
     
 }
+
+- (void)clickDoneBtn {
+    [self.delegate didSelectDate:self.mSelectDate];
+    [self removeLunarDatePicker];
+}
 // lazy init
 
-- (UIPickerView *)lunarDatePickerView {
-    if (!_lunarDatePickerView) {
-        _lunarDatePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, WITDTH_SCREEN, 200)];
-        _lunarDatePickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
-        _lunarDatePickerView.dataSource = self;
-        _lunarDatePickerView.delegate = self;
+- (UIPickerView *)datePickerView {
+    if (!_datePickerView) {
+        _datePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.doneBtn.frame.size.height + 5, WITDTH_SCREEN, 200)];
+        _datePickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+        _datePickerView.dataSource = self;
+        _datePickerView.delegate = self;
     }
-    return _lunarDatePickerView;
+    return _datePickerView;
 }
 
 - (UIView *)alertView {
@@ -342,11 +348,33 @@
 }
 
 - (void)scrollToSelectDate:(BOOL)animated{
-
+    
     NSArray * indexArr = @[@(self.typeCalendarIndex), @(self.dayIndex), @(self.monthIndex), @(self.yearIndex)];
     for (NSInteger i = 0; i < indexArr.count; i++) {
-        [self.lunarDatePickerView selectRow:[indexArr[i] integerValue] inComponent:i animated:animated];
+        [self.datePickerView selectRow:[indexArr[i] integerValue] inComponent:i animated:animated];
     }
+}
+
+- (NSString *)getDayText:(NSInteger)row {
+    NSString *dayString = self.dayArr[row];
+    NSInteger jdnOfStartMonth;
+    if (self.mTypeOfCalendar == TypeCalendarAmLich) {
+
+        jdnOfStartMonth = self.mSelectDate.getJulianDayNumber - self.mSelectDate.getLunarDay;
+
+    } else {
+         jdnOfStartMonth = self.mSelectDate.getJulianDayNumber - self.mSelectDate.getSolarDay;
+    }
+    dayString = [NSString stringWithFormat:@"%@, %@", [BMDate dayOfWeek:(jdnOfStartMonth + row + 1)] ,dayString];
+   return dayString;
+}
+
+- (NSString *)getTypeCalendarText:(NSInteger)row {
+    NSString *typeCalendarText = DUONGLICH;
+    if ([self.typeCalendarArr[row] integerValue] == TypeCalendarAmLich) {
+        return AMLICH;
+    }
+    return typeCalendarText;
 }
 
 - (void)setSelectDate:(BMDate *)selectDate {
@@ -355,7 +383,7 @@
     }
     _selectDate = selectDate;
     _mSelectDate = selectDate;
-    if (_lunarDatePickerView) {
+    if (_datePickerView) {
         [self loadData];
     }
 }
@@ -367,7 +395,7 @@
     }
     _typeOfCalendar = typeOfCalendar;
     _mTypeOfCalendar = typeOfCalendar;
-    if (_lunarDatePickerView) {
+    if (_datePickerView) {
         [self loadData];
     }
 }
@@ -399,6 +427,25 @@
     }
     return _typeCalendarArr;
 }
+
+- (UIButton *)doneBtn {
+    if (!_doneBtn) {
+        _doneBtn = UIButton.new;
+        _doneBtn.frame = CGRectMake(WITDTH_SCREEN - 60 - 20, 8, 60, 28);
+        _doneBtn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
+        [_doneBtn addTarget:self action:@selector(clickDoneBtn) forControlEvents:UIControlEventTouchUpInside];
+        _doneBtn.layer.cornerRadius = 6.0f;
+        _doneBtn.layer.borderWidth = 1.0f;
+        [_doneBtn setTitle:@"done" forState:UIControlStateNormal];
+        _doneBtn.backgroundColor = [UIColor darkGrayColor];
+         _doneBtn.layer.masksToBounds = YES;
+        [self.alertView addSubview:_doneBtn];
+        
+    }
+    return _doneBtn;
+}
+
+
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
