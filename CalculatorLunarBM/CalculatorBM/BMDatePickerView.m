@@ -245,7 +245,7 @@
 
 -(void)initDateArray {
     self.typeCalendarArr = [BMDate getTypeCalendarArr];
-    self.typeCalendarIndex = 1;
+    self.typeCalendarIndex = self.mTypeOfCalendar;
     [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
 }
 

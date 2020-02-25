@@ -18,7 +18,7 @@
 #define WITDTH_SCREEN [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_BOUNDS [UIScreen mainScreen].bounds
 #define AMLICH @"Âm"
-#define DUONGLICH @"Dương Lịch"
+#define DUONGLICH @"Dương"
 #define STARTYEAR 1904
 #define STARTMONTH 1
 #define STARTDAY 1
