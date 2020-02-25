@@ -13,18 +13,7 @@
 
 
 @implementation BMDate (Utility)
-+ (BMDate *)getCurrentDate {
-    BMDate * currentDate  = [[BMDate alloc] initLocalDate:[self getCurrentDateComponents].day :[self getCurrentDateComponents].month  :[self getCurrentDateComponents].year ];
-    return currentDate;
-    
-}
-+ (NSDateComponents *)getCurrentDateComponents {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSInteger units = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    return [gregorian components:units fromDate:[NSDate date]];
-}
+
 
 
 + (NSArray *)getLunarDayArr:(NSInteger)year month:(NSInteger)month minDate:(BMDate *)minDate maxDate:(BMDate *)maxDate isLeapMonth:(BOOL)isLeapMonth {
@@ -156,14 +145,7 @@
 }
 
 
-+(BOOL)indexOfLeapLunarMonthInArr:(NSArray *)monthArr{
-    for (NSInteger i = 0;i <monthArr.count -1 ; i ++) {
-        if ([monthArr[i] integerValue] == [monthArr[i + 1] integerValue]  ) {
-            return true;
-        }
-    }
-    return false;
-}
+
 
 
 - (NSString *)getStringMonth:(TypeOfCalendar)typeOfCalendar {

@@ -14,7 +14,7 @@
 #import "LunarUtils.h"
 #import "LunarCalendarView.h"
 #import "SolarCalendarView.h"
-#import "LunarDatePickerView.h"
+#import "BMDatePickerView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) BMDate * date;
 
 @property (nonatomic, strong) UIButton * commitBtn;
-@property (nonatomic, strong) LunarDatePickerView * lunarDatePickerView;
+@property (nonatomic, strong) BMDatePickerView * lunarDatePickerView;
 
 
 
@@ -66,7 +66,7 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    LunarDatePickerView *datePicker = LunarDatePickerView.new;
+    BMDatePickerView *datePicker = BMDatePickerView.new;
    
     datePicker.typeOfCalendar = TypeCalendarDuongLich;
     datePicker.selectDate = self.date;
@@ -158,9 +158,9 @@
     return _lunarCalendarView;
 }
  
-- (LunarDatePickerView *)lunarDatePickerView {
+- (BMDatePickerView *)lunarDatePickerView {
     if (!_lunarDatePickerView) {
-        _lunarDatePickerView = LunarDatePickerView.new;
+        _lunarDatePickerView = BMDatePickerView.new;
     }
     return _lunarDatePickerView;
 }

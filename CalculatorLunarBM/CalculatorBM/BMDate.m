@@ -20,8 +20,6 @@
 @property (nonatomic, strong) NSString *dayOfWeek;
 @property (assign) NSInteger julianDayNumber;
 
-
-
 @end
 @implementation BMDate
 
@@ -160,14 +158,14 @@
 }
 
 - (NSInteger)getIndexOfMonthInYear:(TypeOfCalendar)typeOfCalendar {
-    if (typeOfCalendar == TypeCalendarAmLich) {
-        if ((self.isLeapLunarMonth) && (self.getLunarMonth > self.getLeapLunarMonth)) {
-               return self.getLunarMonth ;
-        } else {
-            return self.getLunarMonth - 1;
-        }
-    } else {
+    if (typeOfCalendar == TypeCalendarDuongLich) {
         return self.getSolarMonth - 1;
+    }
+
+    if ((self.isLeapLunarMonth) && (self.getLunarMonth > self.getLeapLunarMonth)) {
+           return self.getLunarMonth;
+    } else {
+        return self.getLunarMonth - 1;
     }
 }
 
@@ -194,5 +192,20 @@
 }
 -(BOOL)bmDate_compare:(BMDate *)date {
     return self.julianDayNumber >= date.julianDayNumber ? true : false;
+    
+}
+
++ (BMDate *)getCurrentDate {
+    BMDate * currentDate  = [[BMDate alloc] initLocalDate:[self getCurrentDateComponents].day :[self getCurrentDateComponents].month  :[self getCurrentDateComponents].year ];
+    return currentDate;
+    
+}
+
++ (NSDateComponents *)getCurrentDateComponents {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSInteger units = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    return [gregorian components:units fromDate:[NSDate date]];
 }
 @end

@@ -53,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getYearWithTypeCalendar:(TypeOfCalendar)typeOfCalendar;
 - (NSInteger)getIndexOfMonthInYear:(TypeOfCalendar)typeOfCalendar;
 
++ (BMDate *)getCurrentDate ;
++ (NSDateComponents *)getCurrentDateComponents;
 
 @end
 

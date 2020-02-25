@@ -18,15 +18,15 @@
         return nil;
     }
     self = [super init];
-      if (self) {
-          self.solarYear = solarYear;
-          self.lunarYear = [LunarUtils getLunarYearWithSolarDate:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
-      }
-      return self;
+    if (self) {
+        self.solarYear = solarYear;
+        self.lunarYear = [LunarUtils getLunarYearWithSolarDate:solarDay mm:solarMonth yy:solarYear timeZone:timeZone];
+    }
+    return self;
 }
 
 - (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone {
-// check input
+    // check input
     self = [super init];
     if (self) {
         self.lunarYear = lunarYear;
@@ -62,17 +62,17 @@
 }
 
 - (NSInteger)getLeapLunarMonth {
-   return  [BMYear getLeapLunarMonth:self.lunarYear];
+    return  [BMYear getLeapLunarMonth:self.lunarYear];
 }
 
 
 // class method
 + (BOOL)isLeapSolarYear:(NSInteger)solarYear {
-     BOOL isLeapYear = false;
-       if ((solarYear % 4 == 0 && solarYear % 100 != 0) || ( solarYear % 400 == 0 )) {
-           isLeapYear = true;
-       }
-       return isLeapYear;
+    BOOL isLeapYear = false;
+    if ((solarYear % 4 == 0 && solarYear % 100 != 0) || ( solarYear % 400 == 0 )) {
+        isLeapYear = true;
+    }
+    return isLeapYear;
 }
 
 
@@ -98,7 +98,7 @@
         if (offsetA11 < 3 ) {
             return 12 - offsetA11;
         } else {
-           return  offsetB11 - 2;
+            return  offsetB11 - 2;
         }
     }
     return 0;
@@ -106,11 +106,11 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

@@ -25,7 +25,7 @@
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
 		BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */; };
-		BF918E8023F51E2F00A08D27 /* LunarDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF918E7F23F51E2F00A08D27 /* LunarDatePickerView.m */; };
+		BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +82,8 @@
 		BF80ABBA23F3A12600AC5C3B /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		BF8A038F23F3FD7700C79D96 /* SolarCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarCalendarView.h; sourceTree = "<group>"; };
 		BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
-		BF918E7E23F51E2F00A08D27 /* LunarDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LunarDatePickerView.h; sourceTree = "<group>"; };
-		BF918E7F23F51E2F00A08D27 /* LunarDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarDatePickerView.m; sourceTree = "<group>"; };
+		BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
+		BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDatePickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */,
 				BF8A038F23F3FD7700C79D96 /* SolarCalendarView.h */,
 				BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */,
-				BF918E7E23F51E2F00A08D27 /* LunarDatePickerView.h */,
-				BF918E7F23F51E2F00A08D27 /* LunarDatePickerView.m */,
+				BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */,
+				BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */,
 				BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */,
 				BF5E9D7423EC30D7006DC5FD /* ViewController.m in Sources */,
-				BF918E8023F51E2F00A08D27 /* LunarDatePickerView.m in Sources */,
+				BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */,
 				BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */,
 				BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */,
 				BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */,

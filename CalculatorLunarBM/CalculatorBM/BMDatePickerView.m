@@ -6,14 +6,14 @@
 //  Copyright © 2020 vincent. All rights reserved.
 //
 
-#import "LunarDatePickerView.h"
+#import "BMDatePickerView.h"
 #import "define.h"
 #import "BMYear.h"
 #import "BMDate.h"
 #import "BMDate+Utility.h"
 
 
-@interface LunarDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface BMDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
 @property (nonatomic, strong) UIPickerView * lunarDatePickerView;
 @property (nonatomic, strong) UIView * alertView;
 @property (nonatomic, strong) UIView * maskView;
@@ -33,7 +33,7 @@
 
 
 @end
-@implementation LunarDatePickerView
+@implementation BMDatePickerView
 
 #pragma mark - UIPickerViewDelegate
 
@@ -42,7 +42,7 @@
     switch (typeOfColumnPicker) {
         case ColumnTypeCalendar:
             
-            // get index
+            
             self.typeCalendarIndex = row;
             self.mTypeOfCalendar = [self.typeCalendarArr[self.typeCalendarIndex] integerValue];
             [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
@@ -51,6 +51,7 @@
             [self.lunarDatePickerView reloadComponent:ColumnDay];
             [self scrollToSelectDate:NO];
             break;
+            
         case ColumnYear:
             self.yearIndex = row;
             [self reloadArraysAndIndexs:NO UpdateMonth:YES updateDay:YES];
@@ -59,12 +60,14 @@
             [self newDateWithConfig];
             [self scrollToSelectDate:NO];
             break;
+            
         case ColumnMonth:
             self.monthIndex = row;
             [self reloadArraysAndIndexs:NO UpdateMonth:NO updateDay:YES];
             [self.lunarDatePickerView reloadComponent:ColumnDay];
             [self newDateWithConfig];
             break;
+            
         case ColumnDay:
             self.dayIndex = row;
             [self newDateWithConfig];
@@ -74,6 +77,7 @@
     }
 
 }
+
 -(void)newDateWithConfig {
     NSInteger year = [self.yearArr[self.yearIndex] integerValue];
     NSString * monthStr = self.monthArr[self.monthIndex] ;
@@ -113,7 +117,11 @@
     }
     switch (typeOfColumnPicker) {
         case ColumnTypeCalendar:
-            label.text = @"am";
+            if (self.typeCalendarArr[row] == TypeCalendarAmLich) {
+                label.text = AMLICH;
+            } else {
+                label.text = DUONGLICH;
+            }
             break;
         case ColumnDay:
             label.text = self.dayArr[row];
@@ -218,7 +226,7 @@
     }
 }
 
-- (void) handlerDefaultSelectDate {
+- (void)handlerDefaultSelectDate {
     if (!_typeOfCalendar) {
         self.mTypeOfCalendar = TypeCalendarDuongLich;
     }
@@ -241,28 +249,7 @@
     [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
 }
 
-- (void)setSelectDate:(BMDate *)selectDate {
-    if (!selectDate && self.mSelectDate == selectDate) {
-        return;
-    }
-    _selectDate = selectDate;
-    _mSelectDate = selectDate;
-    if (_lunarDatePickerView) {
-        [self loadData];
-    }
-}
 
-
-- (void)setTypeOfCalendar:(TypeOfCalendar)typeOfCalendar {
-    if (!typeOfCalendar && self.mTypeOfCalendar == typeOfCalendar) {
-        return;
-    }
-    _typeOfCalendar = typeOfCalendar;
-    _mTypeOfCalendar = typeOfCalendar;
-    if (_lunarDatePickerView) {
-        [self loadData];
-    }
-}
 
 - (void)reloadArraysAndIndexs:(BOOL)updateYear UpdateMonth:(BOOL)updateMonth updateDay:(BOOL)updateDay {
     
@@ -272,11 +259,10 @@
         // get yearIndex
         self.yearIndex = [self.mSelectDate getYearWithTypeCalendar:self.mTypeOfCalendar] - [self.minDate getYearWithTypeCalendar:self.mTypeOfCalendar];
     }
-    
     if (self.yearIndex > self.yearArr.count - 1) {
         return;
     }
-    
+
     NSInteger year = [self.yearArr[self.yearIndex] integerValue] ;
     if (updateMonth) {
         // getMonthArr
@@ -313,11 +299,7 @@
     } else if (element.integerValue >= [arr.lastObject integerValue]) {
         index = arr.count - 1;
     } else {
-        for (NSInteger i = 0; i < arr.count; i++) {
-            if ([arr[i] isEqual:element]) {
-                index = i;
-            }
-        }
+        index = [arr indexOfObject:element];
     }
     return index;
     
@@ -364,6 +346,29 @@
     NSArray * indexArr = @[@(self.typeCalendarIndex), @(self.dayIndex), @(self.monthIndex), @(self.yearIndex)];
     for (NSInteger i = 0; i < indexArr.count; i++) {
         [self.lunarDatePickerView selectRow:[indexArr[i] integerValue] inComponent:i animated:animated];
+    }
+}
+
+- (void)setSelectDate:(BMDate *)selectDate {
+    if (!selectDate && self.mSelectDate == selectDate) {
+        return;
+    }
+    _selectDate = selectDate;
+    _mSelectDate = selectDate;
+    if (_lunarDatePickerView) {
+        [self loadData];
+    }
+}
+
+
+- (void)setTypeOfCalendar:(TypeOfCalendar)typeOfCalendar {
+    if (!typeOfCalendar && self.mTypeOfCalendar == typeOfCalendar) {
+        return;
+    }
+    _typeOfCalendar = typeOfCalendar;
+    _mTypeOfCalendar = typeOfCalendar;
+    if (_lunarDatePickerView) {
+        [self loadData];
     }
 }
 
