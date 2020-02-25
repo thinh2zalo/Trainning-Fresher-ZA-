@@ -24,8 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray *)getSolarDayArr:(NSInteger)year month:(NSInteger)month minDate:(BMDate *)minDate maxDate:(BMDate *)maxDate;
 
-
-
 + (NSInteger)getDaysInLunarYear:(NSInteger)year month:(NSInteger)month isLeapMonth:(BOOL)isLeapMonth;
 
 + (NSInteger)getDaysInSolarYear:(NSInteger)year month:(NSInteger)month;

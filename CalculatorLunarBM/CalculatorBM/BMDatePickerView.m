@@ -45,8 +45,6 @@
     TypeOfColumnPicker typeOfColumnPicker = (TypeOfColumnPicker) component;
     switch (typeOfColumnPicker) {
         case ColumnTypeCalendar:
-            
-            
             self.typeCalendarIndex = row;
             self.mTypeOfCalendar = [self.typeCalendarArr[self.typeCalendarIndex] integerValue];
             [self reloadArraysAndIndexs:YES UpdateMonth:YES updateDay:YES];
@@ -79,9 +77,7 @@
         default:
             break;
     }
-    
 }
-
 
 - (void)newDateWithConfig {
     NSInteger year = [self.yearArr[self.yearIndex] integerValue];
@@ -126,8 +122,6 @@
             break;
         case ColumnDay:
             label.text = [self getDayText:row];
-            NSLog(@"getType :%@", [self getDayText:row]);
-
             break;
         case ColumnMonth:
             label.text = self.monthArr[row];
@@ -303,7 +297,6 @@
         index = [arr indexOfObject:element];
     }
     return index;
-    
 }
 
 - (void)clickDoneBtn {
@@ -346,6 +339,8 @@
     }
     return _maskView;
 }
+
+
 
 - (void)scrollToSelectDate:(BOOL)animated{
     
@@ -427,6 +422,34 @@
     }
     return _typeCalendarArr;
 }
+
+- (NSInteger)yearIndex {
+    if (_yearIndex < 0) {
+        _yearIndex = 0;
+    } else {
+        _yearIndex = MIN(_yearIndex, self.yearArr.count - 1);
+    }
+    return _yearIndex;
+}
+
+- (NSInteger)monthIndex {
+    if (_monthIndex < 0) {
+        _monthIndex = 0;
+    } else {
+        _monthIndex = MIN(_monthIndex, self.monthArr.count - 1);
+    }
+    return _monthIndex;
+}
+
+- (NSInteger)dayIndex {
+    if (_dayIndex < 0) {
+        _dayIndex = 0;
+    } else {
+        _dayIndex = MIN(_dayIndex, self.dayArr.count - 1);
+    }
+    return _dayIndex;
+}
+
 
 - (UIButton *)doneBtn {
     if (!_doneBtn) {

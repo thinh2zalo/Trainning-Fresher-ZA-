@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getSolarMonth;
 - (NSInteger)getSolarYear;
 - (NSString*)dayOfWeek;
-// get tháng nhuận trong năm
+// get tháng nhuận trong năm âm lịch
 -(NSInteger)getLeapLunarMonth;
 
 // gét ngày tháng năm với một kiểu lịch nào đo
