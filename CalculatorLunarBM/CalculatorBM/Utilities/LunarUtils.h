@@ -19,13 +19,13 @@
 
 
 // convert lunar to solar
-+(NSMutableArray*) convertLunarToSolar:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth lunarYear:(NSInteger)lunarYear lunarLeap:(NSInteger)lunarLeap timeZone:(NSInteger)timeZone;
+
++(NSMutableArray*) convertLunarToSolar:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth lunarYear:(NSInteger)lunarYear isLunarLeap:(BOOL)isLunarLeap timeZone:(NSInteger)timeZone;
 // convert solar to lunar
 
 +(NSMutableDictionary*) convertSolarToLunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
 +(NSInteger)jdFromSolarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy;
 +(NSMutableArray*)jdToDate:(NSInteger)jd;
-+(NSInteger)jdFromLunarDate:(NSInteger)lunarDay mm:(NSInteger)lunarMonth yy:(NSInteger)lunarYear lunarLeap:(NSInteger)lunarLeap andTimeZone:(NSInteger) timeZone; // loai bo~
 
 + (NSInteger)jdFromLunarDate:(NSInteger)lunarDay mm:(NSInteger)lunarMonth yy:(NSInteger)lunarYear isLunarLeap:(BOOL)isLunarLeap andTimeZone:(NSInteger) timeZone;
 

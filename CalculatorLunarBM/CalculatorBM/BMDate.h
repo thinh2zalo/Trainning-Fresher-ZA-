@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 // creational function for init class BMDate with some diffrence options
 - (instancetype)initDate:(NSString *)stringDate andTimeZone:(NSInteger)timeZone;
 - (instancetype)initDateWithSolarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone;
--  (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy;
+- (instancetype)initLocalDate:(NSInteger)julianDayNumber;
+- (instancetype)initLocalDate:(NSInteger)solarDay :(NSInteger)solarMonth :(NSInteger)solarYear;
 - (instancetype)initDateWithLunarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth andTimeZone:(NSInteger)timeZone;
 // kiểm tra tháng hiện tại có phải tháng nhuận hay không ?
 - (BOOL)isLeapLunarMonth;
@@ -58,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BMDate *)getCurrentDate ;
 + (NSDateComponents *)getCurrentDateComponents;
 + (NSString*)dayOfWeek:(NSInteger)jdn;
-
++(NSInteger)getCurrentJulianDayNumber;
 @end
 
 NS_ASSUME_NONNULL_END

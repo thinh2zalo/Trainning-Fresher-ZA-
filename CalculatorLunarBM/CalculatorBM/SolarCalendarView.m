@@ -7,11 +7,16 @@
 //
 
 #import "SolarCalendarView.h"
+#import "DateModel.h"
 
 @interface SolarCalendarView()
 @property (nonatomic, strong) UILabel * solarDayLabel;
 @property (nonatomic, strong) UILabel * solarMonthLabel;
 @property (nonatomic, strong) UILabel * solarMonthAndYearLabel;
+
+@property (nonatomic, strong) UIImageView * image;
+
+@property (nonatomic, strong) UILabel * quoteLabel;
 
 @property (nonatomic, strong) UILabel * solarYearLabel;
 @property (nonatomic, strong) UILabel * dayOfWeekLabel;
@@ -27,18 +32,23 @@
 }
 */
 - (void)layoutSubviews {
+    self.image.frame = self.bounds;
     self.solarMonthAndYearLabel.frame = CGRectMake(0, 0, 200, 40);
     self.solarMonthAndYearLabel.center = CGPointMake(self.frame.size.width/2, 100);
     self.solarDayLabel.frame = CGRectMake(0, 0, 200, 200);
     self.solarDayLabel.center = CGPointMake(self.frame.size.width/2, 180);
     self.dayOfWeekLabel.frame = CGRectMake(0, 0, 150, 40);
     self.dayOfWeekLabel.center = CGPointMake(self.frame.size.width/2, 270);
+    self.quoteLabel.frame = CGRectMake(0, 0, self.frame.size.width - 100, 200);
+    self.quoteLabel.center = CGPointMake(self.frame.size.width/2,self.dayOfWeekLabel.frame.origin.y + self.dayOfWeekLabel.frame.size.height + 50);
 }
 
-- (void)loadDateWithInput:(BMDate *)date {
+- (void)loadDateWithInput:(DateModel *)dataModel {
+    BMDate * date = [[BMDate alloc] initLocalDate:dataModel.jdn];
     self.solarMonthAndYearLabel.text = [NSString stringWithFormat:@"Tháng %tu năm %tu", [date getSolarMonth], [date getSolarYear]];
     self.solarDayLabel.text = [NSString stringWithFormat:@"%tu", [date getSolarDay]];
     self.dayOfWeekLabel.text = [date dayOfWeek];
+    self.image.image = dataModel.image;
 }
 
 
@@ -78,5 +88,26 @@
     return _dayOfWeekLabel;
 }
 
+- (UILabel *)quoteLabel {
+    if (!_quoteLabel) {
+        _quoteLabel = UILabel.new;
+        [_quoteLabel setNumberOfLines:3];
+        _quoteLabel.textAlignment = NSTextAlignmentCenter;
+        [_quoteLabel setFont:[UIFont boldSystemFontOfSize:15]];
+                                                          _quoteLabel.textColor = [UIColor whiteColor];
+        [self addSubview:_quoteLabel];
+        
+    }
+    return _quoteLabel;
+    
+}
+
+- (UIImageView *)image{
+    if (!_image) {
+        _image = UIImageView.new;
+        [self addSubview:_image];
+    }
+    return _image;
+}
 
 @end

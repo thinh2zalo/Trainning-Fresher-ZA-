@@ -30,7 +30,6 @@
 @property(nonatomic, assign) NSInteger typeCalendarIndex;
 
 @property (nonatomic, strong) UIButton *doneBtn;
-@property (nonatomic, strong) UIButton *cabcelBtn;
 
 @property(nonatomic, assign) TypeOfCalendar  mTypeOfCalendar;
 @property(nonatomic, strong) BMDate  *mSelectDate;
@@ -188,7 +187,6 @@
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
-    
 }
 
 - (void)didTapMaskView {
@@ -254,13 +252,9 @@
         // get yearIndex
         self.yearIndex = [self.mSelectDate getYearWithTypeCalendar:self.mTypeOfCalendar] - [self.minDate getYearWithTypeCalendar:self.mTypeOfCalendar];
     }
-    if (self.yearIndex > self.yearArr.count - 1) {
-        return;
-    }
-    
     NSInteger year = [self.yearArr[self.yearIndex] integerValue] ;
     if (updateMonth) {
-        // getMonthArr
+        // get MonthArr
         self.monthArr = [BMDate getMonthArr:year minDate:self.minDate maxDate:self.maxDate andTypeCalendar:self.mTypeOfCalendar];
         // get MonthIndex
         self.monthIndex = [self findIndexOfElement:[self.mSelectDate getStringMonth:self.mTypeOfCalendar] inArray:self.monthArr];
@@ -274,12 +268,12 @@
                     isLeapMonth = true;
                 }
             }
-            // getDayArr
+            // get DayArr
             self.dayArr = [BMDate getLunarDayArr:year month:month minDate:self.minDate maxDate:self.maxDate isLeapMonth:isLeapMonth];
         } else {
             self.dayArr = [BMDate getSolarDayArr:year month:month minDate:self.minDate maxDate:self.maxDate];
         }
-        // getDayIndex
+        // get DayIndex
         self.dayIndex = [self findIndexOfElement:@([self.mSelectDate getDayWithTypeCalendar:self.mTypeOfCalendar]).stringValue inArray:self.dayArr];
     }
 }
@@ -340,10 +334,7 @@
     return _maskView;
 }
 
-
-
 - (void)scrollToSelectDate:(BOOL)animated{
-    
     NSArray * indexArr = @[@(self.typeCalendarIndex), @(self.dayIndex), @(self.monthIndex), @(self.yearIndex)];
     for (NSInteger i = 0; i < indexArr.count; i++) {
         [self.datePickerView selectRow:[indexArr[i] integerValue] inComponent:i animated:animated];
@@ -354,9 +345,7 @@
     NSString *dayString = self.dayArr[row];
     NSInteger jdnOfStartMonth;
     if (self.mTypeOfCalendar == TypeCalendarAmLich) {
-
         jdnOfStartMonth = self.mSelectDate.getJulianDayNumber - self.mSelectDate.getLunarDay;
-
     } else {
          jdnOfStartMonth = self.mSelectDate.getJulianDayNumber - self.mSelectDate.getSolarDay;
     }
@@ -416,6 +405,7 @@
     return _dayArr;
 }
 
+
 - (NSArray *)typeCalendarArr {
     if (!_typeCalendarArr) {
         _typeCalendarArr = [NSArray array];
@@ -463,7 +453,6 @@
         _doneBtn.backgroundColor = [UIColor darkGrayColor];
          _doneBtn.layer.masksToBounds = YES;
         [self.alertView addSubview:_doneBtn];
-        
     }
     return _doneBtn;
 }

@@ -15,15 +15,17 @@
 #import "LunarCalendarView.h"
 #import "SolarCalendarView.h"
 #import "BMDatePickerView.h"
+#import "BMPageViewController.h"
+#import "SolarViewController.h"
 
-@interface ViewController () <BMDatePickerViewDelegate>
+@interface ViewController () <BMDatePickerViewDelegate, BMPageViewControllerDelegate>
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
 @property (nonatomic, strong) SolarCalendarView * solarCalenDarView;
 
 @property (nonatomic, strong) UIImageView * backgroundTemp;
 @property (nonatomic, strong) UITextField * inputDateTF;
 @property (nonatomic, strong) BMDate * date;
-
+@property (nonatomic, strong) NSArray * arrVC;
 @property (nonatomic, strong) UIButton * commitBtn;
 @property (nonatomic, strong) BMDatePickerView * lunarDatePickerView;
 
@@ -40,33 +42,52 @@
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:tap];
-        BMDate * bmDate2 = [[BMDate alloc] initDateWithLunarDate:14 :4 :2020 isLeapMonth:YES andTimeZone:7];
+       
     
     [self loadUI];
 
 }
 
+- (void)pageViewCurrentDate:(BMDate *)currentDate {
+    [self.lunarCalendarView loadDateWithInput:currentDate];
 
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    BMDatePickerView *datePicker = BMDatePickerView.new;
-   
-    datePicker.typeOfCalendar = TypeCalendarDuongLich;
-    datePicker.selectDate = self.date;
-    datePicker.delegate = self;
-    [datePicker show];
 }
+
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    BMDatePickerView *datePicker = BMDatePickerView.new;
+//   
+//    datePicker.typeOfCalendar = TypeCalendarDuongLich;
+//    datePicker.selectDate = self.date;
+//    datePicker.delegate = self;
+//    [datePicker show];
+//}
 
 // BMDatePickerViewDelegate
 - (void)didSelectDate:(BMDate *)bmDate {
    [self.lunarCalendarView loadDateWithInput:bmDate];
    [self.solarCalenDarView loadDateWithInput:bmDate];
+    
 }
+
 
 - (void)loadUI {
     self.backgroundTemp.frame = self.view.bounds;
-    self.solarCalenDarView.frame = self.view.bounds;
+
+    NSInteger currentJDN = [BMDate getCurrentJulianDayNumber];
+    SolarViewController *vc1 = [[SolarViewController alloc] initWithJDN:currentJDN];
+    SolarViewController *vc2 = [[SolarViewController alloc] init];
+    SolarViewController *vc3 = [[SolarViewController alloc] init];
+    
+    self.arrVC = @[vc1,vc2,vc3];
+    
+    BMPageViewController * pageVC = [[BMPageViewController alloc] initWithFrame:self.view.bounds controllers:self.arrVC];
+    
+    [self addChildViewController:pageVC];
+    pageVC.BMPaingdelegate  = self;
+    [self.view addSubview:pageVC.view];
+    [pageVC didMoveToParentViewController:self];
+//    self.solarCalenDarView.frame = self.view.bounds;
     self.lunarCalendarView.frame = CGRectMake(0, HEIGHT_SCREEN - 160, WITDTH_SCREEN, 130);
     self.inputDateTF.frame = CGRectMake(0, 0, 200, 50);
     self.inputDateTF.center = self.view.center;
@@ -154,5 +175,11 @@
         _lunarDatePickerView = BMDatePickerView.new;
     }
     return _lunarDatePickerView;
+}
+- (NSArray *)arrVC {
+    if (!_arrVC) {
+        _arrVC = NSArray.new;
+    }
+    return _arrVC;
 }
 @end

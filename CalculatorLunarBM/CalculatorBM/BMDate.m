@@ -25,6 +25,20 @@
 @end
 @implementation BMDate
 
+- (instancetype)initLocalDate:(NSInteger)julianDayNumber {
+    if (julianDayNumber <= 0) {
+        return nil;
+    }
+    NSArray *inforDMYSolar = [LunarUtils jdToDate:julianDayNumber];
+    if (inforDMYSolar == nil) {
+        return nil;
+    }
+    self = [self initLocalDate:[inforDMYSolar[0] integerValue] :[inforDMYSolar[1] integerValue]  :[inforDMYSolar[2] integerValue]];
+    if (self) {
+        return self;
+    }
+    return nil;
+}
 
 - (instancetype)initDate:(NSString *)dateStr andTimeZone:(NSInteger)timeZone{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -37,8 +51,8 @@
     return [self initDateWithSolarDate:components.day :components.month :components.year andTimeZone:timeZone];
 }
 
-- (instancetype)initLocalDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy {
-    self = [self initDateWithSolarDate:dd :mm :yy andTimeZone:LOCAL_TIMEZONE];
+- (instancetype)initLocalDate:(NSInteger)solarDay :(NSInteger)solarMonth :(NSInteger)solarYear {
+    self = [self initDateWithSolarDate:solarDay :solarMonth :solarYear andTimeZone:LOCAL_TIMEZONE];
     if (self) {
         return self;
     }
@@ -228,5 +242,10 @@
     NSInteger units = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [gregorian components:units fromDate:[NSDate date]];
+}
+
++ (NSInteger)getCurrentJulianDayNumber {
+    NSDateComponents * currentDate = [BMDate getCurrentDateComponents];
+    return [LunarUtils jdFromSolarDate:currentDate.day mm:currentDate.month yy:currentDate.year];
 }
 @end

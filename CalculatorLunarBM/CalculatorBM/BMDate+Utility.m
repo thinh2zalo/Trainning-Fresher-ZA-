@@ -146,9 +146,6 @@
 }
 
 
-
-
-
 - (NSString *)getStringMonth:(TypeOfCalendar)typeOfCalendar {
     NSString *month = NSString.new;
     if (typeOfCalendar == TypeCalendarAmLich) {

@@ -13,7 +13,7 @@
 @implementation BMYear
 
 - (instancetype)initWithSolarDay:(NSInteger)solarDay solarMonth:(NSInteger)solarMonth solarYear:(NSInteger)solarYear timeZone:(NSInteger)timeZone {
-    
+    // check input
     if (![BMDate validDate:solarDay month:solarMonth year:solarYear]) {
         return nil;
     }
@@ -26,7 +26,7 @@
 }
 
 - (instancetype)initWithLunarDay:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth solarYear:(NSInteger)lunarYear isLeapMonth:(BOOL)isLeapMonth timeZone:(NSInteger)timeZone {
-    // check input
+    // check input 
     self = [super init];
     if (self) {
         self.lunarYear = lunarYear;

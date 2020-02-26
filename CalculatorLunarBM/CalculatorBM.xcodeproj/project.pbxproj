@@ -24,6 +24,10 @@
 		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
+		BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D0C24055D1A004740C5 /* BMPageViewController.m */; };
+		BF866D1024061027004740C5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D0F24061027004740C5 /* TestViewController.m */; };
+		BF866D13240616FF004740C5 /* SolarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D12240616FF004740C5 /* SolarViewController.m */; };
+		BF866D1724068408004740C5 /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D1624068408004740C5 /* DateModel.m */; };
 		BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */; };
 		BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */; };
 /* End PBXBuildFile section */
@@ -80,6 +84,14 @@
 		BF80ABB723F3024800AC5C3B /* BMDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDate.h; sourceTree = "<group>"; };
 		BF80ABB823F3024800AC5C3B /* BMDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDate.m; sourceTree = "<group>"; };
 		BF80ABBA23F3A12600AC5C3B /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		BF866D0B24055D1A004740C5 /* BMPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMPageViewController.h; sourceTree = "<group>"; };
+		BF866D0C24055D1A004740C5 /* BMPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMPageViewController.m; sourceTree = "<group>"; };
+		BF866D0E24061027004740C5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		BF866D0F24061027004740C5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BF866D11240616FF004740C5 /* SolarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarViewController.h; sourceTree = "<group>"; };
+		BF866D12240616FF004740C5 /* SolarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarViewController.m; sourceTree = "<group>"; };
+		BF866D1524068408004740C5 /* DateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateModel.h; sourceTree = "<group>"; };
+		BF866D1624068408004740C5 /* DateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateModel.m; sourceTree = "<group>"; };
 		BF8A038F23F3FD7700C79D96 /* SolarCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarCalendarView.h; sourceTree = "<group>"; };
 		BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
 		BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
@@ -154,6 +166,8 @@
 		BF5E9D6B23EC30D7006DC5FD /* CalculatorBM */ = {
 			isa = PBXGroup;
 			children = (
+				BF866D14240683E2004740C5 /* Model */,
+				BF866D0A24055CE1004740C5 /* Controller */,
 				BF05D81223F3DB17007ABE89 /* Images */,
 				BF05D80E23F3B70B007ABE89 /* View */,
 				BF5E9DAB23ED408A006DC5FD /* Utilities */,
@@ -217,6 +231,28 @@
 				BF80ABBA23F3A12600AC5C3B /* define.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BF866D0A24055CE1004740C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D0B24055D1A004740C5 /* BMPageViewController.h */,
+				BF866D0C24055D1A004740C5 /* BMPageViewController.m */,
+				BF866D0E24061027004740C5 /* TestViewController.h */,
+				BF866D0F24061027004740C5 /* TestViewController.m */,
+				BF866D11240616FF004740C5 /* SolarViewController.h */,
+				BF866D12240616FF004740C5 /* SolarViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BF866D14240683E2004740C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D1524068408004740C5 /* DateModel.h */,
+				BF866D1624068408004740C5 /* DateModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,18 +386,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF866D13240616FF004740C5 /* SolarViewController.m in Sources */,
 				BF5E9DA423EC3117006DC5FD /* BMYear.m in Sources */,
 				BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */,
 				BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */,
 				BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */,
 				BF5E9D7423EC30D7006DC5FD /* ViewController.m in Sources */,
 				BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */,
+				BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */,
 				BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */,
 				BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */,
+				BF866D1024061027004740C5 /* TestViewController.m in Sources */,
 				BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */,
 				BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */,
 				BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */,
 				BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */,
+				BF866D1724068408004740C5 /* DateModel.m in Sources */,
 				BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
