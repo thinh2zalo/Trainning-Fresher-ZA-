@@ -22,7 +22,7 @@ didScrollTo:(NSInteger)index;
 - (UIViewController *)viewControllerFor:(BMPageViewController*)bmPageViewController atIndex:(NSInteger)index;
 - (NSInteger)defaultPage;
 @end
-
+// pageViewController lớp wrap lại UIPageViewController. Với các viewController được lặp lại vô tận.
 @interface BMPageViewController : UIPageViewController
 @property (nonatomic, weak) id <BMPageViewControllerDelegate> BMPaingDelegate;
 @property (nonatomic, weak) id <BMPageViewControllerDataSource> BMPaingDataSource;

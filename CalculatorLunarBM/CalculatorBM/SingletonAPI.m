@@ -7,6 +7,7 @@
 //
 
 #import "SingletonAPI.h"
+#import "define.h"
 @interface SingletonAPI()
 @property (nonatomic, strong)NSArray *quotationArr;
 @property (nonatomic, strong)NSArray *imageArr;
@@ -34,9 +35,9 @@
     return [NSURL URLWithString:strURL];
 }
 
-- (NSArray *)getQuotationArr{
+- (NSArray *)getQuotationArr {
     if (!_quotationArr) {
-        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"quotations" ofType:@"plist"]];
+        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_QUOTATIONS ofType:TYPEFILE_PLIST]];
       _quotationArr = arr;
  }
     return _quotationArr;
@@ -44,7 +45,7 @@
 
 -(NSArray *)getImageArr {
     if (!_imageArr) {
-        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"]];
+        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_URLIMG ofType:TYPEFILE_PLIST]];
         _imageArr = arr;
         }
     return _imageArr;

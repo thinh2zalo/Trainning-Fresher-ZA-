@@ -28,6 +28,10 @@
 #define ENDDAY 31
 #define PLUS @"+"
 
+#define FILE_QUOTATIONS @"quotations"
+#define FILE_URLIMG @"images"
+#define TYPEFILE_PLIST @"plist"
+
 // define dayOfWeek
 #define THU2 @"T.Hai"
 #define THU3 @"T.Ba"

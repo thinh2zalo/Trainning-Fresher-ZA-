@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SingletonAPI : NSObject
 + (SingletonAPI *)sharedInstance;
 - (NSArray *)getQuotationArr;
--(NSArray *)getImageArr;
--(NSString *)getQuote:(NSInteger)jdn;
--(NSURL *)getURLImage:(NSInteger)jdn;
+- (NSArray *)getImageArr;
+- (NSString *)getQuote:(NSInteger)jdn;
+- (NSURL *)getURLImage:(NSInteger)jdn;
 @end
 
 NS_ASSUME_NONNULL_END

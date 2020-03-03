@@ -15,7 +15,7 @@
 @implementation DateModel
 
 - (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote imageURL:(NSURL *)imageURL {
-    self =[super init];
+    self = [super init];
     if (self) {
         _jdn = jdn;
         _quote = quote;

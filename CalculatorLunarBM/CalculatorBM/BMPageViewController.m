@@ -35,8 +35,10 @@
     [super viewDidLoad];
     self.dataSource = self;
     self.delegate = self;
+    // lấy những thông tin default.
     self.currentIndex = [self.BMPaingDataSource defaultPage];
     self.viewControllerCount = [self.BMPaingDataSource numberOfViewControllers:self];
+
     UIViewController * vc = [self fetchViewController:self.currentIndex];
     [self setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
@@ -54,13 +56,13 @@
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
-    // get viewController will transition to.
+    // get viewController sẽ được scroll tới.
     UIViewController *viewController = pendingViewControllers.firstObject;
     if (!viewController) {
         return;
     }
-    // get index of viewController
-    NSNumber* index = [self.map objectForKey:viewController];
+    // get Index của viewController sẽ được scroll tới
+    NSNumber* index = [self.map objectForKey:viewController]; // bốc từ trong map.
     self.expectedTransitionIndex = index.integerValue;
     if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:willScrollToPageAt:direction:animated:)]) {
         // get direction
@@ -73,6 +75,8 @@
     if (index == previousPage) {
         return DirectionNetrue;
     } else {
+        // nếu page hiện tại là page cuối và page tiếp theo là page 0 thì là Forword;
+        // nếu page hiện tại < page tiếp theo 1 đơn vị thì là Forword;
         if (((previousPage == self.viewControllerCount - 1) && (index == 0)) || (index - previousPage == 1)) {
             return DirectionForword;
         }
@@ -113,14 +117,10 @@
 
 -(UIViewController *)fetchViewController:(NSInteger)index {
     if ([self.BMPaingDataSource respondsToSelector:@selector(viewControllerFor:atIndex:)]) {
-        
         UIViewController * viewController = [self.BMPaingDataSource viewControllerFor:self atIndex:index];
         if (viewController) {
             [self.map setObject:@(index) forKey:viewController];
         }
-        NSLog(@"viewController :%tu", self.currentIndex);
-
-        NSLog(@"viewController :%tu", index);
         return viewController;
     }
     return nil;

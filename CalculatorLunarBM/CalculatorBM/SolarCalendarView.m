@@ -94,7 +94,7 @@
 - (UILabel *)quoteLabel {
     if (!_quoteLabel) {
         _quoteLabel = UILabel.new;
-        [_quoteLabel setNumberOfLines:3];
+        [_quoteLabel setNumberOfLines:5];
         _quoteLabel.textAlignment = NSTextAlignmentCenter;
         [_quoteLabel setFont:[UIFont boldSystemFontOfSize:15]];
                                                           _quoteLabel.textColor = [UIColor whiteColor];

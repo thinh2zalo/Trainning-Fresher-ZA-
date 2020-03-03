@@ -273,7 +273,7 @@
         _backgroundView = UIView.new;
         _backgroundView.backgroundColor = [UIColor blackColor];
         [_backgroundView setAlpha:0.3];
-        [self addSubview:_backgroundView];
+        [self insertSubview:_backgroundView atIndex:0];
     }
     return _backgroundView;
 }

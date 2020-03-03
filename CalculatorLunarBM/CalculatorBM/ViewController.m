@@ -47,6 +47,7 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    // create 3 viewcontroller
     SolarViewController *newVC1 = SolarViewController.new;
     BMDate * currentDate = [BMDate getCurrentDate];
     NSInteger jdn = [currentDate getJulianDayNumber];
@@ -54,43 +55,24 @@
     [newVC1 setDataModel:model];
     SolarViewController *newVC2 = SolarViewController.new;
     SolarViewController *newVC3 = SolarViewController.new;
+    
     [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:jdn]
           placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    self.backgroundImgView.sd_imageIndicator = SDWebImageActivityIndicator.grayIndicator;
+
     [self.lunarCalendarView loadDateWithInput:currentDate];
 
     self.arrVC = @[newVC1,newVC2,newVC3];
     [self loadUI];
 }
 
-- (void)pageViewCurrentDate:(BMDate *)currentDate {
-    [self.lunarCalendarView loadDateWithInput:currentDate];
-}
 
--(void)didSelectDate:(BMDate *)bmDate {
+// MARK: - BMDatePickerViewDelegate
+- (void)didSelectDate:(BMDate *)bmDate {
     [self setDate:bmDate];
 }
 
--(void)loadUIWith:(BMDate *)date {
-    if (!date) {
-        return;
-    }
-    [self.solarMonthYearView loadDateWithInput:date];
-    
-    SolarViewController * solarShowed = self.arrVC[self.pageViewController.getCurrentIndex];
-    if (!solarShowed) {
-        return;
-    }
-    DateModel * dataModelShowed = [self createDataModel:date.getJulianDayNumber];
-    if (!dataModelShowed) {
-        return;
-    }
-    [solarShowed setDataModel:dataModelShowed];
-    [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:date.getJulianDayNumber]
-     
-    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    [self.lunarCalendarView loadDateWithInput:date];
-}
-
+// MARK: - BMPageViewControllerDelegate
 
 - (void)bmPageViewController:(BMPageViewController *)bmPageViewController willScrollToPageAt:(NSInteger)index direction:(NavigationDirection)direction animated:(BOOL)animated {
     SolarViewController *currentSolarViewController = (SolarViewController *)self.arrVC[bmPageViewController.getCurrentIndex];
@@ -113,6 +95,9 @@
             break;
     }
 }
+
+// MARK: - BMPageViewControllerDataSource
+
 
 - (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController {
     return self.arrVC.count;
@@ -137,24 +122,8 @@
     self.solarMonthYearView.center = CGPointMake(self.view.frame.size.width/2, 100);
 }
 
-- (void)commitDate {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"dd/MM/yyyy";
-    //dateFormatter.dateFormat = @"dd-MM-yyyy";
-    
-    NSDate *date = [dateFormatter dateFromString:self.inputDateTF.text];
-    if(date == nil) {
-        NSLog(@"incorrect format");
-    } else {
-        BMDate *newDate = [[BMDate alloc] initDate:self.inputDateTF.text andTimeZone:LOCAL_TIMEZONE];
-        self.date = newDate;
-        [self dismissKeyboard];
-        [self.lunarCalendarView loadDateWithInput:self.date];
-        [self.solarCalenDarView loadDateWithInput:self.date];
-    }
-}
 
--(DateModel *)createDataModel:(NSInteger)jdn {
+- (DateModel *)createDataModel:(NSInteger)jdn {
     NSString *quote = [SingletonAPI.sharedInstance getQuote:jdn];
     NSURL *urlImage = [SingletonAPI.sharedInstance getURLImage:jdn];
     return [[DateModel alloc] initWithDate:jdn quote:quote imageURL:urlImage];
@@ -167,26 +136,42 @@
 - (UIImageView *)backgroundTemp {
     if (!_backgroundTemp) {
         _backgroundTemp = UIImageView.new;
-        //        _backgroundTemp.backgroundColor = [UIColor redColor];
         _backgroundTemp.image = [UIImage imageNamed:@"background"];
         [self.view addSubview:_backgroundTemp];
     }
     return _backgroundTemp;
 }
+
+
 -(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
-    
     SolarViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
-    
     DateModel * modelShowed = solarShowed.getDataModel;
     BMDate * date = [[BMDate alloc] initLocalDate:modelShowed.jdn];
     [self setDate:date];
-    NSLog(@"jdn = %tu", modelShowed.jdn);
-    [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:modelShowed.jdn]
-                              placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    [self.lunarCalendarView loadDateWithInput:date];
-    [self.solarMonthYearView loadDateWithInput:date];
 }
 
+-(void)loadUIWith:(BMDate *)date {
+    if (!date) {
+        return;
+    }
+    [self.solarMonthYearView loadDateWithInput:date];
+
+    SolarViewController * solarShowed = self.arrVC[self.pageViewController.getCurrentIndex];
+    if (!solarShowed) {
+        return;
+    }
+    
+    DateModel * dataModelShowed = [self createDataModel:date.getJulianDayNumber];
+    if (!dataModelShowed) {
+        return;
+    }
+    [solarShowed setDataModel:dataModelShowed];
+
+    [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:date.getJulianDayNumber]
+     
+    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [self.lunarCalendarView loadDateWithInput:date];
+}
 
 
 - (UITextField *)inputDateTF {
@@ -221,17 +206,7 @@
     return _pageViewController;
 }
 
-- (UIButton *)commitBtn {
-    if (!_commitBtn) {
-        _commitBtn = UIButton.new;
-        _commitBtn.backgroundColor = [UIColor blueColor];
-        [_commitBtn setTitle:@"Commit" forState:UIControlStateNormal];
-        _commitBtn.layer.cornerRadius = 5;
-        [_commitBtn addTarget:self action:@selector(commitDate) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_commitBtn];
-    }
-    return _commitBtn;
-}
+
 
 -(void)selectDate {
     BMDatePickerView *datePicker = BMDatePickerView.new;

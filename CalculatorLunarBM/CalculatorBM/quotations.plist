@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   quotations.plist
-   CalculatorBM
-
-   Created by vincent on 3/3/20.
-   Copyright (c) 2020 vincent. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<string>Hạnh phúc lớn nhất ở đời là có thể tin chắc rằng ta được yêu thương - Yêu vì chính bản thân ta, hay đúng hơn, yêu bất kể bản thân ta</string>
+	<string>Bạn không cần ai nói với bạn rằng bạn là ai hay bạn là điều gì.  Bạn là chính con người bạn!</string>
+	<string>Hạnh phúc là khi điều bạn nghĩ, điều bạn nói  và điều bạn làm hài hòa với nhau.</string>
+	<string>Hạnh phúc không có nghĩa là mọi việc đều hoàn hảo.  Nó có nghĩa là bạn đã quyết định nhìn xa hơn những khiếm khuyết.</string>
+	<string>Thật tuyệt vời là con người đã sử dụng biết bao thời gian để chống lại cái ác.  Giá mà họ cũng sử dụng năng lượng đó để yêu thương người khác, cái ác sẽ tự chết vì buồn chán.,</string>
+	<string>Hãy yêu tôi khi tôi ít xứng đáng với tình yêu ấy nhất,  bởi đó là lúc tôi thực sự cần nó.</string>
+	<string>Yêu thương mang lại nhiều lạc thú hơn là được yêu</string>
+	<string>Mong bạn có hơi ấm trong nhà tuyết, dầu trong đèn dầu và sự yên bình trong trái tim.</string>
+	<string>Hãy nhớ tới tôi và cười,  bởi thà quên tôi đi còn hơn nhớ tới tôi và khóc.</string>
+	<string>Cũng như sự ích kỷ và phàn nàn làm tha hóa tâm hồn,  tình yêu với những niềm vui của mình làm tầm nhìn trở nên rõ ràng và sắc nét.</string>
+	<string>Khi nhìn lại cuộc đời mình,  bạn sẽ thấy rằng những khoảng khắc bạn thực sự sống là những lúc bạn làm điều gì đó hết lòng vì tình yêu.</string>
+	<string>Bạn sẽ không bao giờ hạnh phúc nếu bạn tiếp tục tìm kiếm thành phần của hạnh phúc.  Bạn sẽ không bao giờ sống nếu bạn vẫn tìm kiếm ý nghĩa của cuộc đời. (Albert Camus)</string>
+	<string>Với phân tích cuối cùng, tình yêu là cuộc sống.  Tình yêu không bao giờ thất bại và cuộc sống không bao giờ thất bại chừng nào còn có tình yêu.</string>
+	<string>Thử thách của tình bạn là sự trợ giúp lẫn nhau trong nghịch cảnh, và hơn thế, trợ giúp vô điều kiện.&quot;,
+&quot;Vị bác sĩ tốt nhất là người anh chạy tới nhờ và không thể tìm thấy.  (Denis Diderot)</string>
+	<string>Bệnh nhân nào cũng đem theo bên trong người thầy thuốc của chính bản thân mình.  (Albert Schweitzer).</string>
+	<string>Tôi chỉ biết một nghĩa vụ, và đó là yêu thương.</string>
+	<string>Khi một người chết đi, anh ta nắm trong tay chỉ những gì mình đã cho đi khi còn sống.</string>
+	<string>Tình bạn là bầu rượu của cuộc đời:  nhưng tình bạn mới... không mạnh cũng không trong.</string>
+	<string>Kinh doanh có thể mang cho bạn tiền bạc,  nhưng tình bạn thì hiếm khi nào.</string>
+</array>
 </plist>

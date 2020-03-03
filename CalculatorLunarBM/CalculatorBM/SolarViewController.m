@@ -44,7 +44,6 @@
 }
 
 - (void)setDataModel:(DateModel *)dataModel {
-    
     if (dataModel == nil || _dataModel == dataModel) {
         return;
     }
