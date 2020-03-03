@@ -59,7 +59,6 @@
             [self.datePickerView reloadComponent:ColumnMonth];
             [self.datePickerView reloadComponent:ColumnDay];
             [self newDateWithConfig];
-//            [self scrollToSelectDate:NO];
             break;
             
         case ColumnMonth:
@@ -112,6 +111,7 @@
     TypeOfColumnPicker typeOfColumnPicker = (TypeOfColumnPicker) component;
     if (!label) {
         label = [[UILabel alloc] init];
+        label.frame = CGRectMake(0, 0, 200, 100);
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = NSTextAlignmentCenter;
     }
@@ -301,7 +301,7 @@
 
 - (UIPickerView *)datePickerView {
     if (!_datePickerView) {
-        _datePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.doneBtn.frame.size.height + 5, WITDTH_SCREEN, 200)];
+        _datePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.doneBtn.frame.size.height + 5, WITDTH_SCREEN, 300)];
         _datePickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         _datePickerView.dataSource = self;
         _datePickerView.delegate = self;
@@ -311,7 +311,7 @@
 
 - (UIView *)alertView {
     if (!_alertView) {
-        _alertView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WITDTH_SCREEN, 200)];
+        _alertView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WITDTH_SCREEN, 300)];
         UIView *shadowLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _alertView.frame.size.width, 1.0f)];
         shadowLineView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [_alertView addSubview:shadowLineView];
@@ -444,7 +444,7 @@
 - (UIButton *)doneBtn {
     if (!_doneBtn) {
         _doneBtn = UIButton.new;
-        _doneBtn.frame = CGRectMake(WITDTH_SCREEN - 60 - 20, 8, 60, 28);
+        _doneBtn.frame = CGRectMake(WITDTH_SCREEN - 60 - 30, 10, 60, 28);
         _doneBtn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
         [_doneBtn addTarget:self action:@selector(clickDoneBtn) forControlEvents:UIControlEventTouchUpInside];
         _doneBtn.layer.cornerRadius = 6.0f;

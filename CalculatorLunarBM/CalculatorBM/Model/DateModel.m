@@ -14,15 +14,16 @@
 
 @implementation DateModel
 
-- (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote image:(UIImage *)image {
+- (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote imageURL:(NSURL *)imageURL {
     self =[super init];
     if (self) {
         _jdn = jdn;
         _quote = quote;
-        _image = image;
+        _imageURL = imageURL;
     }
     return self;
 }
+
 
 - (NSString *)quote {
     if (!_quote) {
@@ -31,11 +32,11 @@
     return _quote;
 }
 
-- (UIImage *)image {
-    if (!_image) {
-        _image = UIImage.new;
+- (NSURL *)imageURL {
+    if (!_imageURL) {
+        _imageURL = NSURL.new;
     }
-    return _image;
+    return _imageURL;
 }
 
 /*

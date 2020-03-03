@@ -26,8 +26,6 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpdateUI];
@@ -38,22 +36,20 @@
     [self.solarCalendarView loadDateWithInput:self.dataModel];
 }
 
-- (DateModel *)dataModel {
+- (DateModel *)getDataModel {
     if (!_dataModel) {
         _dataModel = DateModel.new;
     }
     return _dataModel;
 }
 
-
-
 - (void)setDataModel:(DateModel *)dataModel {
+    
     if (dataModel == nil || _dataModel == dataModel) {
         return;
     }
     _dataModel = dataModel;
     [self.solarCalendarView loadDateWithInput:self.dataModel];
-
 }
 
 - (SolarCalendarView *)solarCalendarView {

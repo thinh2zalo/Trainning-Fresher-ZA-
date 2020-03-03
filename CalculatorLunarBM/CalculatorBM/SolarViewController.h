@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SolarViewController : UIViewController
 - (DateModel *)getDataModel;
+- (void)setDataModel:(DateModel *)dataModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

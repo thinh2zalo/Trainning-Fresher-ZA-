@@ -56,10 +56,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getYearWithTypeCalendar:(TypeOfCalendar)typeOfCalendar;
 - (NSInteger)getIndexOfMonthInYear:(TypeOfCalendar)typeOfCalendar;
 
+
+// lấy ngày hiện tại
 + (BMDate *)getCurrentDate ;
 + (NSDateComponents *)getCurrentDateComponents;
-+ (NSString*)dayOfWeek:(NSInteger)jdn;
 +(NSInteger)getCurrentJulianDayNumber;
+// lấy thứ trong tuần // input jdn
++ (NSString*)dayOfWeek:(NSInteger)jdn;
+
 @end
 
 NS_ASSUME_NONNULL_END

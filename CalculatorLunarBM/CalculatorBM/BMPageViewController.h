@@ -9,20 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "BMDate.h"
 NS_ASSUME_NONNULL_BEGIN
-@protocol BMPageViewControllerDelegate
-- (void)pageViewCurrentDate:(BMDate *)currentDate;
+@class BMPageViewController;
+@protocol BMPageViewControllerDelegate <NSObject>
+- (void)bmPageViewController:(BMPageViewController *)bmPageViewController
+willScrollToPageAt:(NSInteger)index direction:(NavigationDirection)direction animated:(BOOL)animated;
+- (void)bmPageViewController:(BMPageViewController *)bmPageViewController
+didScrollTo:(NSInteger)index;
 @end
+
 @protocol BMPageViewControllerDataSource <NSObject>
-
-- (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerAfterViewController:(nonnull UIViewController *)viewController;
-
+- (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController;
+- (UIViewController *)viewControllerFor:(BMPageViewController*)bmPageViewController atIndex:(NSInteger)index;
+- (NSInteger)defaultPage;
 @end
-
 
 @interface BMPageViewController : UIPageViewController
-- (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray <UIViewController *> *)controllers;
-@property (nonatomic, weak) id <BMPageViewControllerDelegate> BMPaingdelegate;
-
+@property (nonatomic, weak) id <BMPageViewControllerDelegate> BMPaingDelegate;
+@property (nonatomic, weak) id <BMPageViewControllerDataSource> BMPaingDataSource;
+- (NSInteger )getCurrentIndex;
 @end
 
 NS_ASSUME_NONNULL_END

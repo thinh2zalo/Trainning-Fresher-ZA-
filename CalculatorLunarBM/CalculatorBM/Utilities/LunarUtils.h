@@ -23,7 +23,7 @@
 +(NSMutableArray*) convertLunarToSolar:(NSInteger)lunarDay lunarMonth:(NSInteger)lunarMonth lunarYear:(NSInteger)lunarYear isLunarLeap:(BOOL)isLunarLeap timeZone:(NSInteger)timeZone;
 // convert solar to lunar
 
-+(NSMutableDictionary*) convertSolarToLunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
++(NSMutableDictionary*)convertSolarToLunar:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy timeZone:(NSInteger)timeZone;
 +(NSInteger)jdFromSolarDate:(NSInteger)dd mm:(NSInteger)mm yy:(NSInteger)yy;
 +(NSMutableArray*)jdToDate:(NSInteger)jd;
 

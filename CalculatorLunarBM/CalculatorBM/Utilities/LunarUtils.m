@@ -12,13 +12,7 @@
 @end
 
 @implementation LunarUtils
-+ (NSMutableDictionary*)getHoroscopeDayInfo:(int)D :(int)M :(int)Y{
-    NSMutableDictionary *dayInfo = [[NSMutableDictionary alloc] init];
-    [dayInfo setObject:[NSString stringWithFormat:@"%d",D] forKey:@"Day"];
-    [dayInfo setObject:[NSString stringWithFormat:@"%d",M] forKey:@"Month"];
-    [dayInfo setObject:[NSString stringWithFormat:@"%d",Y] forKey:@"Year"];    
-     return dayInfo;
-}
+
 
 + (NSArray *)getDiaChi {
     static NSArray *diaChi;
@@ -40,7 +34,7 @@
 }
 
 + (double)NewMoon:(NSInteger)k{
-    double T = k/1236.85; // Time in Julian centuries from 1900 January 0.5
+    double T = k/1236.85; // Time in Julian centuries from 1900
     double T2 = T * T;
     double T3 = T2 * T;
     double dr = PI/180;
@@ -171,7 +165,7 @@
     k = floor((a11 - 2415021.076998695) / 29.530588853 + 0.5);
     last = 0;
     i = 1; // We start with the month following lunar month 11
-    arc = [self getSunLongitude:[self getNewMoonDay:k+i timeZone:timeZone ] timeZone:timeZone ];
+    arc = [self getSunLongitude:[self getNewMoonDay:k+i timeZone:timeZone ] timeZone:timeZone];
     do {
         last = arc;
         i++;

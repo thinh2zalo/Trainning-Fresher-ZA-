@@ -9,92 +9,125 @@
 #import "BMPageViewController.h"
 #import "SolarViewController.h"
 @interface BMPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-@property (nonatomic, strong) NSArray <UIViewController *>* controllers;
-@property (nonatomic, strong) BMDate * currentDate;
+@property (assign) NSInteger currentIndex;
+@property (assign) NSInteger viewControllerCount;
+@property (assign) NSInteger expectedTransitionIndex;
+// map to store viewController
+@property (nonatomic, strong, readonly, nonnull) NSMapTable<UIViewController *, NSNumber*> *map;
 
 
 @end
 
+
 @implementation BMPageViewController
 
-- (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray <UIViewController *> *)controllers {
+- (instancetype)init {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     if (self) {
-        self.controllers = controllers;
-        self.view.frame = frame;
+        _map = [[NSMapTable alloc] initWithKeyOptions:NSMapTableWeakMemory | NSMapTableObjectPointerPersonality
+                                         valueOptions:NSMapTableWeakMemory
+                                             capacity:0];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIViewController *firstViewController = self.controllers.firstObject;
-    if (firstViewController == NULL) {
-        return;
-    }
-    [self setViewControllers:@[firstViewController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     self.dataSource = self;
     self.delegate = self;
+    self.currentIndex = [self.BMPaingDataSource defaultPage];
+    self.viewControllerCount = [self.BMPaingDataSource numberOfViewControllers:self];
+    UIViewController * vc = [self fetchViewController:self.currentIndex];
+    [self setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
-
-
-// delegate
+// MARK: - UIPageViewControllerDelegate
 
 -  (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
-    if (completed && finished) {
-           [self.BMPaingdelegate pageViewCurrentDate:self.currentDate];
-              [self.BMPaingdelegate pageViewCurrentDate:self.currentDate];
+    if (completed) {
+        NSInteger index = [self.map objectForKey:previousViewControllers.firstObject].integerValue;
+        index = self.expectedTransitionIndex;
+        [self updateCurrentPageIndexIfNeeded:index];
+          if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:didScrollTo:)]) {
+              [self.BMPaingDelegate bmPageViewController:self didScrollTo:index];
+          }
     }
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
-    SolarViewController * solarController = (SolarViewController *)pendingViewControllers.lastObject;
-//        self.currentDate = solarController.getDate;
+    // get viewController will transition to.
+    UIViewController *viewController = pendingViewControllers.firstObject;
+    if (!viewController) {
+        return;
+    }
+    // get index of viewController
+    NSNumber* index = [self.map objectForKey:viewController];
+    self.expectedTransitionIndex = index.integerValue;
+    if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:willScrollToPageAt:direction:animated:)]) {
+        // get direction
+          NavigationDirection direction = [self determineDirection:index.integerValue previousPage:self.currentIndex];
+        [self.BMPaingDelegate bmPageViewController:self willScrollToPageAt:index.integerValue direction:direction animated:YES];
+    }
 }
 
+- (NavigationDirection)determineDirection:(NSInteger)index previousPage:(NSInteger)previousPage {
+    if (index == previousPage) {
+        return DirectionNetrue;
+    } else {
+        if (((previousPage == self.viewControllerCount - 1) && (index == 0)) || (index - previousPage == 1)) {
+            return DirectionForword;
+        }
+        return DirectionReverse;
+    }
+}
+
+- (BOOL)updateCurrentPageIndexIfNeeded:(NSInteger)index {
+    if ((self.currentIndex != index) && (index >= 0 )&& (index < self.viewControllerCount)) {
+        self.currentIndex = index;
+        return true;
+    }
+    return false;
+}
+
+// MARK: - UIPageViewControllerDataSource
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerAfterViewController:(nonnull UIViewController *)viewController {
-    
-    NSInteger index = [self.controllers indexOfObject:viewController];
-    SolarViewController * solarController = (SolarViewController *)viewController;
-    if (index == NSNotFound || !solarController) {
+    if (self.viewControllerCount == NSNotFound || self.currentIndex == NSNotFound) {
         return nil;
     }
-    NSInteger nextIndex = index + 1;
-    
-    if (nextIndex == self.controllers.count) {
-        [];
-//        NSInteger currentJDN = [solarController getJDN];
-//           [(SolarViewController *)self.controllers.firstObject setJdn:currentJDN + 1];
-        return self.controllers.firstObject;
+    if (self.currentIndex == self.viewControllerCount - 1) {
+        return [self fetchViewController:0];
+    } else {
+        return [self fetchViewController:self.currentIndex + 1];
     }
-//    NSInteger currentJDN = [solarController getJDN];
-//    [(SolarViewController *)self.controllers[nextIndex] setJdn:currentJDN + 1];
-    return self.controllers[nextIndex];
 }
 
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerBeforeViewController:(nonnull UIViewController *)viewController {
-    SolarViewController * solarController = (SolarViewController *)viewController;
-    NSInteger index = [self.controllers indexOfObject:viewController];
-       if (index == NSNotFound || !solarController) {
-           return nil;
-       }
-        if (index == 0) {
-//           NSInteger currentJDN = solarController.getJDN;
-//           [(SolarViewController *)self.controllers.lastObject setJdn:currentJDN -1];
-           return self.controllers.lastObject;
-       }
-//        NSInteger previousInDex = index - 1;
-//        NSInteger currentJDN = [(SolarViewController *)viewController getJDN];
-//
-//        [(SolarViewController *)self.controllers[previousInDex] setJdn:currentJDN - 1];
-//       return self.controllers[previousInDex];
-}
-
-
-- (NSArray<UIViewController *> *)controllers {
-    if (!_controllers) {
-        _controllers = NSArray.new;
+    if (self.viewControllerCount == NSNotFound || self.currentIndex == NSNotFound) {
+        return nil;
     }
-    return _controllers;
+    if (self.currentIndex != 0) {
+        return  [self fetchViewController:self.currentIndex - 1];
+    } else {
+        return  [self fetchViewController:self.viewControllerCount - 1];
+    }
 }
+
+-(UIViewController *)fetchViewController:(NSInteger)index {
+    if ([self.BMPaingDataSource respondsToSelector:@selector(viewControllerFor:atIndex:)]) {
+        
+        UIViewController * viewController = [self.BMPaingDataSource viewControllerFor:self atIndex:index];
+        if (viewController) {
+            [self.map setObject:@(index) forKey:viewController];
+        }
+        NSLog(@"viewController :%tu", self.currentIndex);
+
+        NSLog(@"viewController :%tu", index);
+        return viewController;
+    }
+    return nil;
+}
+
+- (NSInteger )getCurrentIndex{
+    return self.currentIndex;
+}
+
 @end

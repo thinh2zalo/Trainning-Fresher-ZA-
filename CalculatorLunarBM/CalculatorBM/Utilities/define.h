@@ -36,7 +36,15 @@
 #define THU6 @"T.Sáu"
 #define THU7 @"T.Bảy"
 #define CHUNHAT @"CN"
+#define ShareDelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 
+
+typedef NS_ENUM(NSUInteger, NavigationDirection) {
+    DirectionNetrue = 0,
+    DirectionForword = 1,
+    DirectionReverse = 2,
+  
+};
 
 typedef NS_ENUM(NSUInteger, TypeOfColumnPicker) {
     ColumnTypeCalendar = 0,

@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 *   @brief   set type of calendar  lunar calendar || solar calendar */
 @property (nonatomic) TypeOfCalendar typeOfCalendar;
 
-@property(nullable,nonatomic,weak) id<BMDatePickerViewDelegate> delegate;                  // default is nil. weak reference
+@property(nullable,nonatomic,weak) id<BMDatePickerViewDelegate> delegate;               // default is nil. weak reference
 
 - (void)show;
 @end

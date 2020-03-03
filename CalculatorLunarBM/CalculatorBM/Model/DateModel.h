@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BMDate.h"
+#import <SDWebImage.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DateModel : NSObject
 @property (assign) NSInteger  jdn;
 @property (nonatomic, strong) NSString * quote;
-@property (nonatomic, strong) UIImage * image;
-
+@property (nonatomic, strong) NSURL * imageURL;
+- (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote imageURL:(NSURL *)imageURL;
 @end
 
 NS_ASSUME_NONNULL_END
