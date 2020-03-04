@@ -12,12 +12,10 @@
 		BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */; };
 		BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF05D81323F3DB5D007ABE89 /* image_17.jpg */; };
 		BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */; };
+		BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */; };
 		BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; };
 		BF59D133240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF59D136240DFD1D00A09D89 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59D135240DFD1D00A09D89 /* SDWebImage.framework */; };
-		BF59D13C240E108900A09D89 /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13B240E108900A09D89 /* quotations.plist */; };
-		BF59D13E240E120300A09D89 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13D240E120300A09D89 /* images.plist */; };
-		BF59D141240E1B0500A09D89 /* SolarMonthYearView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59D140240E1B0500A09D89 /* SolarMonthYearView.m */; };
+		BF59D141240E1B0500A09D89 /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59D140240E1B0500A09D89 /* BMButtonLabel.m */; };
 		BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D6D23EC30D7006DC5FD /* AppDelegate.m */; };
 		BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */; };
 		BF5E9D7423EC30D7006DC5FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7323EC30D7006DC5FD /* ViewController.m */; };
@@ -31,11 +29,13 @@
 		BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA623ED3F63006DC5FD /* BMMonth.m */; };
 		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
+		BF7447EB240F4C890056541C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59D135240DFD1D00A09D89 /* SDWebImage.framework */; };
+		BF7447ED240F4F7D0056541C /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13B240E108900A09D89 /* quotations.plist */; };
+		BF7447EE240F4F7D0056541C /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13D240E120300A09D89 /* images.plist */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
 		BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D0C24055D1A004740C5 /* BMPageViewController.m */; };
 		BF866D13240616FF004740C5 /* SolarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D12240616FF004740C5 /* SolarViewController.m */; };
 		BF866D1724068408004740C5 /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D1624068408004740C5 /* DateModel.m */; };
-		BF866D1B240CB073004740C5 /* quotations.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF866D1A240CB073004740C5 /* quotations.txt */; };
 		BF866D1F240CC182004740C5 /* SingletonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D1E240CC182004740C5 /* SingletonAPI.m */; };
 		BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */; };
 		BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */; };
@@ -86,13 +86,14 @@
 		BF05D81323F3DB5D007ABE89 /* image_17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_17.jpg; sourceTree = "<group>"; };
 		BF5818C223FFBA15007A5C8A /* BMDate+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMDate+Utility.h"; sourceTree = "<group>"; };
 		BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BMDate+Utility.m"; sourceTree = "<group>"; };
+		BF583155240FAD6000CAAA34 /* HorizontalPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalPageViewController.h; sourceTree = "<group>"; };
+		BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalPageViewController.m; sourceTree = "<group>"; };
 		BF59D128240DFA2E00A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59D12B240DFA9600A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59D135240DFD1D00A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59D13B240E108900A09D89 /* quotations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = quotations.plist; sourceTree = "<group>"; };
 		BF59D13D240E120300A09D89 /* images.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
-		BF59D13F240E1B0500A09D89 /* SolarMonthYearView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarMonthYearView.h; sourceTree = "<group>"; };
-		BF59D140240E1B0500A09D89 /* SolarMonthYearView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarMonthYearView.m; sourceTree = "<group>"; };
+		BF59D140240E1B0500A09D89 /* BMButtonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
 		BF5E9D6923EC30D7006DC5FD /* CalendarBM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarBM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5E9D6C23EC30D7006DC5FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF5E9D6D23EC30D7006DC5FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
 		BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
 		BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDatePickerView.m; sourceTree = "<group>"; };
+		BFBCC93E240F8D2800F19839 /* BMButtonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMButtonLabel.h; sourceTree = "<group>"; };
 		D61B2043DE81966C2D85D9B3 /* Pods-CalculatorBMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBMTests.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorBMTests/Pods-CalculatorBMTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF59D136240DFD1D00A09D89 /* SDWebImage.framework in Frameworks */,
+				BF7447EB240F4C890056541C /* SDWebImage.framework in Frameworks */,
 				BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,8 +191,8 @@
 				BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */,
 				BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */,
 				BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */,
-				BF59D13F240E1B0500A09D89 /* SolarMonthYearView.h */,
-				BF59D140240E1B0500A09D89 /* SolarMonthYearView.m */,
+				BFBCC93E240F8D2800F19839 /* BMButtonLabel.h */,
+				BF59D140240E1B0500A09D89 /* BMButtonLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +304,8 @@
 				BF866D0C24055D1A004740C5 /* BMPageViewController.m */,
 				BF866D11240616FF004740C5 /* SolarViewController.h */,
 				BF866D12240616FF004740C5 /* SolarViewController.m */,
+				BF583155240FAD6000CAAA34 /* HorizontalPageViewController.h */,
+				BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -320,9 +324,9 @@
 			children = (
 				BF866D1A240CB073004740C5 /* quotations.txt */,
 				BF59D13B240E108900A09D89 /* quotations.plist */,
+				BF59D13D240E120300A09D89 /* images.plist */,
 				BF866D1D240CC182004740C5 /* SingletonAPI.h */,
 				BF866D1E240CC182004740C5 /* SingletonAPI.m */,
-				BF59D13D240E120300A09D89 /* images.plist */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -449,11 +453,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF866D1B240CB073004740C5 /* quotations.txt in Resources */,
-				BF59D13C240E108900A09D89 /* quotations.plist in Resources */,
+				BF7447ED240F4F7D0056541C /* quotations.plist in Resources */,
+				BF7447EE240F4F7D0056541C /* images.plist in Resources */,
 				BF5E9D7C23EC30DB006DC5FD /* LaunchScreen.storyboard in Resources */,
 				BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */,
-				BF59D13E240E120300A09D89 /* images.plist in Resources */,
 				BF5E9D7923EC30DB006DC5FD /* Assets.xcassets in Resources */,
 				BF5E9D7723EC30D7006DC5FD /* Main.storyboard in Resources */,
 			);
@@ -586,6 +589,7 @@
 				BF866D13240616FF004740C5 /* SolarViewController.m in Sources */,
 				BF5E9DA423EC3117006DC5FD /* BMYear.m in Sources */,
 				BF866D1F240CC182004740C5 /* SingletonAPI.m in Sources */,
+				BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */,
 				BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */,
 				BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */,
 				BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */,
@@ -599,7 +603,7 @@
 				BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */,
 				BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */,
 				BF866D1724068408004740C5 /* DateModel.m in Sources */,
-				BF59D141240E1B0500A09D89 /* SolarMonthYearView.m in Sources */,
+				BF59D141240E1B0500A09D89 /* BMButtonLabel.m in Sources */,
 				BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +662,9 @@
 		BF5E9D9623EC30DB006DC5FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -716,7 +722,9 @@
 		BF5E9D9723EC30DB006DC5FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -770,6 +778,7 @@
 			baseConfigurationReference = 9F99A4A4B39D10CB3CAE1497 /* Pods-CalculatorBM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
 				INFOPLIST_FILE = CalculatorBM/Info.plist;
@@ -788,6 +797,7 @@
 			baseConfigurationReference = 1DEB6B830F5954C3E7FC6C1D /* Pods-CalculatorBM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
 				INFOPLIST_FILE = CalculatorBM/Info.plist;

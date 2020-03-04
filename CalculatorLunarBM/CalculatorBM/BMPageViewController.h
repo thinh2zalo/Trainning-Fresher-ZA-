@@ -18,6 +18,7 @@ didScrollTo:(NSInteger)index;
 @end
 
 @protocol BMPageViewControllerDataSource <NSObject>
+@required
 - (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController;
 - (UIViewController *)viewControllerFor:(BMPageViewController*)bmPageViewController atIndex:(NSInteger)index;
 - (NSInteger)defaultPage;

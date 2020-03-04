@@ -21,24 +21,23 @@
 
 @implementation BMPageViewController
 
-- (instancetype)init {
-    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    if (self) {
-        _map = [[NSMapTable alloc] initWithKeyOptions:NSMapTableWeakMemory | NSMapTableObjectPointerPersonality
-                                         valueOptions:NSMapTableWeakMemory
-                                             capacity:0];
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = self;
     self.delegate = self;
+    _map = [[NSMapTable alloc] initWithKeyOptions:NSMapTableWeakMemory | NSMapTableObjectPointerPersonality
+                                            valueOptions:NSMapTableWeakMemory
+                                                capacity:0];
     // lấy những thông tin default.
+    if (![self.BMPaingDataSource respondsToSelector:@selector(defaultPage)]) {
+        return;
+    }
+    
     self.currentIndex = [self.BMPaingDataSource defaultPage];
     self.viewControllerCount = [self.BMPaingDataSource numberOfViewControllers:self];
-
+    
     UIViewController * vc = [self fetchViewController:self.currentIndex];
     [self setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
@@ -49,9 +48,9 @@
         NSInteger index = [self.map objectForKey:previousViewControllers.firstObject].integerValue;
         index = self.expectedTransitionIndex;
         [self updateCurrentPageIndexIfNeeded:index];
-          if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:didScrollTo:)]) {
-              [self.BMPaingDelegate bmPageViewController:self didScrollTo:index];
-          }
+        if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:didScrollTo:)]) {
+            [self.BMPaingDelegate bmPageViewController:self didScrollTo:index];
+        }
     }
 }
 
@@ -66,7 +65,7 @@
     self.expectedTransitionIndex = index.integerValue;
     if ([self.BMPaingDelegate respondsToSelector:@selector(bmPageViewController:willScrollToPageAt:direction:animated:)]) {
         // get direction
-          NavigationDirection direction = [self determineDirection:index.integerValue previousPage:self.currentIndex];
+        NavigationDirection direction = [self determineDirection:index.integerValue previousPage:self.currentIndex];
         [self.BMPaingDelegate bmPageViewController:self willScrollToPageAt:index.integerValue direction:direction animated:YES];
     }
 }
@@ -126,7 +125,7 @@
     return nil;
 }
 
-- (NSInteger )getCurrentIndex{
+- (NSInteger )getCurrentIndex {
     return self.currentIndex;
 }
 

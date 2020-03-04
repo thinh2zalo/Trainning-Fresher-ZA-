@@ -14,7 +14,6 @@
 
 @end
 @implementation SingletonAPI
-@synthesize quotationArr = _quotationArr;
 + (SingletonAPI *)sharedInstance {
     static SingletonAPI *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -34,6 +33,8 @@
     NSString * strURL = self.getImageArr[index];
     return [NSURL URLWithString:strURL];
 }
+
+
 
 - (NSArray *)getQuotationArr {
     if (!_quotationArr) {

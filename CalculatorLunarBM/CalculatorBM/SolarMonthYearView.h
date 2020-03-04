@@ -10,7 +10,8 @@
 #import "BMDate.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SolarMonthYearView : UIView
+@interface BMButtonLabel : UIView
+-(void)setLabelText:(NSString *)text;
 - (void)loadDateWithInput:(BMDate *)date;
 @end
 

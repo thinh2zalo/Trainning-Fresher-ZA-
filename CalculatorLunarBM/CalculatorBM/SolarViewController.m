@@ -13,7 +13,6 @@
 @property (nonatomic, strong)  SolarCalendarView * solarCalendarView;
 @end
 @implementation SolarViewController
-@synthesize dataModel = _dataModel;
 
 - (instancetype)initWithModel:(DateModel *)dateModel {
     if (!dateModel) {
