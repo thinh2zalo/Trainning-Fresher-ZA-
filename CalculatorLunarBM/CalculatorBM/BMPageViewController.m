@@ -114,6 +114,10 @@
     }
 }
 
+-(UIViewController *)getCurrentViewController {
+    return  [self fetchViewController:self.currentIndex];
+}
+
 -(UIViewController *)fetchViewController:(NSInteger)index {
     if ([self.BMPaingDataSource respondsToSelector:@selector(viewControllerFor:atIndex:)]) {
         UIViewController * viewController = [self.BMPaingDataSource viewControllerFor:self atIndex:index];

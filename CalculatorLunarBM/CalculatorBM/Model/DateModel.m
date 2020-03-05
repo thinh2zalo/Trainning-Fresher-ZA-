@@ -7,7 +7,7 @@
 //
 
 #import "DateModel.h"
-
+#import "SingletonAPI.h"
 @interface DateModel ()
 
 @end
@@ -22,6 +22,12 @@
         _imageURL = imageURL;
     }
     return self;
+}
+
++ (DateModel *)createDataModel:(NSInteger)jdn {
+    NSString *quote = [SingletonAPI.sharedInstance getQuote:jdn];
+    NSURL *urlImage = [SingletonAPI.sharedInstance getURLImage:jdn];
+    return [[DateModel alloc] initWithDate:jdn quote:quote imageURL:urlImage];
 }
 
 

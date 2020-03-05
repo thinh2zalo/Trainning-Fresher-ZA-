@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * quote;
 @property (nonatomic, strong) NSURL * imageURL;
 - (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote imageURL:(NSURL *)imageURL;
++ (DateModel *)createDataModel:(NSInteger)jdn;
 @end
 
 NS_ASSUME_NONNULL_END

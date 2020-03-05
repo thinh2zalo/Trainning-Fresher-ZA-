@@ -33,7 +33,7 @@
            [_solarMonthAndYearLabel setFont:[UIFont boldSystemFontOfSize:17]];
                                                 _solarMonthAndYearLabel.textColor = [UIColor blackColor];
                                                 _solarMonthAndYearLabel.textAlignment = NSTextAlignmentCenter;
-        _solarMonthAndYearLabel.text = @"Tháng 2 năm 2020";
+        
            [self addSubview:_solarMonthAndYearLabel];
        }
        return _solarMonthAndYearLabel;

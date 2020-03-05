@@ -21,7 +21,7 @@
 #import "BMButtonLabel.h"
 #import "HorizontalPageViewController.h"
 
-@interface ViewController () <BMDatePickerViewDelegate, BMPageViewControllerDelegate, BMPageViewControllerDataSource>
+@interface ViewController () <BMDatePickerViewDelegate, BMPageViewControllerDelegate, BMPageViewControllerDataSource, HorizontalPageViewControllerDelegate>
 @property (nonatomic, strong) LunarCalendarView * lunarCalendarView;
 @property (nonatomic, strong) SolarCalendarView * solarCalenDarView;
 
@@ -55,40 +55,42 @@
 
 - (void)loadData {
     // create 3 viewcontroller
-        SolarViewController *newVC1 = SolarViewController.new;
-       BMDate * currentDate = [BMDate getCurrentDate];
-       NSInteger jdn = [currentDate getJulianDayNumber];
-       DateModel *model = [self createDataModel:jdn];
-        
-       [newVC1 setDataModel:model];
-       SolarViewController *newVC2 = SolarViewController.new;
-       SolarViewController *newVC3 = SolarViewController.new;
-       
-       [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:jdn]
+   
+    HorizontalPageViewController * horizontalPageViewController1 = HorizontalPageViewController.new;
+    horizontalPageViewController1.HorizontalPageViewControllerDelegate = self;
+    HorizontalPageViewController * horizontalPageViewController2 = HorizontalPageViewController.new;
+    horizontalPageViewController2.HorizontalPageViewControllerDelegate = self;
+
+    HorizontalPageViewController * horizontalPageViewController3 = HorizontalPageViewController.new;
+    horizontalPageViewController3.HorizontalPageViewControllerDelegate = self;
+
+    self.arrVC = @[horizontalPageViewController1, horizontalPageViewController2, horizontalPageViewController3];
+    BMDate * currentDate = [BMDate getCurrentDate];
+    [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:currentDate.getJulianDayNumber]
              placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
        self.backgroundImgView.sd_imageIndicator = SDWebImageActivityIndicator.grayIndicator;
 
        [self.lunarCalendarView loadDateWithInput:currentDate];
-        self.arrVC = @[newVC1,newVC2,newVC3];
+    [self.solarMonthYearView loadDateWithInput:currentDate];
     
     [self.toDayLabel setLabelText:@"Hôm nay"];
-    HorizontalPageViewController * horizontalPageViewController1 = HorizontalPageViewController.new;
-    HorizontalPageViewController * horizontalPageViewController2 = HorizontalPageViewController.new;
-    HorizontalPageViewController * horizontalPageViewController3 = HorizontalPageViewController.new;
-    self.arrVC = @[horizontalPageViewController1, horizontalPageViewController2, horizontalPageViewController3];
+}
+
+- (void)triggerUpdate:(BMDate *)date {
+    [self setDate:date];
+    [self loadUIWith:date isUpdateSolarView:NO];
 }
 
 - (void)loadUI {
     [self addChildViewController:self.pageViewController];
     [self.pageViewController didMoveToParentViewController:self];
-    [self.view addSubview:self.pageViewController.view];
+    [self.view insertSubview:self.pageViewController.view atIndex:1];
     self.backgroundImgView.frame = self.view.bounds;
     self.lunarCalendarView.frame = CGRectMake(0, HEIGHT_SCREEN - 160, WITDTH_SCREEN, 130);
-    self.pageViewController.view.frame = self.view.bounds;
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.lunarCalendarView.frame.origin.y);
     self.solarMonthYearView.frame = CGRectMake(0, 0, 170, 40);
     self.solarMonthYearView.center = CGPointMake(self.view.frame.size.width/2, 100);
     self.toDayLabel.frame = CGRectMake(20, self.solarMonthYearView.frame.origin.y,90 , 40);
-    
 }
 
 
@@ -100,34 +102,37 @@
 
 // MARK: - BMPageViewControllerDelegate
 
-//- (void)bmPageViewController:(BMPageViewController *)bmPageViewController willScrollToPageAt:(NSInteger)index direction:(NavigationDirection)direction animated:(BOOL)animated {
-//    SolarViewController *currentSolarViewController = (SolarViewController *)self.arrVC[bmPageViewController.getCurrentIndex];
-//    
-//    switch (direction) {
-//        case DirectionForword:{
-//            NSInteger nextJDN = [currentSolarViewController getDataModel].jdn + 1;
-//            DateModel *model = [self createDataModel:nextJDN];
-//            [self.arrVC[index] setDataModel:model];
-//        }
-//            break;
-//        case DirectionReverse: {
-//            NSInteger preJDN = [currentSolarViewController getDataModel].jdn - 1;
-//            DateModel *model = [self createDataModel:preJDN];
-//            [self.arrVC[index] setDataModel:model];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//}
-//
-//-(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
-//    SolarViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
-//    DateModel * modelShowed = solarShowed.getDataModel;
-//    BMDate * date = [[BMDate alloc] initLocalDate:modelShowed.jdn];
-//    [self setDate:date];
-//    [self loadUIWith:date isUpdateSolarView:NO];
-//}
+- (void)bmPageViewController:(BMPageViewController *)bmPageViewController willScrollToPageAt:(NSInteger)index direction:(NavigationDirection)direction animated:(BOOL)animated {
+    HorizontalPageViewController *horizontalPageViewController = (HorizontalPageViewController *)self.arrVC[bmPageViewController.getCurrentIndex];
+    if (!horizontalPageViewController) {
+        return;
+    }
+    
+    switch (direction) {
+        case DirectionForword:{
+            NSInteger nextJDN = [horizontalPageViewController  getDateModel].jdn + 7;
+            DateModel *model = [DateModel createDataModel:nextJDN];
+            [(HorizontalPageViewController *)self.arrVC[index] setDateModel:model];
+        }
+            break;
+        case DirectionReverse: {
+            NSInteger nextJDN = [horizontalPageViewController  getDateModel].jdn- 7;
+            DateModel *model = [DateModel createDataModel:nextJDN];
+            [(HorizontalPageViewController *)self.arrVC[index] setDateModel:model];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
+    HorizontalPageViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
+        DateModel * modelShowed = solarShowed.getDateModel;
+    BMDate * date = [[BMDate alloc] initLocalDate:modelShowed.jdn];
+    [self setDate:date];
+    [self loadUIWith:date isUpdateSolarView:NO];
+}
 
 // MARK: - BMPageViewControllerDataSource
 
@@ -143,11 +148,7 @@
     return 0;
 }
 
-- (DateModel *)createDataModel:(NSInteger)jdn {
-    NSString *quote = [SingletonAPI.sharedInstance getQuote:jdn];
-    NSURL *urlImage = [SingletonAPI.sharedInstance getURLImage:jdn];
-    return [[DateModel alloc] initWithDate:jdn quote:quote imageURL:urlImage];
-}
+
 
 - (UIImageView *)backgroundTemp {
     if (!_backgroundTemp) {
@@ -165,12 +166,12 @@
     
     [self.solarMonthYearView loadDateWithInput:date];
 
-    SolarViewController * solarShowed = self.arrVC[self.pageViewController.getCurrentIndex];
-    if (!solarShowed) {
+    HorizontalPageViewController * horizontalPageViewControllerShowed = self.arrVC[self.pageViewController.getCurrentIndex];
+    if (!horizontalPageViewControllerShowed) {
         return;
     }
     
-    DateModel * dataModelShowed = [self createDataModel:date.getJulianDayNumber];
+    DateModel * dataModelShowed = [DateModel createDataModel:date.getJulianDayNumber];
     if (!dataModelShowed) {
         return;
     }
@@ -180,7 +181,7 @@
         [self.toDayLabel setHidden:YES];
     }
     if (isUpdateSolarView) {
-        [solarShowed setDataModel:dataModelShowed];
+        [horizontalPageViewControllerShowed setDateModel:dataModelShowed];
     }
     [self.backgroundImgView sd_setImageWithURL:[SingletonAPI.sharedInstance getURLImage:date.getJulianDayNumber]
      
@@ -257,9 +258,8 @@
     if (!_toDayLabel) {
         _toDayLabel = BMButtonLabel.new;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectToDay)];
-        
-               [_toDayLabel addGestureRecognizer:tap];
-        [self.view addSubview:_toDayLabel];
+        [_toDayLabel addGestureRecognizer:tap];
+        [self.view insertSubview:_toDayLabel aboveSubview:self.pageViewController.view];
     }
     return _toDayLabel;
 }
@@ -297,7 +297,7 @@
     if (!_backgroundImgView) {
         _backgroundImgView = UIImageView.new;
         [_backgroundImgView setContentMode:UIViewContentModeScaleAspectFill];
-        [self.view addSubview:_backgroundImgView];
+        [self.view insertSubview:_backgroundImgView atIndex:0];
     }
     return _backgroundImgView;
 }

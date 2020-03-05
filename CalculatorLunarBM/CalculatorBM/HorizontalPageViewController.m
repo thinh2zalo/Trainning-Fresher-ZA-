@@ -9,8 +9,11 @@
 #import "HorizontalPageViewController.h"
 #import "SolarViewController.h"
 #import "SingletonAPI.h"
+
 @interface HorizontalPageViewController () <BMPageViewControllerDelegate, BMPageViewControllerDataSource>
 @property (nonatomic, strong) NSArray < SolarViewController *> * arrVC;
+@property (nonatomic, strong) DateModel * mDateModel;
+
 @end
 
 @implementation HorizontalPageViewController
@@ -18,11 +21,6 @@
 - (instancetype)init {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     if (self) {
-
-        SolarViewController *newVC1 = SolarViewController.new;
-        SolarViewController *newVC2 = SolarViewController.new;
-        SolarViewController *newVC3 = SolarViewController.new;
-        self.arrVC = @[newVC1,newVC2,newVC3];
         self.BMPaingDelegate = self;
         self.BMPaingDataSource = self;
     }
@@ -30,11 +28,38 @@
 }
 
 - (void)viewDidLoad {
+    [self handleDefault];
+    [self createArrayViewController];
+    NSInteger defaultPage  = [self.BMPaingDataSource defaultPage];
+    SolarViewController * viewControllerShowed = self.arrVC[defaultPage];
+  
+    [viewControllerShowed setDataModel:self.mDateModel];
     [super viewDidLoad];
-   
+
     // Do any additional setup after loading the view.
 }
 
+
+
+- (void)createArrayViewController {
+    SolarViewController *newVC1 = SolarViewController.new;
+     SolarViewController *newVC2 = SolarViewController.new;
+     SolarViewController *newVC3 = SolarViewController.new;
+     self.arrVC = @[newVC1,newVC2,newVC3];
+}
+
+-(void)handleDefault{
+    if (!_dateModel) {
+        _mDateModel =  [DateModel createDataModel:[BMDate getCurrentJulianDayNumber]];
+    }
+}
+
+- (DateModel *)getDateModel {
+    if (!_mDateModel) {
+        _mDateModel = DateModel.new;
+    }
+    return _mDateModel;
+}
 // MARK: - BMPageViewControllerDelegate
 
 - (void)bmPageViewController:(BMPageViewController *)bmPageViewController willScrollToPageAt:(NSInteger)index direction:(NavigationDirection)direction animated:(BOOL)animated {
@@ -43,13 +68,13 @@
     switch (direction) {
         case DirectionForword:{
             NSInteger nextJDN = [currentSolarViewController getDataModel].jdn + 1;
-            DateModel *model = [self createDataModel:nextJDN];
+            DateModel *model = [DateModel createDataModel:nextJDN];
             [self.arrVC[index] setDataModel:model];
         }
             break;
         case DirectionReverse: {
             NSInteger preJDN = [currentSolarViewController getDataModel].jdn - 1;
-            DateModel *model = [self createDataModel:preJDN];
+            DateModel *model = [DateModel createDataModel:preJDN];
             [self.arrVC[index] setDataModel:model];
         }
             break;
@@ -59,11 +84,23 @@
     }
 }
 
+
+- (void)setDateModel:(DateModel *)dataModel {
+    if (_mDateModel == dataModel || !dataModel) {
+        return;
+    }
+    _mDateModel = dataModel;
+    _dateModel = dataModel;
+    
+    [(SolarViewController *)self.getCurrentViewController setDataModel:_mDateModel];
+}
+
 -(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
     SolarViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
     DateModel * modelShowed = solarShowed.getDataModel;
-    BMDate * date = [[BMDate alloc] initLocalDate:modelShowed.jdn];
-    
+    BMDate *date = [[BMDate alloc]initLocalDate:modelShowed.jdn];
+    self.mDateModel =  modelShowed;
+    [self.HorizontalPageViewControllerDelegate triggerUpdate:date];
 }
 // MARK: - BMPageViewControllerDataSource
 
@@ -79,11 +116,6 @@
     return 0;
 }
 
-- (DateModel *)createDataModel:(NSInteger)jdn {
-    NSString *quote = [SingletonAPI.sharedInstance getQuote:jdn];
-    NSURL *urlImage = [SingletonAPI.sharedInstance getURLImage:jdn];
-    return [[DateModel alloc] initWithDate:jdn quote:quote imageURL:urlImage];
-}
 
 - (NSArray<SolarViewController *> *)arrVC {
     if (!_arrVC) {
@@ -93,25 +125,6 @@
 }
 
 
-//- (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController {
-//    return 3;
-//}
-//
-//- (UIViewController *)viewControllerFor:(BMPageViewController *)bmPageViewController atIndex:(NSInteger)index {
-//
-//}
-//
-//- (NSInteger)defaultPage {
-//
-//}
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end

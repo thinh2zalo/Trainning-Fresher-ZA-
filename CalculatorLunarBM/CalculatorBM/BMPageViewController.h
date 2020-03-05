@@ -28,6 +28,7 @@ didScrollTo:(NSInteger)index;
 @property (nonatomic, weak) id <BMPageViewControllerDelegate> BMPaingDelegate;
 @property (nonatomic, weak) id <BMPageViewControllerDataSource> BMPaingDataSource;
 - (NSInteger )getCurrentIndex;
+-(UIViewController *)getCurrentViewController;
 @end
 
 NS_ASSUME_NONNULL_END
