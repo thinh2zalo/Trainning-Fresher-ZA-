@@ -126,7 +126,6 @@
         _alert.alertView.delegate = (JETViewController *)self.viewController;
         [_alert showAlert:self.viewController withJsonModel:oldJsonModel typeAlert:@"edit"];
     }
-   
 }
 
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,7 +29,6 @@
 		BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA623ED3F63006DC5FD /* BMMonth.m */; };
 		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
-		BF7447EB240F4C890056541C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59D135240DFD1D00A09D89 /* SDWebImage.framework */; };
 		BF7447ED240F4F7D0056541C /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13B240E108900A09D89 /* quotations.plist */; };
 		BF7447EE240F4F7D0056541C /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13D240E120300A09D89 /* images.plist */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
@@ -145,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF7447EB240F4C890056541C /* SDWebImage.framework in Frameworks */,
 				BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +354,7 @@
 				BF5E9D6623EC30D7006DC5FD /* Frameworks */,
 				BF5E9D6723EC30D7006DC5FD /* Resources */,
 				BF59D134240DFCEC00A09D89 /* Embed Frameworks */,
-				E4286D0A198CEB71443FF4C8 /* [CP] Embed Pods Frameworks */,
+				8D45ED10D8B6102A12E5C7F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,7 +392,7 @@
 				BF5E9D8B23EC30DB006DC5FD /* Sources */,
 				BF5E9D8C23EC30DB006DC5FD /* Frameworks */,
 				BF5E9D8D23EC30DB006DC5FD /* Resources */,
-				5DC7AB7C4EFF8DDAD5787CEE /* [CP] Embed Pods Frameworks */,
+				971A5141BC68CE21E9417475 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -501,7 +499,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DC7AB7C4EFF8DDAD5787CEE /* [CP] Embed Pods Frameworks */ = {
+		8D45ED10D8B6102A12E5C7F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		971A5141BC68CE21E9417475 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,23 +575,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4286D0A198CEB71443FF4C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -6,8 +6,9 @@ target 'CalculatorBM' do
   use_frameworks!
 
   # Pods for CalculatorBM
-	platform :ios, '8.0'
-        pod 'SDWebImage', '~> 5.0'
+	pod 'SDWebImage', '~> 5.0'
+
+        
 
  
   target 'CalculatorBMTests' do

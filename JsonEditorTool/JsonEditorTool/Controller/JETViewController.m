@@ -516,6 +516,7 @@
 // sav
 - (NSString *)saveFile{
     OrderedDictionary * dict = [[(JETViewController *) self.navigationController.viewControllers.firstObject jsonModel] toOrderDictionary];
+    
     NSData *myData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingFragmentsAllowed error:nil];
     NSString * date = [NSString stringWithFormat:@"%@", [NSDate date]];
     NSString * path = [NSString stringWithFormat:@"%@/tmp/fileJson_%@.txt", NSHomeDirectory(),date];
