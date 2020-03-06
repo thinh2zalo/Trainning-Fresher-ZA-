@@ -6,10 +6,10 @@ target 'JsonEditorTool' do
   use_frameworks!
 
   # Pods for JsonEditorTool
-     pod 'AFNetworking', '~> 3.0'
-     pod 'IGListKit', '~> 3.4.0'
-     pod 'FBSDKShareKit', '~> 4.36.0'
-     pod 'DLRadioButton', '~> 1.4'
+     pod 'AFNetworking', '~> 3.0', :modular_headers => true
+     pod 'IGListKit', '~> 3.4.0', :modular_headers => true
+     pod 'FBSDKShareKit', '~> 4.36.0', :modular_headers => true
+     pod 'DLRadioButton', '~> 1.4', :modular_headers => true
     
 
 

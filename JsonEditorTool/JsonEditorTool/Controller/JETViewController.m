@@ -22,7 +22,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "../Network/EndPoint.h"
-#import  <FBSDKShareKit/FBSDKShareKit.h>
 #import "../View/EmptyView.h"
 #import "OrderedDictionary.h"
 //#import <FBSDKCoreKit/FBSDKCoreKit.h>

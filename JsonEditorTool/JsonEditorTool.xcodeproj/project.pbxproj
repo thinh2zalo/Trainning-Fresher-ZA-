@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09A83012ECC271E974A5EDBE /* Pods_JsonEditorTool_JsonEditorToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */; };
-		288732C950488975099B7548 /* Pods_JsonEditorTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */; };
-		4E0E53B061758FA33CC312F1 /* Pods_JsonEditorToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64834E320E94098436A245 /* Pods_JsonEditorToolTests.framework */; };
 		5210F88D23910F8F0081FE67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F88C23910F8F0081FE67 /* AppDelegate.m */; };
 		5210F89023910F8F0081FE67 /* JETViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210F88F23910F8F0081FE67 /* JETViewController.m */; };
 		5210F89323910F8F0081FE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5210F89123910F8F0081FE67 /* Main.storyboard */; };
@@ -82,6 +79,10 @@
 		52E3AFD323A375EE00AE85B1 /* ZACheckMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA523A375EE00AE85B1 /* ZACheckMark.m */; };
 		52E3AFD523A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3AFA823A375EE00AE85B1 /* UIPanGestureRecognizer+SwipeCellKit.m */; };
 		52F11F0C23C4DF0C00D5245F /* TJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */; };
+		5A1E6BE64C63A9AEF06FFD89 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9354A13AF2E18D2B2D4F1C88 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */; };
+		6CCDD12C0FCB957EBEEA0FB7 /* Pods_JsonEditorToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B23D7868A7FD5D65F063BF6 /* Pods_JsonEditorToolTests.framework */; };
+		BFB976CA2410F8600085AB22 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB976C92410F8600085AB22 /* AFNetworking.framework */; };
+		C7877F2C7BE5B585ECE83C65 /* Pods_JsonEditorTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDA2E48FCB370EEE004F9DF /* Pods_JsonEditorTool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +105,7 @@
 /* Begin PBXFileReference section */
 		1A1F7791AEAF193505EDB909 /* Pods-JsonEditorTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool.release.xcconfig"; sourceTree = "<group>"; };
 		23A7F52E504135F6695DABF4 /* Pods-JsonEditorTool-JsonEditorToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool-JsonEditorToolUITests.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool-JsonEditorToolUITests/Pods-JsonEditorTool-JsonEditorToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3C64834E320E94098436A245 /* Pods_JsonEditorToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDA2E48FCB370EEE004F9DF /* Pods_JsonEditorTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5210F88823910F8F0081FE67 /* JsonEditorTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonEditorTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5210F88B23910F8F0081FE67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5210F88C23910F8F0081FE67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -253,9 +254,10 @@
 		52E3AFA923A375EE00AE85B1 /* ZASwipeCellOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASwipeCellOptions.h; sourceTree = "<group>"; };
 		52F11F0A23C4DF0700D5245F /* TJActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJActivityViewController.h; sourceTree = "<group>"; };
 		52F11F0B23C4DF0B00D5245F /* TJActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJActivityViewController.m; sourceTree = "<group>"; };
+		5B23D7868A7FD5D65F063BF6 /* Pods_JsonEditorToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BB4AEA098FAEA5EB6F7C17 /* Pods-JsonEditorTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool.debug.xcconfig"; sourceTree = "<group>"; };
-		6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_JsonEditorToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9354A13AF2E18D2B2D4F1C88 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JsonEditorTool_JsonEditorToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB976C92410F8600085AB22 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1539A4D6F9C8FAFBA8030AA /* Pods-JsonEditorToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorToolTests.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorToolTests/Pods-JsonEditorToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		E985E1EE84F47038F1D8B99F /* Pods-JsonEditorTool-JsonEditorToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorTool-JsonEditorToolUITests.release.xcconfig"; path = "Target Support Files/Pods-JsonEditorTool-JsonEditorToolUITests/Pods-JsonEditorTool-JsonEditorToolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F716EFBEA17E4BD353A866E4 /* Pods-JsonEditorToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JsonEditorToolTests.debug.xcconfig"; path = "Target Support Files/Pods-JsonEditorToolTests/Pods-JsonEditorToolTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,7 +268,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				288732C950488975099B7548 /* Pods_JsonEditorTool.framework in Frameworks */,
+				BFB976CA2410F8600085AB22 /* AFNetworking.framework in Frameworks */,
+				C7877F2C7BE5B585ECE83C65 /* Pods_JsonEditorTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0E53B061758FA33CC312F1 /* Pods_JsonEditorToolTests.framework in Frameworks */,
+				6CCDD12C0FCB957EBEEA0FB7 /* Pods_JsonEditorToolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09A83012ECC271E974A5EDBE /* Pods_JsonEditorTool_JsonEditorToolUITests.framework in Frameworks */,
+				5A1E6BE64C63A9AEF06FFD89 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +593,10 @@
 		5E769A328216B148EC9E71F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				978729AC88EE68C39FBE9709 /* Pods_JsonEditorTool.framework */,
-				6A30C9BC4332A66255364508 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */,
-				3C64834E320E94098436A245 /* Pods_JsonEditorToolTests.framework */,
+				BFB976C92410F8600085AB22 /* AFNetworking.framework */,
+				4BDA2E48FCB370EEE004F9DF /* Pods_JsonEditorTool.framework */,
+				9354A13AF2E18D2B2D4F1C88 /* Pods_JsonEditorTool_JsonEditorToolUITests.framework */,
+				5B23D7868A7FD5D65F063BF6 /* Pods_JsonEditorToolTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -608,7 +612,7 @@
 				5210F88423910F8F0081FE67 /* Sources */,
 				5210F88523910F8F0081FE67 /* Frameworks */,
 				5210F88623910F8F0081FE67 /* Resources */,
-				4D89ECAA455197B7300E3145 /* [CP] Embed Pods Frameworks */,
+				27224B3B5E4A69FC35A97F91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -646,7 +650,7 @@
 				5210F8A723910F910081FE67 /* Sources */,
 				5210F8A823910F910081FE67 /* Frameworks */,
 				5210F8A923910F910081FE67 /* Resources */,
-				C4A370A1EA94080F03BD3BEE /* [CP] Embed Pods Frameworks */,
+				A03A3C56D7CBFD60787D106C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -729,6 +733,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		27224B3B5E4A69FC35A97F91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		296C8D3DD495ACD9762B5227 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -795,24 +816,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4D89ECAA455197B7300E3145 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JsonEditorTool/Pods-JsonEditorTool-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4A370A1EA94080F03BD3BEE /* [CP] Embed Pods Frameworks */ = {
+		A03A3C56D7CBFD60787D106C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
