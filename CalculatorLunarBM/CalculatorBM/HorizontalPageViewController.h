@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @interface HorizontalPageViewController : BMPageViewController
-@property (nonatomic, assign) DateModel * dateModel;
+@property (nonatomic, assign, ) DateModel * dateModel;
 @property (nonatomic, assign) id <HorizontalPageViewControllerDelegate> HorizontalPageViewControllerDelegate;
 
 - (DateModel *)getDateModel;

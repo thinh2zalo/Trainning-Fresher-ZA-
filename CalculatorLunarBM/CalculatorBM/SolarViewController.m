@@ -18,6 +18,7 @@
     if (!dateModel) {
         return nil;
     }
+    
     self = [super init];
     if (self) {
         self.dataModel = dateModel;
@@ -31,6 +32,7 @@
 }
 
 -(void)setUpdateUI {
+    
     self.solarCalendarView.frame = self.view.bounds;
     [self.solarCalendarView loadDateWithInput:self.dataModel];
 }

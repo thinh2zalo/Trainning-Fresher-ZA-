@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UILabel * solarDayLabel;
 @property (nonatomic, strong) UILabel * solarMonthLabel;
 @property (nonatomic, strong) UILabel * solarMonthAndYearLabel;
-
 @property (nonatomic, strong) UIImageView * image;
 
 @property (nonatomic, strong) UILabel * quoteLabel;
@@ -31,6 +30,9 @@
     // Drawing code
 }
 */
+
+
+
 - (void)layoutSubviews {
 //    self.image.frame = self.bounds;
 //    self.solarMonthAndYearLabel.frame = CGRectMake(0, 0, 200, 40);

@@ -3,88 +3,76 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF60023D24123459004084DA /* BMCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF60023324123458004084DA /* BMCalendar.framework */; };
-		BF60024224123459004084DA /* BMCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60024124123459004084DA /* BMCalendarTests.m */; };
-		BF60024424123459004084DA /* BMCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60023624123458004084DA /* BMCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF60028D241234A4004084DA /* SolarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60024E2412349E004084DA /* SolarViewController.m */; };
-		BF60028E241234A4004084DA /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60024F2412349E004084DA /* BMButtonLabel.m */; };
-		BF60028F241234A4004084DA /* BMYear.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002502412349E004084DA /* BMYear.m */; };
-		BF600290241234A4004084DA /* image_17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF6002512412349E004084DA /* image_17.jpg */; };
-		BF600291241234A4004084DA /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002522412349E004084DA /* AppDelegate.h */; };
-		BF600292241234A4004084DA /* BMDate+Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002532412349E004084DA /* BMDate+Utility.h */; };
-		BF600293241234A4004084DA /* LunarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002542412349E004084DA /* LunarCalendarView.m */; };
-		BF600294241234A4004084DA /* SolarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002552412349E004084DA /* SolarCalendarView.h */; };
-		BF600295241234A4004084DA /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002562412349E004084DA /* BMMonth.m */; };
-		BF600296241234A4004084DA /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002572412349E004084DA /* BMDay.m */; };
-		BF600297241234A4004084DA /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002592412349E004084DA /* HorizontalPageViewController.m */; };
-		BF600298241234A4004084DA /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60025A2412349E004084DA /* BMPageViewController.m */; };
-		BF600299241234A4004084DA /* SingletonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60025B2412349E004084DA /* SingletonAPI.m */; };
-		BF60029A241234A4004084DA /* PageVerticalController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60025C2412349E004084DA /* PageVerticalController.h */; };
-		BF60029B241234A4004084DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF60025D2412349E004084DA /* Assets.xcassets */; };
-		BF60029C241234A4004084DA /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF60025E2412349E004084DA /* images.plist */; };
-		BF60029D241234A4004084DA /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60025F2412349E004084DA /* BMDatePickerView.m */; };
-		BF60029E241234A4004084DA /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6002602412349E004084DA /* quotations.plist */; };
-		BF60029F241234A4004084DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002612412349E004084DA /* ViewController.m */; };
-		BF6002A0241234A4004084DA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002622412349E004084DA /* SceneDelegate.m */; };
-		BF6002A1241234A4004084DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6002632412349E004084DA /* LaunchScreen.storyboard */; };
-		BF6002A2241234A4004084DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6002652412349E004084DA /* Main.storyboard */; };
-		BF6002A3241234A4004084DA /* BMDate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002672412349E004084DA /* BMDate.h */; };
-		BF6002A4241234A4004084DA /* define.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002692412349E004084DA /* define.h */; };
-		BF6002A5241234A4004084DA /* LunarUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60026A2412349E004084DA /* LunarUtils.h */; };
-		BF6002A6241234A4004084DA /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60026B2412349E004084DA /* LunarUtils.m */; };
-		BF6002A7241234A4004084DA /* BMYear.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60026C2412349E004084DA /* BMYear.h */; };
-		BF6002A8241234A4004084DA /* BMButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60026D2412349E004084DA /* BMButtonLabel.h */; };
-		BF6002A9241234A4004084DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60026E2412349E004084DA /* main.m */; };
-		BF6002AA241234A4004084DA /* SolarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60026F2412349E004084DA /* SolarViewController.h */; };
-		BF6002AB241234A4004084DA /* BMDay.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002702412349E004084DA /* BMDay.h */; };
-		BF6002AC241234A4004084DA /* BMMonth.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002712412349E004084DA /* BMMonth.h */; };
-		BF6002AD241234A4004084DA /* quotations.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF6002722412349E004084DA /* quotations.txt */; };
-		BF6002AE241234A4004084DA /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002732412349E004084DA /* SolarCalendarView.m */; };
-		BF6002AF241234A4004084DA /* DateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002752412349E004084DA /* DateModel.h */; };
-		BF6002B0241234A4004084DA /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002762412349E004084DA /* DateModel.m */; };
-		BF6002B1241234A4004084DA /* LunarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002772412349E004084DA /* LunarCalendarView.h */; };
-		BF6002B2241234A4004084DA /* BMDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002782412349E004084DA /* BMDate+Utility.m */; };
-		BF6002B3241234A4004084DA /* SolarMonthYearView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002792412349E004084DA /* SolarMonthYearView.h */; };
-		BF6002B4241234A4004084DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60027A2412349E004084DA /* AppDelegate.m */; };
-		BF6002B5241234A4004084DA /* SingletonAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60027B2412349E004084DA /* SingletonAPI.h */; };
-		BF6002B6241234A4004084DA /* BMPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60027C2412349E004084DA /* BMPageViewController.h */; };
-		BF6002B7241234A4004084DA /* HorizontalPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60027D2412349E004084DA /* HorizontalPageViewController.h */; };
-		BF6002B8241234A4004084DA /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60027E2412349E004084DA /* BMDate.m */; };
-		BF6002BA241234A4004084DA /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002802412349E004084DA /* ViewController.h */; };
-		BF6002BB241234A4004084DA /* SceneDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002812412349E004084DA /* SceneDelegate.h */; };
-		BF6002BC241234A4004084DA /* BMDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002822412349E004084DA /* BMDatePickerView.h */; };
-		BF6002BD241234A4004084DA /* DateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6002842412349F004084DA /* DateModel.h */; };
-		BF6002BE241234A4004084DA /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6002852412349F004084DA /* DateModel.m */; };
-		BF6002BF241234A4004084DA /* define.h in Headers */ = {isa = PBXBuildFile; fileRef = BF600287241234A0004084DA /* define.h */; };
-		BF6002C0241234A4004084DA /* LunarUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF600288241234A0004084DA /* LunarUtils.h */; };
-		BF6002C1241234A4004084DA /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF600289241234A0004084DA /* LunarUtils.m */; };
-		BF6002C2241234A4004084DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF60028A241234A2004084DA /* ViewController.m */; };
-		BF6002C3241234A4004084DA /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF60028C241234A4004084DA /* ViewController.h */; };
-		BF6002DA24123BC4004084DA /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6002D624123A9C004084DA /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C360B385FB4577AAF7C3487 /* Pods_BMCalendar_BMCalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022586D7CF1BD52564751DB6 /* Pods_BMCalendar_BMCalendarTests.framework */; };
+		8DCF9D4E65B73501C31928A5 /* Pods_BMCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA868BB6D18AA40E8C6F165 /* Pods_BMCalendar.framework */; };
+		BF62ACE22417576600D63979 /* BMCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62ACD82417576600D63979 /* BMCalendar.framework */; };
+		BF62ACE72417576600D63979 /* BMCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACE62417576600D63979 /* BMCalendarTests.m */; };
+		BF62ACE92417576600D63979 /* BMCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACDB2417576600D63979 /* BMCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62ACF82417580F00D63979 /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACF52417580E00D63979 /* LunarUtils.m */; };
+		BF62ACF92417580F00D63979 /* LunarUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACF62417580F00D63979 /* LunarUtils.h */; };
+		BF62ACFA2417580F00D63979 /* define2.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD042417585900D63979 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFC2417585200D63979 /* SolarCalendarView.m */; };
+		BF62AD052417585900D63979 /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFD2417585300D63979 /* BMButtonLabel.m */; };
+		BF62AD062417585900D63979 /* BMDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACFE2417585400D63979 /* BMDatePickerView.h */; };
+		BF62AD072417585900D63979 /* LunarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFF2417585500D63979 /* LunarCalendarView.m */; };
+		BF62AD082417585900D63979 /* SolarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD002417585600D63979 /* SolarCalendarView.h */; };
+		BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD012417585700D63979 /* BMButtonLabel.h */; };
+		BF62AD0A2417585900D63979 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD022417585800D63979 /* BMDatePickerView.m */; };
+		BF62AD0B2417585900D63979 /* LunarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD032417585900D63979 /* LunarCalendarView.h */; };
+		BF62AD0F2417587900D63979 /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD0D2417587900D63979 /* DateModel.m */; };
+		BF62AD102417587900D63979 /* DateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD0E2417587900D63979 /* DateModel.h */; };
+		BF62AD1C2417589B00D63979 /* BMDate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD122417589A00D63979 /* BMDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD1D2417589B00D63979 /* BMDay.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD132417589A00D63979 /* BMDay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD1E2417589B00D63979 /* BMDate+Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD142417589A00D63979 /* BMDate+Utility.h */; };
+		BF62AD1F2417589B00D63979 /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD152417589A00D63979 /* BMMonth.m */; };
+		BF62AD202417589B00D63979 /* BMYear.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD162417589A00D63979 /* BMYear.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD212417589B00D63979 /* BMMonth.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD172417589A00D63979 /* BMMonth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD222417589B00D63979 /* BMDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD182417589A00D63979 /* BMDate+Utility.m */; };
+		BF62AD232417589B00D63979 /* BMYear.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD192417589B00D63979 /* BMYear.m */; };
+		BF62AD242417589B00D63979 /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD1A2417589B00D63979 /* BMDay.m */; };
+		BF62AD252417589B00D63979 /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD1B2417589B00D63979 /* BMDate.m */; };
+		BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD27241758E400D63979 /* BMPageViewController.h */; };
+		BF62AD2E241758E900D63979 /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD28241758E500D63979 /* BMPageViewController.m */; };
+		BF62AD2F241758E900D63979 /* SolarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD29241758E600D63979 /* SolarViewController.h */; };
+		BF62AD30241758E900D63979 /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD2A241758E700D63979 /* HorizontalPageViewController.m */; };
+		BF62AD31241758E900D63979 /* HorizontalPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD2B241758E800D63979 /* HorizontalPageViewController.h */; };
+		BF62AD32241758E900D63979 /* SolarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD2C241758E900D63979 /* SolarViewController.m */; };
+		BF62AD392417591E00D63979 /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF62AD342417591500D63979 /* quotations.plist */; };
+		BF62AD3A2417591E00D63979 /* SingletonAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD352417591600D63979 /* SingletonAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD3B2417591E00D63979 /* SingletonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD362417591700D63979 /* SingletonAPI.m */; };
+		BF62AD3C2417591E00D63979 /* quotations.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF62AD372417591900D63979 /* quotations.txt */; };
+		BF62AD3D2417591E00D63979 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF62AD382417591E00D63979 /* images.plist */; };
+		BF62AD40241759ED00D63979 /* BMCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD3E241759ED00D63979 /* BMCalendarController.m */; };
+		BF62AD41241759ED00D63979 /* BMCalendarController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD3F241759ED00D63979 /* BMCalendarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD4424175AA400D63979 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62AD4224175A7F00D63979 /* SDWebImage.framework */; };
+		BF62AD4524175AA400D63979 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF62AD4224175A7F00D63979 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF62AD922417663000D63979 /* define2.h in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define2.h */; };
+		BF62ADA224176A0000D63979 /* quotations.plist in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD342417591500D63979 /* quotations.plist */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62ADA324176A0000D63979 /* images.plist in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD382417591E00D63979 /* images.plist */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF60023E24123459004084DA /* PBXContainerItemProxy */ = {
+		BF62ACE32417576600D63979 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF60022A24123458004084DA /* Project object */;
+			containerPortal = BF62ACCF2417576600D63979 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BF60023224123458004084DA;
+			remoteGlobalIDString = BF62ACD72417576600D63979;
 			remoteInfo = BMCalendar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BF6002C8241238A2004084DA /* Embed Frameworks */ = {
+		BF62AD4624175AA500D63979 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF6002DA24123BC4004084DA /* SDWebImage.framework in Embed Frameworks */,
+				BF62AD4524175AA400D63979 /* SDWebImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,301 +80,265 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF60023324123458004084DA /* BMCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF60023624123458004084DA /* BMCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMCalendar.h; sourceTree = "<group>"; };
-		BF60023724123458004084DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF60023C24123459004084DA /* BMCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF60024124123459004084DA /* BMCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMCalendarTests.m; sourceTree = "<group>"; };
-		BF60024324123459004084DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF60024E2412349E004084DA /* SolarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolarViewController.m; sourceTree = "<group>"; };
-		BF60024F2412349E004084DA /* BMButtonLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
-		BF6002502412349E004084DA /* BMYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMYear.m; sourceTree = "<group>"; };
-		BF6002512412349E004084DA /* image_17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_17.jpg; sourceTree = "<group>"; };
-		BF6002522412349E004084DA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BF6002532412349E004084DA /* BMDate+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMDate+Utility.h"; sourceTree = "<group>"; };
-		BF6002542412349E004084DA /* LunarCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendarView.m; sourceTree = "<group>"; };
-		BF6002552412349E004084DA /* SolarCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarCalendarView.h; sourceTree = "<group>"; };
-		BF6002562412349E004084DA /* BMMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMonth.m; sourceTree = "<group>"; };
-		BF6002572412349E004084DA /* BMDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDay.m; sourceTree = "<group>"; };
-		BF6002592412349E004084DA /* HorizontalPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalPageViewController.m; sourceTree = "<group>"; };
-		BF60025A2412349E004084DA /* BMPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPageViewController.m; sourceTree = "<group>"; };
-		BF60025B2412349E004084DA /* SingletonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonAPI.m; sourceTree = "<group>"; };
-		BF60025C2412349E004084DA /* PageVerticalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageVerticalController.h; sourceTree = "<group>"; };
-		BF60025D2412349E004084DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF60025E2412349E004084DA /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
-		BF60025F2412349E004084DA /* BMDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatePickerView.m; sourceTree = "<group>"; };
-		BF6002602412349E004084DA /* quotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quotations.plist; sourceTree = "<group>"; };
-		BF6002612412349E004084DA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BF6002622412349E004084DA /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BF6002642412349E004084DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BF6002662412349E004084DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BF6002672412349E004084DA /* BMDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDate.h; sourceTree = "<group>"; };
-		BF6002692412349E004084DA /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
-		BF60026A2412349E004084DA /* LunarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarUtils.h; sourceTree = "<group>"; };
-		BF60026B2412349E004084DA /* LunarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarUtils.m; sourceTree = "<group>"; };
-		BF60026C2412349E004084DA /* BMYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMYear.h; sourceTree = "<group>"; };
-		BF60026D2412349E004084DA /* BMButtonLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMButtonLabel.h; sourceTree = "<group>"; };
-		BF60026E2412349E004084DA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF60026F2412349E004084DA /* SolarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarViewController.h; sourceTree = "<group>"; };
-		BF6002702412349E004084DA /* BMDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDay.h; sourceTree = "<group>"; };
-		BF6002712412349E004084DA /* BMMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMonth.h; sourceTree = "<group>"; };
-		BF6002722412349E004084DA /* quotations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quotations.txt; sourceTree = "<group>"; };
-		BF6002732412349E004084DA /* SolarCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
-		BF6002752412349E004084DA /* DateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateModel.h; sourceTree = "<group>"; };
-		BF6002762412349E004084DA /* DateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateModel.m; sourceTree = "<group>"; };
-		BF6002772412349E004084DA /* LunarCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendarView.h; sourceTree = "<group>"; };
-		BF6002782412349E004084DA /* BMDate+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BMDate+Utility.m"; sourceTree = "<group>"; };
-		BF6002792412349E004084DA /* SolarMonthYearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarMonthYearView.h; sourceTree = "<group>"; };
-		BF60027A2412349E004084DA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF60027B2412349E004084DA /* SingletonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonAPI.h; sourceTree = "<group>"; };
-		BF60027C2412349E004084DA /* BMPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPageViewController.h; sourceTree = "<group>"; };
-		BF60027D2412349E004084DA /* HorizontalPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalPageViewController.h; sourceTree = "<group>"; };
-		BF60027E2412349E004084DA /* BMDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDate.m; sourceTree = "<group>"; };
-		BF60027F2412349E004084DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF6002802412349E004084DA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF6002812412349E004084DA /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		BF6002822412349E004084DA /* BMDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
-		BF6002842412349F004084DA /* DateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateModel.h; sourceTree = "<group>"; };
-		BF6002852412349F004084DA /* DateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateModel.m; sourceTree = "<group>"; };
-		BF600287241234A0004084DA /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
-		BF600288241234A0004084DA /* LunarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarUtils.h; sourceTree = "<group>"; };
-		BF600289241234A0004084DA /* LunarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarUtils.m; sourceTree = "<group>"; };
-		BF60028A241234A2004084DA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BF60028C241234A4004084DA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF6002D624123A9C004084DA /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		022586D7CF1BD52564751DB6 /* Pods_BMCalendar_BMCalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMCalendar_BMCalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ADC0570F985994609D78D5B /* Pods-BMCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMCalendar.release.xcconfig"; path = "Target Support Files/Pods-BMCalendar/Pods-BMCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		3DDEB4E807D67DC03DF96CCB /* Pods-BMCalendar-BMCalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMCalendar-BMCalendarTests.release.xcconfig"; path = "Target Support Files/Pods-BMCalendar-BMCalendarTests/Pods-BMCalendar-BMCalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		877785CFD87996CCEAAD2F90 /* Pods-BMCalendar-BMCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMCalendar-BMCalendarTests.debug.xcconfig"; path = "Target Support Files/Pods-BMCalendar-BMCalendarTests/Pods-BMCalendar-BMCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0D8250E20F32764465DAD3 /* Pods-BMCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMCalendar.debug.xcconfig"; path = "Target Support Files/Pods-BMCalendar/Pods-BMCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		AEA868BB6D18AA40E8C6F165 /* Pods_BMCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF62ACD82417576600D63979 /* BMCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF62ACDB2417576600D63979 /* BMCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMCalendar.h; sourceTree = "<group>"; };
+		BF62ACDC2417576600D63979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF62ACE12417576600D63979 /* BMCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF62ACE62417576600D63979 /* BMCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMCalendarTests.m; sourceTree = "<group>"; };
+		BF62ACE82417576600D63979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF62ACF52417580E00D63979 /* LunarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LunarUtils.m; path = "../../../CalculatorLunarBM copy/CalculatorBM/Utilities/LunarUtils.m"; sourceTree = "<group>"; };
+		BF62ACF62417580F00D63979 /* LunarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LunarUtils.h; path = "../../../CalculatorLunarBM copy/CalculatorBM/Utilities/LunarUtils.h"; sourceTree = "<group>"; };
+		BF62ACF72417580F00D63979 /* define2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define2.h; sourceTree = "<group>"; };
+		BF62ACFC2417585200D63979 /* SolarCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
+		BF62ACFD2417585300D63979 /* BMButtonLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
+		BF62ACFE2417585400D63979 /* BMDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
+		BF62ACFF2417585500D63979 /* LunarCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendarView.m; sourceTree = "<group>"; };
+		BF62AD002417585600D63979 /* SolarCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarCalendarView.h; sourceTree = "<group>"; };
+		BF62AD012417585700D63979 /* BMButtonLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMButtonLabel.h; sourceTree = "<group>"; };
+		BF62AD022417585800D63979 /* BMDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatePickerView.m; sourceTree = "<group>"; };
+		BF62AD032417585900D63979 /* LunarCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendarView.h; sourceTree = "<group>"; };
+		BF62AD0D2417587900D63979 /* DateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateModel.m; path = "../../../CalculatorLunarBM copy/CalculatorBM/Model/DateModel.m"; sourceTree = "<group>"; };
+		BF62AD0E2417587900D63979 /* DateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateModel.h; path = "../../../CalculatorLunarBM copy/CalculatorBM/Model/DateModel.h"; sourceTree = "<group>"; };
+		BF62AD122417589A00D63979 /* BMDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMDate.h; path = ../../CalculatorLunarBM/CalculatorBM/BMDate.h; sourceTree = "<group>"; };
+		BF62AD132417589A00D63979 /* BMDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMDay.h; path = ../../CalculatorLunarBM/CalculatorBM/BMDay.h; sourceTree = "<group>"; };
+		BF62AD142417589A00D63979 /* BMDate+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BMDate+Utility.h"; path = "../../CalculatorLunarBM/CalculatorBM/BMDate+Utility.h"; sourceTree = "<group>"; };
+		BF62AD152417589A00D63979 /* BMMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMMonth.m; path = ../../CalculatorLunarBM/CalculatorBM/BMMonth.m; sourceTree = "<group>"; };
+		BF62AD162417589A00D63979 /* BMYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMYear.h; path = ../../CalculatorLunarBM/CalculatorBM/BMYear.h; sourceTree = "<group>"; };
+		BF62AD172417589A00D63979 /* BMMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMMonth.h; path = ../../CalculatorLunarBM/CalculatorBM/BMMonth.h; sourceTree = "<group>"; };
+		BF62AD182417589A00D63979 /* BMDate+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BMDate+Utility.m"; path = "../../CalculatorLunarBM/CalculatorBM/BMDate+Utility.m"; sourceTree = "<group>"; };
+		BF62AD192417589B00D63979 /* BMYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMYear.m; path = ../../CalculatorLunarBM/CalculatorBM/BMYear.m; sourceTree = "<group>"; };
+		BF62AD1A2417589B00D63979 /* BMDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMDay.m; path = ../../CalculatorLunarBM/CalculatorBM/BMDay.m; sourceTree = "<group>"; };
+		BF62AD1B2417589B00D63979 /* BMDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMDate.m; path = ../../CalculatorLunarBM/CalculatorBM/BMDate.m; sourceTree = "<group>"; };
+		BF62AD27241758E400D63979 /* BMPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPageViewController.h; sourceTree = "<group>"; };
+		BF62AD28241758E500D63979 /* BMPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPageViewController.m; sourceTree = "<group>"; };
+		BF62AD29241758E600D63979 /* SolarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarViewController.h; sourceTree = "<group>"; };
+		BF62AD2A241758E700D63979 /* HorizontalPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalPageViewController.m; sourceTree = "<group>"; };
+		BF62AD2B241758E800D63979 /* HorizontalPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalPageViewController.h; sourceTree = "<group>"; };
+		BF62AD2C241758E900D63979 /* SolarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolarViewController.m; sourceTree = "<group>"; };
+		BF62AD342417591500D63979 /* quotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quotations.plist; sourceTree = "<group>"; };
+		BF62AD352417591600D63979 /* SingletonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonAPI.h; sourceTree = "<group>"; };
+		BF62AD362417591700D63979 /* SingletonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonAPI.m; sourceTree = "<group>"; };
+		BF62AD372417591900D63979 /* quotations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quotations.txt; sourceTree = "<group>"; };
+		BF62AD382417591E00D63979 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
+		BF62AD3E241759ED00D63979 /* BMCalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMCalendarController.m; path = ../../CalculatorLunarBM/CalculatorBM/BMCalendarController.m; sourceTree = "<group>"; };
+		BF62AD3F241759ED00D63979 /* BMCalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMCalendarController.h; path = ../../CalculatorLunarBM/CalculatorBM/BMCalendarController.h; sourceTree = "<group>"; };
+		BF62AD4224175A7F00D63979 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF60023024123458004084DA /* Frameworks */ = {
+		BF62ACD52417576600D63979 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF62AD4424175AA400D63979 /* SDWebImage.framework in Frameworks */,
+				8DCF9D4E65B73501C31928A5 /* Pods_BMCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF60023924123459004084DA /* Frameworks */ = {
+		BF62ACDE2417576600D63979 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF60023D24123459004084DA /* BMCalendar.framework in Frameworks */,
+				BF62ACE22417576600D63979 /* BMCalendar.framework in Frameworks */,
+				0C360B385FB4577AAF7C3487 /* Pods_BMCalendar_BMCalendarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF60022924123458004084DA = {
+		7A01A5DF49EA0396171333ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF60023524123458004084DA /* BMCalendar */,
-				BF60024024123459004084DA /* BMCalendarTests */,
-				BF60023424123458004084DA /* Products */,
-				BF6002D824123BC2004084DA /* Frameworks */,
+				AEA868BB6D18AA40E8C6F165 /* Pods_BMCalendar.framework */,
+				022586D7CF1BD52564751DB6 /* Pods_BMCalendar_BMCalendarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF62ACCE2417576600D63979 = {
+			isa = PBXGroup;
+			children = (
+				BF62AD4224175A7F00D63979 /* SDWebImage.framework */,
+				BF62ACDA2417576600D63979 /* BMCalendar */,
+				BF62ACE52417576600D63979 /* BMCalendarTests */,
+				BF62ACD92417576600D63979 /* Products */,
+				DF4BD94F0FE1215FF310ECA2 /* Pods */,
+				7A01A5DF49EA0396171333ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		BF60023424123458004084DA /* Products */ = {
+		BF62ACD92417576600D63979 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF60023324123458004084DA /* BMCalendar.framework */,
-				BF60023C24123459004084DA /* BMCalendarTests.xctest */,
+				BF62ACD82417576600D63979 /* BMCalendar.framework */,
+				BF62ACE12417576600D63979 /* BMCalendarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF60023524123458004084DA /* BMCalendar */ = {
+		BF62ACDA2417576600D63979 /* BMCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				BF6002D124123A17004084DA /* Frameworks */,
-				BF60024D2412349E004084DA /* CalculatorBM */,
-				BF60028B241234A3004084DA /* Images */,
-				BF6002832412349F004084DA /* Model */,
-				BF600286241234A0004084DA /* Utilities */,
-				BF60028C241234A4004084DA /* ViewController.h */,
-				BF60028A241234A2004084DA /* ViewController.m */,
-				BF60023624123458004084DA /* BMCalendar.h */,
-				BF60023724123458004084DA /* Info.plist */,
+				BF62AD3F241759ED00D63979 /* BMCalendarController.h */,
+				BF62AD3E241759ED00D63979 /* BMCalendarController.m */,
+				BF62AD33241758F600D63979 /* resource */,
+				BF62AD26241758A600D63979 /* Controller */,
+				BF62AD112417588E00D63979 /* BMDate */,
+				BF62AD0C2417586D00D63979 /* Model */,
+				BF62ACFB2417582B00D63979 /* View */,
+				BF62ACF42417580100D63979 /* Utilities */,
+				BF62ACDB2417576600D63979 /* BMCalendar.h */,
+				BF62ACDC2417576600D63979 /* Info.plist */,
 			);
 			path = BMCalendar;
 			sourceTree = "<group>";
 		};
-		BF60024024123459004084DA /* BMCalendarTests */ = {
+		BF62ACE52417576600D63979 /* BMCalendarTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF60024124123459004084DA /* BMCalendarTests.m */,
-				BF60024324123459004084DA /* Info.plist */,
+				BF62ACE62417576600D63979 /* BMCalendarTests.m */,
+				BF62ACE82417576600D63979 /* Info.plist */,
 			);
 			path = BMCalendarTests;
 			sourceTree = "<group>";
 		};
-		BF60024D2412349E004084DA /* CalculatorBM */ = {
+		BF62ACF42417580100D63979 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BF6002D624123A9C004084DA /* SDWebImage.framework */,
-				BF60024E2412349E004084DA /* SolarViewController.m */,
-				BF60024F2412349E004084DA /* BMButtonLabel.m */,
-				BF6002502412349E004084DA /* BMYear.m */,
-				BF6002512412349E004084DA /* image_17.jpg */,
-				BF6002522412349E004084DA /* AppDelegate.h */,
-				BF6002532412349E004084DA /* BMDate+Utility.h */,
-				BF6002542412349E004084DA /* LunarCalendarView.m */,
-				BF6002552412349E004084DA /* SolarCalendarView.h */,
-				BF6002562412349E004084DA /* BMMonth.m */,
-				BF6002572412349E004084DA /* BMDay.m */,
-				BF6002582412349E004084DA /* Images */,
-				BF6002592412349E004084DA /* HorizontalPageViewController.m */,
-				BF60025A2412349E004084DA /* BMPageViewController.m */,
-				BF60025B2412349E004084DA /* SingletonAPI.m */,
-				BF60025C2412349E004084DA /* PageVerticalController.h */,
-				BF60025D2412349E004084DA /* Assets.xcassets */,
-				BF60025E2412349E004084DA /* images.plist */,
-				BF60025F2412349E004084DA /* BMDatePickerView.m */,
-				BF6002602412349E004084DA /* quotations.plist */,
-				BF6002612412349E004084DA /* ViewController.m */,
-				BF6002622412349E004084DA /* SceneDelegate.m */,
-				BF6002632412349E004084DA /* LaunchScreen.storyboard */,
-				BF6002652412349E004084DA /* Main.storyboard */,
-				BF6002672412349E004084DA /* BMDate.h */,
-				BF6002682412349E004084DA /* Utilities */,
-				BF60026C2412349E004084DA /* BMYear.h */,
-				BF60026D2412349E004084DA /* BMButtonLabel.h */,
-				BF60026E2412349E004084DA /* main.m */,
-				BF60026F2412349E004084DA /* SolarViewController.h */,
-				BF6002702412349E004084DA /* BMDay.h */,
-				BF6002712412349E004084DA /* BMMonth.h */,
-				BF6002722412349E004084DA /* quotations.txt */,
-				BF6002732412349E004084DA /* SolarCalendarView.m */,
-				BF6002742412349E004084DA /* Model */,
-				BF6002772412349E004084DA /* LunarCalendarView.h */,
-				BF6002782412349E004084DA /* BMDate+Utility.m */,
-				BF6002792412349E004084DA /* SolarMonthYearView.h */,
-				BF60027A2412349E004084DA /* AppDelegate.m */,
-				BF60027B2412349E004084DA /* SingletonAPI.h */,
-				BF60027C2412349E004084DA /* BMPageViewController.h */,
-				BF60027D2412349E004084DA /* HorizontalPageViewController.h */,
-				BF60027E2412349E004084DA /* BMDate.m */,
-				BF60027F2412349E004084DA /* Info.plist */,
-				BF6002802412349E004084DA /* ViewController.h */,
-				BF6002812412349E004084DA /* SceneDelegate.h */,
-				BF6002822412349E004084DA /* BMDatePickerView.h */,
-			);
-			path = CalculatorBM;
-			sourceTree = "<group>";
-		};
-		BF6002582412349E004084DA /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		BF6002682412349E004084DA /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BF6002692412349E004084DA /* define.h */,
-				BF60026A2412349E004084DA /* LunarUtils.h */,
-				BF60026B2412349E004084DA /* LunarUtils.m */,
+				BF62ACF62417580F00D63979 /* LunarUtils.h */,
+				BF62ACF52417580E00D63979 /* LunarUtils.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		BF6002742412349E004084DA /* Model */ = {
+		BF62ACFB2417582B00D63979 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BF6002752412349E004084DA /* DateModel.h */,
-				BF6002762412349E004084DA /* DateModel.m */,
+				BF62AD032417585900D63979 /* LunarCalendarView.h */,
+				BF62ACFF2417585500D63979 /* LunarCalendarView.m */,
+				BF62AD002417585600D63979 /* SolarCalendarView.h */,
+				BF62ACFC2417585200D63979 /* SolarCalendarView.m */,
+				BF62ACFE2417585400D63979 /* BMDatePickerView.h */,
+				BF62AD022417585800D63979 /* BMDatePickerView.m */,
+				BF62AD012417585700D63979 /* BMButtonLabel.h */,
+				BF62ACFD2417585300D63979 /* BMButtonLabel.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BF62AD0C2417586D00D63979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF62AD0E2417587900D63979 /* DateModel.h */,
+				BF62AD0D2417587900D63979 /* DateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BF6002832412349F004084DA /* Model */ = {
+		BF62AD112417588E00D63979 /* BMDate */ = {
 			isa = PBXGroup;
 			children = (
-				BF6002842412349F004084DA /* DateModel.h */,
-				BF6002852412349F004084DA /* DateModel.m */,
+				BF62ACF72417580F00D63979 /* define2.h */,
+				BF62AD122417589A00D63979 /* BMDate.h */,
+				BF62AD1B2417589B00D63979 /* BMDate.m */,
+				BF62AD142417589A00D63979 /* BMDate+Utility.h */,
+				BF62AD182417589A00D63979 /* BMDate+Utility.m */,
+				BF62AD132417589A00D63979 /* BMDay.h */,
+				BF62AD1A2417589B00D63979 /* BMDay.m */,
+				BF62AD172417589A00D63979 /* BMMonth.h */,
+				BF62AD152417589A00D63979 /* BMMonth.m */,
+				BF62AD162417589A00D63979 /* BMYear.h */,
+				BF62AD192417589B00D63979 /* BMYear.m */,
 			);
-			path = Model;
+			name = BMDate;
 			sourceTree = "<group>";
 		};
-		BF600286241234A0004084DA /* Utilities */ = {
+		BF62AD26241758A600D63979 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BF600287241234A0004084DA /* define.h */,
-				BF600288241234A0004084DA /* LunarUtils.h */,
-				BF600289241234A0004084DA /* LunarUtils.m */,
+				BF62AD27241758E400D63979 /* BMPageViewController.h */,
+				BF62AD28241758E500D63979 /* BMPageViewController.m */,
+				BF62AD29241758E600D63979 /* SolarViewController.h */,
+				BF62AD2C241758E900D63979 /* SolarViewController.m */,
+				BF62AD2B241758E800D63979 /* HorizontalPageViewController.h */,
+				BF62AD2A241758E700D63979 /* HorizontalPageViewController.m */,
 			);
-			path = Utilities;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		BF60028B241234A3004084DA /* Images */ = {
+		BF62AD33241758F600D63979 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF62AD372417591900D63979 /* quotations.txt */,
+				BF62AD342417591500D63979 /* quotations.plist */,
+				BF62AD382417591E00D63979 /* images.plist */,
+				BF62AD352417591600D63979 /* SingletonAPI.h */,
+				BF62AD362417591700D63979 /* SingletonAPI.m */,
 			);
-			path = Images;
+			path = resource;
 			sourceTree = "<group>";
 		};
-		BF6002D124123A17004084DA /* Frameworks */ = {
+		DF4BD94F0FE1215FF310ECA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8B0D8250E20F32764465DAD3 /* Pods-BMCalendar.debug.xcconfig */,
+				3ADC0570F985994609D78D5B /* Pods-BMCalendar.release.xcconfig */,
+				877785CFD87996CCEAAD2F90 /* Pods-BMCalendar-BMCalendarTests.debug.xcconfig */,
+				3DDEB4E807D67DC03DF96CCB /* Pods-BMCalendar-BMCalendarTests.release.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6002D824123BC2004084DA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BF60022E24123458004084DA /* Headers */ = {
+		BF62ACD32417576600D63979 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6002B5241234A4004084DA /* SingletonAPI.h in Headers */,
-				BF6002BD241234A4004084DA /* DateModel.h in Headers */,
-				BF6002B7241234A4004084DA /* HorizontalPageViewController.h in Headers */,
-				BF6002BC241234A4004084DA /* BMDatePickerView.h in Headers */,
-				BF6002A4241234A4004084DA /* define.h in Headers */,
-				BF600292241234A4004084DA /* BMDate+Utility.h in Headers */,
-				BF6002C0241234A4004084DA /* LunarUtils.h in Headers */,
-				BF6002A7241234A4004084DA /* BMYear.h in Headers */,
-				BF6002A3241234A4004084DA /* BMDate.h in Headers */,
-				BF60029A241234A4004084DA /* PageVerticalController.h in Headers */,
-				BF6002BF241234A4004084DA /* define.h in Headers */,
-				BF6002BB241234A4004084DA /* SceneDelegate.h in Headers */,
-				BF60024424123459004084DA /* BMCalendar.h in Headers */,
-				BF6002AB241234A4004084DA /* BMDay.h in Headers */,
-				BF6002BA241234A4004084DA /* ViewController.h in Headers */,
-				BF6002AC241234A4004084DA /* BMMonth.h in Headers */,
-				BF6002A5241234A4004084DA /* LunarUtils.h in Headers */,
-				BF6002AA241234A4004084DA /* SolarViewController.h in Headers */,
-				BF6002B6241234A4004084DA /* BMPageViewController.h in Headers */,
-				BF600291241234A4004084DA /* AppDelegate.h in Headers */,
-				BF6002B1241234A4004084DA /* LunarCalendarView.h in Headers */,
-				BF6002A8241234A4004084DA /* BMButtonLabel.h in Headers */,
-				BF6002B3241234A4004084DA /* SolarMonthYearView.h in Headers */,
-				BF6002AF241234A4004084DA /* DateModel.h in Headers */,
-				BF600294241234A4004084DA /* SolarCalendarView.h in Headers */,
-				BF6002C3241234A4004084DA /* ViewController.h in Headers */,
+				BF62AD3A2417591E00D63979 /* SingletonAPI.h in Headers */,
+				BF62ADA224176A0000D63979 /* quotations.plist in Headers */,
+				BF62ADA324176A0000D63979 /* images.plist in Headers */,
+				BF62AD1D2417589B00D63979 /* BMDay.h in Headers */,
+				BF62AD212417589B00D63979 /* BMMonth.h in Headers */,
+				BF62AD202417589B00D63979 /* BMYear.h in Headers */,
+				BF62ACFA2417580F00D63979 /* define2.h in Headers */,
+				BF62AD41241759ED00D63979 /* BMCalendarController.h in Headers */,
+				BF62AD1C2417589B00D63979 /* BMDate.h in Headers */,
+				BF62AD102417587900D63979 /* DateModel.h in Headers */,
+				BF62AD1E2417589B00D63979 /* BMDate+Utility.h in Headers */,
+				BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */,
+				BF62ACE92417576600D63979 /* BMCalendar.h in Headers */,
+				BF62AD0B2417585900D63979 /* LunarCalendarView.h in Headers */,
+				BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */,
+				BF62AD31241758E900D63979 /* HorizontalPageViewController.h in Headers */,
+				BF62AD082417585900D63979 /* SolarCalendarView.h in Headers */,
+				BF62AD062417585900D63979 /* BMDatePickerView.h in Headers */,
+				BF62ACF92417580F00D63979 /* LunarUtils.h in Headers */,
+				BF62AD2F241758E900D63979 /* SolarViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BF60023224123458004084DA /* BMCalendar */ = {
+		BF62ACD72417576600D63979 /* BMCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF60024724123459004084DA /* Build configuration list for PBXNativeTarget "BMCalendar" */;
+			buildConfigurationList = BF62ACEC2417576600D63979 /* Build configuration list for PBXNativeTarget "BMCalendar" */;
 			buildPhases = (
-				BF60022E24123458004084DA /* Headers */,
-				BF60022F24123458004084DA /* Sources */,
-				BF60023024123458004084DA /* Frameworks */,
-				BF60023124123458004084DA /* Resources */,
-				BF6002C8241238A2004084DA /* Embed Frameworks */,
+				14DB02AD3B57FBABAD2C2C7B /* [CP] Check Pods Manifest.lock */,
+				BF62ACD32417576600D63979 /* Headers */,
+				BF62ACD42417576600D63979 /* Sources */,
+				BF62ACD52417576600D63979 /* Frameworks */,
+				BF62AD4624175AA500D63979 /* Embed Frameworks */,
+				BF62ACD62417576600D63979 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -394,45 +346,47 @@
 			);
 			name = BMCalendar;
 			productName = BMCalendar;
-			productReference = BF60023324123458004084DA /* BMCalendar.framework */;
+			productReference = BF62ACD82417576600D63979 /* BMCalendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF60023B24123459004084DA /* BMCalendarTests */ = {
+		BF62ACE02417576600D63979 /* BMCalendarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF60024A24123459004084DA /* Build configuration list for PBXNativeTarget "BMCalendarTests" */;
+			buildConfigurationList = BF62ACEF2417576600D63979 /* Build configuration list for PBXNativeTarget "BMCalendarTests" */;
 			buildPhases = (
-				BF60023824123459004084DA /* Sources */,
-				BF60023924123459004084DA /* Frameworks */,
-				BF60023A24123459004084DA /* Resources */,
+				D6D66ECCB5E1B7BD55E4A5ED /* [CP] Check Pods Manifest.lock */,
+				BF62ACDD2417576600D63979 /* Sources */,
+				BF62ACDE2417576600D63979 /* Frameworks */,
+				BF62ACDF2417576600D63979 /* Resources */,
+				6D97E03C5D1D79A53CE5C837 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF60023F24123459004084DA /* PBXTargetDependency */,
+				BF62ACE42417576600D63979 /* PBXTargetDependency */,
 			);
 			name = BMCalendarTests;
 			productName = BMCalendarTests;
-			productReference = BF60023C24123459004084DA /* BMCalendarTests.xctest */;
+			productReference = BF62ACE12417576600D63979 /* BMCalendarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF60022A24123458004084DA /* Project object */ = {
+		BF62ACCF2417576600D63979 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = vincent;
 				TargetAttributes = {
-					BF60023224123458004084DA = {
+					BF62ACD72417576600D63979 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					BF60023B24123459004084DA = {
+					BF62ACE02417576600D63979 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = BF60022D24123458004084DA /* Build configuration list for PBXProject "BMCalendar" */;
+			buildConfigurationList = BF62ACD22417576600D63979 /* Build configuration list for PBXProject "BMCalendar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -440,33 +394,29 @@
 				en,
 				Base,
 			);
-			mainGroup = BF60022924123458004084DA;
-			productRefGroup = BF60023424123458004084DA /* Products */;
+			mainGroup = BF62ACCE2417576600D63979;
+			productRefGroup = BF62ACD92417576600D63979 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF60023224123458004084DA /* BMCalendar */,
-				BF60023B24123459004084DA /* BMCalendarTests */,
+				BF62ACD72417576600D63979 /* BMCalendar */,
+				BF62ACE02417576600D63979 /* BMCalendarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF60023124123458004084DA /* Resources */ = {
+		BF62ACD62417576600D63979 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF60029B241234A4004084DA /* Assets.xcassets in Resources */,
-				BF60029E241234A4004084DA /* quotations.plist in Resources */,
-				BF60029C241234A4004084DA /* images.plist in Resources */,
-				BF6002A2241234A4004084DA /* Main.storyboard in Resources */,
-				BF6002A1241234A4004084DA /* LaunchScreen.storyboard in Resources */,
-				BF600290241234A4004084DA /* image_17.jpg in Resources */,
-				BF6002AD241234A4004084DA /* quotations.txt in Resources */,
+				BF62AD392417591E00D63979 /* quotations.plist in Resources */,
+				BF62AD3D2417591E00D63979 /* images.plist in Resources */,
+				BF62AD3C2417591E00D63979 /* quotations.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF60023A24123459004084DA /* Resources */ = {
+		BF62ACDF2417576600D63979 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,75 +425,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14DB02AD3B57FBABAD2C2C7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BMCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D97E03C5D1D79A53CE5C837 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMCalendar-BMCalendarTests/Pods-BMCalendar-BMCalendarTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMCalendar-BMCalendarTests/Pods-BMCalendar-BMCalendarTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BMCalendar-BMCalendarTests/Pods-BMCalendar-BMCalendarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6D66ECCB5E1B7BD55E4A5ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BMCalendar-BMCalendarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		BF60022F24123458004084DA /* Sources */ = {
+		BF62ACD42417576600D63979 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6002B8241234A4004084DA /* BMDate.m in Sources */,
-				BF6002BE241234A4004084DA /* DateModel.m in Sources */,
-				BF60028F241234A4004084DA /* BMYear.m in Sources */,
-				BF600293241234A4004084DA /* LunarCalendarView.m in Sources */,
-				BF6002B4241234A4004084DA /* AppDelegate.m in Sources */,
-				BF60028D241234A4004084DA /* SolarViewController.m in Sources */,
-				BF6002A6241234A4004084DA /* LunarUtils.m in Sources */,
-				BF6002B2241234A4004084DA /* BMDate+Utility.m in Sources */,
-				BF600296241234A4004084DA /* BMDay.m in Sources */,
-				BF6002B0241234A4004084DA /* DateModel.m in Sources */,
-				BF600298241234A4004084DA /* BMPageViewController.m in Sources */,
-				BF6002C1241234A4004084DA /* LunarUtils.m in Sources */,
-				BF60029F241234A4004084DA /* ViewController.m in Sources */,
-				BF600297241234A4004084DA /* HorizontalPageViewController.m in Sources */,
-				BF6002A0241234A4004084DA /* SceneDelegate.m in Sources */,
-				BF60028E241234A4004084DA /* BMButtonLabel.m in Sources */,
-				BF6002C2241234A4004084DA /* ViewController.m in Sources */,
-				BF60029D241234A4004084DA /* BMDatePickerView.m in Sources */,
-				BF600299241234A4004084DA /* SingletonAPI.m in Sources */,
-				BF6002AE241234A4004084DA /* SolarCalendarView.m in Sources */,
-				BF6002A9241234A4004084DA /* main.m in Sources */,
-				BF600295241234A4004084DA /* BMMonth.m in Sources */,
+				BF62AD2E241758E900D63979 /* BMPageViewController.m in Sources */,
+				BF62AD3B2417591E00D63979 /* SingletonAPI.m in Sources */,
+				BF62AD232417589B00D63979 /* BMYear.m in Sources */,
+				BF62AD252417589B00D63979 /* BMDate.m in Sources */,
+				BF62AD042417585900D63979 /* SolarCalendarView.m in Sources */,
+				BF62AD922417663000D63979 /* define2.h in Sources */,
+				BF62AD072417585900D63979 /* LunarCalendarView.m in Sources */,
+				BF62AD242417589B00D63979 /* BMDay.m in Sources */,
+				BF62AD32241758E900D63979 /* SolarViewController.m in Sources */,
+				BF62AD0A2417585900D63979 /* BMDatePickerView.m in Sources */,
+				BF62AD30241758E900D63979 /* HorizontalPageViewController.m in Sources */,
+				BF62AD1F2417589B00D63979 /* BMMonth.m in Sources */,
+				BF62ACF82417580F00D63979 /* LunarUtils.m in Sources */,
+				BF62AD052417585900D63979 /* BMButtonLabel.m in Sources */,
+				BF62AD0F2417587900D63979 /* DateModel.m in Sources */,
+				BF62AD40241759ED00D63979 /* BMCalendarController.m in Sources */,
+				BF62AD222417589B00D63979 /* BMDate+Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF60023824123459004084DA /* Sources */ = {
+		BF62ACDD2417576600D63979 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF60024224123459004084DA /* BMCalendarTests.m in Sources */,
+				BF62ACE72417576600D63979 /* BMCalendarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF60023F24123459004084DA /* PBXTargetDependency */ = {
+		BF62ACE42417576600D63979 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF60023224123458004084DA /* BMCalendar */;
-			targetProxy = BF60023E24123459004084DA /* PBXContainerItemProxy */;
+			target = BF62ACD72417576600D63979 /* BMCalendar */;
+			targetProxy = BF62ACE32417576600D63979 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		BF6002632412349E004084DA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF6002642412349E004084DA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		BF6002652412349E004084DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF6002662412349E004084DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		BF60024524123459004084DA /* Debug */ = {
+		BF62ACEA2417576600D63979 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -604,7 +594,7 @@
 			};
 			name = Debug;
 		};
-		BF60024624123459004084DA /* Release */ = {
+		BF62ACEB2417576600D63979 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -659,8 +649,9 @@
 			};
 			name = Release;
 		};
-		BF60024824123459004084DA /* Debug */ = {
+		BF62ACED2417576600D63979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B0D8250E20F32764465DAD3 /* Pods-BMCalendar.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -671,7 +662,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/BMCalendar/CalculatorBM",
 				);
 				INFOPLIST_FILE = BMCalendar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -687,8 +677,9 @@
 			};
 			name = Debug;
 		};
-		BF60024924123459004084DA /* Release */ = {
+		BF62ACEE2417576600D63979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ADC0570F985994609D78D5B /* Pods-BMCalendar.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -699,7 +690,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/BMCalendar/CalculatorBM",
 				);
 				INFOPLIST_FILE = BMCalendar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -715,8 +705,9 @@
 			};
 			name = Release;
 		};
-		BF60024B24123459004084DA /* Debug */ = {
+		BF62ACF02417576600D63979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 877785CFD87996CCEAAD2F90 /* Pods-BMCalendar-BMCalendarTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
@@ -732,8 +723,9 @@
 			};
 			name = Debug;
 		};
-		BF60024C24123459004084DA /* Release */ = {
+		BF62ACF12417576600D63979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DDEB4E807D67DC03DF96CCB /* Pods-BMCalendar-BMCalendarTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQSK4D8K45;
@@ -752,34 +744,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF60022D24123458004084DA /* Build configuration list for PBXProject "BMCalendar" */ = {
+		BF62ACD22417576600D63979 /* Build configuration list for PBXProject "BMCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF60024524123459004084DA /* Debug */,
-				BF60024624123459004084DA /* Release */,
+				BF62ACEA2417576600D63979 /* Debug */,
+				BF62ACEB2417576600D63979 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF60024724123459004084DA /* Build configuration list for PBXNativeTarget "BMCalendar" */ = {
+		BF62ACEC2417576600D63979 /* Build configuration list for PBXNativeTarget "BMCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF60024824123459004084DA /* Debug */,
-				BF60024924123459004084DA /* Release */,
+				BF62ACED2417576600D63979 /* Debug */,
+				BF62ACEE2417576600D63979 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF60024A24123459004084DA /* Build configuration list for PBXNativeTarget "BMCalendarTests" */ = {
+		BF62ACEF2417576600D63979 /* Build configuration list for PBXNativeTarget "BMCalendarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF60024B24123459004084DA /* Debug */,
-				BF60024C24123459004084DA /* Release */,
+				BF62ACF02417576600D63979 /* Debug */,
+				BF62ACF12417576600D63979 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BF60022A24123458004084DA /* Project object */;
+	rootObject = BF62ACCF2417576600D63979 /* Project object */;
 }

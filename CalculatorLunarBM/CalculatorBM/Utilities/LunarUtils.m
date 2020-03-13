@@ -87,7 +87,7 @@
 
 +(NSMutableArray*)jdToDate:(NSInteger)jd {
     NSMutableArray *arr=[[NSMutableArray alloc] init];
-    NSInteger a, b, c, d, e, m, day, month, year;
+    long a, b, c, d, e, m, day, month, year;
     if (jd > 2299160) { // After 5/10/1582, Gregorian calendar
         a = jd + 32044;
         b = floor((4*a+3)/146097);

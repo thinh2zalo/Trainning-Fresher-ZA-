@@ -33,6 +33,7 @@
     if (inforDMYSolar == nil) {
         return nil;
     }
+    NSLog(@"%tu, %tu, %tu",[inforDMYSolar[0] integerValue],[inforDMYSolar[1] integerValue],[inforDMYSolar[2] integerValue] );
     self = [self initLocalDate:[inforDMYSolar[0] integerValue] :[inforDMYSolar[1] integerValue]  :[inforDMYSolar[2] integerValue]];
     if (self) {
         return self;
@@ -41,6 +42,9 @@
 }
 
 - (instancetype)initDate:(NSString *)dateStr andTimeZone:(NSInteger)timeZone{
+    if ([dateStr isKindOfClass:NSString.class] || timeZone < 0) {
+        return nil;
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = DAYFORMAT;
     NSDate * date = [dateFormatter dateFromString:dateStr];
@@ -52,12 +56,16 @@
 }
 
 - (instancetype)initLocalDate:(NSInteger)solarDay :(NSInteger)solarMonth :(NSInteger)solarYear {
+    if (![BMDate validDate:solarDay month:solarMonth year:solarYear]) {
+        return nil;
+    }
     self = [self initDateWithSolarDate:solarDay :solarMonth :solarYear andTimeZone:LOCAL_TIMEZONE];
     if (self) {
         return self;
     }
     return nil;
 }
+
 
 - (instancetype)initDateWithLunarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy isLeapMonth:(BOOL)isLeapMonth andTimeZone:(NSInteger)timeZone {
     if (![BMDate validDate:dd month:mm year:yy]) {
@@ -89,6 +97,7 @@
     }
     return self;
 }
+
 
 -(NSInteger)getLeapLunarMonth {
     if ([self isLeapLunarYear]) {

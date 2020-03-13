@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,10 @@
 		BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF05D81323F3DB5D007ABE89 /* image_17.jpg */; };
 		BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */; };
 		BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */; };
-		BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; };
+		BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF59D133240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF59D141240E1B0500A09D89 /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59D140240E1B0500A09D89 /* BMButtonLabel.m */; };
-		BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D6D23EC30D7006DC5FD /* AppDelegate.m */; };
 		BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */; };
-		BF5E9D7423EC30D7006DC5FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7323EC30D7006DC5FD /* ViewController.m */; };
 		BF5E9D7723EC30D7006DC5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7523EC30D7006DC5FD /* Main.storyboard */; };
 		BF5E9D7923EC30DB006DC5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */; };
 		BF5E9D7C23EC30DB006DC5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7A23EC30DB006DC5FD /* LaunchScreen.storyboard */; };
@@ -29,6 +27,9 @@
 		BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA623ED3F63006DC5FD /* BMMonth.m */; };
 		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
 		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
+		BF62ACCD241756CC00D63979 /* AppDelegate.m in Resources */ = {isa = PBXBuildFile; fileRef = BF62ACCC241756CC00D63979 /* AppDelegate.m */; };
+		BF67B4A324174A9100FBA458 /* BMCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF67B4A224174A9100FBA458 /* BMCalendarController.m */; };
+		BF68C94C24188B92000769ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACCC241756CC00D63979 /* AppDelegate.m */; };
 		BF7447ED240F4F7D0056541C /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13B240E108900A09D89 /* quotations.plist */; };
 		BF7447EE240F4F7D0056541C /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13D240E120300A09D89 /* images.plist */; };
 		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
@@ -95,11 +96,8 @@
 		BF59D140240E1B0500A09D89 /* BMButtonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
 		BF5E9D6923EC30D7006DC5FD /* CalendarBM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarBM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5E9D6C23EC30D7006DC5FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BF5E9D6D23EC30D7006DC5FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BF5E9D6F23EC30D7006DC5FD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BF5E9D7223EC30D7006DC5FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF5E9D7323EC30D7006DC5FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF5E9D7623EC30D7006DC5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF5E9D7B23EC30DB006DC5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,6 +117,9 @@
 		BF5E9DA923ED3F71006DC5FD /* BMDay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDay.m; sourceTree = "<group>"; };
 		BF5E9DAC23ED444F006DC5FD /* LunarUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LunarUtils.h; sourceTree = "<group>"; };
 		BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarUtils.m; sourceTree = "<group>"; };
+		BF62ACCC241756CC00D63979 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF67B4A124174A9100FBA458 /* BMCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMCalendarController.h; sourceTree = "<group>"; };
+		BF67B4A224174A9100FBA458 /* BMCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMCalendarController.m; sourceTree = "<group>"; };
 		BF80ABB723F3024800AC5C3B /* BMDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDate.h; sourceTree = "<group>"; };
 		BF80ABB823F3024800AC5C3B /* BMDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDate.m; sourceTree = "<group>"; };
 		BF80ABBA23F3A12600AC5C3B /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
@@ -235,11 +236,11 @@
 				BF5E9DAB23ED408A006DC5FD /* Utilities */,
 				BF5E9DA123EC30E7006DC5FD /* BMDate */,
 				BF5E9D6C23EC30D7006DC5FD /* AppDelegate.h */,
-				BF5E9D6D23EC30D7006DC5FD /* AppDelegate.m */,
+				BF62ACCC241756CC00D63979 /* AppDelegate.m */,
+				BF67B4A124174A9100FBA458 /* BMCalendarController.h */,
+				BF67B4A224174A9100FBA458 /* BMCalendarController.m */,
 				BF5E9D6F23EC30D7006DC5FD /* SceneDelegate.h */,
 				BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */,
-				BF5E9D7223EC30D7006DC5FD /* ViewController.h */,
-				BF5E9D7323EC30D7006DC5FD /* ViewController.m */,
 				BF5E9D7523EC30D7006DC5FD /* Main.storyboard */,
 				BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */,
 				BF05D81323F3DB5D007ABE89 /* image_17.jpg */,
@@ -455,6 +456,7 @@
 				BF7447EE240F4F7D0056541C /* images.plist in Resources */,
 				BF5E9D7C23EC30DB006DC5FD /* LaunchScreen.storyboard in Resources */,
 				BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */,
+				BF62ACCD241756CC00D63979 /* AppDelegate.m in Resources */,
 				BF5E9D7923EC30DB006DC5FD /* Assets.xcassets in Resources */,
 				BF5E9D7723EC30D7006DC5FD /* Main.storyboard in Resources */,
 			);
@@ -584,17 +586,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF68C94C24188B92000769ED /* AppDelegate.m in Sources */,
 				BF866D13240616FF004740C5 /* SolarViewController.m in Sources */,
 				BF5E9DA423EC3117006DC5FD /* BMYear.m in Sources */,
+				BF67B4A324174A9100FBA458 /* BMCalendarController.m in Sources */,
 				BF866D1F240CC182004740C5 /* SingletonAPI.m in Sources */,
 				BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */,
 				BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */,
 				BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */,
 				BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */,
-				BF5E9D7423EC30D7006DC5FD /* ViewController.m in Sources */,
 				BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */,
 				BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */,
-				BF5E9D6E23EC30D7006DC5FD /* AppDelegate.m in Sources */,
 				BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */,
 				BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */,
 				BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */,

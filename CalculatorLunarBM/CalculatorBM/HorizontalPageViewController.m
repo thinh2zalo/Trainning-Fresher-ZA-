@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [self handleDefault];
-    [self createArrayViewController];
     NSInteger defaultPage  = [self.BMPaingDataSource defaultPage];
     SolarViewController * viewControllerShowed = self.arrVC[defaultPage];
   
@@ -43,6 +42,7 @@
 
 - (void)createArrayViewController {
     SolarViewController *newVC1 = SolarViewController.new;
+    [newVC1 setDataModel:self.mDateModel];
      SolarViewController *newVC2 = SolarViewController.new;
      SolarViewController *newVC3 = SolarViewController.new;
      self.arrVC = @[newVC1,newVC2,newVC3];
@@ -120,6 +120,8 @@
 - (NSArray<SolarViewController *> *)arrVC {
     if (!_arrVC) {
         _arrVC = NSArray.new;
+        [self createArrayViewController];
+
     }
     return _arrVC;
 }

@@ -1,0 +1,936 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		683FFCDE37E7A5B9DED86952 /* Pods_CalculatorBMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F584992DC5702E62D07440C /* Pods_CalculatorBMTests.framework */; };
+		7C6A8B8F48270ECF6C1109A9 /* Pods_CalculatorBM_CalculatorBMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31233D29F1EB608B77737D63 /* Pods_CalculatorBM_CalculatorBMUITests.framework */; };
+		BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */; };
+		BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF05D81323F3DB5D007ABE89 /* image_17.jpg */; };
+		BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */; };
+		BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */; };
+		BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; };
+		BF59D133240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF59D141240E1B0500A09D89 /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59D140240E1B0500A09D89 /* BMButtonLabel.m */; };
+		BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */; };
+		BF5E9D7723EC30D7006DC5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7523EC30D7006DC5FD /* Main.storyboard */; };
+		BF5E9D7923EC30DB006DC5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */; };
+		BF5E9D7C23EC30DB006DC5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5E9D7A23EC30DB006DC5FD /* LaunchScreen.storyboard */; };
+		BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D7E23EC30DB006DC5FD /* main.m */; };
+		BF5E9D8923EC30DB006DC5FD /* CalculatorBMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D8823EC30DB006DC5FD /* CalculatorBMTests.m */; };
+		BF5E9D9423EC30DB006DC5FD /* CalculatorBMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9D9323EC30DB006DC5FD /* CalculatorBMUITests.m */; };
+		BF5E9DA423EC3117006DC5FD /* BMYear.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA323EC3117006DC5FD /* BMYear.m */; };
+		BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA623ED3F63006DC5FD /* BMMonth.m */; };
+		BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DA923ED3F71006DC5FD /* BMDay.m */; };
+		BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */; };
+		BF62ACCD241756CC00D63979 /* AppDelegate.m in Resources */ = {isa = PBXBuildFile; fileRef = BF62ACCC241756CC00D63979 /* AppDelegate.m */; };
+		BF67B4A324174A9100FBA458 /* BMCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF67B4A224174A9100FBA458 /* BMCalendarController.m */; };
+		BF7447ED240F4F7D0056541C /* quotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13B240E108900A09D89 /* quotations.plist */; };
+		BF7447EE240F4F7D0056541C /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF59D13D240E120300A09D89 /* images.plist */; };
+		BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF80ABB823F3024800AC5C3B /* BMDate.m */; };
+		BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D0C24055D1A004740C5 /* BMPageViewController.m */; };
+		BF866D13240616FF004740C5 /* SolarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D12240616FF004740C5 /* SolarViewController.m */; };
+		BF866D1724068408004740C5 /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D1624068408004740C5 /* DateModel.m */; };
+		BF866D1F240CC182004740C5 /* SingletonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF866D1E240CC182004740C5 /* SingletonAPI.m */; };
+		BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */; };
+		BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF5E9D8523EC30DB006DC5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5E9D6123EC30D7006DC5FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5E9D6823EC30D7006DC5FD;
+			remoteInfo = CalculatorBM;
+		};
+		BF5E9D9023EC30DB006DC5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5E9D6123EC30D7006DC5FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5E9D6823EC30D7006DC5FD;
+			remoteInfo = CalculatorBM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF59D134240DFCEC00A09D89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF59D133240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1DEB6B830F5954C3E7FC6C1D /* Pods-CalculatorBM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBM.release.xcconfig"; path = "Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM.release.xcconfig"; sourceTree = "<group>"; };
+		2993EAA2B97E64313D6A79EC /* Pods-CalculatorBMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBMTests.release.xcconfig"; path = "Target Support Files/Pods-CalculatorBMTests/Pods-CalculatorBMTests.release.xcconfig"; sourceTree = "<group>"; };
+		31233D29F1EB608B77737D63 /* Pods_CalculatorBM_CalculatorBMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorBM_CalculatorBMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DECD8266BC7A22BEA79DD2 /* Pods-CalculatorBM-CalculatorBMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBM-CalculatorBMUITests.release.xcconfig"; path = "Target Support Files/Pods-CalculatorBM-CalculatorBMUITests/Pods-CalculatorBM-CalculatorBMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorBM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE63DF3881A157A112D6E87 /* Pods-CalculatorBM-CalculatorBMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBM-CalculatorBMUITests.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorBM-CalculatorBMUITests/Pods-CalculatorBM-CalculatorBMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F584992DC5702E62D07440C /* Pods_CalculatorBMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorBMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F99A4A4B39D10CB3CAE1497 /* Pods-CalculatorBM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBM.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM.debug.xcconfig"; sourceTree = "<group>"; };
+		BF05D80F23F3B7B0007ABE89 /* LunarCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LunarCalendarView.h; sourceTree = "<group>"; };
+		BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarCalendarView.m; sourceTree = "<group>"; };
+		BF05D81323F3DB5D007ABE89 /* image_17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_17.jpg; sourceTree = "<group>"; };
+		BF5818C223FFBA15007A5C8A /* BMDate+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMDate+Utility.h"; sourceTree = "<group>"; };
+		BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BMDate+Utility.m"; sourceTree = "<group>"; };
+		BF583155240FAD6000CAAA34 /* HorizontalPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalPageViewController.h; sourceTree = "<group>"; };
+		BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalPageViewController.m; sourceTree = "<group>"; };
+		BF59D128240DFA2E00A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59D12B240DFA9600A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59D135240DFD1D00A09D89 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59D13B240E108900A09D89 /* quotations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = quotations.plist; sourceTree = "<group>"; };
+		BF59D13D240E120300A09D89 /* images.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
+		BF59D140240E1B0500A09D89 /* BMButtonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
+		BF5E9D6923EC30D7006DC5FD /* CalendarBM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarBM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E9D6C23EC30D7006DC5FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF5E9D6F23EC30D7006DC5FD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		BF5E9D7623EC30D7006DC5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5E9D7B23EC30DB006DC5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF5E9D7D23EC30DB006DC5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5E9D7E23EC30DB006DC5FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF5E9D8423EC30DB006DC5FD /* CalculatorBMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorBMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E9D8823EC30DB006DC5FD /* CalculatorBMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorBMTests.m; sourceTree = "<group>"; };
+		BF5E9D8A23EC30DB006DC5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5E9D8F23EC30DB006DC5FD /* CalculatorBMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorBMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E9D9323EC30DB006DC5FD /* CalculatorBMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorBMUITests.m; sourceTree = "<group>"; };
+		BF5E9D9523EC30DB006DC5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5E9DA223EC3117006DC5FD /* BMYear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMYear.h; sourceTree = "<group>"; };
+		BF5E9DA323EC3117006DC5FD /* BMYear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMYear.m; sourceTree = "<group>"; };
+		BF5E9DA523ED3F63006DC5FD /* BMMonth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMMonth.h; sourceTree = "<group>"; };
+		BF5E9DA623ED3F63006DC5FD /* BMMonth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMMonth.m; sourceTree = "<group>"; };
+		BF5E9DA823ED3F71006DC5FD /* BMDay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDay.h; sourceTree = "<group>"; };
+		BF5E9DA923ED3F71006DC5FD /* BMDay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDay.m; sourceTree = "<group>"; };
+		BF5E9DAC23ED444F006DC5FD /* LunarUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LunarUtils.h; sourceTree = "<group>"; };
+		BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunarUtils.m; sourceTree = "<group>"; };
+		BF62ACCC241756CC00D63979 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF67B4A124174A9100FBA458 /* BMCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMCalendarController.h; sourceTree = "<group>"; };
+		BF67B4A224174A9100FBA458 /* BMCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMCalendarController.m; sourceTree = "<group>"; };
+		BF68C94A241777C0000769ED /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = define.h; path = ../../../CalculatorLunarBM/CalculatorBM/Utilities/define.h; sourceTree = "<group>"; };
+		BF80ABB723F3024800AC5C3B /* BMDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDate.h; sourceTree = "<group>"; };
+		BF80ABB823F3024800AC5C3B /* BMDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDate.m; sourceTree = "<group>"; };
+		BF80ABBA23F3A12600AC5C3B /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		BF866D0B24055D1A004740C5 /* BMPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMPageViewController.h; sourceTree = "<group>"; };
+		BF866D0C24055D1A004740C5 /* BMPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMPageViewController.m; sourceTree = "<group>"; };
+		BF866D11240616FF004740C5 /* SolarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarViewController.h; sourceTree = "<group>"; };
+		BF866D12240616FF004740C5 /* SolarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarViewController.m; sourceTree = "<group>"; };
+		BF866D1524068408004740C5 /* DateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateModel.h; sourceTree = "<group>"; };
+		BF866D1624068408004740C5 /* DateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateModel.m; sourceTree = "<group>"; };
+		BF866D1A240CB073004740C5 /* quotations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quotations.txt; sourceTree = "<group>"; };
+		BF866D1D240CC182004740C5 /* SingletonAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonAPI.h; sourceTree = "<group>"; };
+		BF866D1E240CC182004740C5 /* SingletonAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingletonAPI.m; sourceTree = "<group>"; };
+		BF8A038F23F3FD7700C79D96 /* SolarCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolarCalendarView.h; sourceTree = "<group>"; };
+		BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
+		BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
+		BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDatePickerView.m; sourceTree = "<group>"; };
+		BFBCC93E240F8D2800F19839 /* BMButtonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMButtonLabel.h; sourceTree = "<group>"; };
+		D61B2043DE81966C2D85D9B3 /* Pods-CalculatorBMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorBMTests.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorBMTests/Pods-CalculatorBMTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF5E9D6623EC30D7006DC5FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59D132240DFCEC00A09D89 /* Pods_CalculatorBM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8123EC30DB006DC5FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683FFCDE37E7A5B9DED86952 /* Pods_CalculatorBMTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8C23EC30DB006DC5FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6A8B8F48270ECF6C1109A9 /* Pods_CalculatorBM_CalculatorBMUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D9BE11E8A12FFC4761726F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F99A4A4B39D10CB3CAE1497 /* Pods-CalculatorBM.debug.xcconfig */,
+				1DEB6B830F5954C3E7FC6C1D /* Pods-CalculatorBM.release.xcconfig */,
+				7FE63DF3881A157A112D6E87 /* Pods-CalculatorBM-CalculatorBMUITests.debug.xcconfig */,
+				46DECD8266BC7A22BEA79DD2 /* Pods-CalculatorBM-CalculatorBMUITests.release.xcconfig */,
+				D61B2043DE81966C2D85D9B3 /* Pods-CalculatorBMTests.debug.xcconfig */,
+				2993EAA2B97E64313D6A79EC /* Pods-CalculatorBMTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF05D80E23F3B70B007ABE89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF05D80F23F3B7B0007ABE89 /* LunarCalendarView.h */,
+				BF05D81023F3B7B0007ABE89 /* LunarCalendarView.m */,
+				BF8A038F23F3FD7700C79D96 /* SolarCalendarView.h */,
+				BF8A039023F3FD7700C79D96 /* SolarCalendarView.m */,
+				BF918E7E23F51E2F00A08D27 /* BMDatePickerView.h */,
+				BF918E7F23F51E2F00A08D27 /* BMDatePickerView.m */,
+				BFBCC93E240F8D2800F19839 /* BMButtonLabel.h */,
+				BF59D140240E1B0500A09D89 /* BMButtonLabel.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BF05D81223F3DB17007ABE89 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BF5E9D6023EC30D7006DC5FD = {
+			isa = PBXGroup;
+			children = (
+				BF5E9D6B23EC30D7006DC5FD /* CalculatorBM */,
+				BF5E9D8723EC30DB006DC5FD /* CalculatorBMTests */,
+				BF5E9D9223EC30DB006DC5FD /* CalculatorBMUITests */,
+				BF5E9D6A23EC30D7006DC5FD /* Products */,
+				9D9BE11E8A12FFC4761726F7 /* Pods */,
+				E429551D37F552AB263668C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF5E9D6A23EC30D7006DC5FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E9D6923EC30D7006DC5FD /* CalendarBM.app */,
+				BF5E9D8423EC30DB006DC5FD /* CalculatorBMTests.xctest */,
+				BF5E9D8F23EC30DB006DC5FD /* CalculatorBMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5E9D6B23EC30D7006DC5FD /* CalculatorBM */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D1C240CB091004740C5 /* resource */,
+				BF866D14240683E2004740C5 /* Model */,
+				BF866D0A24055CE1004740C5 /* Controller */,
+				BF05D81223F3DB17007ABE89 /* Images */,
+				BF05D80E23F3B70B007ABE89 /* View */,
+				BF5E9DAB23ED408A006DC5FD /* Utilities */,
+				BF5E9DA123EC30E7006DC5FD /* BMDate */,
+				BF5E9D6C23EC30D7006DC5FD /* AppDelegate.h */,
+				BF62ACCC241756CC00D63979 /* AppDelegate.m */,
+				BF67B4A124174A9100FBA458 /* BMCalendarController.h */,
+				BF67B4A224174A9100FBA458 /* BMCalendarController.m */,
+				BF5E9D6F23EC30D7006DC5FD /* SceneDelegate.h */,
+				BF5E9D7023EC30D7006DC5FD /* SceneDelegate.m */,
+				BF5E9D7523EC30D7006DC5FD /* Main.storyboard */,
+				BF5E9D7823EC30DB006DC5FD /* Assets.xcassets */,
+				BF05D81323F3DB5D007ABE89 /* image_17.jpg */,
+				BF5E9D7A23EC30DB006DC5FD /* LaunchScreen.storyboard */,
+				BF5E9D7D23EC30DB006DC5FD /* Info.plist */,
+				BF5E9D7E23EC30DB006DC5FD /* main.m */,
+			);
+			path = CalculatorBM;
+			sourceTree = "<group>";
+		};
+		BF5E9D8723EC30DB006DC5FD /* CalculatorBMTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E9D8823EC30DB006DC5FD /* CalculatorBMTests.m */,
+				BF5E9D8A23EC30DB006DC5FD /* Info.plist */,
+			);
+			path = CalculatorBMTests;
+			sourceTree = "<group>";
+		};
+		BF5E9D9223EC30DB006DC5FD /* CalculatorBMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E9D9323EC30DB006DC5FD /* CalculatorBMUITests.m */,
+				BF5E9D9523EC30DB006DC5FD /* Info.plist */,
+			);
+			path = CalculatorBMUITests;
+			sourceTree = "<group>";
+		};
+		BF5E9DA123EC30E7006DC5FD /* BMDate */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E9DA223EC3117006DC5FD /* BMYear.h */,
+				BF5E9DA323EC3117006DC5FD /* BMYear.m */,
+				BF5E9DA523ED3F63006DC5FD /* BMMonth.h */,
+				BF5E9DA623ED3F63006DC5FD /* BMMonth.m */,
+				BF5E9DA823ED3F71006DC5FD /* BMDay.h */,
+				BF5E9DA923ED3F71006DC5FD /* BMDay.m */,
+				BF80ABB723F3024800AC5C3B /* BMDate.h */,
+				BF80ABB823F3024800AC5C3B /* BMDate.m */,
+				BF5818C223FFBA15007A5C8A /* BMDate+Utility.h */,
+				BF5818C323FFBA15007A5C8A /* BMDate+Utility.m */,
+			);
+			name = BMDate;
+			sourceTree = "<group>";
+		};
+		BF5E9DAB23ED408A006DC5FD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E9DAC23ED444F006DC5FD /* LunarUtils.h */,
+				BF5E9DAD23ED444F006DC5FD /* LunarUtils.m */,
+				BF68C94A241777C0000769ED /* define.h */,
+				BF80ABBA23F3A12600AC5C3B /* define.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BF866D0A24055CE1004740C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D0B24055D1A004740C5 /* BMPageViewController.h */,
+				BF866D0C24055D1A004740C5 /* BMPageViewController.m */,
+				BF866D11240616FF004740C5 /* SolarViewController.h */,
+				BF866D12240616FF004740C5 /* SolarViewController.m */,
+				BF583155240FAD6000CAAA34 /* HorizontalPageViewController.h */,
+				BF583156240FAD6000CAAA34 /* HorizontalPageViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BF866D14240683E2004740C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D1524068408004740C5 /* DateModel.h */,
+				BF866D1624068408004740C5 /* DateModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF866D1C240CB091004740C5 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF866D1A240CB073004740C5 /* quotations.txt */,
+				BF59D13B240E108900A09D89 /* quotations.plist */,
+				BF59D13D240E120300A09D89 /* images.plist */,
+				BF866D1D240CC182004740C5 /* SingletonAPI.h */,
+				BF866D1E240CC182004740C5 /* SingletonAPI.m */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+		E429551D37F552AB263668C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF59D135240DFD1D00A09D89 /* SDWebImage.framework */,
+				BF59D12B240DFA9600A09D89 /* SDWebImage.framework */,
+				BF59D128240DFA2E00A09D89 /* SDWebImage.framework */,
+				564BB1FA79259DDA8E70BDFB /* Pods_CalculatorBM.framework */,
+				31233D29F1EB608B77737D63 /* Pods_CalculatorBM_CalculatorBMUITests.framework */,
+				9F584992DC5702E62D07440C /* Pods_CalculatorBMTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF5E9D6823EC30D7006DC5FD /* CalculatorBM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5E9D9823EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBM" */;
+			buildPhases = (
+				A534F8CDBFC1F07570A9C19A /* [CP] Check Pods Manifest.lock */,
+				BF5E9D6523EC30D7006DC5FD /* Sources */,
+				BF5E9D6623EC30D7006DC5FD /* Frameworks */,
+				BF5E9D6723EC30D7006DC5FD /* Resources */,
+				BF59D134240DFCEC00A09D89 /* Embed Frameworks */,
+				8D45ED10D8B6102A12E5C7F3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalculatorBM;
+			productName = CalculatorBM;
+			productReference = BF5E9D6923EC30D7006DC5FD /* CalendarBM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF5E9D8323EC30DB006DC5FD /* CalculatorBMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5E9D9B23EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBMTests" */;
+			buildPhases = (
+				360C12937C0475083CBB2AC7 /* [CP] Check Pods Manifest.lock */,
+				BF5E9D8023EC30DB006DC5FD /* Sources */,
+				BF5E9D8123EC30DB006DC5FD /* Frameworks */,
+				BF5E9D8223EC30DB006DC5FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5E9D8623EC30DB006DC5FD /* PBXTargetDependency */,
+			);
+			name = CalculatorBMTests;
+			productName = CalculatorBMTests;
+			productReference = BF5E9D8423EC30DB006DC5FD /* CalculatorBMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF5E9D8E23EC30DB006DC5FD /* CalculatorBMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5E9D9E23EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBMUITests" */;
+			buildPhases = (
+				DDFA404A8EC5ACBE05E605D2 /* [CP] Check Pods Manifest.lock */,
+				BF5E9D8B23EC30DB006DC5FD /* Sources */,
+				BF5E9D8C23EC30DB006DC5FD /* Frameworks */,
+				BF5E9D8D23EC30DB006DC5FD /* Resources */,
+				971A5141BC68CE21E9417475 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5E9D9123EC30DB006DC5FD /* PBXTargetDependency */,
+			);
+			name = CalculatorBMUITests;
+			productName = CalculatorBMUITests;
+			productReference = BF5E9D8F23EC30DB006DC5FD /* CalculatorBMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF5E9D6123EC30D7006DC5FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = vincent;
+				TargetAttributes = {
+					BF5E9D6823EC30D7006DC5FD = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					BF5E9D8323EC30DB006DC5FD = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = BF5E9D6823EC30D7006DC5FD;
+					};
+					BF5E9D8E23EC30DB006DC5FD = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = BF5E9D6823EC30D7006DC5FD;
+					};
+				};
+			};
+			buildConfigurationList = BF5E9D6423EC30D7006DC5FD /* Build configuration list for PBXProject "CalculatorBM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF5E9D6023EC30D7006DC5FD;
+			productRefGroup = BF5E9D6A23EC30D7006DC5FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF5E9D6823EC30D7006DC5FD /* CalculatorBM */,
+				BF5E9D8323EC30DB006DC5FD /* CalculatorBMTests */,
+				BF5E9D8E23EC30DB006DC5FD /* CalculatorBMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF5E9D6723EC30D7006DC5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7447ED240F4F7D0056541C /* quotations.plist in Resources */,
+				BF7447EE240F4F7D0056541C /* images.plist in Resources */,
+				BF5E9D7C23EC30DB006DC5FD /* LaunchScreen.storyboard in Resources */,
+				BF05D81423F3DB5D007ABE89 /* image_17.jpg in Resources */,
+				BF62ACCD241756CC00D63979 /* AppDelegate.m in Resources */,
+				BF5E9D7923EC30DB006DC5FD /* Assets.xcassets in Resources */,
+				BF5E9D7723EC30D7006DC5FD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8223EC30DB006DC5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8D23EC30DB006DC5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		360C12937C0475083CBB2AC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculatorBMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D45ED10D8B6102A12E5C7F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM/Pods-CalculatorBM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		971A5141BC68CE21E9417475 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM-CalculatorBMUITests/Pods-CalculatorBM-CalculatorBMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM-CalculatorBMUITests/Pods-CalculatorBM-CalculatorBMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculatorBM-CalculatorBMUITests/Pods-CalculatorBM-CalculatorBMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A534F8CDBFC1F07570A9C19A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculatorBM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDFA404A8EC5ACBE05E605D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculatorBM-CalculatorBMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF5E9D6523EC30D7006DC5FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF866D13240616FF004740C5 /* SolarViewController.m in Sources */,
+				BF5E9DA423EC3117006DC5FD /* BMYear.m in Sources */,
+				BF67B4A324174A9100FBA458 /* BMCalendarController.m in Sources */,
+				BF866D1F240CC182004740C5 /* SingletonAPI.m in Sources */,
+				BF583157240FAD6000CAAA34 /* HorizontalPageViewController.m in Sources */,
+				BF05D81123F3B7B0007ABE89 /* LunarCalendarView.m in Sources */,
+				BF5E9DAE23ED444F006DC5FD /* LunarUtils.m in Sources */,
+				BF5E9DA723ED3F63006DC5FD /* BMMonth.m in Sources */,
+				BF918E8023F51E2F00A08D27 /* BMDatePickerView.m in Sources */,
+				BF866D0D24055D1B004740C5 /* BMPageViewController.m in Sources */,
+				BF5E9D7F23EC30DB006DC5FD /* main.m in Sources */,
+				BF5E9DAA23ED3F71006DC5FD /* BMDay.m in Sources */,
+				BF8A039123F3FD7700C79D96 /* SolarCalendarView.m in Sources */,
+				BF5E9D7123EC30D7006DC5FD /* SceneDelegate.m in Sources */,
+				BF5818C423FFBA15007A5C8A /* BMDate+Utility.m in Sources */,
+				BF866D1724068408004740C5 /* DateModel.m in Sources */,
+				BF59D141240E1B0500A09D89 /* BMButtonLabel.m in Sources */,
+				BF80ABB923F3024800AC5C3B /* BMDate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8023EC30DB006DC5FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5E9D8923EC30DB006DC5FD /* CalculatorBMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5E9D8B23EC30DB006DC5FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5E9D9423EC30DB006DC5FD /* CalculatorBMUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF5E9D8623EC30DB006DC5FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5E9D6823EC30D7006DC5FD /* CalculatorBM */;
+			targetProxy = BF5E9D8523EC30DB006DC5FD /* PBXContainerItemProxy */;
+		};
+		BF5E9D9123EC30DB006DC5FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5E9D6823EC30D7006DC5FD /* CalculatorBM */;
+			targetProxy = BF5E9D9023EC30DB006DC5FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF5E9D7523EC30D7006DC5FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5E9D7623EC30D7006DC5FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF5E9D7A23EC30DB006DC5FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5E9D7B23EC30DB006DC5FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF5E9D9623EC30DB006DC5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BF5E9D9723EC30DB006DC5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF5E9D9923EC30DB006DC5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F99A4A4B39D10CB3CAE1497 /* Pods-CalculatorBM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalendarBM;
+				PRODUCT_NAME = CalendarBM;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF5E9D9A23EC30DB006DC5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DEB6B830F5954C3E7FC6C1D /* Pods-CalculatorBM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalendarBM;
+				PRODUCT_NAME = CalendarBM;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF5E9D9C23EC30DB006DC5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D61B2043DE81966C2D85D9B3 /* Pods-CalculatorBMTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalculatorBMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalculatorBM.app/CalculatorBM";
+			};
+			name = Debug;
+		};
+		BF5E9D9D23EC30DB006DC5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2993EAA2B97E64313D6A79EC /* Pods-CalculatorBMTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalculatorBMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalculatorBM.app/CalculatorBM";
+			};
+			name = Release;
+		};
+		BF5E9D9F23EC30DB006DC5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE63DF3881A157A112D6E87 /* Pods-CalculatorBM-CalculatorBMUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalculatorBMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CalculatorBM;
+			};
+			name = Debug;
+		};
+		BF5E9DA023EC30DB006DC5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46DECD8266BC7A22BEA79DD2 /* Pods-CalculatorBM-CalculatorBMUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = CalculatorBMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZBM.CalculatorBMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CalculatorBM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF5E9D6423EC30D7006DC5FD /* Build configuration list for PBXProject "CalculatorBM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5E9D9623EC30DB006DC5FD /* Debug */,
+				BF5E9D9723EC30DB006DC5FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5E9D9823EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5E9D9923EC30DB006DC5FD /* Debug */,
+				BF5E9D9A23EC30DB006DC5FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5E9D9B23EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5E9D9C23EC30DB006DC5FD /* Debug */,
+				BF5E9D9D23EC30DB006DC5FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5E9D9E23EC30DB006DC5FD /* Build configuration list for PBXNativeTarget "CalculatorBMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5E9D9F23EC30DB006DC5FD /* Debug */,
+				BF5E9DA023EC30DB006DC5FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF5E9D6123EC30D7006DC5FD /* Project object */;
+}

@@ -20,7 +20,7 @@
 
 
 @implementation BMPageViewController
-
+ 
 
 
 - (void)viewDidLoad {
@@ -33,8 +33,8 @@
     // lấy những thông tin default.
     if (![self.BMPaingDataSource respondsToSelector:@selector(defaultPage)]) {
         return;
+        
     }
-    
     self.currentIndex = [self.BMPaingDataSource defaultPage];
     self.viewControllerCount = [self.BMPaingDataSource numberOfViewControllers:self];
     

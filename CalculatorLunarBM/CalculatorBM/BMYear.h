@@ -29,10 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
  
 + (BOOL)isLeapSolarYear:(NSInteger)solarYear;
 + (BOOL)isLeapLunarYear:(NSInteger)lYear;
-- (NSInteger)getLeapLunarMonth;
-// các hàm kiểm tra năm hiện tại có nhuận hay không. 
+// các hàm kiểm tra năm hiện tại có nhuận hay không.
 -(BOOL)isLeapSolarYear;
 -(BOOL)isLeapLunarYear;
+// hàm lấy tháng nhuận trong năm âm của instance hiện tại
+- (NSInteger)getLeapLunarMonth;
+
 @end
 
 NS_ASSUME_NONNULL_END
