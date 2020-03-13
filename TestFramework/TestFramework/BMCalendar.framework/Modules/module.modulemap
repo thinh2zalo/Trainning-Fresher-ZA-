@@ -1,6 +1,0 @@
-framework module BMCalendar {
-  umbrella header "BMCalendar.h"
-
-  export *
-  module * { export * }
-}

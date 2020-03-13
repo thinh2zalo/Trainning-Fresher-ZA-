@@ -7,7 +7,7 @@
 //
 
 #import "SingletonAPI.h"
-#import "define.h"
+#import "define2.h"
 @interface SingletonAPI()
 @property (nonatomic, strong)NSArray *quotationArr;
 @property (nonatomic, strong)NSArray *imageArr;
@@ -29,6 +29,9 @@
 }
 
 -(NSURL *)getURLImage:(NSInteger)jdn {
+    if (self.getImageArr.count == 0) {
+        return nil;
+    }
     NSInteger index = jdn % self.getImageArr.count;
     NSString * strURL = self.getImageArr[index];
     return [NSURL URLWithString:strURL];
@@ -38,15 +41,18 @@
 
 - (NSArray *)getQuotationArr {
     if (!_quotationArr) {
-        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_QUOTATIONS ofType:TYPEFILE_PLIST]];
-      _quotationArr = arr;
+//        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_QUOTATIONS ofType:TYPEFILE_PLIST]];
+  NSArray * arr = @[@"Hạnh phúc lớn nhất ở đời là có thể tin chắc rằng ta được yêu thương - Yêu vì chính bản thân ta, hay đúng hơn, yêu bất kể bản thân ta", @"Yêu thương mang lại nhiều lạc thú hơn là được yêu"];      _quotationArr = arr;
  }
     return _quotationArr;
 }
 
 -(NSArray *)getImageArr {
     if (!_imageArr) {
-        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_URLIMG ofType:TYPEFILE_PLIST]];
+//        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_URLIMG ofType:TYPEFILE_PLIST]];
+        NSArray * arr = @[@"https://i.imgur.com/FLL3rV4.jpg", @"https://i.imgur.com/WWclFV1.jpg"];
+
+      
         _imageArr = arr;
         }
     return _imageArr;
