@@ -13,7 +13,6 @@
 #import "BMDate+Utility.h"
 
 
-
 @interface BMDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
 @property (nonatomic, strong) UIPickerView * datePickerView;
 @property (nonatomic, strong) UIView * alertView;

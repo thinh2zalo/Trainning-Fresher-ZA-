@@ -1,0 +1,1086 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04B68428921677E086A619EFCA04B296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0732637E2D54431D0F2680D9610CD78F /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7A3903E0ED813C2DD69ECACE4472D /* KeyboardLayoutConstraint.swift */; };
+		0BA90CA2DDA9471E59A1F48AFBDDB3ED /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBF59C877AE907274C435F96526C56 /* LoadingView.xib */; };
+		1045F5952C216156A75B376D1D604298 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59155B013CA5545016AEB850AC0F6DF3 /* SpringButton.swift */; };
+		1500B78FC44AAED561BD90AF696705F0 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BF10EE9B58788DEAE487A45562B8E /* SoundPlayer.swift */; };
+		1D70037A0B3E4A3DDAAEE179B6ABB071 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803553BBC6F2D069C0D5DC6A87362939 /* DesignableView.swift */; };
+		22FD8B7F37E30CB40E1EDA8339F802D8 /* Pods-QuanSuTestTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7883DA9F6A7A5C23CEE53AFB4D8C2C5A /* Pods-QuanSuTestTests-dummy.m */; };
+		29B7B49A4477F2FE45143E568C022B23 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64550F7C5005118BB281E5E0C627DC4 /* Misc.swift */; };
+		29CE9DBD65A494DB313F2991C90787A0 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAEF5E4EBEAE83B5B47D0B0C9C03734 /* DesignableImageView.swift */; };
+		2B12DF1E24A75E8F8EC5556B37FA1F28 /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C871012F7C7CCEFB7C96CC5323FE7E82 /* Spring-dummy.m */; };
+		352C340763B400F31C26159F463D4B64 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D75B0E0566E457365199C5C419E2D /* TransitionZoom.swift */; };
+		3E1CED50F44E5D491DCD5003372DBF81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21788935378637BC203AAF7CC244FC0F /* Images.xcassets */; };
+		4641B14031D2FF6603A1AB1AE8A81872 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEAF55D07A7275A9AADE3C5AEB30B1B /* AsyncImageView.swift */; };
+		46E1E5F755E08FAC7FC8BE0BEE146465 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD2FEDAAD6F08147C6C85F534B4593 /* DesignableLabel.swift */; };
+		50F85BD08590CA9B3A7A04C5E94C9993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		55765FA3526C83F9EAC8A71283051143 /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A6B028B935425C7FE933AFAED4BEB28 /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5696C1E314049FB059812167714E7C4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5E7FB82A077840DF34C3953BC806F8F4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA0DC545B0D0A39E5981C99D204270 /* TransitionManager.swift */; };
+		5FD7F44CF9CD3B08A62E4E6B6BB68030 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC357AA69B9851E3861CCECEF3F54A5F /* SpringLabel.swift */; };
+		693B21EB527D69A0A0F656E57D49A590 /* Pods-QuanSuTestTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BBB4DC27939B1B71C55CEA14F0F1645B /* Pods-QuanSuTestTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F55006D97A8FD0D73193E7AD7E9D6EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		711025B8E5C65F47055B8BDE2D7143B2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10178D16B8AB8147C4A3E2F06CAD697 /* UnwindSegue.swift */; };
+		796621B5A6EBDE53FA99F5555B0F59D7 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CD4D7B364967044914BC42EAF02284 /* SpringTextView.swift */; };
+		7CEA02BEDE5F0BF8FD0A0290B5F5ED9C /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC91BC6245734C2FDE8F0B835EE33D4 /* DesignableTextView.swift */; };
+		9140B6366B10B74C366EBF342680579E /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88036A170F05E8A7ED0EB84FA60E0F /* SpringImageView.swift */; };
+		93591D9AD5D74959575DAA966898CEEE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4EC7CAC970906283C7F99723D2A15 /* BlurView.swift */; };
+		948E96C110F748637813064B3C408D30 /* Pods-QuanSuTest-QuanSuTestUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E4F047BCC7069CF676BFCDBC6E2E /* Pods-QuanSuTest-QuanSuTestUITests-dummy.m */; };
+		A655FA3A985F470092D34931CAA9B1D3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB73CB699C72F99F3F9A3177AD167FF /* DesignableTextField.swift */; };
+		A6CED5C2055858A15DA2A89283BE0946 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5927F300D7F9A39C34641DFF1E7AF393 /* SpringTextField.swift */; };
+		AE1ECB607BC94D1EDE85FBA5560B74A7 /* Pods-QuanSuTest-QuanSuTestUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4057E8E274F4CF2CDC63D91F8AF4A59 /* Pods-QuanSuTest-QuanSuTestUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C027055833A0B6578D37DFBBF2AED005 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF5A6AAE1D921795D39A1694FC416 /* SpringView.swift */; };
+		C70BBAB83307287049F532A4EB9CCEF1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE72D53A5259D1B29B66B60CD8BBE5C5 /* ImageLoader.swift */; };
+		CC1B5616EE6E850FD3E4A53DF41460D0 /* Pods-QuanSuTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AACEE4FC33FF970136E60543937C48A9 /* Pods-QuanSuTest-dummy.m */; };
+		CC60AF46BE0EB20F50602AD2EDFE953F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C7800D37AAE0C0E4C61ADFB4A28FB /* DesignableButton.swift */; };
+		CFA425E34FFEF752EA7CB11A55F08A9E /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EA68049A186DD4CF260505F579E /* AutoTextView.swift */; };
+		D6F9651ADAC53B92DCAAB44816333C03 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854438F698DC0DE8F7084B1B32DD93E /* AsyncButton.swift */; };
+		E5854E6A53A8B1ABB1312522029212C6 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B7D67FE6CDDEB38E84750AF275239B /* DesignableTabBarController.swift */; };
+		E61861448B6C2D9EB4610DF5532BA204 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33367A3EE7B6B041F781265CEAB1644B /* LoadingView.swift */; };
+		EA658ED3170B393E01430E31E8482A8C /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF2D6CDEB2FB4DF88734D53A0425B6 /* SpringAnimation.swift */; };
+		F44E1B920D6638069D7450CA3773C0FD /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386AE24CF2C25BCB9F8A5103C44A4A6 /* Spring.swift */; };
+		FACB67CF39B391B10E964C8D11008BC0 /* Pods-QuanSuTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C05543C7FC8CEAD16720A1236C4F4E /* Pods-QuanSuTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31D466FDACB1792204219AB8918CC3D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A062DD8462AB228A88272FF6B09535E9;
+			remoteInfo = Spring;
+		};
+		A0DF00F28D2ABAB8527D1EF0A4401AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 059D7A7617DBBC666FDF8FFC47CD63FD;
+			remoteInfo = "Pods-QuanSuTest";
+		};
+		B4618C5B8414EE05BEBE01E6CEFB4A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A062DD8462AB228A88272FF6B09535E9;
+			remoteInfo = Spring;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07FBF59C877AE907274C435F96526C56 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
+		14E4DB32396B399CC3CA8125BF665E02 /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		174ABE655744820FCD1E04CF83E4F432 /* Pods-QuanSuTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QuanSuTest-frameworks.sh"; sourceTree = "<group>"; };
+		1A6B028B935425C7FE933AFAED4BEB28 /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
+		1DC91BC6245734C2FDE8F0B835EE33D4 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
+		215B37A96E5A4EFDEEC780893262D32D /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		21788935378637BC203AAF7CC244FC0F /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		23B5E4F047BCC7069CF676BFCDBC6E2E /* Pods-QuanSuTest-QuanSuTestUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QuanSuTest-QuanSuTestUITests-dummy.m"; sourceTree = "<group>"; };
+		26651B916344C858517AE44697854023 /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2854438F698DC0DE8F7084B1B32DD93E /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
+		2C88036A170F05E8A7ED0EB84FA60E0F /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
+		2DD9F7C1ADFBD463DA9FFC825604D270 /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Spring.modulemap; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		33367A3EE7B6B041F781265CEAB1644B /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		3386AE24CF2C25BCB9F8A5103C44A4A6 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Spring.framework; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F4EC7CAC970906283C7F99723D2A15 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		492BF10EE9B58788DEAE487A45562B8E /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		49FD278D58BE6632804573F9003174AA /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		4AEAF55D07A7275A9AADE3C5AEB30B1B /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		4E9BF5A6AAE1D921795D39A1694FC416 /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
+		5684E21F33E4A9D6CAB2DB3D98F203FC /* Pods-QuanSuTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59155B013CA5545016AEB850AC0F6DF3 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
+		5927F300D7F9A39C34641DFF1E7AF393 /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		5DB27F3B56DEC05FC808DD8F3C459325 /* Pods-QuanSuTest-QuanSuTestUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QuanSuTest-QuanSuTestUITests-frameworks.sh"; sourceTree = "<group>"; };
+		60CD4D7B364967044914BC42EAF02284 /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		60FB07EC9D1BEAC2B5DE4ABC385918A7 /* Pods-QuanSuTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTest.release.xcconfig"; sourceTree = "<group>"; };
+		618436350E3CDB64DA7082E2B3DA8BE7 /* Pods-QuanSuTestTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QuanSuTestTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		65A5D1AC6DF555523E44DCC4E331A66F /* Pods-QuanSuTest-QuanSuTestUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTest-QuanSuTestUITests-Info.plist"; sourceTree = "<group>"; };
+		6AB73CB699C72F99F3F9A3177AD167FF /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		76A7A3903E0ED813C2DD69ECACE4472D /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		76FA0DC545B0D0A39E5981C99D204270 /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		7883DA9F6A7A5C23CEE53AFB4D8C2C5A /* Pods-QuanSuTestTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QuanSuTestTests-dummy.m"; sourceTree = "<group>"; };
+		79CE2EA68049A186DD4CF260505F579E /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
+		7B48191808C0AD0C29F05F3F235BDB9C /* Pods_QuanSuTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QuanSuTestTests.framework; path = "Pods-QuanSuTestTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		803553BBC6F2D069C0D5DC6A87362939 /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		82F1C357DCE457302BB0EF3F9B490246 /* Pods-QuanSuTestTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTestTests-Info.plist"; sourceTree = "<group>"; };
+		88CAAB336CB951F4D50F9B80FE8A06DA /* Pods-QuanSuTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTest-acknowledgements.plist"; sourceTree = "<group>"; };
+		943C7800D37AAE0C0E4C61ADFB4A28FB /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
+		94BD2FEDAAD6F08147C6C85F534B4593 /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
+		9ADD36B8143EE2A9A312002E47FEB8CB /* Spring-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Spring-Info.plist"; sourceTree = "<group>"; };
+		9B0D55FF7C1D309076393C846E76CBF2 /* Pods-QuanSuTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTest-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0518883BFB29EA17B8F4E283C89DE34 /* Pods-QuanSuTest-QuanSuTestUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QuanSuTest-QuanSuTestUITests.modulemap"; sourceTree = "<group>"; };
+		A2A4D2986B7E5B64F07A36B911DAE3BD /* Pods-QuanSuTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QuanSuTest-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A4DF2D6CDEB2FB4DF88734D53A0425B6 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		A64550F7C5005118BB281E5E0C627DC4 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		A8A6D8BE4AA68EEEB0D1DD5DFBE1213A /* Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A9C05543C7FC8CEAD16720A1236C4F4E /* Pods-QuanSuTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QuanSuTest-umbrella.h"; sourceTree = "<group>"; };
+		AACEE4FC33FF970136E60543937C48A9 /* Pods-QuanSuTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QuanSuTest-dummy.m"; sourceTree = "<group>"; };
+		ABE4CB644AD8986F281D5FB7DBF13B51 /* Pods-QuanSuTestTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTestTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B10178D16B8AB8147C4A3E2F06CAD697 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		BAAC756157CD207DEBED51CC0F3EC8FC /* Pods-QuanSuTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		BBB4DC27939B1B71C55CEA14F0F1645B /* Pods-QuanSuTestTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QuanSuTestTests-umbrella.h"; sourceTree = "<group>"; };
+		C016F96E23CA016E2DB346696FE5E601 /* Pods_QuanSuTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QuanSuTest.framework; path = "Pods-QuanSuTest.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31D75B0E0566E457365199C5C419E2D /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
+		C4057E8E274F4CF2CDC63D91F8AF4A59 /* Pods-QuanSuTest-QuanSuTestUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QuanSuTest-QuanSuTestUITests-umbrella.h"; sourceTree = "<group>"; };
+		C871012F7C7CCEFB7C96CC5323FE7E82 /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
+		D5EEB3A9C78A0D533CF8D6C9DB072C26 /* Pods_QuanSuTest_QuanSuTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QuanSuTest_QuanSuTestUITests.framework; path = "Pods-QuanSuTest-QuanSuTestUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E463FA3E0238141F62E3430E470E06B5 /* Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E9C186F80767C3DF915F9FB383E7D309 /* Pods-QuanSuTestTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QuanSuTestTests.modulemap"; sourceTree = "<group>"; };
+		EC357AA69B9851E3861CCECEF3F54A5F /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		EEAEF5E4EBEAE83B5B47D0B0C9C03734 /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		F224CE8573DF628D286AE5323DA4C18E /* Pods-QuanSuTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QuanSuTest.debug.xcconfig"; sourceTree = "<group>"; };
+		F330758D005F14FE6040664D0799ADCA /* Pods-QuanSuTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QuanSuTest.modulemap"; sourceTree = "<group>"; };
+		F4B7D67FE6CDDEB38E84750AF275239B /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
+		FE72D53A5259D1B29B66B60CD8BBE5C5 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		645749F37CA16172B5B9F4FAD42F27C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F85BD08590CA9B3A7A04C5E94C9993 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E4A6EC6FF36609082A2BA62DF67B227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5696C1E314049FB059812167714E7C4A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB838E23577CAE3F57FD0C57D8B2D8FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B68428921677E086A619EFCA04B296 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7B3F4B8B6D3183C0F63DF69897AD67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F55006D97A8FD0D73193E7AD7E9D6EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15F41E25565CAFC50F77327B9ADC0459 /* Pods-QuanSuTest-QuanSuTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A0518883BFB29EA17B8F4E283C89DE34 /* Pods-QuanSuTest-QuanSuTestUITests.modulemap */,
+				A8A6D8BE4AA68EEEB0D1DD5DFBE1213A /* Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.markdown */,
+				E463FA3E0238141F62E3430E470E06B5 /* Pods-QuanSuTest-QuanSuTestUITests-acknowledgements.plist */,
+				23B5E4F047BCC7069CF676BFCDBC6E2E /* Pods-QuanSuTest-QuanSuTestUITests-dummy.m */,
+				5DB27F3B56DEC05FC808DD8F3C459325 /* Pods-QuanSuTest-QuanSuTestUITests-frameworks.sh */,
+				65A5D1AC6DF555523E44DCC4E331A66F /* Pods-QuanSuTest-QuanSuTestUITests-Info.plist */,
+				C4057E8E274F4CF2CDC63D91F8AF4A59 /* Pods-QuanSuTest-QuanSuTestUITests-umbrella.h */,
+				26651B916344C858517AE44697854023 /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */,
+				215B37A96E5A4EFDEEC780893262D32D /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */,
+			);
+			name = "Pods-QuanSuTest-QuanSuTestUITests";
+			path = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests";
+			sourceTree = "<group>";
+		};
+		2F6182422A5CE073DC020DACD58D1D2C /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				2854438F698DC0DE8F7084B1B32DD93E /* AsyncButton.swift */,
+				4AEAF55D07A7275A9AADE3C5AEB30B1B /* AsyncImageView.swift */,
+				79CE2EA68049A186DD4CF260505F579E /* AutoTextView.swift */,
+				48F4EC7CAC970906283C7F99723D2A15 /* BlurView.swift */,
+				943C7800D37AAE0C0E4C61ADFB4A28FB /* DesignableButton.swift */,
+				EEAEF5E4EBEAE83B5B47D0B0C9C03734 /* DesignableImageView.swift */,
+				94BD2FEDAAD6F08147C6C85F534B4593 /* DesignableLabel.swift */,
+				F4B7D67FE6CDDEB38E84750AF275239B /* DesignableTabBarController.swift */,
+				6AB73CB699C72F99F3F9A3177AD167FF /* DesignableTextField.swift */,
+				1DC91BC6245734C2FDE8F0B835EE33D4 /* DesignableTextView.swift */,
+				803553BBC6F2D069C0D5DC6A87362939 /* DesignableView.swift */,
+				FE72D53A5259D1B29B66B60CD8BBE5C5 /* ImageLoader.swift */,
+				76A7A3903E0ED813C2DD69ECACE4472D /* KeyboardLayoutConstraint.swift */,
+				33367A3EE7B6B041F781265CEAB1644B /* LoadingView.swift */,
+				A64550F7C5005118BB281E5E0C627DC4 /* Misc.swift */,
+				492BF10EE9B58788DEAE487A45562B8E /* SoundPlayer.swift */,
+				3386AE24CF2C25BCB9F8A5103C44A4A6 /* Spring.swift */,
+				A4DF2D6CDEB2FB4DF88734D53A0425B6 /* SpringAnimation.swift */,
+				59155B013CA5545016AEB850AC0F6DF3 /* SpringButton.swift */,
+				2C88036A170F05E8A7ED0EB84FA60E0F /* SpringImageView.swift */,
+				EC357AA69B9851E3861CCECEF3F54A5F /* SpringLabel.swift */,
+				5927F300D7F9A39C34641DFF1E7AF393 /* SpringTextField.swift */,
+				60CD4D7B364967044914BC42EAF02284 /* SpringTextView.swift */,
+				4E9BF5A6AAE1D921795D39A1694FC416 /* SpringView.swift */,
+				76FA0DC545B0D0A39E5981C99D204270 /* TransitionManager.swift */,
+				C31D75B0E0566E457365199C5C419E2D /* TransitionZoom.swift */,
+				B10178D16B8AB8147C4A3E2F06CAD697 /* UnwindSegue.swift */,
+				3BFA3F906B24CE63464CB1AE567BAD5E /* Resources */,
+				A2ABF5F7B975845F9E411C96C06FF6CB /* Support Files */,
+			);
+			name = Spring;
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		3BFA3F906B24CE63464CB1AE567BAD5E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21788935378637BC203AAF7CC244FC0F /* Images.xcassets */,
+				07FBF59C877AE907274C435F96526C56 /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5587C67570795B0CAF6358A423A170E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F6182422A5CE073DC020DACD58D1D2C /* Spring */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2ABF5F7B975845F9E411C96C06FF6CB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD9F7C1ADFBD463DA9FFC825604D270 /* Spring.modulemap */,
+				49FD278D58BE6632804573F9003174AA /* Spring.xcconfig */,
+				C871012F7C7CCEFB7C96CC5323FE7E82 /* Spring-dummy.m */,
+				9ADD36B8143EE2A9A312002E47FEB8CB /* Spring-Info.plist */,
+				14E4DB32396B399CC3CA8125BF665E02 /* Spring-prefix.pch */,
+				1A6B028B935425C7FE933AFAED4BEB28 /* Spring-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
+		A9E1A8C926D0AA81E0BF313587966559 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C016F96E23CA016E2DB346696FE5E601 /* Pods_QuanSuTest.framework */,
+				D5EEB3A9C78A0D533CF8D6C9DB072C26 /* Pods_QuanSuTest_QuanSuTestUITests.framework */,
+				7B48191808C0AD0C29F05F3F235BDB9C /* Pods_QuanSuTestTests.framework */,
+				3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF57938653A88949F044ADD1D4D0474F /* Pods-QuanSuTest */ = {
+			isa = PBXGroup;
+			children = (
+				F330758D005F14FE6040664D0799ADCA /* Pods-QuanSuTest.modulemap */,
+				A2A4D2986B7E5B64F07A36B911DAE3BD /* Pods-QuanSuTest-acknowledgements.markdown */,
+				88CAAB336CB951F4D50F9B80FE8A06DA /* Pods-QuanSuTest-acknowledgements.plist */,
+				AACEE4FC33FF970136E60543937C48A9 /* Pods-QuanSuTest-dummy.m */,
+				174ABE655744820FCD1E04CF83E4F432 /* Pods-QuanSuTest-frameworks.sh */,
+				9B0D55FF7C1D309076393C846E76CBF2 /* Pods-QuanSuTest-Info.plist */,
+				A9C05543C7FC8CEAD16720A1236C4F4E /* Pods-QuanSuTest-umbrella.h */,
+				F224CE8573DF628D286AE5323DA4C18E /* Pods-QuanSuTest.debug.xcconfig */,
+				60FB07EC9D1BEAC2B5DE4ABC385918A7 /* Pods-QuanSuTest.release.xcconfig */,
+			);
+			name = "Pods-QuanSuTest";
+			path = "Target Support Files/Pods-QuanSuTest";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				5587C67570795B0CAF6358A423A170E3 /* Pods */,
+				A9E1A8C926D0AA81E0BF313587966559 /* Products */,
+				D72353F1268D328DD801656590B29CA0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CF4D6108E1F14ED76CDC0F687F5DEB83 /* Pods-QuanSuTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9C186F80767C3DF915F9FB383E7D309 /* Pods-QuanSuTestTests.modulemap */,
+				618436350E3CDB64DA7082E2B3DA8BE7 /* Pods-QuanSuTestTests-acknowledgements.markdown */,
+				ABE4CB644AD8986F281D5FB7DBF13B51 /* Pods-QuanSuTestTests-acknowledgements.plist */,
+				7883DA9F6A7A5C23CEE53AFB4D8C2C5A /* Pods-QuanSuTestTests-dummy.m */,
+				82F1C357DCE457302BB0EF3F9B490246 /* Pods-QuanSuTestTests-Info.plist */,
+				BBB4DC27939B1B71C55CEA14F0F1645B /* Pods-QuanSuTestTests-umbrella.h */,
+				5684E21F33E4A9D6CAB2DB3D98F203FC /* Pods-QuanSuTestTests.debug.xcconfig */,
+				BAAC756157CD207DEBED51CC0F3EC8FC /* Pods-QuanSuTestTests.release.xcconfig */,
+			);
+			name = "Pods-QuanSuTestTests";
+			path = "Target Support Files/Pods-QuanSuTestTests";
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D72353F1268D328DD801656590B29CA0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF57938653A88949F044ADD1D4D0474F /* Pods-QuanSuTest */,
+				15F41E25565CAFC50F77327B9ADC0459 /* Pods-QuanSuTest-QuanSuTestUITests */,
+				CF4D6108E1F14ED76CDC0F687F5DEB83 /* Pods-QuanSuTestTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		806E360C49CAC753C1AB66CA39D03860 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE1ECB607BC94D1EDE85FBA5560B74A7 /* Pods-QuanSuTest-QuanSuTestUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EF95DD5DAF13E1FB94EF0A3D376383 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				693B21EB527D69A0A0F656E57D49A590 /* Pods-QuanSuTestTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D72C6FA9C18EBBB5947BA00EB5B3FC3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55765FA3526C83F9EAC8A71283051143 /* Spring-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF237D821E386B9E0D3C0D6AABBFA12E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACB67CF39B391B10E964C8D11008BC0 /* Pods-QuanSuTest-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		059D7A7617DBBC666FDF8FFC47CD63FD /* Pods-QuanSuTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFB2C59308A46F6DEEC368BB5F770E68 /* Build configuration list for PBXNativeTarget "Pods-QuanSuTest" */;
+			buildPhases = (
+				EF237D821E386B9E0D3C0D6AABBFA12E /* Headers */,
+				A05D8B96E846ED5059F93D949B8A5014 /* Sources */,
+				C7B3F4B8B6D3183C0F63DF69897AD67B /* Frameworks */,
+				DB7EEE9EBAC7059490F5BC67BD987E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18F04FF87388299F77677E0E7DCFEC52 /* PBXTargetDependency */,
+			);
+			name = "Pods-QuanSuTest";
+			productName = "Pods-QuanSuTest";
+			productReference = C016F96E23CA016E2DB346696FE5E601 /* Pods_QuanSuTest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7CA41263A1AB3799BF67CE66820D8FBE /* Pods-QuanSuTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF1ABB74DFF799A0F06375444CC03600 /* Build configuration list for PBXNativeTarget "Pods-QuanSuTestTests" */;
+			buildPhases = (
+				C4EF95DD5DAF13E1FB94EF0A3D376383 /* Headers */,
+				0E6E5126C03B8FAC1C426F2A66FC6774 /* Sources */,
+				8E4A6EC6FF36609082A2BA62DF67B227 /* Frameworks */,
+				E8D7890FE04EAF8F187E4DC0C1ACD928 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44DF6AB8B8AE78F57AED923DFD6A6D6B /* PBXTargetDependency */,
+			);
+			name = "Pods-QuanSuTestTests";
+			productName = "Pods-QuanSuTestTests";
+			productReference = 7B48191808C0AD0C29F05F3F235BDB9C /* Pods_QuanSuTestTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A062DD8462AB228A88272FF6B09535E9 /* Spring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D09528C50F366F4ABEFEFEEC9A68896E /* Build configuration list for PBXNativeTarget "Spring" */;
+			buildPhases = (
+				D72C6FA9C18EBBB5947BA00EB5B3FC3B /* Headers */,
+				5C602B0ABD9406EF6EAE9A1F6B42925A /* Sources */,
+				645749F37CA16172B5B9F4FAD42F27C5 /* Frameworks */,
+				6C948503E5CFDEA0EC74C74E3CA45213 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spring;
+			productName = Spring;
+			productReference = 3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD2EB81C3A62B66A4ECC591BC3CD4F17 /* Pods-QuanSuTest-QuanSuTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D681523845AFBBDD8F1325A9BDEA87F /* Build configuration list for PBXNativeTarget "Pods-QuanSuTest-QuanSuTestUITests" */;
+			buildPhases = (
+				806E360C49CAC753C1AB66CA39D03860 /* Headers */,
+				8D79D618AE7852EF251D525CFE31B74C /* Sources */,
+				BB838E23577CAE3F57FD0C57D8B2D8FA /* Frameworks */,
+				7B879F67C4B4CB4AB8EF8E323565EE8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B3284E27B94184023330461A7A65C7C /* PBXTargetDependency */,
+			);
+			name = "Pods-QuanSuTest-QuanSuTestUITests";
+			productName = "Pods-QuanSuTest-QuanSuTestUITests";
+			productReference = D5EEB3A9C78A0D533CF8D6C9DB072C26 /* Pods_QuanSuTest_QuanSuTestUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A9E1A8C926D0AA81E0BF313587966559 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059D7A7617DBBC666FDF8FFC47CD63FD /* Pods-QuanSuTest */,
+				DD2EB81C3A62B66A4ECC591BC3CD4F17 /* Pods-QuanSuTest-QuanSuTestUITests */,
+				7CA41263A1AB3799BF67CE66820D8FBE /* Pods-QuanSuTestTests */,
+				A062DD8462AB228A88272FF6B09535E9 /* Spring */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C948503E5CFDEA0EC74C74E3CA45213 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E1CED50F44E5D491DCD5003372DBF81 /* Images.xcassets in Resources */,
+				0BA90CA2DDA9471E59A1F48AFBDDB3ED /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B879F67C4B4CB4AB8EF8E323565EE8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7EEE9EBAC7059490F5BC67BD987E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D7890FE04EAF8F187E4DC0C1ACD928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E6E5126C03B8FAC1C426F2A66FC6774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FD8B7F37E30CB40E1EDA8339F802D8 /* Pods-QuanSuTestTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C602B0ABD9406EF6EAE9A1F6B42925A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6F9651ADAC53B92DCAAB44816333C03 /* AsyncButton.swift in Sources */,
+				4641B14031D2FF6603A1AB1AE8A81872 /* AsyncImageView.swift in Sources */,
+				CFA425E34FFEF752EA7CB11A55F08A9E /* AutoTextView.swift in Sources */,
+				93591D9AD5D74959575DAA966898CEEE /* BlurView.swift in Sources */,
+				CC60AF46BE0EB20F50602AD2EDFE953F /* DesignableButton.swift in Sources */,
+				29CE9DBD65A494DB313F2991C90787A0 /* DesignableImageView.swift in Sources */,
+				46E1E5F755E08FAC7FC8BE0BEE146465 /* DesignableLabel.swift in Sources */,
+				E5854E6A53A8B1ABB1312522029212C6 /* DesignableTabBarController.swift in Sources */,
+				A655FA3A985F470092D34931CAA9B1D3 /* DesignableTextField.swift in Sources */,
+				7CEA02BEDE5F0BF8FD0A0290B5F5ED9C /* DesignableTextView.swift in Sources */,
+				1D70037A0B3E4A3DDAAEE179B6ABB071 /* DesignableView.swift in Sources */,
+				C70BBAB83307287049F532A4EB9CCEF1 /* ImageLoader.swift in Sources */,
+				0732637E2D54431D0F2680D9610CD78F /* KeyboardLayoutConstraint.swift in Sources */,
+				E61861448B6C2D9EB4610DF5532BA204 /* LoadingView.swift in Sources */,
+				29B7B49A4477F2FE45143E568C022B23 /* Misc.swift in Sources */,
+				1500B78FC44AAED561BD90AF696705F0 /* SoundPlayer.swift in Sources */,
+				2B12DF1E24A75E8F8EC5556B37FA1F28 /* Spring-dummy.m in Sources */,
+				F44E1B920D6638069D7450CA3773C0FD /* Spring.swift in Sources */,
+				EA658ED3170B393E01430E31E8482A8C /* SpringAnimation.swift in Sources */,
+				1045F5952C216156A75B376D1D604298 /* SpringButton.swift in Sources */,
+				9140B6366B10B74C366EBF342680579E /* SpringImageView.swift in Sources */,
+				5FD7F44CF9CD3B08A62E4E6B6BB68030 /* SpringLabel.swift in Sources */,
+				A6CED5C2055858A15DA2A89283BE0946 /* SpringTextField.swift in Sources */,
+				796621B5A6EBDE53FA99F5555B0F59D7 /* SpringTextView.swift in Sources */,
+				C027055833A0B6578D37DFBBF2AED005 /* SpringView.swift in Sources */,
+				5E7FB82A077840DF34C3953BC806F8F4 /* TransitionManager.swift in Sources */,
+				352C340763B400F31C26159F463D4B64 /* TransitionZoom.swift in Sources */,
+				711025B8E5C65F47055B8BDE2D7143B2 /* UnwindSegue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D79D618AE7852EF251D525CFE31B74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948E96C110F748637813064B3C408D30 /* Pods-QuanSuTest-QuanSuTestUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A05D8B96E846ED5059F93D949B8A5014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1B5616EE6E850FD3E4A53DF41460D0 /* Pods-QuanSuTest-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18F04FF87388299F77677E0E7DCFEC52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = A062DD8462AB228A88272FF6B09535E9 /* Spring */;
+			targetProxy = B4618C5B8414EE05BEBE01E6CEFB4A84 /* PBXContainerItemProxy */;
+		};
+		44DF6AB8B8AE78F57AED923DFD6A6D6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-QuanSuTest";
+			target = 059D7A7617DBBC666FDF8FFC47CD63FD /* Pods-QuanSuTest */;
+			targetProxy = A0DF00F28D2ABAB8527D1EF0A4401AF0 /* PBXContainerItemProxy */;
+		};
+		6B3284E27B94184023330461A7A65C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = A062DD8462AB228A88272FF6B09535E9 /* Spring */;
+			targetProxy = 31D466FDACB1792204219AB8918CC3D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AE6175DF85FC28557ED075D3B35E16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAAC756157CD207DEBED51CC0F3EC8FC /* Pods-QuanSuTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		21DFE776411506EE545B4CAC5D1FF664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5684E21F33E4A9D6CAB2DB3D98F203FC /* Pods-QuanSuTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2919441A0E5D0F911FA961E5DDC3E583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F224CE8573DF628D286AE5323DA4C18E /* Pods-QuanSuTest.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		914F455A79CDE07CE7727D2BF938FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49FD278D58BE6632804573F9003174AA /* Spring.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Spring-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				PRODUCT_MODULE_NAME = Spring;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A000A974A58070E1072B495E66DC54C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60FB07EC9D1BEAC2B5DE4ABC385918A7 /* Pods-QuanSuTest.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEEB6FB3B5F768E72BE730481D039833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49FD278D58BE6632804573F9003174AA /* Spring.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Spring-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				PRODUCT_MODULE_NAME = Spring;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E9208A6EC0046441CB0F1A95E897430E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 215B37A96E5A4EFDEEC780893262D32D /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FE0762F29D1A7B466425F7FA03F51803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26651B916344C858517AE44697854023 /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D681523845AFBBDD8F1325A9BDEA87F /* Build configuration list for PBXNativeTarget "Pods-QuanSuTest-QuanSuTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0762F29D1A7B466425F7FA03F51803 /* Debug */,
+				E9208A6EC0046441CB0F1A95E897430E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB2C59308A46F6DEEC368BB5F770E68 /* Build configuration list for PBXNativeTarget "Pods-QuanSuTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2919441A0E5D0F911FA961E5DDC3E583 /* Debug */,
+				A000A974A58070E1072B495E66DC54C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF1ABB74DFF799A0F06375444CC03600 /* Build configuration list for PBXNativeTarget "Pods-QuanSuTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21DFE776411506EE545B4CAC5D1FF664 /* Debug */,
+				0AE6175DF85FC28557ED075D3B35E16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D09528C50F366F4ABEFEFEEC9A68896E /* Build configuration list for PBXNativeTarget "Spring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				914F455A79CDE07CE7727D2BF938FB75 /* Debug */,
+				CEEB6FB3B5F768E72BE730481D039833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

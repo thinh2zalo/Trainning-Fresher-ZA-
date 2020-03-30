@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)getImageArr;
 - (NSString *)getQuote:(NSInteger)jdn;
 - (NSURL *)getURLImage:(NSInteger)jdn;
+
+- (void)setQuotationArr:(NSArray *)quotationArr;
+- (void)setImageArr:(NSArray *)imageArr;
 @end
 
 NS_ASSUME_NONNULL_END

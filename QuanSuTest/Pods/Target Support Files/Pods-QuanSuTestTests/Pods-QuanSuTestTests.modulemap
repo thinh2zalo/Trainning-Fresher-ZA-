@@ -1,0 +1,6 @@
+framework module Pods_QuanSuTestTests {
+  umbrella header "Pods-QuanSuTestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,22 +7,9 @@
 //
 
 #import "LunarCalendarView.h"
-#import "define2.h"
+#import "define.h"
 @interface LunarCalendarView()
-@property (nonatomic, strong) UILabel * lunarHourTitleLabel;
-@property (nonatomic, strong) UILabel * hourLabel;
-@property (nonatomic, strong) UILabel * hourCanChiLabel;
-@property (nonatomic, strong) UIView * hourView;
 
-@property (nonatomic, strong) UILabel * lunarDayTitleLabel;
-@property (nonatomic, strong) UILabel * lunarDayLabel;
-@property (nonatomic, strong) UILabel * canChiDayLabel;
-@property (nonatomic, strong) UIView * lunarDayView;
-
-@property (nonatomic, strong) UILabel * lunarMonthTitleLabel;
-@property (nonatomic, strong) UILabel * lunarMonthLabel;
-@property (nonatomic, strong) UILabel * canChiMonthLabel;
-@property (nonatomic, strong) UILabel * canChiYearLabel;
 
 @property (nonatomic, strong) UIView * lunarMonthView;
 @property (nonatomic, strong) UIView *separatorView;

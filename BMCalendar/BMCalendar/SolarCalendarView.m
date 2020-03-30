@@ -10,16 +10,7 @@
 #import "DateModel.h"
 
 @interface SolarCalendarView()
-@property (nonatomic, strong) UILabel * solarDayLabel;
-@property (nonatomic, strong) UILabel * solarMonthLabel;
-@property (nonatomic, strong) UILabel * solarMonthAndYearLabel;
 
-@property (nonatomic, strong) UIImageView * image;
-
-@property (nonatomic, strong) UILabel * quoteLabel;
-
-@property (nonatomic, strong) UILabel * solarYearLabel;
-@property (nonatomic, strong) UILabel * dayOfWeekLabel;
 
 @end
 @implementation SolarCalendarView
@@ -32,9 +23,6 @@
 }
 */
 - (void)layoutSubviews {
-//    self.image.frame = self.bounds;
-//    self.solarMonthAndYearLabel.frame = CGRectMake(0, 0, 200, 40);
-//    self.solarMonthAndYearLabel.center = CGPointMake(self.frame.size.width/2, 100);
     self.solarDayLabel.frame = CGRectMake(0, 0, 200, 250);
     self.solarDayLabel.center = CGPointMake(self.frame.size.width/2, 200);
     self.dayOfWeekLabel.frame = CGRectMake(0, 0, 150, 40);
@@ -44,8 +32,6 @@
 }
 
 - (void)loadDateWithInput:(DateModel *)dataModel {
-    [self.image sd_setImageWithURL:dataModel.imageURL
-    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     BMDate * date = [[BMDate alloc] initLocalDate:dataModel.jdn];
     self.solarMonthAndYearLabel.text = [NSString stringWithFormat:@"Tháng %tu năm %tu", [date getSolarMonth], [date getSolarYear]];
     self.solarDayLabel.text = [NSString stringWithFormat:@"%tu", [date getSolarDay]];
@@ -61,7 +47,6 @@
                                                 _solarMonthAndYearLabel.textColor = [UIColor whiteColor];
                                                 _solarMonthAndYearLabel.textAlignment = NSTextAlignmentCenter;
         _solarMonthAndYearLabel.text = @"Tháng 2 năm 2020";
-//        UITapGestureRecognizer * tapGesture = [UITapGestureRecognizer alloc]initWithTarget:self action:<#(nullable SEL)#>
            [self addSubview:_solarMonthAndYearLabel];
        }
        return _solarMonthAndYearLabel;

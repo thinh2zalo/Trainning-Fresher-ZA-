@@ -7,7 +7,7 @@
 //
 
 #import "BMDatePickerView.h"
-#import "define2.h"
+#import "define.h"
 #import "BMYear.h"
 #import "BMDate.h"
 #import "BMDate+Utility.h"

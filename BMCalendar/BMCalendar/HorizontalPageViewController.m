@@ -13,7 +13,6 @@
 @interface HorizontalPageViewController () <BMPageViewControllerDelegate, BMPageViewControllerDataSource>
 @property (nonatomic, strong) NSArray < SolarViewController *> * arrVC;
 @property (nonatomic, strong) DateModel * mDateModel;
-
 @end
 
 @implementation HorizontalPageViewController
@@ -29,10 +28,8 @@
 
 - (void)viewDidLoad {
     [self handleDefault];
-    [self createArrayViewController];
     NSInteger defaultPage  = [self.BMPaingDataSource defaultPage];
     SolarViewController * viewControllerShowed = self.arrVC[defaultPage];
-  
     [viewControllerShowed setDataModel:self.mDateModel];
     [super viewDidLoad];
 
@@ -42,7 +39,7 @@
 
 
 - (void)createArrayViewController {
-    SolarViewController *newVC1 = SolarViewController.new;
+     SolarViewController *newVC1 = SolarViewController.new;
      SolarViewController *newVC2 = SolarViewController.new;
      SolarViewController *newVC3 = SolarViewController.new;
      self.arrVC = @[newVC1,newVC2,newVC3];
@@ -91,7 +88,6 @@
     }
     _mDateModel = dataModel;
     _dateModel = dataModel;
-    
     [(SolarViewController *)self.getCurrentViewController setDataModel:_mDateModel];
 }
 
@@ -102,6 +98,7 @@
     self.mDateModel =  modelShowed;
     [self.HorizontalPageViewControllerDelegate triggerUpdate:date];
 }
+
 // MARK: - BMPageViewControllerDataSource
 
 - (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController {
@@ -109,6 +106,11 @@
 }
 
 - (UIViewController *)viewControllerFor:(BMPageViewController *)bmPageViewController atIndex:(NSInteger)index {
+
+    if (!self.arrVC || self.arrVC.count == 0) {
+           return nil;
+    }
+
     return self.arrVC[index];
 }
 
@@ -120,6 +122,8 @@
 - (NSArray<SolarViewController *> *)arrVC {
     if (!_arrVC) {
         _arrVC = NSArray.new;
+        [self createArrayViewController];
+
     }
     return _arrVC;
 }

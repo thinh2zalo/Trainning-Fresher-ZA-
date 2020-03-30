@@ -14,17 +14,17 @@
 		BF62ACE92417576600D63979 /* BMCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACDB2417576600D63979 /* BMCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62ACF82417580F00D63979 /* LunarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACF52417580E00D63979 /* LunarUtils.m */; };
 		BF62ACF92417580F00D63979 /* LunarUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACF62417580F00D63979 /* LunarUtils.h */; };
-		BF62ACFA2417580F00D63979 /* define2.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62ACFA2417580F00D63979 /* define.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD042417585900D63979 /* SolarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFC2417585200D63979 /* SolarCalendarView.m */; };
 		BF62AD052417585900D63979 /* BMButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFD2417585300D63979 /* BMButtonLabel.m */; };
 		BF62AD062417585900D63979 /* BMDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62ACFE2417585400D63979 /* BMDatePickerView.h */; };
 		BF62AD072417585900D63979 /* LunarCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACFF2417585500D63979 /* LunarCalendarView.m */; };
-		BF62AD082417585900D63979 /* SolarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD002417585600D63979 /* SolarCalendarView.h */; };
-		BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD012417585700D63979 /* BMButtonLabel.h */; };
+		BF62AD082417585900D63979 /* SolarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD002417585600D63979 /* SolarCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD012417585700D63979 /* BMButtonLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD0A2417585900D63979 /* BMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD022417585800D63979 /* BMDatePickerView.m */; };
-		BF62AD0B2417585900D63979 /* LunarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD032417585900D63979 /* LunarCalendarView.h */; };
+		BF62AD0B2417585900D63979 /* LunarCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD032417585900D63979 /* LunarCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD0F2417587900D63979 /* DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD0D2417587900D63979 /* DateModel.m */; };
-		BF62AD102417587900D63979 /* DateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD0E2417587900D63979 /* DateModel.h */; };
+		BF62AD102417587900D63979 /* DateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD0E2417587900D63979 /* DateModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD1C2417589B00D63979 /* BMDate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD122417589A00D63979 /* BMDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD1D2417589B00D63979 /* BMDay.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD132417589A00D63979 /* BMDay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD1E2417589B00D63979 /* BMDate+Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD142417589A00D63979 /* BMDate+Utility.h */; };
@@ -35,7 +35,7 @@
 		BF62AD232417589B00D63979 /* BMYear.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD192417589B00D63979 /* BMYear.m */; };
 		BF62AD242417589B00D63979 /* BMDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD1A2417589B00D63979 /* BMDay.m */; };
 		BF62AD252417589B00D63979 /* BMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD1B2417589B00D63979 /* BMDate.m */; };
-		BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD27241758E400D63979 /* BMPageViewController.h */; };
+		BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD27241758E400D63979 /* BMPageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD2E241758E900D63979 /* BMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD28241758E500D63979 /* BMPageViewController.m */; };
 		BF62AD2F241758E900D63979 /* SolarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD29241758E600D63979 /* SolarViewController.h */; };
 		BF62AD30241758E900D63979 /* HorizontalPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF62AD2A241758E700D63979 /* HorizontalPageViewController.m */; };
@@ -50,7 +50,7 @@
 		BF62AD41241759ED00D63979 /* BMCalendarController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD3F241759ED00D63979 /* BMCalendarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62AD4424175AA400D63979 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62AD4224175A7F00D63979 /* SDWebImage.framework */; };
 		BF62AD4524175AA400D63979 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF62AD4224175A7F00D63979 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF62AD922417663000D63979 /* define2.h in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define2.h */; };
+		BF62AD922417663000D63979 /* define.h in Sources */ = {isa = PBXBuildFile; fileRef = BF62ACF72417580F00D63979 /* define.h */; };
 		BF62ADA224176A0000D63979 /* quotations.plist in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD342417591500D63979 /* quotations.plist */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF62ADA324176A0000D63979 /* images.plist in Headers */ = {isa = PBXBuildFile; fileRef = BF62AD382417591E00D63979 /* images.plist */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -94,7 +94,7 @@
 		BF62ACE82417576600D63979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF62ACF52417580E00D63979 /* LunarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LunarUtils.m; path = "../../../CalculatorLunarBM copy/CalculatorBM/Utilities/LunarUtils.m"; sourceTree = "<group>"; };
 		BF62ACF62417580F00D63979 /* LunarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LunarUtils.h; path = "../../../CalculatorLunarBM copy/CalculatorBM/Utilities/LunarUtils.h"; sourceTree = "<group>"; };
-		BF62ACF72417580F00D63979 /* define2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define2.h; sourceTree = "<group>"; };
+		BF62ACF72417580F00D63979 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		BF62ACFC2417585200D63979 /* SolarCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolarCalendarView.m; sourceTree = "<group>"; };
 		BF62ACFD2417585300D63979 /* BMButtonLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMButtonLabel.m; sourceTree = "<group>"; };
 		BF62ACFE2417585400D63979 /* BMDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatePickerView.h; sourceTree = "<group>"; };
@@ -212,6 +212,7 @@
 		BF62ACF42417580100D63979 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BF62ACF72417580F00D63979 /* define.h */,
 				BF62ACF62417580F00D63979 /* LunarUtils.h */,
 				BF62ACF52417580E00D63979 /* LunarUtils.m */,
 			);
@@ -245,7 +246,6 @@
 		BF62AD112417588E00D63979 /* BMDate */ = {
 			isa = PBXGroup;
 			children = (
-				BF62ACF72417580F00D63979 /* define2.h */,
 				BF62AD122417589A00D63979 /* BMDate.h */,
 				BF62AD1B2417589B00D63979 /* BMDate.m */,
 				BF62AD142417589A00D63979 /* BMDate+Utility.h */,
@@ -303,23 +303,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */,
+				BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */,
 				BF62AD3A2417591E00D63979 /* SingletonAPI.h in Headers */,
+				BF62AD102417587900D63979 /* DateModel.h in Headers */,
 				BF62ADA224176A0000D63979 /* quotations.plist in Headers */,
 				BF62ADA324176A0000D63979 /* images.plist in Headers */,
 				BF62AD1D2417589B00D63979 /* BMDay.h in Headers */,
 				BF62AD212417589B00D63979 /* BMMonth.h in Headers */,
-				BF62AD202417589B00D63979 /* BMYear.h in Headers */,
-				BF62ACFA2417580F00D63979 /* define2.h in Headers */,
-				BF62AD41241759ED00D63979 /* BMCalendarController.h in Headers */,
-				BF62AD1C2417589B00D63979 /* BMDate.h in Headers */,
-				BF62AD102417587900D63979 /* DateModel.h in Headers */,
-				BF62AD1E2417589B00D63979 /* BMDate+Utility.h in Headers */,
-				BF62AD2D241758E900D63979 /* BMPageViewController.h in Headers */,
-				BF62ACE92417576600D63979 /* BMCalendar.h in Headers */,
 				BF62AD0B2417585900D63979 /* LunarCalendarView.h in Headers */,
-				BF62AD092417585900D63979 /* BMButtonLabel.h in Headers */,
-				BF62AD31241758E900D63979 /* HorizontalPageViewController.h in Headers */,
+				BF62AD202417589B00D63979 /* BMYear.h in Headers */,
+				BF62ACFA2417580F00D63979 /* define.h in Headers */,
+				BF62AD41241759ED00D63979 /* BMCalendarController.h in Headers */,
 				BF62AD082417585900D63979 /* SolarCalendarView.h in Headers */,
+				BF62AD1C2417589B00D63979 /* BMDate.h in Headers */,
+				BF62AD1E2417589B00D63979 /* BMDate+Utility.h in Headers */,
+				BF62ACE92417576600D63979 /* BMCalendar.h in Headers */,
+				BF62AD31241758E900D63979 /* HorizontalPageViewController.h in Headers */,
 				BF62AD062417585900D63979 /* BMDatePickerView.h in Headers */,
 				BF62ACF92417580F00D63979 /* LunarUtils.h in Headers */,
 				BF62AD2F241758E900D63979 /* SolarViewController.h in Headers */,
@@ -499,7 +499,7 @@
 				BF62AD232417589B00D63979 /* BMYear.m in Sources */,
 				BF62AD252417589B00D63979 /* BMDate.m in Sources */,
 				BF62AD042417585900D63979 /* SolarCalendarView.m in Sources */,
-				BF62AD922417663000D63979 /* define2.h in Sources */,
+				BF62AD922417663000D63979 /* define.h in Sources */,
 				BF62AD072417585900D63979 /* LunarCalendarView.m in Sources */,
 				BF62AD242417589B00D63979 /* BMDay.m in Sources */,
 				BF62AD32241758E900D63979 /* SolarViewController.m in Sources */,

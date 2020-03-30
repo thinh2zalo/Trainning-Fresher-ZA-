@@ -7,7 +7,7 @@
 //
 
 #import "SingletonAPI.h"
-#import "define2.h"
+#import "define.h"
 @interface SingletonAPI()
 @property (nonatomic, strong)NSArray *quotationArr;
 @property (nonatomic, strong)NSArray *imageArr;
@@ -37,23 +37,30 @@
     return [NSURL URLWithString:strURL];
 }
 
+- (void)setQuotationArr:(NSArray *)quotationArr {
+    if (![quotationArr isKindOfClass:NSArray.class]) {
+        return;
+    }
+    _quotationArr = [NSArray arrayWithArray:quotationArr];
+}
 
+- (void)setImageArr:(NSArray *)imageArr {
+    if (![imageArr isKindOfClass:NSArray.class]) {
+        return;
+    }
+   _imageArr = [NSArray arrayWithArray:imageArr];
+}
 
 - (NSArray *)getQuotationArr {
     if (!_quotationArr) {
-//        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_QUOTATIONS ofType:TYPEFILE_PLIST]];
-  NSArray * arr = @[@"Hạnh phúc lớn nhất ở đời là có thể tin chắc rằng ta được yêu thương - Yêu vì chính bản thân ta, hay đúng hơn, yêu bất kể bản thân ta", @"Yêu thương mang lại nhiều lạc thú hơn là được yêu"];      _quotationArr = arr;
- }
-    return _quotationArr;
+        _quotationArr = NSArray.new;
+    }
+    return [_quotationArr copy];
 }
 
--(NSArray *)getImageArr {
+- (NSArray *)getImageArr {
     if (!_imageArr) {
-//        NSArray * arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:FILE_URLIMG ofType:TYPEFILE_PLIST]];
-        NSArray * arr = @[@"https://i.imgur.com/FLL3rV4.jpg", @"https://i.imgur.com/WWclFV1.jpg"];
-
-      
-        _imageArr = arr;
+        _imageArr = NSArray.new;
         }
     return _imageArr;
 }

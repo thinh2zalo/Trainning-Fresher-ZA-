@@ -8,26 +8,26 @@
 
 #import "DateModel.h"
 #import "SingletonAPI.h"
+#import <SDWebImage.h>
+
 @interface DateModel ()
 
 @end
 
 @implementation DateModel
 
-- (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote imageURL:(NSURL *)imageURL {
+- (instancetype)initWithDate:(NSInteger)jdn quote:(NSString *)quote {
     self = [super init];
     if (self) {
         _jdn = jdn;
         _quote = quote;
-        _imageURL = imageURL;
     }
     return self;
 }
 
 + (DateModel *)createDataModel:(NSInteger)jdn {
     NSString *quote = [SingletonAPI.sharedInstance getQuote:jdn];
-    NSURL *urlImage = [SingletonAPI.sharedInstance getURLImage:jdn];
-    return [[DateModel alloc] initWithDate:jdn quote:quote imageURL:urlImage];
+    return [[DateModel alloc] initWithDate:jdn quote:quote];
 }
 
 
@@ -38,12 +38,7 @@
     return _quote;
 }
 
-- (NSURL *)imageURL {
-    if (!_imageURL) {
-        _imageURL = NSURL.new;
-    }
-    return _imageURL;
-}
+
 
 /*
 #pragma mark - Navigation

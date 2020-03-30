@@ -63,7 +63,12 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSInteger)getCurrentJulianDayNumber;
 // lấy thứ trong tuần // input jdn
 + (NSString*)dayOfWeek:(NSInteger)jdn;
-
+// operator add and sub date
+- (void)nextDate;
+- (void)previosDate;
+- (void)nextWeek;
+- (void)previosWeek;
+- (void)addingAndSubtractingBy:(long)numberDay;
 @end
 
 NS_ASSUME_NONNULL_END

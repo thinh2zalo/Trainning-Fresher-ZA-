@@ -12,6 +12,8 @@
 #import "BMDay.h"
 #import "BMDate.h"
 #import "LunarUtils.h"
+#import "BMDatePickerView.h"
+#import <SDWebImage.h>
 
 #import "SolarViewController.h"
 #import "SingletonAPI.h"
@@ -29,9 +31,11 @@
 @synthesize date = _date;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData];
-    [self loadUI];
-    [self.toDayLabel setHidden:YES];
+    BMDate * date = [BMDate getCurrentDate];
+    [date addingAndSubtractingBy:-40];
+//    [self loadData];
+//    [self loadUI];
+//    [self.toDayLabel setHidden:YES];
 
 }
 
@@ -55,7 +59,6 @@
 
     [self.lunarCalendarView loadDateWithInput:self.date];
     [self.solarMonthYearView loadDateWithInput:self.date];
-    
     [self.toDayLabel setLabelText:@"Hôm nay"];
 }
 
@@ -109,7 +112,8 @@
     }
 }
 
--(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
+
+- (void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
     HorizontalPageViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
         DateModel * modelShowed = solarShowed.getDateModel;
     BMDate * date = [[BMDate alloc] initLocalDate:modelShowed.jdn];
@@ -149,7 +153,6 @@
         return;
     }
     [self.toDayLabel setHidden:NO];
-
     if (self.date.getJulianDayNumber == BMDate.getCurrentJulianDayNumber) {
         [self.toDayLabel setHidden:YES];
     }
@@ -162,14 +165,20 @@
     [self.lunarCalendarView loadDateWithInput:date];
 }
 
-
-
 - (SolarCalendarView *)solarCalenDarView {
     if (!_solarCalenDarView) {
         _solarCalenDarView = SolarCalendarView.new;
         [self.view addSubview:_solarCalenDarView];
     }
     return _solarCalenDarView;
+}
+
+- (void)importImages:(NSArray *)imgs {
+    [SingletonAPI.sharedInstance setImageArr:imgs];
+}
+
+- (void)importQuotations:(NSArray *)quotations {
+    [SingletonAPI.sharedInstance setQuotationArr:quotations];
 }
 
 - (BMPageViewController *)pageViewController {
@@ -181,8 +190,6 @@
     return _pageViewController;
 }
 
-
- 
 - (void)selectDate {
     BMDatePickerView *datePicker = BMDatePickerView.new;
     datePicker.typeOfCalendar = TypeCalendarDuongLich;
@@ -240,12 +247,6 @@
     return _lunarCalendarView;
 }
 
-- (BMDatePickerView *)lunarDatePickerView {
-    if (!_lunarDatePickerView) {
-        _lunarDatePickerView = BMDatePickerView.new;
-    }
-    return _lunarDatePickerView;
-}
 
 - (NSArray *)arrVC {
     if (!_arrVC) {
@@ -253,8 +254,6 @@
     }
     return _arrVC;
 }
-
-
 
 - (UIImageView *)backgroundImgView{
     if (!_backgroundImgView) {

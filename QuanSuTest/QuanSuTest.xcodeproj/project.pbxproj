@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16F96B3883D73FC77845A121 /* Pods_QuanSuTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C25A1BCD22007E56A06FBA /* Pods_QuanSuTest.framework */; };
+		BF61BB11241B68F9001136DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB10241B68F9001136DC /* AppDelegate.swift */; };
+		BF61BB13241B68F9001136DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB12241B68F9001136DC /* SceneDelegate.swift */; };
+		BF61BB15241B68F9001136DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB14241B68F9001136DC /* ViewController.swift */; };
+		BF61BB18241B68F9001136DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF61BB16241B68F9001136DC /* Main.storyboard */; };
+		BF61BB1A241B68FB001136DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF61BB19241B68FB001136DC /* Assets.xcassets */; };
+		BF61BB1D241B68FB001136DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF61BB1B241B68FB001136DC /* LaunchScreen.storyboard */; };
+		BF61BB28241B68FC001136DC /* QuanSuTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB27241B68FC001136DC /* QuanSuTestTests.swift */; };
+		BF61BB33241B68FC001136DC /* QuanSuTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB32241B68FC001136DC /* QuanSuTestUITests.swift */; };
+		BF61BB41241B781F001136DC /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB40241B781F001136DC /* QuestionCell.swift */; };
+		BF61BB43241B803A001136DC /* ThiThuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61BB42241B803A001136DC /* ThiThuViewController.swift */; };
+		E159198792D731A44807A5EC /* Pods_QuanSuTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E2177934A2329C1C98AD5E /* Pods_QuanSuTestTests.framework */; };
+		FC5156B53233B17D0141E29C /* Pods_QuanSuTest_QuanSuTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885400A64C16740D6651FA55 /* Pods_QuanSuTest_QuanSuTestUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF61BB24241B68FB001136DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF61BB05241B68F9001136DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF61BB0C241B68F9001136DC;
+			remoteInfo = QuanSuTest;
+		};
+		BF61BB2F241B68FC001136DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF61BB05241B68F9001136DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF61BB0C241B68F9001136DC;
+			remoteInfo = QuanSuTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41C25A1BCD22007E56A06FBA /* Pods_QuanSuTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanSuTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF75328D8E6B3B3C4A4B9ED /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig"; path = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		76E2177934A2329C1C98AD5E /* Pods_QuanSuTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanSuTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		772CED916CDFA1B88D9203E4 /* Pods-QuanSuTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTestTests.release.xcconfig"; path = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		885400A64C16740D6651FA55 /* Pods_QuanSuTest_QuanSuTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanSuTest_QuanSuTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4EC05C7C59EAFF8513F739B /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF61BB0D241B68F9001136DC /* QuanSuTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanSuTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF61BB10241B68F9001136DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF61BB12241B68F9001136DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BF61BB14241B68F9001136DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF61BB17241B68F9001136DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF61BB19241B68FB001136DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF61BB1C241B68FB001136DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF61BB1E241B68FB001136DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF61BB23241B68FB001136DC /* QuanSuTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuanSuTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF61BB27241B68FC001136DC /* QuanSuTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuanSuTestTests.swift; sourceTree = "<group>"; };
+		BF61BB29241B68FC001136DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF61BB2E241B68FC001136DC /* QuanSuTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuanSuTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF61BB32241B68FC001136DC /* QuanSuTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuanSuTestUITests.swift; sourceTree = "<group>"; };
+		BF61BB34241B68FC001136DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF61BB40241B781F001136DC /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		BF61BB42241B803A001136DC /* ThiThuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiThuViewController.swift; sourceTree = "<group>"; };
+		CD6CBA3C3A993F95CB67D7EF /* Pods-QuanSuTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTest.debug.xcconfig"; path = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E6439000BE98A29B99E967CA /* Pods-QuanSuTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTest.release.xcconfig"; path = "Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest.release.xcconfig"; sourceTree = "<group>"; };
+		EC0DC4F0566B66C70DE44D96 /* Pods-QuanSuTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanSuTestTests.debug.xcconfig"; path = "Target Support Files/Pods-QuanSuTestTests/Pods-QuanSuTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF61BB0A241B68F9001136DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16F96B3883D73FC77845A121 /* Pods_QuanSuTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB20241B68FB001136DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E159198792D731A44807A5EC /* Pods_QuanSuTestTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB2B241B68FC001136DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5156B53233B17D0141E29C /* Pods_QuanSuTest_QuanSuTestUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BBB564D390A45E7FCBB0325 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD6CBA3C3A993F95CB67D7EF /* Pods-QuanSuTest.debug.xcconfig */,
+				E6439000BE98A29B99E967CA /* Pods-QuanSuTest.release.xcconfig */,
+				A4EC05C7C59EAFF8513F739B /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */,
+				6FF75328D8E6B3B3C4A4B9ED /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */,
+				EC0DC4F0566B66C70DE44D96 /* Pods-QuanSuTestTests.debug.xcconfig */,
+				772CED916CDFA1B88D9203E4 /* Pods-QuanSuTestTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6BE0B4C8006C78528FE946BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41C25A1BCD22007E56A06FBA /* Pods_QuanSuTest.framework */,
+				885400A64C16740D6651FA55 /* Pods_QuanSuTest_QuanSuTestUITests.framework */,
+				76E2177934A2329C1C98AD5E /* Pods_QuanSuTestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF61BB04241B68F9001136DC = {
+			isa = PBXGroup;
+			children = (
+				BF61BB0F241B68F9001136DC /* QuanSuTest */,
+				BF61BB26241B68FC001136DC /* QuanSuTestTests */,
+				BF61BB31241B68FC001136DC /* QuanSuTestUITests */,
+				BF61BB0E241B68F9001136DC /* Products */,
+				2BBB564D390A45E7FCBB0325 /* Pods */,
+				6BE0B4C8006C78528FE946BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF61BB0E241B68F9001136DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BB0D241B68F9001136DC /* QuanSuTest.app */,
+				BF61BB23241B68FB001136DC /* QuanSuTestTests.xctest */,
+				BF61BB2E241B68FC001136DC /* QuanSuTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF61BB0F241B68F9001136DC /* QuanSuTest */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BB10241B68F9001136DC /* AppDelegate.swift */,
+				BF61BB12241B68F9001136DC /* SceneDelegate.swift */,
+				BF61BB14241B68F9001136DC /* ViewController.swift */,
+				BF61BB16241B68F9001136DC /* Main.storyboard */,
+				BF61BB19241B68FB001136DC /* Assets.xcassets */,
+				BF61BB1B241B68FB001136DC /* LaunchScreen.storyboard */,
+				BF61BB1E241B68FB001136DC /* Info.plist */,
+				BF61BB40241B781F001136DC /* QuestionCell.swift */,
+				BF61BB42241B803A001136DC /* ThiThuViewController.swift */,
+			);
+			path = QuanSuTest;
+			sourceTree = "<group>";
+		};
+		BF61BB26241B68FC001136DC /* QuanSuTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BB27241B68FC001136DC /* QuanSuTestTests.swift */,
+				BF61BB29241B68FC001136DC /* Info.plist */,
+			);
+			path = QuanSuTestTests;
+			sourceTree = "<group>";
+		};
+		BF61BB31241B68FC001136DC /* QuanSuTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BB32241B68FC001136DC /* QuanSuTestUITests.swift */,
+				BF61BB34241B68FC001136DC /* Info.plist */,
+			);
+			path = QuanSuTestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF61BB0C241B68F9001136DC /* QuanSuTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF61BB37241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTest" */;
+			buildPhases = (
+				D66D6C0E4E54828F0CB7E70A /* [CP] Check Pods Manifest.lock */,
+				BF61BB09241B68F9001136DC /* Sources */,
+				BF61BB0A241B68F9001136DC /* Frameworks */,
+				BF61BB0B241B68F9001136DC /* Resources */,
+				A4047E9A8F5A94ADBF1E91E7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuanSuTest;
+			productName = QuanSuTest;
+			productReference = BF61BB0D241B68F9001136DC /* QuanSuTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF61BB22241B68FB001136DC /* QuanSuTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF61BB3A241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTestTests" */;
+			buildPhases = (
+				EC261387B96F86481BBC2EBD /* [CP] Check Pods Manifest.lock */,
+				BF61BB1F241B68FB001136DC /* Sources */,
+				BF61BB20241B68FB001136DC /* Frameworks */,
+				BF61BB21241B68FB001136DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF61BB25241B68FB001136DC /* PBXTargetDependency */,
+			);
+			name = QuanSuTestTests;
+			productName = QuanSuTestTests;
+			productReference = BF61BB23241B68FB001136DC /* QuanSuTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF61BB2D241B68FC001136DC /* QuanSuTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF61BB3D241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTestUITests" */;
+			buildPhases = (
+				3E45DCDBBB7C0D49A6D5C745 /* [CP] Check Pods Manifest.lock */,
+				BF61BB2A241B68FC001136DC /* Sources */,
+				BF61BB2B241B68FC001136DC /* Frameworks */,
+				BF61BB2C241B68FC001136DC /* Resources */,
+				2746F2696B515B934D188477 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF61BB30241B68FC001136DC /* PBXTargetDependency */,
+			);
+			name = QuanSuTestUITests;
+			productName = QuanSuTestUITests;
+			productReference = BF61BB2E241B68FC001136DC /* QuanSuTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF61BB05241B68F9001136DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = vincent;
+				TargetAttributes = {
+					BF61BB0C241B68F9001136DC = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					BF61BB22241B68FB001136DC = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = BF61BB0C241B68F9001136DC;
+					};
+					BF61BB2D241B68FC001136DC = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = BF61BB0C241B68F9001136DC;
+					};
+				};
+			};
+			buildConfigurationList = BF61BB08241B68F9001136DC /* Build configuration list for PBXProject "QuanSuTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF61BB04241B68F9001136DC;
+			productRefGroup = BF61BB0E241B68F9001136DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF61BB0C241B68F9001136DC /* QuanSuTest */,
+				BF61BB22241B68FB001136DC /* QuanSuTestTests */,
+				BF61BB2D241B68FC001136DC /* QuanSuTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF61BB0B241B68F9001136DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF61BB1D241B68FB001136DC /* LaunchScreen.storyboard in Resources */,
+				BF61BB1A241B68FB001136DC /* Assets.xcassets in Resources */,
+				BF61BB18241B68F9001136DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB21241B68FB001136DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB2C241B68FC001136DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2746F2696B515B934D188477 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest-QuanSuTestUITests/Pods-QuanSuTest-QuanSuTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E45DCDBBB7C0D49A6D5C745 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuanSuTest-QuanSuTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4047E9A8F5A94ADBF1E91E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuanSuTest/Pods-QuanSuTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D66D6C0E4E54828F0CB7E70A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuanSuTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC261387B96F86481BBC2EBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuanSuTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF61BB09241B68F9001136DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF61BB15241B68F9001136DC /* ViewController.swift in Sources */,
+				BF61BB41241B781F001136DC /* QuestionCell.swift in Sources */,
+				BF61BB43241B803A001136DC /* ThiThuViewController.swift in Sources */,
+				BF61BB11241B68F9001136DC /* AppDelegate.swift in Sources */,
+				BF61BB13241B68F9001136DC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB1F241B68FB001136DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF61BB28241B68FC001136DC /* QuanSuTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF61BB2A241B68FC001136DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF61BB33241B68FC001136DC /* QuanSuTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF61BB25241B68FB001136DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF61BB0C241B68F9001136DC /* QuanSuTest */;
+			targetProxy = BF61BB24241B68FB001136DC /* PBXContainerItemProxy */;
+		};
+		BF61BB30241B68FC001136DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF61BB0C241B68F9001136DC /* QuanSuTest */;
+			targetProxy = BF61BB2F241B68FC001136DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF61BB16241B68F9001136DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF61BB17241B68F9001136DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF61BB1B241B68FB001136DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF61BB1C241B68FB001136DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF61BB35241B68FC001136DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF61BB36241B68FC001136DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF61BB38241B68FC001136DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD6CBA3C3A993F95CB67D7EF /* Pods-QuanSuTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF61BB39241B68FC001136DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6439000BE98A29B99E967CA /* Pods-QuanSuTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF61BB3B241B68FC001136DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC0DC4F0566B66C70DE44D96 /* Pods-QuanSuTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuanSuTest.app/QuanSuTest";
+			};
+			name = Debug;
+		};
+		BF61BB3C241B68FC001136DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 772CED916CDFA1B88D9203E4 /* Pods-QuanSuTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuanSuTest.app/QuanSuTest";
+			};
+			name = Release;
+		};
+		BF61BB3E241B68FC001136DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4EC05C7C59EAFF8513F739B /* Pods-QuanSuTest-QuanSuTestUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuanSuTest;
+			};
+			name = Debug;
+		};
+		BF61BB3F241B68FC001136DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF75328D8E6B3B3C4A4B9ED /* Pods-QuanSuTest-QuanSuTestUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQSK4D8K45;
+				INFOPLIST_FILE = QuanSuTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BM.QuanSuTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuanSuTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF61BB08241B68F9001136DC /* Build configuration list for PBXProject "QuanSuTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF61BB35241B68FC001136DC /* Debug */,
+				BF61BB36241B68FC001136DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF61BB37241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF61BB38241B68FC001136DC /* Debug */,
+				BF61BB39241B68FC001136DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF61BB3A241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF61BB3B241B68FC001136DC /* Debug */,
+				BF61BB3C241B68FC001136DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF61BB3D241B68FC001136DC /* Build configuration list for PBXNativeTarget "QuanSuTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF61BB3E241B68FC001136DC /* Debug */,
+				BF61BB3F241B68FC001136DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF61BB05241B68F9001136DC /* Project object */;
+}

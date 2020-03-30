@@ -29,7 +29,6 @@
         shareInstance = ManagerRecord.new;
     });
     return shareInstance;
-    
 }
 
 

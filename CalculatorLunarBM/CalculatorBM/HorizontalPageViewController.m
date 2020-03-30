@@ -38,8 +38,6 @@
     // Do any additional setup after loading the view.
 }
 
-
-
 - (void)createArrayViewController {
     SolarViewController *newVC1 = SolarViewController.new;
     [newVC1 setDataModel:self.mDateModel];
@@ -95,13 +93,14 @@
     [(SolarViewController *)self.getCurrentViewController setDataModel:_mDateModel];
 }
 
--(void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
+- (void)bmPageViewController:(BMPageViewController *)bmPageViewController didScrollTo:(NSInteger)index {
     SolarViewController * solarShowed =  self.arrVC[bmPageViewController.getCurrentIndex];
     DateModel * modelShowed = solarShowed.getDataModel;
     BMDate *date = [[BMDate alloc]initLocalDate:modelShowed.jdn];
     self.mDateModel =  modelShowed;
     [self.HorizontalPageViewControllerDelegate triggerUpdate:date];
 }
+
 // MARK: - BMPageViewControllerDataSource
 
 - (NSInteger)numberOfViewControllers:(BMPageViewController *)bmPageViewController {
@@ -109,6 +108,9 @@
 }
 
 - (UIViewController *)viewControllerFor:(BMPageViewController *)bmPageViewController atIndex:(NSInteger)index {
+    if (!self.arrVC) {
+        return nil;
+    }
     return self.arrVC[index];
 }
 

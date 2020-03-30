@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BMDate.h"
-#import "define2.h"
+#import "define.h"
 NS_ASSUME_NONNULL_BEGIN
 @protocol BMDatePickerViewDelegate;
 

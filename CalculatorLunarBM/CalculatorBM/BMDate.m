@@ -83,7 +83,7 @@
 }
 
 
-- (instancetype)initDateWithSolarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone{
+- (instancetype)initDateWithSolarDate:(NSInteger)dd :(NSInteger)mm :(NSInteger)yy andTimeZone:(NSInteger)timeZone {
     if (![BMDate validDate:dd month:mm year:yy]) {
         return nil;
     }
@@ -96,8 +96,41 @@
         self.julianDayNumber = [LunarUtils jdFromSolarDate:dd mm:mm yy:yy];
     }
     return self;
+    
+}
+// operator add and sub date
+
+- (void)addingAndSubtractingBy:(long)numberDay {
+    self.julianDayNumber = self.julianDayNumber + numberDay;
+
+    BMDate * newDate = [[BMDate alloc] initLocalDate:self.julianDayNumber];
+    if (!newDate) {
+        return;
+    }
+    self.day = newDate.day;
+    self.month = newDate.month;
+    self.year = newDate.year;
 }
 
+- (void)nextDate {
+    [self addingAndSubtractingBy:+1];
+}
+
+- (void)previosDate {
+    [self addingAndSubtractingBy:-1];
+}
+
+- (void)nextWeek {
+    [self addingAndSubtractingBy:+7];
+}
+
+- (void)previosWeek {
+    [self addingAndSubtractingBy:-7];
+}
+
+- (void)dateByAddingDays:(long)numberDay{
+    self.julianDayNumber = self.julianDayNumber + numberDay;
+}
 
 -(NSInteger)getLeapLunarMonth {
     if ([self isLeapLunarYear]) {
@@ -113,6 +146,8 @@
 - (BOOL)isLeapSolarMonth {
     return [self.year isLeapSolarYear];
 }
+
+
 
 - (NSString*)getNgayCanChi {
     NSInteger CANDay = floor(self.julianDayNumber + 9.5);

@@ -21,8 +21,6 @@
 
 @implementation BMPageViewController
  
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = self;
