@@ -9,15 +9,16 @@
 import UIKit
 
 class SynchronizedSet:NSMutableSet {
-    private var _storage:NSMutableSet!
+    private var _storage: NSMutableSet!
     private let bmLock = BMLock()
+    
     override init() {
         self._storage = NSMutableSet()
         super.init()
     }
     
     override init(capacity numItems: Int) {
-        self._storage = NSMutableSet()
+        self._storage = NSMutableSet(capacity: numItems)
         super.init(capacity: numItems)
     }
     
@@ -31,6 +32,7 @@ class SynchronizedSet:NSMutableSet {
             self._storage.add(object)
         })
     }
+
     
     override func remove(_ object: Any) {
         bmLock.synchronized({
@@ -144,9 +146,6 @@ extension SynchronizedSet {
              self._storage.enumerateObjects(options: opts, using: block)
         })
     }
-    
-    
-    
 }
 
 extension SynchronizedSet {

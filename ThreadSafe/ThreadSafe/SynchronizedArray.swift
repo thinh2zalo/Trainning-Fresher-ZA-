@@ -39,9 +39,9 @@ class SynchronizedArray: NSMutableArray {
     }
     
     override func removeObject(at index: Int) {
-        bmLock.synchronized {
+        bmLock.synchronized({
             self._array.removeObject(at: index)
-        }
+        })
     }
     
     override func removeLastObject() {
@@ -104,7 +104,6 @@ extension SynchronizedArray {
 }
 
 //// MARK: - Mutable
-
 extension SynchronizedArray {
     override func addObjects(from otherArray: [Any]) {
         bmLock.synchronized {
