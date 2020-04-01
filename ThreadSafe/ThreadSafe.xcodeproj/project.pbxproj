@@ -15,6 +15,9 @@
 		BF3343CA2431F10B006C171B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3343C82431F10B006C171B /* LaunchScreen.storyboard */; };
 		BF3343D52431F10B006C171B /* ThreadSafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343D42431F10B006C171B /* ThreadSafeTests.swift */; };
 		BF3343E02431F10B006C171B /* ThreadSafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343DF2431F10B006C171B /* ThreadSafeUITests.swift */; };
+		BF3343EF2431F127006C171B /* SynChronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343ED2431F126006C171B /* SynChronizedSet.swift */; };
+		BF3343F02431F127006C171B /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343EE2431F127006C171B /* SynchronizedArray.swift */; };
+		BF3343F22433447F006C171B /* BMLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343F12433447F006C171B /* BMLock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		BF3343DB2431F10B006C171B /* ThreadSafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreadSafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3343DF2431F10B006C171B /* ThreadSafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeUITests.swift; sourceTree = "<group>"; };
 		BF3343E12431F10B006C171B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF3343ED2431F126006C171B /* SynChronizedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynChronizedSet.swift; sourceTree = "<group>"; };
+		BF3343EE2431F127006C171B /* SynchronizedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
+		BF3343F12433447F006C171B /* BMLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		BF3343BC2431F10A006C171B /* ThreadSafe */ = {
 			isa = PBXGroup;
 			children = (
+				BF3343EE2431F127006C171B /* SynchronizedArray.swift */,
+				BF3343ED2431F126006C171B /* SynChronizedSet.swift */,
 				BF3343BD2431F10A006C171B /* AppDelegate.swift */,
 				BF3343BF2431F10A006C171B /* SceneDelegate.swift */,
 				BF3343C12431F10A006C171B /* ViewController.swift */,
@@ -106,6 +114,7 @@
 				BF3343C62431F10B006C171B /* Assets.xcassets */,
 				BF3343C82431F10B006C171B /* LaunchScreen.storyboard */,
 				BF3343CB2431F10B006C171B /* Info.plist */,
+				BF3343F12433447F006C171B /* BMLock.swift */,
 			);
 			path = ThreadSafe;
 			sourceTree = "<group>";
@@ -259,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3343EF2431F127006C171B /* SynChronizedSet.swift in Sources */,
+				BF3343F22433447F006C171B /* BMLock.swift in Sources */,
 				BF3343C22431F10A006C171B /* ViewController.swift in Sources */,
 				BF3343BE2431F10A006C171B /* AppDelegate.swift in Sources */,
 				BF3343C02431F10A006C171B /* SceneDelegate.swift in Sources */,
+				BF3343F02431F127006C171B /* SynchronizedArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
