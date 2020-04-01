@@ -36,6 +36,7 @@ class BMLock:NSLocking {
             os_unfair_lock_unlock(&_lock)
         }
     }
+    
     @available(iOS, deprecated: 10.0)
     @available(tvOS, deprecated: 10.0)
     private final class _OSSpinLock: NSLocking, Lock {

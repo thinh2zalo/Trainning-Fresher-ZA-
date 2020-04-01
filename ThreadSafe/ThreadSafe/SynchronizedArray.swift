@@ -162,8 +162,32 @@ extension SynchronizedArray {
     
     override func setArray(_ otherArray: [Any]) {
         bmLock.synchronized {
-            return self._array.setArray(otherArray)
+             self._array.setArray(otherArray)
         }
+    }
+    
+    override func sort(using comparator: Selector) {
+        bmLock.synchronized({
+            self._array.sort(using: comparator)
+        })
+    }
+    
+    override func insert(_ objects: [Any], at indexes: IndexSet) {
+        bmLock.synchronized({
+            self._array.insert(objects, at: indexes)
+        })
+    }
+    
+    override func removeObjects(at indexes: IndexSet) {
+        bmLock.synchronized({
+            self._array.removeObjects(at: indexes)
+        })
+    }
+    
+    override func replaceObjects(at indexes: IndexSet, with objects: [Any]) {
+        bmLock.synchronized({
+            self._array.replaceObjects(at: indexes, with: objects)
+        })
     }
     
 }
@@ -240,8 +264,6 @@ extension SynchronizedArray {
             return self._array.subarray(with: range)
         })
     }
-
-    
 }
 
 
